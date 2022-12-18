@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Барбершоп «Бородинский»</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body><!-- Шапка -->
+        <header class="page-header">
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="about.html">О нас</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="catalog.html"
+                            >Каталог</a
+                        >
+                    </li>
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="faq.html"
+                            >Частые вопросы</a
+                        >
+                    </li>
+                </ul>
+                <ul class="navigation-list navigation-user">
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="#">
+                            <span class="visually-hidden"> Поиск </span></a
+                        >
+                    </li>
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="#">
+                            <span class="visually-hidden"> Корзина </span>
+                        </a>
+                    </li>
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="#">Вход</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-container main-index">
+
+            <div class="page-container">
+                <h1 class="visually-hidden">Барбершоп "Бородинский"</h1>
+                <img class="logo" src="images/logo-full.svg" alt="Логотип Барбершопа 'Бородинский'" width="367" height="152">
+                <section class="advatages">
+                    <h2 class="visually-hidden">Преимущества</h2>
+                    <ul class="advatages-list">
+                        <li class="advantages-item">
+                            <h3 class="advantages-title">Быстро</h3>
+                            <p class="advantages-description">
+                                Мы делаем свою работу быстро! Два часа пролетят
+                                незаметно, и вы — счастливый обладатель стильной
+                                стрижки-минутки!
+                            </p>
+                        </li>
+                        <li class="advantages-item">
+                            <h3 class="advantages-title">Круто</h3>
+                            <p class="advantages-description">
+                                Забудьте, как вы стриглись раньше.Мы сделаем из вас
+                                звезду футбола или кино! Во всяком случае внешне.
+                            </p>
+                        </li>
+                        <li class="advantages-item">
+                            <h3 class="advantages-title">Дорого</h3>
+                            <p class="advantages-description">
+                                Наши мастера — профессионалы своего дела и не могут
+                                стоить дешево. К тому же, разве цена не даёт
+                                определённый статус?
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="index-columns">
+                <section class="services">
+                    <h2 class="services-title">Популярные услуги</h2>
+                    <ul class="services-list">
+                        <li class="services-item">
+                            <span class="services-name">Стрижка машинкой</span>
+                            <b class="services-prise">800 ₽</b>
+                        </li>
+                        <li class="services-item">
+                            <span class="services-name">Стрижка усов</span>
+                            <b class="services-prise">1200 ₽</b>
+                        </li>
+                        <li class="services-item">
+                            <span class="services-name">Груминг</span>
+                            <b class="services-prise">400 ₽</b>
+                        </li>
+                        <li class="services-item">
+                            <span class="services-name">Комплексная стрижка</span>
+                            <b class="services-prise">2300 ₽</b>
+                        </li>
+                    </ul>
+                    <a class="button button all" href="#">Посмотреть все</a>
+                </section>
+                <section class="gallery">
+                    <h2 class="gallery-title">Фотогалерея</h2>
+                    <img class="slider-image" src="images/gallery-1.jpg" alt="Примеры работ" />
+                    <button class="slider-button slider-prev" type="button">
+                        <span class="visually-hidden">Предыдущее фото</span>
+                    </button>
+                    <button class="slider-button slider-next" type="button">
+                        <span class="visually-hidden">Следующее фото</span>
+                    </button>
+
+                    <ol class="slider-pagination">
+                        <li class="slider-pagination-item">
+                            <button
+                                class="slider-pagination-button slider-pagination-button-current"
+                                type="button"
+                            >
+                                <span class="visually-hidden">1 фото</span>
+                            </button>
+                        </li>
+                        <li class="slider-pagination-item">
+                            <button class="slider-pagination-button" type="button">
+                                <span class="visually-hidden">2 фото</span>
+                            </button>
+                        </li>
+                        <li class="slider-pagination-item">
+                            <button class="slider-pagination-button" type="button">
+                                <span class="visually-hidden">3 фото</span>
+                            </button>
+                        </li>
+                        <li class="slider-pagination-item">
+                            <button class="slider-pagination-button" type="button">
+                                <span class="visually-hidden">4 фото</span>
+                            </button>
+                        </li>
+                    </ol>
+                </section>
+                </div>
+
+                <div class="index-columns">
+
+                <section class="contacts">
+                    <h2 class="contacts-title">Контакты</h2>
+                    <h3 class="contacts-subtitle">Барбершоп «Бородинский»</h3>
+                    <address class="contacts-address">
+                        <p class="contacts-adress-text">
+                            Санкт-Петербург, набережная реки Карповки, 5, литера П.
+                        </p>
+                        <a class="contacs-phone" href="tel:88005558628"
+                            >+7 800 555-86-28</a
+                        >
+                    </address>
+
+                    <h3 class="contacts-subtitle">Время работы</h3>
+                    <ul class="contacts-schedule">
+                        <li class="contacts-schedule-item">
+                            пн—пт: с 10:00 до 22:00
+                        </li>
+                        <li class="contacts-schedule-item">
+                            сб—вс: с 10:00 до 19:00
+                        </li>
+                    </ul>
+                    <a class="button" href="#">Как проехать</a>
+                    <a class="button button-feedback" href="#">Обратная связь</a>
+                </section>
+
+                <section class="appointment">
+                    <h2 class="appointment-title">Записаться</h2>
+                    <p class="appointment-description">
+                        Укажите желаемую дату и время и мы свяжемся с вами для
+                        подтверждения брони.
+                    </p>
+                    <form class="appointment-form" action="https://echo.htmlacademy.ru" method="post">
+                        <p>
+                            <label class="form-label"for="appointment-date">Дата</label>
+                            <button class="info" type="button">
+                                <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                            </button>
+                            <input type="text" name="appointment-date" id="appointment-date" placeholder="01.01.2021">
+                        </p>
+
+                        <p>
+                            <label class="form-label" for="appointment-time">Время</label>
+                            <button class="info" type="button">
+                                <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                            </button>
+                            <input type="text" name="appointment-time" id="appointment-time" placeholder="10:10">
+                        </p>
+
+                        <p>
+                            <label class="form-label" for="appointment-phone">Телефон</label>
+                            <button class="info" type="button">
+                                <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                            </button>
+                            <input type="text" name="appointment-phone" id="appointment-phone" placeholder="+7 800 000-00-00">
+                        </p>
+
+                        <p>
+                            <label class="form-label" for="appointment-name">Ваше имя</label>
+                            <button class="info" type="button">
+                                <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                            </button>
+                            <input type="text" name="appointment-name" id="appointment-name" placeholder="">
+                            <button class="button" type="submit">Записаться</button>
+                        </p>
+                    </form>
+                </section>
+                </div>
+            </div>
+
+
+        </main>
+
+        <footer class="page-footer">
+            <div class="page-footer-container">
+                <section class="footer-contacts">
+                    <h2 class="visually-hidden">Контакты</h2>
+                    <img class="footer-contacts-logo" src="images/logo-footer.svg" alt="Мини-логотип Барбершопа 'Бородинский'" width="187" height="24">
+                    <address class="footer-contacts-address">
+                        <p class="contacts-address-text">
+                            Санкт-Петербург, набережная реки Карповки, 5, литера П.
+                        </p>
+                        <a class="footer-contacts-address-phone" href="tel:88005558628"
+                            >+7 800 555-86-28</a
+                        >
+                    </address>
+                    <a class="footer-cotacts-map-link" href="#">Как нас найти?</a>
+                </section>
+
+                <section class="footer-newsletter">
+                    <h2 class="page-footer-title">Получайте лучшие предложения</h2>
+
+                    <form class="newsletter-form" action="https://echo.htmlacademy.ru" method="post">
+                        <p>
+                            <label class="visually-hidden" for="newsletter-email">Email</label>
+                            <input class="field" placeholder="email@htmlacademy.ru" type="email" name="newsletter-email" id="newsletter-email" required>
+                        </p>
+                        <button class="button newsletter-button" type="submit">
+                            <span class="visually-hidden">Отправить</span>
+                        </button>
+                    </form>
+                </section>
+                <section class="footer-social">
+                    <h2 class="page-footer-title">Давайте дружить</h2>
+                    <ul class="footer-social-list">
+                        <li class="footer-social-item">
+                            <a class="button" href="#">
+                                <span class="visuality-hidden">Твитер</span>
+                            </a>
+                        </li>
+                        <li class="footer-social-item">
+                            <a class="button" href="#">
+                                <span class="visuality-hidden">Вконтакте</span>
+                            </a>
+                        </li>
+                        <li class="footer-social-item">
+                            <a class="button" href="#">
+                                <span class="visuality-hidden">Инстаграмм</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="about-text">
+                        Сделано в
+                        <a class="htmlacademy-link" href="https://htmlacademy.ru"
+                            >.html academy</a
+                        >
+                    </p>
+                </section>
+            </div>
+        </footer>
+    </body>
+</html>

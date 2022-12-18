@@ -1,0 +1,525 @@
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+
+  src: url(../fonts/ptsans-400.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+
+  src: url(../fonts/ptsans-700.woff2) format("woff2");
+  font-display: swap;
+}
+
+html {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+
+  font-size: 18px;
+  line-height: 23px;
+  font-family: "PT Sans", serif;
+  font-weight: 400;
+  color: #000000;
+  background-color: #f2f2f2;
+
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+
+
+.button{
+  color: #ffffff;
+  background-color: #756257;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+
+.page-header {
+  color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+
+}
+
+
+
+.navigation {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+.navigation-logo{
+  padding: 0;
+  width: 139px;
+  margin-right:30px;
+  margin-left: 75px;
+}
+.navigation-list {
+
+  padding: 0;
+  margin: 0;
+  width: 345px;
+  list-style-type: none;
+}
+
+.navigation-user {
+  width: 265px;
+  margin-left: auto;
+  margin-right: 65px;
+}
+
+.navigation-link{
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+}
+.navigation-button {
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+
+.page-container {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+
+
+.main-logo-container {
+  background-color: #30bd77;
+  background-image: url("../images/background/index-background.jpg");
+  width: 1200px;
+  height: 485px;
+  background-repeat: no-repeat;
+}
+
+.welcome-logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.advantages-title-container {
+  text-align: center;
+}
+
+.advantages-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+
+  text-transform: uppercase;
+}
+
+.advantages-subtitle {
+  color: #333333;
+  font-size: 22px;
+  line-height: 36px;
+}
+
+.advantages-list {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+
+.details-list {
+  margin: 0;
+  padding: 0;
+}
+
+.details-item {
+  list-style-type: none;
+}
+
+/*шрифт в преимуществах Седоны*/
+.advantages-item-title,
+.details-item-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+
+}
+
+.advantages-description,
+.details-description {
+  line-height: 21px;
+  color: #333333;
+
+}
+/* цвет шрифта и фон в преимуществах седоны зависит от расположения */
+
+.bg-blue {
+  background-color: #83B3D3;
+}
+.color-white{
+  color: #ffffff;
+}
+
+.bg-super-light{
+  background-color:rgba(131, 179, 211, 0.12);
+}
+
+.bg-light {
+  background-color:rgba(131, 179, 211, 0.2);
+}
+
+/*стилизация раздела поиска гостингиц*/
+.search {
+  background-color: #ffffff;
+  text-align: center;
+}
+.search-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.search-subtitle {
+  color: #333333;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.search-button {
+  font-size: 20px;
+  line-height: 36px;
+}
+/*стилизация раздела подписки*/
+.subscribe {
+  color:#ffffff;
+  background-color: #83B3D3;
+  background-image: url('../images/background/background-index-bottom.jpg');
+  background-repeat: no-repeat;
+  text-align: center;
+
+}
+
+.subscribe-title{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 36px;
+
+}
+.subscribe-description{
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.field-input{
+  font-size: 18px;
+  line-height: 26px;
+  background-color: #F2F2F2;
+}
+
+.subscribe-button {
+  background-color: #83B3D3;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+
+
+
+/*стилизация раздела подвал*/
+.page-footer {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.page-footer-container {
+  display: flex;
+  padding: 0 72px;
+  background-color: #ffffff;
+}
+
+
+.social-list {
+  padding: 0;
+  margin: 0;
+  width: 107px;
+  margin-right: 61px;
+}
+
+.footer-phone{
+  width: 720px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.footer-developer {
+
+  margin-left: auto;
+}
+
+/*Стилицация  страницы каталога гостиниц*/
+
+
+.inner-header-container {
+  color: #FFFFFF;
+  background-color: #3d78a0;
+  background-image: url("../images/background/catalog-background.jpg");
+  background-repeat: no-repeat;
+  padding: 35px 72px 80px;
+
+}
+.inner-main-title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 78px;
+
+
+}
+/*Хлебные крошки*/
+
+.breadcrumbs {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/*Фильтр каталога*/
+
+.inner-main-title {
+  margin: 0;
+  width: 528px;
+}
+
+.breadcrumbs {
+  padding: 0;
+  margin: 0;
+}
+
+
+.catalog-filter-title {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.catalog-filter-form {
+  display: flex;
+}
+
+.catalog-filter-list {
+  padding: 0;
+  margin: 0;
+}
+
+.filter-fildset {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  margin-right: 17px;
+}
+
+.filter-fildset-price {
+  width: 287px;
+  margin-left: 100px;
+  margin-right: auto;
+}
+
+
+
+.range-title {
+  opacity: 0.3;
+}
+.catalog-filter-input{
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 23px;
+  background-color: transparent;
+}
+
+.filter-buttons {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-submit {
+  background-color: #83B3D3;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.button-reset {
+  color:#FFFFFF;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+
+
+/*Сам католог*/
+
+.catalog {
+  padding: 0 71px;
+}
+/*сортировка и отображение*/
+
+.catalog-sort {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sorting-type-text {
+  margin: 0;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  text-transform: uppercase;
+}
+
+.control-summary {
+  color: #333333;
+}
+
+.cortrol-view-list {
+  margin: 0;
+  padding: 0;
+}
+
+/*Карточки продуктов*/
+
+.product-list {
+  margin: 0;
+  padding: 0;
+}
+
+.product-card {
+    list-style-type: none;
+}
+
+.product-card-link {
+  text-decoration: none;
+}
+
+.product-card-title {
+  color: #000000;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+
+}
+
+.product-card-type-house,
+.product-card-price {
+  color: #333333;
+}
+
+.product-card-button.disabled {
+  background-color: #83B3D3;
+}
+
+.product-card-button.enabled {
+  background-color: #7DB54F;
+}
+
+.product-rating {
+  color: #333333;
+  background-color: #F2F2F2;
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.button-show-more {
+  background-color: #83B3D3;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+/*пагинация*/
+
+.pagination-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 20px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+.pagination li {
+  list-style-type: none;
+}
+
+.pagination-link{
+  color: #FFFFFF;
+  background-color: #83B3D3;
+}
+
+
+.pagination-current-link {
+  color:#000000;
+  background-color: #F2F2F2;
+}
+
+.pagination-selest {
+  display: flex;
+}
+
+/*отображение количества гостиц*/
+
+.select-quantity-card {
+  color: #333333;
+
+}
+
+
+
+/* секция подписки на  странице каталога */
+
+
+.inner-subscribe {
+    text-align: center;
+  }
+
+
+.inner-subscribe-description{
+    color: #333333;
+  }

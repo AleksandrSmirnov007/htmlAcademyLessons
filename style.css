@@ -1,0 +1,28 @@
+
+
+body {
+  
+  font-family: sans-serif;
+  
+  display: flex;
+
+  
+}
+ul {
+  margin: auto;
+  padding: 0;
+  
+}
+
+.container {
+  margin: auto;
+}
+
+.main-menu-item {
+  list-style-type: none;
+  
+}
+.main-menu-item a{
+  text-decoration: none;
+  color: #333333;
+}
