@@ -56,7 +56,7 @@
                     <!--Хлебные крошки-->
                     <ul class="breadcrumbs">
                         <li class="breadcrumbs-item">
-                            <a class="breadcrumbs-link" href="index.html">Главная страница</a>
+                            <a class="breadcrumbs-link home-link" href="index.html"> <span class="visually-hidden">Главная страница</span> </a>
                         </li>
                         <li class="breadcrumbs-item">
                             <a class="breadcrumbs-link">Гостиницы</a>
@@ -74,7 +74,7 @@
                                 <ul class="catalog-filter-list">
                                     <li class="catalog-filter-item">
                                         <label class="control">
-                                            <input class="visually-hidden control-input" type="checkbox" name="swimming-pool" checked/>
+                                            <input class="control-input" type="checkbox" name="swimming-pool" checked/>
                                             <span class="control-mark"></span>
                                             <span class="control-label">Бассейн</span>
                                         </label>
@@ -82,14 +82,14 @@
 
                                     <li class="catalog-filter-item">
                                         <label class="control">
-                                            <input class="visually-hidden control-input" type="checkbox" name="parking-space" checked/>
+                                            <input class="control-input" type="checkbox" name="parking-space" checked/>
                                             <span class="control-mark"></span>
                                             <span class="control-label">Парковка</span>
                                         </label>
                                     </li>
                                     <li class="catalog-filter-item">
                                         <label class="control">
-                                            <input class="visually-hidden control-input" type="checkbox" name="wi-fi"/>
+                                            <input class="control-input" type="checkbox" name="wi-fi"/>
                                             <span class="control-mark"></span>
                                             <span class="control-label">Wi-Fi</span>
                                         </label>
@@ -102,7 +102,7 @@
                                 <ul class="catalog-filter-list">
                                     <li class="catalog-filter-item">
                                         <label class="control">
-                                            <input class="visually-hidden control-input" type="radio" name="house-type" value="hotel" checked/>
+                                            <input class="control-input" type="radio" name="house-type" value="hotel" checked/>
                                             <span class="control-mark"></span>
                                             <span class="control-label">Гостиница</span>
                                         </label>
@@ -110,14 +110,14 @@
 
                                     <li class="catalog-filter-item">
                                         <label class="control">
-                                            <input class="visually-hidden control-input" type="radio" name="house-type" value="motel"/>
+                                            <input class="control-input" type="radio" name="house-type" value="motel"/>
                                             <span class="control-mark"></span>
                                             <span class="control-label">Парковка</span>
                                         </label>
                                     </li>
                                     <li class="catalog-filter-item">
                                         <label class="control">
-                                            <input class="visually-hidden control-input" type="radio" name="house-type" value="apartments"/>
+                                            <input class="control-input" type="radio" name="house-type" value="apartments"/>
                                             <span class="control-mark"></span>
                                             <span class="control-label"
                                                 >Апартаменты</span
@@ -159,7 +159,7 @@
 
                 <section class="catalog">
 
-                    <h3 class="visualyy-hidden" style="font-size: 27px;">Результаты поиска</h3>
+                    <h3 class="visually-hidden" style="font-size: 27px;">Результаты поиска</h3>
                     <div class="catalog-sort">
 
                         <p class="sorting-type-text">
@@ -169,135 +169,145 @@
 
 
                         <!--Списки контроля просмотра-->
-                        <details class="details">
-                            <summary class="control-summary">Сначала дешевые</summary>
+                        <div class="details-container">
+                            <details class="details">
+                                <summary class="control-summary">Сначала дешевые</summary>
+    
+                                <ul class="control-view-list">
+    
+                                    <li class="control-view-item">
+                                        <a class="control-option-link" href="#">
+                                            <span>Сначала дешевые</span>
+                                        </a>
+                                    </li>
+                                    <li class="control-view-item">
+                                        <a class="control-option-link" href="#">
+                                            <span>Сначала популярные</span>
+                                        </a>
+                                    </li>
+                                    <li class="control-view-item">
+                                        <a class="control-option-link" href="#">
+                                            <span>Сначала дорогие</span>
+                                        </a>
+                                    </li>
+                                    <li class="control-view-item">
+                                        <a class="control-option-link" href="#">
+                                            <span>Сначала комфортные</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </details>
+                        </div>
+                        
 
-                            <ul class="cortrol-view-list">
 
-                                <li class="control-view-item">
-                                    <a class="button-wiew" href="#">
-                                        <span class="visually-hidden">Сначала дешевые</span>
-                                    </a>
-                                </li>
-                                <li class="control-view-item">
-                                    <a class="button-wiev" href="#">
-                                        <span class="visually-hidden">Сначала популярные</span>
-                                    </a>
-                                </li>
-                                <li class="control-view-item">
-                                    <a class="button-wiev" href="#">
-                                        <span class="visually-hidden">Сначала дорогие</span>
-                                    </a>
-                                </li>
-                                <li class="control-view-item">
-                                    <a class="button-wiev" href="#">
-                                        <span class="visually-hidden">Сначала комфортные</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </details>
-
-
-                            <ul class="cortrol-view-list">
-                                <li class="control-view-item">
-                                    <a class="button-view view-current">
-                                        <span class="visually-hidden">Карточками</span>
-                                    </a>
-                                </li>
-                                <li class="control-view-item">
-                                    <a class="button-viev" href="#">
-                                        <span class="visually-hidden">Слайдами</span>
-                                    </a>
-                                </li>
-                                <li class="control-view-item">
-                                    <a class="button-viev" href="#">
-                                        <span class="visually-hidden">Списком</span>
-                                    </a>
-                                </li>
-                            </ul>
+                        <ul class="card-view-list">
+                            <li class="card-view-item">
+                                <a class="button-view view-current">
+                                    <span class="visually-hidden">Карточками</span>
+                                </a>
+                            </li>
+                            <li class="card-view-item">
+                                <a class="button-view" href="#">
+                                    <span class="visually-hidden">Слайдами</span>
+                                </a>
+                            </li>
+                            <li class="card-view-item">
+                                <a class="button-view" href="#">
+                                    <span class="visually-hidden">Списком</span>
+                                </a>
+                            </li>
+                        </ul>
 
                     </div>
 
+
+
                     <h3 class="visually-hidden">Список гостиниц</h3>
                     <!--Список карточек продукта-->
+                    <div class="product-cards-container">                    
                     <ul class="product-list">
-                        <li class="product-card">
-                            <a class="product-card-link" href="product.html">
-                                <img class="product-card-image" src="images/content/amara-resort-spa.jpg" alt=" Фшто Amara Resort & Spa">
-                                <h4 class="product-card-title">Amara Resort & Spa</h4>
-                            </a>
-                            <span class="product-card-type-house">Гостиница</span>
+                            <li class="product-card">
+                                <a class="product-card-link" href="product.html">
+                                    <img class="product-card-image" src="images/content/amara-resort-spa.jpg" alt=" Фшто Amara Resort & Spa">
+                                    <h4 class="product-card-title">Amara Resort & Spa</h4>
+                                </a>
+                                <span class="product-card-type-house">Гостиница</span>
 
-                            <span class="product-card-price">От 4000 ₽</span>
+                                <span class="product-card-price">От 4000 ₽</span>
 
-                            <p>
-                                <a class="button product-card-button" href="#">Подробнее</a>
-                                <a class="button product-card-button disabled" href="#">В избранное</a>
-                            </p>
+                                <p>
+                                    <a class="button product-card-button" href="#">Подробнее</a>
+                                    <a class="button product-card-button disabled" href="#">В избранное</a>
+                                </p>
 
-                            <p><span class="visually-hidden">4 звезды</span></p>
-                            <p class="product-rating">Рейтинг: 8,5</p>
-                        </li>
+                                <p><span class="visually-hidden">4 звезды</span></p>
+                                <p class="product-rating">Рейтинг: 8,5</p>
+                            </li>
 
-                        <li class="product-card">
-                            <a class="product-card-link" href="product.html">
-                                <img class="product-card-image" src="images/content/desert-quail-inn.jpg" alt="Фото Desert Quail Inn"/>
-                                <h4 class="product-card-title">Desert Quail Inn</h4>
-                            </a>
-                            <span class="product-card-type-house">Гостиница</span>
+                            <li class="product-card">
+                                <a class="product-card-link" href="product.html">
+                                    <img class="product-card-image" src="images/content/desert-quail-inn.jpg" alt="Фото Desert Quail Inn"/>
+                                    <h4 class="product-card-title">Desert Quail Inn</h4>
+                                </a>
+                                <span class="product-card-type-house">Гостиница</span>
 
-                            <span class="product-card-price">От 3000 ₽</span>
+                                <span class="product-card-price">От 3000 ₽</span>
 
-                            <p>
-                                <a class="button product-card-button" href="#">Подробнее</a>
-                                <a class="button product-card-button disabled" href="#">В избранное</a>
-                            </p>
-                            <p><span class="visually-hidden">3 звезды</span></p>
-                            <p class="product-rating">Рейтинг: 8,9</p>
-                        </li>
+                                <p>
+                                    <a class="button product-card-button" href="#">Подробнее</a>
+                                    <a class="button product-card-button disabled" href="#">В избранное</a>
+                                </p>
+                                <p><span class="visually-hidden">3 звезды</span></p>
+                                <p class="product-rating">Рейтинг: 8,9</p>
+                            </li>
 
-                        <li class="product-card">
-                            <a class="product-card-link" href="product.html">
-                                <img class="product-card-image" src="images/content/villas-at-poco-diablo.jpg" alt="Фото Villas at Poco Diablo" />
-                                <h4 class="product-card-title">Villas at Poco Diablo</h4>
-                            </a>
-                            <span class="product-card-type-house">Гостиница</span>
+                            <li class="product-card">
+                                <a class="product-card-link" href="product.html">
+                                    <img class="product-card-image" src="images/content/villas-at-poco-diablo.jpg" alt="Фото Villas at Poco Diablo" />
+                                    <h4 class="product-card-title">Villas at Poco Diablo</h4>
+                                </a>
+                                <span class="product-card-type-house">Гостиница</span>
 
-                            <span class="product-card-price">От 2000 ₽</span>
+                                <span class="product-card-price">От 2000 ₽</span>
 
-                            <p>
-                                <a class="button product-card-button" href="#">Подробнее</a>
-                                <a class="button product-card-button enabled" href="#">В избранном</a>
-                            </p>
-                            <p><span class="visually-hidden">2 звезды</span></p>
-                            <p class="product-rating">Рейтинг: 9,2</p>
-                        </li>
+                                <p>
+                                    <a class="button product-card-button" href="#">Подробнее</a>
+                                    <a class="button product-card-button enabled" href="#">В избранном</a>
+                                </p>
+                                <p><span class="visually-hidden">2 звезды</span></p>
+                                <p class="product-rating">Рейтинг: 9,2</p>
+                            </li>
 
-                        <li class="product-card">
-                            <a class="product-card-link" href="product.html">
-                                <img class="product-card-image" src="images/content/green-tree-inn.jpg" alt="Фото GreenTree Inn" />
-                                <h4 class="product-card-title">GreenTree Inn</h4>
-                            </a>
-                            <span class="product-card-type-house">Гостиница</span>
+                            <li class="product-card">
+                                <a class="product-card-link" href="product.html">
+                                    <img class="product-card-image" src="images/content/green-tree-inn.jpg" alt="Фото GreenTree Inn" />
+                                    <h4 class="product-card-title">GreenTree Inn</h4>
+                                </a>
+                                <span class="product-card-type-house">Гостиница</span>
 
-                            <span class="product-card-price">От 3000 ₽</span>
+                                <span class="product-card-price">От 3000 ₽</span>
 
-                            <p>
-                                <a class="button product-card-button" href="#">Подробнее</a>
-                                <a class="button product-card-button disabled" href="#">В избранное</a>
-                            </p>
-                            <p><span class="visually-hidden">2 звезды</span></p>
-                            <p class="product-rating">Рейтинг: 9,2</p>
-                        </li>
-                    </ul>
-
-                    <button class="button button-show-more" type="button">
-                        Загрузить ещё
-                    </button>
+                                <p>
+                                    <a class="button product-card-button" href="#">Подробнее</a>
+                                    <a class="button product-card-button disabled" href="#">В избранное</a>
+                                </p>
+                                <p><span class="visually-hidden">2 звезды</span></p>
+                                <p class="product-rating">Рейтинг: 9,2</p>
+                            </li>
+                        </ul>
+                    
+                    <div class="show-more-button-container">
+                        <button class="button button-show-more" type="button">
+                            Загрузить ещё
+                        </button>
+                    </div>
+                        
+                    </div>
                     <!--Пагинация-->
 
                     <div class="pagination-nav">
-                        <ul class="pagination">
+                        <ul class="pagination-list">
                             <li class="pagination-item">
                                 <a class="pagination-link pagination-current-link">1</a>
                             </li>
