@@ -62,8 +62,7 @@ body {
   background-color: #FBF7F4;
   color: #242424;
 
-  outline: 5px solid rgba(255, 99, 78, 0.5);
-  outline-offset: -5px;
+ 
 }
 .visually-hidden {
   position: absolute;
@@ -164,12 +163,7 @@ body {
   margin: 0 auto;
 }
 
-.main-inner{
-  color: #242424;
-  background-color: #FBF7F4;
-  background-image: url("../images/noisy-80x80.svg");
-  background-repeat: repeat;
-}
+
 
 .advantages {
   margin-bottom: 58px;
@@ -428,22 +422,37 @@ body {
   height: 44px;
   margin-right: 8px;
   margin-bottom: 8px;
-  outline: 5px solid rgba(87, 255, 78, 0.5);
-  outline-offset: -5px;
+  outline: 2px solid rgba(87, 255, 78, 0.5);
+  outline-offset: -2px;
 }
 
 .footer-social-item:nth-child(3n) {
   margin-right: 0;
 }
-/* стилизация каталога */
+/*<<<<<<<<<<<<<<<<<<<<<<<                                    стилизация каталога                               >>>>>>>>>>>>>>>>>>>>>>> */
 
 
 .navigation-logo {
+  display: flex;
   width: 140px;
+  align-items: center;
   margin-right: 100px;
 }
 
+/* перенес сюда раздел майн-иннер что бы не 
+путаться сюда где вся стилизация каталога
+раньше он был рядом с майн индекс */
+.main-inner{
+  padding-top: 40px;
+  color: #242424;
+  background-color: #FBF7F4;
+  background-image: url("../images/noisy-80x80.svg");
+  background-repeat: repeat;
+}
+
 .inner-header-title {
+  margin-top: 0;
+  margin-bottom: 16px;
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -454,13 +463,18 @@ body {
 
 }
 
-.breadcrumbs-item{
-  font-size: 16px;
-  line-height: 22px;
-  color: #242424;
+.breadcrumbs {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
+
 .bredcrumbs-link{
+  margin-right: 32px;
+  font-size: 16px;
+  line-height: 22px;
   color: #242424;
 }
 
@@ -495,14 +509,39 @@ body {
 }
 
 .sorting-container{
+  margin-bottom: 16px;
+  padding: 16px;
+  display: flex;
   color: #242424;
   background-color: #FFFFFF;
 
+  outline: 2px solid rgba(87, 255, 78, 0.5);
+  outline-offset: -2px;
 }
+
+.sorting-type {
+  margin-right: auto;
+}
+.sorting-container .button {
+  width: 56px;
+  height: 44px;
+  
+  outline: 2px solid rgba(87, 255, 78, 0.5);
+  outline-offset: -2px;
+}
+
 
 .button-light{
   color:#000000;
   background-color: #FFFFFF;
+}
+
+/*Стилизация карточек продукта*/
+
+.product-list {
+  margin: 0;
+  padding: 0; 
+  list-style-type: none;
 }
 
 .product-card{
@@ -528,19 +567,40 @@ body {
   color:#814B18;
 }
 
+
+/* pagination*/
+
+.pagination-container {
+  display: flex;
+  padding: 16px;
+}
+
 .pagination{
+  margin: 0;
+  padding: 0;
+  display: flex;
   background-color: #FFFFFF;
+  list-style-type: none;
+}
+
+.pagination-item:not(last-child) {
+  margin-right: 8px;
+
 }
 
 .pagination-link{
+  display: block;
+  box-sizing: border-box;
+  width: 50px;
+  height: 44px;
+  padding: 14px 20px;
+
+  line-height: 16px;
+  font-weight: 700;
   color: #FFFFFF;
   background-color: #000000;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 16px;
-  text-align: center;
-  text-transform: uppercase;
-
+  text-decoration: none;
+  
 }
 .pagination-current{
   background-color: #FFFFFF;
@@ -550,5 +610,9 @@ body {
 .pagination-disabled{
   color:#FFFFFF;
   background-color: #595959;
+}
+
+.pagination-show-more {
+  margin-left: auto;
 }
 
