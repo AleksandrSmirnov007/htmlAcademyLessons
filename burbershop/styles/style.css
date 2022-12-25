@@ -49,6 +49,7 @@ html {
 
 }
 
+
 body {
   margin: 0;
   display: flex;
@@ -64,7 +65,18 @@ body {
   outline: 5px solid rgba(255, 99, 78, 0.5);
   outline-offset: -5px;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 
+
+}
 .button {
   color: #FFFFFF;
   background-color: #000000;
@@ -88,26 +100,21 @@ body {
   width: 940px;
   margin: 0 auto;
 
+
 }
 
 .navigation-list {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   width: 430px;
-}
-
-.navigation-user {
-  width: 250px;
-  margin-left: auto;
-}
-
-
-.navigation-item {
-  list-style-type:none;
-
+  list-style-type: none;
 }
 
 .navigation-link {
+  padding: 24px 20px;
+  display: block;
   color: inherit;
   text-decoration: none;
   font-family: PT Sans Narrow, sans-serif;
@@ -115,14 +122,32 @@ body {
   text-transform: uppercase;
   line-height: 22px;
   text-align: center;
+
 }
+
+.navigation-user {
+  width: 250px;
+  margin-left: auto;
+}
+
+.navigation-user .navigation-link {
+  min-width: 16px;
+  min-height: 16px;
+}
+
+
+
+
 
 
 .main-container {
   flex-grow: 1;
+  padding-bottom: 61px;
+  padding-top: 64px;
 }
 
 .main-index {
+
   background-color: #000000;
   color: #FFFFFF;
   background-image: url("../images/index-bg.jpg");
@@ -147,6 +172,11 @@ body {
   background-repeat: repeat;
 }
 
+.advantages {
+  margin-bottom: 58px;
+
+}
+
 .advatages-list {
   display: flex;
   justify-content: space-between;
@@ -154,6 +184,7 @@ body {
   color: #FFFFFF;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .advantages-item {
@@ -165,6 +196,12 @@ body {
   font-size: 32px;
   line-height: 35px;
   text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 56px
+}
+
+.advantages-description {
+  margin: 0;
 }
 
 .index-columns {
@@ -175,6 +212,12 @@ body {
   background-color: #FBF7F4;
   background-image: url("../images/noisy-80x80.svg");
   background-repeat: repeat;
+  margin-bottom: 31px;
+  padding: 40px;
+}
+
+.index-columns:last-child {
+  margin-bottom: 0;
 }
 
 .services {
@@ -188,6 +231,8 @@ body {
 .services-title {
   font-size: 32px;
   line-height: 35px;
+  margin-top: 0;
+  margin-bottom: 28px;
 
 }
 
@@ -206,6 +251,8 @@ body {
 }
 
 .gallery-title {
+  margin-top: 0;
+  margin-bottom: 28px;
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -219,8 +266,9 @@ body {
 }
 
 .contacts-title {
+  margin-top: 0;
+  margin-bottom: 28px;
   font-family: "PT Sans Narrow", sans-serif;
-
   font-size: 32px;
   line-height: 35px;
   text-transform: uppercase;
@@ -262,6 +310,8 @@ body {
 }
 
 .appointment-title {
+  margin-top: 0;
+  margin-bottom: 28px;
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -299,12 +349,14 @@ body {
 }
 
 .page-footer-container {
+  padding: 40px 0;
   width: 940px;
   margin: 0 auto;
   display: flex;
 }
 
 .footer-contacts {
+
   font-style: normal;
   width: 200px;
   margin-right: 130px;
@@ -336,6 +388,8 @@ body {
 }
 
 .page-footer-title{
+  margin-top: 0;
+  margin-bottom: 14px;
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -357,11 +411,31 @@ body {
   margin-left: auto;
 }
 
+
 .page-footer .htmlacademy-link{
   color: #DBB590;
 }
 
+.footer-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 
+.footer-social-item {
+  width: 56px;
+  height: 44px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  outline: 5px solid rgba(87, 255, 78, 0.5);
+  outline-offset: -5px;
+}
+
+.footer-social-item:nth-child(3n) {
+  margin-right: 0;
+}
 /* стилизация каталога */
 
 
