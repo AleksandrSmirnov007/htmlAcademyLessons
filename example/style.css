@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    }
+.grid {
+   width: 1000px;
+    margin: 50px auto 0;
+    
+    outline: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr 20% auto 20%;
+
+
+}
+.grid > * {
+    display: flex;
+    height: 100px;
+    border-radius: 8px;
+}
+.grid > * > * {
+    padding: 5px;
+    margin: auto;
+
+}
+.grid div:nth-child(1) {
+    background-color: lightgreen;
+    
+}
+.grid div:nth-child(2) {
+    background-color: lightblue;
+    
+}
+.grid div:nth-child(3) {
+    
+    background-color: #ff55407d;   
+}
+.grid div:nth-child(4) {
+    background-color: yellow;
+}
+.grid div:nth-child(5) {
+    background-color: #00ffee66;
+}
+.grid div:nth-child(6) {
+    background-color: #0d00ff81;
+}
