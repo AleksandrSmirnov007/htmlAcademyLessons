@@ -1,22 +1,29 @@
 
 
+html {
+  border: 1px solid red;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+}
+
 body {
-  
+  margin: 0;
+  border: 1px solid lightgreen;
   font-family: sans-serif;
+  box-sizing: border-box;
+  height: 100%;
   
   display: flex;
-
-  
-}
-ul {
-  margin: auto;
-  padding: 0;
-  text-align: center;
-  
 }
 
 .container {
   margin: auto;
+}
+
+.main-menu-list {
+  padding: 0;
+  text-align: center; 
 }
 
 .main-menu-item {
@@ -27,3 +34,4 @@ ul {
   text-decoration: none;
   color: #333333;
 }
+
