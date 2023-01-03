@@ -13,9 +13,12 @@ body {
   font-family: sans-serif;
   box-sizing: border-box;
   height: 100%;
+  text-align: center;
   
   display: flex;
 }
+
+
 
 .container {
   margin: auto;
