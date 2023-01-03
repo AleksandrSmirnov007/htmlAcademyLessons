@@ -6,24 +6,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <img src="https://kartinkin.net/uploads/posts/2022-03/1646217714_11-kartinkin-net-p-kartinki-ford-mustang-11.jpg" alt="Фотография" width="320" height="220">
+    <article class="card card-table" id="one">
+        <img class="card-image" src="https://novate.ru/files/u17117/58a26f052a0e04eacd14153083a5271c.jpg" width="350" height="340" alt="фото чаши с черникой">
 
-        <div class="card-content">
-          <h3>Ford Mustang GT</h3>
 
-          <p>Достойный наследник легенды</p>
-
-          <dl>
-            <dt>год выпуска</dt>
-            <dd>2018</dd>
-            <dt>V двигателя</dt>
-            <dd>5,2 л</dd>
-            <dt>макс. скорость</dt>
-            <dd>320 км/ч</dd>
-          </dl>
+        <div class="card-info">
+            <h1 class="card-title"> Черника свежая</h1>
+            <p class="card-description">Отличный товар по привлекательной цене</p>
         </div>
-      </div>
+
+        <dl class="card-status">
+            <dt>Категория</dt>
+            <dd>Ягоды</dd>
+            <dt> Вес нетто</dt>
+            <dd>1 кг</dd>
+            <dt>Стоимость</dt>
+            <dd>1000 р</dd>
+        </dl>
+
+        <div class="card-button">
+            <a class="button"href="">В кoрзину</a>
+        </div>
+
+    </article>
+
+    <button class=" button button-view" type="button">Кнопка преключения вида</button>
+    <script>
+        document.querySelector('.button-view').addEventListener('click', function() {
+            var elementOne = document.getElementById('one');
+
+
+            if (elementOne.classList.contains("card-table")) {
+                elementOne.classList.remove("card-table");
+            }
+            else {
+                elementOne.classList.add("card-table");
+            }
+        })
+    </script>
 </body>
 </html>
 
