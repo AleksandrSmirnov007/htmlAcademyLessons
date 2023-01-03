@@ -1,7 +1,7 @@
 
 
 html {
-  border: 1px solid red;
+
   box-sizing: border-box;
   height: 100%;
   padding: 0;
@@ -9,7 +9,7 @@ html {
 
 body {
   margin: 0;
-  border: 1px solid lightgreen;
+
   font-family: sans-serif;
   box-sizing: border-box;
   height: 100%;
@@ -23,12 +23,12 @@ body {
 
 .main-menu-list {
   padding: 0;
-  text-align: center; 
+  text-align: center;
 }
 
 .main-menu-item {
   list-style-type: none;
-  
+
 }
 .main-menu-item a{
   text-decoration: none;

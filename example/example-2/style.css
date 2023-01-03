@@ -1,0 +1,24 @@
+.card {
+   width: 320px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+ }
+
+ .card-content {
+    padding: 0 20px;
+ }
+
+ .card-content dl {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+dd {
+    grid-row: 1/2;
+    margin: 0;
+}
