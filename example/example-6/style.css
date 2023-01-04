@@ -1,0 +1,79 @@
+
+@font-face {
+    font-family: "PT-Sans";
+    font-style: normal;
+    font-weight: 400;
+
+    src: url("../fonts/ptsans-400.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PT-Sans";
+    font-style: bold;
+    font-weight: 700;
+
+    src: url("../fonts/ptsans-700.woff2") format("woff2");
+}
+
+.simple-grid {
+    color: #555555;
+    padding: 25px 40px;
+    font-family: "PT-Sans", sans-serif;
+    font-weight: 400;
+    margin: 0 auto;
+    width: 820px;
+    height: 200px;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "img name"
+                        "img subject"
+                        "img button";
+}
+
+.simple-grid-img {
+    grid-area: img;
+    width: 400px;
+    height: 200px;
+    /* background: url('https://gas-kvas.com/uploads/posts/2022-06/thumbs/1654924023_7-gas-kvas-com-p-ulitsi-italii-foto-7.jpg') no-repeat center center; */
+    /* background-size: cover; */
+    object-fit: cover;
+
+}
+.simple-grid-name {
+    grid-area: name;
+    margin: 0;
+    margin-top: 20px;
+
+
+}
+.simple-grid-subject {
+    grid-area: subject;
+    margin: 0;
+    font-size: 18px;
+
+
+}
+.simple-grid-button {
+    grid-area: button;
+    display: block;
+    padding: 8px 30px;
+    align-self: start;
+
+    width: max-content;
+    background: linear-gradient(0,#efa83d,#f0c68b);
+    border-radius: 15px;
+
+
+    font-size: 80%;
+    margin-bottom: 20px;
+}
+
+.simple-grid-button a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
