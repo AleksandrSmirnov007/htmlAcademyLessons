@@ -172,38 +172,38 @@
                         подтверждения брони.
                     </p>
                     <form class="appointment-form" action="https://echo.htmlacademy.ru" method="post">
-                        <p>
-                            <label class="form-label"for="appointment-date">Дата</label>
-                            <button class="info" type="button">
+                        <p class="field-group appointment-form-date">
+                            <label class="form-label"for="appointment-date">Дата
+                                <button class="info" type="button">
                                 <span class="visually-hidden">Посмотреть дополнительную информацию</span>
-                            </button>
+                                </button>
+                            </label>
+                            
                             <input type="text" name="appointment-date" id="appointment-date" placeholder="01.01.2021">
                         </p>
 
-                        <p>
-                            <label class="form-label" for="appointment-time">Время</label>
-                            <button class="info" type="button">
+                        <p class="field-group appointment-form-time">
+                            <label class="form-label" for="appointment-time">Время
+                                <button class="info" type="button">
                                 <span class="visually-hidden">Посмотреть дополнительную информацию</span>
-                            </button>
+                                </button>
+                            </label>
+                            
                             <input type="text" name="appointment-time" id="appointment-time" placeholder="10:10">
                         </p>
 
-                        <p>
+                        <p class="field-group appointment-form-phone">
                             <label class="form-label" for="appointment-phone">Телефон</label>
-                            <button class="info" type="button">
-                                <span class="visually-hidden">Посмотреть дополнительную информацию</span>
-                            </button>
+                            
                             <input type="text" name="appointment-phone" id="appointment-phone" placeholder="+7 800 000-00-00">
                         </p>
 
-                        <p>
+                        <p class="field-group appointment-form-name">
                             <label class="form-label" for="appointment-name">Ваше имя</label>
-                            <button class="info" type="button">
-                                <span class="visually-hidden">Посмотреть дополнительную информацию</span>
-                            </button>
+                            
                             <input type="text" name="appointment-name" id="appointment-name" placeholder="">
-                            <button class="button" type="submit">Записаться</button>
                         </p>
+                        <button class="button appointment-submit" type="submit">Записаться</button>
                     </form>
                 </section>
                 </div>

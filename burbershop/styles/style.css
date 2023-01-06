@@ -321,6 +321,28 @@ body {
 .appointment-form {
   font-size: 16px;
   line-height: 24px;
+
+  display: grid;
+  grid-template-columns: 114px 74px 208px;
+  gap: 19px 17px;
+}
+
+.field-group {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  
+}
+.appointment-form .info {
+  display: none;
+}
+.appointment-form-name {
+  grid-column: 1 / -1;
+}
+
+.appointment-submit {
+  grid-column: 1 / -1;
+  justify-self: start;
 }
 
 .form-label {
