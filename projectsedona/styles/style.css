@@ -116,6 +116,7 @@ body {
   color: inherit;
   text-decoration: none;
   text-align: center;
+  outline: 1px solid red;
 
   
 }
@@ -173,7 +174,7 @@ body {
   box-sizing: border-box;
   background-color: #30bd77;
   background-image: url("../images/background/index-background.jpg");
-  width: 1200px;
+  
   height: 485px;
   background-repeat: no-repeat;
 }
@@ -210,6 +211,48 @@ body {
   padding: 0;
   text-align: center;
   list-style-type: none;
+  
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages-item {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.advantages-item-large {
+  width: 800;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.advantages-item-large-text {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantages-item-title {
+  margin: 98px 100px 30px;
+}
+.advantages-description {
+  margin: auto 90px 87px;
+}
+
+.advantages-img {
+  width: 800px;
+  object-fit: cover;
+}
+
+.advantages-item-large:nth-child(2) img {
+  order: -1;
 }
 
 
@@ -217,10 +260,25 @@ body {
 .details-list {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .details-item {
   list-style-type: none;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-item-title {
+  margin: 84px 75px 20px;
+
+}
+
+.details-description {
+  margin: auto 75px 79px;
 }
 
 /*шрифт в преимуществах Седоны*/
@@ -261,8 +319,11 @@ body {
 .search {
   background-color: #ffffff;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .search-title {
+  margin: 91px 240px 29px;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -273,11 +334,15 @@ body {
   color: #333333;
   font-size: 22px;
   line-height: 26px;
+  margin: 0px 240px 56px;
 }
+
+
 
 .search-button {
   font-size: 20px;
   line-height: 36px;
+  margin: auto 312px 93px;
 }
 
 /*стилизация раздела подписки*/
@@ -288,6 +353,8 @@ body {
   background-image: url('../images/background/background-index-bottom.jpg');
   background-repeat: no-repeat;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -296,23 +363,40 @@ body {
   text-transform: uppercase;
   font-size: 30px;
   line-height: 36px;
+  margin: 100px 240px 29px;
 
 }
 .subscribe-description{
   font-size: 22px;
   line-height: 26px;
+  margin: 0 240px 46px;
+}
+
+.subscribe-form {
+  margin: auto 200px 88px;
+  display: flex;
 }
 
 .field-input{
   font-size: 18px;
   line-height: 26px;
   background-color: #F2F2F2;
+  width: 100%;
+  box-sizing: border-box;
+  height: 60px;
 }
 
+.subscribe-field {
+  margin-left: auto;
+  width: 600px;
+  
+}
 .subscribe-button {
+  width: 200px;
   background-color: #83B3D3;
   font-size: 20px;
   line-height: 26px;
+  margin-right: auto;
 }
 
 
