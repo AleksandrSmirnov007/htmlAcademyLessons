@@ -62,6 +62,7 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
+  text-align: center;
 }
 
 
@@ -100,15 +101,17 @@ body {
   list-style-type: none;
 }
 
+.navigation-item {
+  display: flex;
+  align-items: center;
+}
+
 .navigation-user {
   justify-content: flex-end;
   width: 270px;
   margin-left: auto;
 }
 
-.navigation-item {
-  display: flex;
-}
 
 .navigation-link{
   display: block;
@@ -116,7 +119,7 @@ body {
   color: inherit;
   text-decoration: none;
   text-align: center;
-  outline: 1px solid red;
+  
 
   
 }
@@ -145,10 +148,7 @@ body {
   line-height: 13px;
 }
 
-.navigation-item {
-  display: flex;
-  align-items: center;
-}
+
 
 .navigation-button {
   display: block;
@@ -355,6 +355,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding-bottom: 87px;
 
 }
 
@@ -373,7 +374,7 @@ body {
 }
 
 .subscribe-form {
-  margin: auto 200px 88px;
+  margin: auto 200px 0;
   display: flex;
 }
 
@@ -488,6 +489,7 @@ body {
   font-size: 16px;
   line-height: 21px;
   list-style-type: none;
+  margin-bottom: 45px;
   
 }
 
@@ -645,18 +647,32 @@ body {
 }
 
 .product-list {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 10px 18px;
+  margin-top: 0;
+  margin-bottom: 34px;
   padding: 0;
 }
 
 .product-card {
+    padding: 20px;
     list-style-type: none;
+    display: grid;
+    gap: 16px 25px;
+    grid-template-columns: 133px 143px;
+    
 }
 
-.product-card-link {
+
+.product-card-image-title-link {
   text-decoration: none;
+  grid-column: 1 / -1;
+}
+
+.product-card-image {
+  display: block;  /*тег img по умолчаню идет display: inline; и поя вляется отсуп снизу наверно запас для начертания букв.Поэтому меняем на display: block;  и отступ исчезает */
+  margin-bottom: 16px;
 }
 
 .product-card-title {
@@ -664,6 +680,7 @@ body {
   font-weight: 700;
   font-size: 24px;
   line-height: 31px;
+  margin: 0;
 
 }
 
@@ -688,9 +705,15 @@ body {
   text-transform: uppercase;
 }
 
+.show-more-button-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
 .button-show-more {
   display: block;
-  margin: 30px auto;
+  margin: 0 auto;
   background-color: #83B3D3;
   font-size: 20px;
   line-height: 26px;
@@ -768,8 +791,14 @@ body {
 
 
 .inner-subscribe {
-    text-align: center;
-  }
+  text-align: center;
+  padding-bottom: 141px;
+}
+
+.inner-subscribe .subscribe-title {
+  margin-top: 73px;
+  margin-bottom: 46px;
+}
 
 
 .inner-subscribe-description{
