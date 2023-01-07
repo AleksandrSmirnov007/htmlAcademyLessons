@@ -1,0 +1,83 @@
+/*Стилизация карточек продукта*/
+
+.product-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 24px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    gap: 20px;
+
+
+  }
+
+  .product-card{
+    background-color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+
+    /* outline: 1px solid green; */
+
+  }
+  .product-card-image {
+    display: block;  /* по умолчанию картинка inline-block и поэтому есть тандартный отступ снизу для текстового baseline  поэмоу мы переводим в режим блок*/
+  }
+
+  .product-card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;    /* вот тут такой прием грамотный */
+
+
+    /* outline: 1px solid red;
+    outline-offset: -1px; */
+  }
+
+/* к примеру сделаем по умолчанию flex-grow (flex-grow: 0;) одной двустрочной карточки( кпримеру карточка по номером 2) */
+
+/* .product-card:nth-child(2) .product-card-content {
+    flex-grow: 0;
+} */
+
+  .pdoduct-card-link{
+
+    text-decoration: none;
+  }
+
+  .product-card-title{
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .product-card-price{
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    color:#814B18;
+    margin-top: auto;
+  }
+
+  .product-card-button {
+    margin-top: 20px;
+  }
+
+
+  .button {
+    display: block;
+    padding: 10px;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
