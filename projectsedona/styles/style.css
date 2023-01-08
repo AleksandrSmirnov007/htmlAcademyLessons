@@ -36,7 +36,6 @@ body {
 
   /*outline: 2px solid rgba(87, 255, 78, 0.5);
   outline-offset: -2px;*/ /* Рамка для подстветки элементов*/
-
 }
 
 .visually-hidden {
@@ -72,7 +71,6 @@ body {
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
-
 }
 
 .navigation {
@@ -112,52 +110,36 @@ body {
   margin-left: auto;
 }
 
-
 .navigation-link{
   display: block;
   padding: 20px 17px;
   color: inherit;
   text-decoration: none;
   text-align: center;
-  
-
-  
 }
-
 
 .icon-search {
   width: 18px;
   height: 18px;
   padding: 24px 12px;
-
-  
-
 }
 
 .icon-favourites {
   width: 18px;
   height: 18px;
   padding: 24px 12px;
-
-  
 }
-
 
 .icon-button-counter {
   font-size: 10px;
   line-height: 13px;
 }
 
-
-
 .navigation-button {
   display: block;
   font-size: 16px;
   line-height: 20px;
-  
 }
-
-
 
 /* main */
 
@@ -166,8 +148,6 @@ body {
   margin: 0 auto;
   background-color: #ffffff;
 }
-
-
 
 .main-logo-container {
   padding-top: 51px;
@@ -213,13 +193,11 @@ body {
   text-align: center;
   list-style-type: none;
   
-
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .advantages-item {
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,17 +205,17 @@ body {
 }
 
 .advantages-item-large {
-  width: 800;
-  display: flex;
-  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   
 }
 
 .advantages-item-large-text {
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .advantages-item-title {
@@ -256,8 +234,11 @@ body {
 }
 
 .advantages-img {
-  width: 800px;
+  grid-column: span 2;
+  width: 100%;
   object-fit: cover;
+  height: 0;
+  min-height: 100%;
 }
 
 .advantages-item-large:nth-child(2) img {
@@ -267,6 +248,7 @@ body {
 
 
 .details-list {
+  grid-column: 1 / -1;
   margin: 0;
   padding: 0;
   display: flex;
@@ -283,7 +265,6 @@ body {
 
 .details-item-title {
   margin: 84px 75px 20px;
-
 }
 
 .details-description {
@@ -293,19 +274,17 @@ body {
 /*шрифт в преимуществах Седоны*/
 .advantages-item-title,
 .details-item-title {
-  
+
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
-
 }
 
 .advantages-description,
 .details-description {
   line-height: 21px;
   color: #333333;
-
 }
 /* цвет шрифта и фон в преимуществах седоны зависит от расположения */
 
@@ -330,9 +309,11 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding-top: 91px;
+  padding-bottom: 93px;
 }
 .search-title {
-  margin: 91px 240px 29px;
+  margin: 0 240px 29px;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -346,12 +327,10 @@ body {
   margin: 0px 240px 56px;
 }
 
-
-
 .search-button {
   font-size: 20px;
   line-height: 36px;
-  margin: auto 312px 93px;
+  margin: auto 312px 0;
 }
 
 /*стилизация раздела подписки*/
@@ -365,8 +344,8 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding-top: 100px;
   padding-bottom: 87px;
-
 }
 
 .subscribe-title{
@@ -374,8 +353,7 @@ body {
   text-transform: uppercase;
   font-size: 30px;
   line-height: 36px;
-  margin: 100px 240px 29px;
-
+  margin: 0 240px 29px;
 }
 .subscribe-description{
   font-size: 22px;
@@ -426,7 +404,6 @@ body {
   background-color: #ffffff;
 }
 
-
 .social-list {
   display: flex;
   flex-wrap: wrap;
@@ -435,7 +412,6 @@ body {
   margin-left: 62px;
   list-style-type: none;
 }
-
 
 .social-link {
   display: block;
@@ -446,8 +422,6 @@ body {
   margin-bottom: 3px;
   
 }
-
-
 
 .footer-phone{
   min-width: 520px;
@@ -462,8 +436,7 @@ body {
 }
 
 .footer-developer {
-  margin-right: 72px;
-  
+  margin-right: 72px; 
 }
 
 /*Стилицация  страницы каталога гостиниц*/
@@ -480,15 +453,12 @@ body {
   padding-right: 72px;
   padding-top: 35px;
   padding-bottom: 84px;
-
 }
 .inner-main-title {
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
   margin: 0;
-
-
 }
 /*Хлебные крошки*/
 
@@ -501,7 +471,6 @@ body {
   line-height: 21px;
   list-style-type: none;
   margin-bottom: 45px;
-  
 }
 
 .breadcrumbs-item{
@@ -544,7 +513,6 @@ body {
   padding: 0;
   width: 200px;
   box-sizing: border-box;
-  
 }
 
 .filter-fildset-price {
@@ -589,7 +557,6 @@ body {
 
 .catalog {
   padding: 0px 72px 73px;
-  
 }
 /*сортировка и отображение*/
 
@@ -602,8 +569,7 @@ body {
   padding-bottom: 53px;
 }
 
-.sorting-type-text {
-   
+.sorting-type-text {  
   display: flex;
 
   align-items: center;
@@ -617,13 +583,12 @@ body {
 .details {
   justify-self: end;
 }
+
 .control-summary {
   color: #333333;
   height: 48px;
   box-sizing: border-box;
   padding: 12px 127px 13px 19px;
-  
-
 }
 
 
@@ -646,7 +611,6 @@ body {
   height: 14px;
   padding: 17px 16px;
   margin-right: 8px;
-  background-color: green;
 }
 
 
@@ -671,10 +635,8 @@ body {
     list-style-type: none;
     display: grid;
     gap: 16px 25px;
-    grid-template-columns: 133px 143px;
-    
+    grid-template-columns: 133px 143px; 
 }
-
 
 .product-card-image-title-link {
   text-decoration: none;
@@ -750,7 +712,6 @@ body {
 
 .pagination-list a {
   text-decoration: none;
-
 }
 
 .pagination-list li {
@@ -785,15 +746,13 @@ body {
   align-items: center;
   min-width: 386px;
 }
-.selest-description {
-  
+.selest-description { 
   margin: 0px 50px 0px 0px;
 }
 /*отображение количества гостиц*/
 
 .select-quantity-card {
   color: #333333;
-
 }
 
 
@@ -803,15 +762,15 @@ body {
 
 .inner-subscribe {
   text-align: center;
+  padding-top: 73px;
   padding-bottom: 141px;
 }
 
 .inner-subscribe .subscribe-title {
-  margin-top: 73px;
   margin-bottom: 46px;
 }
 
 
 .inner-subscribe-description{
     color: #333333;
-  }
+}
