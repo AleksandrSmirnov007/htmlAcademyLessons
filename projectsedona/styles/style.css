@@ -172,11 +172,12 @@ body {
 .main-logo-container {
   padding-top: 51px;
   box-sizing: border-box;
-  background-color: #30bd77;
+  background-color: #3d78a0;
   background-image: url("../images/background/index-background.jpg");
   
   height: 485px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .welcome-logo {
@@ -240,10 +241,18 @@ body {
 }
 
 .advantages-item-title {
-  margin: 98px 100px 30px;
+  margin-top: 98px;
+  margin-bottom: 30px;
+
 }
-.advantages-description {
+
+.advantages-item-large-text .advantages-description {
   margin: auto 90px 87px;
+}
+
+.advantages-description {
+  margin: auto 75px 108px;
+  
 }
 
 .advantages-img {
@@ -352,6 +361,7 @@ body {
   background-color: #83B3D3;
   background-image: url('../images/background/background-index-bottom.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -440,7 +450,7 @@ body {
 
 
 .footer-phone{
-  width: 520px;
+  min-width: 520px;
   color: inherit;
   text-decoration: none;
   font-size: 40px;
@@ -476,6 +486,7 @@ body {
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
+  margin: 0;
 
 
 }
@@ -508,12 +519,11 @@ body {
 
 /*Фильтр каталога*/
 
-.inner-main-title {
-  margin: 0;
-  width: 528px;
+.catalog-filter-form {
+  display: grid;
+  grid-template-columns: 200px 200px 1fr 221px;
+  gap: 20px;
 }
-
-
 
 .catalog-filter-title {
   margin: 0;
@@ -523,30 +533,25 @@ body {
   line-height: 26px;
 }
 
-.catalog-filter-form {
-  display: flex;
-}
-
 .catalog-filter-list {
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
 
 .filter-fildset {
   margin: 0;
   padding: 0;
   width: 200px;
-  margin-right: 17px;
+  box-sizing: border-box;
+  
 }
 
 .filter-fildset-price {
   width: 287px;
-  margin-left: 100px;
-  margin-right: auto;
+  box-sizing: border-box;
+  justify-self: end;
 }
-
-
-
 .range-title {
   opacity: 0.3;
 }
@@ -558,6 +563,7 @@ body {
 }
 
 .filter-buttons {
+  justify-self: end;
   width: 160px;
   display: flex;
   flex-direction: column;
@@ -588,7 +594,8 @@ body {
 /*сортировка и отображение*/
 
 .catalog-sort {
-  display: flex;
+  display: grid;
+  grid-template-columns: 438px 1fr 241px;
   align-items: center;
   
   padding-top: 43px;
@@ -596,6 +603,7 @@ body {
 }
 
 .sorting-type-text {
+   
   display: flex;
 
   align-items: center;
@@ -604,16 +612,17 @@ body {
   font-size: 30px;
   line-height: 39px;
   text-transform: uppercase;
-  margin-right: 191px;
 }
 
-
-
+.details {
+  justify-self: end;
+}
 .control-summary {
   color: #333333;
   height: 48px;
   box-sizing: border-box;
-  padding: 12px 127px 13px 19px; 
+  padding: 12px 127px 13px 19px;
+  
 
 }
 
@@ -621,6 +630,7 @@ body {
 .card-view-list {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   margin-left: auto;
   padding: 0;
@@ -636,6 +646,7 @@ body {
   height: 14px;
   padding: 17px 16px;
   margin-right: 8px;
+  background-color: green;
 }
 
 
@@ -750,7 +761,6 @@ body {
   display: block;
   text-align: center;
   margin-right: 8px;
-  margin-bottom: 8px;
   border-radius: 4px;
   box-sizing: border-box;
   width: 55px;
