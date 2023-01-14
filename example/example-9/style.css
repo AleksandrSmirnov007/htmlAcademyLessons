@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    height: 100vh;
+    font-size: 30px;
+    line-height: 36px;
+    background-color: #cccccc;
+}
+
+.container-link {
+    margin: auto;
+
+}
+
+a {
+    text-decoration: none;
+    font-family: "Montserrat", "Roboto", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #0063bf;
+}
