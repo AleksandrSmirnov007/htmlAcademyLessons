@@ -1,0 +1,156 @@
+
+/*
+вернуться и доделать после изучения JS
+выделение секций через джаваскрипт
+https://htmlacademy.ru/blog/html/svg-chart */
+
+
+.canvas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .unit{
+    fill: none;
+    stroke-width: 10;/* шириналиниии нашего круга*/
+
+
+    animation-name: render; /* прописываем имя нашей анимации пусть будет рендер используется для отрисовки частей круга при загрузки страницы*/
+    animation-duration: 1.5s; /* прописываем время анимации*/
+
+    transition-property: all;     /* ?????? наверно выбираем компонены для перехода, используется для перехода от stroke-width: 10; к stroke-width: 12; */
+    transition-duration: 0.8s;   /* прописываем время перехода*/
+  }
+
+
+  .unit:nth-child(1) {
+    stroke: #86cfa3; /*цвет линии */
+    stroke-dasharray: 8 100; /*8 -линия, 100 - пробел/штрих линии  с запасом что бы не считать точно до конца круга*/
+  }
+
+  .unit:nth-child(2) {
+    stroke: #a2c6e0;
+    stroke-dasharray: 11 100;
+    stroke-dashoffset: -8; /* сдвиг начала отрисовки штриха линии, то есть отрицательное значение сдвигает отрисовку вперед по пути отрисовки круга*/
+  }
+
+  .unit:nth-child(3) {
+    stroke: #ff6500;
+    stroke-dasharray: 11 100;
+    stroke-dashoffset: -19;/*суммируем 1й и 2й сектор диаграммы и подучаем начало третьего и ставим соответсвеный сдвиг*/
+  }
+  .unit:nth-child(4) {
+    stroke: #00c7ec;
+    stroke-dasharray: 15 100;
+    stroke-dashoffset: -30;
+  }
+  .unit:nth-child(5) {
+    stroke: #00c788;
+    stroke-dasharray: 11 100;
+    stroke-dashoffset: -45;
+  }
+  .unit:nth-child(6) {
+    stroke: #ff88ec;
+    stroke-dasharray: 7 100;
+    stroke-dashoffset: -56;
+  }
+  .unit:nth-child(7) {
+    stroke: #ffc7ec;
+    stroke-dasharray: 37 100;
+    stroke-dashoffset: -63;
+  }
+
+  .title {
+    font-family: "Verdana", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    color: #581d48;
+  }
+
+  .caption-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    outline: thin green;
+  }
+
+  .legend {
+    max-width: 250px;
+  }
+
+  .caption-item {
+    position: relative;
+    padding-left: 30px;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 18px;
+    cursor: pointer;
+  }
+
+  .caption-item:hover {
+    opacity: 0.8;
+    color: #292cf4;
+
+  }
+
+  .caption-item::before {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    background-color: green;
+  }
+
+  .caption-item:nth-child(1)::before {
+    background-color: #86cfa3;
+  }
+
+  .caption-item:nth-child(2)::before {
+    background-color: #a2c6e0;
+  }
+
+  .caption-item:nth-child(3)::before {
+    background-color: #ff6500;
+  }
+
+  .caption-item:nth-child(4)::before {
+    background-color: #00c7ec;
+  }
+
+  .caption-item:nth-child(5)::before {
+    background-color: #00c788;
+  }
+
+  .caption-item:nth-child(6)::before {
+    background-color: #ff88ec;
+  }
+
+  .caption-item:nth-child(7)::before {
+    background-color: #ffc7ec;
+  }
+
+  @keyframes render {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+
+.unit:hover { /*увеличение ширины линии при на наведении на часть диаграммы то есть на один из unit*/
+    stroke-width: 12;
+    opacity: 0.8;
+}
+
+/*теперь сделаем так что бы при выделении пуктов легенды расширялся соответвующий сектор диаграммыы*/
+/*класс .hovered добавляется к элементам через скрипт и тем самым стилизует соответсвующие секторы на диаграмме */
+.hovered {
+    stroke-width: 12;
+    opacity: 0.8;
+}

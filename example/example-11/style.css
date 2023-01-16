@@ -1,0 +1,21 @@
+label {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.form {
+    box-shadow: 0 0 5px 3px grey;
+    color: grey;
+    padding: 4px;
+    width: max-content;
+}
+
+.fieldset {
+    border: none;
+    border-top: 1px solid grey;
+}
+
+.fieldset:focus-within {  /* выделяем форму с помощью псевдокласса focus-widthin*/
+    background: #ccc;
+    color: black;
+}
