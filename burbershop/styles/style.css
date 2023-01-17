@@ -76,7 +76,10 @@ body {
 }
 
 .button {
+  display: inline-block;
+  padding: 14px 20px; 
   color: #FFFFFF;
+  border: none;
   background-color: #000000;
   font-family: "PT Sans", sans-serif;
   font-weight: 700;
@@ -85,6 +88,11 @@ body {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.button + .button {
+  margin-left: 16px;
 }
 
 .page-header {
@@ -232,9 +240,16 @@ body {
 }
 
 .services-list {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style-type: none;
   font-size: 20px;
   line-height: 28px;
+}
 
+.services-item {
+  margin-bottom: 22px;
 }
 
 .services-prise {
@@ -247,7 +262,7 @@ body {
 
 .gallery-title {
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -258,11 +273,13 @@ body {
 .contacts {
   width: 350px;
   font-weight: 700;
+
+  
 }
 
 .contacts-title {
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 32px;
   line-height: 35px;
@@ -270,6 +287,8 @@ body {
 }
 .contacts-subtitle {
   font-family: "PT Sans Narrow", sans-serif;
+  margin-top: 22px;
+  margin-bottom: 8px;
 
   color: #AF7842;
   font-size: 20px;
@@ -281,17 +300,24 @@ body {
   font-style: normal;
   font-size: 16px;
   line-height: 24px;
+  margin-bottom: 22px;
+}
 
+.contacts-address-text {
+  margin: 8px 0;
 }
 
 .contacs-phone {
+  
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 24px;
   line-height: 29px;
   color: #242424;
+  
 }
 
 .contacts-schedule {
+  margin: 8px 0;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -300,13 +326,18 @@ body {
 
 }
 
+.contacts-navigation {
+  margin-top: 21px;
+  margin-bottom: 0;
+}
+
 .appointment {
   width: 430px;
 }
 
 .appointment-title {
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -353,6 +384,9 @@ body {
   font-weight: 700;
 }
 
+
+/* footer */
+
 .page-footer {
 
   color: #FFFFFF;
@@ -373,12 +407,25 @@ body {
 }
 
 .footer-contacts {
-
   font-style: normal;
   width: 200px;
   margin-right: 130px;
 }
 
+.footer-contacts-logo {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.footer-about-text {
+  margin-top: 24px;
+  margin-bottom: 4px;
+}
+
+.footer-contacts-address {
+  margin-bottom: 16px;
+  font-style: normal;
+}
 
 .page-footer a{
   color: inherit;
@@ -426,8 +473,12 @@ body {
 .footer-social {
   max-width: 190px;
   margin-left: auto;
+  outline: 1px solid tomato;
 }
 
+.footer-social p{
+  margin: 0;
+}
 
 .page-footer .htmlacademy-link{
   color: #DBB590;
@@ -437,6 +488,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
+  margin-bottom: 28px;
   padding: 0;
   list-style-type: none;
 }
