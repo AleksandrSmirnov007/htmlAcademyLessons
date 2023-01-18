@@ -116,6 +116,17 @@ body {
   color: inherit;
   text-decoration: none;
   text-align: center;
+  position: relative;
+}
+/*делаем черту потекущей вкладкой меню*/
+.navigation-link-current:after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  right: 17px;
+  bottom: -1px;
+  background-color: #756257;
+  height: 2px;
 }
 
 .icon-search {
@@ -151,13 +162,26 @@ body {
 
 .main-logo-container {
   padding-top: 51px;
+  padding-bottom: 83px;
   box-sizing: border-box;
   background-color: #3d78a0;
   background-image: url("../images/background/index-background.jpg");
-  
-  height: 485px;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+/*разделитель внизу под главным фотом с лого */
+
+.main-logo-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 57px;
+  background-image: url("../images/divider.svg");
+  background-repeat: no-repeat;
+
 }
 
 .welcome-logo {
@@ -220,7 +244,7 @@ body {
 
 .advantages-item-title {
   margin-top: 98px;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 
 }
 
@@ -261,10 +285,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: 84px 84px;
+  background-position: center 80px;
+}
+
+.details-item-housing {
+  background-image: url("../images/housing.svg"); 
+}
+
+.details-item-eating {
+  background-image: url("../images/eating.svg");
+}
+
+.details-item-souvenir {
+  background-image: url("../images/souvenir.svg");
 }
 
 .details-item-title {
-  margin: 84px 75px 20px;
+  margin: 184px 75px 20px;
 }
 
 .details-description {
