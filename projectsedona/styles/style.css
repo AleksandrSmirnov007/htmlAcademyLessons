@@ -57,12 +57,54 @@ body {
 
 .button{
   color: #ffffff;
-  background-color: #756257;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
   text-align: center;
+  border: none;
+  cursor: pointer;
 }
+
+.button-brown {
+  background-color: #756257;
+}
+
+.button-brown:hover {
+  background-color: #615048;
+}
+
+.button-brown:focus {
+  background-color: #615048;
+  outline: 3px solid #83B3D3;
+}
+.button-brown:active {
+  background-color: #615048;
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.button-blue {
+  background-color: #83B3D3;
+}
+
+.button-blue:hover {
+  background-color: #68A2CA;
+}
+
+.button-blue:focus {
+  background-color: #68A2CA;
+  outline: 3px solid #756257;
+}
+.button-blue:active {
+  background-color: #68A2CA;
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.filter-buttons .button-blue:focus {
+  outline: 3px solid #FFFFFF;
+}
+
 
 
 
@@ -81,8 +123,9 @@ body {
   margin: 0 auto;
   background-color: #ffffff;
 }
+
 .navigation-logo{
-  z-index: 5;
+  z-index: 1;
   margin-bottom: -10px;
   width: 139px;
   height: 70px;
@@ -93,7 +136,7 @@ body {
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
+  width: 500px;
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -104,9 +147,14 @@ body {
   align-items: center;
 }
 
+.navigation-item-login {
+  display: inline-block;
+  padding: 14px 5px 14px 20px;
+}
+
 .navigation-user {
   justify-content: flex-end;
-  width: 270px;
+  width: 300px;
   margin-left: auto;
 }
 
@@ -139,18 +187,35 @@ body {
   width: 18px;
   height: 18px;
   padding: 24px 12px;
+  position: relative;
 }
 
 .icon-button-counter {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 3px 5px 0;
+  left: 24px;
+  top: 15px;
+  min-width: 20px;
+  height: 20px;
   font-size: 10px;
   line-height: 13px;
+  background-color: #7DB54F;
+  border-radius: 10px;
 }
 
-.navigation-button {
+.navigation-button-link {
   display: block;
   font-size: 16px;
   line-height: 20px;
+  padding: 9px 15px 8px;
+  border-radius: 4px;
 }
+
+
+
+
+
 
 /* main */
 
@@ -219,13 +284,13 @@ body {
   
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  counter-reset: counter-item-advantages; /*запускаем функцию счетчик*/
 }
 
 .advantages-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .advantages-item-large {
@@ -245,6 +310,20 @@ body {
 .advantages-item-title {
   margin-top: 98px;
   margin-bottom: 80px;
+  counter-increment: counter-item-advantages; /* добавляем единицу (по умолчанию функция +1) на каждом элементе .advantages-item-title */
+  position: relative;
+}
+
+.advantages-item-title::after {
+  content: "— №"counter(counter-item-advantages)" —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  position: absolute;
+  left: 0; /*паттерн центрирования абсолютно-спозиционированного относительно родителя(.parent{position:relative}) элемента при этом задаем горизонтальные марджины auto, left: 0 ; right: 0; (по вертикали тоже работает если top и bottom равны 0(ну или может просто одинаковые???) и вертикальные маржины равны auto */
+  right: 0;
+  margin: 0 auto;
+  bottom: -51px; /*отступ от низа реального элемента до низа псевдоэлемента  равен===== отступ от низа реального элемента до верха спевдоэлемнта + его высота строки псевдоэлемента*/
 
 }
 
@@ -370,6 +449,9 @@ body {
   font-size: 20px;
   line-height: 36px;
   margin: auto 312px 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px;
 }
 
 /*стилизация раздела подписки*/
@@ -421,10 +503,10 @@ body {
 }
 .subscribe-button {
   width: 200px;
-  background-color: #83B3D3;
   font-size: 20px;
   line-height: 26px;
   margin-right: auto;
+  border-radius: 0px 10px 10px 0px;
 }
 
 
@@ -454,13 +536,35 @@ body {
 
 .social-link {
   display: block;
-  width: 20px;
-  height: 20px;
-  padding: 10px;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  
   margin-right: 3px;
   margin-bottom: 3px;
-  
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+.social-link:hover {
+  opacity: 0.8;
+}
+
+.social-link-twitter {
+  background-image: url("../images/social-twitter.svg");
+  background-size: 18px 15px;
+}
+
+.social-link-facebook {
+  background-image: url("../images/social-facebook.svg");
+  background-size: 10px 18px;
+}
+
+.social-link-youtube {
+  background-image: url("../images/social-youtube.svg");
+  background-size: 20px 16px;
+}
+
 
 .footer-phone{
   min-width: 520px;
@@ -577,7 +681,6 @@ body {
 }
 
 .filter-submit {
-  background-color: #83B3D3;
   font-size: 16px;
   line-height: 21px;
 }
@@ -619,7 +722,7 @@ body {
   text-transform: uppercase;
 }
 
-.details {
+.details-control-view {
   justify-self: end;
 }
 
@@ -701,13 +804,25 @@ body {
   color: #333333;
 }
 
-.product-card-button.disabled {
-  background-color: #83B3D3;
-}
-
 .product-card-button.enabled {
   background-color: #7DB54F;
 }
+
+.product-card-button.enabled:hover {
+  background-color: #6C9E42;
+}
+
+.product-card-button.enabled:focus {
+  background-color: #6C9E42;
+  outline: 3px solid #756257;
+}
+.product-card-button.enabled:active {
+  background-color: #6C9E42;
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+
 
 .product-rating {
   color: #333333;
@@ -769,6 +884,21 @@ body {
   padding-bottom: 14px;
   color: #FFFFFF;
   background-color: #83B3D3;
+}
+
+
+.pagination-link:hover {
+  background-color: #68A2CA;
+}
+
+.pagination-link:focus {
+  background-color: #68A2CA;
+  outline: 3px solid #756257;
+}
+.pagination-link:active {
+  background-color: #68A2CA;
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
 }
 
 .pagination-item:last-child .pagination-link  {
