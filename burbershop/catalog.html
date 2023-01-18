@@ -27,16 +27,28 @@
                 <ul class="navigation-list navigation-user">
                     <li class="navigation-item">
                         <a class="navigation-link" href="#">
-                            <span class="visually-hidden"> Поиск </span>
-                        </a>
+                            <svg class="navigation-icon" area-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" >
+                                <path  fill-rule="evenodd" d="M11 6.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm-.67 5.25a6.5 6.5 0 1 1 1.41-1.41l3.97 3.95-1.42 1.42-3.96-3.96Z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="visually-hidden"> Поиск </span>         
+                        </a>   
                     </li>
                     <li class="navigation-item">
                         <a class="navigation-link" href="#">
+                            <svg class="navigation-icon" area-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                <path fill-rule="evenodd" d="M3.1 6 3.57.9l.08-.9h8.67l.1.9.48 5.1H15.63l-.14 1.12-1 8-.1.88H1.61l-.11-.88-1-8L.37 6H3.1Zm2 0h5.8l-.38-4H5.48L5.1 6Zm-1.72 8-.75-6h10.74l-.75 6H3.38ZM8.5 9.5v3h2v-3h-2Zm-3 3v-3h2v3h-2Z" clip-rule="evenodd"/></svg>
                             <span class="visually-hidden"> Корзина </span>
+
                         </a>
                     </li>
                     <li class="navigation-item">
-                        <a class="navigation-link" href="#">Профиль</a>
+                        
+                        <a class="navigation-link navigation-link-profile" href="#">
+                            <svg class="navigation-icon" area-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8ZM8 10C4.68629 10 2 12.6863 2 16H14C14 12.6863 11.3137 10 8 10Z" fill="#BDBDBD"/>
+                            </svg>
+                            <span class="visually-hidden">Профиль</span> 
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -48,10 +60,10 @@
                     <h1 class="inner-header-title">Каталог</h1>
                     <ul class="breadcrumbs">
                         <li class="breadcrumbs-item">
-                            <a class="bredcrumbs-link" href="index.html">Главная</a>
+                            <a class="breadcrumbs-link" href="index.html">Главная</a>
                         </li>
                         <li class="breadcrumbs-item">
-                            <a class="bredcrumbs-link-current">Каталог</a>
+                            <a class="breadcrumbs-link breadcrumbs-link-current">Каталог</a>
                         </li>
                     </ul>
                 </header>
@@ -185,10 +197,12 @@
                                     Отсортировать продукты
                                 </button>
                             </form>
-                            <a class="button button-light" href="#">
+                            <a class="card-grid-togle card-grid-togle-current" href="#">
+                                <svg area-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill-rule="evenodd" d="M2 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-2 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0ZM7 1a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H7ZM6 8c0-.6.4-1 1-1h8a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm1 5a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H7Z" clip-rule="evenodd"/></svg>
                                 <span class="visually-hidden">Показать список</span>
                             </a>
-                            <a class="button" href="#">
+                            <a class="card-grid-togle" href="#">
+                                <svg area-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill-rule="evenodd" d="M0 2a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm6 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0ZM0 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm-8 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z" clip-rule="evenodd"/></svg>
                                 <span class="visually-hidden">Показать карточки</span>
                             </a>
                         </div>
@@ -343,7 +357,7 @@
                     <h2 class="visually-hidden">Контакты</h2>
                     <img class="footer-contacts-logo" src="images/logo-footer.svg" alt="Мини-логотип Барбершопа 'Бородинский'" width="187" height="24">
                     <address class="footer-contacts-address">
-                        <p class="contacts-address-text">
+                        <p class="footer-about-text">
                             Санкт-Петербург, набережная реки Карповки, 5, литера П.
                         </p>
                         <a class="footer-contacts-address-phone" href="tel:88005558628"
@@ -370,17 +384,17 @@
                     <h2 class="page-footer-title">Давайте дружить</h2>
                     <ul class="footer-social-list">
                         <li class="footer-social-item">
-                            <a class="button" href="#">
+                            <a class="footer-social-link footer-social-link-tw" href="#">
                                 <span class="visually-hidden">Твитер</span>
                             </a>
                         </li>
                         <li class="footer-social-item">
-                            <a class="button" href="#">
+                            <a class="footer-social-link footer-social-link-vk" href="#">
                                 <span class="visually-hidden">Вконтакте</span>
                             </a>
                         </li>
                         <li class="footer-social-item">
-                            <a class="button" href="#">
+                            <a class="footer-social-link footer-social-link-inst" href="#">
                                 <span class="visually-hidden">Инстаграмм</span>
                             </a>
                         </li>
