@@ -696,6 +696,7 @@ body {
 путаться сюда где вся стилизация каталога
 раньше он был рядом с майн индекс */
 .main-inner{
+  flex-grow: 1;    /* для патерна "sticky footer"*/
   padding-top: 40px;
   color: #242424;
   background-color: #FBF7F4;

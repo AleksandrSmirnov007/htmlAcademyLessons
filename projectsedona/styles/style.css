@@ -50,7 +50,7 @@ body {
 }
 
 .main-container {
-  flex-grow: 1;
+  flex-grow: 1; /* для патерна "стикки футор"*/
 }
 
 
@@ -158,7 +158,19 @@ body {
   margin-left: auto;
 }
 
-.navigation-link{
+.navigation-icon  {
+  fill: #000000;
+}
+
+.navigation-item:hover svg{
+  fill: #756257;
+}
+
+.navigation-item:active svg {
+  fill:rgba(117, 98, 87, 0.3);
+}
+
+.navigation-link {
   display: block;
   padding: 20px 17px;
   color: inherit;
@@ -166,6 +178,15 @@ body {
   text-align: center;
   position: relative;
 }
+
+.navigation-link:hover {
+  color: #756257;
+}
+
+.navigation-link:active {
+  color: rgba(117, 98, 87, 0.3);
+}
+
 /*делаем черту потекущей вкладкой меню*/
 .navigation-link-current:after {
   content: "";
@@ -199,9 +220,15 @@ body {
   min-width: 20px;
   height: 20px;
   font-size: 10px;
+  font-weight: 400;
   line-height: 13px;
+  color: #FFFFFF;
   background-color: #7DB54F;
   border-radius: 10px;
+}
+
+.icon-button-counter:hover {
+  color: #FFFFFF;
 }
 
 .navigation-button-link {
@@ -245,7 +272,9 @@ body {
   width: 100%;
   height: 57px;
   background-image: url("../images/divider.svg");
+  background-size: 100% 57px;
   background-repeat: no-repeat;
+  background-position: cover;
 
 }
 
@@ -534,40 +563,46 @@ body {
   list-style-type: none;
 }
 
+/*SOCIAL-LINK*/
 .social-link {
-  display: block;
+  display: flex;
   box-sizing: border-box;
   width: 40px;
   height: 40px;
-  
   margin-right: 3px;
   margin-bottom: 3px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.social-link:hover {
-  opacity: 0.8;
+.social-link:focus {
+  outline: 3px solid #83B3D3;
+  border-radius: 10px;
 }
 
-.social-link-twitter {
-  background-image: url("../images/social-twitter.svg");
-  background-size: 18px 15px;
+.social-link:active {
+  opacity: 0.3;
+  outline: none;
 }
 
-.social-link-facebook {
-  background-image: url("../images/social-facebook.svg");
-  background-size: 10px 18px;
+.footer-social-icon{
+  margin: auto;
+  fill: #83B3D3;
 }
 
-.social-link-youtube {
-  background-image: url("../images/social-youtube.svg");
-  background-size: 20px 16px;
+.social-link:hover svg {
+  fill: #68A2CA;
 }
 
+.social-link:focus svg {
+  fill: #68A2CA;
+}
 
+.social-link:active svg {
+  fill: #68A2CA;
+
+}
+
+/*PHONE*/
 .footer-phone{
-  min-width: 520px;
   color: inherit;
   text-decoration: none;
   font-size: 40px;
@@ -575,11 +610,58 @@ body {
   text-transform: uppercase;
   text-align: center;
   margin-left: auto;
-  margin-right: 153px;
+  margin-right: 236px;
+  padding: 15px;
 }
 
-.footer-developer {
-  margin-right: 72px; 
+.footer-phone:hover {
+  color: #756257;
+}
+
+.footer-phone:focus {
+  color: #756257;
+  outline: 3px solid #83B3D3;
+  border-radius: 10px;
+}
+
+.footer-phone:active {
+  opacity: 0.3;
+  outline: none;
+}
+
+.footer-developer-link {
+  margin-right: 72px;
+  padding: 18px 22px;
+}
+
+.footer-developer-link:focus {
+  outline: 3px solid #83B3D3;
+  border-radius: 10px;
+}
+
+.footer-developer-link:active {
+  outline: none;
+}
+
+.footer-developer-link:active {
+  opacity: 0.3;
+  outline: none;
+}
+
+.footer-developer-icon {
+  fill: #000000;
+}
+
+.footer-developer-link:hover svg {
+  fill: #756257;
+}
+
+.footer-developer-link:focus svg {
+  fill: #756257;
+}
+
+.footer-developer-icon:active svg {
+  fill: #756257;
 }
 
 /*Стилицация  страницы каталога гостиниц*/
