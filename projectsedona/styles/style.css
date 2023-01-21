@@ -101,9 +101,6 @@ body {
   outline: none;
 }
 
-.filter-buttons .button-blue:focus {
-  outline: 3px solid #FFFFFF;
-}
 
 
 
@@ -523,6 +520,8 @@ body {
   width: 100%;
   box-sizing: border-box;
   height: 60px;
+  border-radius: 10px 0px 0px 10px;
+  border: none;
 }
 
 .subscribe-field {
@@ -765,7 +764,19 @@ body {
 .filter-submit {
   font-size: 16px;
   line-height: 21px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-radius: 4px;
 }
+
+.filter-submit:focus {
+  outline: 3px solid #FFFFFF;
+}
+
+.filter-submit:active {
+  outline: none;
+}
+
 
 .button-reset {
   color:#FFFFFF;
@@ -773,9 +784,23 @@ body {
   border: 0;
   font-size: 18px;
   line-height: 23px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px 12px;
 }
 
-
+.button-reset:hover {
+  opacity: 0.6;
+}
+.button-reset:focus {
+  outline: 3px solid #83B3D3;
+  border-radius: 4px;
+}
+.button-reset:active {
+  outline: none;
+  opacity: 0.3;
+}
 
 /*Сам католог*/
 
@@ -922,6 +947,10 @@ body {
 }
 
 .button-show-more {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  width: 620px;
+  border-radius: 4px;
   display: block;
   margin: 0 auto;
   background-color: #83B3D3;
