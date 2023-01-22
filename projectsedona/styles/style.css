@@ -522,6 +522,20 @@ body {
   height: 60px;
   border-radius: 10px 0px 0px 10px;
   border: none;
+  color: #000000;
+}
+
+.field-input:hover,
+.field-input:focus {
+  outline: 2px solid #83B3D3;
+}
+
+.field-input:active {
+  outline: 2px solid #E6E6E6;
+}
+
+.field-input:active {
+  color: #00000030;
 }
 
 .subscribe-field {
