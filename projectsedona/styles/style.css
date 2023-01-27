@@ -22,6 +22,10 @@
   box-sizing: border-box;
 }
 
+.img {
+  width: 100%;
+  height: auto;
+}
 
 html {
   height: 100%;
@@ -68,47 +72,43 @@ body {
   text-align: center;
   border: none;
   cursor: pointer;
-}
-
-.button-brown {
   background-color: #756257;
 }
 
-.button-brown:hover {
+.button:hover {
   background-color: #615048;
 }
 
-.button-brown:focus {
+.button:focus {
   background-color: #615048;
   outline: 3px solid #83B3D3;
 }
-.button-brown:active {
+.button:active {
   background-color: #615048;
   color: rgba(255, 255, 255, 0.3);
   outline: none;
 }
 
-.button-blue {
+
+.button-secondary {
   background-color: #83B3D3;
 }
 
-.button-blue:hover {
+.button-secondary:hover {
   background-color: #68A2CA;
 }
 
-.button-blue:focus {
+.button-secondary:focus {
   background-color: #68A2CA;
   outline: 3px solid #756257;
 }
-.button-blue:active {
+.button-secondary:active {
   background-color: #68A2CA;
   color: rgba(255, 255, 255, 0.3);
   outline: none;
 }
 
-
-
-
+/*HEADER*/
 
 .page-header {
   color: #000000;
@@ -142,19 +142,16 @@ body {
   list-style-type: none;
 }
 
+.navigation-user {
+  justify-content: flex-end;
+  min-width: 300px;
+  max-width: 400px;
+  margin-left: auto;
+}
+
 .navigation-item {
   display: flex;
   align-items: center;
-}
-
-.navigation-item-login {
-  display: inline-block;
-}
-
-.navigation-user {
-  justify-content: flex-end;
-  width: 300px;
-  margin-left: auto;
 }
 
 .navigation-icon  {
@@ -233,31 +230,29 @@ body {
   color: #FFFFFF;
 }
 
+.navigation-item-login {
+  display: flex;
+  align-content: center;
+  min-height: 66px;
+}
+
 .navigation-button-link {
   display: block;
   font-size: 16px;
   line-height: 20px;
   padding: 9px 15px 8px;
-  margin-top: 14px;
   margin-left: 20px;
   width: 160px;
   border-radius: 4px;
 }
 
 
+/* MAIN */
 
-
-
-
-/* main */
-
-.page-container {
-  background-color: #ffffff;
-}
-
-.main-container {
+.page-main,
+.inner-main {
   flex-grow: 1; /* для патерна "стикки футор"*/
-  
+  background-color: #ffffff;
 }
 
 .main-logo-container {
@@ -265,9 +260,7 @@ body {
   margin-top: -1px;
   background-color: #3d78a0;
   background-repeat: no-repeat;
-/*до этого составлял из элементов и псевдоэлементов
-но подсмотрел и через несколько бакгроундов лучше
-меньше кода и вспомнил технологию*/
+
   background-position: 
   50% calc(40% - 2px),
   center bottom,
@@ -278,15 +271,13 @@ body {
   100% auto,
   cover;
 
-
   background-image:
   url("../images/welcome.svg"),
   url("../images/divider.svg"), 
   url("../images/background/index-background.jpg");
 }
 
-/*преимущества седоны*/
-
+/*ADVANTAGES - преимущества седоны*/
 
 .advantages-title-container {
   text-align: center;
@@ -310,6 +301,8 @@ body {
   margin: 0;
 }
 
+/*advantages-list*/
+
 .advantages-list {
   margin: 0;
   padding: 0;
@@ -321,86 +314,84 @@ body {
   counter-reset: counter-item-advantages; /*запускаем функцию счетчик*/
 }
 
-.advantages-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .advantages-item-large {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  
 }
-
-.advantages-item-large-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-.advantages-item-title {
-  margin-top: 98px;
-  margin-bottom: 80px;
-  counter-increment: counter-item-advantages; /* добавляем единицу (по умолчанию функция +1) на каждом элементе .advantages-item-title */
-  position: relative;
-}
-
-.advantages-item-title::after {
-  content: "— №"counter(counter-item-advantages)" —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  position: absolute;
-  left: 0; /*паттерн центрирования абсолютно-спозиционированного относительно родителя(.parent{position:relative}) элемента при этом задаем горизонтальные марджины auto, left: 0 ; right: 0; (по вертикали тоже работает если top и bottom равны 0(ну или может просто одинаковые???) и вертикальные маржины равны auto */
-  right: 0;
-  margin: 0 auto;
-  bottom: -49px; /*отступ от низа реального элемента до низа псевдоэлемента  равен===== отступ от низа реального элемента до верха спевдоэлемнта + его высота строки псевдоэлемента*/
-
-}
-
-.advantages-item-large-text .advantages-description {
-  margin: auto 90px 87px;
-}
-
-.advantages-description {
-  margin: auto 75px 108px;
-  
-}
-
 .advantages-img {
   grid-column: span 2;
   width: 100%;
-  object-fit: cover;
-  height: 0;
-  min-height: 100%;
+  height: auto;
+  object-fit: cover; 
 }
 
 .advantages-item-large:nth-child(2) img {
   order: -1;
 }
 
+.advantages-item:nth-child(n+3) .advantages-description {
+  color: #333333;
+}
+/*задаем background и color для advantages*/
 
+.advantages-item:nth-child(1) .advantages-point, /*первый и второй текстовые пункты преимущества*/
+.advantages-item:nth-child(2) .advantages-point {
+  background-color: #83B3D3;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantages-item:nth-child(2n+3), /*третий и пятый пункты преимуществ*//*и нечетные пунткты с изображениями имеют один цвет bg*/
+.details-item:nth-child(odd) {
+  background-color:rgba(131, 179, 211, 0.12);
+}
+
+.advantages-item:nth-child(4) {
+background-color:rgba(131, 179, 211, 0.2);
+}
+
+.advantages-point {
+  padding-top: 98px;
+  padding-bottom: 86px;
+  min-height: 384px;
+}
+
+.advantages-item-title {
+  margin: 0;
+  counter-increment: counter-item-advantages; /* добавляем единицу (по умолчанию функция +1) на каждом элементе .advantages-item-title */
+}
+
+.advantages-description {
+  line-height: 21px;
+  margin: 0;
+}
+.advantages-description::before {
+  content: "— №"counter(counter-item-advantages)" —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
+  display: block;
+  margin: 30px auto;
+}
 
 .details-list {
   grid-column: 1 / -1;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .details-item {
   list-style-type: none;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   background-repeat: no-repeat;
   background-size: 84px 84px;
   background-position: center 80px;
+  background-color: #ffffff;
+  padding-top: 185px;
+  padding-bottom: 79px;
+  min-height: 384px;
 }
 
 .details-item-housing {
@@ -416,11 +407,12 @@ body {
 }
 
 .details-item-title {
-  margin: 185px 75px 20px;
+  margin: 0;
+  margin-bottom: 19px;
 }
 
 .details-description {
-  margin: auto 75px 88px;
+  margin: 0;
 }
 
 /*шрифт в преимуществах Седоны*/
@@ -433,29 +425,14 @@ body {
   text-transform: uppercase;
 }
 
-.advantages-description,
 .details-description {
   line-height: 21px;
   color: #333333;
 }
-/* цвет шрифта и фон в преимуществах седоны зависит от расположения */
 
-.bg-blue {
-  background-color: #83B3D3;
-}
-.color-white{
-  color: #ffffff;
-}
 
-.bg-super-light{
-  background-color:rgba(131, 179, 211, 0.12);
-}
+/*SEARH*/
 
-.bg-light {
-  background-color:rgba(131, 179, 211, 0.2);
-}
-
-/*стилизация раздела поиска гостингиц*/
 .search {
   background-color: #ffffff;
   text-align: center;
@@ -482,14 +459,13 @@ body {
 .search-button {
   font-size: 20px;
   line-height: 36px;
-  min-width: 575px;
   margin: auto 312px 0;
   padding-top: 15px;
   padding-bottom: 9px;
   border-radius: 10px;
 }
 
-/*стилизация раздела подписки*/
+/*SUBSCRIBE*/
 
 .subscribe {
   color:#ffffff;
@@ -498,8 +474,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+ 
   padding-top: 100px;
   padding-bottom: 88px;
 }
@@ -544,8 +519,6 @@ body {
   outline: 2px solid #E6E6E6;
 }
 
-
-
 .subscribe-field {
   margin-left: auto;
   width: 600px;
@@ -560,14 +533,10 @@ body {
   border-radius: 0px 10px 10px 0px;
 }
 
-
-
-
-/*стилизация раздела подвал*/
-
+/*FOOTER*/
 
 .page-footer-container {
-  padding-top: 25px;
+  padding-top: 40px;
   padding-bottom: 30px;
   display: flex;
   background-color: #ffffff;
@@ -577,17 +546,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  padding-top: 13px;
   margin: 0;
-  margin-left: 62px;
+  margin-left: 60px;
   list-style-type: none;
 }
 
 /*SOCIAL-LINK*/
 .social-link {
-  display: flex;
-  width: 40px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 41px;
   height: 40px;
+  margin-top: -2px;
   margin-right: 3px;
   margin-bottom: 3px;
 }
@@ -628,7 +599,7 @@ body {
   line-height: 40px;
   text-transform: uppercase;
   text-align: center;
-  margin: 0 auto;
+  margin: -15px auto 0;
   margin-right: 210px;
   padding: 15px;
 }
@@ -653,6 +624,7 @@ body {
 
 
 .footer-developer-link {
+  margin-top: -16px;
   margin-right: 50px;
   padding: 16px 22px;
 }
