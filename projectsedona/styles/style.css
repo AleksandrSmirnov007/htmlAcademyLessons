@@ -23,6 +23,7 @@
 }
 
 .img {
+  display:block;
   width: 100%;
   height: auto;
 }
@@ -62,6 +63,8 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+/* buttons */
 
 .button{
   color: #ffffff;
@@ -107,7 +110,7 @@ body {
   outline: none;
 }
 
-/*HEADER*/
+/* header */
 
 .page-header {
   color: #000000;
@@ -182,8 +185,8 @@ body {
   color: rgba(117, 98, 87, 0.3);
 }
 
-/*делаем черту потекущей вкладкой меню*/
-.navigation-link-current:after {
+
+.navigation-link-current:after {    /*делаем черту потекущей вкладкой меню*/
   z-index: 1;
   content: "";
   position: absolute;
@@ -246,7 +249,7 @@ body {
 }
 
 
-/* MAIN */
+/* main */
 
 .page-main,
 .inner-main {
@@ -276,7 +279,7 @@ body {
   url("../images/background/index-background.jpg");
 }
 
-/*ADVANTAGES - преимущества седоны*/
+/* advantages - преимущества седоны*/
 
 .advantages-title-container {
   text-align: center;
@@ -300,7 +303,7 @@ body {
   margin: 0;
 }
 
-/*advantages-list*/
+/* advantages-list */
 
 .advantages-list {
   margin: 0;
@@ -430,7 +433,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 
-/*SEARH*/
+/* search */
 
 .search {
   background-color: #ffffff;
@@ -464,7 +467,7 @@ background-color:rgba(131, 179, 211, 0.2);
   border-radius: 10px;
 }
 
-/*SUBSCRIBE*/
+/* subscribe */
 
 .subscribe {
   color:#ffffff;
@@ -532,7 +535,7 @@ background-color:rgba(131, 179, 211, 0.2);
   border-radius: 0px 10px 10px 0px;
 }
 
-/*FOOTER*/
+/* footer */
 
 .page-footer-container {
   padding-top: 40px;
@@ -550,7 +553,7 @@ background-color:rgba(131, 179, 211, 0.2);
   list-style-type: none;
 }
 
-/*SOCIAL-LINK*/
+/* social-link */
 .social-link {
   display: grid;
   justify-content: center;
@@ -590,7 +593,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 }
 
-/*PHONE*/
+/* footer-phone */
 .footer-phone{
   color: inherit;
   text-decoration: none;
@@ -618,14 +621,11 @@ background-color:rgba(131, 179, 211, 0.2);
   outline: none;
 }
 
-
-
-
-
 .footer-developer-link {
-  margin-top: -16px;
+  margin-top: -15px;
   margin-right: 50px;
   padding: 16px 22px;
+  height: min-content;
 }
 
 .footer-developer-link:focus {
@@ -802,7 +802,7 @@ background-color:rgba(131, 179, 211, 0.2);
   opacity: 0.3;
 }
 
-/*Сам католог*/
+/* catalog */
 
 .catalog {
   padding: 0px 72px;
@@ -820,8 +820,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .sorting-type-text {  
   display: flex;
-
-  align-items: center;
+  align-self: end;
   margin: 0;
   font-weight: 700;
   font-size: 30px;
@@ -829,27 +828,50 @@ background-color:rgba(131, 179, 211, 0.2);
   text-transform: uppercase;
 }
 
-/* select */
+/* select-view */
+/* select-pagination */ 
 
-.select-view {
+.select-view,
+.select-pagination {
   justify-self: end;
+  z-index:1;   /* передаст потомкам, и при подводе курсора фотографии не будут проступать через выдающий список */
   position: relative; /* что бы в дальнейшем исключить select-view-list потока задав ему потом абсолютную позицию относительно родителя */
 }
 
-.select-view-button {
+.select-view-button,
+.select-pagination-button {
   color: #333333;
   height: 48px;
   display: flex;   /* также убирается черный тругольник у summary так как изначально summary имеет display: list-item и поэтому имеет маркер в виде треугольника*/
-  width: 287px;
   align-items: center;
   border: 2px solid #E6E6E6;
   border-radius: 4px;
   padding-left: 19px;
-  padding-right: 21px;
+  padding-right: 19px;
+
+  user-select: none;  /* не позволяет выделять область текста так как это мешает пользоваться  */
 }
 
+.select-view-button {
+  width: 287px;
+}
 
-.select-view-button::after { /* создаем новую стрелку */
+.select-pagination-button {
+  width: 160px;
+}
+
+.select-view-button:hover,
+.select-pagination-button:hover {
+  background-color: #eeeeee;
+}
+
+.select-view-button:focus,
+.select-pagination-button:focus {
+  border: 2px solid #83B3D3;
+}
+
+.select-view-button::after,
+.select-pagination-button::after { /* создаем новую стрелку */
   content: "";
   width: 12px;
   height: 7px;
@@ -857,9 +879,15 @@ background-color:rgba(131, 179, 211, 0.2);
   margin-left: auto;
 }
 
-.select-view-list {
+.select-view[open] .select-view-button::after,
+.select-pagination[open] .select-pagination-button::after { /* при клике на details у него появляется атрибут open, и мы используем это что бы развернуть стрелку вверх */
+  transform: rotate(180deg);
+}
+
+.select-view-list,
+.select-pagination-list {
   margin: 0;
-  padding: 10px 19px;
+  padding: 10px 0;
   list-style-type: none;
   position: absolute;
   border-radius: 4px;
@@ -870,12 +898,31 @@ background-color:rgba(131, 179, 211, 0.2);
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.select-view-link {
+.select-view-link,
+.select-pagination-link {
   color: #333333;
+  display: block;
   text-decoration: none;
+  padding: 5px 19px;
 }
 
+.select-view-link-current,
+.select-pagination-link-current {
+  background-color: #eeeeee;
+}
 
+.select-view-link:hover,
+.select-view-link:focus,
+.select-pagination-link:hover,
+.select-pagination-link:focus {
+  background-color: #e8e8e8;
+}
+
+.select-view-link:active,
+.select-pagination-link:active {
+  color: #cccccc;
+  background-color: #666666;
+}
 /* card-view-list */
 
 .card-view-list {
@@ -926,9 +973,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 
-/*Карточки продуктов*/
-
-
+/* product-list */
 
 .product-list {
   display: grid;
@@ -940,11 +985,11 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .product-card {
-    padding: 20px;
-    list-style-type: none;
-    display: grid;
-    gap: 16px 25px;
-    grid-template-columns: 133px 143px; 
+  padding: 20px;
+  list-style-type: none;
+  display: grid;
+  gap: 16px 25px;
+  grid-template-columns: 133px 143px; 
 }
 
 .product-card-image-title-link {
@@ -1012,15 +1057,72 @@ background-color:rgba(131, 179, 211, 0.2);
   outline: none;
 }
 
+
+
+/* stars */
+
 .rating-container {
   margin: 0;
   grid-column: 1 / -1;
-  justify-self: end;
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
 }
+
+.rating-stars {
+  background-image:
+  url("../images/icons/star.svg"), 
+  url("../images/icons/star.svg"), 
+  url("../images/icons/star.svg"), 
+  url("../images/icons/star.svg"), 
+  url("../images/icons/star.svg");
+
+  background-repeat:
+  no-repeat,
+  no-repeat,
+  no-repeat,
+  no-repeat,
+  no-repeat;
+
+  background-size:
+  18px 17px,
+  18px 17px,
+  18px 17px,
+  18px 17px,
+  18px 17px;
+
+  background-position:
+  0 center,
+  25px center,
+  50px center,
+  75px center,
+  100px center;
+}
+
+.star-one {
+  width: 25px;
+}
+
+.star-two {
+  width: 50px;
+}
+
+.star-three {
+  width: 75px;
+}
+
+.star-four {
+  width: 100px;
+}
+
+.star-five {
+  width: 125px;
+}
+
 
 .product-rating {
   display: block;
+  border-radius: 4px;
   text-align: center;
   color: #333333;
   background-color: #F2F2F2;
@@ -1033,6 +1135,9 @@ background-color:rgba(131, 179, 211, 0.2);
   margin: 0;
 }
 
+
+/* show-more-button-container */
+
 .show-more-button-container {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1040,18 +1145,18 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .button-show-more {
+  font-family: "PT Sans", sans-serif;
   padding-top: 17px;
   padding-bottom: 17px;
   width: 620px;
   border-radius: 4px;
   display: block;
   margin: 0 auto;
-  background-color: #83B3D3;
   font-size: 20px;
   line-height: 26px;
 }
 
-/*пагинация*/
+/* pagination */
 
 .pagination-nav {
   display: flex;
@@ -1113,15 +1218,17 @@ background-color:rgba(131, 179, 211, 0.2);
   background-color: #F2F2F2;
 }
 
-.pagination-selest {
+/* pagination-select  */
+
+.card-view-quantity {
   display: flex;
   align-items: center;
   min-width: 386px;
 }
-.selest-description { 
-  margin: 0px 50px 0px 0px;
+.pagination-selest-label { 
+  margin: 0;
+  margin-right: 51px;
 }
-/*отображение количества гостиц*/
 
 .select-quantity-card {
   color: #333333;
@@ -1135,7 +1242,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .inner-subscribe {
   text-align: center;
   padding-top: 73px;
-  padding-bottom: 141px;
+  padding-bottom: 142px;
 }
 
 .inner-subscribe .subscribe-title {
@@ -1145,4 +1252,8 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .inner-subscribe-description{
     color: #333333;
+    font-size: 22px;
+    line-height: 26px;
+    width: 720px;
+    margin: 0 auto 46px;
 }
