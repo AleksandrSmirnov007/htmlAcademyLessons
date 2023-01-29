@@ -271,8 +271,8 @@ body {
   cover;
 
   background-image:
-  url("../images/welcome.svg"),
-  url("../images/divider.svg"), 
+  url("../images/background/welcome.svg"),
+  url("../images/background/divider.svg"), 
   url("../images/background/index-background.jpg");
 }
 
@@ -394,15 +394,15 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .details-item-housing {
-  background-image: url("../images/housing.svg"); 
+  background-image: url("../images/icons/housing.svg"); 
 }
 
 .details-item-eating {
-  background-image: url("../images/eating.svg");
+  background-image: url("../images/icons/eating.svg");
 }
 
 .details-item-souvenir {
-  background-image: url("../images/souvenir.svg");
+  background-image: url("../images/icons/souvenir.svg");
 }
 
 .details-item-title {
@@ -829,16 +829,54 @@ background-color:rgba(131, 179, 211, 0.2);
   text-transform: uppercase;
 }
 
-.details-control-view {
+/* select */
+
+.select-view {
   justify-self: end;
+  position: relative; /* что бы в дальнейшем исключить select-view-list потока задав ему потом абсолютную позицию относительно родителя */
 }
 
-.control-summary {
+.select-view-button {
   color: #333333;
   height: 48px;
-  padding: 12px 127px 13px 19px;
+  display: flex;   /* также убирается черный тругольник у summary так как изначально summary имеет display: list-item и поэтому имеет маркер в виде треугольника*/
+  width: 287px;
+  align-items: center;
+  border: 2px solid #E6E6E6;
+  border-radius: 4px;
+  padding-left: 19px;
+  padding-right: 21px;
 }
 
+
+.select-view-button::after { /* создаем новую стрелку */
+  content: "";
+  width: 12px;
+  height: 7px;
+  background-image: url("../images/icons/chevron-down.svg");
+  margin-left: auto;
+}
+
+.select-view-list {
+  margin: 0;
+  padding: 10px 19px;
+  list-style-type: none;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #ffffff;
+  top: 100%;
+  left: 2px;
+  right: 2px;
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.select-view-link {
+  color: #333333;
+  text-decoration: none;
+}
+
+
+/* card-view-list */
 
 .card-view-list {
   list-style-type: none;
@@ -878,13 +916,13 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .button-view-tile {
-  background-image: url("../images/mode-tile.svg"); 
+  background-image: url("../images/icons/mode-tile.svg"); 
 }
 .button-view-slideshow {
-  background-image: url("../images/mode-slideshow.svg");
+  background-image: url("../images/icons/mode-slideshow.svg");
 }
 .button-view-list {
-  background-image: url("../images/mode-list.svg");
+  background-image: url("../images/icons/mode-list.svg");
 }
 
 
