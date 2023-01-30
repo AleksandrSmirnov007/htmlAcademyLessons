@@ -127,7 +127,7 @@ body {
 }
 
 .navigation-logo{
-  z-index: 1;
+  z-index: 2;  /* поднимает слой иначе оказывается сзади фоновых изображениий которые находятся в main*/
   margin-bottom: -10px;
   width: 139px;
   height: 70px;
@@ -519,6 +519,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .field-input:active {
   outline: 2px solid #E6E6E6;
+  outline-offset: -2px;
 }
 
 .subscribe-field {
@@ -567,6 +568,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .social-link:focus {
   outline: 3px solid #83B3D3;
+  outline-offset: -3px;
   border-radius: 10px;
 }
 
@@ -613,6 +615,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .footer-phone:focus {
   color: #756257;
   outline: 3px solid #83B3D3;
+  
   border-radius: 10px;
 }
 
@@ -811,16 +814,16 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .catalog-sort {
   display: grid;
-  grid-template-columns: 438px 1fr 241px;
+  grid-template-columns: 1fr 287px max-content;
   align-items: center;
-  
+  gap: 81px;
   padding-top: 43px;
   padding-bottom: 53px;
 }
 
-.sorting-type-text {  
+.sorting-type-text { 
+  min-width: 338px;
   display: flex;
-  align-self: end;
   margin: 0;
   font-weight: 700;
   font-size: 30px;
@@ -832,19 +835,18 @@ background-color:rgba(131, 179, 211, 0.2);
 /* select-pagination */ 
 
 .select-view,
-.select-pagination {
-  justify-self: end;
-  z-index:1;   /* передаст потомкам, и при подводе курсора фотографии не будут проступать через выдающий список */
+.select-pagination {  /* ширина второго селекта задается далее в разделе pagination-select */
+  z-index: 2;   /* передаст потомкам, и при подводе курсора фотографии не будут проступать через выдающий список */
   position: relative; /* что бы в дальнейшем исключить select-view-list потока задав ему потом абсолютную позицию относительно родителя */
 }
 
-.select-view-button,
-.select-pagination-button {
+.select-button {  /*ширина элемента .select-view-button  задается размеров колонки грид-коннтейнера .catalog-sort */ 
   color: #333333;
   height: 48px;
   display: flex;   /* также убирается черный тругольник у summary так как изначально summary имеет display: list-item и поэтому имеет маркер в виде треугольника*/
   align-items: center;
-  border: 2px solid #E6E6E6;
+  outline: 2px solid #E6E6E6;
+  outline-offset: -2px;  /* outline всегда делает обводку снаружи элемента. И если мы хотим заменить border на outline c теми же размерами(в селекте это актуально нам нужно перекрыть outline фокуса браузера) необходимо сужать outline к центру элемента свойством outline-ofset с отрицательным значением равным толщине линии*/
   border-radius: 4px;
   padding-left: 19px;
   padding-right: 19px;
@@ -852,26 +854,24 @@ background-color:rgba(131, 179, 211, 0.2);
   user-select: none;  /* не позволяет выделять область текста так как это мешает пользоваться  */
 }
 
-.select-view-button {
-  width: 287px;
+ 
+
+.select-button:hover {
+  outline: 2px solid #83B3D3;
+  outline-offset: -2px;
 }
 
-.select-pagination-button {
-  width: 160px;
+.select-button:focus {
+  outline: 2px solid #83B3D3;
+  outline-offset: -2px;
 }
 
-.select-view-button:hover,
-.select-pagination-button:hover {
-  background-color: #eeeeee;
+.select-button:active {
+  outline: 2px solid #E6E6E6;
+  outline-offset: -2px;
 }
 
-.select-view-button:focus,
-.select-pagination-button:focus {
-  border: 2px solid #83B3D3;
-}
-
-.select-view-button::after,
-.select-pagination-button::after { /* создаем новую стрелку */
+.select-button::after { /* создаем новую стрелку */
   content: "";
   width: 12px;
   height: 7px;
@@ -879,49 +879,44 @@ background-color:rgba(131, 179, 211, 0.2);
   margin-left: auto;
 }
 
-.select-view[open] .select-view-button::after,
-.select-pagination[open] .select-pagination-button::after { /* при клике на details у него появляется атрибут open, и мы используем это что бы развернуть стрелку вверх */
+.select-view[open] .select-button::after,
+.select-pagination[open] .select-button::after { /* при клике на details у него появляется атрибут open, и мы используем это что бы развернуть стрелку вверх */
   transform: rotate(180deg);
 }
 
-.select-view-list,
-.select-pagination-list {
+.select-list {
   margin: 0;
+  margin-top: 2px;
   padding: 10px 0;
   list-style-type: none;
   position: absolute;
   border-radius: 4px;
   background-color: #ffffff;
   top: 100%;
-  left: 2px;
-  right: 2px;
+  left: 0;
+  right: 0;
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.select-view-link,
-.select-pagination-link {
+.select-link {
   color: #333333;
   display: block;
   text-decoration: none;
   padding: 5px 19px;
 }
 
-.select-view-link-current,
-.select-pagination-link-current {
+.select-link-current {
   background-color: #eeeeee;
 }
 
-.select-view-link:hover,
-.select-view-link:focus,
-.select-pagination-link:hover,
-.select-pagination-link:focus {
+.select-link:hover,
+.select-link:focus {
   background-color: #e8e8e8;
 }
 
-.select-view-link:active,
-.select-pagination-link:active {
+.select-link:active {
   color: #cccccc;
-  background-color: #666666;
+  background-color: #efefef;
 }
 /* card-view-list */
 
@@ -929,16 +924,14 @@ background-color:rgba(131, 179, 211, 0.2);
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  margin-left: auto;
+  margin: -4px; /* еще одинподход: родительский контейнер с минусовым маржином по всему периметру, а внутренние элементы имет по кругу плюсовой марджин того же размера, то есть около краев контейнера маржины компенсируются, но между собой элементы имееют отступ в размере двойного марджина (чем то похоже на gap в grid) и можно не обнулять маржин у последенего элеменнта в ряду как к примеру .card-view-item:last-child {margin-right: 0;}*/
   padding: 0;
+  max-width: 220px;
 }
 .card-view-item {
-  margin-right: 8px;
+  margin: 4px;
 }
- .card-view-item:last-child {
-  margin-right: 0;
-}
+
 
 .button-view {
   display: block;
@@ -992,29 +985,47 @@ background-color:rgba(131, 179, 211, 0.2);
   grid-template-columns: 133px 143px; 
 }
 
-.product-card-image-title-link {
+.product-card-link {
   text-decoration: none;
   grid-column: 1 / -1;
   display: grid;
+  position: relative;
 }
 
-.product-card-image-title-link .product-card-title {
-  order: 2;
-}
-
-.product-card-image-title-link:hover img{
-  opacity: 0.6;
-}
-.product-card-image-title-link:focus img{
-  outline: 3px solid #83b3d3;
-}
-.product-card-image-title-link:focus {
-  outline: none;
+.product-card-link::before { /* "довольно хитрое решение с наложением псевдоэлемента в карточке товара: он располагается поверх текста и картинки, создавая таким образом кликабельную область."  Изучите как это сделано ради интереса, но помните: абсолютно нормально заключить в одну ссылку оба элемента сразу.*/
+  z-index: 1;  /* поднимаем над изображением*/
+  content: "";
+  position: absolute;
+  top: -242px;
+  left: -20px;
+  right: -20px;
+  height: calc(100% + 242px);
 }
 
 .product-card-image {
+  grid-column: 1 / -1;
+  order: -1;
+}
+                                                    
+.product-card-link:hover + .product-card-image {  /* ньюанс в том, что мы наводим на псевдоэлемент, но вот такая запись у меня не сработала .product-card-link::before:hover, а сработала вот такая запись .product-card-link:hover */
+  opacity: 0.6;                                     /* так здесь нет вложености нужно использовать "соседние селекиторы" Для управления стилем соседних элементов используется символ плюса (+), который устанавливается между двумя селекторами E и F. Пробелы вокруг плюса не обязательны. Стиль при такой записи применяется к элементу F, но только в том случае, если он является соседним для элемента E и следует сразу после него.  */ 
+}
+
+.product-card-link:focus { /* убираем рамку с кликабельного псевдоэлемента при фокусе */
+  outline: none;
+}
+.product-card-link:focus + .product-card-image {
+  outline: 3px solid #83b3d3;
+}
+
+.product-card-link:active + .product-card-image {
+  opacity: 0.3;
+  outline: none;
+}
+
+
+.product-card-image {
   display: block;  /*тег img по умолчаню идет display: inline; и поя вляется отсуп снизу наверно запас для начертания букв.Поэтому меняем на display: block;  и отступ исчезает */
-  margin-bottom: 16px;
 }
 
 .product-card-title {
@@ -1069,54 +1080,32 @@ background-color:rgba(131, 179, 211, 0.2);
   justify-content: space-between;
 }
 
-.rating-stars {
-  background-image:
-  url("../images/icons/star.svg"), 
-  url("../images/icons/star.svg"), 
-  url("../images/icons/star.svg"), 
-  url("../images/icons/star.svg"), 
-  url("../images/icons/star.svg");
-
-  background-repeat:
-  no-repeat,
-  no-repeat,
-  no-repeat,
-  no-repeat,
-  no-repeat;
-
-  background-size:
-  18px 17px,
-  18px 17px,
-  18px 17px,
-  18px 17px,
-  18px 17px;
-
-  background-position:
-  0 center,
-  25px center,
-  50px center,
-  75px center,
-  100px center;
+.rating-stars { /* добавили в разметку к каждой карточке пустой контейнер с таким классом */ 
+  background-image: url("../images/icons/star.svg"); /* добавим в фон изображение одной звезды (размер шрина 18px, высота: 17px ) */
+  background-size: 25px 17px;  /* захватываем в нашу область бэкграунда кусок пустого пространства справа по горизонтали который равен 7px(растояние между звездами на макете) так как ширина звезды равна 18 то общая ширина с отступом 18+7=25 */ 
+  background-position: -3px 50%; /* выставляем звезду к левому краю по горизотали(так как мы взяли ширину бекграуда больше чем ширина звезды, то звезда автоматически поместится по центру оставив по три с полоаиной пикселя пустого пространства по обеим сторонам. Поэтому сместим ее влево на половину промежутка (между звездами на макете) но число пикселей должно быть целым, возьмем 3 px. И выравниваем по середине по вертикали */
+  background-repeat: repeat-x; /* теперь повторяем нашу звезду (вместе с пустым промежутком) по горизонтали */
+  
 }
 
-.star-one {
-  width: 25px;
+.star-one { /* количество звезд можно регулировать шириной контейнера с фоном из звезд присвоим следущим классам соответсвую ширину */ 
+  width: 18px; /* влезет только одна звезда*/
 }
 
 .star-two {
-  width: 50px;
+  width: 43px; /* 18+7+18  - звезда, промежуток, звезда. Итого: две звезды */
 }
 
 .star-three {
-  width: 75px;
+  width: 68px; /* 43 плюс еще 25 (промежуток и звезда) */
 }
 
-.star-four {
-  width: 100px;
+.star-four { /* 68 плюс еще 25 (промежуток и звезда) */
+  width: 93px;
 }
 
-.star-five {
-  width: 125px;
+.star-five { /* 93 плюс еще 25 (промежуток и звезда) */
+  width: 118px;
 }
 
 
@@ -1182,14 +1171,13 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .pagination-link{
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 8px;
   border-radius: 4px;
   width: 55px;
   height: 55px;
-  padding-top: 14px;
-  padding-bottom: 14px;
   color: #FFFFFF;
   background-color: #83B3D3;
 }
@@ -1199,10 +1187,17 @@ background-color:rgba(131, 179, 211, 0.2);
   background-color: #68A2CA;
 }
 
-.pagination-link:focus {
+.pagination-link:focus {  /* когда фокус и фокус визибле совпадают то то их стили накладываются и стилизация выглядит не так как зудумывалось */
   background-color: #68A2CA;
   outline: 3px solid #756257;
+  outline-offset: 0;
 }
+
+.pagination-link:focus-visible {
+  outline-offset: 5px;
+}
+
+
 .pagination-link:active {
   background-color: #68A2CA;
   color: rgba(255, 255, 255, 0.3);
@@ -1234,6 +1229,9 @@ background-color:rgba(131, 179, 211, 0.2);
   color: #333333;
 }
 
+.select-pagination .select-button {
+  width: 160px;
+}
 
 
 /* секция подписки на  странице каталога */
