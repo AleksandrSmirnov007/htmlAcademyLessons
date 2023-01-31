@@ -77,20 +77,19 @@ body {
   background-color: #756257;
 }
 
-.button:hover {
+.button:hover {                        /* здесь и далее будем применять такую конструкцию и последовательность:   .element:hover{...}  .element:active{...}  .element:focus:not(:active){...}.  Тем самым можно добиться того, что в каждом селекторе можно будет прописывать только те стили которые соответсвуют каждому состоянию и не переопределять стили например при нажатии на элемент применяется псевдокласс active но и в этот жке момент элемент находится в фокусе.   */
   background-color: #615048;
 }
 
-.button:focus {
-  background-color: #615048;
-  outline: 3px solid #83B3D3;
-}
 .button:active {
   background-color: #615048;
   color: rgba(255, 255, 255, 0.3);
-  outline: none;
 }
 
+.button:focus:not(:active) {
+  background-color: #615048;
+  outline: 3px solid #83B3D3;
+}
 
 .button-secondary {
   background-color: #83B3D3;
@@ -100,14 +99,13 @@ body {
   background-color: #68A2CA;
 }
 
-.button-secondary:focus {
+.button-secondary:focus:not(:active) {
   background-color: #68A2CA;
   outline: 3px solid #756257;
 }
 .button-secondary:active {
   background-color: #68A2CA;
   color: rgba(255, 255, 255, 0.3);
-  outline: none;
 }
 
 /* header */
@@ -1153,50 +1151,37 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .pagination-list{
-  margin: 0;
+  margin: 0 -4px;   /* вариант размещения элементов внутри контейнера - использовать отрицательные маржины на контейнере, вместо обнуления отступа у последнего элемента кака раньше .pagination-list{margin: 0;} , .pagination-item {margin-right: 8px;} , .pagination-item:last-child {margin-right: 0;} . */
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   font-size: 20px;
   line-height: 26px;
   text-transform: uppercase;
+  list-style: none;
 }
 
-.pagination-list a {
-  text-decoration: none;
-}
-
-.pagination-list li {
-  list-style-type: none;
+.pagination-item {
+  margin: 0 4px;  /* располовиниваем горизонтальный отсутп между элементами */  
 }
 
 .pagination-link{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 8px;
   border-radius: 4px;
-  width: 55px;
+  min-width: 55px;
   height: 55px;
   color: #FFFFFF;
   background-color: #83B3D3;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
 }
-
 
 .pagination-link:hover {
   background-color: #68A2CA;
 }
-
-.pagination-link:focus {  /* когда фокус и фокус визибле совпадают то то их стили накладываются и стилизация выглядит не так как зудумывалось */
-  background-color: #68A2CA;
-  outline: 3px solid #756257;
-  outline-offset: 0;
-}
-
-.pagination-link:focus-visible {
-  outline-offset: 5px;
-}
-
 
 .pagination-link:active {
   background-color: #68A2CA;
@@ -1204,8 +1189,10 @@ background-color:rgba(131, 179, 211, 0.2);
   outline: none;
 }
 
-.pagination-item:last-child .pagination-link  {
-  margin-right: 0;
+.pagination-link:focus {  /* когда фокус и фокус визибле совпадают то то их стили накладываются и стилизация выглядит не так как зудумывалось */
+  background-color: #68A2CA;
+  outline: 3px solid #756257;
+  outline-offset: 0;  /* важно!!!!!!!! при выборе через таб на клавиатуре появляется кольцо фокусировки стилизованое от браузера оно изменяет outline-offset вроде... И в зависимости от того выбран ли элемент мышкой или клавиатурой получается немго отличия в стилизации. непонятно. Для примера можно жоба .pagination-link:focus-visible {outline-offset: 5px;} */ 
 }
 
 .pagination-current-link {
