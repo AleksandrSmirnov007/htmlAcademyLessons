@@ -43,7 +43,7 @@ body {
 
   font-size: 18px;
   line-height: 23px;
-  font-family: "PT Sans", serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   color: #000000;
   background-color: #f2f2f2;
@@ -144,28 +144,9 @@ body {
   list-style-type: none;
 }
 
-.navigation-user {
-  justify-content: flex-end;
-  min-width: 300px;
-  max-width: 400px;
-  margin-left: auto;
-}
-
 .navigation-item {
   display: flex;
   align-items: center;
-}
-
-.navigation-icon  {
-  fill: #000000;
-}
-
-.navigation-item:hover svg{
-  fill: #756257;
-}
-
-.navigation-item:active svg {
-  fill:rgba(117, 98, 87, 0.3);
 }
 
 .navigation-link {
@@ -177,7 +158,7 @@ body {
   position: relative;
 }
 
-.navigation-link[href]:hover { /* тем самы выделяем только ссылки по которым можно перейти на другие страницы так у ссылки на текущую страницу отсутствует атрибут href */ 
+.navigation-link[href]:hover { /* тем самы выделяем только активные ссылки на элементах, по которым можно перейти на другие страницы. К неактивным элементам например текущая страница эта стилизация применяться не будет, так у ссылки на текущую страницу отсутствует атрибут href */ 
   color: #756257;
 }
 
@@ -197,20 +178,31 @@ body {
   height: 2px;
 }
 
-.icon-search {
-  width: 42px;
-  height: 66px;
-  padding: 0;
-  padding-top: 21px;
+.navigation-user {
+  justify-content: flex-end;
+  min-width: 300px;
+  max-width: 400px;
+  margin-left: auto;
 }
 
-.icon-favourites {
+
+.navigation-icon {
+  display: grid;
+  place-content: center;
+  fill: #000000;
   width: 42px;
   height: 66px;
-  padding: 20px 13px 24px 11px;
-  padding: 0;
-  padding-top: 22px;
-  position: relative;
+  padding: 22px 11px;
+
+}
+
+.navigation-icon:hover {
+  fill: #756257;
+}
+
+.navigation-icon:active {
+  fill:rgba(117, 98, 87, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .icon-button-counter {
@@ -228,23 +220,18 @@ body {
   border-radius: 10px;
 }
 
-.icon-button-counter:hover {
-  color: #FFFFFF;
+.navigation-icon:active .icon-button-counter {
+  color: rgba(255, 255, 255, 0.3);
 }
 
-.navigation-item-login {
-  display: flex;
-  align-content: center;
-  min-height: 66px;
-}
-
-.navigation-button-link {
-  display: block;
+.navigation-button-link { 
   font-size: 16px;
   line-height: 20px;
   padding: 9px 15px 8px;
   margin-left: 20px;
-  width: 160px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  min-width: 160px;
   border-radius: 4px;
 }
 
@@ -523,16 +510,14 @@ background-color:rgba(131, 179, 211, 0.2);
 .field-input:focus {
   outline: 2px solid #83b3d3;
   background-color: #e6e6e6;
-  outline-offset: -2px;
+  
 }
 
 .field-input-error {
   outline: 2px solid #ff5757;
   background-color: #ffffff;
+  outline-offset: -2px;
 }
-
-
-
 
 .subscribe-button {
   font-family: "PT Sans", sans-serif;
@@ -601,22 +586,21 @@ background-color:rgba(131, 179, 211, 0.2);
   margin: -15px auto 0;
   margin-right: 210px;
   padding: 15px;
+  border-radius: 10px;
 }
 
 .footer-phone:hover {
   color: #756257;
 }
-
-.footer-phone:focus {
-  color: #756257;
-  outline: 3px solid #83B3D3;
-  border-radius: 10px;
-}
-
 .footer-phone:active {
   opacity: 0.3;
-  outline: none;
 }
+
+.footer-phone:focus:not(:active) {
+  color: #756257;
+  outline: 3px solid #83B3D3;  
+}
+
 
 .footer-developer-link {
   margin-top: -15px;
@@ -640,7 +624,6 @@ background-color:rgba(131, 179, 211, 0.2);
   outline: 3px solid #83B3D3;
   fill: #756257;
 }
-
 
 /*Стилицация  страницы каталога гостиниц*/
 /*поему то шапка каталога сдвигается на 5ox в лево*/
@@ -666,7 +649,6 @@ background-color:rgba(131, 179, 211, 0.2);
   line-height: 78px;
   margin: 0;
 }
-
 
 /*Хлебные крошки*/
 
@@ -777,14 +759,15 @@ background-color:rgba(131, 179, 211, 0.2);
 .button-reset:hover {
   opacity: 0.6;
 }
-.button-reset:focus {
+.button-reset:active {
+  opacity: 0.3;
+}
+.button-reset:focus:not(:active) {
   outline: 3px solid #83B3D3;
   border-radius: 4px;
 }
-.button-reset:active {
-  outline: none;
-  opacity: 0.3;
-}
+
+
 
 /* catalog */
 
@@ -841,16 +824,17 @@ background-color:rgba(131, 179, 211, 0.2);
   outline: 2px solid #83B3D3;
   outline-offset: -2px;
 }
+.select-button:active {
+  outline: 2px solid #E6E6E6;
+  outline-offset: -2px;
+  color: rgb(51, 51, 51, 0.3);
+}
 
-.select-button:focus {
+.select-button:focus:not(:active) {
   outline: 2px solid #83B3D3;
   outline-offset: -2px;
 }
 
-.select-button:active {
-  outline: 2px solid #E6E6E6;
-  outline-offset: -2px;
-}
 
 .select-button::after { /* создаем новую стрелку */
   content: "";
@@ -861,25 +845,26 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .select-view[open] .select-button::after,
-.select-pagination[open] .select-button::after { /* при клике на details у него появляется атрибут open, и мы используем это что бы развернуть стрелку вверх */
+.select-pagination[open] .select-button::after { /* при клике на summary открывается details и у него появляется атрибут open, и мы используем это что бы развернуть стрелку вверх */
   transform: rotate(180deg);
 }
 
 .select-list {
   margin: 0;
-  margin-top: 2px;
   padding: 10px 0;
   list-style-type: none;
   position: absolute;
   border-radius: 4px;
   background-color: #ffffff;
   top: 100%;
-  left: 0;
-  right: 0;
+  left: 2px;
+  right: 2px;
+  margin-top: 1px;
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .select-link {
+  background-color: #F2F2F2;
   color: #333333;
   display: block;
   text-decoration: none;
@@ -887,18 +872,23 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .select-link-current {
-  background-color: #eeeeee;
+  background-color: #ffffff;
+  color: rgb(51, 51, 51, 0.3);
 }
 
-.select-link:hover,
-.select-link:focus {
-  background-color: #e8e8e8;
+.select-link[href]:hover {
+  background-color: #E6E6E6;
+}
+.select-link[href]:active {
+  color: rgb(51, 51, 51, 0.3);
+  background-color: #ffffff;
+}
+.select-link[href]:focus:not(:active) {
+  background-color: #E6E6E6;
 }
 
-.select-link:active {
-  color: #cccccc;
-  background-color: #efefef;
-}
+
+
 /* card-view-list */
 
 .card-view-list {
@@ -926,13 +916,13 @@ background-color:rgba(131, 179, 211, 0.2);
   border-radius: 4px;
 }
 
-.view-current {
+.button-view-current {
   border: 2px solid #000000;
 }
 
 
-.button-view:hover,
-.button-view:focus {
+.button-view[href]:hover,
+.button-view[href]:focus {
   border: 2px solid #83B3D3;
 }
 
@@ -1039,16 +1029,14 @@ background-color:rgba(131, 179, 211, 0.2);
   background-color: #6C9E42;
 }
 
-.product-card-button.enabled:focus {
-  background-color: #6C9E42;
-  outline: 3px solid #756257;
-}
 .product-card-button.enabled:active {
   background-color: #6C9E42;
   color: rgba(255, 255, 255, 0.3);
-  outline: none;
 }
-
+.product-card-button.enabled:focus:not(:active) {
+  background-color: #6C9E42;
+  outline: 3px solid #756257;
+}
 
 
 /* stars */
@@ -1162,17 +1150,16 @@ background-color:rgba(131, 179, 211, 0.2);
   text-decoration: none;
 }
 
-.pagination-link:hover {
+.pagination-link[href]:hover {
   background-color: #68A2CA;
 }
 
-.pagination-link:active {
+.pagination-link[href]:active {
   background-color: #68A2CA;
   color: rgba(255, 255, 255, 0.3);
-  outline: none;
 }
 
-.pagination-link:focus {  /* когда фокус и фокус визибле совпадают то то их стили накладываются и стилизация выглядит не так как зудумывалось */
+.pagination-link[href]:focus:not(:active) {  /* когда фокус и фокус визибле совпадают то то их стили накладываются и стилизация выглядит не так как зудумывалось */
   background-color: #68A2CA;
   outline: 3px solid #756257;
   outline-offset: 0;  /* важно!!!!!!!! при выборе через таб на клавиатуре появляется кольцо фокусировки стилизованое от браузера оно изменяет outline-offset вроде... И в зависимости от того выбран ли элемент мышкой или клавиатурой получается немго отличия в стилизации. непонятно. Для примера можно жоба .pagination-link:focus-visible {outline-offset: 5px;} */ 
