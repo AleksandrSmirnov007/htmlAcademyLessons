@@ -564,7 +564,7 @@ body {
 
   display: grid;
   grid-template-columns: 114px 74px 208px;
-  gap: 19px 17px;
+  gap: 15px;
 }
 
 .field-group {
@@ -573,9 +573,7 @@ body {
   flex-direction: column;
   
 }
-.appointment-form .info {
-  display: none;
-}
+
 .appointment-form-name {
   grid-column: 1 / -1;
 }
@@ -583,13 +581,48 @@ body {
 .appointment-submit {
   grid-column: 1 / -1;
   justify-self: start;
+  margin-top: 9px;
 }
 
 .form-label {
   text-transform: uppercase;
-  line-height: 22px;
   font-weight: 700;
+  margin-bottom: 8px;
+  font-family: inherit;
 }
+
+.form-label-icon {
+  padding-right: 20px;
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin-top: 4px;
+  margin-left: 2px;
+  background-color: transparent;
+  background-image: url("../images/info.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.field {
+  margin: 0;
+  border: 2px solid #242424;
+  box-sizing: border-box;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-weight: 700;
+  background-color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  color: #BDBDBD;
+}
+
 
 
 /* footer */
@@ -685,11 +718,6 @@ body {
   background-position: center;
 }
 
-.field{
-  font-size: 16px;
-  line-height: 24px;
-  color: #BDBDBD;
-}
 
 .footer-social {
   max-width: 190px;
