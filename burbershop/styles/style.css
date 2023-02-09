@@ -621,9 +621,38 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: #BDBDBD;
+  cursor: pointer;
 }
 
+.field:hover,
+.field:focus {
+  border: 2px solid #AF7842;
+}
 
+.field:focus {
+  outline: 2px solid #DBB590;
+}
+
+.field:disabled,
+.field:disabled:hover {
+  color: #595959;
+  background-color: #E7E7E7;
+  border-color: #595959;
+}
+
+.field:invalid {
+  box-shadow: none;
+  
+}
+
+.field:focus:invalid {
+  border-color: #EA5454;
+}
+
+.field::placeholder {
+  color: #BDBDBD;
+  opacity: 1; /* непонятно зачем */
+}
 
 /* footer */
 
