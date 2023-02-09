@@ -389,6 +389,22 @@ body {
   text-transform: uppercase;
 }
 
+.slider-image {
+  display: block;
+}
+
+.slider-button {
+  width: 48px;
+  height: 60px;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+  background-image: url("../images/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 /* CONTACTS */
 
 .contacts {
