@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />  с этой строкой ломается верстка на мобтльном экране--> 
+        <!-- с этой строкой ломается верстка на мобтльном экране -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />   -->
         <title>Барбершоп «Бородинский»</title>
         <link rel="stylesheet" href="styles/style.css">
     </head>
@@ -90,137 +91,141 @@
                 </section>
 
                 <div class="index-columns">
-                <section class="services">
-                    <h2 class="services-title">Популярные услуги</h2>
-                    <ul class="services-list">
-                        <li class="services-item">
-                            Стрижка машинкой
-                            <b class="services-prise">800 ₽</b>
-                        </li>
-                        <li class="services-item">
-                            Стрижка усов
-                            <b class="services-prise">1200 ₽</b>
-                        </li>
-                        <li class="services-item">
-                            Груминг
-                            <b class="services-prise">400 ₽</b>
-                        </li>
-                        <li class="services-item">
-                            Комплексная стрижка
-                            <b class="services-prise">2300 ₽</b>
-                        </li>
-                    </ul>
-                    <a class="button button-all" href="#">Посмотреть все</a>
-                </section>
-                <section class="gallery">
-                    <h2 class="gallery-title">Фотогалерея</h2>
-                    <img class="slider-image" src="images/gallery-1.jpg" alt="Примеры работ" />
-                    <button class="slider-button slider-prev" type="button">
-                        <span class="visually-hidden">Предыдущее фото</span>
-                    </button>
-                    <button class="slider-button slider-next" type="button">
-                        <span class="visually-hidden">Следующее фото</span>
-                    </button>
+                    <section class="services">
+                        <h2 class="services-title">Популярные услуги</h2>
+                        <ul class="services-list">
+                            <li class="services-item">
+                                Стрижка машинкой
+                                <b class="services-prise">800 ₽</b>
+                            </li>
+                            <li class="services-item">
+                                Стрижка усов
+                                <b class="services-prise">1200 ₽</b>
+                            </li>
+                            <li class="services-item">
+                                Груминг
+                                <b class="services-prise">400 ₽</b>
+                            </li>
+                            <li class="services-item">
+                                Комплексная стрижка
+                                <b class="services-prise">2300 ₽</b>
+                            </li>
+                        </ul>
+                        <a class="button button-all" href="#">Посмотреть все</a>
+                    </section>
+                    <section class="gallery">
+                        <h2 class="gallery-title">Фотогалерея</h2>
+                        <div class="slider"> 
+                            <div class="slider-wrapper">
+                                <img class="slider-image" src="images/gallery-1.jpg" alt="Примеры работ" width="390" height="250" />
+                                <div class="slider-controls">
+                                    <button class="slider-button slider-prev" type="button">
+                                        <span class="visually-hidden">Предыдущее фото</span>
+                                    </button>
 
-                    <ol class="slider-pagination">
-                        <li class="slider-pagination-item">
-                            <button
-                                class="slider-pagination-button slider-pagination-button-current"
-                                type="button"
-                            >
-                                <span class="visually-hidden">1 фото</span>
-                            </button>
-                        </li>
-                        <li class="slider-pagination-item">
-                            <button class="slider-pagination-button" type="button">
-                                <span class="visually-hidden">2 фото</span>
-                            </button>
-                        </li>
-                        <li class="slider-pagination-item">
-                            <button class="slider-pagination-button" type="button">
-                                <span class="visually-hidden">3 фото</span>
-                            </button>
-                        </li>
-                        <li class="slider-pagination-item">
-                            <button class="slider-pagination-button" type="button">
-                                <span class="visually-hidden">4 фото</span>
-                            </button>
-                        </li>
-                    </ol>
-                </section>
+                                    <button class="slider-button slider-next" type="button">
+                                        <span class="visually-hidden">Следующее фото</span>
+                                    </button>
+                                </div>
+                                <ol class="slider-pagination">
+                                    <li class="slider-pagination-item">
+                                        <button
+                                            class="slider-pagination-button slider-pagination-button-current"
+                                            type="button">
+                                            <span class="visually-hidden">1 фото</span>
+                                        </button>
+                                    </li>
+                                    <li class="slider-pagination-item">
+                                        <button class="slider-pagination-button" type="button">
+                                            <span class="visually-hidden">2 фото</span>
+                                        </button>
+                                    </li>
+                                    <li class="slider-pagination-item">
+                                        <button class="slider-pagination-button" type="button">
+                                            <span class="visually-hidden">3 фото</span>
+                                        </button>
+                                    </li>
+                                    <li class="slider-pagination-item">
+                                        <button class="slider-pagination-button" type="button">
+                                            <span class="visually-hidden">4 фото</span>
+                                        </button>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
                 <div class="index-columns">
+                    <section class="contacts">
+                        <h2 class="contacts-title">Контакты</h2>
+                        <h3 class="contacts-subtitle">Барбершоп «Бородинский»</h3>
+                        <address class="contacts-address">
+                            <p class="contacts-address-text">
+                                Санкт-Петербург, набережная реки Карповки, 5, литера П.
+                            </p>
+                            <a class="contacs-phone" href="tel:88005558628"
+                                >+7 800 555-86-28</a
+                            >
+                        </address>
 
-                <section class="contacts">
-                    <h2 class="contacts-title">Контакты</h2>
-                    <h3 class="contacts-subtitle">Барбершоп «Бородинский»</h3>
-                    <address class="contacts-address">
-                        <p class="contacts-address-text">
-                            Санкт-Петербург, набережная реки Карповки, 5, литера П.
+                        <h3 class="contacts-subtitle">Время работы</h3>
+                        <ul class="contacts-schedule">
+                            <li class="contacts-schedule-item">
+                                пн—пт: с 10:00 до 22:00
+                            </li>
+                            <li class="contacts-schedule-item">
+                                сб—вс: с 10:00 до 19:00
+                            </li>
+                        </ul>
+                        <p class="contacts-navigation">
+                            <a class="button" href="#">Как проехать</a>
+                            <a class="button button-feedback" href="#">Обратная связь</a>
                         </p>
-                        <a class="contacs-phone" href="tel:88005558628"
-                            >+7 800 555-86-28</a
-                        >
-                    </address>
+                        
+                    </section>
 
-                    <h3 class="contacts-subtitle">Время работы</h3>
-                    <ul class="contacts-schedule">
-                        <li class="contacts-schedule-item">
-                            пн—пт: с 10:00 до 22:00
-                        </li>
-                        <li class="contacts-schedule-item">
-                            сб—вс: с 10:00 до 19:00
-                        </li>
-                    </ul>
-                    <p class="contacts-navigation">
-                        <a class="button" href="#">Как проехать</a>
-                        <a class="button button-feedback" href="#">Обратная связь</a>
-                    </p>
-                    
-                </section>
-
-                <section class="appointment">
-                    <h2 class="appointment-title">Записаться</h2>
-                    <p class="appointment-description">
-                        Укажите желаемую дату и время и мы свяжемся с вами для
-                        подтверждения брони.
-                    </p>
-                    <form class="appointment-form" action="https://echo.htmlacademy.ru" method="post">
-                        <p class="field-group appointment-form-date">
-                            <label class="form-label"for="appointment-date">Дата
-                                <button class="info" type="button">
-                                <span class="visually-hidden">Посмотреть дополнительную информацию</span>
-                                </button>
-                            </label>
-                            
-                            <input type="text" name="appointment-date" id="appointment-date" placeholder="01.01.2021">
+                    <section class="appointment">
+                        <h2 class="appointment-title">Записаться</h2>
+                        <p class="appointment-description">
+                            Укажите желаемую дату и время и мы свяжемся с вами для
+                            подтверждения брони.
                         </p>
+                        <form class="appointment-form" action="https://echo.htmlacademy.ru" method="post">
+                            <p class="field-group appointment-form-date">
+                                <label class="form-label"for="appointment-date">Дата
+                                    <button class="info" type="button">
+                                    <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                                    </button>
+                                </label>
+                                
+                                <input type="text" name="appointment-date" id="appointment-date" placeholder="01.01.2021">
+                            </p>
 
-                        <p class="field-group appointment-form-time">
-                            <label class="form-label" for="appointment-time">Время
-                                <button class="info" type="button">
-                                <span class="visually-hidden">Посмотреть дополнительную информацию</span>
-                                </button>
-                            </label>
-                            
-                            <input type="text" name="appointment-time" id="appointment-time" placeholder="10:10">
-                        </p>
+                            <p class="field-group appointment-form-time">
+                                <label class="form-label" for="appointment-time">Время
+                                    <button class="info" type="button">
+                                    <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                                    </button>
+                                </label>
+                                
+                                <input type="text" name="appointment-time" id="appointment-time" placeholder="10:10">
+                            </p>
 
-                        <p class="field-group appointment-form-phone">
-                            <label class="form-label" for="appointment-phone">Телефон</label>
-                            
-                            <input type="text" name="appointment-phone" id="appointment-phone" placeholder="+7 800 000-00-00">
-                        </p>
+                            <p class="field-group appointment-form-phone">
+                                <label class="form-label" for="appointment-phone">Телефон</label>
+                                
+                                <input type="text" name="appointment-phone" id="appointment-phone" placeholder="+7 800 000-00-00">
+                            </p>
 
-                        <p class="field-group appointment-form-name">
-                            <label class="form-label" for="appointment-name">Ваше имя</label>
-                            
-                            <input type="text" name="appointment-name" id="appointment-name" placeholder="">
-                        </p>
-                        <button class="button appointment-submit" type="submit">Записаться</button>
-                    </form>
-                </section>
+                            <p class="field-group appointment-form-name">
+                                <label class="form-label" for="appointment-name">Ваше имя</label>
+                                
+                                <input type="text" name="appointment-name" id="appointment-name" placeholder="">
+                            </p>
+                            <button class="button appointment-submit" type="submit">Записаться</button>
+                        </form>
+                    </section>
                 </div>
             </div>
 

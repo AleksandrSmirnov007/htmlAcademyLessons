@@ -373,7 +373,7 @@ body {
   background-position: center right 20px;
 }
 
-
+/* gallery */
 
 .gallery {
   width: 390px;
@@ -389,8 +389,21 @@ body {
   text-transform: uppercase;
 }
 
+.slider-wrapper {
+  position: relative;
+}
+
 .slider-image {
   display: block;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
 }
 
 .slider-button {
@@ -403,6 +416,56 @@ body {
   background-image: url("../images/arrow-right.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.slider-prev {
+  transform: rotate(180deg);
+}
+
+.slider-button:hover {
+  background-color: #814B18;
+}
+
+.slider-button:focus {
+  background-color: #814B18;
+  outline: 2px solid #DBB590;
+}
+
+.slider-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.slider-pagination-item {
+  margin: 0 4px;
+}
+
+.slider-pagination-button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 8px;
+  height: 8px;
+  background-color: #BDBDBD;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-pagination-button-current {
+  background-color: #242424;
+}
+
+.slider-pagination-button:hover:not(.slider-pagination-button-current) {
+  background-color: #814b18;
+}
+
+.slider-pagination-button:focus:not(.slider-pagination-button-current) {
+  background-color: #814b18;
+  outline: none;
 }
 
 /* CONTACTS */
