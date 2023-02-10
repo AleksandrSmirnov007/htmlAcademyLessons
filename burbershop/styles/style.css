@@ -567,7 +567,8 @@ body {
   gap: 15px;
 }
 
-.field-group {
+.appointment .field-group,
+.footer-newsletter .field-group { /* такого класса там нет */
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -613,7 +614,6 @@ body {
 .field {
   margin: 0;
   border: 2px solid #242424;
-  box-sizing: border-box;
   padding: 8px 14px;
   font-family: inherit;
   font-weight: 700;
@@ -731,11 +731,21 @@ body {
 }
 
 .footer-newsletter {
-  width: 280px;
+  width: 279px;
 }
 
 .newsletter-form {
   display: flex;
+}
+
+.newsletter-email {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.newsletter-field {
+  width: 192px;
+  border-color:#000000;
 }
 
 .newsletter-button {
@@ -900,14 +910,84 @@ body {
   margin-right: 20px;
 }
 
+
 .catalog-filter-title{
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 20px;
   line-height: 28px;
   text-transform: uppercase;
   color: #000000;
+}
+
+   /* range */
+
+.range-scale {
+  margin-bottom: 16px;
+  position: relative;
+  height: 4px;
+  background-color: #242424;
+  border-radius: 2px;
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color:#AF7842;
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 2px solid #242424;
+  border-radius: 50%;
+  cursor: pointer; 
+}
+
+.range-toggle:hover {
+  background-color: #DBB590;
+}
+
+.range-toggle:focus,
+.range-toggle:active {
+  outline: 3px solid #AF7842;
+}
+
+.toggle-min {
+  top: -8px;
+  left: -10px;
+}
+
+.toggle-max {
+  top: -8px;
+  right: -10px;
+}
+
+.range-wrapper-inputs {
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-filter-label {
+  display: flex;
+  margin-right: 4px;
 
 }
+
+.catalog-filter-input {
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  padding: 0 2px;
+  appearance: textfield; /* тут еще дописать шаг 17 */
+}
+
+.catalog-filter-input::-webkit-inner-spin-button,
+.catalig-filter-input::-webkit-outer-spin-button { /* разобраться */ 
+  appearance: none;
+}
+
 
 .control-label{
   font-weight: 700;

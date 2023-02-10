@@ -72,23 +72,28 @@
                     <form class="catalog-filter" action="https://echo.htmlacademy.ru" method="get">
                         <fieldset class="catalog-filter-group">
                             <legend class="catalog-filter-title">Цена</legend>
-
-                            
-
-                            <label class="catalog-filter-label">
-                                от <input class="catalog-filter-input" type="number" name="min-price"/> ₽
-                            </label>
-                            <label class="catalog-filter-label">
-                                до <input class="catalog-filter-input" type="number" name="max-price"/> ₽
-                            </label>
-
-                            <button class="range-toggle toggle-min" type="button">
-                                <span class="visually-hidden">Изменить минимальную цену</span>
-                            </button>
-                            <button class="range-toggle toggle-max" type="button">
-                                <span class="visually-hidden">Изменить максимальную цену</span>
-                            </button>
-
+                            <div class="range">
+                                <div class="range-scale">
+                                    <div class="range-bar" style="left: 42px; width: 13">
+                                        <button class="range-toggle toggle-min" type="button">
+                                            <span class="visually-hidden">Изменить минимальную цену</span>
+                                        </button>
+                                        <button class="range-toggle toggle-max" type="button">
+                                            <span class="visually-hidden">Изменить максимальную цену</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="range-wrapper-inputs">
+                                    <label class="catalog-filter-label">
+                                        от <input class="catalog-filter-input" type="number" name="min-price" value="50"/> ₽
+                                    </label>
+                                    <label class="catalog-filter-label">
+                                        до <input class="catalog-filter-input" type="number" name="max-price" value="1500"/> ₽
+                                    </label>
+                                </div>   
+                            </div>
                         </fieldset>
                         <fieldset class="catalog-filter-group">
                             <legend class="catalog-filter-title">
