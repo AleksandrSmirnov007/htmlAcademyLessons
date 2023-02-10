@@ -1,0 +1,62 @@
+.select {
+	  border-radius: 3px;
+	
+
+}
+.select-button {
+	outline: 1px solid #eeeeee;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.select-button::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("chevron-down.svg");
+  background-size: 20px 20px;
+  margin-left: auto;
+}
+
+.select[open] .select-button{
+  outline-color: #cccccc;
+}
+
+.select[open] .select-button::after {
+  transform: rotate(180deg);
+}
+
+.select-list {
+	margin: 0;
+	padding: 10px 0;
+	list-style-type: none;
+	border-radius: 3px;
+	outline: 1px solid #eeeeee;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4),  -2px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.select-item-link {
+	padding: 10px;
+	display: block;
+	
+	color: #333333;
+	text-decoration: none;
+}
+
+.select-item-link:hover:not(.current) {
+  background-color: #eeeeee;
+}
+
+.select-item-link:active:not(.current) {
+  opacity: 0.5;
+}
+
+
+.current {
+  background-color: #cccccc;
+}
+
