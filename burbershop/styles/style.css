@@ -863,6 +863,8 @@ body {
 
 }
 
+/* breadcrumbs */
+
 .breadcrumbs {
   display: flex;
   padding: 0;
@@ -917,9 +919,24 @@ body {
   line-height: 28px;
   text-transform: uppercase;
   color: #000000;
+  margin-bottom: 22px;
+
+}
+
+
+.catalog-filter-group {
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-bottom: 40px;
 }
 
    /* range */
+
+.range {
+  padding: 0;
+  padding-top: 8px;
+}
 
 .range-scale {
   margin-bottom: 16px;
@@ -927,6 +944,7 @@ body {
   height: 4px;
   background-color: #242424;
   border-radius: 2px;
+  
 }
 
 .range-bar {
@@ -980,19 +998,99 @@ body {
   background-color: transparent;
   border: none;
   padding: 0 2px;
-  appearance: textfield; /* тут еще дописать шаг 17 */
+  appearance: textfield;
+  text-align: center;
+  font-family: inherit;
 }
 
 .catalog-filter-input::-webkit-inner-spin-button,
-.catalig-filter-input::-webkit-outer-spin-button { /* разобраться */ 
+.catalig-filter-input::-webkit-outer-spin-button {
   appearance: none;
 }
 
+/* catalog-filter-list */
+
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.catalog-filter-item:not(:last-child) { /* одним селектором с отрицанием для последнего элемента можно задать оступы всем кроме последнего вместо дополнительной записи .catalog-filter-item:last-child {margin-bottom: 0;} */
+  margin-bottom: 16px;
+}
+
+.control {
+  display: block;
+  padding-left: 36px;
+  position: relative;
+  cursor: pointer;
+}
 
 .control-label{
   font-weight: 700;
   line-height: 22px;
 }
+
+/* control-mark */
+
+.control-mark {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #242424;
+}
+
+.control:hover .control-mark {
+  border: 2px solid #814B18;
+}
+
+.control:focus-within .control-mark { /* так как в фокус попадает только input, так как только он интерактивный для браузера, но можно эту строку заменить на .control-input:focus + .control-mark тоесть фокус будет устанавливаться через нажатие на label и выбирать .control-mark c помощью соседних селекторов */ 
+  border: 2px solid #814b18;
+  outline: 2px solid #DBB590;
+}
+
+/* checkbox */
+
+.control-input[type="checkbox"]:checked + .control-mark:before,
+.control-input[type="checkbox"]:checked + .control-mark:after {
+  position: absolute;
+  top: 7px;
+  right: 2px;
+  content: "";
+  width: 12px;
+  height: 2px;
+  background-color: #242424;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark:before {
+  transform: rotate(45deg);
+}
+
+.control-input[type="checkbox"]:checked + .control-mark:after {
+  transform: rotate(-45deg);
+}
+
+/* radio */
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark:before {
+  content: "";
+  position: absolute;
+  background-color: #242424;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+
+
 
 .catalog-right-column {
   width: 700px;
@@ -1011,38 +1109,68 @@ body {
 .sorting-type {
   margin-right: auto;
 }
+
+.select {
+  display: flex;
+  align-items: center;
+  width: 260px;
+  margin-right: auto;
+}
+
+.select-control {
+  width: 100%;
+  padding: 8px 14px;
+  padding-right: 48px;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  appearance: none;
+  color: #242424;
+  background-color: #ffffff;
+  background-image: url("../images/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: calc(100% - 16px) center;  /* как вариант еще такая запись background-position: right 16px center;*/
+  border: 2px solid #242424;
+  cursor: pointer;
+}
+
+.select-control:hover {
+  border: 2px solid #AF7842;
+}
+
+.select-control:focus {
+  border: 2px solid #AF7842;
+  outline: 2px solid #DBB590;
+}
+
+/* card-grid-togle */
+
 .card-grid-togle {
   width: 56px;
   height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+  fill: #242424;
+}
+
+.card-grid-togle-current {
   background-color: #000000;
+  fill: #ffffff;
 }
 
 .card-grid-togle:hover {
   background-color: #814B18;
+  fill: #ffffff;
 }
 
 .card-grid-togle:focus {
-  outline: 2px solid #DBB590;
   background-color: #AF7842;
-}
-
-.card-grid-togle svg {
-  fill: #FFFFFF;
-}
-
-.card-grid-togle:hover svg,
-.card-grid-togle:focus svg {
-  fill: #FFFFFF;
-}
-
-.card-grid-togle-current {
-  background-color: #FFFFFF;
-}
-.card-grid-togle-current svg {
-  fill: #242424;
+  outline: 2px solid #DBB590;
+  fill: #ffffff;
 }
 
 /*Стилизация карточек продукта*/
