@@ -92,7 +92,7 @@ body {
   box-sizing: border-box;
 }
 
-.button-feedback {
+.button-light {
   background-color: #FFFFFF;
   color: #242424;
 }
@@ -107,7 +107,7 @@ body {
   background-color: #814B18;
 }
 
-.button-feedback:hover {
+.button-light:hover {
   color: #FFFFFF;
   background-color: #DBB590;
 }
@@ -118,7 +118,7 @@ body {
   outline: 2px solid #DBB590;
 }
 
-.button-feedback:focus {
+.button-light:focus {
 
   background-color: #DBB590;
   outline: 2px solid #AF7842;
@@ -135,8 +135,10 @@ body {
   display: flex;
   width: 940px;
   margin: 0 auto;
+}
 
-
+.navigation-item {
+  position: relative; /* для popover-cart */ 
 }
 
 .navigation-list {
@@ -147,6 +149,7 @@ body {
   width: 430px;
   list-style-type: none;
 }
+
 
 .navigation-link {
   position: relative;
@@ -360,7 +363,7 @@ body {
   border-bottom: 2px dotted #595959;
 }
 
-.services-prise {
+.services-price {
   color:#AF7842;
   order: 3;
 }
@@ -530,11 +533,6 @@ body {
   margin-top: 21px;
   margin-bottom: 0;
 }
-.button-feedback {
-  background-color: #FFFFFF;
-  color: #242424;
-}
-
 
 /* APOINTMENT */
 
@@ -1295,3 +1293,94 @@ body {
   margin-left: auto;
 }
 
+.popover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 1;
+  min-height: 176px;
+  background-color: #ffffff;
+  color:#242424;
+  padding: 40px;
+  font-family: "PT Sans Narrow", sans-serif;
+  min-height: 186px;
+  display: none; 
+  /* Скроем поповер. Теперь мы можем добавлять или удалять класс для отображения и скрытия блока с корзиной. */
+}
+.popover-open {
+  display: block; /* а добавив этот класс поповер можно открыть через js*/
+}
+
+
+.popover-cart {
+  width: 420px;
+}
+
+.popover .popover-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 72px;
+  height: 70px;
+  padding-left: 44px;
+  background-image: url("../images/popover-cart.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: 20px center; /* одно ито же что background-position: left 20px center; */ 
+}
+
+.popover-content {
+  height: 100%; /* непонятно зачем */ 
+}
+
+.popover-title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: 35px;
+  color:#000000;
+  text-transform: uppercase;
+}
+
+.cart-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 284px 1fr;  /* нужно прописать grid-template-rows: repeat(2, min-content); что бы работала такая запись grid-row: 1 / -1; но мы пойдем другим путем смотри далее в .cart-item-button*/
+  
+}
+
+.cart-item + .cart-item {  /* вместо этого можно использовать .cart-item:not(:last-child) { border-bottom: 1px dashed #595959; padding-bottom: 22px; margin-bottom: 24px;} */
+  padding-top: 24px;
+  margin-top: 22px;
+  border-top: 1px dashed #595959;
+} 
+
+.cart-item-title {
+  margin-top: 0;
+  margin-bottom: 2px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cart-item-price {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #AF7842;
+  font-weight: 700;
+  font-family: "PT Sans", sans-serif;
+}
+
+.cart-item-button {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3; /* при этом запись grid-row: 1 / -1; тут не работает так как не задано количество строк */ 
+  align-self: start;
+}
