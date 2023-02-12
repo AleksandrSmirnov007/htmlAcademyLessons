@@ -773,6 +773,49 @@ background-color:rgba(131, 179, 211, 0.2);
   background-color: transparent;
 }
 
+
+/*  range-slider  */
+
+.range-fields {
+	margin-bottom: 22px;
+}
+
+.range-slider {
+	height: 4px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	flex-direction: column;  /*  для растяжения */
+	
+}
+
+.slider-bar {
+    position: relative;
+	height: 4px;
+	background-color: #ffffff;
+}
+
+.range-toggle {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: none;
+	border-radius: 4px;
+	background-color: #ffffff;
+}
+
+.toggle-min {
+	top: -8px;
+	left: -10px;
+}
+
+.toggle-max {
+	top: -8px;
+	right: -10px;
+}
+/* range-slider end*/ 
+
+
 .filter-buttons {
   justify-self: end;
   width: 160px;
