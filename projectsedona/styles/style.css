@@ -763,22 +763,42 @@ background-color:rgba(131, 179, 211, 0.2);
   width: 287px;
   justify-self: end;
 }
+
+.range-fields {
+	margin-bottom: 22px;
+        display: flex;
+}
+
+.range-field {
+	display: flex;
+	padding: 10px;
+	border: 2px solid #ffffff;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	width: 50%;
+}
+
+.range-field + .range-field{
+	border-left: none;
+	border-radius: 0;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
 .range-title {
   opacity: 0.3;
+  order: 2;
 }
 .range-input{
   color: #ffffff;
   font-size: 18px;
   line-height: 23px;
   background-color: transparent;
+  border: none;
 }
 
 
 /*  range-slider  */
-
-.range-fields {
-	margin-bottom: 22px;
-}
 
 .range-slider {
 	height: 4px;
@@ -817,6 +837,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 
 .filter-buttons {
+  padding-top: 45px;
   justify-self: end;
   width: 160px;
   display: flex;
