@@ -700,11 +700,64 @@ background-color:rgba(131, 179, 211, 0.2);
   list-style-type: none;
 }
 
+.catalog-filter-item:not(:last-child){
+	margin-bottom: 24px;
+}
+
 .filter-fieldset {
   margin: 0;
   padding: 0;
   width: 200px;
+  border: none;
 }
+
+
+/*  checkbox  and radio */
+.control {
+        padding-left: 40px;
+	position: relative;
+}
+
+.control-input[type="checkbox"] + .control-mark {
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border-radius: 4px;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	background-image: url("");
+	top:5px;
+	left: 5px;
+}
+
+.control-input[type="radio"] + .control-mark {
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #595959;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+
 
 .filter-fieldset-price {
   width: 287px;
