@@ -95,7 +95,7 @@
                     <h2 class="visually-hidden">Преимущества</h2>
                     <ul class="advatages-list">
                         <li class="advantages-item">
-                            <h3 class="advantages-title">Быстро</h3>
+                            <h3 class="advantages-title popover-head">Быстро</h3>
                             <p class="advantages-description">
                                 Мы делаем свою работу быстро! Два часа пролетят
                                 незаметно, и вы — счастливый обладатель стильной
@@ -310,12 +310,43 @@
                     </ul>
                     <p class="about-text">
                         Сделано в
-                        <a class="htmlacademy-link" href="https://htmlacademy.ru"
-                            >.html academy</a
-                        >
+                        <a class="htmlacademy-link" href="https://htmlacademy.ru">.html academy</a>
                     </p>
                 </section>
             </div>
         </footer>
+        <div class="modal-container modal-container-close">
+            <div class="modal modal-auth">
+                
+                <button class="modal-close-button">
+                    <span class="visually-hidden">Закрыть</span>
+                </button>
+                <section class="modal-content">
+                    <h2 class="modal-title">Личный кабинет</h2>
+                </section>
+                
+                <form class="auth-form" action="https://echo.htmlacademy.ru" method="post">
+                    <p class="field-group">
+                        <label class="visually-hidden" for="auth-login">login</label>
+                        <input class="field auth-form-field" id="auth-login" type="text" name="auth-login" placeholder="Логин">
+                    </p>
+                    <p class="field-group">
+                        <label class="visually-hidden" for="auth-password">password</label>
+                        <input class="field auth-form-field" id="auth-password" type="password" name="auth-password" placeholder="Пароль">
+                    </p>
+                    <p class="field-group auth-form-user-options">
+                        <label class="auth-form-checkbox control">
+                            <input class="visually-hidden control-input" type="checkbox" name="firm-storе">
+                            <span class="control-mark"></span>
+                            <span class="control-label">Запомнить меня</span>
+                        </label>
+                        <a class="auth-form-recovery" href="#">Забыл пароль</a>
+                    </p>
+                    <button class="button auth-form-button" type="submit">Войти</button>
+                    <a class="button auth-form-register" href="#">Регистрация</a>
+                    
+                </form>
+            </div>
+        </div>
     </body>
 </html>
