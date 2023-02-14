@@ -418,6 +418,62 @@
                 </a>
             </div>
         </footer>
+        <-- модальное окно -->
+        <div class="modal-container">
+            <div class="modal-search-appartment">
+        	    <button class="button modal-close-button button-light" type="button">
+        	        <span class="visually-hidden">закрыть</span>
+                </button>
+            	<h2 class="search-appartment-title">Поиск гостиниц в Седоне</h2>
+                <div class="modal-search-content">
+                	<form class="modal-search-form" action="https://echo.htmlacademy.ru" method="get">
+                        <div class="modal-field date-in-field">
+                             <label class="modal-field-title" for="date-in">Дата заезда:</label>
+                             <input class="modal-field-input" type="text" name="date-in" id="date-in" placeholder="Укажите дату" value="27 апреля 2020">
+                             <span class="modal-field-message modal-field-message-error">Мы не можем отправить вам в прошлое</span>
+                         </div>
+                         
+                         <div class="modal-field date-out-field">
+                             <label class="modal-field-title" for="date-out">Дата выезда:</label>
+                             <input class="modal-field-input" type="text" name="date-out" id="date-out" placeholder="Укажите дату" value="1 сентября 2021">
+                             <span class="modal-field-message">На эти даты есть свободные номера. Пока есть.</span>
+                         </div>
+                         
+                         <div class="modal-field amount-fields>
+                         	 <div class="amount-field adults-field">
+                         	    <label class="modal-field-title" for="adults-input">Взрослые:</label>
+                         
+                                 <button class="number-button number-button-minus" type="button">
+                                 	<span class="visually-hidden">Уменьшить количество</span>
+                                 </button>
+                                 
+                                 <input class="modal-amount-input" id="adults-input" type="number" name="adults-number" value="2" min="1" step="1" placeholder="0">
+                                 	
+                                 <button class="number-button number-button-plus" type="button">
+                                 	<span class="visually-hidden">Увеличить количество</span>
+                                 </button>
+                                 
+                                 <div class="amount-field children-field">
+                                 	<span class="modal-form-info">
+                         	             <label class="modal-field-title" for="children-input">Дети:</label>
+                                          <span class="field-info" id="children-info">Укажите количество детей которые будут с вами, возврат которых от 6 до 18 лет. Дети до 6 лет размешаются бесплатно.</span>
+                                     </span>
+                                 <button class="number-button number-button-minus" type="button">
+                                 	<span class="visually-hidden">Уменьшить количество</span>
+                                 </button>
+                                 
+                                 <input class="modal-amount-input" id="children-input" type="number" name="children-number" value="1" min="1" step="1" placeholder="0">
+                                 	
+                                 <button class="number-button number-button-plus" type="button">
+                                 	<span class="visually-hidden">Увеличить количество</span>
+                                 </button>
+                         	<div>
+                         	<button class="button" type="submit">Найти</button>
+                         </div>
+                	</form>
+                </div>	
+            </div>
+        </div>
 
 
     </body>
