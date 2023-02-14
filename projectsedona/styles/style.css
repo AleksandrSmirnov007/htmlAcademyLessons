@@ -1444,3 +1444,58 @@ background-color:rgba(131, 179, 211, 0.2);
     width: 720px;
     margin: 0 auto 46px;
 }
+
+/*  модальное окно */
+
+.modal-container {
+	position: fixed;
+	background-color: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	display: flex;
+}
+
+.modal-search-appartment {
+	margin: auto;
+	width: 500px; /* fix */
+	min-height: 300px; /* fix */
+	background-color: #ffffff;
+	box-shadow: 0 0 10px 10px #595959;  /*  fix  */
+	position: relative;
+	padding: 50px;
+	border-radius: 40px;
+}
+
+.modal-close-button {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	width: 40px;
+	height: 40px; 
+	background-color: #dddddd;
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: ;
+	background-position: center;
+	border-radius: 50%;
+}
+
+.search-appartment-title {
+	margin-top: 0;
+	margin-bottom: 40px;
+}
+
+.modal-search-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-field {
+	display: grid;
+}
+
+
+.field-info {
+	display: none;
+}
