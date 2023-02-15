@@ -432,48 +432,49 @@
                              <label class="modal-field-title" for="date-in">Дата заезда:</label>
                              <input class="modal-field-input" type="text" name="date-in" id="date-in" placeholder="Укажите дату" value="27 апреля 2020">
                              <span class="modal-field-message modal-field-message-error">Мы не можем отправить вам в прошлое</span>
-                         </div>
+                        </div>
                          
-                         <div class="modal-field date-out-field">
+                        <div class="modal-field date-out-field">
                              <label class="modal-field-title" for="date-out">Дата выезда:</label>
                              <input class="modal-field-input" type="text" name="date-out" id="date-out" placeholder="Укажите дату" value="1 сентября 2021">
                              <span class="modal-field-message">На эти даты есть свободные номера. Пока есть.</span>
-                         </div>
+                        </div>
                          
-                         <div class="modal-field amount-fields">
+                        <div class="modal-field amount-fields">
                          	
-                         	 <div class="amount-field adults-field">
+                         	<div class="amount-field adults-field">
                          	    <label class="modal-field-title" for="adults-input">Взрослые:</label>
                          
-                                 <button class="number-button number-button-minus" type="button">
-                                 	<span class="visually-hidden">Уменьшить количество</span>
-                                 </button>
+                                <button class="number-button number-button-minus" type="button">
+                                	<span class="visually-hidden">Уменьшить количество</span>
+                                </button>
                                  
-                                 <input class="modal-amount-input" id="adults-input" type="number" name="adults-number" value="2" min="1" step="1" placeholder="0">
+                                <input class="modal-field-input modal-amount-input" id="adults-input" type="number" name="adults-number" value="2" min="1" step="1" placeholder="0">
                                  	
-                                 <button class="number-button number-button-plus" type="button">
-                                 	<span class="visually-hidden">Увеличить количество</span>
-                                 </button>
-                             </div>
+                                <button class="number-button number-button-plus" type="button">
+                                	<span class="visually-hidden">Увеличить количество</span>
+                                </button>
+                            </div>
                              
-                             <div class="amount-field children-field">
-                                  <span class="modal-form-info">
-                         	           <label class="modal-field-title" for="children-input">Дети:</label>
-                                        <span class="field-info" id="children-info">Укажите количество детей которые будут с вами, возврат которых от 6 до 18 лет. Дети до 6 лет размешаются бесплатно.</span>
-                                 </span>
-                                 <button class="number-button number-button-minus" type="button">
-                                 	<span class="visually-hidden">Уменьшить количество</span>
-                                 </button>
+                            <div class="amount-field children-field">
+                                <span class="modal-form-info">
+                         	        <label class="modal-field-title" for="children-input">Дети:</label>
+                                    <span class="field-info-icon"></span>
+                                    <span class="field-info" id="children-info">Укажите количество детей которые будут с вами, возврат которых от 6 до 18 лет. Дети до 6 лет размешаются бесплатно.</span>
+                                </span>
+                                <button class="number-button number-button-minus" type="button">
+                                	<span class="visually-hidden">Уменьшить количество</span>
+                                </button>
                                  
-                                 <input class="modal-amount-input" id="children-input" type="number" name="children-number" value="1" min="1" step="1" placeholder="0">
+                                <input class="modal-field-input modal-amount-input" id="children-input" type="number" name="children-number" value="1" min="1" step="1" placeholder="0">
                                  	
-                                 <button class="number-button number-button-plus" type="button">
-                                 	<span class="visually-hidden">Увеличить количество</span>
-                                 </button>
+                                <button class="number-button number-button-plus" type="button">
+                                	<span class="visually-hidden">Увеличить количество</span>
+                                </button>
                          	</div>
                          
                          </div>
-                         <button class="button" type="submit">Найти</button>
+                         <button class="button button-secondary modal-button-submit" type="submit">Найти</button>
                          
                 	</form>
                 </div>	

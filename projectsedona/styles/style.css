@@ -1453,37 +1453,58 @@ background-color:rgba(131, 179, 211, 0.2);
 	width: 100%;
 	height: 100%;
 	z-index: 2;
-	display: flex;
+  display: flex;
+  top: 0;  /* без top: 0; left: 0; окно будет смещаться из центра прои зуме */
+  left: 0;
+
 }
 
 .modal-search-appartment {
-	margin: auto;
-	width: 500px; /* fix */
-	min-height: 300px; /* fix */
-	background-color: #ffffff;
-	box-shadow: 0 0 10px 10px #595959;  /*  fix  */
+  margin: auto;
+	width: 715px;
+	min-height: 561px;
+	background: #FFFFFF;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
 	position: relative;
-	padding: 50px;
-	border-radius: 40px;
+	padding: 70px;
+  padding-top: 62px;
 }
 
 .modal-close-button {
 	position: absolute;
-	top: 50px;
-	right: 50px;
-	width: 40px;
-	height: 40px; 
-	background-color: #dddddd;
-	background-image: url("");
+	top: 54px;
+	right: 70px;
+	width: 53px;
+	height: 53px; 
+	background-color: #f2f2f2;
+	background-image: url("../images/icons/modal-close.svg");
 	background-repeat: no-repeat;
-	background-size: ;
+	background-size: #f2f2f2;
 	background-position: center;
 	border-radius: 50%;
 }
 
+.modal-close-button:hover {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:active {
+  background-color: #e6e6e6;
+}
+
+.modal-close-button:focus:not(:active) {
+  background-color: #e6e6e6;
+  outline: 3px solid #83b3d3;
+}
+
 .search-appartment-title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  text-transform: uppercase;
 	margin-top: 0;
-	margin-bottom: 40px;
+	margin-bottom: 32px;
 }
 
 .modal-search-form {
@@ -1493,9 +1514,123 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .modal-field {
 	display: grid;
+  grid-template-columns: 155px 1fr;
+}
+
+.modal-field-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.modal-field-input {
+  font-size: 18px;
+  line-height: 40px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  border: none;
+  padding-left: 19px;
+  padding-right: 19px;
+
+}
+
+.modal-amount-input {
+  border-radius: 0;
+  text-align: center;
+  width: 50px;
+}
+
+/* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
+.modal-amount-input::-webkit-outer-spin-button,
+.modal-amount-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Для Firefox попроще: */
+.modal-amount-input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 
+
+.modal-field-message {
+  font-size: 16px;
+  line-height: 40px;
+  color: #333333;
+  grid-column: 2 / 3;
+  margin-bottom: 11px;
+}
+
+.modal-field-message-error {
+  color: #ff5757;
+}
+
 .field-info {
 	display: none;
+}
+
+.amount-fields {
+  grid-template-columns: 288px 1fr;
+}
+
+.amount-field {
+  display: flex;
+}
+
+.number-button {
+  background-color: #f2f2f2;
+  width: 50px;
+  height: 50px;
+  display: block;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.number-button-minus {
+  background-image: url("../images/icons/minus-number.svg");
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.number-button-plus {
+  background-image: url("../images/icons/plus-number.svg");
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.adults-field .modal-field-title {
+  min-width: 155px;
+}
+
+.children-field {
+  justify-self: end;
+}
+
+.children-field .modal-field-title {
+  padding-right: 43px;
+}
+
+.modal-form-info {
+  position: relative;
+}
+
+.field-info-icon {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: #83b3d3;
+  border-radius: 50%;
+}
+
+
+
+.modal-button-submit {
+  margin-top: 40px;
+  min-height: 60px;
+  border-radius: 10px;
 }
