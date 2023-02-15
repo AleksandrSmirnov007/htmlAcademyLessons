@@ -1521,6 +1521,7 @@ background-color:rgba(131, 179, 211, 0.2);
   font-weight: 700;
   font-size: 18px;
   line-height: 40px;
+  align-self: center;
 }
 
 .modal-field-input {
@@ -1533,6 +1534,7 @@ background-color:rgba(131, 179, 211, 0.2);
   border: none;
   padding-left: 19px;
   padding-right: 19px;
+  height: 50px;
 
 }
 
@@ -1540,6 +1542,7 @@ background-color:rgba(131, 179, 211, 0.2);
   border-radius: 0;
   text-align: center;
   width: 50px;
+  z-index: 1;
 }
 
 /* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
@@ -1611,11 +1614,12 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .children-field .modal-field-title {
-  padding-right: 43px;
+  padding-right: 55px;
 }
 
 .modal-form-info {
   position: relative;
+  display: grid; /* выравнивает по центру "Дети:" так как этот лейбл находится внутри обертки modal-form-info */ 
 }
 
 .field-info-icon {
@@ -1625,6 +1629,15 @@ background-color:rgba(131, 179, 211, 0.2);
   height: 25px;
   background-color: #83b3d3;
   border-radius: 50%;
+}
+
+.field-info-icon {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background-image: url("../images/icons/i-info.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 
