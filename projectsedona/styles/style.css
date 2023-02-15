@@ -1453,10 +1453,13 @@ background-color:rgba(131, 179, 211, 0.2);
 	width: 100%;
 	height: 100%;
 	z-index: 2;
-  display: flex;
   top: 0;  /* без top: 0; left: 0; окно будет смещаться из центра прои зуме */
   left: 0;
+  display: none;
+}
 
+.modal-container-open {
+  display: flex;
 }
 
 .modal-search-appartment {
