@@ -1478,11 +1478,17 @@ background-color:rgba(131, 179, 211, 0.2);
 	width: 53px;
 	height: 53px; 
 	background-color: #f2f2f2;
-	background-image: url("../images/icons/modal-close.svg");
-	background-repeat: no-repeat;
-	background-size: #f2f2f2;
-	background-position: center;
 	border-radius: 50%;
+  display: flex;
+}
+
+.close-button-icon {
+  margin: auto;
+  width: 13px;
+  height: 13px;
+  background-image: url("../images/icons/modal-close.svg");
+	background-repeat: no-repeat;
+  background-position: center;
 }
 
 .modal-close-button:hover {
@@ -1491,6 +1497,10 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .modal-close-button:active {
   background-color: #e6e6e6;
+}
+
+.modal-close-button:active .close-button-icon {
+  opacity: 0.3;
 }
 
 .modal-close-button:focus:not(:active) {
@@ -1522,6 +1532,7 @@ background-color:rgba(131, 179, 211, 0.2);
   font-size: 18px;
   line-height: 40px;
   align-self: center;
+  cursor: pointer;
 }
 
 .modal-field-input {
@@ -1539,9 +1550,10 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .modal-amount-input {
+  padding: 0;
   border-radius: 0;
   text-align: center;
-  width: 50px;
+  width: 33px;
   z-index: 1;
 }
 
@@ -1556,8 +1568,6 @@ background-color:rgba(131, 179, 211, 0.2);
   -moz-appearance: textfield;
 }
 
-
-
 .modal-field-message {
   font-size: 16px;
   line-height: 40px;
@@ -1570,10 +1580,6 @@ background-color:rgba(131, 179, 211, 0.2);
   color: #ff5757;
 }
 
-.field-info {
-	display: none;
-}
-
 .amount-fields {
   grid-template-columns: 288px 1fr;
 }
@@ -1583,26 +1589,55 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .number-button {
+  
   background-color: #f2f2f2;
   width: 50px;
   height: 50px;
   display: block;
   border: none;
-  background-position: center;
-  background-repeat: no-repeat;
   cursor: pointer;
+  display: flex;
 }
 
-.number-button-minus {
-  background-image: url("../images/icons/minus-number.svg");
+.number-button-minus { 
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 
 .number-button-plus {
-  background-image: url("../images/icons/plus-number.svg");
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+}
+
+.number-button-icon {
+  margin: auto;
+  width: 25px;
+  height: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.number-button:hover .number-button-icon {
+  opacity: 1;
+}
+
+.number-button:active .number-button-icon {
+  opacity: 0.2;
+}
+
+.number-button:focus:not(:active) .number-button-icon {
+  border: 3px solid #83B3D3;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.number-button-minus .number-button-icon {
+  background-image: url("../images/icons/minus-number.svg");
+}
+
+.number-button-plus .number-button-icon {
+  background-image: url("../images/icons/plus-number.svg");
 }
 
 .adults-field .modal-field-title {
@@ -1614,7 +1649,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .children-field .modal-field-title {
-  padding-right: 55px;
+  margin-right: 55px;
 }
 
 .modal-form-info {
@@ -1638,9 +1673,41 @@ background-color:rgba(131, 179, 211, 0.2);
   background-image: url("../images/icons/i-info.svg");
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
+.field-info {
+  position: absolute;
+  top: 40px;
+  left: calc(-128px + 50%);
+  position: absolute;
+  width: 256px;
+  background-color: #333333;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  color:#ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 15px 20px;
+  display: none;
+}
 
+.field-info-icon:hover .field-info {
+  display: block;
+}
+
+.field-info:before {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 9px;
+  top: -9px;
+  left: calc(50% - 10px);
+  
+  background-image: url("../images/icons/triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .modal-button-submit {
   margin-top: 40px;

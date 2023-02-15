@@ -422,7 +422,8 @@
         <!-- модальное окно -->
         <div class="modal-container">
             <div class="modal-search-appartment">
-        	    <button class="button modal-close-button button-light" type="button">
+        	    <button class="button modal-close-button" type="button">
+                    <span class="close-button-icon"></span>
         	        <span class="visually-hidden">закрыть</span>
                 </button>
             	<h2 class="search-appartment-title">Поиск гостиниц в Седоне</h2>
@@ -430,13 +431,13 @@
                 	<form class="modal-search-form" action="https://echo.htmlacademy.ru" method="get">
                         <div class="modal-field date-in-field">
                              <label class="modal-field-title" for="date-in">Дата заезда:</label>
-                             <input class="field-input modal-field-input" type="text" name="date-in" id="date-in" placeholder="Укажите дату" value="27 апреля 2020">
-                             <span class="modal-field-message modal-field-message-error">Мы не можем отправить вам в прошлое</span>
+                             <input class="field-input modal-field-input" type="text" name="date-in" id="date-in" placeholder="Укажите дату" value="27 апреля 2022">
+                             <span class="modal-field-message modal-field-message-error">Мы не можем отправить вас в прошлое</span>
                         </div>
                          
                         <div class="modal-field date-out-field">
                              <label class="modal-field-title" for="date-out">Дата выезда:</label>
-                             <input class="field-input modal-field-input" type="text" name="date-out" id="date-out" placeholder="Укажите дату" value="1 сентября 2021">
+                             <input class="field-input modal-field-input" type="text" name="date-out" id="date-out" placeholder="Укажите дату" value="1 сентября 2023">
                              <span class="modal-field-message">На эти даты есть свободные номера. Пока есть.</span>
                         </div>
                          
@@ -461,8 +462,9 @@
                             <div class="amount-field children-field">
                                 <span class="modal-form-info">
                          	        <label class="modal-field-title" for="children-input">Дети:</label>
-                                    <span class="field-info-icon"></span>
-                                    <span class="field-info" id="children-info">Укажите количество детей которые будут с вами, возврат которых от 6 до 18 лет. Дети до 6 лет размешаются бесплатно.</span>
+                                    <span class="field-info-icon">
+                                        <span class="field-info" id="children-info">Укажите количество детей которые будут с вами, возвраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                                    </span> 
                                 </span>
                                 <button class="number-button number-button-minus" type="button">
                                     <span class="number-button-icon"></span>
