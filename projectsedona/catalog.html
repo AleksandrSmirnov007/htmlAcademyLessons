@@ -420,13 +420,12 @@
         </footer>
          
         <!-- модальное окно -->
-        <div class="modal-container modal-container-open">
-            <div class="modal-search-appartment">
-        	    <button class="button modal-close-button" type="button">
-                    <span class="close-button-icon"></span>
+        <div class="modal modal-open">
+            <div class="modal-container">
+        	    <button class="modal-close-button" type="button">
         	        <span class="visually-hidden">закрыть</span>
                 </button>
-            	<h2 class="search-appartment-title">Поиск гостиниц в Седоне</h2>
+            	<h2 class="search-apartment-title">Поиск гостиниц в Седоне</h2>
                 <div class="modal-search-content">
                 	<form class="modal-search-form" action="https://echo.htmlacademy.ru" method="get">
                         <div class="modal-field date-in-field">
@@ -445,18 +444,17 @@
                          	
                          	<div class="amount-field adults-field">
                          	    <label class="modal-field-title" for="adults-input">Взрослые:</label>
-                         
-                                <button class="number-button number-button-minus" type="button">
-                                    <span class="number-button-icon"></span>
-                                	<span class="visually-hidden">Уменьшить количество</span>
-                                </button>
-                                 
-                                <input class="field-input modal-field-input modal-amount-input" id="adults-input" type="number" name="adults-number" value="2" min="1" step="1" placeholder="0">
-                                 	
-                                <button class="number-button number-button-plus" type="button">
-                                    <span class="number-button-icon"></span>
-                                	<span class="visually-hidden">Увеличить количество</span>
-                                </button>
+                                <div class="modal-number">
+                                    <button class="number-button number-button-minus" type="button">
+                                        <span class="visually-hidden">Уменьшить количество</span>
+                                    </button>
+                                    
+                                    <input class="field-input modal-field-input modal-amount-input" id="adults-input" type="number" name="adults-number" value="2" min="1" step="1" placeholder="0">
+                                        
+                                    <button class="number-button number-button-plus" type="button"> 
+                                        <span class="visually-hidden">Увеличить количество</span>
+                                    </button>
+                                </div>
                             </div>
                              
                             <div class="amount-field children-field">
@@ -466,17 +464,18 @@
                                         <span class="field-info" id="children-info">Укажите количество детей которые будут с вами, возвраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
                                     </span> 
                                 </span>
-                                <button class="number-button number-button-minus" type="button">
-                                    <span class="number-button-icon"></span>
-                                	<span class="visually-hidden">Уменьшить количество</span>
-                                </button>
-                                 
-                                <input class="field-input modal-field-input modal-amount-input" id="children-input" type="number" name="children-number" value="1" min="1" step="1" placeholder="0">
-                                 	
-                                <button class="number-button number-button-plus" type="button">
-                                    <span class="number-button-icon"></span>
-                                	<span class="visually-hidden">Увеличить количество</span>
-                                </button>
+
+                                <div class="modal-number">
+                                    <button class="number-button number-button-minus" type="button">
+                                        <span class="visually-hidden">Уменьшить количество</span>
+                                    </button>
+                                    
+                                    <input class="field-input modal-field-input modal-amount-input" id="children-input" type="number" name="children-number" value="1" min="1" step="1" placeholder="0">
+                                        
+                                    <button class="number-button number-button-plus" type="button">
+                                        <span class="visually-hidden">Увеличить количество</span>
+                                    </button>
+                                </div>
                          	</div>
                          
                          </div>
