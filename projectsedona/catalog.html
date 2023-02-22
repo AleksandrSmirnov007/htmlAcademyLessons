@@ -379,7 +379,7 @@
                         бойскаутское!
                     </p>
                     <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-                        <label class="subscribe-field field">
+                        <label class="subscribe-field">
                             <span class="visually-hidden">Ваш e-mail</span>
 
                             <input class="field-input" type="email" name="email" placeholder="Ваш e-mail"/>
@@ -420,66 +420,65 @@
         </footer>
          
         <!-- модальное окно -->
-        <section class="modal modal-open">
+        <section class="modal modal-opened">
             <div class="modal-container">
-        	    <h2 class="search-apartment-title">Поиск гостиницы в Седоне</h2>
+        	    <h2 class="modal-title section-title">Поиск гостиницы в Седоне</h2>
                 <button class="modal-close-button" type="button">
         	        <span class="visually-hidden">закрыть</span>
                 </button>
                 
-                <form class="modal-search-form" action="https://echo.htmlacademy.ru" method="get">
-                    <div class="modal-field date-in-field">
+                <form class="modal-content modal-search-form" action="https://echo.htmlacademy.ru" method="get">
+                    <div class="search-form-date modal-field date-in-field">
                             <label class="modal-field-title" for="date-in">Дата заезда:</label>
-                            <input class="field-input modal-field-input" type="text" name="date-in" id="date-in" placeholder="Укажите дату" value="27 апреля 2020">
+                            <input class="field-input" type="text" name="date-in" id="date-in" placeholder="Укажите дату" value="27 апреля 2020">
                             <span class="modal-field-message modal-field-message-error">Мы не можем отправить вас в прошлое</span>
                     </div>
                         
-                    <div class="modal-field date-out-field">
+                    <div class="search-form-date modal-field date-out-field">
                             <label class="modal-field-title" for="date-out">Дата выезда:</label>
-                            <input class="field-input modal-field-input" type="text" name="date-out" id="date-out" placeholder="Укажите дату" value="1 сентября 2021">
+                            <input class="field-input" type="text" name="date-out" id="date-out" placeholder="Укажите дату" value="1 сентября 2021">
                             <span class="modal-field-message">На эти даты есть свободные номера. Пока есть.</span>
                     </div>
                         
-                    <div class="modal-field amount-fields">
+                    
                         
-                        <div class="amount-field adults-field">
-                            <label class="modal-field-title" for="adults-input">Взрослые:</label>
-                            <div class="modal-number">
-                                <button class="number-button number-button-minus" type="button">
-                                    <span class="visually-hidden">Уменьшить количество</span>
-                                </button>
+                    <div class="search-form-amount modal-field adults-field">
+                        <label class="modal-field-title" for="adults-input">Взрослые:</label>
+                        <div class="modal-number">
+                            <button class="number-button number-button-minus" type="button">
+                                <span class="visually-hidden">Уменьшить количество</span>
+                            </button>
                                 
-                                <input class="field-input modal-field-input modal-amount-input" id="adults-input" type="number" name="adults-number" value="2" min="1" step="1" placeholder="0">
+                            <input class="field-input number-input" id="adults-input" type="number" name="adults-number" value="2" min="1" step="1" placeholder="0">
                                     
-                                <button class="number-button number-button-plus" type="button"> 
-                                    <span class="visually-hidden">Увеличить количество</span>
-                                </button>
-                            </div>
+                            <button class="number-button number-button-plus" type="button"> 
+                                <span class="visually-hidden">Увеличить количество</span>
+                            </button>
                         </div>
+                    </div>
                             
-                        <div class="amount-field children-field">
-                            <span class="modal-form-info">
-                                <label class="modal-field-title" for="children-input">Дети:</label>
-                                <span class="field-info-icon">
-                                    <span class="field-info-text" id="children-info">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
-                                </span> 
-                            </span>
+                    <div class="search-form-amount modal-field children-field">
+                        <span class="modal-form-info">
+                            <label class="modal-field-title" for="children-input">Дети:</label>
+                            <span class="field-info-icon">
+                                <span class="field-info-text" id="children-info">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                            </span> 
+                        </span>
 
-                            <div class="modal-number">
-                                <button class="number-button number-button-minus" type="button">
-                                    <span class="visually-hidden">Уменьшить количество</span>
-                                </button>
+                        <div class="modal-number">
+                            <button class="number-button number-button-minus" type="button">
+                                <span class="visually-hidden">Уменьшить количество</span>
+                            </button>
                                 
-                                <input class="field-input modal-field-input modal-amount-input" id="children-input" type="number" name="children-number" value="1" min="1" step="1" placeholder="0">
+                            <input class="field-input number-input" id="children-input" type="number" name="children-number" value="1" min="1" step="1" placeholder="0">
                                     
-                                <button class="number-button number-button-plus" type="button">
-                                    <span class="visually-hidden">Увеличить количество</span>
-                                </button>
-                            </div>
+                            <button class="number-button number-button-plus" type="button">
+                                <span class="visually-hidden">Увеличить количество</span>
+                            </button>
                         </div>
-                        
-                        </div>
-                        <button class="button button-secondary modal-button-submit" type="submit">Найти</button>
+                    </div>
+
+                    <button class="button button-secondary modal-button-submit" type="submit">Найти</button>
                         
                 </form>
                 	
