@@ -70,6 +70,7 @@ body {
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
+  font-family: "PT Sans", sans-serif;
   font-weight: 700;
   text-align: center;
   border: none;
@@ -232,7 +233,7 @@ body {
   margin-top: 14px;
   margin-bottom: 14px;
   min-width: 160px;
-  border-radius: 4px;
+  border-radius: 4px;   /*   нигде нет шрифта на кнопки!!!!!!!!!!!!!   */
 }
 
 
@@ -451,7 +452,7 @@ background-color:rgba(131, 179, 211, 0.2);
   margin: auto 312px 0;
   padding-top: 15px;
   padding-bottom: 9px;
-  border-radius: 10px;
+  border-radius: 10px;  /* И тут нет шрифта на кнопке!     */
 }
 
 /* subscribe */
@@ -487,21 +488,27 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .field-input{
-  font-family: "PT Sans", sans-serif;
+  font-family: inherit;
   font-size: 18px;
-  line-height: 26px;
   background-color: #F2F2F2;
   width: 100%;
-  height: 60px;
-  border-radius: 10px 0px 0px 10px;
-  border: none;
-  padding-left: 22px;
+  border: 2px solid transparent;
 }
 
 .subscribe-field {
   margin-left: auto;
-  width: 600px;
+
 }
+
+.subscribe-field .field-input {
+	border-radius: 10px 0px 0px 10px;
+	line-height: 26px;
+	padding-left: 22px;
+    width: 600px;
+    height: 60px;
+}
+
+
 
 .field-input:hover {
   background-color: #e6e6e6;
@@ -514,9 +521,8 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .field-input-error {
-  outline: 2px solid #ff5757;
+  botder-color: #ff5757;
   background-color: #ffffff;
-  outline-offset: -2px;
 }
 
 .subscribe-button {
@@ -1394,7 +1400,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .pagination-link[href]:focus:not(:active) {  /* когда фокус и фокус визибле совпадают то то их стили накладываются и стилизация выглядит не так как зудумывалось */
   background-color: #68A2CA;
   outline: 3px solid #756257;
-  outline-offset: 0;  /* важно!!!!!!!! при выборе через таб на клавиатуре появляется кольцо фокусировки стилизованое от браузера оно изменяет outline-offset вроде... И в зависимости от того выбран ли элемент мышкой или клавиатурой получается немго отличия в стилизации. непонятно. Для примера можно жоба .pagination-link:focus-visible {outline-offset: 5px;} */ 
+  outline-offset: 0;  /* важно!!!!!!!! при выборе через таб на клавиатуре появляется кольцо фокусировки стилизованое от браузера оно изменяет outline-offset вроде... И в зависимости от того выбран ли элемент мышкой или клавиатурой получается немго отличия в стилизации. непонятно. Для примера можно добавить .pagination-link:focus-visible {outline-offset: 5px;} */ 
 }
 
 .pagination-current-link {
@@ -1459,49 +1465,44 @@ background-color:rgba(131, 179, 211, 0.2);
   place-content: center;
 }
 
-.modal-open {
+.modal-opened {
   display: grid;
 }
 
 .modal-container {
 	width: 715px;
-	min-height: 561px;
-	background: #FFFFFF;
+	background: #ffffff;
   box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
 	padding: 70px;
   padding-top: 54px;
   display: grid;
-  grid-template-columns: 1fr 53px;
+  grid-template-columns: 1fr min-content;
   row-gap: 54px;
-  column-gap: 25px;
 }
 
 .modal-close-button {
+  padding: 0;
+  width: 53px;
   height: 53px;
-  align-self: start;
-	background-color: #f2f2f2;
+  background-color: #f2f2f2;
   border: none;
-	border-radius: 50%;
-  display: grid;
-  place-content: center;
+  border-radius: 50%;
 }
 
 
 
 .modal-close-button::after {
   content: "";
-  width: 13px;
-  height: 13px;
+  display: block;  /*  все созданные псевдоэлементы по умолчанию display: inline;  для задания размеров необходимо применить display: block, flex, grid...  */ 
+  width: 53px;
+  height: 53px;
   background-image: url("../images/icons/modal-close.svg");
 	background-repeat: no-repeat;
   background-position: center;
 }
 
-.modal-close-button:hover {
-  background-color: #E6E6E6;
-}
-
+.modal-close-button:hover,
 .modal-close-button:active {
   background-color: #e6e6e6;
 }
@@ -1511,16 +1512,17 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .modal-close-button:focus:not(:active) {
-  background-color: #e6e6e6;
+  background-color: #e6e6e6; /*    нужно ли это ? посмотреть цвет на компе в стаилгайде у состояния focus  */
   outline: 3px solid #83b3d3;
+  outline-ofset: 0; /* видимо, как и выше добавлено чтобы focus-visible не переопределял  значение  outline-ofset*/
 }
 
-.search-apartment-title {
+.modal-title {
   font-size: 30px;
   font-weight: 700;
-  line-height: 40px;
-  text-transform: uppercase;
-	margin: 0;
+  line-height: 40px;  
+  text-transform: uppercase;   /*  параметры шрифта в эталонном коде задаются через класс section-title  проверить и такую же систему */
+  margin: 0;
    
   align-self: center;
   padding-top: 4px;
@@ -1528,16 +1530,28 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 
+.modal-content {   /* по сути форме присвоен так же этот класс видимо что бы подчеркнуть структуру   */
+	grid-column: 1 / -1;
+}
+
+/*   Search Form     */
+
 .modal-search-form {
+  display: grid;
+  grid-template-rows: repeat(3, 50px) 60px;
+  grid-template-columns: 50% 1fr;   /*   это делается что бы уместить в третью строку 2 поля   */
+  row-gap: 40px;
+}
+
+.search-form-date {
   grid-column: 1 / -1;
-	display: grid;
-	grid-template-rows: repeat(3, 50px) 60px;
-  gap: 40px;
 }
 
 .modal-field {
-	display: grid;
-  grid-template-columns: 155px 1fr;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  column-gap: 15px;
+  
 }
 
 .modal-field-title {
@@ -1546,30 +1560,30 @@ background-color:rgba(131, 179, 211, 0.2);
   font-weight: 700;
   font-size: 18px;
   line-height: 40px;
-  align-self: center;
+  align-self: center;  /* будет далее действовать во всех grid    */
   cursor: pointer;
 }
 
-.modal-field-input {
-  font-size: 18px;
+.modal-search-form .field-input {
   line-height: 40px;
-  font-family: "PT Sans", sans-serif;
   font-weight: 700;
-  background-color: #f2f2f2;
   border-radius: 4px;
-  border: none;
   padding-left: 21px;
   padding-right: 20px;
   height: 50px;
-  
 }
 
-.modal-field-input[type="text"] {
+
+.search-form-date .field-input {
   background-image: url("../images/icons/date.svg");
   background-repeat: no-repeat;
-  background-position: center right 19px;
+  background-position: right 19px top 50%;
 }
 
+.search-form-date .field-input:not(:placeholder-shown):active {
+	outline: 2px solid #333333;
+	background-color: #ffffff;
+}
 
 .modal-field-message {
   margin-top: -7px;
@@ -1584,22 +1598,6 @@ background-color:rgba(131, 179, 211, 0.2);
   color: #ff5757;
 }
 
-.amount-fields {
-  grid-template-columns: 288px 1fr;
-}
-
-.amount-field {
-  display: grid;
-  grid-template-columns: 1fr min-content;
-}
-
-.children-field {
-  justify-self: end;
-}
-
-.children-field .modal-field-title {
-  margin-right: 52px;
-}
 
 .modal-number {
   display: grid;
@@ -1629,24 +1627,23 @@ background-color:rgba(131, 179, 211, 0.2);
   grid-row: 1 / 2;
 }
 
-.modal-amount-input {
+.number-input {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
   
   padding: 0 50px;
-  border-radius: 4px;
-  text-align: center;
+  text-align: center;   
   width: 133px;
 }
 
 /* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
-.modal-amount-input::-webkit-outer-spin-button,
-.modal-amount-input::-webkit-inner-spin-button {
+.number-input::-webkit-outer-spin-button,
+.number-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
 /* Для Firefox попроще: */
-.modal-amount-input[type='number'] {
+.number-input {
   -moz-appearance: textfield;
 }
 
@@ -1684,22 +1681,24 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .modal-form-info {
   position: relative;
-  display: grid; /* выравнивает по центру "Дети:" так как этот лейбл находится внутри обертки modal-form-info */ 
+  display: grid; 
+  
+  grid-template-columns: min-content min-content;
+  justify-content: end; /* выравнивает "дети:" по правому краю   */
+  align-items: center;
 }
 
 .field-info-icon {
-  position: absolute;
+  position: relative;
   display: block;
   width: 25px;
   height: 25px;
   background-color: #83b3d3;
   border-radius: 50%;
-}
-
-.field-info-icon {
-  position: absolute;
-  top: 15px;
-  right: 17px;
+  
+  margin-right: 5px;
+  margin-left: 10px;
+  
   background-image: url("../images/icons/i-info.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1739,11 +1738,11 @@ background-color:rgba(131, 179, 211, 0.2);
   background-position: center;
 }
 
-.modal-button-submit {
+.modal-button-submit { /* задать шрифт через общие стили для кнопок     */
+  grid-column: 1  / -1;
   margin-top: 1px;
   margin-left:2px;
   margin-right: -2px;
-  min-height: 60px;
   border-radius: 10px;
   font-size: 20px;
   line-height: 40px;
