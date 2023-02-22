@@ -987,14 +987,9 @@ background-color:rgba(131, 179, 211, 0.2);
   padding-bottom: 14px;
 }
 
-.filter-submit:focus {
+.filter-submit:focus:not(:active) {  /* неоходимо поддерживать специфичность селекторов на одном уровне, если уже и используем конструкцию :focus:not(:active) то так и надо делат везде иначе невозможно будет переопределить за счет того что селектор находиться ниже*/
   outline: 3px solid #FFFFFF;
 }
-
-.filter-submit:active {
-  outline: none;
-}
-
 
 .button-reset {
   font-family: "PT sans", sans-serif;
