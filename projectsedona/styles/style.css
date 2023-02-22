@@ -67,11 +67,14 @@ body {
 /* buttons */
 
 .button{
+  font-size: 16px;
+  line-height: 21px;
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
   font-family: "PT Sans", sans-serif;
   font-weight: 700;
+  border-radius: 4px;
   text-align: center;
   border: none;
   cursor: pointer;
@@ -108,6 +111,12 @@ body {
 .button-secondary:focus:not(:active) {
   background-color: #68A2CA;
   outline: 3px solid #756257;
+}
+
+.button-large {
+  font-size: 20px;
+  line-height: 26px;
+  border-radius: 10px;
 }
 
 
@@ -226,14 +235,12 @@ body {
 }
 
 .navigation-button-link { 
-  font-size: 16px;
   line-height: 20px;
   padding: 9px 15px 8px;
   margin-left: 20px;
   margin-top: 14px;
   margin-bottom: 14px;
   min-width: 160px;
-  border-radius: 4px;   /*   нигде нет шрифта на кнопки!!!!!!!!!!!!!   */
 }
 
 
@@ -275,18 +282,26 @@ body {
   padding-bottom: 77px;
 }
 
-.advantages-title {
+.section-title {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.advantages-title {
   margin-top: 0;
   margin-bottom: 31px;
-  text-transform: uppercase;
+}
+
+.section-subtitle {
+  font-size: 22px;
+  line-height: 26px;
 }
 
 .advantages-subtitle {
   color: #333333;
-  font-size: 22px;
   line-height: 36px;
   margin: 0;
 }
@@ -433,32 +448,22 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 .search-title {
   margin: 0 240px 29px;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 36px;
-  text-transform: uppercase;
 }
 
 .search-subtitle {
-  color: #333333;
-  font-size: 22px;
-  line-height: 26px;
   margin: 0px 240px 56px;
 }
 
 .search-button {
-  font-size: 20px;
   line-height: 36px;
   margin: auto 312px 0;
   padding-top: 15px;
   padding-bottom: 9px;
-  border-radius: 10px;  /* И тут нет шрифта на кнопке!     */
 }
 
 /* subscribe */
 
 .subscribe {
-  color:#ffffff;
   background-color: #83B3D3;
   background-image: url('../images/background/background-index-bottom.jpg');
   background-repeat: no-repeat;
@@ -470,15 +475,18 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .subscribe-title{
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 30px;
   line-height: 36px;
   margin: 0 240px 29px;
 }
+
+.page-main .subscribe-title,
+.page-main .subscribe-description {
+  color: #ffffff;
+}
+
+ 
+
 .subscribe-description{
-  font-size: 22px;
-  line-height: 26px;
   margin: 0 240px 46px;
 }
 
@@ -521,15 +529,12 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .field-input-error {
-  botder-color: #ff5757;
+  border-color: #ff5757;
   background-color: #ffffff;
 }
 
 .subscribe-button {
-  font-family: "PT Sans", sans-serif;
   width: 200px;
-  font-size: 20px;
-  line-height: 26px;
   margin-right: auto;
   border-radius: 0px 10px 10px 0px;
 }
@@ -645,7 +650,7 @@ background-color:rgba(131, 179, 211, 0.2);
   background-size: cover;
   padding-left: 72px;
   padding-right: 72px;
-  padding-top: 35px;
+  padding-top: 42px;
   padding-bottom: 84px;
   height: 408px;
 }
@@ -665,11 +670,11 @@ background-color:rgba(131, 179, 211, 0.2);
   align-content: center;
   padding: 0;
   margin: 0;
-  margin-left: -5px;
+  margin-left: -7px;
   font-size: 16px;
   line-height: 21px;
   list-style-type: none;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
 .breadcrumbs-item {
@@ -706,7 +711,7 @@ background-color:rgba(131, 179, 211, 0.2);
   height: 27px;
   background-image: url("../images/icons/home-breadcrumbs.svg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right 50% top 2px;
   background-size: 12px 12px;  
 }
 
@@ -728,15 +733,15 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .catalog-filter-form {
   display: grid;
-  grid-template-columns: 200px 200px 1fr 221px;
+  grid-template-columns: 197px 197px 1fr 221px;
   gap: 20px;
 }
 
 .catalog-filter-title {
+  margin-left: -3px;
   margin-top: 0;
   margin-bottom: 30px;
   padding-top: 0;
-  padding-bottom: 4px;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
@@ -758,6 +763,8 @@ background-color:rgba(131, 179, 211, 0.2);
   width: 200px;
   border: none;
 }
+
+
 
 
 /*  checkbox  and radio */
@@ -823,13 +830,17 @@ background-color:rgba(131, 179, 211, 0.2);
   top: 5px;
   left: 5px;
 }
+/* range */
+
 
 .filter-fieldset-price {
   width: 287px;
   justify-self: end;
 }
 
-/* range */
+.filter-fieldset-price .catalog-filter-title {
+  margin-bottom: 35px;
+}
 
 .range-fields {
 	margin-bottom: 28px;
@@ -840,7 +851,11 @@ background-color:rgba(131, 179, 211, 0.2);
   flex-grow: 1;
 	display: flex;
   justify-content: space-between;
-	padding: 10px;
+  height: 48px;
+  padding-bottom: 11px;
+  padding-top: 14px;
+	padding-left: 17px;
+  padding-right: 14px;
 	border: 2px solid #ffffff;
   border-right: 2px solid #ffffff;
 	border-top-left-radius: 4px;
@@ -891,6 +906,8 @@ background-color:rgba(131, 179, 211, 0.2);
 .range-title {
   opacity: 0.3;
   order: 2;
+  align-self: center;
+  padding-bottom: 2px;
 }
 .range-input{
   color: #ffffff;
@@ -966,11 +983,8 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .filter-submit {
-  font-size: 16px;
-  line-height: 21px;
   padding-top: 14px;
   padding-bottom: 14px;
-  border-radius: 4px;
 }
 
 .filter-submit:focus {
@@ -983,6 +997,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 
 .button-reset {
+  font-family: "PT sans", sans-serif;
   color:#FFFFFF;
   background-color: rgba(0, 0, 0, 0);
   border: 0;
@@ -1252,11 +1267,8 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .product-card-button {
-  font-size: 16px;
-  line-height: 21px;
   padding-top: 9px;
   padding-bottom: 7px;
-  border-radius: 4px;
 }
 
 .product-card-button.enabled {
@@ -1444,9 +1456,6 @@ background-color:rgba(131, 179, 211, 0.2);
 
 
 .inner-subscribe-description{
-    color: #333333;
-    font-size: 22px;
-    line-height: 26px;
     width: 720px;
     margin: 0 auto 46px;
 }
@@ -1512,21 +1521,17 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .modal-close-button:focus:not(:active) {
-  background-color: #e6e6e6; /*    нужно ли это ? посмотреть цвет на компе в стаилгайде у состояния focus  */
+  background-color: #e6e6e6;
   outline: 3px solid #83b3d3;
   outline-ofset: 0; /* видимо, как и выше добавлено чтобы focus-visible не переопределял  значение  outline-ofset*/
 }
 
 .modal-title {
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 40px;  
-  text-transform: uppercase;   /*  параметры шрифта в эталонном коде задаются через класс section-title  проверить и такую же систему */
+  line-height: 40px; 
   margin: 0;
    
   align-self: center;
   padding-top: 4px;
-  
 }
 
 
@@ -1577,7 +1582,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .search-form-date .field-input {
   background-image: url("../images/icons/date.svg");
   background-repeat: no-repeat;
-  background-position: right 19px top 50%;
+  background-position: right 15px top 55% ;
 }
 
 .search-form-date .field-input:not(:placeholder-shown):active {
@@ -1689,6 +1694,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .field-info-icon {
+  
   position: relative;
   display: block;
   width: 25px;
@@ -1696,13 +1702,18 @@ background-color:rgba(131, 179, 211, 0.2);
   background-color: #83b3d3;
   border-radius: 50%;
   
-  margin-right: 5px;
+  margin-top: 5px; /* подгонка по местоположению */ 
+  margin-right: 2px;
   margin-left: 10px;
   
   background-image: url("../images/icons/i-info.svg");
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+}
+
+.field-info-icon:hover {
+  background-color: #68A2CA;
 }
 
 .field-info-text {
@@ -1738,14 +1749,10 @@ background-color:rgba(131, 179, 211, 0.2);
   background-position: center;
 }
 
-.modal-button-submit { /* задать шрифт через общие стили для кнопок     */
+.modal-button-submit {
   grid-column: 1  / -1;
   margin-top: 1px;
   margin-left:2px;
   margin-right: -2px;
-  border-radius: 10px;
-  font-size: 20px;
   line-height: 40px;
-  font-family: "PT Sans", sans-serif;
-  font-weight: 700;
 }
