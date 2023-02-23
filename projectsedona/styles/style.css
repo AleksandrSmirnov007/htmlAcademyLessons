@@ -634,11 +634,11 @@ body {
 }
 
 .inner-header-container {
+  min-height: 408px;
   padding-left: 72px;
   padding-right: 72px;
   padding-top: 42px;
-  padding-bottom: 84px;
-  min-height: 408px;
+  padding-bottom: 80px;
   background-color: #3d78a0;
   background-image: url("../images/background/catalog-background.jpg");
   background-repeat: no-repeat;
