@@ -34,20 +34,20 @@ html {
 }
 
 body {
+  display: flex;
   width: 1200px;
   margin: 0 auto;
-  display: flex;
   flex-direction: column;
   min-height: 100%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
+  font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 23px;
-  font-family: "PT Sans", sans-serif;
   font-weight: 400;
+
   color: #000000;
   background-color: #f2f2f2;
-
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
   /*outline: 2px solid rgba(87, 255, 78, 0.5);
   outline-offset: -2px;*/ /* Рамка для подстветки элементов*/
@@ -67,18 +67,20 @@ body {
 /* buttons */
 
 .button {
+  font-family: "PT Sans", sans-serif;
   font-size: 16px;
   line-height: 21px;
+  font-weight: 700;
+
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
-  font-family: "PT Sans", sans-serif;
-  font-weight: 700;
   border-radius: 4px;
-  text-align: center;
   border: none;
-  cursor: pointer;
+  text-align: center;
+
   background-color: #756257;
+  cursor: pointer;
 }
 
 .button:hover {                        /* здесь и далее будем применять такую конструкцию и последовательность:   .element:hover{...}  .element:active{...}  .element:focus:not(:active){...}.  Тем самым можно добиться того, что в каждом селекторе можно будет прописывать только те стили которые соответсвуют каждому состоянию и не переопределять стили например при нажатии на элемент применяется псевдокласс active но и в этот жке момент элемент находится в фокусе.   */
@@ -131,16 +133,15 @@ body {
 
 .navigation {
   display: flex;
-
   padding: 0 65px 0 75px;
   background-color: #ffffff;
 }
 
 .navigation-logo {
   z-index: 2;  /* поднимает слой иначе оказывается сзади фоновых изображениий которые находятся в main*/
-  margin-bottom: -10px;
   width: 139px;
   height: 70px;
+  margin-bottom: -10px;
   margin-right: 30px;
 }
 
@@ -159,12 +160,12 @@ body {
 }
 
 .navigation-link {
+  position: relative;
   display: block;
   padding: 19px 17px;
   color: inherit;
   text-decoration: none;
   text-align: center;
-  position: relative;
 }
 
 .navigation-link[href]:hover { /* тем самы выделяем только активные ссылки на элементах, по которым можно перейти на другие страницы. К неактивным элементам например текущая страница эта стилизация применяться не будет, так у ссылки на текущую страницу отсутствует атрибут href */
@@ -177,14 +178,14 @@ body {
 
 
 .navigation-link-current::after {    /*делаем черту потекущей вкладкой меню*/
-  z-index: 1;
-  content: "";
   position: absolute;
+  content: "";
   left: 17px;
   right: 17px;
   bottom: -1px;
-  background-color: #756257;
+  z-index: 1;
   height: 2px;
+  background-color: #756257;
 }
 
 .navigation-user {
@@ -197,10 +198,10 @@ body {
 .navigation-icon {
   display: grid;
   place-content: center;
-  fill: #000000;
   width: 42px;
   height: 66px;
   padding: 22px 11px;
+  fill: #000000;
 }
 
 .navigation-icon:hover {
@@ -208,17 +209,17 @@ body {
 }
 
 .navigation-icon:active {
-  fill: rgba(117, 98, 87, 0.3);
   color: rgba(255, 255, 255, 0.3);
+  fill: rgba(117, 98, 87, 0.3);
 }
 
 .icon-button-counter {
   position: absolute;
-  padding: 3px 5px 0;
   left: 24px;
   top: 14px;
   min-width: 20px;
   height: 20px;
+  padding: 3px 5px 0;
   font-size: 10px;
   font-weight: 400;
   line-height: 13px;
@@ -232,12 +233,12 @@ body {
 }
 
 .navigation-button-link {
-  line-height: 20px;
+  min-width: 160px;
   padding: 9px 15px 8px;
   margin-left: 20px;
   margin-top: 14px;
   margin-bottom: 14px;
-  min-width: 160px;
+  line-height: 20px;
 }
 
 
@@ -274,9 +275,9 @@ body {
 /* advantages - преимущества седоны*/
 
 .advantages-title-container {
-  text-align: center;
   padding-top: 63px;
   padding-bottom: 77px;
+  text-align: center;
 }
 
 .section-title {
@@ -298,21 +299,20 @@ body {
 }
 
 .advantages-subtitle {
-  color: #333333;
-  line-height: 36px;
   margin: 0;
+  line-height: 36px;
+  color: #333333;
 }
 
 /* advantages-list */
 
 .advantages-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin: 0;
   padding: 0;
   text-align: center;
   list-style-type: none;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   counter-reset: counter-item-advantages; /*запускаем функцию счетчик*/
 }
 
@@ -340,13 +340,15 @@ body {
 
 .advantages-item:nth-child(1) .advantages-point, /*первый и второй текстовые пункты преимущества*/
 .advantages-item:nth-child(2) .advantages-point {
-  background-color: #83b3d3;
-  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #83b3d3;
+  color: #ffffff;
 }
+
 /*третий и пятый пункты преимуществ*//*и нечетные пунткты с изображениями имеют один цвет bg*/
+
 .advantages-item:nth-child(2n+3),
 .details-item:nth-child(odd) {
   background-color: rgba(131, 179, 211, 0.12);
@@ -357,9 +359,9 @@ body {
 }
 
 .advantages-point {
+  min-height: 384px;
   padding-top: 98px;
   padding-bottom: 86px;
-  min-height: 384px;
 }
 
 .advantages-item-title {
@@ -368,34 +370,34 @@ body {
 }
 
 .advantages-description {
-  line-height: 21px;
   margin: 0;
+  line-height: 21px;
 }
 
 .advantages-description::before {
-  content: "— №" counter(counter-item-advantages) " —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
   display: block;
   margin: 30px auto;
+  content: "— №" counter(counter-item-advantages) " —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
 }
 
 .details-list {
   grid-column: 1 / -1;
-  margin: 0;
-  padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
 }
 
 .details-item {
-  list-style-type: none;
+  min-height: 384px;
+  padding-top: 185px;
+  padding-bottom: 79px;
   align-items: center;
   background-repeat: no-repeat;
   background-size: 84px 84px;
   background-position: center 80px;
   background-color: #ffffff;
-  padding-top: 185px;
-  padding-bottom: 79px;
-  min-height: 384px;
+  list-style-type: none;
 }
 
 .details-item-housing {
@@ -424,7 +426,6 @@ body {
 /*шрифт в преимуществах Седоны*/
 .advantages-item-title,
 .details-item-title {
-
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -435,12 +436,12 @@ body {
 /* search */
 
 .search {
-  background-color: #ffffff;
-  text-align: center;
   display: flex;
   flex-direction: column;
   padding-top: 93px;
   padding-bottom: 93px;
+  text-align: center;
+  background-color: #ffffff;
 }
 
 .search-title {
@@ -452,28 +453,27 @@ body {
 }
 
 .search-button {
-  line-height: 36px;
   margin: auto 312px 0;
   padding-top: 15px;
   padding-bottom: 9px;
+  line-height: 36px;
 }
 
 /* subscribe */
 
 .subscribe {
+  padding-top: 100px;
+  padding-bottom: 88px;
+  text-align: center;
   background-color: #83b3d3;
   background-image: url("../images/background/background-index-bottom.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
-
-  padding-top: 100px;
-  padding-bottom: 88px;
 }
 
 .subscribe-title {
-  line-height: 36px;
   margin: 0 240px 29px;
+  line-height: 36px;
 }
 
 .page-main .subscribe-title,
@@ -486,15 +486,15 @@ body {
 }
 
 .subscribe-form {
-  margin: auto 200px 0;
   display: flex;
+  margin: auto 200px 0;
 }
 
 .field-input {
+  width: 100%;
   font-family: inherit;
   font-size: 18px;
   background-color: #f2f2f2;
-  width: 100%;
   border: 2px solid transparent;
 }
 
@@ -503,11 +503,11 @@ body {
 }
 
 .subscribe-field .field-input {
-  border-radius: 10px 0 0 10px;
-  line-height: 26px;
-  padding-left: 22px;
   width: 600px;
   height: 60px;
+  padding-left: 22px;
+  line-height: 26px;
+  border-radius: 10px 0 0 10px;
 }
 
 .field-input:hover {
@@ -515,8 +515,8 @@ body {
 }
 
 .field-input:focus {
-  outline: 2px solid #83b3d3;
   background-color: #e6e6e6;
+  outline: 2px solid #83b3d3;
 }
 
 .field-input-error {
@@ -533,9 +533,9 @@ body {
 /* footer */
 
 .page-footer-container {
+  display: flex;
   padding-top: 40px;
   padding-bottom: 30px;
-  display: flex;
   background-color: #ffffff;
 }
 
@@ -558,8 +558,8 @@ body {
   margin-top: -2px;
   margin-right: 3px;
   margin-bottom: 3px;
-  fill: #83b3d3; /* Свойство fill наследуется поэтому укажем его здесь(а не в svg) что бы использовать :hover, active, focus:not(:active) не на прямую в svg а через родительскую ссылку, к томуже нам нужно еще добавить на эту ссылку outline.А если стилизовать svg отдельно, то придеться писать псевдоклассы взаимодействия еще и на него  */
   border-radius: 10px;
+  fill: #83b3d3; /* Свойство fill наследуется поэтому укажем его здесь(а не в svg) что бы использовать :hover, active, focus:not(:active) не на прямую в svg а через родительскую ссылку, к томуже нам нужно еще добавить на эту ссылку outline.А если стилизовать svg отдельно, то придеться писать псевдоклассы взаимодействия еще и на него  */
 }
 
 .social-link:hover {
@@ -579,15 +579,15 @@ body {
 
 /* footer-phone */
 .footer-phone {
+  margin: -15px auto 0;
+  margin-right: 210px;
+  padding: 15px;
   color: inherit;
   text-decoration: none;
   font-size: 40px;
   line-height: 40px;
   text-transform: uppercase;
   text-align: center;
-  margin: -15px auto 0;
-  margin-right: 210px;
-  padding: 15px;
   border-radius: 10px;
 }
 
@@ -605,10 +605,10 @@ body {
 }
 
 .footer-developer-link {
+  height: min-content;
   margin-top: -15px;
   margin-right: 50px;
   padding: 16px 22px;
-  height: min-content;
   border-radius: 10px;
   fill: #000000;
 }
@@ -634,24 +634,24 @@ body {
 }
 
 .inner-header-container {
-  color: #ffffff;
-  background-color: #3d78a0;
-  background-image: url("../images/background/catalog-background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   padding-left: 72px;
   padding-right: 72px;
   padding-top: 42px;
   padding-bottom: 84px;
   min-height: 408px;
+  background-color: #3d78a0;
+  background-image: url("../images/background/catalog-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
 }
 
 .inner-main-title {
+  margin-top: 0;
+  margin-bottom: -15px;
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
-  margin-top: 0;
-  margin-bottom: -15px;
 }
 
 /*Хлебные крошки*/
@@ -664,22 +664,22 @@ body {
   margin-left: -7px;
   font-size: 16px;
   line-height: 21px;
-  list-style-type: none;
   margin-bottom: 40px;
+  list-style-type: none;
 }
 
 .breadcrumbs-item {
-  margin-right: 10px;
   position: relative;
+  margin-right: 10px;
 }
 
 .breadcrumbs-item:not(:first-child)::before {
-  content: "";
   position: absolute;
-  width: 5px;
-  height: 100%;
   top: 0;
   left: -7px;
+  content: "";
+  width: 5px;
+  height: 100%;
   background-image: url("../images/icons/breadcrumbs-arrow.svg");
   background-repeat: no-repeat;
   background-size: 5px 8px;
@@ -690,10 +690,10 @@ body {
   display: block;
   height: 100%;
   padding: 0 5px;
-  border: 3px solid transparent;
-  border-radius: 4px;
   text-decoration: none;
   color: inherit;
+  border: 3px solid transparent;
+  border-radius: 4px;
 }
 
 .home-link {
@@ -748,9 +748,9 @@ body {
 }
 
 .filter-fieldset {
+  width: 200px;
   margin: 0;
   padding: 0;
-  width: 200px;
   border: none;
 }
 
@@ -784,10 +784,10 @@ body {
 
 
 .control-label::after {
+  display: none;
   background-image: url("../images/icons/tick.svg");
   background-repeat: no-repeat;
   background-position: center;
-  display: none;
 }
 
 
@@ -840,8 +840,8 @@ body {
 /* range */
 
 .filter-fieldset-price {
-  width: 287px;
   justify-self: end;
+  width: 287px;
 }
 
 .filter-fieldset-price .catalog-filter-title {
@@ -849,13 +849,13 @@ body {
 }
 
 .range-fields {
-  margin-bottom: 28px;
   display: flex;
+  margin-bottom: 28px;
 }
 
 .range-field {
-  flex-grow: 1;
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
   height: 48px;
   padding-bottom: 11px;
@@ -897,10 +897,10 @@ body {
 }
 
 .range-field:focus-within:not(:active) {
+  z-index: 1;
   outline: 3px solid #83b3d3;
   box-shadow: inset 0 0 0 3px #83b3d3;
   opacity: 1;
-  z-index: 1;
 }
 
 .range-input:focus {
@@ -908,30 +908,30 @@ body {
 }
 
 .range-title {
-  opacity: 0.3;
   order: 2;
   align-self: center;
   padding-bottom: 2px;
+  opacity: 0.3;
 }
 
 .range-input {
-  color: #ffffff;
+  font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 23px;
+  color: #ffffff;
   background-color: transparent;
   border: none;
   appearance: none;
-  font-family: "PT Sans", sans-serif;
 }
 
 /*  range-slider  */
 
 .range-slider {
+  display: flex;
+  flex-direction: column;  /*  для растяжения */
   height: 4px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.3);
-  display: flex;
-  flex-direction: column;  /*  для растяжения */
 }
 
 .slider-bar {
@@ -985,13 +985,12 @@ body {
 
 /* range-slider end*/
 
-
 .filter-buttons {
-  padding-top: 60px;
   justify-self: end;
-  width: 160px;
   display: flex;
   flex-direction: column;
+  width: 160px;
+  padding-top: 60px;
 }
 
 .filter-submit {
@@ -1004,16 +1003,16 @@ body {
 }
 
 .button-reset {
-  font-family: "PT sans", sans-serif;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0);
-  border: 0;
-  font-size: 18px;
-  line-height: 23px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   padding: 2px 12px;
+  font-family: "PT sans", sans-serif;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
 }
 
 .button-reset:hover {
@@ -1046,8 +1045,8 @@ body {
 }
 
 .sorting-type-text {
-  min-width: 338px;
   display: flex;
+  min-width: 338px;
   margin: 0;
   font-weight: 700;
   font-size: 30px;
@@ -1060,21 +1059,20 @@ body {
 
 .select-view,
 .select-pagination {  /* ширина второго селекта задается далее в разделе pagination-select */
-  z-index: 2;   /* передаст потомкам, и при подводе курсора фотографии не будут проступать через выдающий список */
   position: relative; /* что бы в дальнейшем исключить select-view-list потока задав ему потом абсолютную позицию относительно родителя */
+  z-index: 2;   /* передаст потомкам, и при подводе курсора фотографии не будут проступать через выдающий список */
 }
 
 .select-button {  /*ширина элемента .select-view-button  задается размеров колонки грид-коннтейнера .catalog-sort */
-  color: #333333;
-  height: 48px;
   display: flex;   /* также убирается черный тругольник у summary так как изначально summary имеет display: list-item и поэтому имеет маркер в виде треугольника*/
   align-items: center;
+  height: 48px;
+  padding-left: 19px;
+  padding-right: 19px;
   outline: 2px solid #e6e6e6;
   outline-offset: -2px;  /* outline всегда делает обводку снаружи элемента. И если мы хотим заменить border на outline c теми же размерами(в селекте это актуально нам нужно перекрыть outline фокуса браузера) необходимо сужать outline к центру элемента свойством outline-ofset с отрицательным значением равным толщине линии*/
   border-radius: 4px;
-  padding-left: 19px;
-  padding-right: 19px;
-
+  color: #333333;
   user-select: none;  /* не позволяет выделять область текста так как это мешает пользоваться  */
 }
 
@@ -1098,8 +1096,8 @@ body {
   content: "";
   width: 12px;
   height: 7px;
-  background-image: url("../images/icons/chevron-down.svg");
   margin-left: auto;
+  background-image: url("../images/icons/chevron-down.svg");
 }
 
 .select-view[open] .select-button::after,
@@ -1108,25 +1106,25 @@ body {
 }
 
 .select-list {
-  margin: 0;
-  padding: 10px 0;
-  list-style-type: none;
   position: absolute;
-  border-radius: 4px;
-  background-color: #ffffff;
   top: 100%;
   left: 2px;
   right: 2px;
+  margin: 0;
   margin-top: 1px;
+  padding: 10px 0;
+  border-radius: 4px;
+  background-color: #ffffff;
+  list-style-type: none;
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .select-link {
+  display: block;
+  padding: 5px 19px;
   background-color: #f2f2f2;
   color: #333333;
-  display: block;
   text-decoration: none;
-  padding: 5px 19px;
 }
 
 .select-link-current {
@@ -1150,12 +1148,12 @@ body {
 /* card-view-list */
 
 .card-view-list {
-  list-style-type: none;
+  max-width: 220px;
   display: flex;
   flex-wrap: wrap;
   margin: -4px; /* еще одинподход: родительский контейнер с минусовым маржином по всему периметру, а внутренние элементы имет по кругу плюсовой марджин того же размера, то есть около краев контейнера маржины компенсируются, но между собой элементы имееют отступ в размере двойного марджина (чем то похоже на gap в grid) и можно не обнулять маржин у последенего элеменнта в ряду как к примеру .card-view-item:last-child {margin-right: 0;}*/
   padding: 0;
-  max-width: 220px;
+  list-style-type: none;
 }
 
 .card-view-item {
@@ -1166,7 +1164,6 @@ body {
   display: block;
   width: 48px;
   height: 48px;
-
   background-repeat: no-repeat;
   background-size: 16px 14px;
   background-position: center;
@@ -1208,27 +1205,27 @@ body {
 }
 
 .product-card {
-  padding: 20px;
-  list-style-type: none;
   display: grid;
   gap: 16px 25px;
   grid-template-columns: 133px 143px;
+  padding: 20px;
+  list-style-type: none;
 }
 
 .product-card-link {
-  text-decoration: none;
+  position: relative;
   grid-column: 1 / -1;
   display: grid;
-  position: relative;
+  text-decoration: none;
 }
 
 .product-card-link::before { /* "довольно хитрое решение с наложением псевдоэлемента в карточке товара: он располагается поверх текста и картинки, создавая таким образом кликабельную область."  Изучите как это сделано ради интереса, но помните: абсолютно нормально заключить в одну ссылку оба элемента сразу.*/
-  z-index: 1;  /* поднимаем над изображением*/
-  content: "";
   position: absolute;
   top: -242px;
   left: -20px;
   right: -20px;
+  z-index: 1;  /* поднимаем над изображением*/
+  content: "";
   height: calc(100% + 242px);
 }
 
@@ -1256,11 +1253,11 @@ body {
 }
 
 .product-card-title {
-  color: #000000;
+  margin: 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 31px;
-  margin: 0;
+  color: #000000;
 }
 
 .product-card-type-house,
@@ -1296,9 +1293,9 @@ body {
 .rating-container {
   margin: 0;
   grid-column: 1 / -1;
-  border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  border-radius: 4px;
 }
 
 .rating-stars { /* добавили в разметку к каждой карточке пустой контейнер с таким классом */
@@ -1330,17 +1327,17 @@ body {
 
 .product-rating {
   display: block;
-  border-radius: 4px;
-  text-align: center;
-  color: #333333;
-  background-color: #f2f2f2;
-  font-size: 16px;
-  line-height: 21px;
-  text-transform: uppercase;
   min-width: 160px;
   padding-top: 9px;
   padding-bottom: 7px;
   margin: 0;
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  text-align: center;
+  color: #333333;
 }
 
 /* show-more-button-container */
@@ -1352,15 +1349,15 @@ body {
 }
 
 .button-show-more {
-  font-family: "PT Sans", sans-serif;
+  display: block;
+  margin: 0 auto;
   padding-top: 17px;
   padding-bottom: 17px;
   width: 620px;
-  border-radius: 4px;
-  display: block;
-  margin: 0 auto;
+  font-family: "PT Sans", sans-serif;
   font-size: 20px;
   line-height: 26px;
+  border-radius: 4px;
 }
 
 /* pagination */
@@ -1371,10 +1368,10 @@ body {
 }
 
 .pagination-list {
-  margin: 0 -4px;   /* вариант размещения элементов внутри контейнера - использовать отрицательные маржины на контейнере, вместо обнуления отступа у последнего элемента кака раньше .pagination-list{margin: 0;} , .pagination-item {margin-right: 8px;} , .pagination-item:last-child {margin-right: 0;} . */
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 -4px;   /* вариант размещения элементов внутри контейнера - использовать отрицательные маржины на контейнере, вместо обнуления отступа у последнего элемента кака раньше .pagination-list{margin: 0;} , .pagination-item {margin-right: 8px;} , .pagination-item:last-child {margin-right: 0;} . */
+  padding: 0;
   font-size: 20px;
   line-height: 26px;
   text-transform: uppercase;
@@ -1389,14 +1386,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
+  padding: 8px;
   min-width: 55px;
   height: 55px;
   color: #ffffff;
   background-color: #83b3d3;
-  padding: 8px;
   text-align: center;
   text-decoration: none;
+  border-radius: 4px;
 }
 
 .pagination-link[href]:hover {
@@ -1445,9 +1442,9 @@ body {
 
 
 .inner-subscribe {
-  text-align: center;
   padding-top: 73px;
   padding-bottom: 142px;
+  text-align: center;
 }
 
 .inner-subscribe .subscribe-title {
@@ -1456,22 +1453,22 @@ body {
 
 
 .inner-subscribe-description {
-  margin: 0 auto 46px;
   width: 720px;
+  margin: 0 auto 46px;
 }
 
 /*  модальное окно */
 
 .modal {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 100%;
-  height: 100%;
-  z-index: 2;
   top: 0;  /* без top: 0; left: 0; окно будет смещаться из центра прои зуме */
   left: 0;
+  z-index: 2;
   display: none;
+  width: 100%;
+  height: 100%;
   place-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .modal-opened {
@@ -1479,15 +1476,15 @@ body {
 }
 
 .modal-container {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  row-gap: 54px;
+  padding: 70px;
+  padding-top: 54px;
   width: 715px;
   background: #ffffff;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
-  padding: 70px;
-  padding-top: 54px;
-  display: grid;
-  grid-template-columns: 1fr min-content;
-  row-gap: 54px;
 }
 
 .modal-close-button {
@@ -1500,8 +1497,8 @@ body {
 }
 
 .modal-close-button::after {
-  content: "";
   display: block;  /*  все созданные псевдоэлементы по умолчанию display: inline;  для задания размеров необходимо применить display: block, flex, grid...  */
+  content: "";
   width: 53px;
   height: 53px;
   background-image: url("../images/icons/modal-close.svg");
@@ -1525,11 +1522,10 @@ body {
 }
 
 .modal-title {
-  line-height: 40px;
-  margin: 0;
-
   align-self: center;
+  margin: 0;
   padding-top: 4px;
+  line-height: 40px;
 }
 
 .modal-content {   /* по сути форме присвоен так же этот класс видимо что бы подчеркнуть структуру   */
@@ -1556,22 +1552,22 @@ body {
 }
 
 .modal-field-title {
+  align-self: center;  /* будет далее действовать во всех grid    */
   padding-top: 2px;
   padding-left: 2px;
   font-weight: 700;
   font-size: 18px;
   line-height: 40px;
-  align-self: center;  /* будет далее действовать во всех grid    */
   cursor: pointer;
 }
 
 .modal-search-form .field-input {
-  line-height: 40px;
-  font-weight: 700;
-  border-radius: 4px;
   padding-left: 21px;
   padding-right: 20px;
   height: 50px;
+  line-height: 40px;
+  font-weight: 700;
+  border-radius: 4px;
 }
 
 
@@ -1587,12 +1583,12 @@ body {
 }
 
 .modal-field-message {
+  grid-column: 2 / 3;
   margin-top: -7px;
   margin-left: 1px;
   font-size: 16px;
   line-height: 40px;
   color: #333333;
-  grid-column: 2 / 3;
 }
 
 .modal-field-message-error {
@@ -1606,16 +1602,13 @@ body {
 }
 
 .number-button {
-  background-color: transparent;
+  z-index: 1;
+  display: grid;
+  place-content: center;
   width: 50px;
   height: 50px;
   border: none;
-
-  z-index: 1;
-  top: 0;
-
-  display: grid;
-  place-content: center;
+  background-color: transparent;
 }
 
 .number-button-minus {
@@ -1631,10 +1624,9 @@ body {
 .number-input {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-
+  width: 133px;
   padding: 0 50px;
   text-align: center;
-  width: 133px;
   appearance: textfield;  /* Для Firefox попроще: Код прячет стрелки управления в браузерах */
 }
 
@@ -1678,7 +1670,6 @@ body {
 .modal-form-info {
   position: relative;
   display: grid;
-
   grid-template-columns: min-content min-content;
   justify-content: end; /* выравнивает "дети:" по правому краю   */
   align-items: center;
@@ -1689,13 +1680,11 @@ body {
   display: block;
   width: 25px;
   height: 25px;
-  background-color: #83b3d3;
-  border-radius: 50%;
-
   margin-top: 5px; /* подгонка по местоположению */
   margin-right: 2px;
   margin-left: 10px;
-
+  background-color: #83b3d3;
+  border-radius: 50%;
   background-image: url("../images/icons/i-info.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1710,15 +1699,15 @@ body {
   position: absolute;
   top: 40px;
   left: calc(-128px + 50%);
+  display: none;
   width: 256px;
+  padding: 20px 20px 23px 24px;
+  font-size: 16px;
+  line-height: 20px;
   background-color: #333333;
   border-radius: 10px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   color: #ffffff;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 20px 20px 23px 24px;
-  display: none;
 }
 
 .field-info-icon:hover .field-info-text {
@@ -1728,11 +1717,10 @@ body {
 .field-info::before {
   content: "";
   position: absolute;
-  width: 19px;
-  height: 9px;
   top: -9px;
   left: calc(50% - 10px);
-
+  width: 19px;
+  height: 9px;
   background-image: url("../images/icons/triangle.svg");
   background-repeat: no-repeat;
   background-position: center;
