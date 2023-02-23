@@ -17,7 +17,7 @@
 }
 
 *,
-*::before, 
+*::before,
 *::after {
   box-sizing: border-box;
 }
@@ -47,7 +47,7 @@ body {
   font-weight: 400;
   color: #000000;
   background-color: #f2f2f2;
-  
+
 
   /*outline: 2px solid rgba(87, 255, 78, 0.5);
   outline-offset: -2px;*/ /* Рамка для подстветки элементов*/
@@ -131,7 +131,7 @@ body {
 
 .navigation {
   display: flex;
-  
+
   padding: 0 65px 0 75px;
   background-color: #ffffff;
 }
@@ -142,7 +142,7 @@ body {
   width: 139px;
   height: 70px;
   margin-right:30px;
-  
+
 }
 
 .navigation-list {
@@ -168,7 +168,7 @@ body {
   position: relative;
 }
 
-.navigation-link[href]:hover { /* тем самы выделяем только активные ссылки на элементах, по которым можно перейти на другие страницы. К неактивным элементам например текущая страница эта стилизация применяться не будет, так у ссылки на текущую страницу отсутствует атрибут href */ 
+.navigation-link[href]:hover { /* тем самы выделяем только активные ссылки на элементах, по которым можно перейти на другие страницы. К неактивным элементам например текущая страница эта стилизация применяться не будет, так у ссылки на текущую страницу отсутствует атрибут href */
   color: #756257;
 }
 
@@ -234,7 +234,7 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.navigation-button-link { 
+.navigation-button-link {
   line-height: 20px;
   padding: 9px 15px 8px;
   margin-left: 20px;
@@ -258,19 +258,19 @@ body {
   background-color: #3d78a0;
   background-repeat: no-repeat;
 
-  background-position: 
+  background-position:
   50% calc(40% - 2px),
   center bottom,
   50% 50%;
 
-  background-size: 
+  background-size:
   auto auto,
   100% auto,
   cover;
 
   background-image:
   url("../images/background/welcome.svg"),
-  url("../images/background/divider.svg"), 
+  url("../images/background/divider.svg"),
   url("../images/background/index-background.jpg");
 }
 
@@ -313,7 +313,7 @@ body {
   padding: 0;
   text-align: center;
   list-style-type: none;
-  
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   counter-reset: counter-item-advantages; /*запускаем функцию счетчик*/
@@ -328,7 +328,7 @@ body {
   grid-column: span 2;
   width: 100%;
   height: auto;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .advantages-item-large:nth-child(2) img {
@@ -400,7 +400,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .details-item-housing {
-  background-image: url("../images/icons/housing.svg"); 
+  background-image: url("../images/icons/housing.svg");
 }
 
 .details-item-eating {
@@ -469,7 +469,7 @@ background-color:rgba(131, 179, 211, 0.2);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
- 
+
   padding-top: 100px;
   padding-bottom: 88px;
 }
@@ -484,7 +484,7 @@ background-color:rgba(131, 179, 211, 0.2);
   color: #ffffff;
 }
 
- 
+
 
 .subscribe-description{
   margin: 0 240px 46px;
@@ -525,7 +525,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .field-input:focus {
   outline: 2px solid #83b3d3;
   background-color: #e6e6e6;
-  
+
 }
 
 .field-input-error {
@@ -567,7 +567,7 @@ background-color:rgba(131, 179, 211, 0.2);
   margin-top: -2px;
   margin-right: 3px;
   margin-bottom: 3px;
-  fill: #83B3D3; /* Свойство fill наследуется поэтому укажем его здесь(а не в svg) что бы использовать :hover, active, focus:not(:active) не на прямую в svg а через родительскую ссылку, к томуже нам нужно еще добавить на эту ссылку outline.А если стилизовать svg отдельно, то придеться писать псевдоклассы взаимодействия еще и на него  */ 
+  fill: #83B3D3; /* Свойство fill наследуется поэтому укажем его здесь(а не в svg) что бы использовать :hover, active, focus:not(:active) не на прямую в svg а через родительскую ссылку, к томуже нам нужно еще добавить на эту ссылку outline.А если стилизовать svg отдельно, то придеться писать псевдоклассы взаимодействия еще и на него  */
   border-radius: 10px;
 }
 .social-link:hover {
@@ -609,7 +609,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .footer-phone:focus:not(:active) {
   color: #756257;
-  outline: 3px solid #83B3D3;  
+  outline: 3px solid #83B3D3;
 }
 
 
@@ -693,7 +693,7 @@ background-color:rgba(131, 179, 211, 0.2);
   background-repeat: no-repeat;
   background-size: 5px 8px;
   background-position: center 55%;
-  
+
 }
 
 .breadcrumbs-link {
@@ -712,7 +712,7 @@ background-color:rgba(131, 179, 211, 0.2);
   background-image: url("../images/icons/home-breadcrumbs.svg");
   background-repeat: no-repeat;
   background-position: right 50% top 2px;
-  background-size: 12px 12px;  
+  background-size: 12px 12px;
 }
 
 .breadcrumbs-link:hover {
@@ -816,11 +816,11 @@ background-color:rgba(131, 179, 211, 0.2);
  /* checkbox */
 
 .control:hover .control-input[type="checkbox"] + .control-label::before {
-  background-color: rgba(255, 255, 255, 0.6);  /* если применить простое opacity то оно повлияет на z-index и при наведении псевдоэлемент before будет располагаться над псевдоэлементом after и если галка поставлена она будет исчезат при наведении. Еще можно использовать в таком случае z-index: 1; для .control-label::after */ 
+  background-color: rgba(255, 255, 255, 0.6);  /* если применить простое opacity то оно повлияет на z-index и при наведении псевдоэлемент before будет располагаться над псевдоэлементом after и если галка поставлена она будет исчезат при наведении. Еще можно использовать в таком случае z-index: 1; для .control-label::after */
 }
 
 .control-input[type="checkbox"]:active + .control-label::before {
-  background-color: rgba(255, 255, 255, 0.3); 
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -829,10 +829,10 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .control-input[type="checkbox"]:checked + .control-label::after {
-	display: block;
+  display: block;
 }
 
-/* radio */ 
+/* radio */
 
 .control-input[type="radio"] + .control-label::before {
   content: "";
@@ -883,8 +883,8 @@ background-color:rgba(131, 179, 211, 0.2);
   border-right: 2px solid #ffffff;
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px;
-	
-  
+
+
 }
 
 /* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
@@ -952,7 +952,7 @@ background-color:rgba(131, 179, 211, 0.2);
 	background-color: rgba(255, 255, 255, 0.3);
 	display: flex;
 	flex-direction: column;  /*  для растяжения */
-	
+
 }
 
 .slider-bar {
@@ -1004,7 +1004,7 @@ background-color:rgba(131, 179, 211, 0.2);
   user-select: none;
 }
 
-/* range-slider end*/ 
+/* range-slider end*/
 
 
 .filter-buttons {
@@ -1066,7 +1066,7 @@ background-color:rgba(131, 179, 211, 0.2);
   padding-bottom: 53px;
 }
 
-.sorting-type-text { 
+.sorting-type-text {
   min-width: 338px;
   display: flex;
   margin: 0;
@@ -1077,7 +1077,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 /* select-view */
-/* select-pagination */ 
+/* select-pagination */
 
 .select-view,
 .select-pagination {  /* ширина второго селекта задается далее в разделе pagination-select */
@@ -1085,7 +1085,7 @@ background-color:rgba(131, 179, 211, 0.2);
   position: relative; /* что бы в дальнейшем исключить select-view-list потока задав ему потом абсолютную позицию относительно родителя */
 }
 
-.select-button {  /*ширина элемента .select-view-button  задается размеров колонки грид-коннтейнера .catalog-sort */ 
+.select-button {  /*ширина элемента .select-view-button  задается размеров колонки грид-коннтейнера .catalog-sort */
   color: #333333;
   height: 48px;
   display: flex;   /* также убирается черный тругольник у summary так как изначально summary имеет display: list-item и поэтому имеет маркер в виде треугольника*/
@@ -1099,7 +1099,7 @@ background-color:rgba(131, 179, 211, 0.2);
   user-select: none;  /* не позволяет выделять область текста так как это мешает пользоваться  */
 }
 
- 
+
 
 .select-button:hover {
   outline: 2px solid #83B3D3;
@@ -1189,7 +1189,7 @@ background-color:rgba(131, 179, 211, 0.2);
   display: block;
   width: 48px;
   height: 48px;
-  
+
   background-repeat: no-repeat;
   background-size: 16px 14px;
   background-position: center;
@@ -1208,7 +1208,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .button-view-tile {
-  background-image: url("../images/icons/mode-tile.svg"); 
+  background-image: url("../images/icons/mode-tile.svg");
 }
 .button-view-slideshow {
   background-image: url("../images/icons/mode-slideshow.svg");
@@ -1234,7 +1234,7 @@ background-color:rgba(131, 179, 211, 0.2);
   list-style-type: none;
   display: grid;
   gap: 16px 25px;
-  grid-template-columns: 133px 143px; 
+  grid-template-columns: 133px 143px;
 }
 
 .product-card-link {
@@ -1258,9 +1258,9 @@ background-color:rgba(131, 179, 211, 0.2);
   grid-column: 1 / -1;
   order: -1;
 }
-                                                    
+
 .product-card-link:hover + .product-card-image {  /* ньюанс в том, что мы наводим на псевдоэлемент, но вот такая запись у меня не сработала .product-card-link::before:hover, а сработала вот такая запись .product-card-link:hover */
-  opacity: 0.6;                                     /* так здесь нет вложености нужно использовать "соседние селекиторы" Для управления стилем соседних элементов используется символ плюса (+), который устанавливается между двумя селекторами E и F. Пробелы вокруг плюса не обязательны. Стиль при такой записи применяется к элементу F, но только в том случае, если он является соседним для элемента E и следует сразу после него.  */ 
+  opacity: 0.6;                                     /* так здесь нет вложености нужно использовать "соседние селекиторы" Для управления стилем соседних элементов используется символ плюса (+), который устанавливается между двумя селекторами E и F. Пробелы вокруг плюса не обязательны. Стиль при такой записи применяется к элементу F, но только в том случае, если он является соседним для элемента E и следует сразу после него.  */
 }
 
 .product-card-link:focus { /* убираем рамку с кликабельного псевдоэлемента при фокусе */
@@ -1327,15 +1327,15 @@ background-color:rgba(131, 179, 211, 0.2);
   justify-content: space-between;
 }
 
-.rating-stars { /* добавили в разметку к каждой карточке пустой контейнер с таким классом */ 
+.rating-stars { /* добавили в разметку к каждой карточке пустой контейнер с таким классом */
   background-image: url("../images/icons/star.svg"); /* добавим в фон изображение одной звезды (размер шрина 18px, высота: 17px ) */
-  background-size: 25px 17px;  /* захватываем в нашу область бэкграунда кусок пустого пространства справа по горизонтали который равен 7px(растояние между звездами на макете) так как ширина звезды равна 18 то общая ширина с отступом 18+7=25 */ 
+  background-size: 25px 17px;  /* захватываем в нашу область бэкграунда кусок пустого пространства справа по горизонтали который равен 7px(растояние между звездами на макете) так как ширина звезды равна 18 то общая ширина с отступом 18+7=25 */
   background-position: -3px 50%; /* выставляем звезду к левому краю по горизотали(так как мы взяли ширину бекграуда больше чем ширина звезды, то звезда автоматически поместится по центру оставив по три с полоаиной пикселя пустого пространства по обеим сторонам. Поэтому сместим ее влево на половину промежутка (между звездами на макете) но число пикселей должно быть целым, возьмем 3 px. И выравниваем по середине по вертикали */
   background-repeat: repeat-x; /* теперь повторяем нашу звезду (вместе с пустым промежутком) по горизонтали */
-  
+
 }
 
-.star-one { /* количество звезд можно регулировать шириной контейнера с фоном из звезд присвоим следущим классам соответсвую ширину */ 
+.star-one { /* количество звезд можно регулировать шириной контейнера с фоном из звезд присвоим следущим классам соответсвую ширину */
   width: 18px; /* влезет только одна звезда*/
 }
 
@@ -1411,7 +1411,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .pagination-item {
-  margin: 0 4px;  /* располовиниваем горизонтальный отсутп между элементами */  
+  margin: 0 4px;  /* располовиниваем горизонтальный отсутп между элементами */
 }
 
 .pagination-link{
@@ -1440,7 +1440,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .pagination-link[href]:focus:not(:active) {  /* когда фокус и фокус визибле совпадают то то их стили накладываются и стилизация выглядит не так как зудумывалось */
   background-color: #68A2CA;
   outline: 3px solid #756257;
-  outline-offset: 0;  /* важно!!!!!!!! при выборе через таб на клавиатуре появляется кольцо фокусировки стилизованое от браузера оно изменяет outline-offset вроде... И в зависимости от того выбран ли элемент мышкой или клавиатурой получается немго отличия в стилизации. непонятно. Для примера можно добавить .pagination-link:focus-visible {outline-offset: 5px;} */ 
+  outline-offset: 0;  /* важно!!!!!!!! при выборе через таб на клавиатуре появляется кольцо фокусировки стилизованое от браузера оно изменяет outline-offset вроде... И в зависимости от того выбран ли элемент мышкой или клавиатурой получается немго отличия в стилизации. непонятно. Для примера можно добавить .pagination-link:focus-visible {outline-offset: 5px;} */
 }
 
 .pagination-current-link {
@@ -1455,7 +1455,7 @@ background-color:rgba(131, 179, 211, 0.2);
   align-items: center;
   min-width: 386px;
 }
-.pagination-selest-label { 
+.pagination-selest-label {
   margin: 0;
   margin-right: 51px;
 }
@@ -1531,7 +1531,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .modal-close-button::after {
   content: "";
-  display: block;  /*  все созданные псевдоэлементы по умолчанию display: inline;  для задания размеров необходимо применить display: block, flex, grid...  */ 
+  display: block;  /*  все созданные псевдоэлементы по умолчанию display: inline;  для задания размеров необходимо применить display: block, flex, grid...  */
   width: 53px;
   height: 53px;
   background-image: url("../images/icons/modal-close.svg");
@@ -1555,9 +1555,9 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .modal-title {
-  line-height: 40px; 
+  line-height: 40px;
   margin: 0;
-   
+
   align-self: center;
   padding-top: 4px;
 }
@@ -1584,11 +1584,11 @@ background-color:rgba(131, 179, 211, 0.2);
   display: grid;
   grid-template-columns: 140px 1fr;
   column-gap: 15px;
-  
+
 }
 
 .modal-field-title {
-  padding-top: 2px; 
+  padding-top: 2px;
   padding-left: 2px;
   font-weight: 700;
   font-size: 18px;
@@ -1642,10 +1642,10 @@ background-color:rgba(131, 179, 211, 0.2);
   width: 50px;
   height: 50px;
   border: none;
-  
+
   z-index: 1;
   top: 0;
-  
+
   display: grid;
   place-content: center;
 }
@@ -1663,9 +1663,9 @@ background-color:rgba(131, 179, 211, 0.2);
 .number-input {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-  
+
   padding: 0 50px;
-  text-align: center;   
+  text-align: center;
   width: 133px;
 }
 
@@ -1703,7 +1703,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .number-button:active::after {
   opacity: 0.2;
-  
+
 }
 
 .number-button:focus:not(:active)::after {
@@ -1714,26 +1714,26 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .modal-form-info {
   position: relative;
-  display: grid; 
-  
+  display: grid;
+
   grid-template-columns: min-content min-content;
   justify-content: end; /* выравнивает "дети:" по правому краю   */
   align-items: center;
 }
 
 .field-info-icon {
-  
+
   position: relative;
   display: block;
   width: 25px;
   height: 25px;
   background-color: #83b3d3;
   border-radius: 50%;
-  
-  margin-top: 5px; /* подгонка по местоположению */ 
+
+  margin-top: 5px; /* подгонка по местоположению */
   margin-right: 2px;
   margin-left: 10px;
-  
+
   background-image: url("../images/icons/i-info.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1771,7 +1771,7 @@ background-color:rgba(131, 179, 211, 0.2);
   height: 9px;
   top: -9px;
   left: calc(50% - 10px);
-  
+
   background-image: url("../images/icons/triangle.svg");
   background-repeat: no-repeat;
   background-position: center;
