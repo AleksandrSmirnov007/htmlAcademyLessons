@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
 
-  src: url(../fonts/ptsans-400.woff2) format("woff2");
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 700;
 
-  src: url(../fonts/ptsans-700.woff2) format("woff2");
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .img {
-  display:block;
+  display: block;
   width: 100%;
   height: auto;
 }
@@ -39,7 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
   font-size: 18px;
   line-height: 23px;
@@ -66,7 +66,7 @@ body {
 
 /* buttons */
 
-.button{
+.button {
   font-size: 16px;
   line-height: 21px;
   color: #ffffff;
@@ -92,24 +92,24 @@ body {
 
 .button:focus:not(:active) {
   background-color: #615048;
-  outline: 3px solid #83B3D3;
+  outline: 3px solid #83b3d3;
 }
 
 .button-secondary {
-  background-color: #83B3D3;
+  background-color: #83b3d3;
 }
 
 .button-secondary:hover {
-  background-color: #68A2CA;
+  background-color: #68a2ca;
 }
 
 .button-secondary:active {
-  background-color: #68A2CA;
+  background-color: #68a2ca;
   color: rgba(255, 255, 255, 0.3);
 }
 
 .button-secondary:focus:not(:active) {
-  background-color: #68A2CA;
+  background-color: #68a2ca;
   outline: 3px solid #756257;
 }
 
@@ -136,13 +136,12 @@ body {
   background-color: #ffffff;
 }
 
-.navigation-logo{
+.navigation-logo {
   z-index: 2;  /* поднимает слой иначе оказывается сзади фоновых изображениий которые находятся в main*/
   margin-bottom: -10px;
   width: 139px;
   height: 70px;
-  margin-right:30px;
-
+  margin-right: 30px;
 }
 
 .navigation-list {
@@ -177,7 +176,7 @@ body {
 }
 
 
-.navigation-link-current:after {    /*делаем черту потекущей вкладкой меню*/
+.navigation-link-current::after {    /*делаем черту потекущей вкладкой меню*/
   z-index: 1;
   content: "";
   position: absolute;
@@ -195,7 +194,6 @@ body {
   margin-left: auto;
 }
 
-
 .navigation-icon {
   display: grid;
   place-content: center;
@@ -203,7 +201,6 @@ body {
   width: 42px;
   height: 66px;
   padding: 22px 11px;
-
 }
 
 .navigation-icon:hover {
@@ -211,7 +208,7 @@ body {
 }
 
 .navigation-icon:active {
-  fill:rgba(117, 98, 87, 0.3);
+  fill: rgba(117, 98, 87, 0.3);
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -225,8 +222,8 @@ body {
   font-size: 10px;
   font-weight: 400;
   line-height: 13px;
-  color: #FFFFFF;
-  background-color: #7DB54F;
+  color: #ffffff;
+  background-color: #7db54f;
   border-radius: 10px;
 }
 
@@ -259,19 +256,19 @@ body {
   background-repeat: no-repeat;
 
   background-position:
-  50% calc(40% - 2px),
-  center bottom,
-  50% 50%;
+    50% calc(40% - 2px),
+    center bottom,
+    50% 50%;
 
   background-size:
-  auto auto,
-  100% auto,
-  cover;
+    auto auto,
+    100% auto,
+    cover;
 
   background-image:
-  url("../images/background/welcome.svg"),
-  url("../images/background/divider.svg"),
-  url("../images/background/index-background.jpg");
+    url("../images/background/welcome.svg"),
+    url("../images/background/divider.svg"),
+    url("../images/background/index-background.jpg");
 }
 
 /* advantages - преимущества седоны*/
@@ -324,6 +321,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .advantages-img {
   grid-column: span 2;
   width: 100%;
@@ -342,20 +340,20 @@ body {
 
 .advantages-item:nth-child(1) .advantages-point, /*первый и второй текстовые пункты преимущества*/
 .advantages-item:nth-child(2) .advantages-point {
-  background-color: #83B3D3;
+  background-color: #83b3d3;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.advantages-item:nth-child(2n+3), /*третий и пятый пункты преимуществ*//*и нечетные пунткты с изображениями имеют один цвет bg*/
+/*третий и пятый пункты преимуществ*//*и нечетные пунткты с изображениями имеют один цвет bg*/
+.advantages-item:nth-child(2n+3),
 .details-item:nth-child(odd) {
-  background-color:rgba(131, 179, 211, 0.12);
+  background-color: rgba(131, 179, 211, 0.12);
 }
 
 .advantages-item:nth-child(4) {
-background-color:rgba(131, 179, 211, 0.2);
+  background-color: rgba(131, 179, 211, 0.2);
 }
 
 .advantages-point {
@@ -373,8 +371,9 @@ background-color:rgba(131, 179, 211, 0.2);
   line-height: 21px;
   margin: 0;
 }
+
 .advantages-description::before {
-  content: "— №"counter(counter-item-advantages)" —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
+  content: "— №" counter(counter-item-advantages) " —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
   display: block;
   margin: 30px auto;
 }
@@ -418,6 +417,8 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .details-description {
   margin: 0;
+  line-height: 21px;
+  color: #333333;
 }
 
 /*шрифт в преимуществах Седоны*/
@@ -428,11 +429,6 @@ background-color:rgba(131, 179, 211, 0.2);
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
-}
-
-.details-description {
-  line-height: 21px;
-  color: #333333;
 }
 
 
@@ -446,12 +442,13 @@ background-color:rgba(131, 179, 211, 0.2);
   padding-top: 93px;
   padding-bottom: 93px;
 }
+
 .search-title {
   margin: 0 240px 29px;
 }
 
 .search-subtitle {
-  margin: 0px 240px 56px;
+  margin: 0 240px 56px;
 }
 
 .search-button {
@@ -464,8 +461,8 @@ background-color:rgba(131, 179, 211, 0.2);
 /* subscribe */
 
 .subscribe {
-  background-color: #83B3D3;
-  background-image: url('../images/background/background-index-bottom.jpg');
+  background-color: #83b3d3;
+  background-image: url("../images/background/background-index-bottom.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -474,7 +471,7 @@ background-color:rgba(131, 179, 211, 0.2);
   padding-bottom: 88px;
 }
 
-.subscribe-title{
+.subscribe-title {
   line-height: 36px;
   margin: 0 240px 29px;
 }
@@ -484,9 +481,7 @@ background-color:rgba(131, 179, 211, 0.2);
   color: #ffffff;
 }
 
-
-
-.subscribe-description{
+.subscribe-description {
   margin: 0 240px 46px;
 }
 
@@ -495,28 +490,25 @@ background-color:rgba(131, 179, 211, 0.2);
   display: flex;
 }
 
-.field-input{
+.field-input {
   font-family: inherit;
   font-size: 18px;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   width: 100%;
   border: 2px solid transparent;
 }
 
 .subscribe-field {
   margin-left: auto;
-
 }
 
 .subscribe-field .field-input {
-	border-radius: 10px 0px 0px 10px;
-	line-height: 26px;
-	padding-left: 22px;
-    width: 600px;
-    height: 60px;
+  border-radius: 10px 0 0 10px;
+  line-height: 26px;
+  padding-left: 22px;
+  width: 600px;
+  height: 60px;
 }
-
-
 
 .field-input:hover {
   background-color: #e6e6e6;
@@ -525,7 +517,6 @@ background-color:rgba(131, 179, 211, 0.2);
 .field-input:focus {
   outline: 2px solid #83b3d3;
   background-color: #e6e6e6;
-
 }
 
 .field-input-error {
@@ -536,7 +527,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .subscribe-button {
   width: 200px;
   margin-right: auto;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0 10px 10px 0;
 }
 
 /* footer */
@@ -567,27 +558,27 @@ background-color:rgba(131, 179, 211, 0.2);
   margin-top: -2px;
   margin-right: 3px;
   margin-bottom: 3px;
-  fill: #83B3D3; /* Свойство fill наследуется поэтому укажем его здесь(а не в svg) что бы использовать :hover, active, focus:not(:active) не на прямую в svg а через родительскую ссылку, к томуже нам нужно еще добавить на эту ссылку outline.А если стилизовать svg отдельно, то придеться писать псевдоклассы взаимодействия еще и на него  */
+  fill: #83b3d3; /* Свойство fill наследуется поэтому укажем его здесь(а не в svg) что бы использовать :hover, active, focus:not(:active) не на прямую в svg а через родительскую ссылку, к томуже нам нужно еще добавить на эту ссылку outline.А если стилизовать svg отдельно, то придеться писать псевдоклассы взаимодействия еще и на него  */
   border-radius: 10px;
 }
+
 .social-link:hover {
-  fill: #68A2CA;
+  fill: #68a2ca;
 }
 
 .social-link:active {
   opacity: 0.3;
-  fill: #68A2CA;
+  fill: #68a2ca;
 }
 
 .social-link:focus:not(:active) {
-  outline: 3px solid #83B3D3;
+  outline: 3px solid #83b3d3;
   outline-offset: -3px;
-  fill: #83B3D3;
+  fill: #83b3d3;
 }
 
-
 /* footer-phone */
-.footer-phone{
+.footer-phone {
   color: inherit;
   text-decoration: none;
   font-size: 40px;
@@ -603,15 +594,15 @@ background-color:rgba(131, 179, 211, 0.2);
 .footer-phone:hover {
   color: #756257;
 }
+
 .footer-phone:active {
   opacity: 0.3;
 }
 
 .footer-phone:focus:not(:active) {
   color: #756257;
-  outline: 3px solid #83B3D3;
+  outline: 3px solid #83b3d3;
 }
-
 
 .footer-developer-link {
   margin-top: -15px;
@@ -632,7 +623,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .footer-developer-link:focus:not(:active) {
-  outline: 3px solid #83B3D3;
+  outline: 3px solid #83b3d3;
   fill: #756257;
 }
 
@@ -643,7 +634,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .inner-header-container {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #3d78a0;
   background-image: url("../images/background/catalog-background.jpg");
   background-repeat: no-repeat;
@@ -654,13 +645,13 @@ background-color:rgba(131, 179, 211, 0.2);
   padding-bottom: 84px;
   min-height: 408px;
 }
+
 .inner-main-title {
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
   margin-top: 0;
   margin-bottom: -15px;
-
 }
 
 /*Хлебные крошки*/
@@ -693,13 +684,12 @@ background-color:rgba(131, 179, 211, 0.2);
   background-repeat: no-repeat;
   background-size: 5px 8px;
   background-position: center 55%;
-
 }
 
 .breadcrumbs-link {
   display: block;
   height: 100%;
-  padding: 0px 5px;
+  padding: 0 5px;
   border: 3px solid transparent;
   border-radius: 4px;
   text-decoration: none;
@@ -724,7 +714,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .breadcrumbs-link:focus:not(:active) {
-  border: 3px solid #83B3D3;
+  border: 3px solid #83b3d3;
   border-radius: 4px;
 }
 
@@ -753,8 +743,8 @@ background-color:rgba(131, 179, 211, 0.2);
   list-style-type: none;
 }
 
-.catalog-filter-item:not(:last-child){
-	margin-bottom: 13px;
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 13px;
 }
 
 .filter-fieldset {
@@ -764,12 +754,9 @@ background-color:rgba(131, 179, 211, 0.2);
   border: none;
 }
 
-
-
-
 /*  checkbox  and radio */
 .control {
-	position: relative;
+  position: relative;
   user-select: none;
   cursor: pointer;
 }
@@ -786,18 +773,18 @@ background-color:rgba(131, 179, 211, 0.2);
   grid-column: 1 / 2; /* тфким образом заставим элементы наслоиться друг на друга */
   grid-row: 1 / 2;
   content: "";
-	width: 20px;
-	height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .control-label::before {
-  background-color: white;
-	border-radius: 4px;
+  background-color: #ffffff;
+  border-radius: 4px;
 }
 
 
 .control-label::after {
-	background-image: url("../images/icons/tick.svg");
+  background-image: url("../images/icons/tick.svg");
   background-repeat: no-repeat;
   background-position: center;
   display: none;
@@ -813,7 +800,7 @@ background-color:rgba(131, 179, 211, 0.2);
   border-radius: 50%;
 }
 
- /* checkbox */
+/* checkbox */
 
 .control:hover .control-input[type="checkbox"] + .control-label::before {
   background-color: rgba(255, 255, 255, 0.6);  /* если применить простое opacity то оно повлияет на z-index и при наведении псевдоэлемент before будет располагаться над псевдоэлементом after и если галка поставлена она будет исчезат при наведении. Еще можно использовать в таком случае z-index: 1; для .control-label::after */
@@ -825,7 +812,7 @@ background-color:rgba(131, 179, 211, 0.2);
 
 
 .control-input:focus + .control-label::before {
-  outline: 3px solid #83B3D3;
+  outline: 3px solid #83b3d3;
 }
 
 .control-input[type="checkbox"]:checked + .control-label::after {
@@ -836,25 +823,21 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .control-input[type="radio"] + .control-label::before {
   content: "";
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 .control-input[type="radio"]:checked + .control-label::after {
   display: block;
 }
 
- /* checkbox radio disabled*/
+/* checkbox radio disabled*/
 
 
- .control-input:disabled + .control-label::before {
-  background-color:rgba(255, 255, 255, 0.3);
- }
-
-
+.control-input:disabled + .control-label::before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
 /* range */
-
-
 
 .filter-fieldset-price {
   width: 287px;
@@ -866,45 +849,43 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .range-fields {
-	margin-bottom: 28px;
+  margin-bottom: 28px;
   display: flex;
 }
 
 .range-field {
   flex-grow: 1;
-	display: flex;
+  display: flex;
   justify-content: space-between;
   height: 48px;
   padding-bottom: 11px;
   padding-top: 14px;
-	padding-left: 17px;
+  padding-left: 17px;
   padding-right: 14px;
-	border: 2px solid #ffffff;
+  border: 2px solid #ffffff;
   border-right: 2px solid #ffffff;
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
-
-
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 /* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 /* Для Firefox попроще: */
-.range-input[type='number'] {
-  -moz-appearance: textfield;
+.range-input[type="number"] {
+  appearance: textfield;
 }
 
-.range-field + .range-field{
+.range-field + .range-field {
   margin-left: -2px;
   border-right: 2px solid #ffffff;
-	border-left: 2px solid #ffffff;
-	border-radius: 0;
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
+  border-left: 2px solid #ffffff;
+  border-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .range-field:hover {
@@ -916,8 +897,8 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .range-field:focus-within:not(:active) {
-  outline: 3px solid #83B3D3;
-  box-shadow: inset 0 0 0 3px #83B3D3;
+  outline: 3px solid #83b3d3;
+  box-shadow: inset 0 0 0 3px #83b3d3;
   opacity: 1;
   z-index: 1;
 }
@@ -932,7 +913,8 @@ background-color:rgba(131, 179, 211, 0.2);
   align-self: center;
   padding-bottom: 2px;
 }
-.range-input{
+
+.range-input {
   color: #ffffff;
   font-size: 18px;
   line-height: 23px;
@@ -942,57 +924,54 @@ background-color:rgba(131, 179, 211, 0.2);
   font-family: "PT Sans", sans-serif;
 }
 
-
-
 /*  range-slider  */
 
 .range-slider {
-	height: 4px;
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0.3);
-	display: flex;
-	flex-direction: column;  /*  для растяжения */
-
+  height: 4px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;  /*  для растяжения */
 }
 
 .slider-bar {
   position: relative;
-	height: 4px;
-	background-color: #ffffff;
+  height: 4px;
+  background-color: #ffffff;
 }
 
 .range-toggle {
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	border: none;
-	border-radius: 4px;
-	background-color: #ffffff;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
   cursor: pointer;
 }
 
 .range-toggle:hover {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .range-toggle:active {
   outline: 2px solid #83b3d3;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .range-toggle:focus:not(:active) {
-  outline: 3px solid #83B3D3;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  outline: 3px solid #83b3d3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .toggle-min {
-	top: -8px;
-	left: 0;
+  top: -8px;
+  left: 0;
 }
 
 .toggle-max {
-	top: -8px;
-	right: -0;
+  top: -8px;
+  right: -0;
 }
 
 
@@ -1021,12 +1000,12 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .filter-submit:focus:not(:active) {  /* неоходимо поддерживать специфичность селекторов на одном уровне, если уже и используем конструкцию :focus:not(:active) то так, и надо делать везде, иначе невозможно будет переопределить стили за счет того, что селектор находиться ниже переопределяемого  */
-  outline: 3px solid #FFFFFF;
+  outline: 3px solid #ffffff;
 }
 
 .button-reset {
   font-family: "PT sans", sans-serif;
-  color:#FFFFFF;
+  color: #ffffff;
   background-color: rgba(0, 0, 0, 0);
   border: 0;
   font-size: 18px;
@@ -1040,20 +1019,20 @@ background-color:rgba(131, 179, 211, 0.2);
 .button-reset:hover {
   opacity: 0.6;
 }
+
 .button-reset:active {
   opacity: 0.3;
 }
+
 .button-reset:focus:not(:active) {
-  outline: 3px solid #83B3D3;
+  outline: 3px solid #83b3d3;
   border-radius: 4px;
 }
-
-
 
 /* catalog */
 
 .catalog {
-  padding: 0px 72px;
+  padding: 0 72px;
 }
 /*сортировка и отображение*/
 
@@ -1090,7 +1069,7 @@ background-color:rgba(131, 179, 211, 0.2);
   height: 48px;
   display: flex;   /* также убирается черный тругольник у summary так как изначально summary имеет display: list-item и поэтому имеет маркер в виде треугольника*/
   align-items: center;
-  outline: 2px solid #E6E6E6;
+  outline: 2px solid #e6e6e6;
   outline-offset: -2px;  /* outline всегда делает обводку снаружи элемента. И если мы хотим заменить border на outline c теми же размерами(в селекте это актуально нам нужно перекрыть outline фокуса браузера) необходимо сужать outline к центру элемента свойством outline-ofset с отрицательным значением равным толщине линии*/
   border-radius: 4px;
   padding-left: 19px;
@@ -1099,23 +1078,21 @@ background-color:rgba(131, 179, 211, 0.2);
   user-select: none;  /* не позволяет выделять область текста так как это мешает пользоваться  */
 }
 
-
-
 .select-button:hover {
-  outline: 2px solid #83B3D3;
+  outline: 2px solid #83b3d3;
   outline-offset: -2px;
 }
+
 .select-button:active {
-  outline: 2px solid #E6E6E6;
+  outline: 2px solid #e6e6e6;
   outline-offset: -2px;
   color: rgb(51, 51, 51, 0.3);
 }
 
 .select-button:focus:not(:active) {
-  outline: 2px solid #83B3D3;
+  outline: 2px solid #83b3d3;
   outline-offset: -2px;
 }
-
 
 .select-button::after { /* создаем новую стрелку */
   content: "";
@@ -1145,7 +1122,7 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .select-link {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   color: #333333;
   display: block;
   text-decoration: none;
@@ -1158,17 +1135,17 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .select-link[href]:hover {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
 }
+
 .select-link[href]:active {
   color: rgb(51, 51, 51, 0.3);
   background-color: #ffffff;
 }
+
 .select-link[href]:focus:not(:active) {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
 }
-
-
 
 /* card-view-list */
 
@@ -1180,10 +1157,10 @@ background-color:rgba(131, 179, 211, 0.2);
   padding: 0;
   max-width: 220px;
 }
+
 .card-view-item {
   margin: 4px;
 }
-
 
 .button-view {
   display: block;
@@ -1204,19 +1181,20 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .button-view[href]:hover,
 .button-view[href]:focus {
-  border: 2px solid #83B3D3;
+  border: 2px solid #83b3d3;
 }
 
 .button-view-tile {
   background-image: url("../images/icons/mode-tile.svg");
 }
+
 .button-view-slideshow {
   background-image: url("../images/icons/mode-slideshow.svg");
 }
+
 .button-view-list {
   background-image: url("../images/icons/mode-list.svg");
 }
-
 
 /* product-list */
 
@@ -1257,6 +1235,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .product-card-image {
   grid-column: 1 / -1;
   order: -1;
+  display: block;  /*тег img по умолчаню идет display: inline; и поя вляется отсуп снизу наверно запас для начертания букв.Поэтому меняем на display: block;  и отступ исчезает */
 }
 
 .product-card-link:hover + .product-card-image {  /* ньюанс в том, что мы наводим на псевдоэлемент, но вот такая запись у меня не сработала .product-card-link::before:hover, а сработала вот такая запись .product-card-link:hover */
@@ -1266,6 +1245,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .product-card-link:focus { /* убираем рамку с кликабельного псевдоэлемента при фокусе */
   outline: none;
 }
+
 .product-card-link:focus + .product-card-image {
   outline: 3px solid #83b3d3;
 }
@@ -1275,18 +1255,12 @@ background-color:rgba(131, 179, 211, 0.2);
   outline: none;
 }
 
-
-.product-card-image {
-  display: block;  /*тег img по умолчаню идет display: inline; и поя вляется отсуп снизу наверно запас для начертания букв.Поэтому меняем на display: block;  и отступ исчезает */
-}
-
 .product-card-title {
   color: #000000;
   font-weight: 700;
   font-size: 24px;
   line-height: 31px;
   margin: 0;
-
 }
 
 .product-card-type-house,
@@ -1300,22 +1274,22 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .product-card-button.enabled {
-  background-color: #7DB54F;
+  background-color: #7db54f;
 }
 
 .product-card-button.enabled:hover {
-  background-color: #6C9E42;
+  background-color: #6c9e42;
 }
 
 .product-card-button.enabled:active {
-  background-color: #6C9E42;
+  background-color: #6c9e42;
   color: rgba(255, 255, 255, 0.3);
 }
+
 .product-card-button.enabled:focus:not(:active) {
-  background-color: #6C9E42;
+  background-color: #6c9e42;
   outline: 3px solid #756257;
 }
-
 
 /* stars */
 
@@ -1332,7 +1306,6 @@ background-color:rgba(131, 179, 211, 0.2);
   background-size: 25px 17px;  /* захватываем в нашу область бэкграунда кусок пустого пространства справа по горизонтали который равен 7px(растояние между звездами на макете) так как ширина звезды равна 18 то общая ширина с отступом 18+7=25 */
   background-position: -3px 50%; /* выставляем звезду к левому краю по горизотали(так как мы взяли ширину бекграуда больше чем ширина звезды, то звезда автоматически поместится по центру оставив по три с полоаиной пикселя пустого пространства по обеим сторонам. Поэтому сместим ее влево на половину промежутка (между звездами на макете) но число пикселей должно быть целым, возьмем 3 px. И выравниваем по середине по вертикали */
   background-repeat: repeat-x; /* теперь повторяем нашу звезду (вместе с пустым промежутком) по горизонтали */
-
 }
 
 .star-one { /* количество звезд можно регулировать шириной контейнера с фоном из звезд присвоим следущим классам соответсвую ширину */
@@ -1355,13 +1328,12 @@ background-color:rgba(131, 179, 211, 0.2);
   width: 118px;
 }
 
-
 .product-rating {
   display: block;
   border-radius: 4px;
   text-align: center;
   color: #333333;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   font-size: 16px;
   line-height: 21px;
   text-transform: uppercase;
@@ -1370,7 +1342,6 @@ background-color:rgba(131, 179, 211, 0.2);
   padding-bottom: 7px;
   margin: 0;
 }
-
 
 /* show-more-button-container */
 
@@ -1399,7 +1370,7 @@ background-color:rgba(131, 179, 211, 0.2);
   justify-content: space-between;
 }
 
-.pagination-list{
+.pagination-list {
   margin: 0 -4px;   /* вариант размещения элементов внутри контейнера - использовать отрицательные маржины на контейнере, вместо обнуления отступа у последнего элемента кака раньше .pagination-list{margin: 0;} , .pagination-item {margin-right: 8px;} , .pagination-item:last-child {margin-right: 0;} . */
   padding: 0;
   display: flex;
@@ -1414,38 +1385,38 @@ background-color:rgba(131, 179, 211, 0.2);
   margin: 0 4px;  /* располовиниваем горизонтальный отсутп между элементами */
 }
 
-.pagination-link{
+.pagination-link {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
   min-width: 55px;
   height: 55px;
-  color: #FFFFFF;
-  background-color: #83B3D3;
+  color: #ffffff;
+  background-color: #83b3d3;
   padding: 8px;
   text-align: center;
   text-decoration: none;
 }
 
 .pagination-link[href]:hover {
-  background-color: #68A2CA;
+  background-color: #68a2ca;
 }
 
 .pagination-link[href]:active {
-  background-color: #68A2CA;
+  background-color: #68a2ca;
   color: rgba(255, 255, 255, 0.3);
 }
 
 .pagination-link[href]:focus:not(:active) {  /* когда фокус и фокус визибле совпадают то то их стили накладываются и стилизация выглядит не так как зудумывалось */
-  background-color: #68A2CA;
+  background-color: #68a2ca;
   outline: 3px solid #756257;
   outline-offset: 0;  /* важно!!!!!!!! при выборе через таб на клавиатуре появляется кольцо фокусировки стилизованое от браузера оно изменяет outline-offset вроде... И в зависимости от того выбран ли элемент мышкой или клавиатурой получается немго отличия в стилизации. непонятно. Для примера можно добавить .pagination-link:focus-visible {outline-offset: 5px;} */
 }
 
 .pagination-current-link {
-  color:#000000;
-  background-color: #F2F2F2;
+  color: #000000;
+  background-color: #f2f2f2;
 }
 
 /* pagination-select  */
@@ -1455,6 +1426,7 @@ background-color:rgba(131, 179, 211, 0.2);
   align-items: center;
   min-width: 386px;
 }
+
 .pagination-selest-label {
   margin: 0;
   margin-right: 51px;
@@ -1483,19 +1455,19 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 
-.inner-subscribe-description{
-    width: 720px;
-    margin: 0 auto 46px;
+.inner-subscribe-description {
+  margin: 0 auto 46px;
+  width: 720px;
 }
 
 /*  модальное окно */
 
 .modal {
-	position: fixed;
-	background-color: rgba(255, 255, 255, 0.8);
-	width: 100%;
-	height: 100%;
-	z-index: 2;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
   top: 0;  /* без top: 0; left: 0; окно будет смещаться из центра прои зуме */
   left: 0;
   display: none;
@@ -1507,11 +1479,11 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .modal-container {
-	width: 715px;
-	background: #ffffff;
-  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
+  width: 715px;
+  background: #ffffff;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
-	padding: 70px;
+  padding: 70px;
   padding-top: 54px;
   display: grid;
   grid-template-columns: 1fr min-content;
@@ -1527,15 +1499,13 @@ background-color:rgba(131, 179, 211, 0.2);
   border-radius: 50%;
 }
 
-
-
 .modal-close-button::after {
   content: "";
   display: block;  /*  все созданные псевдоэлементы по умолчанию display: inline;  для задания размеров необходимо применить display: block, flex, grid...  */
   width: 53px;
   height: 53px;
   background-image: url("../images/icons/modal-close.svg");
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -1551,7 +1521,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .modal-close-button:focus:not(:active) {
   background-color: #e6e6e6;
   outline: 3px solid #83b3d3;
-  outline-ofset: 0; /* видимо, как и выше добавлено чтобы focus-visible не переопределял  значение  outline-ofset*/
+  outline-offset: 0; /* видимо, как и выше добавлено чтобы focus-visible не переопределял  значение  outline-ofset*/
 }
 
 .modal-title {
@@ -1562,9 +1532,8 @@ background-color:rgba(131, 179, 211, 0.2);
   padding-top: 4px;
 }
 
-
 .modal-content {   /* по сути форме присвоен так же этот класс видимо что бы подчеркнуть структуру   */
-	grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 /*   Search Form     */
@@ -1584,7 +1553,6 @@ background-color:rgba(131, 179, 211, 0.2);
   display: grid;
   grid-template-columns: 140px 1fr;
   column-gap: 15px;
-
 }
 
 .modal-field-title {
@@ -1610,12 +1578,12 @@ background-color:rgba(131, 179, 211, 0.2);
 .search-form-date .field-input {
   background-image: url("../images/icons/date.svg");
   background-repeat: no-repeat;
-  background-position: right 15px top 55% ;
+  background-position: right 15px top 55%;
 }
 
 .search-form-date .field-input:not(:placeholder-shown):active {
-	outline: 2px solid #333333;
-	background-color: #ffffff;
+  outline: 2px solid #333333;
+  background-color: #ffffff;
 }
 
 .modal-field-message {
@@ -1667,17 +1635,13 @@ background-color:rgba(131, 179, 211, 0.2);
   padding: 0 50px;
   text-align: center;
   width: 133px;
+  appearance: textfield;  /* Для Firefox попроще: Код прячет стрелки управления в браузерах */
 }
 
 /* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
 .number-input::-webkit-outer-spin-button,
 .number-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-/* Для Firefox попроще: */
-.number-input {
-  -moz-appearance: textfield;
+  appearance: none;
 }
 
 .number-button::after {
@@ -1703,11 +1667,10 @@ background-color:rgba(131, 179, 211, 0.2);
 
 .number-button:active::after {
   opacity: 0.2;
-
 }
 
 .number-button:focus:not(:active)::after {
-  border: 3px solid #83B3D3;
+  border: 3px solid #83b3d3;
   border-radius: 4px;
   opacity: 1;
 }
@@ -1722,7 +1685,6 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .field-info-icon {
-
   position: relative;
   display: block;
   width: 25px;
@@ -1741,19 +1703,18 @@ background-color:rgba(131, 179, 211, 0.2);
 }
 
 .field-info-icon:hover {
-  background-color: #68A2CA;
+  background-color: #68a2ca;
 }
 
 .field-info-text {
   position: absolute;
   top: 40px;
   left: calc(-128px + 50%);
-  position: absolute;
   width: 256px;
   background-color: #333333;
   border-radius: 10px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  color:#ffffff;
+  color: #ffffff;
   font-size: 16px;
   line-height: 20px;
   padding: 20px 20px 23px 24px;
@@ -1764,7 +1725,7 @@ background-color:rgba(131, 179, 211, 0.2);
   display: block;
 }
 
-.field-info:before {
+.field-info::before {
   content: "";
   position: absolute;
   width: 19px;
@@ -1780,7 +1741,7 @@ background-color:rgba(131, 179, 211, 0.2);
 .modal-button-submit {
   grid-column: 1  / -1;
   margin-top: 1px;
-  margin-left:2px;
+  margin-left: 2px;
   margin-right: -2px;
   line-height: 40px;
 }
