@@ -652,7 +652,7 @@ background-color:rgba(131, 179, 211, 0.2);
   padding-right: 72px;
   padding-top: 42px;
   padding-bottom: 84px;
-  height: 408px;
+  min-height: 408px;
 }
 .inner-main-title {
   font-weight: 700;
@@ -769,67 +769,85 @@ background-color:rgba(131, 179, 211, 0.2);
 
 /*  checkbox  and radio */
 .control {
-  padding-left: 40px;
 	position: relative;
   user-select: none;
   cursor: pointer;
 }
 
-.control-input + .control-mark {
-	position: absolute;
-	left: 0;
+.control-label {
+  display: grid;
+  grid-template-columns: 20px 1fr; /* теперь при переносе текста на новую строку он будет находить ся в второй ячейке и будет сохраняться отступ */
+  gap: 19px;
+}
+
+
+.control-label::before,
+.control-label::after {
+  grid-column: 1 / 2; /* тфким образом заставим элементы наслоиться друг на друга */
+  grid-row: 1 / 2;
+  content: "";
 	width: 20px;
 	height: 20px;
-	background-color: white;
+}
+
+.control-label::before {
+  background-color: white;
 	border-radius: 4px;
+}
+
+
+.control-label::after {
+	background-image: url("../images/icons/tick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+}
+
+
+.control-input[type="radio"] + .control-label::after {
+  width: 20px;
+  height: 20px;
+  border: 5px solid transparent; /* такой способ нарисовать точку меньшего диаметра задать прозрачную границу и орезат бакгроунд по content-box */
+  background-clip: content-box;
+  background-color: #595959;
+  border-radius: 50%;
 }
 
  /* checkbox */
 
-.control:hover .control-input[type="checkbox"] + .control-mark {
-  opacity: 0.6;
+.control:hover .control-input[type="checkbox"] + .control-label::before {
+  background-color: rgba(255, 255, 255, 0.6);  /* если применить простое opacity то оно повлияет на z-index и при наведении псевдоэлемент before будет располагаться над псевдоэлементом after и если галка поставлена она будет исчезат при наведении. Еще можно использовать в таком случае z-index: 1; для .control-label::after */ 
+}
+
+.control-input[type="checkbox"]:active + .control-label::before {
+  background-color: rgba(255, 255, 255, 0.3); 
+}
+
+
+.control-input:focus + .control-label::before {
   outline: 3px solid #83B3D3;
 }
 
-.control-input[type="checkbox"]:active + .control-mark {
-  opacity: 0.3;
+.control-input[type="checkbox"]:checked + .control-label::after {
+	display: block;
 }
 
-.control-input[type="checkbox"]:focus:not(:active) + .control-mark {
-  outline: 3px solid #83B3D3;
-}
-
-.control-input[type="checkbox"]:checked + .control-mark::before {
-	content: "";
-	position: absolute;
-	width: 13px;
-	height: 10px;
-	background-image: url("../images/icons/tick.svg");
-  background-repeat: no-repeat;
-  background-size: 13px 10px;
-	top: 5px;
-	left: 4px;
-}
 /* radio */ 
 
-.control-input[type="radio"] + .control-mark {
-	border-radius: 10px;
+.control-input[type="radio"] + .control-label::before {
+  content: "";
+	border-radius: 50%;
 }
 
 .control-input[type="radio"]:focus:not(:active) + .control-mark {
   outline: 3px solid #83B3D3;
 }
 
-.control-input[type="radio"]:checked + .control-mark::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #595959;
-  border-radius: 50%;
-  top: 5px;
-  left: 5px;
+.control-input[type="radio"]:checked + .control-label::after {
+  display: block;
 }
+
+
 /* range */
 
 

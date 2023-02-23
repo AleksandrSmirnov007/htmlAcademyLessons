@@ -1418,7 +1418,8 @@ img {
 
 .control-input {
   position: absolute;
-  opacity: 0;
+  top: 2px;
+  opacity: 0.5;
 }
 
 .control-lead {
