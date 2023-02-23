@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@linthtml/linthtml": "^0.9.4",
     "linthtml-config-htmlacademy": "^1.0.3",
     "stylelint-config-htmlacademy": "^1.1.4"
   }

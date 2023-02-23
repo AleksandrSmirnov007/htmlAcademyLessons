@@ -19,7 +19,7 @@
 @font-face {
   font-family: "PT Sans";
   font-style: italic;
-  font-weight:400;
+  font-weight: 400;
   src: url("../fonts/pt-sans-italic.woff2") format(woff2);
   font-display: swap;
 }
@@ -43,10 +43,8 @@
   font-display: swap;
 }
 
-
 html {
   height: 100%;
-
 }
 
 
@@ -59,11 +57,10 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  background-color: #FBF7F4;
+  background-color: #fbf7f4;
   color: #242424;
-
- 
 }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -77,8 +74,8 @@ body {
 
 .button {
   display: inline-block;
-  padding: 14px 20px; 
-  color: #FFFFFF;
+  padding: 14px 20px;
+  color: #ffffff;
   border: none;
   background-color: #000000;
   font-family: "PT Sans", sans-serif;
@@ -93,7 +90,7 @@ body {
 }
 
 .button-light {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #242424;
 }
 
@@ -103,32 +100,30 @@ body {
 }
 
 .button:hover,
-.footer-social-link:hover  {
-  background-color: #814B18;
+.footer-social-link:hover {
+  background-color: #814b18;
 }
 
 .button-light:hover {
-  color: #FFFFFF;
-  background-color: #DBB590;
+  color: #ffffff;
+  background-color: #dbb590;
 }
 
 .button:focus,
 .footer-social-link:focus {
-  background-color: #814B18;
-  outline: 2px solid #DBB590;
+  background-color: #814b18;
+  outline: 2px solid #dbb590;
 }
 
 .button-light:focus {
-
-  background-color: #DBB590;
-  outline: 2px solid #AF7842;
+  background-color: #dbb590;
+  outline: 2px solid #af7842;
 }
 
 
 .page-header {
   background-color: #000000;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
 
 .navigation {
@@ -138,7 +133,7 @@ body {
 }
 
 .navigation-item {
-  position: relative; /* для popover-cart */ 
+  position: relative; /* для popover-cart */
 }
 
 .navigation-list {
@@ -157,7 +152,7 @@ body {
   display: block;
   color: inherit;
   text-decoration: none;
-  font-family: PT Sans Narrow, sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 22px;
@@ -169,7 +164,7 @@ body {
 }
 
 .navigation-link:focus {
-  box-shadow: inset 0 0 0 4px #E7E7E7;
+  box-shadow: inset 0 0 0 4px #e7e7e7;
   outline: none;
 }
 
@@ -184,14 +179,13 @@ body {
 }
 
 .navigation-icon {
-  fill: #BDBDBD;
+  fill: #bdbdbd;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   margin: auto;
-  fill: #BDBDBD;
 }
 
 .navigation-link:hover .navigation-icon {
@@ -199,7 +193,7 @@ body {
 }
 
 .navigation-link:focus .navigation-icon {
-  fill: #DBDBDB;
+  fill: #bdbdbd;
 }
 
 .navigation-link-login {
@@ -213,7 +207,7 @@ body {
 }
 
 .navigation-link-login:hover .navigation-icon {
-  fill: #FFFFFF;
+  fill: #ffffff;
 }
 /* main */
 
@@ -226,13 +220,13 @@ body {
 .main-index {
 
   background-color: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   background-image: url("../images/index-bg.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 
-.page-container{
+.page-container {
   width: 940px;
   margin: 0 auto;
 }
@@ -242,25 +236,22 @@ body {
   margin: 0 auto;
 }
 
-
-
 .advantages {
   margin-bottom: 58px;
-
 }
 
 .advatages-list {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 .advantages-item {
-  width: 277px
+  width: 277px;
 }
 
 .advantages-title {
@@ -270,7 +261,7 @@ body {
   line-height: 35px;
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 56px
+  margin-bottom: 56px;
 }
 
 .advantages-title::before {
@@ -278,7 +269,7 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   left: 50%;
   bottom: -34px;
   margin-left: -6px;
@@ -292,9 +283,8 @@ body {
 .index-columns {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
   color: #242424;
-  background-color: #FBF7F4;
+  background-color: #fbf7f4;
   background-image: url("../images/noisy-80x80.svg");
   background-repeat: repeat;
   margin-bottom: 31px;
@@ -328,7 +318,6 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   width: 390px;
-
 }
 
 .services-title {
@@ -336,7 +325,6 @@ body {
   line-height: 35px;
   margin-top: 0;
   margin-bottom: 28px;
-
 }
 
 .services-list {
@@ -357,14 +345,14 @@ body {
 
 .services-item::before {
   content: "";
-  margin:0 16px;
+  margin: 0 16px;
   order: 2;
   flex-grow: 1;
   border-bottom: 2px dotted #595959;
 }
 
 .services-price {
-  color:#AF7842;
+  color: #af7842;
   order: 3;
 }
 
@@ -426,12 +414,12 @@ body {
 }
 
 .slider-button:hover {
-  background-color: #814B18;
+  background-color: #814b18;
 }
 
 .slider-button:focus {
-  background-color: #814B18;
-  outline: 2px solid #DBB590;
+  background-color: #814b18;
+  outline: 2px solid #ddb590;
 }
 
 .slider-pagination {
@@ -453,7 +441,7 @@ body {
   border: none;
   width: 8px;
   height: 8px;
-  background-color: #BDBDBD;
+  background-color: #bdbdbd;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -476,8 +464,6 @@ body {
 .contacts {
   width: 350px;
   font-weight: 700;
-
-  
 }
 
 .contacts-title {
@@ -488,17 +474,18 @@ body {
   line-height: 35px;
   text-transform: uppercase;
 }
+
 .contacts-subtitle {
   font-family: "PT Sans Narrow", sans-serif;
   margin-top: 22px;
   margin-bottom: 8px;
 
-  color: #AF7842;
+  color: #af7842;
   font-size: 20px;
   line-height: 28px;
   text-transform: uppercase;
-
 }
+
 .contacts-address {
   font-style: normal;
   font-size: 16px;
@@ -511,12 +498,10 @@ body {
 }
 
 .contacs-phone {
-  
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 24px;
   line-height: 29px;
   color: #242424;
-  
 }
 
 .contacts-schedule {
@@ -526,7 +511,6 @@ body {
   line-height: 24px;
   list-style-type: none;
   padding-left: 0;
-
 }
 
 .contacts-navigation {
@@ -570,7 +554,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  
 }
 
 .appointment-form-name {
@@ -618,52 +601,49 @@ body {
   background-color: #ffffff;
   font-size: 16px;
   line-height: 24px;
-  color: #BDBDBD;
+  color: #bdbdbd;
   cursor: pointer;
 }
 
 .field:hover,
 .field:focus {
-  border: 2px solid #AF7842;
+  border: 2px solid #af7842;
 }
 
 .field:focus {
-  outline: 2px solid #DBB590;
+  outline: 2px solid#dbB590;
 }
 
 .field:disabled,
 .field:disabled:hover {
   color: #595959;
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
   border-color: #595959;
 }
 
 .field:invalid {
   box-shadow: none;
-  
 }
 
 .field:focus:invalid {
-  border-color: #EA5454;
+  border-color: #ea5454;
 }
 
 .field::placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
   opacity: 1; /* непонятно зачем */
 }
 
 /* footer */
 
 .page-footer {
-
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #242424;
   background-image: url("../images/noisy-80x80.svg");
   background-repeat: repeat;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
-
 }
 
 .page-footer-container {
@@ -694,13 +674,11 @@ body {
   font-style: normal;
 }
 
-.page-footer a{
+.page-footer a {
   color: inherit;
 }
 
-
-
-.footer-contacts-address-phone{
+.footer-contacts-address-phone {
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -709,7 +687,7 @@ body {
   text-decoration: underline;
 }
 
-.footer-cotacts-map-link{
+.footer-cotacts-map-link {
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -718,7 +696,7 @@ body {
   text-decoration: underline;
 }
 
-.page-footer-title{
+.page-footer-title {
   margin-top: 0;
   margin-bottom: 14px;
   font-family: "PT Sans Narrow", sans-serif;
@@ -743,7 +721,7 @@ body {
 
 .newsletter-field {
   width: 192px;
-  border-color:#000000;
+  border: color #000000;
 }
 
 .newsletter-button {
@@ -761,12 +739,12 @@ body {
   margin-left: auto;
 }
 
-.footer-social p{
+.footer-social p {
   margin: 0;
 }
 
-.page-footer .htmlacademy-link{
-  color: #DBB590;
+.page-footer .htmlacademy-link {
+  color: #dbb590;
 }
 
 .footer-social-list {
@@ -796,9 +774,8 @@ body {
   background-size: 16px 16px;
   background-position: center;
   background-color: #000000;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
-
 
 .footer-social-link-tw {
   background-image: url("../images/twitter.svg");
@@ -812,14 +789,13 @@ body {
   background-image: url("../images/insta.svg");
 }
 
-
 /* modal */
 
 .modal-container {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);;
+  background-color: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
   display: flex;
@@ -898,7 +874,7 @@ body {
 
 .auth-form-register {
   width: 360px;
-  color: #4E2E0E;
+  color: #4e2e0e;
   background-color: #ffffff;
 }
 
@@ -906,9 +882,7 @@ body {
   display: none;
 }
 
-
 /*<<<<<<<<<<<<<<<<<<<<<<<                                    стилизация каталога                               >>>>>>>>>>>>>>>>>>>>>>> */
-
 
 .navigation-logo {
   display: flex;
@@ -920,24 +894,25 @@ body {
 .navigator-link-current {
   position: relative;
 }
-.navigation-link-current:after {
+
+.navigation-link-current::after {
   content: "";
   position: absolute;
   bottom: 0;
   height: 4px;
   right: 20px;
   left: 20px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
-/* перенес сюда раздел майн-иннер что бы не 
+/* перенес сюда раздел майн-иннер что бы не
 путаться сюда где вся стилизация каталога
 раньше он был рядом с майн индекс */
-.main-inner{
+.main-inner {
   flex-grow: 1;    /* для патерна "sticky footer"*/
   padding-top: 40px;
   color: #242424;
-  background-color: #FBF7F4;
+  background-color: #fbf7f4;
   background-image: url("../images/noisy-80x80.svg");
   background-repeat: repeat;
 }
@@ -951,8 +926,6 @@ body {
   line-height: 35px;
   text-transform: uppercase;
   color: #242424;
-
-
 }
 
 /* breadcrumbs */
@@ -962,10 +935,9 @@ body {
   padding: 0;
   margin: 0;
   list-style-type: none;
-  
 }
 
-.breadcrumbs-item{
+.breadcrumbs-item {
   margin-right: 32px;
   position: relative;
 }
@@ -985,36 +957,33 @@ body {
   content: none;
 }
 
-.breadcrumbs-link{
-  
+.breadcrumbs-link {
   font-size: 16px;
   line-height: 22px;
-  color: #242424; 
+  color: #242424;
 }
 
-.breadcrumbs-link-current{
-  color:#595959;
+.breadcrumbs-link-current {
+  color: #595959;
 }
 
 .catalog-products {
   display: flex;
 }
+
 .catalog-filter {
   width: 220px;
   margin-right: 20px;
 }
 
-
-.catalog-filter-title{
+.catalog-filter-title {
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 20px;
   line-height: 28px;
   text-transform: uppercase;
   color: #000000;
   margin-bottom: 22px;
-
 }
-
 
 .catalog-filter-group {
   margin: 0;
@@ -1023,7 +992,7 @@ body {
   margin-bottom: 40px;
 }
 
-   /* range */
+/* range */
 
 .range {
   padding: 0;
@@ -1036,13 +1005,12 @@ body {
   height: 4px;
   background-color: #242424;
   border-radius: 2px;
-  
 }
 
 .range-bar {
   position: absolute;
   height: 4px;
-  background-color:#AF7842;
+  background-color: #af7842;
 }
 
 .range-toggle {
@@ -1052,16 +1020,16 @@ body {
   background-color: #ffffff;
   border: 2px solid #242424;
   border-radius: 50%;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .range-toggle:hover {
-  background-color: #DBB590;
+  background-color: #dbb590;
 }
 
 .range-toggle:focus,
 .range-toggle:active {
-  outline: 3px solid #AF7842;
+  outline: 3px solid #af7842;
 }
 
 .toggle-min {
@@ -1082,7 +1050,6 @@ body {
 .catalog-filter-label {
   display: flex;
   margin-right: 4px;
-
 }
 
 .catalog-filter-input {
@@ -1119,7 +1086,7 @@ body {
   cursor: pointer;
 }
 
-.control-label{
+.control-label {
   font-weight: 700;
   line-height: 22px;
 }
@@ -1136,18 +1103,18 @@ body {
 }
 
 .control:hover .control-mark {
-  border: 2px solid #814B18;
+  border: 2px solid #814b18;
 }
 
-.control:focus-within .control-mark { /* так как в фокус попадает только input, так как только он интерактивный для браузера, но можно эту строку заменить на .control-input:focus + .control-mark тоесть фокус будет устанавливаться через нажатие на label и выбирать .control-mark c помощью соседних селекторов */ 
+.control:focus-within .control-mark { /* так как в фокус попадает только input, так как только он интерактивный для браузера, но можно эту строку заменить на .control-input:focus + .control-mark тоесть фокус будет устанавливаться через нажатие на label и выбирать .control-mark c помощью соседних селекторов */
   border: 2px solid #814b18;
-  outline: 2px solid #DBB590;
+  outline: 2px solid #dbb590;
 }
 
 /* checkbox */
 
-.control-input[type="checkbox"]:checked + .control-mark:before,
-.control-input[type="checkbox"]:checked + .control-mark:after {
+.control-input[type="checkbox"]:checked + .control-mark::before,
+.control-input[type="checkbox"]:checked + .control-mark::after {
   position: absolute;
   top: 7px;
   right: 2px;
@@ -1157,11 +1124,11 @@ body {
   background-color: #242424;
 }
 
-.control-input[type="checkbox"]:checked + .control-mark:before {
+.control-input[type="checkbox"]:checked + .control-mark::before {
   transform: rotate(45deg);
 }
 
-.control-input[type="checkbox"]:checked + .control-mark:after {
+.control-input[type="checkbox"]:checked + .control-mark::after {
   transform: rotate(-45deg);
 }
 
@@ -1170,7 +1137,7 @@ body {
   border-radius: 50%;
 }
 
-.control-input[type="radio"]:checked + .control-mark:before {
+.control-input[type="radio"]:checked + .control-mark::before {
   content: "";
   position: absolute;
   background-color: #242424;
@@ -1181,21 +1148,18 @@ body {
   left: 4px;
 }
 
-
-
-
 .catalog-right-column {
   width: 700px;
 }
 
 /* SORTING */
 
-.sorting-container{
+.sorting-container {
   margin-bottom: 16px;
   padding: 16px;
   display: flex;
   color: #242424;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .sorting-type {
@@ -1229,12 +1193,12 @@ body {
 }
 
 .select-control:hover {
-  border: 2px solid #AF7842;
+  border: 2px solid #af7842;
 }
 
 .select-control:focus {
-  border: 2px solid #AF7842;
-  outline: 2px solid #DBB590;
+  border: 2px solid #af7842;
+  outline: 2px solid #dbb590;
 }
 
 /* card-grid-togle */
@@ -1255,13 +1219,13 @@ body {
 }
 
 .card-grid-togle:hover {
-  background-color: #814B18;
+  background-color: #814b18;
   fill: #ffffff;
 }
 
 .card-grid-togle:focus {
-  background-color: #AF7842;
-  outline: 2px solid #DBB590;
+  background-color: #af7842;
+  outline: 2px solid #dbb590;
   fill: #ffffff;
 }
 
@@ -1269,28 +1233,25 @@ body {
 
 .product-list {
   list-style-type: none;
-  padding: 0; 
+  padding: 0;
   margin: 0;
   margin-bottom: 24px;
 
   display: grid;
   grid-template-columns: repeat(3, 220px);
   gap: 20px;
-
-  
 }
 
-.product-card{
-  background-color: #FFFFFF;
+.product-card {
+  background-color: #ffffff;
   display: grid;
   grid-template-columns: 16px 188px 16px;
   grid-template-rows: 200px min-content auto min-content 16px;
-  
 }
 
 .product-card-image-link {
   grid-column: 1 / -1;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
 }
 
 .product-card-title-link,
@@ -1304,18 +1265,18 @@ body {
   margin-bottom: 8px;
 }
 
-.product-card-title{
+.product-card-title {
   font-weight: 700;
   color: #000000;
 }
 
-.product-card-price{
+.product-card-price {
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
   text-transform: uppercase;
-  color:#814B18;
+  color: #814b18;
   margin-bottom: 16px;
 }
 
@@ -1326,20 +1287,19 @@ body {
   padding: 16px;
 }
 
-.pagination{
+.pagination {
   margin: 0;
   padding: 0;
   display: flex;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   list-style-type: none;
 }
 
-.pagination-item:not(last-child) {
+.pagination-item:not(:last-child) {
   margin-right: 8px;
-
 }
 
-.pagination-link{
+.pagination-link {
   display: block;
   box-sizing: border-box;
   width: 50px;
@@ -1348,27 +1308,27 @@ body {
 
   line-height: 16px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #000000;
   text-decoration: none;
 }
 
 
 .pagination-link:hover {
-  background-color: #814B18;
+  background-color: #814b18;
 }
 
 .pagination-link:focus {
-  outline: 2px solid #DBB590;
-  background-color: #AF7842;
+  outline: 2px solid #dbb590;
+  background-color: #af7842;
 }
 
-.pagination-current{
-  background-color: #FFFFFF;
+.pagination-current {
+  background-color: #ffffff;
   color: #242424;
 }
 
-.pagination-disabled{
+.pagination-disabled {
   background-image: url("../images/arrow-left.svg");
   background-repeat: no-repeat;
   background-size: 16px 16px;
@@ -1391,23 +1351,21 @@ body {
 
 .popover {
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 0;
   box-sizing: border-box;
   z-index: 1;
-  min-height: 176px;
   background-color: #ffffff;
-  color:#242424;
+  color: #242424;
   padding: 40px;
   font-family: "PT Sans Narrow", sans-serif;
   min-height: 186px;
-  display: none; 
+  display: none;
 }
 
 .popover-open {
   display: block;
 }
-
 
 .popover-cart {
   width: 420px;
@@ -1423,11 +1381,11 @@ body {
   background-image: url("../images/popover-cart.svg");
   background-repeat: no-repeat;
   background-size: 16px 16px;
-  background-position: 20px center; /* одно ито же что background-position: left 20px center; */ 
+  background-position: 20px center; /* одно ито же что background-position: left 20px center; */
 }
 
 .popover-content {
-  height: 100%; /* непонятно зачем */ 
+  height: 100%; /* непонятно зачем */
 }
 
 .popover-title {
@@ -1435,7 +1393,7 @@ body {
   margin-bottom: 24px;
   font-size: 32px;
   line-height: 35px;
-  color:#000000;
+  color: #000000;
   text-transform: uppercase;
 }
 
@@ -1448,14 +1406,13 @@ body {
 .cart-item {
   display: grid;
   grid-template-columns: 284px 1fr;  /* нужно прописать grid-template-rows: repeat(2, min-content); что бы работала такая запись grid-row: 1 / -1; но мы пойдем другим путем смотри далее в .cart-item-button*/
-  
 }
 
 .cart-item + .cart-item {  /* вместо этого можно использовать .cart-item:not(:last-child) { border-bottom: 1px dashed #595959; padding-bottom: 22px; margin-bottom: 24px;} */
   padding-top: 24px;
   margin-top: 22px;
   border-top: 1px dashed #595959;
-} 
+}
 
 .cart-item-title {
   margin-top: 0;
@@ -1470,13 +1427,13 @@ body {
   margin: 0;
   font-size: 16px;
   line-height: 24px;
-  color: #AF7842;
+  color: #af7842;
   font-weight: 700;
   font-family: "PT Sans", sans-serif;
 }
 
 .cart-item-button {
   grid-column: 2 / 3;
-  grid-row: 1 / 3; /* при этом запись grid-row: 1 / -1; тут не работает так как не задано количество строк */ 
+  grid-row: 1 / 3; /* при этом запись grid-row: 1 / -1; тут не работает так как не задано количество строк */
   align-self: start;
 }
