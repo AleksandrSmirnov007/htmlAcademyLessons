@@ -839,16 +839,21 @@ background-color:rgba(131, 179, 211, 0.2);
 	border-radius: 50%;
 }
 
-.control-input[type="radio"]:focus:not(:active) + .control-mark {
-  outline: 3px solid #83B3D3;
-}
-
 .control-input[type="radio"]:checked + .control-label::after {
   display: block;
 }
 
+ /* checkbox radio disabled*/
+
+
+ .control-input:disabled + .control-label::before {
+  background-color:rgba(255, 255, 255, 0.3);
+ }
+
+
 
 /* range */
+
 
 
 .filter-fieldset-price {
@@ -989,6 +994,16 @@ background-color:rgba(131, 179, 211, 0.2);
 	top: -8px;
 	right: -0;
 }
+
+
+/* disabled */
+
+.filter-fieldset-price-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* range-slider end*/ 
 
 
