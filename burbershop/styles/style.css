@@ -45,11 +45,12 @@
 
 html {
   height: 100%;
+  display: flex;
 }
 
 
 body {
-  margin: 0;
+  margin: auto;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -59,6 +60,7 @@ body {
   line-height: 24px;
   background-color: #fbf7f4;
   color: #242424;
+  width: 1020px;
 }
 
 .visually-hidden {
@@ -96,7 +98,7 @@ body {
 
 
 .button + .button {
-  margin-left: 16px;
+  margin-left: 12px;
 }
 
 .button:hover,
@@ -171,6 +173,7 @@ body {
 .navigation-user {
   width: 250px;
   margin-left: auto;
+  justify-content: flex-end;
 }
 
 .navigation-user .navigation-link {
@@ -233,7 +236,7 @@ body {
 
 .logo {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 64px;
 }
 
 .advantages {
@@ -354,6 +357,7 @@ body {
 .services-price {
   color: #af7842;
   order: 3;
+  word-spacing: 4px;
 }
 
 .button-all {
@@ -394,7 +398,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
+  transform: translateY(-77%);
 }
 
 .slider-button {
@@ -411,6 +415,11 @@ body {
 
 .slider-prev {
   transform: rotate(180deg);
+}
+
+.slider-button-not-active {
+  opacity: 0;
+  cursor: default;
 }
 
 .slider-button:hover {
@@ -432,10 +441,11 @@ body {
 }
 
 .slider-pagination-item {
-  margin: 0 4px;
+  margin: 16px 4px 0;
 }
 
 .slider-pagination-button {
+  display: block;
   padding: 0;
   margin: 0;
   border: none;
@@ -535,6 +545,8 @@ body {
 }
 
 .appointment-description {
+  margin: 0;
+  margin-bottom: 24px;
   font-size: 14px;
   line-height: 20px;
   color: #595959;
@@ -545,8 +557,8 @@ body {
   line-height: 24px;
 
   display: grid;
-  grid-template-columns: 114px 74px 208px;
-  gap: 15px;
+  grid-template-columns: 114px 74px 1fr;
+  gap: 17px;
 }
 
 .appointment .field-group,
@@ -556,6 +568,11 @@ body {
   flex-direction: column;
 }
 
+.appointment .field {
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .appointment-form-name {
   grid-column: 1 / -1;
 }
@@ -563,7 +580,7 @@ body {
 .appointment-submit {
   grid-column: 1 / -1;
   justify-self: start;
-  margin-top: 9px;
+  margin-top: 2px;
 }
 
 .form-label {
@@ -751,7 +768,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   padding: 0;
   list-style-type: none;
 }
@@ -798,6 +815,10 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
+  display: none;
+}
+
+.modal-container-opened {
   display: flex;
 }
 
@@ -933,6 +954,7 @@ body {
 .breadcrumbs {
   display: flex;
   padding: 0;
+  padding-bottom: 32px;
   margin: 0;
   list-style-type: none;
 }
