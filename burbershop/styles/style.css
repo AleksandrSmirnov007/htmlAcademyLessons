@@ -58,7 +58,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  background-color: #fbf7f4;
+  background-color: #f3f3f3;
   color: #242424;
   width: 1020px;
 }
@@ -132,6 +132,8 @@ body {
   display: flex;
   width: 940px;
   margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .navigation-item {
@@ -232,6 +234,8 @@ body {
 .page-container {
   width: 940px;
   margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .logo {
@@ -664,7 +668,7 @@ body {
 }
 
 .page-footer-container {
-  padding: 40px 0;
+  padding: 40px;
   width: 940px;
   margin: 0 auto;
   display: flex;
@@ -970,8 +974,8 @@ body {
   position: absolute;
   width: 8px;
   height: 8px;
-  right: -20px;
-  top: 6px;
+  right: -21px;
+  top: 7px;
   transform: rotate(45deg);
 }
 
