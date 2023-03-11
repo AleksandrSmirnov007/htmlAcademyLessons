@@ -1004,7 +1004,7 @@ body {
   line-height: 28px;
   text-transform: uppercase;
   color: #000000;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .catalog-filter-group {
@@ -1075,13 +1075,15 @@ body {
 }
 
 .catalog-filter-input {
-  width: 30px;
+  width: 40px;
   background-color: transparent;
   border: none;
   padding: 0 2px;
   appearance: textfield;
   text-align: center;
   font-family: inherit;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .catalog-filter-input::-webkit-inner-spin-button,
@@ -1098,7 +1100,7 @@ body {
 }
 
 .catalog-filter-item:not(:last-child) { /* одним селектором с отрицанием для последнего элемента можно задать оступы всем кроме последнего вместо дополнительной записи .catalog-filter-item:last-child {margin-bottom: 0;} */
-  margin-bottom: 16px;
+  margin-bottom: 13px;
 }
 
 .control {
@@ -1179,6 +1181,7 @@ body {
 .sorting-container {
   margin-bottom: 16px;
   padding: 16px;
+  padding-top: 14px;
   display: flex;
   color: #242424;
   background-color: #ffffff;
@@ -1288,8 +1291,11 @@ body {
 }
 
 .product-card-title {
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 700;
   color: #000000;
+  margin: 0;
 }
 
 .product-card-price {
@@ -1307,6 +1313,8 @@ body {
 .pagination-container {
   display: flex;
   padding: 16px;
+  background-color: #ffffff;
+  margin-bottom: 60px;
 }
 
 .pagination {
@@ -1351,11 +1359,15 @@ body {
 }
 
 .pagination-disabled {
+  background-color: #595959;
+}
+
+.pagination-prev {
   background-image: url("../images/arrow-left.svg");
   background-repeat: no-repeat;
   background-size: 16px 16px;
   background-position: center;
-  background-color: #595959;
+  min-width: 56px;
 }
 
 .pagination-next {
@@ -1363,10 +1375,12 @@ body {
   background-repeat: no-repeat;
   background-size: 16px 16px;
   background-position: center;
+  min-width: 56px;
 }
 
 .pagination-show-more {
   margin-left: auto;
+  word-spacing: 4px;
 }
 
 /* popover */
