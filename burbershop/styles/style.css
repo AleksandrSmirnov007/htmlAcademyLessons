@@ -53,6 +53,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
+  min-width: 1020px;
   min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
@@ -60,7 +61,6 @@ body {
   line-height: 24px;
   background-color: #f3f3f3;
   color: #242424;
-  width: 1020px;
 }
 
 .visually-hidden {
@@ -132,8 +132,6 @@ body {
   display: flex;
   width: 940px;
   margin: 0 auto;
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 .navigation-item {
@@ -234,8 +232,6 @@ body {
 .page-container {
   width: 940px;
   margin: 0 auto;
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 .logo {
@@ -728,7 +724,7 @@ body {
 }
 
 .footer-newsletter {
-  width: 279px;
+  width: 300px;
 }
 
 .newsletter-form {
@@ -741,7 +737,7 @@ body {
 }
 
 .newsletter-field {
-  width: 192px;
+  width: 100%;
   border: color #000000;
 }
 
