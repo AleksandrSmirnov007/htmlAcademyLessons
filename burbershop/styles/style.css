@@ -97,10 +97,6 @@ body {
 }
 
 
-.button + .button {
-  margin-left: 12px;
-}
-
 .button:hover,
 .footer-social-link:hover {
   background-color: #814b18;
@@ -244,8 +240,9 @@ body {
 }
 
 .advatages-list {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 277px);
+  gap: 30px 54px;
   text-align: center;
   color: #ffffff;
   margin: 0;
@@ -253,9 +250,6 @@ body {
   list-style-type: none;
 }
 
-.advantages-item {
-  width: 277px;
-}
 
 .advantages-title {
   position: relative;
@@ -528,6 +522,11 @@ body {
   margin-bottom: 0;
 }
 
+.contacts-navigation .button {
+  margin-right: 16px;
+  margin-bottom: 5px;
+}
+
 /* APOINTMENT */
 
 .appointment {
@@ -724,7 +723,7 @@ body {
 }
 
 .footer-newsletter {
-  width: 300px;
+  max-width: 300px;
 }
 
 .newsletter-form {
@@ -953,6 +952,7 @@ body {
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
   padding-bottom: 32px;
   margin: 0;
@@ -1004,7 +1004,7 @@ body {
   line-height: 28px;
   text-transform: uppercase;
   color: #000000;
-  margin-bottom: 20px;
+  max-width: 220px;
 }
 
 .catalog-filter-group {
@@ -1017,8 +1017,11 @@ body {
 /* range */
 
 .range {
+  margin-top: 14px;
   padding: 0;
-  padding-top: 8px;
+  padding-top: 14px;
+  max-width: 220px;
+  overflow: auto;
 }
 
 .range-scale {
@@ -1094,7 +1097,8 @@ body {
 /* catalog-filter-list */
 
 .catalog-filter-list {
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 20px;
   padding: 0;
   list-style-type: none;
 }
@@ -1183,6 +1187,7 @@ body {
   padding: 16px;
   padding-top: 14px;
   display: flex;
+  flex-wrap: wrap;
   color: #242424;
   background-color: #ffffff;
 }
@@ -1321,8 +1326,13 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   background-color: #ffffff;
   list-style-type: none;
+}
+
+.pagination-item {
+  margin-bottom: 5px;
 }
 
 .pagination-item:not(:last-child) {
@@ -1332,8 +1342,8 @@ body {
 .pagination-link {
   display: block;
   box-sizing: border-box;
-  width: 50px;
-  height: 44px;
+  min-width: 50px;
+  min-height: 44px;
   padding: 14px 20px;
 
   line-height: 16px;
@@ -1381,6 +1391,7 @@ body {
 .pagination-show-more {
   margin-left: auto;
   word-spacing: 4px;
+  max-width: 170px;
 }
 
 /* popover */
