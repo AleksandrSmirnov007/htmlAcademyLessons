@@ -264,12 +264,12 @@ body {
 .advantages-title::before {
   content: "";
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   background-color: #ffffff;
   left: 50%;
   bottom: -34px;
-  margin-left: -6px;
+  margin-left: -6.5px;
   transform: rotate(45deg);
 }
 
@@ -351,7 +351,7 @@ body {
 .services-price {
   color: #af7842;
   order: 3;
-  word-spacing: 4px;
+  word-spacing: 3px;
 }
 
 .button-all {
@@ -501,7 +501,7 @@ body {
   margin: 8px 0;
 }
 
-.contacs-phone {
+.contacts-phone {
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 24px;
   line-height: 29px;
@@ -534,7 +534,7 @@ body {
 }
 
 .appointment-title {
-  margin-top: 0;
+  margin-top: 2px;
   margin-bottom: 20px;
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
@@ -543,9 +543,9 @@ body {
   text-transform: uppercase;
 }
 
-.appointment-description {
+.appointment-info {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   font-size: 14px;
   line-height: 20px;
   color: #595959;
@@ -554,7 +554,6 @@ body {
 .appointment-form {
   font-size: 16px;
   line-height: 24px;
-
   display: grid;
   grid-template-columns: 114px 74px 1fr;
   gap: 17px;
@@ -677,7 +676,7 @@ body {
 
 .footer-contacts-logo {
   display: block;
-  margin-bottom: 24px;
+  margin-bottom: 2px;
 }
 
 .footer-about-text {
@@ -1011,7 +1010,7 @@ body {
   margin: 0;
   padding: 0;
   border: none;
-  margin-bottom: 40px;
+  margin-bottom: 39px;
 }
 
 /* range */
@@ -1112,6 +1111,8 @@ body {
   padding-left: 36px;
   position: relative;
   cursor: pointer;
+  line-height: 22px;
+  padding-bottom: 3px;
 }
 
 .control-label {
@@ -1377,7 +1378,8 @@ body {
   background-repeat: no-repeat;
   background-size: 16px 16px;
   background-position: center;
-  min-width: 56px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .pagination-next {
@@ -1385,7 +1387,8 @@ body {
   background-repeat: no-repeat;
   background-size: 16px 16px;
   background-position: center;
-  min-width: 56px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .pagination-show-more {
