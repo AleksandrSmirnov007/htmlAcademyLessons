@@ -91,11 +91,15 @@ body {
   box-sizing: border-box;
 }
 
-.button-light {
+.button-light,
+.button-light:active,
+.button-current,
+.button-current:active,
+.button-feedback,
+.button-feedback:active {
   background-color: #ffffff;
   color: #242424;
 }
-
 
 .button:hover,
 .footer-social-link:hover {
@@ -108,16 +112,23 @@ body {
 }
 
 .button:focus,
-.footer-social-link:focus {
+.button:active,
+.footer-social-link:focus,
+.footer-social-link:active {
   background-color: #814b18;
   outline: 2px solid #dbb590;
+}
+
+.button-disabled,
+.button:disabled {
+  color: #e7e7e7;
+  background-color: #595959;
 }
 
 .button-light:focus {
   background-color: #dbb590;
   outline: 2px solid #af7842;
 }
-
 
 .page-header {
   background-color: #000000;
@@ -735,6 +746,7 @@ body {
 }
 
 .newsletter-field {
+  box-sizing: border-box;
   width: 100%;
   border: color #000000;
 }
@@ -831,7 +843,7 @@ body {
   width: 360px;
 }
 
-.modal-close-button {
+.button-close-modal {
   position: absolute;
   width: 56px;
   height: 44px;
@@ -1349,8 +1361,6 @@ body {
 
   line-height: 16px;
   font-weight: 700;
-  color: #ffffff;
-  background-color: #000000;
   text-decoration: none;
 }
 
@@ -1364,14 +1374,6 @@ body {
   background-color: #af7842;
 }
 
-.pagination-current {
-  background-color: #ffffff;
-  color: #242424;
-}
-
-.pagination-disabled {
-  background-color: #595959;
-}
 
 .pagination-prev {
   background-image: url("../images/arrow-left.svg");
