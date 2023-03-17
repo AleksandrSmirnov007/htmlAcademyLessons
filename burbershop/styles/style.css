@@ -91,24 +91,9 @@ body {
   box-sizing: border-box;
 }
 
-.button-light,
-.button-light:active,
-.button-current,
-.button-current:active,
-.button-feedback,
-.button-feedback:active {
-  background-color: #ffffff;
-  color: #242424;
-}
-
 .button:hover,
 .footer-social-link:hover {
   background-color: #814b18;
-}
-
-.button-light:hover {
-  color: #ffffff;
-  background-color: #dbb590;
 }
 
 .button:focus,
@@ -117,17 +102,37 @@ body {
 .footer-social-link:active {
   background-color: #814b18;
   outline: 2px solid #dbb590;
+  outline-offset: 0;
+}
+
+.button-current,
+.button-current:hover,
+.button-feedback {
+  background-color: #ffffff;
+  color: #242424;
+  cursor: default;
+  outline: none;
+}
+
+.button-feedback:hover {
+  background-color: #dbb590;
+}
+
+.button-feedback:focus {
+  background-color: #dbb590;
+  outline: 2px solid #af7842;
 }
 
 .button-disabled,
-.button:disabled {
+.button-disabled:hover,
+.button-disabled:active,
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:active {
   color: #e7e7e7;
   background-color: #595959;
-}
-
-.button-light:focus {
-  background-color: #dbb590;
-  outline: 2px solid #af7842;
+  outline: none;
+  cursor: default;
 }
 
 .page-header {
@@ -470,7 +475,7 @@ body {
 }
 
 .slider-pagination-button:focus:not(.slider-pagination-button-current) {
-  background-color: #814b18;
+  background-color: #dbb590;
   outline: none;
 }
 
@@ -1363,17 +1368,6 @@ body {
   font-weight: 700;
   text-decoration: none;
 }
-
-
-.pagination-link:hover {
-  background-color: #814b18;
-}
-
-.pagination-link:focus {
-  outline: 2px solid #dbb590;
-  background-color: #af7842;
-}
-
 
 .pagination-prev {
   background-image: url("../images/arrow-left.svg");
