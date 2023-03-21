@@ -6,6 +6,7 @@
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> с этой строкой ломается верстка на мобтльном экране-->
         <title>Каталог</title>
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     </head>
     <body>
         <header class="page-header">
@@ -43,7 +44,7 @@
 
                         </a>
                         <div class="popover popover-cart">
-                            <button class="popover-close-button button button-light">
+                            <button class="popover-close-button button button-light" type="button">
                                 2
                                 <span class="visually-hidden">закрыть</span>
                             </button>
@@ -223,7 +224,7 @@
                     <!--Сортировка-->
                     <div class="catalog-right-column">
                         <div class="sorting-container">
-                            <form class="sorting-type">
+                            <form class="sorting-type" action="https://echo.htmlacademy.ru">
                                 <div class="select">
                                     <label class="visually-hidden" for="sorting">Сортировка</label>
                                     <select class="select-control" id="sorting" name="sorting">
@@ -448,7 +449,7 @@
         <div class="modal-container modal-container-close">
             <div class="modal modal-auth">
 
-                <button class="modal-close-button">
+                <button class="modal-close-button" type="button">
                     <span class="visually-hidden">Закрыть</span>
                 </button>
                 <section class="modal-content">

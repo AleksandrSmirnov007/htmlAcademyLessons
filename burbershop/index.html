@@ -7,6 +7,7 @@
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />   -->
         <title>Барбершоп «Бородинский»</title>
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     </head>
     <body><!-- Шапка -->
         <header class="page-header">
@@ -29,7 +30,7 @@
                     <li class="navigation-item">
                         <a class="navigation-link" href="#">
                             <svg class="navigation-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                             viewBox="0 0 16 16" fill="none" >
+                             viewBox="0 0 16 16" >
                                 <path  fill-rule="evenodd" d="M11 6.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm-.67 5.25a6.5 6.5 0 1 1 1.41-1.41l3.97 3.95-1.42 1.42-3.96-3.96Z" clip-rule="evenodd"/>
                             </svg>
                             <span class="visually-hidden"> Поиск </span>
@@ -38,13 +39,13 @@
                     <li class="navigation-item">
                         <a class="navigation-link" href="#">
                             <svg class="navigation-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                             viewBox="0 0 16 16" fill="none">
+                             viewBox="0 0 16 16" >
                                 <path fill-rule="evenodd" d="M3.1 6 3.57.9l.08-.9h8.67l.1.9.48 5.1H15.63l-.14 1.12-1 8-.1.88H1.61l-.11-.88-1-8L.37 6H3.1Zm2 0h5.8l-.38-4H5.48L5.1 6Zm-1.72 8-.75-6h10.74l-.75 6H3.38ZM8.5 9.5v3h2v-3h-2Zm-3 3v-3h2v3h-2Z" clip-rule="evenodd"/>
                             </svg>
                             <span class="visually-hidden"> Корзина </span>
                         </a>
                         <div class="popover popover-cart">
-                            <button class="popover-close-button button button-light">
+                            <button class="popover-close-button button button-light" type="button">
                                 2
                                 <span class="visually-hidden">закрыть</span>
                             </button>
@@ -248,7 +249,7 @@
                             <p class="field-group appointment-form-phone">
                                 <label class="form-label" for="appointment-phone">Телефон</label>
 
-                                <input class="field" type="text" name="appointment-phone" id="appointment-phone" placeholder="+7 800 000-00-00">
+                                <input class="field" type="text" name="appointment-phone" id="appointment-phone" placeholder="+7 800 000-00-00" required>
                             </p>
 
                             <p class="field-group appointment-form-name">
@@ -321,7 +322,7 @@
         <div class="modal-container">
             <div class="modal modal-auth">
 
-                <button class="button-close-modal">
+                <button class="button-close-modal" type="button">
                     <span class="visually-hidden">Закрыть</span>
                 </button>
                 <section class="modal-content">
