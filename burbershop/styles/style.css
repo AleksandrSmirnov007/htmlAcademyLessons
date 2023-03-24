@@ -63,6 +63,11 @@ body {
   color: #242424;
 }
 
+.img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
