@@ -1702,7 +1702,7 @@ body {
   left: calc(-128px + 50%);
   display: none;
   width: 256px;
-  padding: 20px 20px 23px 24px;
+  padding: 20px 15px 23px 24px;
   font-size: 16px;
   line-height: 20px;
   background-color: #333333;
