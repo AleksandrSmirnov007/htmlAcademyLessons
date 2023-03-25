@@ -390,25 +390,33 @@ body {
 
 .details-item {
   min-height: 384px;
-  padding-top: 185px;
+  padding-top: 80px;
   padding-bottom: 79px;
   align-items: center;
-  background-repeat: no-repeat;
-  background-size: 84px 84px;
-  background-position: center 80px;
   background-color: #ffffff;
   list-style-type: none;
 }
 
-.details-item-housing {
+.details-item::before {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 21px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 84px 84px;
+}
+
+.details-item-housing::before {
   background-image: url("../images/icons/housing.svg");
 }
 
-.details-item-eating {
+.details-item-eating::before {
   background-image: url("../images/icons/eating.svg");
 }
 
-.details-item-souvenir {
+.details-item-souvenir::before {
   background-image: url("../images/icons/souvenir.svg");
 }
 
@@ -522,6 +530,14 @@ body {
 .field-input-error {
   border-color: #ff5757;
   background-color: #ffffff;
+}
+
+.field-input:disabled,
+.field-input:disabled:hover,
+.field-input:disabled:active {
+  opacity: 0.3;
+  cursor: default;
+  outline: none;
 }
 
 .subscribe-button {
@@ -830,8 +846,11 @@ body {
   display: block;
 }
 
-/* checkbox radio disabled*/
+/* checkbox and radio disabled*/
 
+.control-input:disabled + .control-label {
+  opacity: 0.3;
+}
 
 .control-input:disabled + .control-label::before {
   background-color: rgba(255, 255, 255, 0.3);
@@ -856,16 +875,72 @@ body {
 .range-field {
   display: flex;
   flex-grow: 1;
-  justify-content: space-between;
+  border: none;
+  position: relative;
+}
+
+.range-title {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  bottom: 12px;
+  opacity: 0.3;
+}
+
+.range-input {
+  font-family: "PT Sans", sans-serif;
+  display: block;
   height: 48px;
+  width: 100%;
+  box-sizing: border-box;
   padding-bottom: 11px;
   padding-top: 14px;
   padding-left: 17px;
   padding-right: 14px;
   border: 2px solid #ffffff;
-  border-right: 2px solid #ffffff;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+  background-color: transparent;
+  appearance: none;
+  cursor: default;
+}
+
+.range-field:last-child .range-input {
+  border-left: none;
+  border-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.range-input:focus {
+  outline: none;
+}
+
+.range-input:hover {
+  opacity: 0.6;
+}
+
+.range-input:active {
+  background-color: #756257;
+}
+
+.range-input:disabled,
+.range-input:disabled:hover {
+  opacity: 0.3;
+}
+
+.range-input:disabled:active {
+  background-color: transparent;
+}
+
+.range-input:focus:not(:active) {
+  outline: 3px solid #83b3d3;
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  opacity: 1;
+  border-left: 2px solid #ffffff;
 }
 
 /* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
@@ -877,51 +952,6 @@ body {
 /* Для Firefox попроще: */
 .range-input[type="number"] {
   appearance: textfield;
-}
-
-.range-field + .range-field {
-  margin-left: -2px;
-  border-right: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-radius: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.range-field:hover {
-  opacity: 0.6;
-}
-
-.range-field:active {
-  background-color: #756257;
-}
-
-.range-field:focus-within:not(:active) {
-  z-index: 1;
-  outline: 3px solid #83b3d3;
-  box-shadow: inset 0 0 0 3px #83b3d3;
-  opacity: 1;
-}
-
-.range-input:focus {
-  outline: none;
-}
-
-.range-title {
-  order: 2;
-  align-self: center;
-  padding-bottom: 2px;
-  opacity: 0.3;
-}
-
-.range-input {
-  font-family: "PT Sans", sans-serif;
-  font-size: 18px;
-  line-height: 23px;
-  color: #ffffff;
-  background-color: transparent;
-  border: none;
-  appearance: none;
 }
 
 /*  range-slider  */
@@ -998,6 +1028,11 @@ body {
   padding-bottom: 14px;
 }
 
+.filter-submit:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
 .filter-submit:focus:not(:active) {  /* неоходимо поддерживать специфичность селекторов на одном уровне, если уже и используем конструкцию :focus:not(:active) то так, и надо делать везде, иначе невозможно будет переопределить стили за счет того, что селектор находиться ниже переопределяемого  */
   outline: 3px solid #ffffff;
 }
@@ -1027,6 +1062,11 @@ body {
 .button-reset:focus:not(:active) {
   outline: 3px solid #83b3d3;
   border-radius: 4px;
+}
+
+.button-reset:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 
 /* catalog */
@@ -1578,9 +1618,15 @@ body {
   background-position: right 15px top 55%;
 }
 
-.search-form-date .field-input:not(:placeholder-shown):active {
+.search-form-input:not(:placeholder-shown):active {
   outline: 2px solid #333333;
   background-color: #ffffff;
+}
+
+.search-form-input:disabled:hover,
+.search-form-input:disabled:not(:placeholder-shown):active {
+  outline: none;
+  background-color: rgb(242, 242, 242);
 }
 
 .modal-field-message {
@@ -1611,6 +1657,7 @@ body {
   border: none;
   background-color: transparent;
 }
+
 
 .number-button-minus {
   grid-column: 1 / 2;
@@ -1668,6 +1715,13 @@ body {
   opacity: 1;
 }
 
+.number-button:disabled,
+.number-button:disabled:hover::after,
+.number-button:disabled:active::after {
+  border: none;
+  opacity: 0.3;
+}
+
 .modal-form-info {
   position: relative;
   display: grid;
@@ -1715,7 +1769,7 @@ body {
   display: block;
 }
 
-.field-info::before {
+.field-info-text::before {
   content: "";
   position: absolute;
   top: -9px;
@@ -1733,4 +1787,13 @@ body {
   margin-left: 2px;
   margin-right: -2px;
   line-height: 40px;
+}
+
+.modal-button-submit:disabled,
+.modal-button-submit:disabled:hover,
+.modal-button-submit:disabled:active {
+  opacity: 0.3;
+  background-color: #83b3d3;
+  color: #ffffff;
+  cursor: default;
 }
