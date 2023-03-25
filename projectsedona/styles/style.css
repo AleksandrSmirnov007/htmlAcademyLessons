@@ -253,7 +253,7 @@ body {
 .main-logo-container {
   min-height: 485px;
   margin-top: -1px;
-  background-color: #3d78a0;
+  background-color: #652f10;
   background-repeat: no-repeat;
 
   background-position:
@@ -1709,6 +1709,12 @@ body {
   opacity: 0.2;
 }
 
+/* убираем с кнопок стандартную рамку при фокусе от браузера */
+.number-button:focus {
+  outline: none;
+}
+
+/* прописываем свой фокус */
 .number-button:focus:not(:active)::after {
   border: 3px solid #83b3d3;
   border-radius: 4px;
