@@ -680,6 +680,7 @@ body {
 
 .breadcrumbs-list {
   display: flex;
+  flex-wrap: wrap;
   align-content: center;
   padding: 0;
   margin: 0;
@@ -690,9 +691,14 @@ body {
   list-style-type: none;
 }
 
-.breadcrumbs-item {
+.breadcrumbs-item:first-child {
+  margin-right: -10px;
+}
+
+.breadcrumbs-item:not(:first-child) {
   position: relative;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: -10px;
 }
 
 .breadcrumbs-item:not(:first-child)::before {
@@ -1764,6 +1770,7 @@ body {
 
 .field-info-text {
   position: absolute;
+  z-index: 1;
   top: 40px;
   left: calc(-128px + 50%);
   display: none;
