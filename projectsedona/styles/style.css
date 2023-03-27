@@ -872,7 +872,8 @@ body {
 
 .filter-fieldset-price {
   justify-self: end;
-  width: 287px;
+  width: 100%;
+  max-width: 287px;
 }
 
 .filter-fieldset-price .catalog-filter-title {
@@ -1201,7 +1202,7 @@ body {
 /* card-view-list */
 
 .card-view-list {
-  max-width: 220px;
+  max-width: 170px;
   display: flex;
   flex-wrap: wrap;
   margin: -4px; /* еще одинподход: родительский контейнер с минусовым маржином по всему периметру, а внутренние элементы имет по кругу плюсовой марджин того же размера, то есть около краев контейнера маржины компенсируются, но между собой элементы имееют отступ в размере двойного марджина (чем то похоже на gap в grid) и можно не обнулять маржин у последенего элеменнта в ряду как к примеру .card-view-item:last-child {margin-right: 0;}*/
@@ -1423,7 +1424,8 @@ body {
 .pagination-list {
   display: flex;
   flex-wrap: wrap;
-  margin: -4px -4px;   /* вариант размещения элементов внутри контейнера - использовать отрицательные маржины на контейнере, вместо обнуления отступа у последнего элемента как раньше .pagination-list{margin: 0;} , .pagination-item {margin-right: 8px;} , .pagination-item:last-child {margin-right: 0;} . (плюч к этому еще добавлдены вертикальные  отрицательные отсупы которые потом будут поглащать отступы элементов*/
+  margin: -4px;   /* вариант размещения элементов внутри контейнера - использовать отрицательные маржины на контейнере, вместо обнуления отступа у последнего элемента как раньше .pagination-list{margin: 0;} , .pagination-item {margin-right: 8px;} , .pagination-item:last-child {margin-right: 0;} . (плюч к этому еще добавлдены вертикальные  отрицательные отсупы которые потом будут поглащать отступы элементов. Но справа поставим положительный отступ что бы элемненты не пирилипали к элементам справа  */
+  margin-right: 10px;
   padding: 0;
   font-size: 20px;
   line-height: 26px;
@@ -1768,9 +1770,10 @@ body {
   background-color: #68a2ca;
 }
 
+/* всплыващая подсказка */
 .field-info-text {
-  position: absolute;
-  z-index: 1;
+  position: absolute; /* позиционирование ее отностельно родителя и выведение из потока */
+  z-index: 1; /* иначе перекрывается аналогичным родителем */
   top: 40px;
   left: calc(-128px + 50%);
   display: none;
