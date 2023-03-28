@@ -285,7 +285,7 @@ body {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #333333;
+  color: #000000;
 }
 
 .advantages-title {
@@ -296,12 +296,12 @@ body {
 .section-subtitle {
   font-size: 22px;
   line-height: 26px;
+  color: #333333;
 }
 
 .advantages-subtitle {
   margin: 0;
   line-height: 36px;
-  color: #333333;
 }
 
 /* advantages-list */
@@ -1408,7 +1408,6 @@ body {
   padding-top: 17px;
   padding-bottom: 17px;
   width: 620px;
-  font-family: "PT Sans", sans-serif;
   font-size: 20px;
   line-height: 26px;
   border-radius: 4px;
