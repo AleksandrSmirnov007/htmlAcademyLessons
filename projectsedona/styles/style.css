@@ -24,8 +24,9 @@
 
 .img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 html {
@@ -253,7 +254,7 @@ body {
 .main-logo-container {
   min-height: 485px;
   margin-top: -1px;
-  background-color: #652f10;
+  background-color: #4287b6;
   background-repeat: no-repeat;
 
   background-position:
@@ -744,6 +745,7 @@ body {
 .breadcrumbs-link:focus:not(:active) {
   border: 3px solid #83b3d3;
   border-radius: 4px;
+  outline: 0; /* при переключении фокуса клавишей tab вклюется псевдоклас focus-vuisible происходит не такая стилизация   */
 }
 
 
