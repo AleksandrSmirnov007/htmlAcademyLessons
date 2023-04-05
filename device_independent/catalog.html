@@ -12,7 +12,7 @@
   <header class="page-header">
     <nav class="navigation">
       <a class="navigation-logo" href="index.html">
-        <img width="145" height="36" src="image/content/logo.svg" alt="логотип Девайс">
+        <img width="145" height="36" src="image/icon/logo.svg" alt="логотип Девайс">
       </a>
       <section class="search">
         <h2 class="visually-hidden">Поиск товаров на сайте</h2>
@@ -78,91 +78,219 @@
       </li>
     </ul>
 
-    <form class="catalog-filter" action="https://echo.htmlacademy.ru" method="post">
-      <h2 class="form-title">Фильтр</h2>
-      <fieldset class="filter-fieldset">
-        <legend class="catalog-filter-title">Стоимость</legend>
-        <div class="range">
-          <div class="range-bar">
-            <button class="range-toggle toggle-min" type="button">
-              <span class="visually-hidden">изменить минимальную цену</span>
-            </button>
-            <button class="range-toggle toggle-max" type="button">
-              <span class="visually-hidden">изменить максимальную цену</span>
-            </button>
+    <section class="left-panel">
+      <form class="catalog-filter" action="https://echo.htmlacademy.ru" method="post">
+        <h2 class="form-title">Фильтр</h2>
+        <fieldset class="filter-fieldset">
+          <legend class="catalog-filter-title">Стоимость</legend>
+          <div class="range">
+            <div class="range-bar">
+              <button class="range-toggle toggle-min" type="button">
+                <span class="visually-hidden">изменить минимальную цену</span>
+              </button>
+              <button class="range-toggle toggle-max" type="button">
+                <span class="visually-hidden">изменить максимальную цену</span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="range-wrapper-inputs">
-          <label class="catalog-filter-label">
-            от <input class="catalog-filter-input" type="number" name="min-price" value="50">
-          </label>
+          <div class="range-wrapper-inputs">
+            <label class="catalog-filter-label">
+              от <input class="catalog-filter-input" type="number" name="min-price" value="50">
+            </label>
 
-          <label class="catalog-filter-label">
-            от <input class="catalog-filter-input" type="number" name="max-price" value="5000">
-          </label>
-        </div>
+            <label class="catalog-filter-label">
+              от <input class="catalog-filter-input" type="number" name="max-price" value="5000">
+            </label>
+          </div>
 
-      </fieldset>
-      <fieldset class="filter-fieldset">
-        <legend class="catalog-filter-title">Цвет</legend>
-        <ul class="catalog-filter-list">
-          <li class="catalog-filter-item">
-            <label class="control">
-              <input class="control-input" type="checkbox" name="black" checked>
-              <span class="visually-hidden">Черный</span>
-            </label>
-          </li>
-          <li class="catalog-filter-item">
-            <label class="control">
-              <input class="control-input" type="checkbox" name="white" checked>
-              <span class="visually-hidden">Белый</span>
-            </label>
-          </li>
-          <li class="catalog-filter-item">
-            <label class="control">
-              <input class="control-input" type="checkbox" name="blue">
-              <span class="visually-hidden">Синий</span>
-            </label>
-          </li>
-          <li class="catalog-filter-item">
-            <label class="control">
-              <input class="control-input" type="checkbox" name="red">
-              <span class="visually-hidden">Красный</span>
-            </label>
-          </li>
-          <li class="catalog-filter-item">
-            <label class="control">
-              <input class="control-input" type="checkbox" name="pink">
-              <span class="visually-hidden">Розовый</span>
-            </label>
-          </li>
+        </fieldset>
+        <fieldset class="filter-fieldset">
+          <legend class="catalog-filter-title">Цвет</legend>
+          <ul class="catalog-filter-list">
+            <li class="catalog-filter-item">
+              <label class="control">
+                <input class="control-input" type="checkbox" name="black" checked>
+                <span class="visually-hidden">Черный</span>
+              </label>
+            </li>
+            <li class="catalog-filter-item">
+              <label class="control">
+                <input class="control-input" type="checkbox" name="white" checked>
+                <span class="visually-hidden">Белый</span>
+              </label>
+            </li>
+            <li class="catalog-filter-item">
+              <label class="control">
+                <input class="control-input" type="checkbox" name="blue">
+                <span class="visually-hidden">Синий</span>
+              </label>
+            </li>
+            <li class="catalog-filter-item">
+              <label class="control">
+                <input class="control-input" type="checkbox" name="red">
+                <span class="visually-hidden">Красный</span>
+              </label>
+            </li>
+            <li class="catalog-filter-item">
+              <label class="control">
+                <input class="control-input" type="checkbox" name="pink">
+                <span class="visually-hidden">Розовый</span>
+              </label>
+            </li>
 
+          </ul>
+        </fieldset>
+        <fieldset class="filter-fieldset">
+          <legend class="catalog-filter-title">Bluetooth</legend>
+          <ul class="catalog-filter-list">
+            <li class="catalog-filter-item">
+              <label class="control">
+                <input class="control-input" type="radio" name="Bluetooth" value="yes" checked>
+                <span class="visually-hidden">Есть</span>
+              </label>
+            </li>
+            <li class="catalog-filter-item">
+              <label class="control">
+                <input class="control-input" type="radio" name="Bluetooth" value="no">
+                <span class="visually-hidden">Нет</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <button class="button filter-submit" type="submit">Показать</button>
+
+      </form>
+    </section>
+
+    <section class="right-column">
+      <h2 class="visually-hidden">Результаты поиска</h2>
+      <div class="control-panel">
+        <form class="catalog-sort" action="https://echo.htmlacademy.ru" method="get">
+          <label class="form-title" for="sorting">сортировка:</label>
+          <select class="select-control" name="sorting" id="sorting">
+            <option value="popular" selected>Популярные</option>
+            <option value="cheap">Дешевые</option>
+            <option value="expensive">Дорогие</option>
+          </select>
+
+          <button class="visually-hidden" type="submit">Отсортировать продукты</button>
+        </form>
+
+        <a class="arrow arrow-up" href="#">
+          <span class="visually-hidden">Листать вверх</span>
+        </a>
+        <a class="arrow arrow-down" href="#">
+          <span class="visually-hidden">Листать вниз</span>
+        </a>
+      </div>
+      <ul class="product-card-list">
+      <h3 class="visually-hidden">Список товаров</h3>
+        <li class="producut-card-item">
+          <a class="product-card-link" href="#">
+            <h4 class="product-card-title">Любительская селфи-палка</h4>
+          </a>
+          <img class="product-card-image" width="360" heght="380" src="image/content/product-1.jpg" alt="селфи-палка с телефоном.">
+          <p class="product-card-price">
+            <span class="visually-hidden">цена:</span>
+            500 ₽
+          </p>
+        </li>
+        <li class="producut-card-item">
+          <a class="product-card-link" href="#">
+            <h4 class="product-card-title">Профессиональная селфи-палка </h4>
+          </a>
+          <img class="product-card-image" width="360" heght="380" src="image/content/product-2.jpg" alt="селфи-палка с телефоном.">
+          <p class="product-card-price">
+            <span class="visually-hidden">цена:</span>
+            1 500 ₽
+          </p>
+        </li>
+        <li class="producut-card-item">
+          <a class="product-card-link" href="#">
+            <h4 class="product-card-title">Непотопляемая селфи-палка</h4>
+          </a>
+          <img class="product-card-image" width="360" heght="380" src="image/content/product-3.jpg" alt="селфи-палка с телефоном.">
+          <p class="product-card-price">
+            <span class="visually-hidden">цена:</span>
+            2 500 ₽
+          </p>
+        </li>
+        <li class="producut-card-item">
+          <a class="product-card-link" href="#">
+            <h4 class="product-card-title">Селфи-палка «Следуй за мной»</h4>
+          </a>
+          <img class="product-card-image" width="360" heght="380" src="image/content/product-4.jpg" alt="селфи-палка с телефоном.">
+          <p class="product-card-price">
+            <span class="visually-hidden">цена:</span>
+            1 500 ₽
+          </p>
+        </li>
+      </ul>
+
+      <button class="button button-show-more" type="button">Загрузить ещё</button>
+
+      <div class="pagination-nav">
+        <button class="button pagination-button" type="button">Назад</button>
+
+        <ul class="pagination-list">
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">1</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">2</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">3</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">...</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">15</a>
+          </li>
         </ul>
-      </fieldset>
-      <fieldset class="filter-fieldset">
-        <legend class="catalog-filter-title">Bluetooth</legend>
-        <ul class="catalog-filter-list">
-          <li class="catalog-filter-item">
-            <label class="control">
-              <input class="control-input" type="radio" name="Bluetooth" value="yes" checked>
-              <span class="visually-hidden">Есть</span>
-            </label>
-          </li>
-          <li class="catalog-filter-item">
-            <label class="control">
-              <input class="control-input" type="radio" name="Bluetooth" value="no">
-              <span class="visually-hidden">Нет</span>
-            </label>
-          </li>
-        </ul>
-      </fieldset>
-      <button class="button filter-submit" type="submit">Показать</button>
 
-    </form>
+        <button class="button paigation-button" type="bytton">Вперёд</button>
+      </div>
 
-    <form class="catalog-sort" action="https://echo.htmlacademy.ru" method="post">
+    </section>
 
-    </form>
+    <section class="modal">
+      <h2 class="visually-hidden">Модальное окно</h2>
+      <p class="section-title">Доставка под заказ</p>
+      <button class="button modal-button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+
+      <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
+        <fieldset class="modal-field modal-field-name">
+          <label class="modal-field-title"  for="name">Ваше имя:</label>
+          <input class="field-input" type="text" name="name" id="name" placeholder="Введите имя">
+
+        </fieldset>
+        <fieldset class="modal-field modal-field-email">
+          <label class="modal-field-title"  for="email">Ваш e-mail:</label>
+          <input class="field-input" type="email" name="email" id="email" placeholder="почта">
+          <span class="modal-field-message madal-fiaeld-message-error">Забавный у вас адрес</span>
+        </fieldset>
+
+        <fieldset class="modal-field modal-field-poroduct">
+          <label class="modal-field-title"  for="product">Что нужно привезти:</label>
+          <input class="field-input" type="text" name="product" id="product" placeholder="В свободной форме">
+
+        </fieldset>
+
+        <fieldset class="modal-field modal-field-amount">
+          <label class="modal-field-title"  for="amount">Количество</label>
+          <!-- info -->
+          <input class="field-input" type="number" name="amount" id="amount" placeholder="В свободной форме">
+          <!-- ограничения больше 0, шаг -->
+          <!-- кнопки  -->
+        </fieldset>
+
+
+      </form>
+    </section>
 
   </main>
 
@@ -171,7 +299,7 @@
   <footer class="page-footer">
     <section class="footer-contacts-text">
       <h2 class="visually-hidden">Контакты</h2>
-      <img class="footer-contacts-logo" src="image/content/logo-yellow.svg" alt="логотип Девайс желтым цветом">
+      <img class="footer-contacts-logo" src="image/icon/logo-yellow.svg" alt="логотип Девайс желтым цветом">
       <address class="footer-address">
         <p class="footer-contacts-text">
           Санкт-Петербург, набережная реки Карповки, 5, литера П.
@@ -218,7 +346,7 @@
           </li>
         </ul>
         <a class="htmlacademy-link" href="https://htmlacademy.ru">
-          <img class="htmlacademy-logo" src="image/content/htmlacademy-logo.svg" alt="ссылка на .html academy. ">
+          <img class="htmlacademy-logo" src="image/icon/htmlacademy-logo.svg" alt="ссылка на .html academy. ">
         </a>
       </section>
 
