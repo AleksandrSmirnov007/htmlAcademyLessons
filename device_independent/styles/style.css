@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 800;
 
-  src: url("../fonts/Raleway-800.woff2") format("woff2");
+  src: url("../fonts/Raleway-extra-bold.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 400;
 
-  src: url("../fonts/Rubik-400.woff2") format("woff2");
+  src: url("../fonts/Rubik-regular.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 700;
 
-  src: url("../fonts/Rubik-700.woff2") format("woff2");
+  src: url("../fonts/Rubik-bold.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -255,4 +255,130 @@ body {
 
 .footer-contacts-phone {
   text-decoration: underline;
+}
+
+
+/* catalog */
+
+.left-panel {
+  background-color: #f0f0f0;
+}
+
+.form-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.breadcrumbs-link{
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.catalog-filter-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.catalog-filter-label {
+  font-size: 15px;
+  line-height: 18px;
+  opacity: 0.3;
+}
+
+.catalog-filter-input {
+  background-color: transparent;
+}
+
+.select-control {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+/* product card */
+
+.product-card-link {
+  text-decoration: none;
+}
+
+.product-card-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.product-card-price {
+  font-size: 18px;
+  line-height: 21px;
+  color: #444444;
+}
+
+.button-show-more {
+  font-size: 16px;
+  line-height: 19px;
+  background-color: transparent;
+}
+
+.pagination {
+  background-color: #ebebeb;
+}
+
+.pagination-button {
+  background-color: transparent;
+}
+
+.pagination-link {
+  font-size: 16px;
+  line-height: 20px;
+  color: #444444;
+  opacity: 0.3;
+  text-decoration: none;
+}
+
+/* modal */
+
+.modal-field-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.modal-field-input {
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  background-color: #f0f0f0;
+}
+
+.modal-field-input::placeholder {
+  color: #000000;
+  opacity: 0.3;
+}
+
+.modal-field-message {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.modal-field-message-error {
+  color: #ff3d3d;
+}
+
+.field-info-text {
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  background-color: #000000;
 }
