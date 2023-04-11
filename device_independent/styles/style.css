@@ -83,11 +83,16 @@ body {
   background-color: transparent;
 }
 
-.navigation-user-link {
+.navigation-user-link,
+.account-exit {
   font-size: 18px;
   line-height: 30px;
   color: #000000;
   text-decoration: none;
+}
+
+.account-exit {
+  opacity: 0.3;
 }
 
 .icon-button-counter {
