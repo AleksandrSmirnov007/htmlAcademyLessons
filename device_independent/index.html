@@ -14,32 +14,34 @@
       <a class="navigation-logo">
         <img width="145" height="36" src="image/icon/logo.svg" alt="логотип Девайс">
       </a>
-      <section class="search">
-        <h2 class="visually-hidden">Поиск товаров на сайте</h2>
+      <div class="user-menu-container">
+        <section class="search">
+          <h2 class="visually-hidden">Поиск товаров на сайте</h2>
 
-        <form action="https://echo.htmlacademy.ru/" metod="post">
-          <label class="field search-field">
-            <span class="visually-hidden">Введите текст поиска</span>
-            <input class="field-input search-input" type="text" name="search" placeholder="Текст поиска">
-          </label>
-          <button class="button button-search" type="submit">Найти</button>
-        </form>
-      </section>
+          <form action="https://echo.htmlacademy.ru/" metod="post">
+            <label class="field search-field">
+              <span class="visually-hidden">Введите текст поиска</span>
+              <input class="field-input search-input" type="text" name="search" placeholder="Текст поиска">
+            </label>
+            <button class="button button-search" type="submit">Найти</button>
+          </form>
+        </section>
 
-      <ul class="navigation-user-list">
-        <li class="navigation-user-item">
-          <a class="navigation-user-link" href="#">Войти</a>
-        </li>
-        <li class="navigation-user-item">
-          <a class="navigation-user-link" href="#">Сравнить</a>
-        </li>
-        <li class="navigation-user-item">
-          <a class="navigation-user-link" href="#">
-            <span>Корзина</span>
-            <span class="icon-button-counter">2</span>
-          </a>
-        </li>
-      </ul>
+        <ul class="navigation-user-list">
+          <li class="navigation-user-item">
+            <a class="navigation-user-link" href="#">Войти</a>
+          </li>
+          <li class="navigation-user-item">
+            <a class="navigation-user-link" href="#">Сравнить</a>
+          </li>
+          <li class="navigation-user-item">
+            <a class="navigation-user-link" href="#">
+              <span>Корзина</span>
+              <span class="icon-button-counter">2</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <ul class="navigation-list">
         <li class="navigation-item">
@@ -62,7 +64,7 @@
     </nav>
   </header>
 
-  <main class="page-main">
+  <main class="page-main main-container">
     <h1 class="visually-hidden">Интернет-магазин «Девайс»</h1>
     <section class="gallery">
       <h2 class="visually-hidden">Галерея</h2>
@@ -74,7 +76,7 @@
         </div>
       </div>
       <div class="slider-info">
-        <div class="slider-number">01</div>
+        <div class="slider-number visually-hidden">01</div>
         <p class="section-title">Порхает как бабочка, жалит как пчела!</p>
         <p class="section-description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
       </div>

@@ -25,19 +25,74 @@
   font-display: swap;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+html {
+  height: 100%;
+
+}
+
 body {
+  min-height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
   color: #000000;
   background-color: #ffffff;
+  padding-top: 17px;
+  width: 1440px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .header-nav {
-  background-color: #ffe17f;
+  padding: 0 200px;
 }
 
-.field-input {
+.navigation-logo {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.user-menu-container {
+  display: flex;
+}
+
+.search {
+  width: 517px;
+}
+
+.navigation-user-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navigation-user-item {
 
 }
 
@@ -112,8 +167,22 @@ body {
   text-decoration: none;
 }
 
+.main-container {
+  flex-grow: 1;
+}
+
+/* .gallery {
+  display: grid;
+  grid-template-columns: 560px 560px;
+} */
+
+.slider {
+  padding-left: 145px;
+  padding-right: 140px;
+}
 
 .slider-number {
+  position: absolute;
   font-weight: 700;
   font-size: 180px;
   line-height: 180px;
@@ -264,6 +333,7 @@ body {
 
 
 /* catalog */
+
 
 .left-panel {
   background-color: #f0f0f0;
