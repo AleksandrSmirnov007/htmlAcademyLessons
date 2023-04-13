@@ -69,31 +69,30 @@ body {
 }
 
 .header-nav {
-  padding: 0 200px;
+  margin: 0 140px;
+  padding: 0 60px;
 }
 
 .navigation-logo {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .user-menu-container {
   display: flex;
+  align-items: center;
 }
 
-.search {
+.search-form {
   width: 517px;
-}
-
-.navigation-user-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
-.navigation-user-item {
-
+.search-field {
+  flex-grow: 1;
+  margin-right: -2px;
 }
 
 .search-input {
@@ -103,6 +102,10 @@ body {
   line-height: 20px;
   color: #000000;
   background-color: transparent;
+  padding: 8px 48px;
+  border: 2px solid #000000;
+  border-radius: 50px 0 0 50px;
+  width: 100%;
 }
 
 .search-input::placeholder {
@@ -110,8 +113,11 @@ body {
   background-color: transparent;
 }
 
-
-.button{
+.button-search {
+  padding: 8px 54px;
+  border: 2px solid #000000;
+  border-radius: 0px 50px 50px 0px;
+  /* margin-right: 26px; */
 
 }
 
@@ -138,12 +144,54 @@ body {
   background-color: transparent;
 }
 
+.navigation-user-list {
+  list-style-type: none;
+  margin: 0;
+  margin-right: -21px;
+  padding: 0;
+  padding-left: 26px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navigation-user-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .navigation-user-link,
 .account-exit {
+  display: block;
   font-size: 18px;
   line-height: 30px;
   color: #000000;
   text-decoration: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  outline: 1px solid green;
+  margin-right: 5px;
+}
+
+.navigation-user-link-login {
+  min-width: 231px;
+  padding-left: 29px;
+  margin-right: 26px;
+}
+
+.navigation-user-link-compare {
+  padding-left: 24px;
+  padding-right: 10px;
+}
+
+.navigation-user-link-cart {
+  padding-left: 2px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation-user-link-text {
+  padding-left: 20px;
 }
 
 .account-exit {
@@ -153,6 +201,12 @@ body {
 .icon-button-counter {
   font-size: 14px;
   line-height: 17px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 7px;
+  padding-left: 7px;
+  background-color: green;
+  border-radius: 50%;
 }
 
 .navigation-link {
