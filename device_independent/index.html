@@ -44,11 +44,30 @@
       </div>
 
       <ul class="navigation-list">
-        <li class="navigation-item">
-          <a class="navigation-link" href="catalog.html">Каталог товаров</a>
-          <a href="#">
-            <span class="visually-hidden">показать еще</span>
-          </a>
+        <li class="navigation-item catalog-toggler-container">
+          <details class="select-catalog">
+            <summary class="select-button navigation-link">Каталог товаров</summary>
+            <ul class="catalog-select-list">
+              <li class="catalog-select-item first-column">
+                <a href="#" class="catalog-select-link">Виртуальная реальность</a>
+              </li>
+              <li class="catalog-select-item first-column">
+                <a href="#" class="catalog-select-link">Моноподы для cелфи</a>
+              </li>
+              <li class="catalog-select-item first-column">
+                <a href="#" class="catalog-select-link">Экшн-камеры</a>
+              </li>
+              <li class="catalog-select-item second-column">
+                <a href="#" class="catalog-select-link">Фитнес-браслеты</a>
+              </li>
+              <li class="catalog-select-item second-column">
+                <a href="#" class="catalog-select-link">Умные часы</a>
+              </li>
+              <li class="catalog-select-item third-column">
+                <a href="#" class="catalog-select-link">Квадрокоптеры</a>
+              </li>
+            </ul>
+          </details>
         </li>
         <li class="navigation-item">
           <a class="navigation-link" href="#">Доставка</a>
@@ -69,48 +88,62 @@
     <section class="gallery">
       <h2 class="visually-hidden">Галерея</h2>
       <div class="slider">
+        <div class="slider-number">
+          <span class="background-number">01</span>
+        </div>
         <img class="slider-image" width="560" height="560" src="image/content/slider-1.png" alt="квадракоптер с лазером.">
         <div class="slider-controls">
-          <button class="button slider-button" type="button">Предыдущее фото</button>
-          <button class="button slider-button" type="button">Следующее фото</button>
+          <button class="button slider-button slider-button-pref" type="button">
+            <span class="visually-hidden">Предыдущее фото</span>
+          </button>
+          <button class="button slider-button slider-button-next" type="button">
+            <span class="visually-hidden">Следующее фото</span>
+          </button>
         </div>
       </div>
-      <div class="slider-info">
-        <div class="slider-number visually-hidden">01</div>
-        <p class="section-title">Порхает как бабочка, жалит как пчела!</p>
-        <p class="section-description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
+
+      <div class="slider-description">
+        <div class="slider-info">
+
+          <p class="section-title">Порхает как бабочка, жалит как пчела!</p>
+          <p class="section-description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
+
+        </div>
+
+        <div class="pagination-container">
+          <a class="button slider-button-show-more button-secondary" href="#">Подробнее</a>
+
+          <ol class="slider-pagination-list">
+            <li class="slider-pagination-item">
+              <button class="slider-pagination-button slider-pagination-button-current" type="button">
+                <span class="visually-hidden">Фото 1</span>
+              </button>
+            </li>
+            <li class="slider-pagination-item">
+              <button class="slider-pagination-button" type="button">
+                <span class="visually-hidden">Фото 2</span>
+              </button>
+            </li>
+            <li class="slider-pagination-item">
+              <button class="slider-pagination-button" type="button">
+                <span class="visually-hidden">Фото 3</span>
+              </button>
+            </li>
+          </ol>
+        </div>
+
+
+        <ul class="parameter-list">
+          <li class="parameter-item">
+            <dt class="parameter-termin">Дальность полета</dt>
+            <dd class="parameter-description">800 м</dd>
+          </li>
+          <li class="parameter-item">
+            <dt class="parameter-termin">Радиус поражения</dt>
+            <dd class="parameter-description">50 м</dd>
+          </li>
+        </ul>
       </div>
-
-      <a class="button slider-button-show-more button-secondary" href="#">Подробнее</a>
-
-      <ol class="slider-pagination-list">
-        <li class="slider-pagination-item">
-          <button class="slider-pagination-button slider-pagination-button-current" type="button">
-            <span class="visually-hidden">Фото 1</span>
-          </button>
-        </li>
-        <li class="slider-pagination-item">
-          <button class="slider-pagination-button" type="button">
-            <span class="visually-hidden">Фото 2</span>
-          </button>
-        </li>
-        <li class="slider-pagination-item">
-          <button class="slider-pagination-button" type="button">
-            <span class="visually-hidden">Фото 3</span>
-          </button>
-        </li>
-      </ol>
-
-      <ul class="parameter-list">
-        <li class="parameter-item">
-          <dt class="parameter-termin">Дальность полета</dt>
-          <dd class="parameter-description">800 м</dd>
-        </li>
-        <li class="parameter-item">
-          <dt class="parameter-termin">Радиус поражения</dt>
-          <dd class="parameter-description">50 м</dd>
-        </li>
-      </ul>
     </section>
 
     <section class="categories">

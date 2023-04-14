@@ -81,6 +81,7 @@ body {
 .user-menu-container {
   display: flex;
   align-items: center;
+  margin-bottom: 22px;
 }
 
 .search-form {
@@ -144,6 +145,7 @@ body {
   background-color: transparent;
 }
 
+/* navigation-user-list */
 .navigation-user-list {
   list-style-type: none;
   margin: 0;
@@ -209,6 +211,114 @@ body {
   border-radius: 50%;
 }
 
+/* navigation-list */
+.navigation-list {
+  z-index: 1;  /* поднимаем список что бы подсунуть под него выпадающее окно далее по коду будет яснее */
+  position: relative; /* такая надпись высветилась у z индекса в окне элементов разработчика The position: static property prevents z-index from having an effect. Try setting position to something other than static. меняем статик на релатив и z индекс работает (видимо при статик z индекс считается от положения в коде) */
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin-right: -28px;
+  margin-left: -24px;
+  margin-bottom: -19px;
+}
+
+.navigation-item {
+  padding: 2px;
+  margin-right: 22px;
+  margin-left: 22px;
+}
+
+.catalog-toggler-container {
+  margin-right: auto;
+  display: flex;
+  position: relative; /* отсносительного этого элемента будем позиционировать выпающее меню */
+}
+
+/* выпадающее окно на детайлс */
+
+/* стилизуем суммари */
+.select-button {
+  position: relative;
+  padding: 17px 65px 17px 2px;/* закладываем место справа под кружок с плюсом/минусом  */
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* круглая граница кнопки  */
+.select-button::after {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  bottom: 0;
+  content: "";
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  width: 50px;
+  height: 50px;
+  opacity: 0.3;
+
+  background-position: center;
+  background-size: 16px 17px;
+  background-repeat: no-repeat;
+  background-image: url("../image/icon/select-plus.svg");
+}
+
+/* замена плюса в круге на минус при открытии details */
+.select-catalog[open] .select-button::after {
+  background-image: url("../image/icon/select-minus.svg");
+}
+
+/* выпадающее окно */
+.catalog-select-list {
+  z-index: -1; /*опускаем по z относительно пунктов меню(каталог товаров, доставка, гарантия. контакты.... мы их подняли выше по коду над другими элементами через класс="navigation-list") выпадающее окно должно быть ниже по z индексу, но при этом выше других элементов на странице */
+  position: absolute;
+  width: 1160px;
+  left: -58px;
+  top: 36px;
+  background-color: #ffe17f;
+  list-style-type: none;
+  padding: 33px 60px 27px;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  column-gap: 30px;
+  grid-auto-flow: dense; /*этим свойвои и значением размещаем элементы плотно(особенности гридов) по умолчанию рамещает немного по другому можно узнат отуключив свойство */
+}
+
+.catalog-select-item {
+  margin-bottom: 18px;
+  margin-right: 18px;
+  width: max-content;
+}
+
+/* сетка выпадающего меню */
+.first-column {
+  grid-column: 1 / 2;
+}
+
+.second-column {
+  grid-column: 2 / 3;
+}
+
+.third-column {
+  grid-column: 3 / 4;
+}
+
+/* пункты выпадающего меню */
+.catalog-select-link {
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* общаяя стилизация пунктов основной навигации(шрифт, цвет) */
 .navigation-link {
   font-family: 'Raleway', sans-serif;
   font-style: normal;
@@ -219,29 +329,53 @@ body {
   text-transform: uppercase;
   color: #000000;
   text-decoration: none;
+  display: flex;
+  align-items: center; /* так как в первом элементе другие падинги могут быть несоответсвия между ним и следующими (еще можно попробовать baseline) */
 }
+
 
 .main-container {
-  flex-grow: 1;
+  flex-grow: 1; /* для паттерна стикки-футер */
 }
 
-/* .gallery {
+/* Слайдер */
+
+.gallery {
   display: grid;
   grid-template-columns: 560px 560px;
-} */
-
-.slider {
-  padding-left: 145px;
-  padding-right: 140px;
+  margin-right: 140px;
+  margin-left: 145px;
+  column-gap: 35px;
 }
 
+.slider {
+  position: relative; /* для позиционирования подложки с номером слайда (.slider-number), а также конопок слайдера */
+}
+
+/* позиционируем подложку (желтый фон) */
 .slider-number {
   position: absolute;
+  left: -5px;
+  top: -150px;
   font-weight: 700;
   font-size: 180px;
   line-height: 180px;
   color: #ffffff;
   background-color: #ffe17e;
+  z-index: -1;
+  width: 1160px;
+  height: 300px;
+}
+
+/* позиционируем номер слайда на подложке */
+.background-number {
+  position: absolute;
+  bottom: -38px;
+  right: 44px;
+}
+
+.slider-description {
+  padding-top: 123px;
 }
 
 .section-title {
@@ -252,12 +386,47 @@ body {
   color: #000000;
 }
 
+.gallery .section-title {
+  margin-top: 0;
+  margin-bottom: 29px;
+}
+
 .section-description {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
   color: #444444;
+}
+
+.gallery-section-description {
+  margin-top: 0;
+  margin-bottom: 51px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-pagination-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin-right: -20px;
+}
+
+.slider-pagination-item {
+  display: grid;
+  place-content: center;
+  margin-right: 20px;
+}
+.slider-pagination-button {
+  width: 12px;
+  height: 12px;
 }
 
 .parameter-termin {
