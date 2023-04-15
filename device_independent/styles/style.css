@@ -131,8 +131,22 @@ body {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #000000;
-  background-color: #ffe17e;
   text-decoration: none;
+
+  position: relative; /* нужно для желтой полосы за кнопкой через псевдоэлемент */
+}
+
+.button-secondary::before,
+.tab-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: calc(50% - 4px);
+  right: 0;
+  left: 0;
+  background-color: #ffe17f;
+  z-index: -1;
 }
 
 .button-search {
@@ -213,12 +227,11 @@ body {
 
 /* navigation-list */
 .navigation-list {
-  z-index: 1;  /* поднимаем список что бы подсунуть под него выпадающее окно далее по коду будет яснее */
-  position: relative; /* такая надпись высветилась у z индекса в окне элементов разработчика The position: static property prevents z-index from having an effect. Try setting position to something other than static. меняем статик на релатив и z индекс работает (видимо при статик z индекс считается от положения в коде) */
   padding: 0;
   margin: 0;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-right: -28px;
   margin-left: -24px;
@@ -275,14 +288,14 @@ body {
 
 /* выпадающее окно */
 .catalog-select-list {
-  z-index: -1; /*опускаем по z относительно пунктов меню(каталог товаров, доставка, гарантия. контакты.... мы их подняли выше по коду над другими элементами через класс="navigation-list") выпадающее окно должно быть ниже по z индексу, но при этом выше других элементов на странице */
+  z-index: 1; /*поднимаем по z относительно пунктов меню(каталог товаров, доставка, гарантия. контакты.... мы их подняли выше по коду над другими элементами через класс="navigation-list") выпадающее окно должно быть выше по z индексу, но при этом выше других элементов на странице */
   position: absolute;
   width: 1160px;
   left: -58px;
-  top: 36px;
+  top: 55px;
   background-color: #ffe17f;
   list-style-type: none;
-  padding: 33px 60px 27px;
+  padding: 13px 60px 27px;
   margin: 0;
 
   display: grid;
@@ -408,7 +421,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 49px;
 }
+
+.slider-button-show-more {
+  padding: 10px 40px;
+}
+
+
 
 .slider-pagination-list {
   padding: 0;
@@ -425,17 +445,47 @@ body {
   margin-right: 20px;
 }
 .slider-pagination-button {
+  padding: 0;
+  margin: 0;
   width: 12px;
   height: 12px;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #000000;
+}
+
+.slider-pagination-button-current {
+  background-color: #000000;
+}
+
+.parameter-list {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat( 2, max-content);
+  min-width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.parameter-item {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-gap: 12px;
+  grid-template-areas: "parameter-description"
+                       "parameter-termin";
 }
 
 .parameter-termin {
+  grid-area: parameter-termin;
   font-size: 16px;
   line-height: 30px;
   color: #444444;
 }
 
 .parameter-description {
+  margin-left: 0;
+  grid-area: parameter-description;
   font-size: 36px;
   line-height: 30px;
   color: #000000;
