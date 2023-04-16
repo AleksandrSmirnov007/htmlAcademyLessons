@@ -184,8 +184,8 @@ body {
   text-decoration: none;
   padding-top: 4px;
   padding-bottom: 4px;
-  outline: 1px solid green;
   margin-right: 5px;
+  outline: 1px solid green;
 }
 
 .navigation-user-link-login {
@@ -221,7 +221,7 @@ body {
   padding-bottom: 2px;
   padding-right: 7px;
   padding-left: 7px;
-  background-color: green;
+  background-color: #ffffff;
   border-radius: 50%;
 }
 
@@ -359,11 +359,44 @@ body {
   margin-right: 140px;
   margin-left: 145px;
   column-gap: 35px;
+  margin-bottom: 216px;
 }
 
 .slider {
   position: relative; /* для позиционирования подложки с номером слайда (.slider-number), а также конопок слайдера */
 }
+
+.slider-controls {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 211px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-button {
+  width: 28px;
+  height: 68px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  background-size: 20px 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.slider-button-pref {
+  transform: rotate(180deg);
+  background-image: url("../image/icon/arrow.svg");
+}
+
+.slider-button-next {
+  background-image: url("../image/icon/arrow.svg");
+}
+
+
 
 /* позиционируем подложку (желтый фон) */
 .slider-number {
@@ -412,7 +445,7 @@ body {
   color: #444444;
 }
 
-.gallery-section-description {
+.gallery .section-description {
   margin-top: 0;
   margin-bottom: 51px;
 }
@@ -427,8 +460,6 @@ body {
 .slider-button-show-more {
   padding: 10px 40px;
 }
-
-
 
 .slider-pagination-list {
   padding: 0;
@@ -491,9 +522,66 @@ body {
   color: #000000;
 }
 
+.categories {
+  margin-bottom: 70px;
+}
+
+.categories-list {
+  list-style-type: none;
+  margin: 0 140px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 160px);
+  column-gap: 40px;
+}
+
 .categories-link {
   text-decoration: none;
+  padding-top: 193px;
+  display: block;
+  position: relative;
 }
+
+.categories-link::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 160px;
+  height: 160px;
+  background-color: #ffe17f;
+  background-size: 160px 160px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.categories-virtualreal::before {
+  background-image: url("../image/icon/catogory-virtalreal.svg");
+}
+
+.categories-monopods::before {
+  background-image: url("../image/icon/category-monopods.svg");
+}
+
+.categories-actioncameras::before {
+  background-image: url("../image/icon/category-actioncameras.svg");
+}
+
+.categories-fitnesband::before {
+  background-image: url("../image/icon/category-fitnesband.svg");
+}
+
+.categories-smartwatch::before {
+  background-image: url("../image/icon/category-smartwatch.svg");
+}
+
+.categories-quadracopters::before {
+  background-image: url("../image/icon/category-quadracopters.svg");
+}
+
+
 
 .categories-title {
   font-family: 'Raleway', sans-serif;
