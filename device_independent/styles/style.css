@@ -132,21 +132,7 @@ body {
   text-transform: uppercase;
   color: #000000;
   text-decoration: none;
-
-  position: relative; /* нужно для желтой полосы за кнопкой через псевдоэлемент */
-}
-
-.button-secondary::before,
-.tab-link::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 8px;
-  top: calc(50% - 4px);
-  right: 0;
-  left: 0;
-  background-color: #ffe17f;
-  z-index: -1;
+  background-image: linear-gradient(to bottom, transparent calc(50% - 4px), #ffe17f calc(50% - 4px), #ffe17f calc(50% + 4px), transparent calc(50% + 4px));
 }
 
 .button-search {
@@ -522,8 +508,18 @@ body {
   color: #000000;
 }
 
+/* categories */
 .categories {
   margin-bottom: 70px;
+}
+
+.categories-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: #000000;
 }
 
 .categories-list {
@@ -582,17 +578,35 @@ body {
 }
 
 
+/* services */
 
-.categories-title {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: -0.02em;
-  color: #000000;
+.services {
+  display: grid;
+  grid-template-columns: 140px 287px 1fr 140px;
+  background: linear-gradient(to bottom, #ffffff 102px, #f0f0f0 102px);
+
+}
+
+.panel-menu {
+  grid-column: 2 / 3;
+}
+
+.tabs-list {
+  list-style-type: none;
+  padding: 0;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  margin: 0;
+  display: grid;
+  row-gap: 35px;
+}
+
+.panel-content {
+  grid-column: 3 / 4;
 }
 
 .tab-link-current {
+  background-image: none;
   color: #ffe17f;
   background-color: #000000;
 }
