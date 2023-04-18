@@ -591,6 +591,10 @@ body {
   grid-column: 2 / 3;
 }
 
+.panel-content {
+  grid-column: 3 / 4;
+}
+
 .tabs-list {
   list-style-type: none;
   padding: 0;
@@ -599,16 +603,27 @@ body {
   margin: 0;
   display: grid;
   row-gap: 35px;
+  border-right: 7px solid #000000;
 }
 
-.panel-content {
-  grid-column: 3 / 4;
+.tab-item {
+  display: grid;
+}
+.tab-link {
+  justify-self: start;
+  text-align: center;
+  display: block;
+  padding: 10px 20px;
+  min-width: 160px;
 }
 
 .tab-link-current {
+  text-align: left;
+  justify-self: stretch;
   background-image: none;
   color: #ffe17f;
   background-color: #000000;
+  text-align: left;
 }
 
 .button-addition-services {
