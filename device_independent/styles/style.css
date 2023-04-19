@@ -584,6 +584,7 @@ body {
   display: grid;
   grid-template-columns: 140px 287px 1fr 140px;
   background: linear-gradient(to bottom, #ffffff 102px, #f0f0f0 102px);
+  padding-bottom: 72px;
 
 }
 
@@ -593,6 +594,27 @@ body {
 
 .panel-content {
   grid-column: 3 / 4;
+  padding-left: 116px;
+  padding-right: 282px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  background-repeat: no-repeat;
+  background-position: 674px center;
+}
+
+.panel-content-delivery {
+  background-image: url("../image/icon/background-delivery.svg");
+  background-size: 136px 164px;
+}
+
+
+.panel-content .section-title {
+  margin: 0;
+  margin-bottom: 34px;
+}
+
+.panel-content .section-description {
+  margin: 0;
 }
 
 .tabs-list {
@@ -614,7 +636,7 @@ body {
 .tab-link {
   text-align: center;
   display: block;
-  padding: 10px 20px;
+  padding: 10px 10px;
   min-width: 160px;
 }
 
