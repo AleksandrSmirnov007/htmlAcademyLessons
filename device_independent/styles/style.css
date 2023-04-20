@@ -247,7 +247,7 @@ body {
   user-select: none;
 }
 
-/* круглая граница кнопки  */
+/* круглая граница кнопки и изображение плюса */
 .select-button::after {
   position: absolute;
   right: 0;
@@ -424,7 +424,6 @@ body {
 }
 
 .section-description {
-  font-family: 'Rubik', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
@@ -508,7 +507,7 @@ body {
   color: #000000;
 }
 
-/* categories */
+/* categories картинки на желтом фоне с подписями*/
 .categories {
   margin-bottom: 70px;
 }
@@ -578,13 +577,14 @@ body {
 }
 
 
-/* services */
+/* services меню с вкладками доставка, гарантия, кредит и информационное поле*/
 
 .services {
   display: grid;
   grid-template-columns: 140px 287px 1fr 140px;
   background: linear-gradient(to bottom, #ffffff 102px, #f0f0f0 102px);
   padding-bottom: 72px;
+  margin-bottom: 70px;
 
 }
 
@@ -646,7 +646,8 @@ body {
   background-color: #000000;
 }
 
-.tab-link-current + .tab-background-longer { /* пришлось добавить пустышку. если делать как tab-item::after то соседние селекторы не работают хоть и по сути в грид конгтейнере два элемента(один из них псевдоэлемент) */
+/* растягиваем заливку до правой границы контейнера, если вкладка является текущей */
+.tab-link-current + .tab-background-longer { /* пришлось добавить пустышку. если делать через tab-item::after то соседние селекторы не работают, несмотря на то, что в одном грид-контейнере находится два элемента(один из них псевдоэлемент) */
     content: "";
     width: 100%;
     height: 100%;
@@ -656,6 +657,8 @@ body {
     grid-row: 1 / 2;
 }
 
+
+/* кнопка "доставим редкий товар на заказ" */
 .button-addition-services {
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
@@ -667,13 +670,112 @@ body {
   color: #000000;
   text-decoration: none;
   background-color: #f0f0f0;
+
+  display: block;
+  width: 1106px;
+  margin: 0 140px 70px;
+  padding: 40px 125px;
+  position: relative;
+  background-image: url("../image/icon/elipse.svg");
+  background-repeat: no-repeat;
+  background-size: 41px 40px;
+  background-position: right 42px center;
+}
+/* картинка слева */
+.button-addition-services::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #ffe17e;
+  background-image: url("../image/icon/delivery-car.svg");
+  background-repeat: no-repeat;
+  background-size: 47px 31px;
+  background-position: center;
+  height: 100%;
+  width: 125px;
 }
 
+/* значек справа(фон для него задан как фоновая картинка родительского элемента .button-addition-services так как при наведении символ на иконке меняет прозрачность независимо от фона иконки */
+.button-addition-services::after {
+  content: "";
+  position: absolute;
+  right: 42px;
+  top: calc(50% - 20px);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-image: url("../image/icon/i-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 2px 12px;
+  background-position: center;
+  opacity: 0.3;
+}
+
+
+/* columns */
+.columns {
+  display: grid;
+  grid-template-columns: 520px 532px;
+  margin: 0 140px 70px;
+  column-gap: 108px;
+}
+
+.column {
+  position: relative;
+}
+
+/* черточки на колонками */
+.column::before {
+  content: "";
+  width: 84px;
+  height: 7px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+}
+
+.columns .section-title {
+  margin-top: 40px;
+  margin-bottom: 48px;
+}
+
+.columns .section-description {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* section about */
 .delivery-list {
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   letter-spacing: -0.02em;
+
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 30px;
+  list-style-type: none;
+  display: grid;
+  row-gap: 19px;
+}
+
+.delivery-item {
+  padding-left: 34px;
+  margin-left: 4px;
+  position: relative;
+}
+
+.delivery-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 4px);
+  background-color: #ffc700;
+  border-radius: 50%;
 }
 
 .section-subtitle {
@@ -681,10 +783,13 @@ body {
   font-size: 24px;
   line-height: 30px;
   color: #444444;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .contacts-address {
   font-style: normal;
+  margin-bottom: 30px;
 }
 
 .contacts-phone {
@@ -692,15 +797,46 @@ body {
   color: #444444;
 }
 
-.subscribe {
-  background-color: #f0f0f0;
+.schedule-list {
+  padding: 0;
+  list-style-type: none;
 }
 
+/* subscribe */
+.subscribe {
+  background-color: #f0f0f0;
+  padding: 64px 141px 56px;
+  display: grid;
+  grid-template-columns: 354px 1fr;
+  column-gap: 252px;
+  row-gap: 144px;
+  align-items: end;
+}
+
+.subscribe .section-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 7px;
+}
+
+.subscribe .section-description {
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.subscribe-form {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 557px 253px 1fr;
+}
+/* сделать границы !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .subscribe-input {
   font-size: 18px;
   line-height: 30px;
   color: #444444;
   background-color: transparent;
+  width: 100%;
+  height: 100%;
 }
 
 .subscribe-input::placeholder {
@@ -712,9 +848,33 @@ body {
 
 .button-subscribe {
   background-color: transparent;
+  background-image: none;
+  padding: 18px 39px;
+}
+
+.pseudo-checkbox {
+  padding-left: 32px;
+  align-self: center;
+  justify-self: end;
+  position:relative
+}
+
+/* зеленая галочка */
+.pseudo-checkbox::before {
+  content: "";
+  width: 16px;
+  height: 17px;
+  position: absolute;
+  background-image: url("../image/icon/check-icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px 17px;
+  left: 0;
+  top: calc(50% - 8px);
 }
 
 
+/* footer */
 .page-footer {
   color: #ffffff;
   background-color: #444444;
