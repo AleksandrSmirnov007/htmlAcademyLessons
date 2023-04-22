@@ -3,51 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Девайс интернет-магазин</title>
   <link rel="stylesheet" href="styles/style.css">
   <link rel="icon" type="image/png" sizes="16x16" href="image/favicon16x16.png">
 </head>
 <body>
   <header class="page-header">
-    <nav class="header-nav">
-      <a class="navigation-logo" href="index.html">
+    <nav class="header-nav catalog-header-nav">
+      <a class="navigation-logo">
         <img width="145" height="36" src="image/icon/logo.svg" alt="логотип Девайс">
       </a>
-      <section class="search">
-        <h2 class="visually-hidden">Поиск товаров на сайте</h2>
+      <div class="user-menu-container">
+        <section class="search">
+          <h2 class="visually-hidden">Поиск товаров на сайте</h2>
 
-        <form action="https://echo.htmlacademy.ru/" metod="post">
-          <label class="field search-field">
-            <span class="visually-hidden">Введите текст поиска</span>
-            <input class="field-input" type="text" name="search" placeholder="Текст поиска">
-          </label>
-          <button class="button search-button" type="submit">Найти</button>
-        </form>
-      </section>
+          <form class="search-form" action="https://echo.htmlacademy.ru/" metod="post">
+            <label class="field search-field">
+              <span class="visually-hidden">Введите текст поиска</span>
+              <input class="field-input search-input" type="text" name="search" placeholder="Текст поиска">
+            </label>
+            <button class="button button-search" type="submit">Найти</button>
+          </form>
+        </section>
 
-      <ul class="navigation-user-list">
-        <li class="navigation-user-item">
-          <a class="navigation-user-link" href="#">Коля Петухов</a>
-          <a class="account-exit" href="">Выйти</a>
-        </li>
-        <li class="navigation-user-item">
-          <a class="navigation-user-link" href="#">Сравнить</a>
-        </li>
-        <li class="navigation-user-item">
-          <a class="navigation-user-link" href="#">
-            <span>Корзина</span>
-            <span class="icon-button-counter">2</span>
-          </a>
-        </li>
-      </ul>
+        <ul class="navigation-user-list">
+          <li class="navigation-user-item navigation-user-item-login">
+            <a class="navigation-user-link navigation-user-link-login" href="#">Коля Петухов</a>
+            <a class="account-exit" href="№">Выйти</a>
+          </li>
+          <li class="navigation-user-item">
+            <a class="navigation-user-link navigation-user-link-compare" href="#">Сравнить</a>
+          </li>
+          <li class="navigation-user-item">
+            <a class="navigation-user-link navigation-user-link-cart " href="#">
+              <span class="icon-button-counter">2</span>
+              <span class="navigation-user-link-text">Корзина</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <ul class="navigation-list">
-        <li class="navigation-item">
-          <a class="navigation-link" href="#">Каталог товаров</a>
-          <a href="#">
-            <span class="visually-hidden">показать еще</span>
-          </a>
+        <li class="navigation-item catalog-toggler-container">
+          <details class="select-catalog">
+            <summary class="select-button navigation-link">Каталог товаров</summary>
+            <ul class="catalog-select-list">
+              <li class="catalog-select-item first-column">
+                <a href="#" class="catalog-select-link">Виртуальная реальность</a>
+              </li>
+              <li class="catalog-select-item first-column">
+                <a href="#" class="catalog-select-link">Моноподы для cелфи</a>
+              </li>
+              <li class="catalog-select-item first-column">
+                <a href="#" class="catalog-select-link">Экшн-камеры</a>
+              </li>
+              <li class="catalog-select-item second-column">
+                <a href="#" class="catalog-select-link">Фитнес-браслеты</a>
+              </li>
+              <li class="catalog-select-item second-column">
+                <a href="#" class="catalog-select-link">Умные часы</a>
+              </li>
+              <li class="catalog-select-item third-column">
+                <a href="#" class="catalog-select-link">Квадрокоптеры</a>
+              </li>
+            </ul>
+          </details>
         </li>
         <li class="navigation-item">
           <a class="navigation-link" href="#">Доставка</a>
@@ -64,19 +85,21 @@
   </header>
 
   <main class="catalog-main main-container">
-    <h1 class="visually-hidden">Каталог товаров</h1>
-    <p class="section-title">Моноподы для селфи</p>
-    <ul class="breadcrumbs-list">
-      <li class="breadcrumbs-item">
-        <a class="breadcrumbs-link" href="index.html">Главная</a>
-      </li>
-      <li class="breadcrumbs-item">
-        <a class="breadcrumbs-link" href="catalog.html">Каталог товаров</a>
-      </li>
-      <li class="breadcrumbs-item">
-        <a class="breadcrumbs-link" href="index.html">Моноподы для селфи</a>
-      </li>
-    </ul>
+    <section class="catalog-top-panel">
+      <h1 class="visually-hidden">Каталог товаров</h1>
+      <p class="section-title">Моноподы для селфи</p>
+      <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link" href="index.html">Главная</a>
+        </li>
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link" href="catalog.html">Каталог товаров</a>
+        </li>
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link" href="index.html">Моноподы для селфи</a>
+        </li>
+      </ul>
+    </section>
 
     <section class="left-panel">
       <form class="catalog-filter" action="https://echo.htmlacademy.ru" method="post">
@@ -308,28 +331,29 @@
 
 
   <footer class="page-footer">
-    <section class="footer-contacts-text">
-      <h2 class="visually-hidden">Контакты</h2>
-      <img class="footer-contacts-logo" src="image/icon/logo-yellow.svg" alt="логотип Девайс желтым цветом">
-      <address class="footer-address">
-        <p class="footer-contacts-text">
-          Санкт-Петербург, набережная реки Карповки, 5, литера П.
-        </p>
-      </address>
+    <img class="footer-logo" src="image/icon/logo-yellow.svg" alt="логотип Девайс желтым цветом">
+    <div class="footer-content">
+      <section class="footer-contacts-text">
+        <h2 class="visually-hidden">Контакты</h2>
 
-      <section class="footer-navigation">
-        <ul class="footer-navigation-list">
-          <li class="fotter-navigation-item">
-            <a class="footer-navigation-link" href="#">Доставка</a>
-          </li>
-          <li class="fotter-navigation-item">
-            <a class="footer-navigation-link" href="#">Гарантия</a>
-          </li>
-          <li class="fotter-navigation-item">
-            <a class="footer-navigation-link" href="#">Контакты</a>
-          </li>
-        </ul>
+        <address class="footer-address">
+          <p class="footer-contacts-text">
+            Санкт-Петербург, набережная реки Карповки, 5, литера П.
+          </p>
+        </address>
       </section>
+
+      <ul class="footer-navigation-list">
+        <li class="fotter-navigation-item">
+          <a class="footer-navigation-link" href="#">Доставка</a>
+        </li>
+        <li class="fotter-navigation-item">
+          <a class="footer-navigation-link" href="#">Гарантия</a>
+        </li>
+        <li class="fotter-navigation-item">
+          <a class="footer-navigation-link" href="#">Контакты</a>
+        </li>
+      </ul>
 
       <section class="footer-phone">
         <address class="footer-address">
@@ -337,31 +361,29 @@
         </address>
       </section>
 
-      <section class="footer-social">
-        <h2 class="visually-hidden">Социальные сети</h2>
-        <ul class="footer-social-list">
-          <li class="footer-social-item">
-            <a class="footer-social-link footer-social-link-fb" href="https://www.facebook.com/htmlacademy">
-              <span class="visually-hidden">facebook</span>
-            </a>
-          </li>
-          <li class="footer-social-item">
-            <a class="footer-social-link footer-social-link-inst" href="https://www.instagram.com/htmlacademy/">
-              <span class="visually-hidden">instagram</span>
-            </a>
-          </li>
-          <li class="footer-social-item">
-            <a class="footer-social-link footer-social-link-tw" href="https://www.twitter.com/htmlacademy_ru">
-              <span class="visually-hidden">twitter</span>
-            </a>
-          </li>
-        </ul>
-        <a class="htmlacademy-link" href="https://htmlacademy.ru">
-          <img class="htmlacademy-logo" src="image/icon/htmlacademy-logo.svg" alt="ссылка на .html academy. ">
-        </a>
-      </section>
+      <h2 class="visually-hidden">Социальные сети</h2>
+      <ul class="footer-social-list">
+        <li class="footer-social-item">
+          <a class="footer-social-link footer-social-link-fb" href="https://www.facebook.com/htmlacademy">
+            <span class="visually-hidden">facebook</span>
+          </a>
+        </li>
+        <li class="footer-social-item">
+          <a class="footer-social-link footer-social-link-inst" href="https://www.instagram.com/htmlacademy/">
+            <span class="visually-hidden">instagram</span>
+          </a>
+        </li>
+        <li class="footer-social-item">
+          <a class="footer-social-link footer-social-link-tw" href="https://www.twitter.com/htmlacademy_ru">
+            <span class="visually-hidden">twitter</span>
+          </a>
+        </li>
+      </ul>
+      <a class="html-academy-link" href="https://htmlacademy.ru">
+        <img class="htmlacademy-logo" src="image/icon/htmlacademy-logo.svg" alt="ссылка на .html academy. ">
+      </a>
+    </div>
 
-    </section>
   </footer>
 
 

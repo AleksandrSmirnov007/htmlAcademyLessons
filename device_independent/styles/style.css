@@ -163,9 +163,13 @@ body {
   margin-bottom: 5px;
 }
 
+.navigation-user-item-login {
+  min-width: 231px
+}
+
 .navigation-user-link,
 .account-exit {
-  display: block;
+  display: inline-block;
   font-size: 18px;
   line-height: 30px;
   color: #000000;
@@ -176,7 +180,6 @@ body {
 }
 
 .navigation-user-link-login {
-  min-width: 231px;
   padding-left: 29px;
   margin-right: 26px;
 }
@@ -1017,6 +1020,14 @@ body {
 
 /* catalog */
 
+.catalog-header-nav {
+  padding-bottom: 38px;
+}
+
+.catalog-top-panel {
+  margin: 0 140px;
+  padding: 35px 60px;
+}
 
 .left-panel {
   background-color: #f0f0f0;
