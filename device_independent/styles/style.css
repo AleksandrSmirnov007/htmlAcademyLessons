@@ -71,6 +71,7 @@ body {
 .header-nav {
   margin: 0 140px;
   padding: 0 60px;
+  background-image: linear-gradient(to bottom, #ffffff 23px, #ffe17e 23px);
 }
 
 .navigation-logo {
@@ -124,6 +125,7 @@ body {
 
 .button-secondary,
 .tab-link {
+  display: inline-block;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -171,7 +173,6 @@ body {
   padding-top: 4px;
   padding-bottom: 4px;
   margin-right: 5px;
-  outline: 1px solid green;
 }
 
 .navigation-user-link-login {
@@ -388,7 +389,7 @@ body {
 .slider-number {
   position: absolute;
   left: -5px;
-  top: -150px;
+  top: 0px;
   font-weight: 700;
   font-size: 180px;
   line-height: 180px;
@@ -396,7 +397,7 @@ body {
   background-color: #ffe17e;
   z-index: -1;
   width: 1160px;
-  height: 300px;
+  height: 150px;
 }
 
 /* позиционируем номер слайда на подложке */
@@ -724,6 +725,9 @@ body {
   position: relative;
 }
 
+.column .button-secondary {
+  padding: 6px 25px;
+}
 /* черточки на колонками */
 .column::before {
   content: "";
@@ -836,6 +840,9 @@ body {
   background-color: transparent;
   width: 100%;
   height: 100%;
+  border: 3px solid transparent;
+  border-bottom: 3px solid #c4c4c4;
+  padding: 11px 16px 14px 16px;
 }
 
 .subscribe-input::placeholder {
@@ -849,6 +856,7 @@ body {
   background-color: transparent;
   background-image: none;
   padding: 18px 39px;
+  border: 3px solid #cecece;
 }
 
 .pseudo-checkbox {
@@ -877,13 +885,40 @@ body {
 .page-footer {
   color: #ffffff;
   background-color: #444444;
+
+  padding: 61px 140px;
+  position: relative;
 }
 
+.page-footer::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 7px;
+  left: 141px;
+  bottom: 77px;
+  background-color: #ffc700;
+}
+
+.footer-logo {
+  margin-bottom: 35px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-areas: "contacts services tel"
+                      ". soc-list html-academy-link";
+  grid-template-columns: 250px 1fr 250px;
+  column-gap: 100px;
+  row-gap: 47px;
+}
 .page-footer a {
   color: #ffffff;
 }
 
 .footer-contacts-text {
+  grid-area: contacts;
+  margin: 0;
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -906,10 +941,79 @@ body {
   font-style: normal;
 }
 
+.footer-navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  column-gap: 35px;
+}
+
+.footer-phone {
+  justify-self: end;
+}
+
 .footer-contacts-phone {
   text-decoration: underline;
 }
 
+.footer-social-list {
+  margin: 0;
+  margin-right: -15px;  /* компенсирует оступы справа у footer-social-link */
+  margin-bottom: -15px;
+  padding: 0;
+  list-style-type: none;
+  grid-area: soc-list;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-social-item {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-social-link {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: relative;
+}
+
+.footer-social-link::after {
+  display: block;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+.footer-social-link-fb::after {
+  background-size: 9px 18px;
+  background-image: url("../image/icon/icon-facebok.svg");
+}
+
+.footer-social-link-inst::after {
+  background-size: 16px 16px;
+  background-image: url("../image/icon/icon-instagramm.svg");
+}
+
+.footer-social-link-tw::after {
+  background-size: 15px 15px;
+  background-image: url("../image/icon/icon-twitter.svg");
+}
+
+.html-academy-link {
+  grid-area: html-academy-link;
+  justify-self: end;
+}
 
 /* catalog */
 
