@@ -1024,12 +1024,49 @@ body {
   padding-bottom: 38px;
 }
 
-.catalog-top-panel {
+.catalog-title {
   margin: 0 140px;
   padding: 35px 60px;
 }
 
-.left-panel {
+.catalog-title .section-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.breadcrumbs-list {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs-item {
+  margin-bottom: 15px; /* в сумме с отступом у breadcrumbs-list они датут отступ 35px, но в таком случае будет оступ между строками 15px если строк будет нескольстко */
+}
+
+.breadcrumbs-item:not(:first-child) {
+  display: grid;
+  grid-template-columns: 36px max-content;
+}
+/* стерлки у хлебных крошек */
+.breadcrumbs-item::before {
+  content: "";
+  width: 4px;
+  height: 7px;
+  justify-self: center;
+  align-self: center;
+  background-image: url("../image/icon/breadcrumbs-arrow.svg");
+  background-size: 4px 7px;
+  background-position: center;
+  background-position: no-repeat;
+
+}
+
+.catalog-filter {
   background-color: #f0f0f0;
 }
 

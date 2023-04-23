@@ -85,250 +85,203 @@
   </header>
 
   <main class="catalog-main main-container">
-    <section class="catalog-top-panel">
-      <h1 class="visually-hidden">Каталог товаров</h1>
-      <p class="section-title">Моноподы для селфи</p>
-      <ul class="breadcrumbs-list">
-        <li class="breadcrumbs-item">
-          <a class="breadcrumbs-link" href="index.html">Главная</a>
-        </li>
-        <li class="breadcrumbs-item">
-          <a class="breadcrumbs-link" href="catalog.html">Каталог товаров</a>
-        </li>
-        <li class="breadcrumbs-item">
-          <a class="breadcrumbs-link" href="index.html">Моноподы для селфи</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="left-panel">
-      <form class="catalog-filter" action="https://echo.htmlacademy.ru" method="post">
-        <h2 class="form-title">Фильтр</h2>
-        <fieldset class="filter-fieldset">
-          <legend class="catalog-filter-title">Стоимость</legend>
-          <div class="range">
-            <div class="range-bar">
-              <button class="range-toggle toggle-min" type="button">
-                <span class="visually-hidden">изменить минимальную цену</span>
-              </button>
-              <button class="range-toggle toggle-max" type="button">
-                <span class="visually-hidden">изменить максимальную цену</span>
-              </button>
-            </div>
-          </div>
-          <div class="range-wrapper-inputs">
-            <label class="catalog-filter-label">
-              от <input class="catalog-filter-input" type="number" name="min-price" value="50">
-            </label>
-
-            <label class="catalog-filter-label">
-              от <input class="catalog-filter-input" type="number" name="max-price" value="5000">
-            </label>
-          </div>
-
-        </fieldset>
-        <fieldset class="filter-fieldset">
-          <legend class="catalog-filter-title">Цвет</legend>
-          <ul class="catalog-filter-list">
-            <li class="catalog-filter-item">
-              <label class="control">
-                <input class="control-input" type="checkbox" name="black" checked>
-                <span class="control-label">Черный</span>
-              </label>
-            </li>
-            <li class="catalog-filter-item">
-              <label class="control">
-                <input class="control-input" type="checkbox" name="white" checked>
-                <span class="control-label">Белый</span>
-              </label>
-            </li>
-            <li class="catalog-filter-item">
-              <label class="control">
-                <input class="control-input" type="checkbox" name="blue">
-                <span class="cotrol-label">Синий</span>
-              </label>
-            </li>
-            <li class="catalog-filter-item">
-              <label class="control">
-                <input class="control-input" type="checkbox" name="red">
-                <span class="control-label">Красный</span>
-              </label>
-            </li>
-            <li class="catalog-filter-item">
-              <label class="control">
-                <input class="control-input" type="checkbox" name="pink">
-                <span class="control-label">Розовый</span>
-              </label>
-            </li>
-
-          </ul>
-        </fieldset>
-        <fieldset class="filter-fieldset">
-          <legend class="catalog-filter-title">Bluetooth</legend>
-          <ul class="catalog-filter-list">
-            <li class="catalog-filter-item">
-              <label class="control">
-                <input class="control-input" type="radio" name="Bluetooth" value="yes" checked>
-                <span class="visually-hidden">Есть</span>
-              </label>
-            </li>
-            <li class="catalog-filter-item">
-              <label class="control">
-                <input class="control-input" type="radio" name="Bluetooth" value="no">
-                <span class="visually-hidden">Нет</span>
-              </label>
-            </li>
-          </ul>
-        </fieldset>
-        <button class="button filter-submit button-secondary" type="submit">Показать</button>
-
-      </form>
-    </section>
-
-    <section class="right-column">
-      <h2 class="visually-hidden">Результаты поиска</h2>
-      <div class="control-panel">
-        <form class="catalog-sort" action="https://echo.htmlacademy.ru" method="get">
-          <label class="form-title" for="sorting">сортировка:</label>
-          <select class="select-control" name="sorting" id="sorting">
-            <option value="popular" selected>Популярные</option>
-            <option value="cheap">Дешевые</option>
-            <option value="expensive">Дорогие</option>
-          </select>
-
-          <button class="visually-hidden" type="submit">Отсортировать продукты</button>
-        </form>
-
-        <a class="arrow arrow-up" href="#">
-          <span class="visually-hidden">Листать вверх</span>
-        </a>
-        <a class="arrow arrow-down" href="#">
-          <span class="visually-hidden">Листать вниз</span>
-        </a>
-      </div>
-      <ul class="product-card-list">
-      <h3 class="visually-hidden">Список товаров</h3>
-        <li class="producut-card-item">
-          <a class="product-card-link" href="#">
-            <h4 class="product-card-title">Любительская селфи-палка</h4>
-          </a>
-          <img class="product-card-image" width="360" heght="380" src="image/content/product-1.jpg" alt="селфи-палка с телефоном.">
-          <p class="product-card-price">
-            <span class="visually-hidden">цена:</span>
-            500 ₽
-          </p>
-        </li>
-        <li class="producut-card-item">
-          <a class="product-card-link" href="#">
-            <h4 class="product-card-title">Профессиональная селфи-палка </h4>
-          </a>
-          <img class="product-card-image" width="360" heght="380" src="image/content/product-2.jpg" alt="селфи-палка с телефоном.">
-          <p class="product-card-price">
-            <span class="visually-hidden">цена:</span>
-            1 500 ₽
-          </p>
-        </li>
-        <li class="producut-card-item">
-          <a class="product-card-link" href="#">
-            <h4 class="product-card-title">Непотопляемая селфи-палка</h4>
-          </a>
-          <img class="product-card-image" width="360" heght="380" src="image/content/product-3.jpg" alt="селфи-палка с телефоном.">
-          <p class="product-card-price">
-            <span class="visually-hidden">цена:</span>
-            2 500 ₽
-          </p>
-        </li>
-        <li class="producut-card-item">
-          <a class="product-card-link" href="#">
-            <h4 class="product-card-title">Селфи-палка «Следуй за мной»</h4>
-          </a>
-          <img class="product-card-image" width="360" heght="380" src="image/content/product-4.jpg" alt="селфи-палка с телефоном.">
-          <p class="product-card-price">
-            <span class="visually-hidden">цена:</span>
-            1 500 ₽
-          </p>
-        </li>
-      </ul>
-
-      <button class="button button-show-more button-secondary" type="button">Загрузить ещё</button>
-
-      <div class="pagination">
-        <button class="button pagination-button button-secondary" type="button">Назад</button>
-
-        <ul class="pagination-list">
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">1</a>
+    <section class="catalog">
+      <div class="catalog-title">
+        <h1 class="visually-hidden">Каталог товаров</h1>
+        <p class="section-title">Моноподы для селфи</p>
+        <ul class="breadcrumbs-list">
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="index.html">Главная</a>
           </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">2</a>
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="catalog.html">Каталог товаров</a>
           </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">3</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">...</a>
-          </li>
-          <li class="pagination-item">
-            <a class="pagination-link" href="#">15</a>
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="index.html">Моноподы для селфи</a>
           </li>
         </ul>
-
-        <button class="button pagination-button button-secondary" type="bytton">Вперёд</button>
       </div>
 
-    </section>
+      <div class="catalog-filter-content-wrapper">
+        <div class="catalog-filter">
+          <form class="catalog-filter-form" action="https://echo.htmlacademy.ru" method="post">
+            <h2 class="form-title">Фильтр</h2>
+            <fieldset class="filter-fieldset">
+              <legend class="catalog-filter-title">Стоимость</legend>
+              <div class="range">
+                <div class="range-bar">
+                  <button class="range-toggle toggle-min" type="button">
+                    <span class="visually-hidden">изменить минимальную цену</span>
+                  </button>
+                  <button class="range-toggle toggle-max" type="button">
+                    <span class="visually-hidden">изменить максимальную цену</span>
+                  </button>
+                </div>
+              </div>
+              <div class="range-wrapper-inputs">
+                <label class="catalog-filter-label">
+                  от <input class="catalog-filter-input" type="number" name="min-price" value="50">
+                </label>
 
-    <section class="modal">
-      <h2 class="visually-hidden">Модальное окно</h2>
-      <p class="section-title">Доставка под заказ</p>
-      <button class="button modal-button">
-        <span class="visually-hidden">Закрыть</span>
-      </button>
+                <label class="catalog-filter-label">
+                  от <input class="catalog-filter-input" type="number" name="max-price" value="5000">
+                </label>
+              </div>
 
-      <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
-        <fieldset class="modal-field modal-field-name">
-          <label class="modal-field-title"  for="name">Ваше имя:</label>
-          <input class="field-input modal-field-input" type="text" name="name" id="name" placeholder="Введите имя">
+            </fieldset>
+            <fieldset class="filter-fieldset">
+              <legend class="catalog-filter-title">Цвет</legend>
+              <ul class="catalog-filter-list">
+                <li class="catalog-filter-item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="black" checked>
+                    <span class="control-label">Черный</span>
+                  </label>
+                </li>
+                <li class="catalog-filter-item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="white" checked>
+                    <span class="control-label">Белый</span>
+                  </label>
+                </li>
+                <li class="catalog-filter-item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="blue">
+                    <span class="cotrol-label">Синий</span>
+                  </label>
+                </li>
+                <li class="catalog-filter-item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="red">
+                    <span class="control-label">Красный</span>
+                  </label>
+                </li>
+                <li class="catalog-filter-item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="pink">
+                    <span class="control-label">Розовый</span>
+                  </label>
+                </li>
 
-        </fieldset>
-        <fieldset class="modal-field modal-field-email">
-          <label class="modal-field-title"  for="email">Ваш e-mail:</label>
-          <input class="field-input modal-field-input" type="email" name="email" id="email" value="почта">
-          <span class="modal-field-message modal-field-message-error">Забавный у вас адрес</span>
-        </fieldset>
+              </ul>
+            </fieldset>
+            <fieldset class="filter-fieldset">
+              <legend class="catalog-filter-title">Bluetooth</legend>
+              <ul class="catalog-filter-list">
+                <li class="catalog-filter-item">
+                  <label class="control">
+                    <input class="control-input" type="radio" name="Bluetooth" value="yes" checked>
+                    <span class="visually-hidden">Есть</span>
+                  </label>
+                </li>
+                <li class="catalog-filter-item">
+                  <label class="control">
+                    <input class="control-input" type="radio" name="Bluetooth" value="no">
+                    <span class="visually-hidden">Нет</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <button class="button filter-submit button-secondary" type="submit">Показать</button>
 
-        <fieldset class="modal-field modal-field-poroduct">
-          <label class="modal-field-title"  for="product">Что нужно привезти:</label>
-          <input class="field-input modal-field-input" type="text" name="product" id="product" placeholder="В свободной форме">
+          </form>
+        </div>
 
-        </fieldset>
+        <div class="catalog-content">
+          <h2 class="visually-hidden">Результаты поиска</h2>
+          <div class="control-panel">
+            <form class="catalog-sort" action="https://echo.htmlacademy.ru" method="get">
+              <label class="form-title" for="sorting">сортировка:</label>
+              <select class="select-control" name="sorting" id="sorting">
+                <option value="popular" selected>Популярные</option>
+                <option value="cheap">Дешевые</option>
+                <option value="expensive">Дорогие</option>
+              </select>
 
-        <fieldset class="modal-field modal-field-amount">
-          <label class="modal-field-title"  for="amount-input">Количество:</label>
-          <span class="field-info-icon">
-            <span class="field-info-text">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.</span>
-          </span>
-          <div class="modal-number">
-            <button class="number-button number-button-minus" type="button">
-              <span class="visually-hidden">Уменьшить количество</span>
-            </button>
+              <button class="visually-hidden" type="submit">Отсортировать продукты</button>
+            </form>
 
-            <input class="field-input modal-field-input" type="number" name="amount" id="amount-input" placeholder="В свободной форме" value="1" min="0" step="1">
-
-            <button class="number-button number-button-plus" type="button">
-              <span class="visually-hidden">Увеличить количество</span>
-            </button>
+            <a class="arrow arrow-up" href="#">
+              <span class="visually-hidden">Листать вверх</span>
+            </a>
+            <a class="arrow arrow-down" href="#">
+              <span class="visually-hidden">Листать вниз</span>
+            </a>
           </div>
-        </fieldset>
-        <button class="button button-secondary" type="submit">Отправить</button>
+          <ul class="product-card-list">
+          <h3 class="visually-hidden">Список товаров</h3>
+            <li class="producut-card-item">
+              <a class="product-card-link" href="#">
+                <h4 class="product-card-title">Любительская селфи-палка</h4>
+              </a>
+              <img class="product-card-image" width="360" heght="380" src="image/content/product-1.jpg" alt="селфи-палка с телефоном.">
+              <p class="product-card-price">
+                <span class="visually-hidden">цена:</span>
+                500 ₽
+              </p>
+            </li>
+            <li class="producut-card-item">
+              <a class="product-card-link" href="#">
+                <h4 class="product-card-title">Профессиональная селфи-палка </h4>
+              </a>
+              <img class="product-card-image" width="360" heght="380" src="image/content/product-2.jpg" alt="селфи-палка с телефоном.">
+              <p class="product-card-price">
+                <span class="visually-hidden">цена:</span>
+                1 500 ₽
+              </p>
+            </li>
+            <li class="producut-card-item">
+              <a class="product-card-link" href="#">
+                <h4 class="product-card-title">Непотопляемая селфи-палка</h4>
+              </a>
+              <img class="product-card-image" width="360" heght="380" src="image/content/product-3.jpg" alt="селфи-палка с телефоном.">
+              <p class="product-card-price">
+                <span class="visually-hidden">цена:</span>
+                2 500 ₽
+              </p>
+            </li>
+            <li class="producut-card-item">
+              <a class="product-card-link" href="#">
+                <h4 class="product-card-title">Селфи-палка «Следуй за мной»</h4>
+              </a>
+              <img class="product-card-image" width="360" heght="380" src="image/content/product-4.jpg" alt="селфи-палка с телефоном.">
+              <p class="product-card-price">
+                <span class="visually-hidden">цена:</span>
+                1 500 ₽
+              </p>
+            </li>
+          </ul>
 
+          <button class="button button-show-more button-secondary" type="button">Загрузить ещё</button>
 
-      </form>
+          <div class="pagination">
+            <button class="button pagination-button button-secondary" type="button">Назад</button>
+
+            <ul class="pagination-list">
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">1</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">2</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">3</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">...</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">15</a>
+              </li>
+            </ul>
+
+            <button class="button pagination-button button-secondary" type="bytton">Вперёд</button>
+          </div>
+
+        </div>
+      </div>
     </section>
-
   </main>
-
-
 
   <footer class="page-footer">
     <img class="footer-logo" src="image/icon/logo-yellow.svg" alt="логотип Девайс желтым цветом">
@@ -386,6 +339,53 @@
 
   </footer>
 
+  <section class="modal">
+    <h2 class="visually-hidden">Модальное окно</h2>
+    <p class="section-title">Доставка под заказ</p>
+    <button class="button modal-button">
+      <span class="visually-hidden">Закрыть</span>
+    </button>
+
+    <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
+      <fieldset class="modal-field modal-field-name">
+        <label class="modal-field-title"  for="name">Ваше имя:</label>
+        <input class="field-input modal-field-input" type="text" name="name" id="name" placeholder="Введите имя">
+
+      </fieldset>
+      <fieldset class="modal-field modal-field-email">
+        <label class="modal-field-title"  for="email">Ваш e-mail:</label>
+        <input class="field-input modal-field-input" type="email" name="email" id="email" value="почта">
+        <span class="modal-field-message modal-field-message-error">Забавный у вас адрес</span>
+      </fieldset>
+
+      <fieldset class="modal-field modal-field-poroduct">
+        <label class="modal-field-title"  for="product">Что нужно привезти:</label>
+        <input class="field-input modal-field-input" type="text" name="product" id="product" placeholder="В свободной форме">
+
+      </fieldset>
+
+      <fieldset class="modal-field modal-field-amount">
+        <label class="modal-field-title"  for="amount-input">Количество:</label>
+        <span class="field-info-icon">
+          <span class="field-info-text">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.</span>
+        </span>
+        <div class="modal-number">
+          <button class="number-button number-button-minus" type="button">
+            <span class="visually-hidden">Уменьшить количество</span>
+          </button>
+
+          <input class="field-input modal-field-input" type="number" name="amount" id="amount-input" placeholder="В свободной форме" value="1" min="0" step="1">
+
+          <button class="number-button number-button-plus" type="button">
+            <span class="visually-hidden">Увеличить количество</span>
+          </button>
+        </div>
+      </fieldset>
+      <button class="button button-secondary" type="submit">Отправить</button>
+
+
+    </form>
+  </section>
 
 </body>
 </html>
