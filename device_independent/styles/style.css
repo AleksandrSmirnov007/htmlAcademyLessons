@@ -1063,11 +1063,26 @@ body {
   background-size: 4px 7px;
   background-position: center;
   background-position: no-repeat;
-
 }
 
+.breadcrumbs-link{
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.catalog-filter-content-wrapper {
+  background-color: #f0f0f0;
+  padding: 0 140px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+
+/* catalog-filter  */
 .catalog-filter {
   background-color: #f0f0f0;
+  margin: 0 60px;
 }
 
 .form-title {
@@ -1077,13 +1092,15 @@ body {
   line-height: 19px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin: 0;
 }
 
-.breadcrumbs-link{
-  font-size: 16px;
-  line-height: 19px;
-  text-decoration: none;
-  color: #000000;
+.filter-fieldset {
+  margin: 0;
+  padding: 0;
 }
 
 .catalog-filter-title {
@@ -1102,6 +1119,14 @@ body {
 
 .catalog-filter-input {
   background-color: transparent;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000000;
+  opacity: 0.3;
+  /* border: 1px solid transparent; */
 }
 
 .select-control {
