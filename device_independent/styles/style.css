@@ -1046,14 +1046,14 @@ body {
 
 .breadcrumbs-item {
   margin-bottom: 15px; /* в сумме с отступом у breadcrumbs-list они датут отступ 35px, но в таком случае будет оступ между строками 15px если строк будет нескольстко */
+  display: grid; /* задади грид всем элементам breadcrumbs? что бы не было проблем с выравниванием  из за своиств grid*/
 }
 
-.breadcrumbs-item:not(:first-child) {
-  display: grid;
+.breadcrumbs-item:not(:first-child) {/* стрелки будут у всех кроме первого элемента только им зададим шаблон сетку с двумя столбцами*/
   grid-template-columns: 36px max-content;
 }
-/* стерлки у хлебных крошек */
-.breadcrumbs-item::before {
+/* стрелки у хлебных крошек */
+.breadcrumbs-item:not(:first-child)::before {
   content: "";
   width: 4px;
   height: 7px;
@@ -1100,7 +1100,12 @@ body {
 
 .filter-fieldset {
   margin: 0;
-  padding: 0;
+  border-top: 2px solid #000000;
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 35px;
+  border: none;
 }
 
 .catalog-filter-title {
@@ -1109,15 +1114,63 @@ body {
   line-height: 20px;
   letter-spacing: -0.02em;
   color: #000000;
+  border-top: 2px solid #000000;
+  padding-top: 12px;
+  padding-bottom: 20px;
+  width: 100%;
 }
 
-.catalog-filter-label {
+
+/* range */
+.range-bar {
+  height: 2px;
+  background-color: #000000;
+  margin-top: 10px;
+  margin-bottom: 11px;
+  position: relative;
+}
+
+.range-toggle {
+  position: absolute;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  background-color: #ebebeb;
+}
+
+.toggle-min {
+  left: -9px;
+}
+
+.toggle-max {
+  right: -9px;
+}
+
+.range-fields {
+  display: flex;
+  flex-direction: row;
+}
+
+.range-field {
   font-size: 15px;
   line-height: 18px;
   opacity: 0.3;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  position: relative;
 }
 
-.catalog-filter-input {
+.range-title {
+  position: absolute;
+  left: -24px;
+  top: calc(50% - 9px);
+  padding-left: 7px;
+}
+
+.range-input {
   background-color: transparent;
   font-family: 'Rubik';
   font-style: normal;
@@ -1125,10 +1178,117 @@ body {
   font-size: 15px;
   line-height: 18px;
   color: #000000;
-  opacity: 0.3;
-  /* border: 1px solid transparent; */
+  border: 1px solid transparent;
+  width: 100%;
 }
 
+.range-field:first-child {
+  padding-right: 24px;
+}
+
+/* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+/* Для Firefox попроще: */
+.range-input[type="number"] {
+  appearance: textfield;
+}
+
+/* filter checkbox radio */
+
+.catalog-filter-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  row-gap: 17px;
+}
+
+
+.control-label {
+  line-height: 19px;
+  display: grid;
+  grid-template-columns: 20px min-content;
+  column-gap: 16px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.control-label::before,
+.control-label::after {
+  content: "";
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: center;
+}
+
+.control-label::before { /* из-за рамки при фокусе которая размером больше чем элемент сделаем подложку из before большего размера, что бы отцентровать используем отрицательные маржины */
+  width: 28px;
+  height: 28px;
+  margin: -4px;
+  border: 2px solid transparent;
+
+}
+
+/* чекбокс */
+ /* нечекнутый чекбокс */
+.control-label::after {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cccccc;
+  border-radius: 3px;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: center;
+}
+
+/* чекнутый чекбокс */
+.control-input:checked + .control-label::after {
+  background-image: url("../image/icon/checkbox-shevron.svg");
+  border: 2px solid #000000;
+}
+
+/* радио */
+/* невыбранный радио*/
+.control-input[type="radio"] + .control-label::after {
+  border-radius: 50%;
+}
+
+/* выбранный радио */
+.control-input[type="radio"]:checked + .control-label::after {
+  background-size: 8px 8px;
+  background-image: url("../image/icon/radio-circle.svg");
+}
+
+/* взамодествие с чекбоксами и радио*/
+
+.control-label:hover {
+  opacity: 0.6;
+}
+
+.control-input:focus-visible:not(:active) + .control-label::before {
+  border-color: #af4fff;
+}
+
+.control-label:active {
+  opacity: 0.3;
+}
+
+/* отключение чекбоксов и радио */
+.control-input:disabled + .control-label {
+  opacity: 0.1;
+}
+
+/* filter-submit */
+.filter-submit {
+  border: 2px solid transparent;
+  padding: 10px 48px;
+}
+
+/* sorting */
 .select-control {
   font-size: 18px;
   line-height: 30px;
