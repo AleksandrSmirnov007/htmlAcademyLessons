@@ -1603,17 +1603,22 @@ body {
   position: absolute;
   width: 60px;
   height: 100%;
-  background-color: green;
+  background-color: transparent;
   top: 0;
   border: 2px solid transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
 }
 
 .number-button-minus {
   left: 0;
+  background-image: url("../image/icon/button-minus.svg");
 }
 
 .number-button-plus {
   right: 0;
+  background-image: url("../image/icon/button-plus.svg")
 }
 
 
