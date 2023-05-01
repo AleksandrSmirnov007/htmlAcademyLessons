@@ -135,6 +135,8 @@ body {
   color: #000000;
   text-decoration: none;
   background-image: linear-gradient(to bottom, transparent calc(50% - 4px), #ffe17f calc(50% - 4px), #ffe17f calc(50% + 4px), transparent calc(50% + 4px));
+  border: 2px solid transparent;
+  background-color: transparent;
 }
 
 .button-search {
@@ -343,13 +345,17 @@ body {
 
 /* Слайдер */
 
-.gallery {
-  display: grid;
+.slide {
+  display: none;
   grid-template-columns: 560px 560px;
   margin-right: 140px;
   margin-left: 145px;
   column-gap: 35px;
   margin-bottom: 216px;
+}
+
+.slide-current {
+  display: grid;
 }
 
 .slider {
@@ -392,7 +398,7 @@ body {
 .slider-number {
   position: absolute;
   left: -5px;
-  top: 0px;
+  top: -150px;
   font-weight: 700;
   font-size: 180px;
   line-height: 180px;
@@ -400,7 +406,7 @@ body {
   background-color: #ffe17e;
   z-index: -1;
   width: 1160px;
-  height: 150px;
+  height: 300px;
 }
 
 /* позиционируем номер слайда на подложке */
@@ -481,7 +487,7 @@ body {
 .parameter-list {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat( 2, max-content);
+  grid-template-columns: repeat( 3, max-content);
   min-width: 100%;
   list-style-type: none;
   margin: 0;
@@ -1305,8 +1311,16 @@ body {
 
 /* filter-submit */
 .filter-submit {
-  border: 2px solid transparent;
   padding: 10px 48px;
+}
+
+
+/* catalog-content */
+
+.catalog-content {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
 /* catalog-sort-form */
@@ -1316,6 +1330,7 @@ body {
   display: grid;
   grid-template-columns: 1fr max-content;
   align-content: center;
+  background-color: #f0f0f0;
 }
 
 .catalog-sort-form {
@@ -1364,7 +1379,8 @@ body {
 
 .product-card-list {
   background-color: #ffffff;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 44px;
   padding: 70px 40px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1379,6 +1395,7 @@ body {
   display: grid;
   grid-template-areas: "image image"
                         "link price";
+  row-gap: 32px;
 }
 
 .product-card-link {
@@ -1392,6 +1409,7 @@ body {
   line-height: 20px;
   letter-spacing: -0.02em;
   color: #000000;
+  margin: 0;
 }
 
 .product-card-image {
@@ -1400,34 +1418,129 @@ body {
 
 .product-card-price {
   grid-area: price;
+  justify-self: end;
   font-size: 18px;
   line-height: 21px;
   color: #444444;
+  margin: 0;
 }
 
 .button-show-more {
   font-size: 16px;
   line-height: 19px;
   background-color: transparent;
+  border: 3px solid #e5e5e5;
+  background-image: none;
+  padding: 18px 0;
+  margin-bottom: 44px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 .pagination {
   background-color: #ebebeb;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  place-content: center;
+}
+
+.pagination-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .pagination-button {
   background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  padding: 25px;
 }
 
 .pagination-link {
+  display: block;
+  padding: 10px;
+  text-align: center;
   font-size: 16px;
   line-height: 20px;
   color: #444444;
   opacity: 0.3;
   text-decoration: none;
+  min-width: 40px;
+
 }
 
-/* modal */
+/* модальное окно */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;/* без top: 0; left: 0; окно будет смещаться из центра прои зуме */
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  background-color: rgba(240, 240, 240, 0.9);
+
+}
+.modal-opened {
+  display: grid;
+}
+
+.modal-container {
+  position: relative;
+  width: 920px;
+  padding: 72px 80px;
+  background: #FFFFFF;
+  border: 10px solid #000000;
+  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close-button {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 80px;
+  right: 80px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  background-image: url("../image/icon/cross.svg");
+  background-repeat: no-repeat;
+  background-size: 26px 26px;
+  background-position: center;
+}
+
+.modal .section-title {
+  margin-top: 0;
+  margin-bottom: 42px;
+}
+
+.modal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 42px;
+  column-gap: 40px;
+}
+
+.modal-fields {/* сгруппируем два поля в одни контейнер чтобы разместить его на два столбца */
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 40px;
+}
+
+.modal-field {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
 
 .modal-field-title {
   font-weight: 700;
@@ -1435,13 +1548,17 @@ body {
   line-height: 20px;
   letter-spacing: -0.02em;
   color: #000000;
+  margin-bottom: 14px;
 }
 
 .modal-field-input {
+  padding: 20px;
   font-size: 16px;
   line-height: 20px;
   color: #000000;
   background-color: #f0f0f0;
+  border: 2px solid transparent;
+  width: 100%;
 }
 
 .modal-field-input::placeholder {
@@ -1459,8 +1576,48 @@ body {
 }
 
 .field-info-text {
+  display: none;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
   background-color: #000000;
+}
+
+.modal-number {
+  position: relative;
+}
+
+/* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+/* Для Firefox попроще: */
+.amount-input[type="number"] {
+  appearance: textfield;
+  text-align: center;
+}
+
+.number-button {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  background-color: green;
+  top: 0;
+  border: 2px solid transparent;
+}
+
+.number-button-minus {
+  left: 0;
+}
+
+.number-button-plus {
+  right: 0;
+}
+
+
+.modal-button-submit {
+  padding: 10px 30px;
+  justify-self: start;
 }
