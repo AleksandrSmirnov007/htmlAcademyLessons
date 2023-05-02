@@ -68,6 +68,7 @@ body {
   overflow: hidden;
 }
 
+
 .header-nav {
   margin: 0 140px;
   padding: 0 60px;
@@ -1575,12 +1576,65 @@ body {
   color: #ff3d3d;
 }
 
+.label-icon-container {
+  padding-right: 34px;
+  position: relative;
+  width: max-content;
+  display: grid;
+}
+
+.field-info-icon {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: #ffe17f;
+  border-radius: 50%;
+  background-image: url("../image/icon/i-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2px 12px;
+  cursor: pointer;
+}
+
 .field-info-text {
   display: none;
+  position: absolute;
+  width: 200px;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
   background-color: #000000;
+  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  top: calc(100% + 10px);
+  right: -34px;
+  padding: 19px;
+
+}
+
+.field-info-text::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 40px;
+  width: 14px;
+  height: 6px;
+  background-image: url("../image/icon/triangle.svg");
+  background-size: 14px 6px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.field-info-icon:focus {
+  outline: none;
+}
+
+.field-info-icon:hover .field-info-text,
+.field-info-icon:focus .field-info-text {
+  display: block;
 }
 
 .modal-number {
@@ -1625,4 +1679,8 @@ body {
 .modal-button-submit {
   padding: 10px 30px;
   justify-self: start;
+}
+
+.field-input-error { /* собрать все инпуты в начале файла */
+  border-color: #ff3d3d;
 }

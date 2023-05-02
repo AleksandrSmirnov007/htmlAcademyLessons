@@ -345,7 +345,7 @@
   </footer>
 
   <!-- чтобы включить модальное окно - добавить section класс modal-opened -->
-  <section class="modal">
+  <section class="modal modal-opened">
     <div class="modal-container">
 
       <h2 class="visually-hidden">Модальное окно</h2>
@@ -362,7 +362,7 @@
         </fieldset>
         <fieldset class="modal-field modal-field-email">
           <label class="modal-field-title"  for="email">Ваш e-mail:</label>
-          <input class="field-input modal-field-input" type="email" name="email" id="email" value="почта">
+          <input class="field-input modal-field-input field-input-error" type="email" name="email" id="email" value="почта">
           <span class="modal-field-message modal-field-message-error">Забавный у вас адрес</span>
         </fieldset>
 
@@ -373,10 +373,12 @@
           </fieldset>
 
           <fieldset class="modal-field modal-field-amount">
-            <label class="modal-field-title"  for="amount-input">Количество:</label>
-            <span class="field-info-icon">
-              <span class="field-info-text">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.</span>
-            </span>
+            <div class="label-icon-container">
+              <label class="modal-field-title"  for="amount-input">Количество:</label>
+              <span class="field-info-icon" contenteditable>
+                <span class="field-info-text">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.</span>
+              </span>
+            </div>
             <div class="modal-number">
               <button class="number-button number-button-minus" type="button">
                 <span class="visually-hidden">Уменьшить количество</span>
