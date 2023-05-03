@@ -75,9 +75,34 @@ body {
   background-image: linear-gradient(to bottom, #ffffff 23px, #ffe17e 23px);
 }
 
-.navigation-logo {
+.navigation-logo-link,
+.footer-logo-link {
   display: block;
-  margin-bottom: 24px;
+  width: max-content;
+  margin-bottom: 18px;
+  padding: 2px;
+  border: 2px solid transparent;
+}
+
+.footer-logo-link {
+  margin-bottom: 31px;
+}
+
+.navigation-logo-link:hover,
+.footer-logo-link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.navigation-logo-link:active,
+.footer-logo-link:active {
+  opacity: 0.3;
+}
+
+.navigation-logo-link:focus:not(:active),
+.footer-logo-link:focus:not(:active) {
+  border-color: #af4fff;
+  outline: none;
 }
 
 .user-menu-container {
@@ -116,12 +141,20 @@ body {
   background-color: transparent;
 }
 
+/* buttons  */
+
 .button-search {
   padding: 8px 54px;
   border: 2px solid #000000;
   border-radius: 0px 50px 50px 0px;
-  /* margin-right: 26px; */
 
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  background-color: transparent;
 }
 
 .button-secondary,
@@ -140,14 +173,26 @@ body {
   background-color: transparent;
 }
 
-.button-search {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: #000000;
-  background-color: transparent;
+.button-secondary:hover {
+  background-image: none;
+  background-color: #ffe17f;
+}
+
+.button-secondary:active {
+  background-image: none;
+  background-color: #ffcc33;
+}
+
+.button-secondary:focus:not(:active) {
+  outline: 2px solid #AF4FFF;
+}
+
+.button:disabled,
+.button-disabled
+ {
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* navigation-user-list */
@@ -931,10 +976,6 @@ body {
   background-color: #ffc700;
 }
 
-.footer-logo {
-  margin-bottom: 35px;
-}
-
 .footer-content {
   display: grid;
   grid-template-areas: "contacts services tel"
@@ -1073,7 +1114,7 @@ body {
 }
 
 .breadcrumbs-item {
-  margin-bottom: 15px; /* в сумме с отступом у breadcrumbs-list они датут отступ 35px, но в таком случае будет оступ между строками 15px если строк будет нескольстко */
+  margin-bottom: 11px; /* в сумме с отступом у breadcrumbs-list они датут отступ 35px, но в таком случае будет оступ между строками 11px если строк будет нескольстко */
   display: grid; /* задади грид всем элементам breadcrumbs? что бы не было проблем с выравниванием  из за своиств grid*/
 }
 
@@ -1098,7 +1139,26 @@ body {
   line-height: 19px;
   text-decoration: none;
   color: #000000;
+  padding: 2px;
+  border: 2px solid transparent;
 }
+
+.breadcrumbs-link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.breadcrumbs-link:active {
+  opacity: 0.3;
+}
+
+.breadcrumbs-link:focus:not(:active) {
+  border-color: #af4fff;
+  outline: none;
+}
+
+
+
 
 .catalog-filter-content-wrapper {
   background-color: #f0f0f0;
