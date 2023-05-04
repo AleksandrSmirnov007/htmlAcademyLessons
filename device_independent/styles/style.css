@@ -1407,11 +1407,30 @@ body {
   appearance: none;
   padding-right: 50px;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background-image: url("../image/icon/select-arrow.svg");
   background-repeat: no-repeat;
   background-size: 10px 7px;
   background-position: right 11px center;
+  cursor: pointer;
+}
+
+.select-control:hover {
+  opacity: 0.6;
+}
+
+.select-control:focus:not(:active) {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.select-control:active {
+  opacity: 0.3;
+}
+
+.select-control:disabled,
+.select-control-disabled {
+  opacity: 0.1;
 }
 
 .paging-arows {
@@ -1496,6 +1515,21 @@ body {
   margin-bottom: 44px;
   margin-right: 40px;
   margin-left: 40px;
+}
+
+.button-show-more:hover {
+  border: 3px solid #000000;
+  background-color: transparent;
+}
+
+.button-show-more:focus:not(:active) {
+  outline-offset: 2px;
+}
+
+.button-show-more:active {
+  border: 3px solid #000000;
+  background-color: transparent;
+  opacity: 0.2;
 }
 
 .pagination {
@@ -1617,14 +1651,48 @@ body {
   font-size: 16px;
   line-height: 20px;
   color: #000000;
-  background-color: #f0f0f0;
+  background-color: #ebebeb;
   border: 2px solid transparent;
   width: 100%;
 }
 
+.modal-field-input[name="name"] {
+  background-image: url("../image/icon/field-name-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 15px 12px;
+  background-position: right 20px center;
+}
+
+.modal-field-input[type="email"] {
+  background-image: url("../image/icon/field-letter-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 15px 12px;
+  background-position: right 20px center;
+}
+
 .modal-field-input::placeholder {
   color: #000000;
+  background-color: #f0f0f0;
   opacity: 0.3;
+}
+
+.modal-field-input:hover {
+  background-color: #dcdcdc;
+  cursor: pointer;
+}
+
+.modal-field-input:hover::placeholder { /* у плейсхолдкра область бакгроунда равна шитрине строки и при наведении мыши на поле кода там плесхолдер заний фон под плеисхолдером не меняется(поэтому меняем его дополнительно)  */
+  background-color: #dcdcdc;
+}
+
+.modal-field-input:focus {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+
+.field-input-error {
+  border-color: #ff3d3d;
 }
 
 .modal-field-message {
@@ -1635,6 +1703,14 @@ body {
 .modal-field-message-error {
   color: #ff3d3d;
 }
+
+.modal-field-input:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
+
 
 .label-icon-container {
   padding-right: 34px;
@@ -1711,6 +1787,7 @@ body {
 .amount-input[type="number"] {
   appearance: textfield;
   text-align: center;
+  cursor: text;
 }
 
 .number-button {
@@ -1720,21 +1797,65 @@ body {
   background-color: transparent;
   top: 0;
   border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.number-button-minus {
+  left: 0;
+}
+
+.number-button-plus {
+  right: 0;
+}
+
+.number-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 16px;
 }
 
-.number-button-minus {
-  left: 0;
+.number-button-minus::after {
   background-image: url("../image/icon/button-minus.svg");
 }
 
-.number-button-plus {
-  right: 0;
+.number-button-plus::after {
   background-image: url("../image/icon/button-plus.svg")
 }
+/* number-button:hover */
+.number-button:hover {
+  background-color: #ebebeb;
+}
 
+.number-button:hover::after {
+  opacity: 0.6;
+}
+
+/* number-button:focus  */
+.number-button:focus:not(:active) {
+  border: 2px solid #af4fff;
+  outline: none;
+}
+
+/* number-button:active */
+.number-button:active {
+  background-color: #f0f0f0;
+}
+
+.number-button:active::after {
+  opacity: 0.3;
+}
+
+.number-button:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
 
 .modal-button-submit {
   padding: 10px 30px;
