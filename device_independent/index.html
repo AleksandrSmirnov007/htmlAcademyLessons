@@ -21,23 +21,29 @@
           <form class="search-form" action="https://echo.htmlacademy.ru/" metod="post">
             <label class="field search-field">
               <span class="visually-hidden">Введите текст поиска</span>
-              <input class="field-input search-input" type="text" name="search" placeholder="Текст поиска">
+              <input class="field-input search-input" type="text" name="search" placeholder="Поиск по сайту" value="Текст поиска">
             </label>
-            <button class="button button-search" type="submit">Найти</button>
+            <div class="button-search-container">
+              <button class="button button-search" type="submit">Найти</button>
+            </div>
           </form>
         </section>
 
         <ul class="navigation-user-list">
           <li class="navigation-user-item navigation-user-item-login">
-            <a class="navigation-user-link navigation-user-link-login" href="#">Войти</a>
+            <a class="navigation-user-link navigation-user-link-login" href="#">
+              <span class="navigation-user-link-text navigation-user-link-login-text">Войти</span>
+            </a>
           </li>
           <li class="navigation-user-item">
-            <a class="navigation-user-link navigation-user-link-compare" href="#">Сравнить</a>
+            <a class="navigation-user-link navigation-user-link-compare" href="#">
+              <span class="navigation-user-link-text navigation-user-link-compare-text">Сравнить</span>
+            </a>
           </li>
           <li class="navigation-user-item">
             <a class="navigation-user-link navigation-user-link-cart " href="#">
+              <span class="navigation-user-link-text navigation-user-link-cart-text">Корзина</span>
               <span class="icon-button-counter">2</span>
-              <span class="navigation-user-link-text">Корзина</span>
             </a>
           </li>
         </ul>

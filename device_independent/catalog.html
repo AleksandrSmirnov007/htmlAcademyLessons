@@ -21,24 +21,30 @@
           <form class="search-form" action="https://echo.htmlacademy.ru/" metod="post">
             <label class="field search-field">
               <span class="visually-hidden">Введите текст поиска</span>
-              <input class="field-input search-input" type="text" name="search" placeholder="Текст поиска">
+              <input class="field-input search-input" type="text" name="search" placeholder="Поиск по сайту" value="Текст поиска">
             </label>
-            <button class="button button-search" type="submit">Найти</button>
+            <div class="button-search-container">
+              <button class="button button-search" type="submit">Найти</button>
+            </div>
           </form>
         </section>
 
         <ul class="navigation-user-list">
           <li class="navigation-user-item navigation-user-item-login">
-            <a class="navigation-user-link navigation-user-link-login" href="#">Коля Петухов</a>
-            <a class="account-exit" href="#">Выйти</a>
+            <a class="navigation-user-link navigation-user-link-login" href="#">
+              <span class="navigation-user-link-text navigation-user-link-login-text" href="#">Коля Петухов</span>
+            </a>
+            <a class="navigation-user-link account-exit" href="#">Выйти</a>
           </li>
           <li class="navigation-user-item">
-            <a class="navigation-user-link navigation-user-link-compare" href="#">Сравнить</a>
+            <a class="navigation-user-link navigation-user-link-compare" href="#">
+              <span class="navigation-user-link-text navigation-user-link-compare-text">Сравнить</span>
+            </a>
           </li>
           <li class="navigation-user-item">
             <a class="navigation-user-link navigation-user-link-cart " href="#">
+              <span class="navigation-user-link-text navigation-user-link-cart-text">Корзина</span>
               <span class="icon-button-counter">2</span>
-              <span class="navigation-user-link-text">Корзина</span>
             </a>
           </li>
         </ul>
@@ -50,22 +56,22 @@
             <summary class="select-button navigation-link">Каталог товаров</summary>
             <ul class="catalog-select-list">
               <li class="catalog-select-item first-column">
-                <a href="#" class="catalog-select-link">Виртуальная реальность</a>
+                <a class="catalog-select-link" href="#">Виртуальная реальность</a>
               </li>
               <li class="catalog-select-item first-column">
-                <a href="#" class="catalog-select-link">Моноподы для cелфи</a>
+                <a class="catalog-select-link catalog-select-link-current" href="#">Моноподы для cелфи</a>
               </li>
               <li class="catalog-select-item first-column">
-                <a href="#" class="catalog-select-link">Экшн-камеры</a>
+                <a class="catalog-select-link" href="#">Экшн-камеры</a>
               </li>
               <li class="catalog-select-item second-column">
-                <a href="#" class="catalog-select-link">Фитнес-браслеты</a>
+                <a class="catalog-select-link" href="#">Фитнес-браслеты</a>
               </li>
               <li class="catalog-select-item second-column">
-                <a href="#" class="catalog-select-link">Умные часы</a>
+                <a class="catalog-select-link" href="#">Умные часы</a>
               </li>
               <li class="catalog-select-item third-column">
-                <a href="#" class="catalog-select-link">Квадрокоптеры</a>
+                <a class="catalog-select-link" href="#">Квадрокоптеры</a>
               </li>
             </ul>
           </details>
@@ -347,7 +353,7 @@
   </footer>
 
   <!-- чтобы включить модальное окно - добавить section класс modal-opened -->
-  <section class="modal modal-opened">
+  <section class="modal">
     <div class="modal-container">
 
       <h2 class="visually-hidden">Модальное окно</h2>

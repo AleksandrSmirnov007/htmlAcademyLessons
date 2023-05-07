@@ -53,7 +53,7 @@ body {
   font-weight: 400;
   color: #000000;
   background-color: #ffffff;
-  padding-top: 17px;
+  padding-top: 14px;
   width: 1440px;
 }
 
@@ -72,14 +72,15 @@ body {
 .header-nav {
   margin: 0 140px;
   padding: 0 60px;
-  background-image: linear-gradient(to bottom, #ffffff 23px, #ffe17e 23px);
+  background-image: linear-gradient(to bottom, #ffffff 27px, #ffe17e 27px);
 }
 
 .navigation-logo-link,
 .footer-logo-link {
   display: block;
   width: max-content;
-  margin-bottom: 18px;
+  margin-left: -4px;
+  margin-bottom: 22px;
   padding: 2px;
   border: 2px solid transparent;
 }
@@ -134,11 +135,28 @@ body {
   border: 2px solid #000000;
   border-radius: 50px 0 0 50px;
   width: 100%;
+  cursor: text;
 }
 
 .search-input::placeholder {
   color: #000000;
+  opacity: 0.3;
   background-color: transparent;
+}
+
+.search-input:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
+.search-input:focus {
+  outline: none;
+}
+.search-field:focus-within {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+  z-index: 1;
 }
 
 /* buttons  */
@@ -155,6 +173,32 @@ body {
   line-height: 20px;
   color: #000000;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.button-search:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
+.button-search:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.button-search:focus:not(:active) {
+  outline: none;
+}
+
+.button-search:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+.button-search-container:focus-within {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
 }
 
 .button-secondary,
@@ -199,7 +243,7 @@ body {
 .navigation-user-list {
   list-style-type: none;
   margin: 0;
-  margin-right: -21px;
+  margin-right: -20px;
   padding: 0;
   padding-left: 26px;
   display: flex;
@@ -209,50 +253,81 @@ body {
 .navigation-user-item {
   margin-top: 5px;
   margin-bottom: 5px;
+  margin-right: 18px;
+  display: flex;
 }
 
 .navigation-user-item-login {
-  min-width: 231px
+  min-width: 238px;
+  justify-content: space-between;
 }
 
-.navigation-user-link,
-.account-exit {
-  display: inline-block;
+.navigation-user-link {
   font-size: 18px;
   line-height: 30px;
   color: #000000;
   text-decoration: none;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  margin-right: 5px;
-}
-
-.navigation-user-link-login {
-  padding-left: 29px;
-  margin-right: 26px;
-}
-
-.navigation-user-link-compare {
-  padding-left: 24px;
-  padding-right: 10px;
-}
-
-.navigation-user-link-cart {
-  padding-left: 2px;
-  padding-right: 15px;
+  padding: 0;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
-.navigation-user-link-text {
-  padding-left: 20px;
+.navigation-user-link:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
-.account-exit {
+.navigation-user-link:active {
   opacity: 0.3;
 }
 
+.navigation-user-link:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+
+
+.account-exit {
+  opacity: 0.3;
+  margin-right: 7px;
+}
+
+.navigation-user-link-cart {
+  position: relative; /* для поизионирования icon-button-counter */
+}
+
+.navigation-user-link-text {
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.navigation-user-link-login-text {
+  padding-left: 27px;
+  background-size: 16px 13px;
+  background-image: url("../image/icon/login-icon.svg");
+}
+
+.navigation-user-link-compare-text {
+  padding-left: 22px;
+  background-size: 10px 13px;
+  background-image: url("../image/icon/compare-icon.svg");
+}
+
+.navigation-user-link-cart-text {
+  padding-left: 44px;
+  background-size: 16px 15px;
+  background-position: 16px 5px;
+  background-image: url("../image/icon/cart-icon.svg");
+}
+
+
+
 .icon-button-counter {
+  position: absolute;
+  top: 4px;
+  left: 0px;
   font-size: 14px;
   line-height: 17px;
   padding-top: 2px;
@@ -282,9 +357,45 @@ body {
   margin-left: 22px;
 }
 
+/* общаяя стилизация пунктов основной навигации(шрифт, цвет) */
+.navigation-link {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* так как в первом элементе другие падинги могут быть несоответсвия между ним и следующими (еще можно попробовать baseline) */
+}
+
+.navigation-link-current {
+  padding-bottom: 6px;
+  margin-top: 8px;
+  border-bottom: 2px solid #000000;
+}
+
+.navigation-link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.navigation-link:active {
+  opacity: 0.3;
+}
+
+.navigation-link:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
 .catalog-toggler-container {
   margin-right: auto;
   display: flex;
+  z-index: 1; /* иначе картинка слайда неиного наслаивается сверху над catalog-toggler-container */
   position: relative; /* отсносительного этого элемента будем позиционировать выпающее меню */
 }
 
@@ -324,16 +435,21 @@ body {
   background-image: url("../image/icon/select-minus.svg");
 }
 
+.select-button:hover,
+.select-button:hover::after {
+  opacity: 1;
+}
+
 /* выпадающее окно */
 .catalog-select-list {
   z-index: 1; /*поднимаем по z относительно пунктов меню(каталог товаров, доставка, гарантия. контакты.... мы их подняли выше по коду над другими элементами через класс="navigation-list") выпадающее окно должно быть выше по z индексу, но при этом выше других элементов на странице */
   position: absolute;
   width: 1160px;
   left: -58px;
-  top: 55px;
+  top: 62px;
   background-color: #ffe17f;
   list-style-type: none;
-  padding: 13px 60px 27px;
+  padding: 6px 60px 27px;
   margin: 0;
 
   display: grid;
@@ -343,7 +459,7 @@ body {
 }
 
 .catalog-select-item {
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   margin-right: 18px;
   width: max-content;
 }
@@ -367,22 +483,33 @@ body {
   line-height: 18px;
   color: #000000;
   text-decoration: none;
+  margin-bottom: 3px;
 }
 
-/* общаяя стилизация пунктов основной навигации(шрифт, цвет) */
-.navigation-link {
-  font-family: 'Raleway', sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #000000;
-  text-decoration: none;
-  display: flex;
-  align-items: center; /* так как в первом элементе другие падинги могут быть несоответсвия между ним и следующими (еще можно попробовать baseline) */
+.catalog-select-link-current {
+  margin-bottom: 0px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #000000;
 }
+
+.catalog-select-link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.catalog-select-link:active {
+  opacity: 0.3;
+}
+
+.catalog-select-link:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+
+
+
+
 
 
 .main-container {
@@ -916,7 +1043,7 @@ body {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  border: 3px solid transparent;
+  border: 0 solid transparent;
   border-bottom: 3px solid #c4c4c4;
   padding: 11px 16px 14px 16px;
 }
@@ -927,6 +1054,32 @@ body {
   color: #444444;
   opacity: 0.5;
 }
+
+.subscribe-input:hover {
+  background-color: #b3b3b3;
+}
+
+.subscribe-input:focus:not(:active) {
+  outline: none;
+  background-color: #dcdcdc;
+}
+
+.subscribe-input:active {
+  outline: none;
+}
+
+.subscribe-input-error {
+  border-bottom-color: #ff3d3d;
+}
+
+.subscribe-input:disabled,
+.subscribe-inputdisabled:hover {
+  background-color: transparent;
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
 
 .button-subscribe {
   background-color: transparent;
@@ -1368,6 +1521,8 @@ body {
 /* отключение чекбоксов и радио */
 .control-input:disabled + .control-label {
   opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* filter-submit */
@@ -1428,9 +1583,10 @@ body {
   opacity: 0.3;
 }
 
-.select-control:disabled,
-.select-control-disabled {
+.select-control:disabled {
   opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
 }
 
 .paging-arows {
