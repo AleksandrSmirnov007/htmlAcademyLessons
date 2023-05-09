@@ -658,6 +658,21 @@ body {
   background-color: #000000;
 }
 
+.slider-pagination-button:hover {
+  opacity: 0.6;
+}
+
+.slider-pagination-button:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.slider-pagination-button:active {
+  opacity: 0.3;
+}
+
+
+
 .parameter-list {
   display: grid;
   grid-gap: 20px;
@@ -1755,9 +1770,9 @@ body {
 
 .modal-close-button {
   position: absolute;
-  width: 34px;
-  height: 34px;
-  top: 80px;
+  width: 26px;
+  height: 26px;
+  top: 84px;
   right: 80px;
   border: 2px solid transparent;
   background-color: transparent;
@@ -1765,6 +1780,19 @@ body {
   background-repeat: no-repeat;
   background-size: 26px 26px;
   background-position: center;
+}
+
+.modal-close-button:hover {
+  opacity: 0.6;
+}
+
+.modal-close-button:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.modal-close-button:active {
+  opacity: 0.3;
 }
 
 .modal .section-title {
