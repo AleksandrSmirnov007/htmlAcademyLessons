@@ -2037,16 +2037,104 @@ body {
   background-image: linear-gradient(to bottom, transparent 6px, #000000 6px);
 }
 
+.popover-cart::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 153px;
+  width: 14px;
+  height: 6px;
+  background-image: url("../image/icon/triangle.svg");
+  background-size: 14px 6px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .popover-cart-list {
   margin: 0;
   padding: 0;
   display: grid;
 }
 
+.popover-cart-item {
+  position: relative;
+  padding: 20px;
+  padding-right: 40px;
+}
+
+.popover-cart-item:not(:last-child) {
+  border-bottom: 1px solid #1a1a1a;
+}
+
 .popover-cart-link {
+  width: max-content;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
   text-decoration: none;
+  display: grid;
+  grid-template-columns: 39px max-content;
+  gap: 23px;
+  padding: 0;
 }
 
+.popover-cart-link-text {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.pover-cart-link-thumbnail {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.button-exclude {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url("../image/icon/cross-mini.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 11px;
+  background-position: center;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+}
+
+.total-panel-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 20px;
+  color: #ffffff;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.total-panel-item {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  place-content: center;
+}
+
+.goods-umount-number {
+  margin-left: 0.5em;
+}
+
+.button-cart-open-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-cart-open {
+  margin: 20px;
+  padding: 15px;
+  text-align: center;
+  background-image: none;
+  background-color: #ffffff;
+}
