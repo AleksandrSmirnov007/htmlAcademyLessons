@@ -2105,6 +2105,22 @@ body {
   height: 10px;
 }
 
+.popover-cart-link:hover,
+.button-exclude:hover {
+  opacity: 0.6;
+}
+
+.popover-cart-link:focus:not(:active),
+.button-exclude:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.popover-cart-link:active,
+.button-exclude:active {
+  opacity: 0.3;
+}
+
 .total-panel-list {
   list-style-type: none;
   margin: 0;
@@ -2138,3 +2154,19 @@ body {
   background-image: none;
   background-color: #ffffff;
 }
+
+.button-cart-open:focus:not(:active) {
+  outline-offset: 2px;
+}
+
+.button-cart-open:active {
+  background-color: #ffe17f;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.button-cart-open-disabled {
+  color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  user-select: none;
+}
+
