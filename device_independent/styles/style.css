@@ -547,8 +547,8 @@ body {
 }
 
 .slider-button {
-  width: 28px;
-  height: 68px;
+  width: 20px;
+  height: 60px;
   border: 2px solid transparent;
   background-color: transparent;
   background-size: 20px 60px;
@@ -566,6 +566,25 @@ body {
   background-image: url("../image/icon/slider-arrow.svg");
 }
 
+.slider-button:hover {
+  opacity: 0.6;
+}
+
+.slider-button:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.slider-button:active {
+  opacity: 0.3;
+  outline: none;
+}
+
+.slider-button:disabled {
+  opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
+}
 
 
 /* позиционируем подложку (желтый фон) */
@@ -650,12 +669,12 @@ body {
   width: 12px;
   height: 12px;
   display: block;
-  border-radius: 50%;
-  border: 2px solid #000000;
+  border: none;
+  background-image: radial-gradient(#ffffff, #ffffff 3px, #000000 4px, #000000 5px, #ffffff 6px); /* задаем рисунок круга через linear-gradient от идем от центра но делем перход в 1 пиксель что бы границы груго были плавными */
 }
 
 .slider-pagination-button-current {
-  background-color: #000000;
+  background-image: radial-gradient(#000000, #000000 5px, #ffffff 6px);
 }
 
 .slider-pagination-button:hover {
@@ -669,9 +688,14 @@ body {
 
 .slider-pagination-button:active {
   opacity: 0.3;
+  outline: none;
 }
 
-
+.slider-pagination-button:disabled {
+  opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
+}
 
 .parameter-list {
   display: grid;
@@ -734,6 +758,7 @@ body {
   padding-top: 193px;
   display: block;
   position: relative;
+  height: 100%;
 }
 
 .categories-link::before {
@@ -750,6 +775,22 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.categories-link:hover::before {
+  background-color: #ffc700;
+}
+
+.categories-link:focus:not(:active) {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.categories-link:active {
+  opacity: 0.3;
+  outline: none;
+}
+
+
 
 .categories-virtualreal::before {
   background-image: url("../image/icon/catogory-virtalreal.svg");
@@ -2057,12 +2098,21 @@ body {
   position: absolute;
   top: 100%;
   left: -123px;
-  display: none;
+  z-index: -1;  /*   z-index: -1; + opacity: 0; прячем popover-cart, но оставляем его доступным через фокус. Если использовать display: none; то при перемещении фокуса табом с элемента navigation-user-link-cart элемент popover-cart станет недоступен и фокус на него не перейдет */
+  opacity: 0;
+  display: grid;
   width: 320px;
   padding-top: 6px;
-  display: grid;
   grid-template-rows: repeat(3,min-content);
   background-image: linear-gradient(to bottom, transparent 6px, #000000 6px);
+}
+
+.navigation-user-link-cart:hover + .popover-cart,
+.navigation-user-link-cart:focus + .popover-cart,
+.popover-cart:hover,
+.popover-cart:focus-within {
+  z-index: 1;
+  opacity: 1;
 }
 
 .popover-cart::before {
@@ -2082,6 +2132,7 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
+  list-style-type: none;
 }
 
 .popover-cart-item {
