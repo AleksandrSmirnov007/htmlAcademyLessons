@@ -972,6 +972,22 @@ body {
   opacity: 0.3;
 }
 
+.button-addition-services:hover::before {
+  background-color: #ffc700;
+}
+
+.button-addition-services:hover::after {
+  opacity: 1;
+}
+
+.button-addition-services:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.button-addition-services:active {
+  opacity: 0.3;
+}
 
 /* columns */
 .columns {
@@ -1292,6 +1308,29 @@ body {
   background-image: url("../image/icon/icon-twitter.svg");
 }
 
+.footer-social-link:hover {
+  background-color: #ffc700;
+}
+
+.footer-social-link:focus:not(:active)::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.footer-social-link:focus:not(:active) { /* убираем стандартную стилизацию фокуса */
+  outline: none;
+}
+
+.footer-social-link:active::after {
+  opacity: 0.3;
+}
+
 .html-academy-link {
   grid-area: html-academy-link;
   justify-self: end;
@@ -1436,6 +1475,7 @@ body {
   border: 2px solid #000000;
   border-radius: 50%;
   background-color: #ebebeb;
+  z-index: 0;
 }
 
 .toggle-min {
@@ -1444,6 +1484,30 @@ body {
 
 .toggle-max {
   right: -9px;
+}
+
+.range-toggle:hover {
+  border: 2px solid rgba(0, 0, 0, 0.5); /* opacity здесь не получается использовать так как фон кнопки не меняется и к тому же полоски range bar доходят до серидины кнопки */
+}
+
+.range-toggle:focus:not(:active)::before {/* приходится помещать квадратный элемент сверху, так как рамка вокруг круглой точки квадратная в сосотоянии фокус */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  outline: 2px solid #af4fff;
+  outline-offset: 4px;
+}
+
+.range-toggle:focus:not(:active) { /* убираем стандартную стилизацию присущую состоянию "фокус" */
+  outline: none;
+}
+
+
+.range-toggle:active {
+  background-color: #000000;
 }
 
 .range-fields {
