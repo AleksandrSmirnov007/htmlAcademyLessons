@@ -1224,21 +1224,6 @@ body {
   font-style: normal;
 }
 
-.footer-navigation-link {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-address {
-  font-style: normal;
-}
-
 .footer-navigation-list {
   margin: 0;
   padding: 0;
@@ -1248,6 +1233,27 @@ body {
   column-gap: 35px;
 }
 
+.footer-navigation-link {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: grid;
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer-address {
+  font-style: normal;
+}
+
+.footer-navigation-link:hover {
+  color: #ffc700;
+}
+
 .footer-phone {
   justify-self: end;
 }
@@ -1255,6 +1261,34 @@ body {
 .footer-contacts-phone {
   text-decoration: underline;
 }
+
+.footer-navigation-link:hover,
+.footer-contacts-phone:hover {
+  color: #ffc700;
+}
+
+.footer-navigation-link:focus:not(:active),
+.footer-contacts-phone:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.footer-navigation-link:active,
+.footer-contacts-phone:active {
+  color: #ffc700;
+  opacity: 0.3;
+}
+
+.footer-navigation-link:hover::before,
+.footer-navigation-link:active::before { /* создаем подчеркивание желтым цветом в сосояния hover и active */
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: calc(100% - 0.2em); /* эта сложность возникает из приминения letter-spacing: 0.2em для .footer-navigation-link так как это промежуток добавляется и к последней букве. Из за этого увеличивается width и желтая черта получается длиннее на эти  0.2em */
+  bottom: -6px;
+  background-color: #ffc700;
+}
+
 
 .footer-social-list {
   margin: 0;
@@ -1331,10 +1365,37 @@ body {
   opacity: 0.3;
 }
 
+
+
 .html-academy-link {
   grid-area: html-academy-link;
   justify-self: end;
+  align-self: center;
+  fill: #ffc700;
 }
+
+.htmlacademy-logo {
+  display: block; /* svg по умолчанию inline и поэтому возникают проблемы с вертикальным выравниванием  */
+}
+
+.html-academy-link:hover .htmlacademy-logo {
+  fill: #ffffff;
+}
+
+.html-academy-link:focus:not(:active) .htmlacademy-logo {
+  fill: #ffffff;
+  opacity: 0.5;
+}
+.html-academy-link:focus:not(:active) {
+  outline: 1px solid #af4fff;
+  outline-offset: 1px;
+}
+
+.html-academy-link:active .htmlacademy-logo {
+  fill: #ffc700;
+}
+
+
 
 /* catalog */
 
@@ -1721,6 +1782,17 @@ body {
   display: block;
   width: 30px;
   height: 30px;
+
+  position: relative;
+}
+
+.paging-arrow::before { /* используем псевдодлемент и зададим изображение стрелок ему, потому что по умолчанию для стрелок opacity: 0.2 и прозрачность передается outline тоже если задавть ее элементу с прозрачностью а нам она здесь не нужна. Мы задали прозрачность псевдо элементу а сам элнмент .paging-arrow имеет по прежнему opacity: 1; соотвественно и его outline так же будет непрорачной */
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
   background-image: url("../image/icon/triangle-button-sort.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1728,8 +1800,22 @@ body {
   opacity: 0.2;
 }
 
-.paging-arrow-down {
+
+.paging-arrow-down::before {
   transform: rotate(180deg);
+}
+
+.paging-arrow:hover::before {
+ opacity: 0.5;
+}
+
+.paging-arrow:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.paging-arrow:active::before {
+  opacity: 1;
 }
 
 /* product-card-list */
@@ -1748,19 +1834,19 @@ body {
 
 /* product card */
 
-.product-card-item {
+.product-card-link {
   display: grid;
   grid-template-areas: "image image"
                         "link price";
   row-gap: 32px;
-}
-
-.product-card-link {
-  grid-area: link;
+  position: relative; /* для значка "new" */
   text-decoration: none;
 }
 
 .product-card-title {
+  grid-area: link;
+  text-decoration: none;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
@@ -1769,8 +1855,23 @@ body {
   margin: 0;
 }
 
-.product-card-image {
+/* добавляем значек "new" товару */
+.product-card-link-new::before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-image: url("../image/icon/new-icon.svg");
+  top: 27px;
+  right: 27px;
+  z-index: 1; /* иначе значек перекрывается изображением */
+}
+
+
+
+.product-card-image-container {
   grid-area: image;
+  position: relative;
 }
 
 .product-card-price {
@@ -1780,7 +1881,85 @@ body {
   line-height: 21px;
   color: #444444;
   margin: 0;
+  position: relative;
 }
+
+/* разобраться почему не видно этот псевдоэлемент у img
+
+:before и :after добавляет контент к содержимому элемента, а у img же как такового содержимого нет.
+Решение - завернуть img в div и к нему уже применять псевдоэлементы.
+
+Также псевдоэлементы нельзя применить к input
+поэтому мы дополнительно обернули img  в контейнер
+*/
+
+/* product card hover, active */
+
+        /* делаем цветовой фильр при наведении а так же при нажатии  */
+.product-card-link:hover .product-card-image-container::before,
+.product-card-link:active .product-card-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  opacity: 0.8;
+  z-index: 2; /* иначе значек "new" находится поверх фильтра */
+}
+
+       /* при наведении и нажатии появляется надпись поверx фильра и изображения "подробнее" */
+.product-card-link:hover .product-card-image-container::after,
+.product-card-link:active .product-card-image-container::after {
+  content: "подробнее";
+  position: absolute;
+  /* центрируем надпись:   top: 0; right: 0; bottom: 0; left: 0; margin: auto; */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+
+  /* задаем размеры по содежимому */
+  width: min-content;
+  height: min-content;
+
+  padding: 10px 32px;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000000;
+
+  background-image: linear-gradient(to bottom, transparent calc(50% - 4px), #ffe17f calc(50% - 4px), #ffe17f calc(50% + 4px), transparent calc(50% + 4px));
+
+  z-index: 3; /* иначе надпись находится под фильтром */
+}
+
+        /* при наведении меняется прозрачность шрифта title на 0.6 */
+.product-card-link:hover .product-card-title {
+  opacity: 0.6;
+}
+
+        /* прин нажатии меняется прозрачность шрифта title и price на 0.3  */
+
+.product-card-link:active .product-card-title,
+.product-card-link:active .product-card-price {
+  opacity: 0.3;
+}
+
+/* product card focus  */
+.product-card-link:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
 
 .button-show-more {
   font-size: 16px;
@@ -1814,6 +1993,7 @@ body {
   display: grid;
   grid-template-columns: min-content 1fr min-content;
   place-content: center;
+  margin: 0 40px 78px;
 }
 
 .pagination-list {
@@ -1832,6 +2012,20 @@ body {
   border-color: transparent;
   padding: 25px;
 }
+
+.pagination-button:hover {
+  background-color: #dcdcdc;
+}
+
+.pagination-button:focus:not(:active) {
+  outline-offset: 2px;
+}
+
+.pagination-button:active {
+  color: rgba(0, 0, 0, 0.3);
+  background-color: #dcdcdc;
+}
+
 
 .pagination-link {
   display: block;
