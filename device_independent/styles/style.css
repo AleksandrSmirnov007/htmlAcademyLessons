@@ -174,6 +174,7 @@ body {
   color: #000000;
   background-color: transparent;
   cursor: pointer;
+  position: relative;
 }
 
 .button-search:disabled {
@@ -191,15 +192,21 @@ body {
   outline: none;
 }
 
+.button-search:focus:not(:active)::before {/* создаем псевдоэлемент от которого будем делать полностью квадратную рамку при фокусе на button-search */
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  outline: 2px solid #af4fff;
+  outline-offset: 4px;
+}
+
 .button-search:active {
   color: rgba(255, 255, 255, 0.3);
 }
 
-
-.button-search-container:focus-within {
-  outline: 2px solid #af4fff;
-  outline-offset: 2px;
-}
 
 .button-secondary,
 .tab-link {
@@ -290,7 +297,7 @@ body {
 
 
 .account-exit {
-  opacity: 0.3;
+  color: rgba(0, 0, 0, 0.3);
   margin-right: 7px;
 }
 
@@ -1572,25 +1579,31 @@ body {
 }
 
 .range-fields {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: -15px;
 }
 
 .range-field {
   font-size: 15px;
   line-height: 18px;
-  opacity: 0.3;
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-  position: relative;
+
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: end;
+  width: max-content;
+}
+
+
+.range-field:focus-within {
+  outline: 2px solid #af4fff; /* делаем рамку при фокус на инпут */
+  outline-offset: 2px;
 }
 
 .range-title {
-  position: absolute;
-  left: -24px;
-  top: calc(50% - 9px);
-  padding-left: 7px;
+  display: block;
+  opacity: 0.3;
+  margin-right: 0.1em;
 }
 
 .range-input {
@@ -1601,13 +1614,32 @@ body {
   font-size: 15px;
   line-height: 18px;
   color: #000000;
-  border: 1px solid transparent;
+  border: none;
   width: 100%;
+  padding: 0;
+  opacity: 0.3;
 }
 
-.range-field:first-child {
-  padding-right: 24px;
+.range-input:focus {
+  outline: none;
 }
+/* убираем плейсхолдер при фокусе (далее четыре правила) */
+.range-input:focus::-webkit-input-placeholder {
+  color: transparent
+}
+
+.range-input:focus::-moz-placeholder {
+  color: transparent
+}
+
+.range-input:focus:-moz-placeholder {
+  color: transparent
+}
+
+.range-input:focus:-ms-input-placeholder {
+  color: transparent
+}
+
 
 /* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
 .range-input::-webkit-outer-spin-button,
@@ -1809,10 +1841,12 @@ body {
  opacity: 0.5;
 }
 
-.paging-arrow:focus:not(:active) {
+.paging-arrow:focus:not(:active),
+.paging-arrow:focus-visible { /* у фокус визибле тоже своя стилизация, но мы приведеи к единой */
   outline: 2px solid #af4fff;
   outline-offset: 2px;
 }
+
 
 .paging-arrow:active::before {
   opacity: 1;
@@ -2026,6 +2060,12 @@ body {
   background-color: #dcdcdc;
 }
 
+.pagination-button:disabled {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
 
 .pagination-link {
   display: block;
@@ -2033,11 +2073,26 @@ body {
   text-align: center;
   font-size: 16px;
   line-height: 20px;
-  color: #444444;
-  opacity: 0.3;
+  color: rgba(68, 68, 68, 0.3);
   text-decoration: none;
   min-width: 40px;
+}
 
+.pagination-link-current {
+  color: rgba(68, 68, 68, 0.6);
+}
+
+.pagination-link:hover {
+  color: rgba(68, 68, 68, 1);
+}
+
+.pagination-link:focus:not(:active) {
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+}
+
+.pagination-link:active {
+  color: rgba(68, 68, 68, 0.1);
 }
 
 /* модальное окно */
