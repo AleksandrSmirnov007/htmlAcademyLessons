@@ -54,7 +54,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   padding-top: 14px;
-  width: 1440px;
+  min-width: 1160px;
 }
 
 .visually-hidden {
@@ -68,9 +68,9 @@ body {
   overflow: hidden;
 }
 
-
 .header-nav {
-  margin: 0 140px;
+  width: 1160px;
+  margin: 0 auto;
   padding: 0 60px;
   background-image: linear-gradient(to bottom, #ffffff 27px, #ffe17e 27px);
 }
@@ -515,12 +515,6 @@ body {
   outline-offset: 2px;
 }
 
-
-
-
-
-
-
 .main-container {
   flex-grow: 1; /* для паттерна стикки-футер */
 }
@@ -529,10 +523,11 @@ body {
 
 .slide {
   display: none;
+  width: 1160px;
   grid-template-columns: 560px 560px;
-  margin-right: 140px;
-  margin-left: 145px;
-  column-gap: 35px;
+  margin-right: auto;
+  margin-left: auto;
+  column-gap: 40px;
   margin-bottom: 216px;
 }
 
@@ -598,7 +593,7 @@ body {
 /* позиционируем подложку (желтый фон) */
 .slider-number {
   position: absolute;
-  left: -5px;
+  left: 0px;
   top: -150px;
   font-weight: 700;
   font-size: 180px;
@@ -741,7 +736,11 @@ body {
 /* categories картинки на желтом фоне с подписями*/
 .categories {
   margin-bottom: 70px;
+  width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
 }
+
 
 .categories-title {
   font-family: 'Raleway', sans-serif;
@@ -754,7 +753,7 @@ body {
 
 .categories-list {
   list-style-type: none;
-  margin: 0 140px;
+  margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(6, 160px);
@@ -829,10 +828,13 @@ body {
 
 .services {
   display: grid;
-  grid-template-columns: 140px 287px 1fr 140px;
+  grid-template-columns: 1fr 287px 873px 1fr;
   background: linear-gradient(to bottom, #ffffff 102px, #f0f0f0 102px);
   padding-bottom: 72px;
   margin-bottom: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
 
 }
 
@@ -928,6 +930,7 @@ body {
 
 
 /* кнопка "доставим редкий товар на заказ" */
+
 .button-addition-services {
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
@@ -941,7 +944,8 @@ body {
   background-color: #f0f0f0;
 
   display: block;
-  margin: 0 140px 70px;
+  width: 1160px;
+  margin: 0 auto 70px;
   padding: 40px 125px;
   position: relative;
   background-image: url("../image/icon/elipse.svg");
@@ -999,9 +1003,10 @@ body {
 
 /* columns */
 .columns {
+  width: 1160px;
   display: grid;
   grid-template-columns: 520px 532px;
-  margin: 0 140px 70px;
+  margin: 0 auto 70px;
   column-gap: 108px;
 }
 
@@ -1090,9 +1095,15 @@ body {
 }
 
 /* subscribe */
-.subscribe {
+
+.subscribe-container {
   background-color: #f0f0f0;
-  padding: 64px 141px 56px;
+}
+
+.subscribe {
+  width: 1160px;
+  margin: 0 auto;
+  padding: 64px 0 56px;
   display: grid;
   grid-template-columns: 354px 1fr;
   column-gap: 252px;
@@ -1195,17 +1206,20 @@ body {
 .page-footer {
   color: #ffffff;
   background-color: #444444;
-
-  padding: 61px 140px;
+}
+.page-footer-container {
+  width: 1160px;
+  margin: 0 auto;
+  padding: 61px 0;
   position: relative;
 }
 
-.page-footer::before {
+.page-footer-container::before {
   content: "";
   position: absolute;
   width: 80px;
   height: 7px;
-  left: 141px;
+  left: 0;
   bottom: 77px;
   background-color: #ffc700;
 }
