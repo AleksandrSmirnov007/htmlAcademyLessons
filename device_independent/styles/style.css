@@ -80,12 +80,13 @@ body {
   display: block;
   width: max-content;
   margin-left: -4px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   padding: 2px;
   border: 2px solid transparent;
 }
 
 .footer-logo-link {
+  margin-top: -3px;
   margin-bottom: 31px;
 }
 
@@ -136,6 +137,10 @@ body {
   border-radius: 50px 0 0 50px;
   width: 100%;
   cursor: text;
+  background-image: url("../image/icon/search-icon.svg");
+  background-position: left 16px center;
+  background-repeat: no-repeat;
+  background-size: 16px 17px;
 }
 
 .search-input::placeholder {
@@ -528,11 +533,15 @@ body {
   margin-right: auto;
   margin-left: auto;
   column-gap: 40px;
-  margin-bottom: 216px;
+  margin-bottom: 71px;
 }
 
 .slide-current {
   display: grid;
+}
+
+.slider-image {
+  margin-left: 5px;   /* почему расхождение на 5px? */
 }
 
 .slider {
@@ -542,11 +551,12 @@ body {
 .slider-controls {
   position: absolute;
   width: 100%;
-  left: 0;
+  left: 5px;   /* почему расхождение на 5px? тоже пришлось корректировать */
   right: 0;
   top: 211px;
   display: flex;
   justify-content: space-between;
+  padding-left: 30px;
 }
 
 .slider-button {
@@ -613,7 +623,7 @@ body {
 }
 
 .slider-description {
-  padding-top: 123px;
+  padding-top: 122px;
 }
 
 .section-title {
@@ -638,18 +648,18 @@ body {
 
 .gallery .section-description {
   margin-top: 0;
-  margin-bottom: 51px;
+  margin-bottom: 48px;
 }
 
 .pagination-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 49px;
+  margin-bottom: 46px;
 }
 
 .slider-button-show-more {
-  padding: 10px 40px;
+  padding: 10px 37px;
 }
 
 .slider-pagination-list {
@@ -735,7 +745,7 @@ body {
 
 /* categories картинки на желтом фоне с подписями*/
 .categories {
-  margin-bottom: 70px;
+  margin-bottom: 80px;
   width: 1160px;
   margin-right: auto;
   margin-left: auto;
@@ -743,6 +753,7 @@ body {
 
 
 .categories-title {
+  margin: 0;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -853,7 +864,7 @@ body {
   grid-column: 3 / 4;
   padding-left: 116px;
   padding-right: 282px;
-  padding-top: 72px;
+  padding-top: 74px;
   padding-bottom: 72px;
   background-repeat: no-repeat;
   background-position: 674px center;
@@ -907,7 +918,7 @@ body {
 .tab-link {
   text-align: center;
   display: block;
-  padding: 10px 10px;
+  padding: 8px 16px;
   min-width: 160px;
 }
 
@@ -946,7 +957,7 @@ body {
   display: block;
   width: 1160px;
   margin: 0 auto 70px;
-  padding: 40px 125px;
+  padding: 38px 125px;
   position: relative;
   background-image: url("../image/icon/elipse.svg");
   background-repeat: no-repeat;
@@ -1006,7 +1017,7 @@ body {
   width: 1160px;
   display: grid;
   grid-template-columns: 520px 532px;
-  margin: 0 auto 70px;
+  margin: 0 auto 72px;
   column-gap: 108px;
 }
 
@@ -1015,9 +1026,10 @@ body {
 }
 
 .column .button-secondary {
-  padding: 6px 25px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
-/* черточки на колонками */
+/* черточки над колонками */
 .column::before {
   content: "";
   width: 84px;
@@ -1029,16 +1041,20 @@ body {
 }
 
 .columns .section-title {
-  margin-top: 40px;
+  margin-top: 48px;
   margin-bottom: 48px;
 }
 
-.columns .section-description {
+.columns .section-description:not(.contacts-address-text) {
   margin-top: 0;
   margin-bottom: 30px;
 }
 
-/* section about */
+.contacts-address-text {
+  margin: 0;
+}
+
+/* about */
 .delivery-list {
   font-weight: 700;
   font-size: 18px;
@@ -1047,7 +1063,7 @@ body {
 
   padding: 0;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 31px;
   list-style-type: none;
   display: grid;
   row-gap: 19px;
@@ -1079,6 +1095,13 @@ body {
   margin-bottom: 15px;
 }
 
+.about .button-secondary {
+  padding-right: 21px;
+  padding-left: 21px;
+}
+
+/* contacts */
+
 .contacts-address {
   font-style: normal;
   margin-bottom: 30px;
@@ -1087,11 +1110,18 @@ body {
 .contacts-phone {
   text-decoration-line: underline;
   color: #444444;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 .schedule-list {
   padding: 0;
   list-style-type: none;
+}
+
+.contacts .button-secondary {
+  padding-left: 32px;
+  padding-right: 30px;
 }
 
 /* subscribe */
@@ -1103,7 +1133,7 @@ body {
 .subscribe {
   width: 1160px;
   margin: 0 auto;
-  padding: 64px 0 56px;
+  padding: 65px 0 55px;
   display: grid;
   grid-template-columns: 354px 1fr;
   column-gap: 252px;
@@ -1131,6 +1161,9 @@ body {
 .subscribe-input {
   font-size: 18px;
   line-height: 30px;
+
+  font-family: 'Rubik';
+
   color: #444444;
   background-color: transparent;
   width: 100%;
@@ -1176,7 +1209,7 @@ body {
 .button-subscribe {
   background-color: transparent;
   background-image: none;
-  padding: 18px 39px;
+  padding: 15px 37px;
   border: 3px solid #cecece;
 }
 
@@ -1248,11 +1281,12 @@ body {
 
 .footer-navigation-list {
   margin: 0;
+  margin-top: 5px;
   padding: 0;
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, min-content);
-  column-gap: 35px;
+  column-gap: 32px;
 }
 
 .footer-navigation-link {
@@ -1278,10 +1312,14 @@ body {
 
 .footer-phone {
   justify-self: end;
+  margin-top: 5px;
 }
 
 .footer-contacts-phone {
-  text-decoration: underline;
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .footer-navigation-link:hover,
