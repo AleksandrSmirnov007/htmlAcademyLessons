@@ -1426,8 +1426,9 @@ body {
 }
 
 .catalog-title {
-  margin: 0 140px;
-  padding: 35px 60px;
+  margin: 0 auto;
+  width: 1160px;
+  padding: 35px 20px 35px 60px;
 }
 
 .catalog-title .section-title {
@@ -1494,15 +1495,16 @@ body {
 
 .catalog-filter-content-wrapper {
   background-color: #f0f0f0;
-  padding: 0 140px;
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 1fr 320px 840px 1fr;
+  grid-template-areas: ". filter content ."
 }
 
 /* catalog-filter  */
 .catalog-filter {
   background-color: #f0f0f0;
   margin: 0 60px;
+  grid-area: filter;
 }
 
 .form-title {
@@ -1539,7 +1541,6 @@ body {
   padding-bottom: 20px;
   width: 100%;
 }
-
 
 /* range */
 .range-bar {
@@ -1766,6 +1767,7 @@ body {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  grid-area: content;
 }
 
 /* catalog-sort-form */
