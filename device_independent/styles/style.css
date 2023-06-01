@@ -123,6 +123,7 @@ body {
 .search-field {
   flex-grow: 1;
   margin-right: -2px;
+  min-width: 350px;
 }
 
 .search-input {
@@ -141,6 +142,7 @@ body {
   background-position: left 16px center;
   background-repeat: no-repeat;
   background-size: 16px 17px;
+  height: 100%;
 }
 
 .search-input::placeholder {
@@ -167,7 +169,7 @@ body {
 /* buttons  */
 
 .button-search {
-  padding: 8px 54px;
+  padding: 8px;
   border: 2px solid #000000;
   border-radius: 0px 50px 50px 0px;
 
@@ -180,6 +182,8 @@ body {
   background-color: transparent;
   cursor: pointer;
   position: relative;
+  width: 160px;
+
 }
 
 .button-search:disabled {
@@ -227,6 +231,7 @@ body {
   background-image: linear-gradient(to bottom, transparent calc(50% - 4px), #ffe17f calc(50% - 4px), #ffe17f calc(50% + 4px), transparent calc(50% + 4px));
   border: 2px solid transparent;
   background-color: transparent;
+  text-align: center;
 }
 
 .button-secondary:hover {
@@ -476,6 +481,7 @@ body {
   margin-bottom: 15px;
   margin-right: 18px;
   width: max-content;
+  max-width: 300px;
 }
 
 /* сетка выпадающего меню */
@@ -660,6 +666,8 @@ body {
 
 .slider-button-show-more {
   padding: 10px 37px;
+  margin-right: 20px;
+  text-align: center;
 }
 
 .slider-pagination-list {
@@ -721,6 +729,7 @@ body {
 }
 
 .parameter-item {
+  max-width: 200px;
   display: grid;
   grid-template-rows: repeat(2, min-content);
   grid-gap: 12px;
@@ -1217,7 +1226,8 @@ body {
   padding-left: 32px;
   align-self: center;
   justify-self: end;
-  position:relative
+  position: relative;
+  margin-left: 20px;
 }
 
 /* зеленая галочка */
@@ -1265,9 +1275,6 @@ body {
   column-gap: 100px;
   row-gap: 47px;
 }
-.page-footer a {
-  color: #ffffff;
-}
 
 .footer-contacts-text {
   grid-area: contacts;
@@ -1283,10 +1290,13 @@ body {
   margin: 0;
   margin-top: 5px;
   padding: 0;
+  padding-right: 11px;
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, min-content);
   column-gap: 32px;
+  row-gap: 20px;
+  justify-content: center;
 }
 
 .footer-navigation-link {
@@ -1300,6 +1310,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   position: relative;
+  text-align: center;
 }
 
 .footer-address {
@@ -1320,6 +1331,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+  color: #ffffff;
 }
 
 .footer-navigation-link:hover,
@@ -1740,7 +1752,6 @@ body {
   content: "";
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  align-self: center;
 }
 
 .control-label::before { /* из-за рамки при фокусе которая размером больше чем элемент сделаем подложку из before большего размера, что бы отцентровать используем отрицательные маржины */
