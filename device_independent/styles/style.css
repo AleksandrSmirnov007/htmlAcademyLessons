@@ -1460,18 +1460,18 @@ body {
 /* catalog */
 
 .catalog-header-nav {
-  padding-bottom: 38px;
+  padding-bottom: 35px;
 }
 
 .catalog-title {
   margin: 0 auto;
   width: 1160px;
-  padding: 35px 20px 35px 60px;
+  padding: 37px 20px 6px 60px;
 }
 
 .catalog-title .section-title {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .breadcrumbs-list {
@@ -1490,7 +1490,7 @@ body {
 }
 
 .breadcrumbs-item:not(:first-child) {/* стрелки будут у всех кроме первого элемента только им зададим шаблон сетку с двумя столбцами*/
-  grid-template-columns: 36px max-content;
+  grid-template-columns: 37px max-content;
 }
 /* стрелки у хлебных крошек */
 .breadcrumbs-item:not(:first-child)::before {
@@ -1510,8 +1510,6 @@ body {
   line-height: 19px;
   text-decoration: none;
   color: #000000;
-  padding: 2px;
-  border: 2px solid transparent;
 }
 
 .breadcrumbs-link:hover {
@@ -1524,8 +1522,9 @@ body {
 }
 
 .breadcrumbs-link:focus:not(:active) {
-  border-color: #af4fff;
-  outline: none;
+  outline: 2px solid #af4fff;
+  outline-offset: 2px;
+
 }
 
 
@@ -1558,13 +1557,17 @@ body {
   margin: 0;
 }
 
+.catalog-filter-form .form-title {
+  margin-bottom: 32px;
+}
+
 .filter-fieldset {
   margin: 0;
   border-top: 2px solid #000000;
   padding-top: 0;
   padding-right: 0;
   padding-left: 0;
-  padding-bottom: 35px;
+  padding-bottom: 37px;
   border: none;
 }
 
@@ -1581,17 +1584,21 @@ body {
 }
 
 /* range */
+.range-bar-container {
+  margin-top: 8px;
+  margin-bottom: 11px;
+  background-color: #dcdcdc;
+}
+
 .range-bar {
   height: 2px;
   background-color: #000000;
-  margin-top: 10px;
-  margin-bottom: 11px;
   position: relative;
 }
 
 .range-toggle {
   position: absolute;
-  top: -9px;
+  top: -8px;
   width: 18px;
   height: 18px;
   border: 2px solid #000000;
@@ -1714,11 +1721,13 @@ body {
   padding: 0;
   display: grid;
   row-gap: 17px;
+  margin-bottom: -3px;
 }
 
 
 .control-label {
   line-height: 19px;
+  font-size: 16px;
   display: grid;
   grid-template-columns: 20px min-content;
   column-gap: 16px;
@@ -1826,6 +1835,8 @@ body {
 
 .select-control {
   justify-self: end;
+  font-family: 'Rubik';
+  font-weight: 400;
   font-size: 18px;
   line-height: 30px;
   appearance: none;
@@ -1860,7 +1871,7 @@ body {
 
 .paging-arows {
   display: flex;
-  min-width: 257px;
+  min-width: 255px;
   justify-content: end;
   align-items: center;
 }
@@ -2056,8 +2067,8 @@ body {
   background-color: transparent;
   border: 3px solid #e5e5e5;
   background-image: none;
-  padding: 18px 0;
-  margin-bottom: 44px;
+  padding: 15px 0;
+  margin-bottom: 43px;
   margin-right: 40px;
   margin-left: 40px;
 }
@@ -2082,7 +2093,7 @@ body {
   display: grid;
   grid-template-columns: min-content 1fr min-content;
   place-content: center;
-  margin: 0 40px 78px;
+  margin: 0 40px 76px;
 }
 
 .pagination-list {
@@ -2099,7 +2110,7 @@ body {
   background-color: transparent;
   background-image: none;
   border-color: transparent;
-  padding: 25px;
+  padding: 24px;
 }
 
 .pagination-button:hover {
