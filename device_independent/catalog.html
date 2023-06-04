@@ -18,7 +18,7 @@
         <section class="search">
           <h2 class="visually-hidden">Поиск товаров на сайте</h2>
 
-          <form class="search-form" action="https://echo.htmlacademy.ru/" metod="post">
+          <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
             <label class="field search-field">
               <span class="visually-hidden">Введите текст поиска</span>
               <input class="field-input search-input" type="text" name="search" placeholder="Поиск по сайту" value="Текст поиска">
@@ -32,7 +32,7 @@
         <ul class="navigation-user-list">
           <li class="navigation-user-item navigation-user-item-login">
             <a class="navigation-user-link navigation-user-link-login" href="#">
-              <span class="navigation-user-link-text navigation-user-link-login-text" href="#">Коля Петухов</span>
+              <span class="navigation-user-link-text navigation-user-link-login-text">Коля Петухов</span>
             </a>
             <a class="navigation-user-link account-exit" href="#">Выйти</a>
           </li>
@@ -69,12 +69,12 @@
               </ul>
               <ul class="total-panel-list">
                 <li class="total-panel-item">
-                  <dt class="goods-umount-title">Товаров:</dt>
-                  <dd class="goods-umount-number">2</dd>
+                  <span class="goods-umount-title">Товаров:</span>
+                  <span class="goods-umount-number">2</span>
                 </li>
                 <li class="total-panel-item">
-                  <dt class="goods-umount-title">Сумма:</dt>
-                  <dd class="goods-umount-number">2000 ₽</dd>
+                  <span class="goods-umount-title">Сумма:</span>
+                  <span class="goods-umount-number">2000 ₽</span>
                 </li>
               </ul>
               <div class="button-cart-open-container">
@@ -163,14 +163,12 @@
               <div class="range-fields">
                 <label class="range-field">
                   <span class="range-title">от</span>
-                  <!-- использую атрибут tel вместо number так как у number не действует атрибут maxlength при ручном вводе пользователя -->
-                  <!-- использую зависимость ширины инпута от содержимого onkeydown="this.style.width = ((this.value.length + 1.7) * 8) + 'px';" 1.7 подобрал чтобы инпут расширялся соответсвено длинне введенных символов -->
-                  <input onkeydown="this.style.width = ((this.value.length + 1.7) * 8) + 'px';" style="width: 15px; max-width: 100px;" class="range-input" type="tel" maxlength="5" name="min-price" value="0" min="0" max="100000" step="100" placeholder="0">
+                  <input style="width: 15px;" class="range-input" type="number" name="min-price" value="0" min="0" max="100000" step="100" placeholder="0">
                 </label>
 
                 <label class="range-field">
                   <span class="range-title">до</span>
-                  <input  onkeydown="this.style.width = ((this.value.length + 1.7) * 8) + 'px';" style="width: 45px; max-width: 100px;" class="range-input" type="tel" maxlength="6" name="max-price" value="5000" min="0" max="100000" step="100" placeholder="5000">
+                  <input style="width: 45px;" class="range-input" type="number" name="max-price" value="5000" min="0" max="100000" step="100" placeholder="5000">
                 </label>
               </div>
 
@@ -257,16 +255,16 @@
             </div>
 
           </div>
-          <ul class="product-card-list">
-          <h3 class="visually-hidden">Список карточек товаров</h3>
 
+          <h3 class="visually-hidden">Список карточек товаров</h3>
+          <ul class="product-card-list">
             <li class="product-card-item">
               <!-- что бы добавить значек "new" нужно добавить a.product-card-link дополнительный класс .product-card-link-new -->
               <a class="product-card-link product-card-link-new" href="#">
                 <h4 class="product-card-title">Любительская<br>селфи-палка</h4>
 
                 <div class="product-card-image-container">
-                  <img class="product-card-image" width="360" heght="380" src="image/content/product-1.jpg" alt="селфи-палка с телефоном.">
+                  <img class="product-card-image" width="360" height="380" src="image/content/product-1.jpg" alt="селфи-палка с телефоном.">
                 </div>
 
                 <p class="product-card-price">
@@ -281,7 +279,7 @@
                 <h4 class="product-card-title">Профессиональная<br>селфи-палка</h4>
 
                 <div class="product-card-image-container">
-                  <img class="product-card-image" width="360" heght="380" src="image/content/product-2.jpg" alt="селфи-палка с телефоном.">
+                  <img class="product-card-image" width="360" height="380" src="image/content/product-2.jpg" alt="селфи-палка с телефоном.">
                 </div>
 
                 <p class="product-card-price">
@@ -296,7 +294,7 @@
                 <h4 class="product-card-title">Непотопляемая<br>селфи-палка</h4>
 
                 <div class="product-card-image-container">
-                  <img class="product-card-image" width="360" heght="380" src="image/content/product-3.jpg" alt="селфи-палка с телефоном.">
+                  <img class="product-card-image" width="360" height="380" src="image/content/product-3.jpg" alt="селфи-палка с телефоном.">
                 </div>
 
                 <p class="product-card-price">
@@ -311,7 +309,7 @@
                 <h4 class="product-card-title">Селфи-палка «Следуй<br>за мной»</h4>
 
                 <div class="product-card-image-container">
-                  <img class="product-card-image" width="360" heght="380" src="image/content/product-4.jpg" alt="селфи-палка с телефоном.">
+                  <img class="product-card-image" width="360" height="380" src="image/content/product-4.jpg" alt="селфи-палка с телефоном.">
                 </div>
 
                 <p class="product-card-price">
@@ -345,7 +343,7 @@
               </li>
             </ul>
 
-            <button class="button pagination-button button-secondary" type="bytton">Вперёд</button>
+            <button class="button pagination-button button-secondary" type="button">Вперёд</button>
           </div>
 
         </div>
@@ -354,13 +352,14 @@
   </main>
 
   <footer class="page-footer">
+    <h2 class="visually-hidden">Общая информация о сайте</h2>
     <div class="page-footer-container">
       <a class="footer-logo-link" href="">
         <img src="image/icon/logo-yellow.svg" alt="логотип Девайс желтым цветом">
       </a>
       <div class="footer-content">
         <section class="footer-contacts-text">
-          <h2 class="visually-hidden">Контакты</h2>
+          <h3 class="visually-hidden">Контакты</h3>
 
           <address class="footer-address">
             <p class="footer-contacts-text">
@@ -369,6 +368,7 @@
           </address>
         </section>
 
+        <h3 class="visually-hidden">Навигация в подвале сайта</h3>
         <ul class="footer-navigation-list">
           <li class="fotter-navigation-item">
             <a class="footer-navigation-link" href="#">Доставка</a>
@@ -382,12 +382,13 @@
         </ul>
 
         <section class="footer-phone">
+          <h3 class="visually-hidden">Контактный телефон в подвале сайта</h3>
           <address class="footer-address">
             <a class="footer-contacts-phone" href="tel:+78128121212">Тел.: +7 (812) 812-12-12</a>
           </address>
         </section>
 
-        <h2 class="visually-hidden">Социальные сети</h2>
+        <h3 class="visually-hidden">Социальные сети</h3>
         <ul class="footer-social-list">
           <li class="footer-social-item">
             <a class="footer-social-link footer-social-link-fb" href="https://www.facebook.com/htmlacademy">
