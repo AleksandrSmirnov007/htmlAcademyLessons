@@ -777,7 +777,7 @@ body {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(6, 160px);
-  column-gap: 40px;
+  gap: 40px;
 }
 
 .categories-link {
@@ -1028,6 +1028,7 @@ body {
   grid-template-columns: 520px 532px;
   margin: 0 auto 72px;
   column-gap: 108px;
+  row-gap: 50px;
 }
 
 .column {
@@ -1882,7 +1883,8 @@ body {
 
 .paging-arows {
   display: flex;
-  min-width: 255px;
+  flex-wrap: wrap;
+  width: 255px;
   justify-content: end;
   align-items: center;
 }
