@@ -163,12 +163,14 @@
               <div class="range-fields">
                 <label class="range-field">
                   <span class="range-title">от</span>
-                  <input style="width: 15px;" class="range-input" type="number" name="min-price" value="0" min="0" max="100000" step="100" placeholder="0">
+                  <input style="width: 15px;" class="range-input" type="number" name="min-price" value="0" min="0"
+                  max="100000" step="100" placeholder="0">
                 </label>
 
                 <label class="range-field">
                   <span class="range-title">до</span>
-                  <input style="width: 45px;" class="range-input" type="number" name="max-price" value="5000" min="0" max="100000" step="100" placeholder="5000">
+                  <input style="width: 45px;" class="range-input" type="number" name="max-price" value="5000" min="0"
+                  max="100000" step="100" placeholder="5000">
                 </label>
               </div>
 
@@ -355,7 +357,7 @@
     <h2 class="visually-hidden">Общая информация о сайте</h2>
     <div class="page-footer-container">
       <a class="footer-logo-link" href="">
-        <img src="image/icon/logo-yellow.svg" alt="логотип Девайс желтым цветом">
+        <img  width="145" height="36" src="image/icon/logo-yellow.svg" alt="логотип Девайс желтым цветом">
       </a>
       <div class="footer-content">
         <section class="footer-contacts-text">
@@ -425,11 +427,13 @@
 
       <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
         <fieldset class="modal-field modal-field-name">
+          <legend class="visually-hidden">Поле для ввода вашего имени</legend>
           <label class="modal-field-title"  for="name">Ваше имя:</label>
           <input class="field-input modal-field-input" type="text" name="name" id="name" placeholder="Введите имя">
-
         </fieldset>
+
         <fieldset class="modal-field modal-field-email">
+          <legend class="visually-hidden">Поле для ввода вашего e-mail</legend>
           <label class="modal-field-title"  for="email">Ваш e-mail:</label>
           <input class="field-input modal-field-input field-input-error" type="email" name="email" id="email" value="почта">
           <span class="modal-field-message modal-field-message-error">Забавный у вас адрес</span>
@@ -437,11 +441,13 @@
 
         <div class="modal-fields">
           <fieldset class="modal-field modal-field-poroduct">
+            <legend class="visually-hidden">Поле для ввода товаров которые нужно привезти</legend>
             <label class="modal-field-title"  for="product">Что нужно привезти:</label>
             <input class="field-input modal-field-input" type="text" name="product" id="product" placeholder="В свободной форме">
           </fieldset>
 
           <fieldset class="modal-field modal-field-amount">
+            <legend class="visually-hidden">Поле для ввода количества товаров которые нужно привезти</legend>
             <div class="label-icon-container">
               <label class="modal-field-title"  for="amount-input">Количество:</label>
               <span class="field-info-icon" contenteditable>
@@ -453,7 +459,8 @@
                 <span class="visually-hidden">Уменьшить количество</span>
               </button>
 
-              <input class="field-input modal-field-input amount-input" type="number" name="amount" id="amount-input" placeholder="В свободной форме" value="1" min="0" step="1">
+              <input class="field-input modal-field-input amount-input" type="number" name="amount" id="amount-input" placeholder="В свободной форме" value="1"
+              min="0" step="1">
 
               <button class="number-button number-button-plus" type="button">
                 <span class="visually-hidden">Увеличить количество</span>

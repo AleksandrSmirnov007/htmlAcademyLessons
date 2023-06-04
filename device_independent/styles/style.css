@@ -40,7 +40,6 @@ img {
 
 html {
   height: 100%;
-
 }
 
 body {
@@ -127,7 +126,7 @@ body {
 }
 
 .search-input {
-  font-family: 'Rubik';
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -160,6 +159,7 @@ body {
 .search-input:focus {
   outline: none;
 }
+
 .search-field:focus-within {
   outline: 2px solid #af4fff;
   outline-offset: 2px;
@@ -171,9 +171,9 @@ body {
 .button-search {
   padding: 8px;
   border: 2px solid #000000;
-  border-radius: 0px 50px 50px 0px;
+  border-radius: 0 50px 50px 0;
 
-  font-family: 'Rubik';
+  font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -183,7 +183,6 @@ body {
   cursor: pointer;
   position: relative;
   width: 160px;
-
 }
 
 .button-search:disabled {
@@ -220,7 +219,7 @@ body {
 .button-secondary,
 .tab-link {
   display: inline-block;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 21px;
@@ -245,12 +244,11 @@ body {
 }
 
 .button-secondary:focus:not(:active) {
-  outline: 2px solid #AF4FFF;
+  outline: 2px solid #af4fff;
 }
 
 .button:disabled,
-.button-disabled
- {
+.button-disabled {
   opacity: 0.3;
   pointer-events: none;
   user-select: none;
@@ -304,8 +302,6 @@ body {
   outline-offset: 2px;
 }
 
-
-
 .account-exit {
   color: rgba(0, 0, 0, 0.3);
   margin-right: 7px;
@@ -340,12 +336,10 @@ body {
   background-image: url("../image/icon/cart-icon.svg");
 }
 
-
-
 .icon-button-counter {
   position: absolute;
   top: 4px;
-  left: 0px;
+  left: 0;
   font-size: 14px;
   line-height: 17px;
   padding-top: 2px;
@@ -377,7 +371,7 @@ body {
 
 /* общаяя стилизация пунктов основной навигации(шрифт, цвет) */
 .navigation-link {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -507,7 +501,7 @@ body {
 }
 
 .catalog-select-link-current {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   padding-bottom: 3px;
   border-bottom: 1px solid #000000;
 }
@@ -609,7 +603,7 @@ body {
 /* позиционируем подложку (желтый фон) */
 .slider-number {
   position: absolute;
-  left: 0px;
+  left: 0;
   top: -150px;
   font-weight: 700;
   font-size: 180px;
@@ -633,7 +627,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 50px;
   line-height: 50px;
@@ -684,6 +678,7 @@ body {
   place-content: center;
   margin-right: 20px;
 }
+
 .slider-pagination-button {
   padding: 0;
   margin: 0;
@@ -721,7 +716,7 @@ body {
 .parameter-list {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat( 3, max-content);
+  grid-template-columns: repeat(3, max-content);
   min-width: 100%;
   list-style-type: none;
   margin: 0;
@@ -733,8 +728,7 @@ body {
   display: grid;
   grid-template-rows: repeat(2, min-content);
   grid-gap: 12px;
-  grid-template-areas: "parameter-description"
-                       "parameter-termin";
+  grid-template-areas: "parameter-description" "parameter-termin";
 }
 
 .parameter-termin {
@@ -760,10 +754,9 @@ body {
   margin-left: auto;
 }
 
-
 .categories-title {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 24px;
@@ -808,7 +801,7 @@ body {
 }
 
 .categories-link:focus:not(:active) {
-  outline: 2px solid #AF4FFF;
+  outline: 2px solid #af4fff;
   outline-offset: 2px;
 }
 
@@ -816,8 +809,6 @@ body {
   opacity: 0.3;
   outline: none;
 }
-
-
 
 .categories-virtualreal::before {
   background-image: url("../image/icon/catogory-virtalreal.svg");
@@ -855,7 +846,6 @@ body {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-
 }
 
 .panel-menu {
@@ -939,20 +929,20 @@ body {
 
 /* растягиваем заливку до правой границы контейнера, если вкладка является текущей */
 .tab-link-current + .tab-background-longer { /* пришлось добавить пустышку. если делать через tab-item::after то соседние селекторы не работают, несмотря на то, что в одном грид-контейнере находится два элемента(один из них псевдоэлемент) */
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    display: block;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  display: block;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 
 /* кнопка "доставим редкий товар на заказ" */
 
 .button-addition-services {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 20px;
   line-height: 23px;
@@ -1158,7 +1148,7 @@ body {
 }
 
 .subscribe .section-description {
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -1172,7 +1162,7 @@ body {
   font-size: 18px;
   line-height: 30px;
 
-  font-family: 'Rubik';
+  font-family: "Rubik", sans-serif;
 
   color: #444444;
   background-color: transparent;
@@ -1251,6 +1241,7 @@ body {
   color: #ffffff;
   background-color: #444444;
 }
+
 .page-footer-container {
   width: 1160px;
   margin: 0 auto;
@@ -1270,8 +1261,7 @@ body {
 
 .footer-content {
   display: grid;
-  grid-template-areas: "contacts services tel"
-                      ". soc-list html-academy-link";
+  grid-template-areas: "contacts services tel" ". soc-list html-academy-link";
   grid-template-columns: 250px 1fr 250px;
   column-gap: 100px;
   row-gap: 47px;
@@ -1280,7 +1270,7 @@ body {
 .footer-contacts-text {
   grid-area: contacts;
   margin: 0;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -1301,7 +1291,7 @@ body {
 }
 
 .footer-navigation-link {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 21px;
@@ -1328,7 +1318,7 @@ body {
 }
 
 .footer-contacts-phone {
-  font-family: 'Rubik';
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -1439,7 +1429,6 @@ body {
 }
 
 
-
 .html-academy-link {
   grid-area: html-academy-link;
   justify-self: end;
@@ -1459,6 +1448,7 @@ body {
   fill: #ffffff;
   opacity: 0.5;
 }
+
 .html-academy-link:focus:not(:active) {
   outline: 1px solid #af4fff;
   outline-offset: 1px;
@@ -1467,7 +1457,6 @@ body {
 .html-academy-link:active .htmlacademy-logo {
   fill: #ffc700;
 }
-
 
 
 /* catalog */
@@ -1515,10 +1504,10 @@ body {
   background-image: url("../image/icon/breadcrumbs-arrow.svg");
   background-size: 4px 7px;
   background-position: center;
-  background-position: no-repeat;
+  background-repeat: no-repeat;
 }
 
-.breadcrumbs-link{
+.breadcrumbs-link {
   font-size: 16px;
   line-height: 19px;
   text-decoration: none;
@@ -1537,17 +1526,14 @@ body {
 .breadcrumbs-link:focus:not(:active) {
   outline: 2px solid #af4fff;
   outline-offset: 2px;
-
 }
-
-
 
 
 .catalog-filter-content-wrapper {
   background-color: #f0f0f0;
   display: grid;
   grid-template-columns: 1fr 320px 840px 1fr;
-  grid-template-areas: ". filter content ."
+  grid-template-areas: ". filter content .";
 }
 
 /* catalog-filter  */
@@ -1558,7 +1544,7 @@ body {
 }
 
 .form-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 16px;
   line-height: 19px;
@@ -1683,7 +1669,7 @@ body {
 
 .range-input {
   background-color: transparent;
-  font-family: 'Rubik';
+  font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -1700,19 +1686,19 @@ body {
 }
 /* убираем плейсхолдер при фокусе (далее четыре правила) */
 .range-input:focus::-webkit-input-placeholder {
-  color: transparent
+  color: transparent;
 }
 
 .range-input:focus::-moz-placeholder {
-  color: transparent
+  color: transparent;
 }
 
 .range-input:focus:-moz-placeholder {
-  color: transparent
+  color: transparent;
 }
 
 .range-input:focus:-ms-input-placeholder {
-  color: transparent
+  color: transparent;
 }
 
 
@@ -1761,11 +1747,10 @@ body {
   height: 28px;
   margin: -4px;
   border: 2px solid transparent;
-
 }
 
 /* чекбокс */
- /* нечекнутый чекбокс */
+/* нечекнутый чекбокс */
 .control-label::after {
   width: 20px;
   height: 20px;
@@ -1848,7 +1833,7 @@ body {
 
 .select-control {
   justify-self: end;
-  font-family: 'Rubik';
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
@@ -1868,7 +1853,7 @@ body {
 }
 
 .select-control:focus:not(:active) {
-  outline: 2px solid #AF4FFF;
+  outline: 2px solid #af4fff;
   outline-offset: 2px;
 }
 
@@ -1918,7 +1903,7 @@ body {
 }
 
 .paging-arrow:hover::before {
- opacity: 0.5;
+  opacity: 0.5;
 }
 
 .paging-arrow:focus:not(:active),
@@ -1950,8 +1935,7 @@ body {
 
 .product-card-link {
   display: grid;
-  grid-template-areas: "image image"
-                        "link price";
+  grid-template-areas: "image image" "link price";
   row-gap: 32px;
   position: relative; /* для значка "new" */
   text-decoration: none;
@@ -1981,8 +1965,6 @@ body {
   z-index: 1; /* иначе значек перекрывается изображением */
 }
 
-
-
 .product-card-image-container {
   grid-area: image;
   position: relative;
@@ -2009,7 +1991,7 @@ body {
 
 /* product card hover, active */
 
-        /* делаем цветовой фильр при наведении а так же при нажатии  */
+/* делаем цветовой фильр при наведении а так же при нажатии  */
 .product-card-link:hover .product-card-image-container::before,
 .product-card-link:active .product-card-image-container::before {
   content: "";
@@ -2023,7 +2005,7 @@ body {
   z-index: 2; /* иначе значек "new" находится поверх фильтра */
 }
 
-       /* при наведении и нажатии появляется надпись поверx фильра и изображения "подробнее" */
+/* при наведении и нажатии появляется надпись поверx фильра и изображения "подробнее" */
 .product-card-link:hover .product-card-image-container::after,
 .product-card-link:active .product-card-image-container::after {
   content: "подробнее";
@@ -2041,7 +2023,7 @@ body {
 
   padding: 10px 32px;
 
-  font-family: 'Raleway';
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -2056,12 +2038,12 @@ body {
   z-index: 3; /* иначе надпись находится под фильтром */
 }
 
-        /* при наведении меняется прозрачность шрифта title на 0.6 */
+/* при наведении меняется прозрачность шрифта title на 0.6 */
 .product-card-link:hover .product-card-title {
   opacity: 0.6;
 }
 
-        /* прин нажатии меняется прозрачность шрифта title и price на 0.3  */
+/* прин нажатии меняется прозрачность шрифта title и price на 0.3  */
 
 .product-card-link:active .product-card-title,
 .product-card-link:active .product-card-price {
@@ -2187,8 +2169,8 @@ body {
   height: 100%;
   place-content: center;
   background-color: rgba(240, 240, 240, 0.9);
-
 }
+
 .modal-opened {
   display: grid;
 }
@@ -2197,9 +2179,9 @@ body {
   position: relative;
   width: 920px;
   padding: 72px 80px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 10px solid #000000;
-  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .modal-close-button {
@@ -2330,7 +2312,6 @@ body {
 }
 
 
-
 .label-icon-container {
   padding-right: 34px;
   position: relative;
@@ -2362,12 +2343,11 @@ body {
   line-height: 20px;
   color: #ffffff;
   background-color: #000000;
-  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
   z-index: 1;
   top: calc(100% + 10px);
   right: -34px;
   padding: 19px;
-
 }
 
 .field-info-text::before {
@@ -2444,7 +2424,7 @@ body {
 }
 
 .number-button-plus::after {
-  background-image: url("../image/icon/button-plus.svg")
+  background-image: url("../image/icon/button-plus.svg");
 }
 /* number-button:hover */
 .number-button:hover {
@@ -2481,13 +2461,9 @@ body {
   justify-self: start;
 }
 
-.field-input-error { /* собрать все инпуты в начале файла */
-  border-color: #ff3d3d;
-}
-
 /* popover */
 
-.popover-cart{
+.popover-cart {
   position: absolute;
   top: 100%;
   left: -123px;
@@ -2496,7 +2472,7 @@ body {
   display: grid;
   width: 320px;
   padding-top: 6px;
-  grid-template-rows: repeat(3,min-content);
+  grid-template-rows: repeat(3, min-content);
   background-image: linear-gradient(to bottom, transparent 6px, #000000 6px);
 }
 
