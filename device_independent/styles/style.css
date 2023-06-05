@@ -43,17 +43,19 @@ html {
 }
 
 body {
-  min-height: 100%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  min-width: 1160px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding-top: 14px;
+
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
   color: #000000;
+
   background-color: #ffffff;
-  padding-top: 14px;
-  min-width: 1160px;
 }
 
 .visually-hidden {
@@ -61,8 +63,10 @@ body {
   width: 1px;
   height: 1px;
   margin: -1px;
-  padding: 0;
   border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -71,6 +75,7 @@ body {
   width: 1160px;
   margin: 0 auto;
   padding: 0 60px;
+
   background-image: linear-gradient(to bottom, #ffffff 27px, #ffe17e 27px);
 }
 
@@ -81,6 +86,7 @@ body {
   margin-left: -4px;
   margin-bottom: 20px;
   padding: 2px;
+
   border: 2px solid transparent;
 }
 
@@ -113,45 +119,50 @@ body {
 }
 
 .search-form {
-  width: 517px;
   display: flex;
+  width: 517px;
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
 .search-field {
+  min-width: 350px;
   flex-grow: 1;
   margin-right: -2px;
-  min-width: 350px;
 }
 
 .search-input {
+  width: 100%;
+  height: 100%;
+  padding: 8px 48px;
+
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   color: #000000;
-  background-color: transparent;
-  padding: 8px 48px;
+
   border: 2px solid #000000;
   border-radius: 50px 0 0 50px;
-  width: 100%;
-  cursor: text;
+  background-color: transparent;
   background-image: url("../image/icon/search-icon.svg");
   background-position: left 16px center;
   background-repeat: no-repeat;
   background-size: 16px 17px;
-  height: 100%;
+
+  cursor: text;
 }
 
 .search-input::placeholder {
   color: #000000;
-  opacity: 0.3;
+
   background-color: transparent;
+  opacity: 0.3;
 }
 
 .search-input:disabled {
   opacity: 0.3;
+
   pointer-events: none;
   user-select: none;
 }
@@ -161,17 +172,18 @@ body {
 }
 
 .search-field:focus-within {
+  z-index: 1;
+
   outline: 2px solid #af4fff;
   outline-offset: 2px;
-  z-index: 1;
 }
 
 /* buttons  */
 
 .button-search {
+  position: relative;
+  width: 160px;
   padding: 8px;
-  border: 2px solid #000000;
-  border-radius: 0 50px 50px 0;
 
   font-family: "Rubik", sans-serif;
   font-style: normal;
@@ -179,21 +191,24 @@ body {
   font-size: 16px;
   line-height: 20px;
   color: #000000;
+
   background-color: transparent;
+  border: 2px solid #000000;
+  border-radius: 0 50px 50px 0;
   cursor: pointer;
-  position: relative;
-  width: 160px;
 }
 
 .button-search:disabled {
   opacity: 0.3;
+
   pointer-events: none;
   user-select: none;
 }
 
 .button-search:hover {
-  background-color: #000000;
   color: #ffffff;
+
+  background-color: #000000;
 }
 
 .button-search:focus:not(:active) {
@@ -203,10 +218,12 @@ body {
 .button-search:focus:not(:active)::before {/* создаем псевдоэлемент от которого будем делать полностью квадратную рамку при фокусе на button-search */
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+
+  width: 100%;
+  height: 100%;
+
   outline: 2px solid #af4fff;
   outline-offset: 4px;
 }
@@ -219,18 +236,20 @@ body {
 .button-secondary,
 .tab-link {
   display: inline-block;
+
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 21px;
   letter-spacing: 0.2em;
+  text-align: center;
   text-transform: uppercase;
   color: #000000;
   text-decoration: none;
+
   background-image: linear-gradient(to bottom, transparent calc(50% - 4px), #ffe17f calc(50% - 4px), #ffe17f calc(50% + 4px), transparent calc(50% + 4px));
   border: 2px solid transparent;
   background-color: transparent;
-  text-align: center;
 }
 
 .button-secondary:hover {
@@ -250,27 +269,31 @@ body {
 .button:disabled,
 .button-disabled {
   opacity: 0.3;
+
   pointer-events: none;
   user-select: none;
 }
 
 /* navigation-user-list */
 .navigation-user-list {
-  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+
   margin: 0;
   margin-right: -20px;
   padding: 0;
   padding-left: 26px;
-  display: flex;
-  flex-wrap: wrap;
+
+  list-style-type: none;
 }
 
 .navigation-user-item {
+  position: relative;
+
+  display: flex;
   margin-top: 5px;
   margin-bottom: 5px;
   margin-right: 18px;
-  display: flex;
-  position: relative;
 }
 
 .navigation-user-item-login {
@@ -279,17 +302,19 @@ body {
 }
 
 .navigation-user-link {
+  display: flex;
+  align-items: baseline;
+  padding: 0;
+
   font-size: 18px;
   line-height: 30px;
   color: #000000;
   text-decoration: none;
-  padding: 0;
-  display: flex;
-  align-items: baseline;
 }
 
 .navigation-user-link:hover {
   opacity: 0.6;
+
   cursor: pointer;
 }
 
@@ -303,8 +328,9 @@ body {
 }
 
 .account-exit {
-  color: rgba(0, 0, 0, 0.3);
   margin-right: 7px;
+
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .navigation-user-link-cart {
@@ -312,25 +338,29 @@ body {
 }
 
 .navigation-user-link-text {
+  padding: 0;
+
   background-position: left center;
   background-repeat: no-repeat;
-  padding: 0;
 }
 
 .navigation-user-link-login-text {
   padding-left: 27px;
+
   background-size: 16px 13px;
   background-image: url("../image/icon/login-icon.svg");
 }
 
 .navigation-user-link-compare-text {
   padding-left: 22px;
+
   background-size: 10px 13px;
   background-image: url("../image/icon/compare-icon.svg");
 }
 
 .navigation-user-link-cart-text {
   padding-left: 44px;
+
   background-size: 16px 15px;
   background-position: 16px 5px;
   background-image: url("../image/icon/cart-icon.svg");
@@ -340,27 +370,31 @@ body {
   position: absolute;
   top: 4px;
   left: 0;
-  font-size: 14px;
-  line-height: 17px;
+
   padding-top: 2px;
   padding-bottom: 2px;
   padding-right: 7px;
   padding-left: 7px;
+
+  font-size: 14px;
+  line-height: 17px;
   background-color: #ffffff;
+
   border-radius: 50%;
 }
 
 /* navigation-list */
 .navigation-list {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding: 0;
+  margin: 0;
   margin-right: -28px;
   margin-left: -24px;
   margin-bottom: -19px;
+
+  list-style-type: none;
 }
 
 .navigation-item {
@@ -371,6 +405,9 @@ body {
 
 /* общаяя стилизация пунктов основной навигации(шрифт, цвет) */
 .navigation-link {
+  display: flex;
+  align-items: center; /* так как в первом элементе другие падинги могут быть несоответсвия между ним и следующими (еще можно попробовать baseline) */
+
   font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -380,18 +417,18 @@ body {
   text-transform: uppercase;
   color: #000000;
   text-decoration: none;
-  display: flex;
-  align-items: center; /* так как в первом элементе другие падинги могут быть несоответсвия между ним и следующими (еще можно попробовать baseline) */
 }
 
 .navigation-link-current {
   padding-bottom: 6px;
   margin-top: 8px;
+
   border-bottom: 2px solid #000000;
 }
 
 .navigation-link:hover {
   opacity: 0.6;
+
   cursor: pointer;
 }
 
@@ -405,10 +442,11 @@ body {
 }
 
 .catalog-toggler-container {
-  margin-right: auto;
-  display: flex;
-  z-index: 1; /* иначе картинка слайда неиного наслаивается сверху над catalog-toggler-container */
   position: relative; /* отсносительного этого элемента будем позиционировать выпающее меню */
+  z-index: 1; /* иначе картинка слайда неиного наслаивается сверху над catalog-toggler-container */
+
+  display: flex;
+  margin-right: auto;
 }
 
 /* выпадающее окно на детайлс */
@@ -416,30 +454,33 @@ body {
 /* стилизуем суммари */
 .select-button {
   position: relative;
-  padding: 17px 65px 17px 2px;/* закладываем место справа под кружок с плюсом/минусом  */
+
   display: flex;
+  padding: 17px 65px 17px 2px;/* закладываем место справа под кружок с плюсом/минусом  */
+
   cursor: pointer;
   user-select: none;
 }
 
 /* круглая граница кнопки и изображение плюса */
 .select-button::after {
+  content: "";
   position: absolute;
   right: 0;
   top: 2px;
   bottom: 0;
-  content: "";
+
   display: block;
-  border-radius: 50%;
-  border: 2px solid #000000;
   width: 50px;
   height: 50px;
-  opacity: 0.3;
+  border-radius: 50%;
+  border: 2px solid #000000;
 
   background-position: center;
   background-size: 16px 17px;
   background-repeat: no-repeat;
   background-image: url("../image/icon/select-plus.svg");
+  opacity: 0.3;
 }
 
 /* замена плюса в круге на минус при открытии details */
@@ -457,25 +498,26 @@ body {
 .catalog-select-list {
   z-index: 1; /*поднимаем по z относительно пунктов меню(каталог товаров, доставка, гарантия. контакты.... мы их подняли выше по коду над другими элементами через класс="navigation-list") выпадающее окно должно быть выше по z индексу, но при этом выше других элементов на странице */
   position: absolute;
-  width: 1160px;
   left: -58px;
   top: 62px;
-  background-color: #ffe17f;
-  list-style-type: none;
-  padding: 6px 60px 27px;
-  margin: 0;
 
   display: grid;
   grid-template-columns: repeat(3, min-content);
   column-gap: 30px;
   grid-auto-flow: dense; /*этим свойвои и значением размещаем элементы плотно(особенности гридов) по умолчанию рамещает немного по другому можно узнат отуключив свойство */
+  width: 1160px;
+  padding: 6px 60px 27px;
+  margin: 0;
+
+  background-color: #ffe17f;
+  list-style-type: none;
 }
 
 .catalog-select-item {
-  margin-bottom: 15px;
-  margin-right: 18px;
   width: max-content;
   max-width: 300px;
+  margin-bottom: 15px;
+  margin-right: 18px;
 }
 
 /* сетка выпадающего меню */
@@ -493,16 +535,18 @@ body {
 
 /* пункты выпадающего меню */
 .catalog-select-link {
+  margin-bottom: 3px;
+
   font-size: 16px;
   line-height: 18px;
   color: #000000;
   text-decoration: none;
-  margin-bottom: 3px;
 }
 
 .catalog-select-link-current {
   margin-bottom: 0;
   padding-bottom: 3px;
+
   border-bottom: 1px solid #000000;
 }
 
@@ -528,11 +572,11 @@ body {
 
 .slide {
   display: none;
-  width: 1160px;
   grid-template-columns: 560px 560px;
+  column-gap: 40px;
+  width: 1160px;
   margin-right: auto;
   margin-left: auto;
-  column-gap: 40px;
   margin-bottom: 71px;
 }
 
@@ -550,23 +594,26 @@ body {
 
 .slider-controls {
   position: absolute;
-  width: 100%;
   left: 5px;   /* почему расхождение на 5px? тоже пришлось корректировать */
   right: 0;
   top: 211px;
+
   display: flex;
   justify-content: space-between;
+  width: 100%;
   padding-left: 30px;
 }
 
 .slider-button {
   width: 20px;
   height: 60px;
-  border: 2px solid transparent;
+
   background-color: transparent;
   background-size: 20px 60px;
   background-repeat: no-repeat;
   background-position: center;
+
+  border: 2px solid transparent;
   cursor: pointer;
 }
 
@@ -602,17 +649,20 @@ body {
 
 /* позиционируем подложку (желтый фон) */
 .slider-number {
+  z-index: -1;
   position: absolute;
   left: 0;
   top: -150px;
+
+  width: 1160px;
+  height: 300px;
+
   font-weight: 700;
   font-size: 180px;
   line-height: 180px;
   color: #ffffff;
+
   background-color: #ffe17e;
-  z-index: -1;
-  width: 1160px;
-  height: 300px;
 }
 
 /* позиционируем номер слайда на подложке */
@@ -661,16 +711,18 @@ body {
 .slider-button-show-more {
   padding: 10px 37px;
   margin-right: 20px;
+
   text-align: center;
 }
 
 .slider-pagination-list {
-  padding: 0;
-  margin: 0;
   display: flex;
   align-items: center;
-  list-style-type: none;
+  padding: 0;
+  margin: 0;
   margin-right: -20px;
+
+  list-style-type: none;
 }
 
 .slider-pagination-item {
@@ -680,13 +732,14 @@ body {
 }
 
 .slider-pagination-button {
-  padding: 0;
-  margin: 0;
+  display: block;
   width: 12px;
   height: 12px;
-  display: block;
-  border: none;
+  padding: 0;
+  margin: 0;
+
   background-image: radial-gradient(#ffffff, #ffffff 3px, #000000 4px, #000000 5px, #ffffff 6px); /* задаем рисунок круга через linear-gradient от идем от центра но делем перход в 1 пиксель что бы границы груго были плавными */
+  border: none;
 }
 
 .slider-pagination-button-current {
@@ -718,29 +771,32 @@ body {
   grid-gap: 20px;
   grid-template-columns: repeat(3, max-content);
   min-width: 100%;
-  list-style-type: none;
   margin: 0;
   padding: 0;
+
+  list-style-type: none;
 }
 
 .parameter-item {
-  max-width: 200px;
   display: grid;
   grid-template-rows: repeat(2, min-content);
   grid-gap: 12px;
   grid-template-areas: "parameter-description" "parameter-termin";
+  max-width: 200px;
 }
 
 .parameter-termin {
   grid-area: parameter-termin;
+
   font-size: 16px;
   line-height: 30px;
   color: #444444;
 }
 
 .parameter-description {
-  margin-left: 0;
   grid-area: parameter-description;
+  margin-left: 0;
+
   font-size: 36px;
   line-height: 30px;
   color: #000000;
@@ -748,14 +804,15 @@ body {
 
 /* categories картинки на желтом фоне с подписями*/
 .categories {
-  margin-bottom: 80px;
   width: 1160px;
+  margin-bottom: 80px;
   margin-right: auto;
   margin-left: auto;
 }
 
 .categories-title {
   margin: 0;
+
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -765,20 +822,23 @@ body {
 }
 
 .categories-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: grid;
   grid-template-columns: repeat(6, 160px);
   gap: 40px;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
 }
 
 .categories-link {
-  text-decoration: none;
-  padding-top: 193px;
-  display: block;
   position: relative;
+
+  display: block;
   height: 100%;
+  padding-top: 193px;
+
+  text-decoration: none;
 }
 
 .categories-link::before {
@@ -787,9 +847,11 @@ body {
   right: 0;
   left: 0;
   content: "";
+
   display: block;
   width: 160px;
   height: 160px;
+
   background-color: #ffe17f;
   background-size: 160px 160px;
   background-repeat: no-repeat;
@@ -841,11 +903,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 287px 873px 1fr;
   background: linear-gradient(to bottom, #ffffff 102px, #f0f0f0 102px);
+  width: 100%;
   padding-bottom: 72px;
   margin-bottom: 70px;
   margin-right: auto;
   margin-left: auto;
-  width: 100%;
 }
 
 .panel-menu {
@@ -865,6 +927,7 @@ body {
   padding-right: 282px;
   padding-top: 74px;
   padding-bottom: 72px;
+
   background-repeat: no-repeat;
   background-position: 674px center;
 }
@@ -899,14 +962,15 @@ body {
 }
 
 .tabs-list {
-  list-style-type: none;
+  display: grid;
+  row-gap: 35px;
   padding: 0;
   padding-top: 64px;
   padding-bottom: 64px;
   margin: 0;
-  display: grid;
-  row-gap: 35px;
+
   border-right: 7px solid #000000;
+  list-style-type: none;
 }
 
 .tab-item {
@@ -915,33 +979,43 @@ body {
 }
 
 .tab-link {
-  text-align: center;
   display: block;
-  padding: 8px 16px;
   min-width: 160px;
+  padding: 8px 16px;
+
+  text-align: center;
 }
 
 .tab-link-current {
-  background-image: none;
   color: #ffe17f;
+
+  background-image: none;
   background-color: #000000;
 }
 
 /* растягиваем заливку до правой границы контейнера, если вкладка является текущей */
 .tab-link-current + .tab-background-longer { /* пришлось добавить пустышку. если делать через tab-item::after то соседние селекторы не работают, несмотря на то, что в одном грид-контейнере находится два элемента(один из них псевдоэлемент) */
   content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
   display: block;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+  width: 100%;
+  height: 100%;
+
+  background-color: #000000;
 }
 
 
 /* кнопка "доставим редкий товар на заказ" */
 
 .button-addition-services {
+  position: relative;
+
+  display: block;
+  width: 1160px;
+  margin: 0 auto 70px;
+  padding: 38px 125px;
+
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 20px;
@@ -953,11 +1027,6 @@ body {
   text-decoration: none;
   background-color: #f0f0f0;
 
-  display: block;
-  width: 1160px;
-  margin: 0 auto 70px;
-  padding: 38px 125px;
-  position: relative;
   background-image: url("../image/icon/elipse.svg");
   background-repeat: no-repeat;
   background-size: 41px 40px;
@@ -969,13 +1038,15 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+
+  height: 100%;
+  width: 125px;
+
   background-color: #ffe17e;
   background-image: url("../image/icon/delivery-car.svg");
   background-repeat: no-repeat;
   background-size: 47px 31px;
   background-position: center;
-  height: 100%;
-  width: 125px;
 }
 
 /* значек справа(фон для него задан как фоновая картинка родительского элемента .button-addition-services так как при наведении символ на иконке меняет прозрачность независимо от фона иконки */
@@ -984,13 +1055,15 @@ body {
   position: absolute;
   right: 42px;
   top: calc(50% - 20px);
+
   height: 40px;
   width: 40px;
-  border-radius: 50%;
+
   background-image: url("../image/icon/i-icon.svg");
   background-repeat: no-repeat;
   background-size: 2px 12px;
   background-position: center;
+  border-radius: 50%;
   opacity: 0.3;
 }
 
@@ -1013,12 +1086,12 @@ body {
 
 /* columns */
 .columns {
-  width: 1160px;
   display: grid;
   grid-template-columns: 520px 532px;
-  margin: 0 auto 72px;
   column-gap: 108px;
   row-gap: 50px;
+  width: 1160px;
+  margin: 0 auto 72px;
 }
 
 .column {
@@ -1032,11 +1105,13 @@ body {
 /* черточки над колонками */
 .column::before {
   content: "";
-  width: 84px;
-  height: 7px;
   position: absolute;
   top: 0;
   left: 0;
+
+  width: 84px;
+  height: 7px;
+
   background-color: #000000;
 }
 
@@ -1056,43 +1131,48 @@ body {
 
 /* about */
 .delivery-list {
+  display: grid;
+  row-gap: 19px;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 31px;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   letter-spacing: -0.02em;
 
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 31px;
   list-style-type: none;
-  display: grid;
-  row-gap: 19px;
 }
 
 .delivery-item {
+  position: relative;
+
   padding-left: 34px;
   margin-left: 4px;
-  position: relative;
 }
 
 .delivery-item::before {
   content: "";
-  width: 8px;
-  height: 8px;
   position: absolute;
   left: 0;
   top: calc(50% - 4px);
+
+  width: 8px;
+  height: 8px;
+
   background-color: #ffc700;
   border-radius: 50%;
 }
 
 .section-subtitle {
+  margin-top: 0;
+  margin-bottom: 15px;
+
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
   color: #444444;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
 
 .about .button-secondary {
@@ -1103,8 +1183,9 @@ body {
 /* contacts */
 
 .contacts-address {
-  font-style: normal;
   margin-bottom: 30px;
+
+  font-style: normal;
 }
 
 .contacts-phone {
@@ -1116,6 +1197,7 @@ body {
 
 .schedule-list {
   padding: 0;
+
   list-style-type: none;
 }
 
@@ -1131,14 +1213,14 @@ body {
 }
 
 .subscribe {
-  width: 1160px;
-  margin: 0 auto;
-  padding: 65px 0 55px;
   display: grid;
   grid-template-columns: 354px 1fr;
   column-gap: 252px;
   row-gap: 144px;
   align-items: end;
+  width: 1160px;
+  margin: 0 auto;
+  padding: 65px 0 55px;
 }
 
 .subscribe .section-title {
@@ -1159,24 +1241,25 @@ body {
 }
 /* сделать границы !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .subscribe-input {
-  font-size: 18px;
-  line-height: 30px;
-
-  font-family: "Rubik", sans-serif;
-
-  color: #444444;
-  background-color: transparent;
   width: 100%;
   height: 100%;
+  padding: 11px 16px 14px 16px;
+
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  color: #444444;
+
+  background-color: transparent;
   border: 0 solid transparent;
   border-bottom: 3px solid #c4c4c4;
-  padding: 11px 16px 14px 16px;
 }
 
 .subscribe-input::placeholder {
   font-size: 18px;
   line-height: 30px;
   color: #444444;
+
   opacity: 0.5;
 }
 
@@ -1185,8 +1268,9 @@ body {
 }
 
 .subscribe-input:focus:not(:active) {
-  outline: none;
   background-color: #dcdcdc;
+
+  outline: none;
 }
 
 .subscribe-input:active {
@@ -1207,55 +1291,63 @@ body {
 
 
 .button-subscribe {
+  padding: 15px 37px;
+
   background-color: transparent;
   background-image: none;
-  padding: 15px 37px;
   border: 3px solid #cecece;
 }
 
 .pseudo-checkbox {
+  position: relative;
+
   padding-left: 32px;
+  margin-left: 20px;
   align-self: center;
   justify-self: end;
-  position: relative;
-  margin-left: 20px;
 }
 
 /* зеленая галочка */
 .pseudo-checkbox::before {
   content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 8px);
+
   width: 16px;
   height: 17px;
-  position: absolute;
+
   background-image: url("../image/icon/check-icon.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 16px 17px;
-  left: 0;
-  top: calc(50% - 8px);
 }
 
 
 /* footer */
 .page-footer {
   color: #ffffff;
+
   background-color: #444444;
 }
 
 .page-footer-container {
+  position: relative;
+
   width: 1160px;
   margin: 0 auto;
   padding: 61px 0;
-  position: relative;
 }
 
 .page-footer-container::before {
   content: "";
   position: absolute;
-  width: 80px;
-  height: 7px;
   left: 0;
   bottom: 77px;
+
+  width: 80px;
+  height: 7px;
+
   background-color: #ffc700;
 }
 
@@ -1270,6 +1362,7 @@ body {
 .footer-contacts-text {
   grid-area: contacts;
   margin: 0;
+
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1278,29 +1371,32 @@ body {
 }
 
 .footer-navigation-list {
-  margin: 0;
-  margin-top: 5px;
-  padding: 0;
-  padding-right: 11px;
-  list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, min-content);
   column-gap: 32px;
   row-gap: 20px;
   justify-content: center;
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  padding-right: 11px;
+
+  list-style-type: none;
 }
 
 .footer-navigation-link {
+  position: relative;
+
+  display: grid;
+
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 21px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  display: grid;
   color: #ffffff;
   text-decoration: none;
-  position: relative;
   text-align: center;
 }
 
@@ -1339,31 +1435,34 @@ body {
 .footer-navigation-link:active,
 .footer-contacts-phone:active {
   color: #ffc700;
+
   opacity: 0.3;
 }
 
 .footer-navigation-link:hover::before,
 .footer-navigation-link:active::before { /* создаем подчеркивание желтым цветом в сосояния hover и active */
-  position: absolute;
   content: "";
+  position: absolute;
+  bottom: -6px;
+
   height: 2px;
   width: calc(100% - 0.2em); /* эта сложность возникает из приминения letter-spacing: 0.2em для .footer-navigation-link так как это промежуток добавляется и к последней букве. Из за этого увеличивается width и желтая черта получается длиннее на эти  0.2em */
-  bottom: -6px;
+
   background-color: #ffc700;
 }
 
 
 .footer-social-list {
+  grid-area: soc-list;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
   margin-right: -15px;  /* компенсирует оступы справа у footer-social-link */
   margin-bottom: -15px;
   padding: 0;
+
   list-style-type: none;
-  grid-area: soc-list;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .footer-social-item {
@@ -1372,22 +1471,25 @@ body {
 }
 
 .footer-social-link {
+  position: relative;
+
   display: block;
   width: 40px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  position: relative;
 }
 
 .footer-social-link::after {
-  display: block;
   content: "";
-  background-repeat: no-repeat;
-  background-position: center;
   position: absolute;
+
+  display: block;
   width: 40px;
   height: 40px;
+
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .footer-social-link-fb::after {
@@ -1412,10 +1514,12 @@ body {
 .footer-social-link:focus:not(:active)::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+
+  width: 100%;
+  height: 100%;
+
   outline: 2px solid #af4fff;
   outline-offset: 2px;
 }
@@ -1433,6 +1537,7 @@ body {
   grid-area: html-academy-link;
   justify-self: end;
   align-self: center;
+
   fill: #ffc700;
 }
 
@@ -1466,8 +1571,8 @@ body {
 }
 
 .catalog-title {
-  margin: 0 auto;
   width: 1160px;
+  margin: 0 auto;
   padding: 37px 20px 6px 60px;
 }
 
@@ -1477,18 +1582,19 @@ body {
 }
 
 .breadcrumbs-list {
-  list-style-type: none;
-  margin-top: 0;
-  margin-bottom: 20px;
-  padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0;
+
+  list-style-type: none;
 }
 
 .breadcrumbs-item {
-  margin-bottom: 11px; /* в сумме с отступом у breadcrumbs-list они датут отступ 35px, но в таком случае будет оступ между строками 11px если строк будет нескольстко */
   display: grid; /* задади грид всем элементам breadcrumbs? что бы не было проблем с выравниванием  из за своиств grid*/
+  margin-bottom: 11px; /* в сумме с отступом у breadcrumbs-list они датут отступ 35px, но в таком случае будет оступ между строками 11px если строк будет нескольстко */
 }
 
 .breadcrumbs-item:not(:first-child) {/* стрелки будут у всех кроме первого элемента только им зададим шаблон сетку с двумя столбцами*/
@@ -1501,6 +1607,7 @@ body {
   height: 7px;
   justify-self: center;
   align-self: center;
+
   background-image: url("../image/icon/breadcrumbs-arrow.svg");
   background-size: 4px 7px;
   background-position: center;
@@ -1530,30 +1637,32 @@ body {
 
 
 .catalog-filter-content-wrapper {
-  background-color: #f0f0f0;
   display: grid;
   grid-template-columns: 1fr 320px 840px 1fr;
   grid-template-areas: ". filter content .";
+
+  background-color: #f0f0f0;
 }
 
 /* catalog-filter  */
 .catalog-filter {
-  background-color: #f0f0f0;
-  margin: 0 60px;
   grid-area: filter;
+  margin: 0 60px;
+
+  background-color: #f0f0f0;
 }
 
 .form-title {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin: 0;
+
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-
-  padding-top: 25px;
-  padding-bottom: 25px;
-  margin: 0;
 }
 
 .catalog-filter-form .form-title {
@@ -1562,49 +1671,57 @@ body {
 
 .filter-fieldset {
   margin: 0;
-  border-top: 2px solid #000000;
   padding-top: 0;
   padding-right: 0;
   padding-left: 0;
   padding-bottom: 37px;
+
   border: none;
+  border-top: 2px solid #000000;
 }
 
 .catalog-filter-title {
+  width: 100%;
+  padding: 0;
+  padding-top: 12px;
+  padding-bottom: 20px;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   letter-spacing: -0.02em;
   color: #000000;
+
   border-top: 2px solid #000000;
-  padding: 0;
-  padding-top: 12px;
-  padding-bottom: 20px;
-  width: 100%;
 }
 
 /* range */
 .range-bar-container {
   margin-top: 8px;
   margin-bottom: 11px;
+
   background-color: #dcdcdc;
 }
 
 .range-bar {
-  height: 2px;
-  background-color: #000000;
   position: relative;
+
+  height: 2px;
+
+  background-color: #000000;
 }
 
 .range-toggle {
   position: absolute;
   top: -8px;
+  z-index: 0;
+
   width: 18px;
   height: 18px;
+
+  background-color: #ebebeb;
   border: 2px solid #000000;
   border-radius: 50%;
-  background-color: #ebebeb;
-  z-index: 0;
 }
 
 .toggle-min {
@@ -1624,8 +1741,10 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+
   width: 100%;
   height: 100%;
+
   outline: 2px solid #af4fff;
   outline-offset: 4px;
 }
@@ -1646,13 +1765,13 @@ body {
 }
 
 .range-field {
-  font-size: 15px;
-  line-height: 18px;
-
   display: grid;
   grid-template-columns: max-content max-content;
   align-items: end;
   width: max-content;
+
+  font-size: 15px;
+  line-height: 18px;
 }
 
 
@@ -1663,21 +1782,24 @@ body {
 
 .range-title {
   display: block;
-  opacity: 0.3;
   margin-right: 0.1em;
+
+  opacity: 0.3;
 }
 
 .range-input {
-  background-color: transparent;
+  width: 100%;
+  padding: 0;
+
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
   color: #000000;
+
+  background-color: transparent;
   border: none;
-  width: 100%;
-  padding: 0;
   opacity: 0.3;
 }
 
@@ -1716,21 +1838,24 @@ body {
 /* filter checkbox radio */
 
 .catalog-filter-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: grid;
   row-gap: 17px;
+  margin: 0;
   margin-bottom: -3px;
+  padding: 0;
+
+  list-style-type: none;
 }
 
 
 .control-label {
-  line-height: 19px;
-  font-size: 16px;
   display: grid;
   grid-template-columns: 20px min-content;
   column-gap: 16px;
+
+  line-height: 19px;
+  font-size: 16px;
+
   user-select: none;
   cursor: pointer;
 }
@@ -1746,6 +1871,7 @@ body {
   width: 28px;
   height: 28px;
   margin: -4px;
+
   border: 2px solid transparent;
 }
 
@@ -1754,6 +1880,7 @@ body {
 .control-label::after {
   width: 20px;
   height: 20px;
+
   border: 2px solid #cccccc;
   border-radius: 3px;
   background-repeat: no-repeat;
@@ -1796,6 +1923,7 @@ body {
 /* отключение чекбоксов и радио */
 .control-input:disabled + .control-label {
   opacity: 0.1;
+
   pointer-events: none;
   user-select: none;
 }
@@ -1809,19 +1937,21 @@ body {
 /* catalog-content */
 
 .catalog-content {
-  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   grid-area: content;
+
+  background-color: #ffffff;
 }
 
 /* catalog-sort-form */
 
 .catalog-sort {
-  padding: 0 40px;
   display: grid;
   grid-template-columns: 1fr max-content;
   align-content: center;
+  padding: 0 40px;
+
   background-color: #f0f0f0;
 }
 
@@ -1833,19 +1963,22 @@ body {
 
 .select-control {
   justify-self: end;
+  padding-right: 50px;
+
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
-  appearance: none;
-  padding-right: 50px;
+
   background-color: transparent;
-  border: 2px solid transparent;
   background-image: url("../image/icon/select-arrow.svg");
   background-repeat: no-repeat;
   background-size: 10px 7px;
   background-position: right 11px center;
+  border: 2px solid transparent;
   cursor: pointer;
+
+  appearance: none;
 }
 
 .select-control:hover {
@@ -1863,6 +1996,7 @@ body {
 
 .select-control:disabled {
   opacity: 0.1;
+
   pointer-events: none;
   user-select: none;
 }
@@ -1870,26 +2004,28 @@ body {
 .paging-arows {
   display: flex;
   flex-wrap: wrap;
-  width: 255px;
   justify-content: end;
   align-items: center;
+  width: 255px;
 }
 
 .paging-arrow {
+  position: relative;
+
   display: block;
   width: 30px;
   height: 30px;
-
-  position: relative;
 }
 
 .paging-arrow::before { /* используем псевдодлемент и зададим изображение стрелок ему, потому что по умолчанию для стрелок opacity: 0.2 и прозрачность передается outline тоже если задавть ее элементу с прозрачностью а нам она здесь не нужна. Мы задали прозрачность псевдо элементу а сам элнмент .paging-arrow имеет по прежнему opacity: 1; соотвественно и его outline так же будет непрорачной */
   content: "";
-  width: 100%;
-  height: 100%;
+  position: absolute;
   top: 0;
   left: 0;
-  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
   background-image: url("../image/icon/triangle-button-sort.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1920,64 +2056,71 @@ body {
 /* product-card-list */
 
 .product-card-list {
-  background-color: #ffffff;
-  margin-top: 0;
-  margin-bottom: 44px;
-  padding: 70px 40px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 40px;
   row-gap: 44px;
+  margin-top: 0;
+  margin-bottom: 44px;
+  padding: 70px 40px 0;
+
+  background-color: #ffffff;
+
   list-style-type: none;
 }
 
 /* product card */
 
 .product-card-link {
+  position: relative; /* для значка "new" */
+
   display: grid;
   grid-template-areas: "image image" "link price";
   row-gap: 32px;
-  position: relative; /* для значка "new" */
+
   text-decoration: none;
 }
 
 .product-card-title {
   grid-area: link;
-  text-decoration: none;
+  margin: 0;
 
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   letter-spacing: -0.02em;
   color: #000000;
-  margin: 0;
+  text-decoration: none;
 }
 
 /* добавляем значек "new" товару */
 .product-card-link-new::before {
-  position: absolute;
   content: "";
-  width: 60px;
-  height: 60px;
-  background-image: url("../image/icon/new-icon.svg");
+  position: absolute;
   top: 27px;
   right: 27px;
   z-index: 1; /* иначе значек перекрывается изображением */
+
+  width: 60px;
+  height: 60px;
+
+  background-image: url("../image/icon/new-icon.svg");
 }
 
 .product-card-image-container {
-  grid-area: image;
   position: relative;
+  grid-area: image;
 }
 
 .product-card-price {
+  position: relative;
+
   grid-area: price;
   justify-self: end;
   font-size: 18px;
+  margin: 0;
   line-height: 21px;
   color: #444444;
-  margin: 0;
-  position: relative;
 }
 
 /* разобраться почему не видно этот псевдоэлемент у img
@@ -1998,11 +2141,13 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 2; /* иначе значек "new" находится поверх фильтра */
+
   width: 100%;
   height: 100%;
+
   background-color: #f0f0f0;
   opacity: 0.8;
-  z-index: 2; /* иначе значек "new" находится поверх фильтра */
 }
 
 /* при наведении и нажатии появляется надпись поверx фильра и изображения "подробнее" */
@@ -2015,12 +2160,12 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  margin: auto;
+  z-index: 3; /* иначе надпись находится под фильтром */
 
   /* задаем размеры по содежимому */
   width: min-content;
   height: min-content;
-
+  margin: auto;
   padding: 10px 32px;
 
   font-family: "Raleway", sans-serif;
@@ -2034,8 +2179,6 @@ body {
   color: #000000;
 
   background-image: linear-gradient(to bottom, transparent calc(50% - 4px), #ffe17f calc(50% - 4px), #ffe17f calc(50% + 4px), transparent calc(50% + 4px));
-
-  z-index: 3; /* иначе надпись находится под фильтром */
 }
 
 /* при наведении меняется прозрачность шрифта title на 0.6 */
@@ -2058,20 +2201,22 @@ body {
 
 
 .button-show-more {
-  font-size: 16px;
-  line-height: 19px;
-  background-color: transparent;
-  border: 3px solid #e5e5e5;
-  background-image: none;
   padding: 15px 0;
   margin-bottom: 43px;
   margin-right: 40px;
   margin-left: 40px;
+
+  font-size: 16px;
+  line-height: 19px;
+
+  background-color: transparent;
+  border: 3px solid #e5e5e5;
+  background-image: none;
 }
 
 .button-show-more:hover {
-  border: 3px solid #000000;
   background-color: transparent;
+  border: 3px solid #000000;
 }
 
 .button-show-more:focus:not(:active) {
@@ -2079,34 +2224,37 @@ body {
 }
 
 .button-show-more:active {
-  border: 3px solid #000000;
   background-color: transparent;
+  border: 3px solid #000000;
   opacity: 0.2;
 }
 
 .pagination {
-  background-color: #ebebeb;
   display: grid;
   grid-template-columns: min-content 1fr min-content;
   place-content: center;
   margin: 0 40px 76px;
+
+  background-color: #ebebeb;
 }
 
 .pagination-list {
-  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   margin: 0;
   padding: 0;
+
+  list-style-type: none;
 }
 
 .pagination-button {
+  padding: 24px;
+
   background-color: transparent;
   background-image: none;
   border-color: transparent;
-  padding: 24px;
 }
 
 .pagination-button:hover {
@@ -2124,6 +2272,7 @@ body {
 
 .pagination-button:disabled {
   opacity: 0;
+
   pointer-events: none;
   user-select: none;
 }
@@ -2131,13 +2280,14 @@ body {
 
 .pagination-link {
   display: block;
+  min-width: 40px;
   padding: 10px;
-  text-align: center;
+
   font-size: 16px;
   line-height: 20px;
   color: rgba(68, 68, 68, 0.3);
   text-decoration: none;
-  min-width: 40px;
+  text-align: center;
 }
 
 .pagination-link-current {
@@ -2160,14 +2310,16 @@ body {
 /* модальное окно */
 
 .modal {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;/* без top: 0; left: 0; окно будет смещаться из центра прои зуме */
   z-index: 2;
+
+  display: none;
+  place-content: center;
   width: 100%;
   height: 100%;
-  place-content: center;
+
   background-color: rgba(240, 240, 240, 0.9);
 }
 
@@ -2177,8 +2329,10 @@ body {
 
 .modal-container {
   position: relative;
+
   width: 920px;
   padding: 72px 80px;
+
   background: #ffffff;
   border: 10px solid #000000;
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -2186,10 +2340,12 @@ body {
 
 .modal-close-button {
   position: absolute;
-  width: 26px;
-  height: 26px;
   top: 84px;
   right: 80px;
+
+  width: 26px;
+  height: 26px;
+
   border: 2px solid transparent;
   background-color: transparent;
   background-image: url("../image/icon/cross.svg");
@@ -2231,30 +2387,35 @@ body {
 }
 
 .modal-field {
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+
   border: none;
 }
 
 .modal-field-title {
+  margin-bottom: 14px;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   letter-spacing: -0.02em;
   color: #000000;
-  margin-bottom: 14px;
 }
 
 .modal-field-input {
+  width: 100%;
   padding: 20px;
+
   font-size: 16px;
   line-height: 20px;
   color: #000000;
+
   background-color: #ebebeb;
   border: 2px solid transparent;
-  width: 100%;
 }
 
 .modal-field-input[name="name"] {
@@ -2273,6 +2434,7 @@ body {
 
 .modal-field-input::placeholder {
   color: #000000;
+
   background-color: #f0f0f0;
   opacity: 0.3;
 }
@@ -2313,19 +2475,22 @@ body {
 
 
 .label-icon-container {
-  padding-right: 34px;
   position: relative;
-  width: max-content;
+
   display: grid;
+  width: max-content;
+  padding-right: 34px;
 }
 
 .field-info-icon {
   position: absolute;
   right: 0;
   top: -2px;
+
   display: block;
   width: 26px;
   height: 26px;
+
   background-color: #ffe17f;
   border-radius: 50%;
   background-image: url("../image/icon/i-icon.svg");
@@ -2336,18 +2501,21 @@ body {
 }
 
 .field-info-text {
-  display: none;
   position: absolute;
+  top: calc(100% + 10px);
+  right: -34px;
+  z-index: 1;
+
+  display: none;
   width: 200px;
+  padding: 19px;
+
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
   background-color: #000000;
+
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  top: calc(100% + 10px);
-  right: -34px;
-  padding: 19px;
 }
 
 .field-info-text::before {
@@ -2355,8 +2523,10 @@ body {
   position: absolute;
   top: -6px;
   right: 40px;
+
   width: 14px;
   height: 6px;
+
   background-image: url("../image/icon/triangle.svg");
   background-size: 14px 6px;
   background-repeat: no-repeat;
@@ -2391,10 +2561,12 @@ body {
 
 .number-button {
   position: absolute;
+  top: 0;
+
   width: 60px;
   height: 100%;
+
   background-color: transparent;
-  top: 0;
   border: 2px solid transparent;
   cursor: pointer;
 }
@@ -2410,10 +2582,12 @@ body {
 .number-button::after {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+
+  width: 100%;
+  height: 100%;
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 16px;
@@ -2457,8 +2631,8 @@ body {
 }
 
 .modal-button-submit {
-  padding: 10px 30px;
   justify-self: start;
+  padding: 10px 30px;
 }
 
 /* popover */
@@ -2468,12 +2642,14 @@ body {
   top: 100%;
   left: -123px;
   z-index: -1;  /*   z-index: -1; + opacity: 0; прячем popover-cart, но оставляем его доступным через фокус. Если использовать display: none; то при перемещении фокуса табом с элемента navigation-user-link-cart элемент popover-cart станет недоступен и фокус на него не перейдет */
-  opacity: 0;
+
   display: grid;
+  grid-template-rows: repeat(3, min-content);
   width: 320px;
   padding-top: 6px;
-  grid-template-rows: repeat(3, min-content);
+
   background-image: linear-gradient(to bottom, transparent 6px, #000000 6px);
+  opacity: 0;
 }
 
 .navigation-user-link-cart:hover + .popover-cart,
@@ -2489,8 +2665,10 @@ body {
   position: absolute;
   top: 0;
   left: 153px;
+
   width: 14px;
   height: 6px;
+
   background-image: url("../image/icon/triangle.svg");
   background-size: 14px 6px;
   background-repeat: no-repeat;
@@ -2498,14 +2676,16 @@ body {
 }
 
 .popover-cart-list {
+  display: grid;
   margin: 0;
   padding: 0;
-  display: grid;
+
   list-style-type: none;
 }
 
 .popover-cart-item {
   position: relative;
+
   padding: 20px;
   padding-right: 40px;
 }
@@ -2515,15 +2695,16 @@ body {
 }
 
 .popover-cart-link {
+  display: grid;
+  grid-template-columns: 39px max-content;
+  gap: 23px;
   width: max-content;
+  padding: 0;
+
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
   text-decoration: none;
-  display: grid;
-  grid-template-columns: 39px max-content;
-  gap: 23px;
-  padding: 0;
 }
 
 .popover-cart-link-text {
@@ -2537,20 +2718,22 @@ body {
 }
 
 .button-exclude {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  width: 10px;
+  height: 10px;
   margin: 0;
   padding: 0;
-  border-radius: 0;
-  border: none;
+
   background-color: transparent;
   background-image: url("../image/icon/cross-mini.svg");
   background-repeat: no-repeat;
   background-size: 10px 11px;
   background-position: center;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 10px;
-  height: 10px;
+  border-radius: 0;
+  border: none;
 }
 
 .popover-cart-link:hover,
@@ -2570,14 +2753,15 @@ body {
 }
 
 .total-panel-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0 20px;
-  color: #ffffff;
-  background-color: #1a1a1a;
   display: flex;
   justify-content: space-between;
   min-height: 44px;
+  margin: 0;
+  padding: 0 20px;
+
+  color: #ffffff;
+  background-color: #1a1a1a;
+  list-style-type: none;
 }
 
 .total-panel-item {
@@ -2598,7 +2782,9 @@ body {
 .button-cart-open {
   margin: 20px;
   padding: 15px;
+
   text-align: center;
+
   background-image: none;
   background-color: #ffffff;
 }
@@ -2614,6 +2800,7 @@ body {
 
 .button-cart-open-disabled {
   color: rgba(0, 0, 0, 0.3);
+
   pointer-events: none;
   user-select: none;
 }
