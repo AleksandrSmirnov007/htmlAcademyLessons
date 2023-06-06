@@ -1571,13 +1571,13 @@ body {
   padding-bottom: 35px;
 }
 
-.catalog-title {
+.catalog-main-head {
   width: 1160px;
   margin: 0 auto;
   padding: 37px 20px 6px 60px;
 }
 
-.catalog-title .section-title {
+.catalog-main-head .section-title {
   margin-top: 0;
   margin-bottom: 14px;
 }
@@ -1637,7 +1637,7 @@ body {
 }
 
 
-.catalog-filter-content-wrapper {
+.catalog {
   display: grid;
   grid-template-columns: 1fr 320px 840px 1fr;
   grid-template-areas: ". filter content .";

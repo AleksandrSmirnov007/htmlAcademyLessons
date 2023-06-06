@@ -53,7 +53,7 @@
                     <span class="popover-cart-link-text">Любительская<br>селфи-палка</span>
                     <img class="pover-cart-link-thumbnail" width="39" height="43" src="image/thumbnails/product-1-thimb.png" alt="селфи палка с телефоном мини изображение">
                   </a>
-                  <button class="button button-exclude">
+                  <button class="button button-exclude" type="button">
                     <span class="visually-hidden">Исключить из корзины</span>
                   </button>
                 </li>
@@ -62,7 +62,7 @@
                     <span class="popover-cart-link-text">Профессиональная<br>селфи-палка</span>
                     <img class="pover-cart-link-thumbnail" width="39" height="43" src="image/thumbnails/product-2-thimb.png" alt="селфи палка с телефоном мини изображение">
                   </a>
-                  <button class="button button-exclude">
+                  <button class="button button-exclude" type="button">
                     <span class="visually-hidden">Исключить из корзины</span>
                   </button>
                 </li>
@@ -129,8 +129,8 @@
   <main class="catalog-main">
 
 
-    <div class="catalog-title">
-      <h1 class="visually-hidden">Каталог товаров</h1>
+    <header class="catalog-main-head">
+      <h1 class="visually-hidden">Страница с каталогом товаров</h1>
       <p class="section-title">Моноподы для селфи</p>
       <ul class="breadcrumbs-list">
         <li class="breadcrumbs-item">
@@ -143,12 +143,13 @@
           <a class="breadcrumbs-link">Моноподы для селфи</a>
         </li>
       </ul>
-    </div>
+    </header>
 
-    <div class="catalog-filter-content-wrapper">
+    <section class="catalog">
+      <h2 class="visually-hidden">Каталог товаров</h2>
       <div class="catalog-filter">
         <form class="catalog-filter-form" action="https://echo.htmlacademy.ru" method="post">
-          <h2 class="form-title">Фильтр:</h2>
+          <h3 class="form-title">Фильтр:</h3>
           <fieldset class="filter-fieldset">
             <legend class="catalog-filter-title">Стоимость</legend>
             <div class="range-bar-container">
@@ -236,7 +237,7 @@
       </div>
 
       <div class="catalog-content">
-        <h2 class="visually-hidden">Результаты поиска</h2>
+        <h3 class="visually-hidden">Результаты поиска</h3>
         <div class="catalog-sort">
           <form class="catalog-sort-form" action="https://echo.htmlacademy.ru" method="get">
             <label class="form-title" for="sorting">сортировка:</label>
@@ -351,7 +352,7 @@
         </div>
 
       </div>
-    </div>
+    </section>
 
   </main>
 
@@ -423,7 +424,7 @@
 
       <h2 class="visually-hidden">Модальное окно</h2>
       <p class="section-title">Доставка под заказ</p>
-      <button class="button modal-close-button">
+      <button class="button modal-close-button" type="button">
         <span class="visually-hidden">Закрыть</span>
       </button>
 
