@@ -441,7 +441,7 @@ body {
   outline-offset: 2px;
 }
 
-.catalog-toggler-container {
+.dropdown-button-item {
   position: relative; /* отсносительного этого элемента будем позиционировать выпающее меню */
   z-index: 1; /* иначе картинка слайда неиного наслаивается сверху над catalog-toggler-container */
 
@@ -484,7 +484,7 @@ body {
 }
 
 /* замена плюса в круге на минус при открытии details */
-.select-catalog[open] .select-button::after {
+.dropdown-button-container[open] .select-button::after {
   background-image: url("../image/icon/select-minus.svg");
 }
 
@@ -495,7 +495,7 @@ body {
 
 
 /* выпадающее окно */
-.catalog-select-list {
+.dropdown-list {
   z-index: 1; /*поднимаем по z относительно пунктов меню(каталог товаров, доставка, гарантия. контакты.... мы их подняли выше по коду над другими элементами через класс="navigation-list") выпадающее окно должно быть выше по z индексу, но при этом выше других элементов на странице */
   position: absolute;
   left: -58px;
@@ -513,7 +513,7 @@ body {
   list-style-type: none;
 }
 
-.catalog-select-item {
+.dropdown-item {
   width: max-content;
   max-width: 300px;
   margin-bottom: 15px;
@@ -534,7 +534,7 @@ body {
 }
 
 /* пункты выпадающего меню */
-.catalog-select-link {
+.dropdown-link {
   margin-bottom: 3px;
 
   font-size: 16px;
@@ -543,28 +543,29 @@ body {
   text-decoration: none;
 }
 
-.catalog-select-link-current {
+.dropdown-link-current {
   margin-bottom: 0;
   padding-bottom: 3px;
 
   border-bottom: 1px solid #000000;
 }
 
-.catalog-select-link:hover {
+.dropdown-link:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.catalog-select-link:active {
+.dropdown-link:active {
   opacity: 0.3;
 }
 
-.catalog-select-link:focus:not(:active) {
+.dropdown-link:focus:not(:active) {
   outline: 2px solid #af4fff;
   outline-offset: 2px;
 }
 
-.main-container {
+.page-main,
+.catalog-main {
   flex-grow: 1; /* для паттерна стикки-футер */
 }
 
