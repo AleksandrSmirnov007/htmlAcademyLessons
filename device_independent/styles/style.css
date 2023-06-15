@@ -2113,6 +2113,10 @@ body {
   grid-area: image;
 }
 
+.product-card-image {
+  background-color: #efefef;
+}
+
 .product-card-price {
   position: relative;
 
