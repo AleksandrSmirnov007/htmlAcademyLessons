@@ -32,6 +32,9 @@ body {
 
 .main-menu-item a {
   text-decoration: none;
-  color: #333333;
+  color: #999999;
 }
 
+.complete a {
+  color: #333333;
+}
