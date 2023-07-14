@@ -44,19 +44,19 @@
         <button class="install__button" type="button">Скачать приложение</button>
         <ul class="install__list">
           <li class="install__item install__item--ios">
-            <p class="install__icon">
+            <a class="install__icon" href="#">
               <span class="visually-hidden">IOS</span>
-            </p>
+            </a>
           </li>
           <li class="install__item install__item--android">
-            <p class="install__icon">
+            <a class="install__icon" href="#">
               <span class="visually-hidden">Android</span>
-            </p>
+            </a>
           </li>
           <li class="install__item install__item--windows">
-            <p class="install__icon">
+            <a class="install__icon" href="#">
               <span class="visually-hidden">Windows</span>
-            </p>
+            </a>
           </li>
         </ul>
 
@@ -95,11 +95,9 @@
         <h2 class="visually-hidden">Отзывы</h2>
         <div class="feedbacks__list slider__list">
           <blockquote class="feedbacks__item slider__item">
-            <cite class="feedbacks__author-info">
-              <p class="feedbacks__author-name">Николай Петров</p>
-              <p class="feedbacks__author-age">25 лет</p>
-              <p class="feedbacks__author-profession">Водитель трамвая</p>
-            </cite>
+            <cite class="feedbacks__author-name">Николай Петров</cite>
+            <p class="feedbacks__author-age">25 лет</p>
+            <p class="feedbacks__author-profession">Водитель трамвая</p>
             <p class="feedbacks__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
           </blockquote>
         </div>
@@ -122,15 +120,15 @@
           <tr>
             <th></th>
             <th class="price__column-head slider-item">
-              <h3 class="price__title">База</h3>
+              <p class="price__title">База</p>
               <p class="price__cost">1,99 USD</p>
             </th>
             <th class="price__column-head price__column-head--hit slider-item slider__item--current">
-              <h3 class="price__title">Стандарт</h3>
+              <p class="price__title">Стандарт</p>
               <p class="price__cost">3,99 USD</p>
             </th>
             <th class="price__column-head slider-item">
-              <h3 class="price__title">Анлим</h3>
+              <p class="price__title">Анлим</p>
               <p class="price__cost">9,99 USD</p>
             </th>
           </tr>
@@ -190,24 +188,21 @@
           </div>
         </dl>
 
-        <img class="contacts__image" src="" alt="">продолжить отсюда скачать изображение карты
+        <img class="contacts__image" width="320" height="200" src="img/content/map-mark-mobile.png" alt="Карта с меткой местоположения">
       </section>
-
-
-
 
     </main>
 
     <footer class="page__footer page-footer">
 
       <div class="page-footer__logo logo">
-        <img class="logo__image" width="128" height="24" src="img/content/logo-text.svg" alt="Логотип Кэт-энерджи">
+        <img class="logo__image" width="128" height="24" src="img/content/logo-footer-mobile-tablet.svg" alt="Логотип Pink">
       </div>
 
       <ul class="page-footer__list social">
         <li class="social__item">
-          <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
-            <span class="visually-hidden">Мы в Вконтакте</span>
+          <a class="social__link social__link--twitter" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">Мы в Твиттере</span>
           </a>
         </li>
         <li class="social__item">
@@ -216,16 +211,16 @@
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link social__link--instagramm" href="https://www.instagram.com/htmlacademy">
-            <span class="visually-hidden">Мы в Инстаграмме</span>
+          <a class="social__link social__link--youtube" href="https://www.instagram.com/htmlacademy">
+            <span class="visually-hidden">Мы в Ютубе</span>
           </a>
         </li>
       </ul>
 
       <a class="page-footer__developer developer" href="https://htmlacademy.ru/intensive/adaptive">
-        <span class="visually-hidden">Разработано в</span>
-        HTMLAcademy
-        <img class="developer__image" width="27" height="34" src="img/content/logo-html.svg" alt="Логотип HTML Academy">
+        <span class="developer__text">Разработано в</span>
+        <span class="visually-hidden">HTMLAcademy</span>
+        <img class="developer__image" width="27" height="34" src="img/content/logo-html-academy.svg" alt="Логотип HTML Academy">
       </a>
 
     </footer>
