@@ -155,14 +155,22 @@
             </fieldset>
             <button class="appointment__button button" type="submit">Отправить заявку</button>
           </form>
-
-          <div class="appointment__pop-up falure">
-            продолжить
-          </div>
-          <div class="appointment__pop-up success">
-
-          </div>
         </div>
+      </section>
+      <section class="page-main__section pop-up">
+        <h2 class="visually-hidden">Всплывающее окно</h2>
+        <ul class="pop-up__list">
+          <li class="pop-up__item pop-up__item--falure">
+            <h3 class="pop-up__heading">Неудача</h3>
+            <p class="pop-up__message">Что-то пошло не так. Проверьте выделенные красным поля формы.</p>
+            <button class="pop-up__button" type="button">Ок</button>
+          </li>
+          <li class="pop-up__item pop-up__item--success">
+            <h3 class="pop-up__heading">Это успех!</h3>
+            <p class="pop-up__message">Ваша заявка отправлена. Ожидайте, мы свяжемся с вами как только будет минутка.</p>
+            <button class="pop-up__button" type="button">Закрыть окно</button>
+          </li>
+        </ul>
       </section>
     </main>
 
