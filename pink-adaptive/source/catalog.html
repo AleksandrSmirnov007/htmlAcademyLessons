@@ -6,7 +6,7 @@
   </head>
   <body class="page__body">
     <header class="page-header">
-      <nav class="page-header__nav">
+      <nav class="page-header__nav main-nav">
         <a class="page-header__logo" href="#">
           <img class="page-header__logo-image" width="74" height="23" src="img/content/logo@1x.svg" alt="Логотип социальной сети Pink">
         </a>
@@ -33,7 +33,7 @@
 
     </header>
     <main class="page__main page-main">
-      <header class="page-main_header">
+      <header class="page-main__header">
         <h1 class="page-main__headihg">Фотографии пользователей</h1>
         <p class="page-main__intro">Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?</p>
       </header>
@@ -42,17 +42,118 @@
 
         <ul class="reviews__list">
           <li class="reviews__item">
-            <img class="reviews__image reviews__image--work-month" width="280" height="480" src="image/content/photo-1@1x.jpg" alt="Постриженный мужчина в профиль">
+            <img class="reviews__image reviews__image--work-month" width="320" height="137" src="img/catalog/panorama@1x-320x137.jpg" alt="Мост через пропасть">
             <span class="reviews__mark">Панорама дня</span>
             <blockquote class="reviews__quote">
               <cite class="reviews__cite">Анна</cite>
-              <time class="reviews__cite">Пять минут назад</time>
+              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(5 минут назад)</time>
               <p class="reviews__text">Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</p>
             </blockquote>
-            <button class="reviews__button-like"><span class="visually-hidden">Нравится</span></button>
+            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
             <span class="reviews__like-counter">Нравится: 215</span>
           </li>
+          <li class="reviews__item">
+            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-1@1x-280x180.jpg" alt="Белый автомобиль Тесла">
+            <blockquote class="reviews__quote">
+              <cite class="reviews__cite">Левон</cite>
+              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(5 часов назад)</time>
+              <p class="reviews__text">Вчера он на луну летал, сегодня в руки к нам попал.</p>
+            </blockquote>
+            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
+            <span class="reviews__like-counter">Нравится: 356</span>
+          </li>
+          <li class="reviews__item">
+            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-2@1x-280x180.jpg" alt="Барабанная установка">
+            <blockquote class="reviews__quote">
+              <cite class="reviews__cite">Антон</cite>
+              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(12 часов назад)</time>
+              <p class="reviews__text">Соседи будут рады!</p>
+            </blockquote>
+            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
+            <span class="reviews__like-counter">Нравится: 666</span>
+          </li>
+          <li class="reviews__item">
+            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-3@1x-280x180.jpg" alt="Небо и решетка">
+            <blockquote class="reviews__quote">
+              <cite class="reviews__cite">Борис</cite>
+              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(20 часов назад)</time>
+              <p class="reviews__text">Здесь могла быть ваша цитата о высоком и вечном.</p>
+            </blockquote>
+            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
+            <span class="reviews__like-counter">Нравится: 215</span>
+          </li>
+          <li class="reviews__item">
+            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-4@1x-280x180.jpg" alt="Кубанская бахча">
+            <blockquote class="reviews__quote">
+              <cite class="reviews__cite">Сергей</cite>
+              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(25 часов назад)</time>
+              <p class="reviews__text">Самая кубанская в мире!</p>
+            </blockquote>
+            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
+            <span class="reviews__like-counter">Нравится: 4</span>
+          </li>
+          <li class="reviews__item">
+            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-5@1x-280x180.jpg" alt="Постриженный мужчина в профиль">
+            <blockquote class="reviews__quote">
+              <cite class="reviews__cite">Максим</cite>
+              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(40 часов назад)</time>
+              <p class="reviews__text">Где снег-то?</p>
+            </blockquote>
+            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
+            <span class="reviews__like-counter">Нравится: 150</span>
+          </li>
+          <li class="reviews__item">
+            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-6@1x-280x180.jpg" alt="Крыло самолета">
+            <blockquote class="reviews__quote">
+              <cite class="reviews__cite">Надежда</cite>
+              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(45 часов назад)</time>
+              <p class="reviews__text">Всем GM и взаимные лайки!</p>
+            </blockquote>
+            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
+            <span class="reviews__like-counter">Нравится: 150</span>
+          </li>
         </ul>
+      </section>
+      <section class="page-main__section uploading">
+        <h2 class="visually-hidden">Загрузка фотографий</h2>
+        <p class="uploading__intro">Затмите их всех! Выкладывайте все, что накопилось в телефоне!</p>
+        <form class="uploading__form" action="https://echo.htmlacademy.ru" method="post">
+          <img class="uploading__image" width="280" height="374" src="img/catalog/photo-7@1x-280x374.jpg" alt="Снежная дорога">
+          <label class="uploading__label uploading__label--crop uploading__label--current">
+            <span class="visualy-hidden">
+              Обрезать
+              <input class="uploading__input" type="number" name="uploading-crop"  value="50" max="100" min="0"
+              step="1">
+            </span>
+          </label>
+          <label class="uploading__label uploading__label--fill">
+            <span class="visualy-hidden">
+              Заливка
+              <input class="uploading__input" type="number" name="uploading-fill"  value="50" max="100" min="0"
+              step="1">
+            </span>
+          </label>
+          <label class="uploading__label uploading__label--current">
+            <span class="visualy-hidden">
+              Контраст
+              <input class="uploading__input" type="number" name="uploading-contrast"  value="50" max="100" min="0"
+              step="1">
+            </span>
+          </label>
+
+          <div class="uploading__range range">
+            <div class="range__scale">
+                <div class="range__bar" style="left: 42px;">
+                    <button class="range__toggle" type="button">
+                        <span class="visually-hidden">Изменить параметр</span>
+                    </button>
+                </div>
+            </div>
+          </div>
+
+          <button class="uploading__submit" type="submit">Запостить</button>
+          <button class="uploading__cancel" type="button">Отмена</button>
+        </form>
       </section>
     </main>
 

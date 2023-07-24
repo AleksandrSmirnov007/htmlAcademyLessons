@@ -6,7 +6,7 @@
   </head>
   <body class="page__body">
     <header class="page-header">
-      <nav class="page-header__nav">
+      <nav class="page-header__nav main-nav">
         <a class="page-header__logo" href="#">
           <img class="page-header__logo-image" width="34" height="38" src="img/content/logo@1x.svg" alt="Логотип Кэт-энерджи">
           <img class="page-header__logo-text" width="101" height="18" src="img/content/logo-text.svg" alt="" aria-hidden="true">
@@ -37,18 +37,26 @@
         <form class="appointment__form"  action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="appointment__fieldset">
             <legend><span class="visually-hidden">Данные о коте</span></legend>
-            <label class="appointment__label">
-              <span class="visually-hidden">Имя:*</span>
-              <input class="appointment__input" type="text" name="name" placeholder="Барсик">
-            </label>
-            <label class="appointment__label">
-              <span class="visually-hidden">Вес (кг):</span>
-              <input class="appointment__input" type="number" name="weight" placeholder="7">
-            </label>
-            <label class="appointment__label">
-              <span class="visually-hidden">Возвраст (лет):</span>
-              <input class="appointment__input" type="number" name="refund" placeholder="7">
-            </label>
+            <ul class="appointment__list">
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <span class="visually-hidden">Имя:*</span>
+                  <input class="appointment__input" type="text" name="name" placeholder="Барсик">
+                </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <span class="visually-hidden">Вес (кг):</span>
+                  <input class="appointment__input" type="number" name="weight" placeholder="7">
+                </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <span class="visually-hidden">Возвраст (лет):</span>
+                  <input class="appointment__input" type="number" name="refund" placeholder="7">
+                </label>
+              </li>
+            </ul>
           </fieldset>
           <fieldset class="appointment__fieldset">
             <legend><span class="visually-hidden">Варианты программы</span></legend>
@@ -75,14 +83,20 @@
           </fieldset>
           <fieldset class="appointment__fieldset">
             <legend><span class="visually-hidden">Контактные данные(владельца кота)</span></legend>
-            <label class="appointment__label">
-              <span class="visually-hidden">E-mail:*</span>
-              <input class="appointment__input" type="email" name="email" placeholder="kuklachev@gmail.com">
-            </label>
-            <label class="appointment__label">
-              <span class="visually-hidden">Телефон:*</span>
-              <input class="appointment__input" type="tel" name="phone" placeholder="8 (960) 900-60-90">
-            </label>
+            <ul class="appointment__list">
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <span class="visually-hidden">E-mail:*</span>
+                  <input class="appointment__input" type="email" name="email" placeholder="kuklachev@gmail.com">
+                </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <span class="visually-hidden">Телефон:*</span>
+                  <input class="appointment__input" type="tel" name="phone" placeholder="8 (960) 900-60-90">
+                </label>
+              </li>
+            </ul>
           </fieldset>
 
           <fieldset class="appointment__fieldset">
