@@ -34,162 +34,115 @@
     </header>
     <main class="page__main page-main">
       <header class="page-main_header">
-        <h1 class="page-main__headihg">Пинк Конкурс</h1>
+        <h1 class="page-main__headihg">Конкурс на самое безбашенное путешествие с Пинк</h1>
         <p class="page-main__intro">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!</p>
       </header>
+      <section class="page-main__section appointment">
+        <h2 class="visually-hidden">Форма данных для конкурса</h2>
+        <form class="appointment__form"  action="https://echo.htmlacademy.ru" method="post">
+          <fieldset class="appointment__fieldset">
+            <legend><span class="visually-hidden">ФИО</span></legend>
+            <label class="appointment__label">
+              Фамилия:
+              <input class="appointment__input" type="text" name="second-name" placeholder="Укажите фамилию *">
+            </label>
+            <label class="appointment__label">
+              Имя:
+              <input class="appointment__input" type="text" name="first-name" placeholder="Введите ваше имя *">
+            </label>
+            <label class="appointment__label">
+              Отчество:
+              <input class="appointment__input" type="text" name="third-name" placeholder="Ну и отчество тоже">
+            </label>
+          </fieldset>
 
-      <section class="page-main__ install">
-        <h2 class="visually-hidden">Установка приложения</h2>
-        <button class="install__button" type="button">Скачать приложение</button>
-        <ul class="install__list">
-          <li class="install__item install__item--ios">
-            <a class="install__icon" href="#">
-              <span class="visually-hidden">IOS</span>
-            </a>
-          </li>
-          <li class="install__item install__item--android">
-            <a class="install__icon" href="#">
-              <span class="visually-hidden">Android</span>
-            </a>
-          </li>
-          <li class="install__item install__item--windows">
-            <a class="install__icon" href="#">
-              <span class="visually-hidden">Windows</span>
-            </a>
-          </li>
-        </ul>
+          <fieldset class="appointment__fieldset">
+            <legend class="appointment__legend">Ваши безбашенные достижения в путешествии</legend>
+            <ul class="appointment__list">
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="checkbox" name="selfi-with-sharck" checked>
+                  <span class="appointment__checkbox">Сделал селфи с акулой</span>
+               </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="checkbox" name="burned-on-the-beach" checked>
+                  <span class="appointment__checkbox">Обгорел на пляже</span>
+               </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="checkbox" name="seen-chuck-norris">
+                  <span class="appointment__checkbox">Видел Чака Норриса</span>
+               </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="checkbox" name="bought-souvenirs">
+                  <span class="appointment__checkbox">Накупил сувениров</span>
+               </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="checkbox" name="held-the-tower" checked>
+                  <span class="appointment__checkbox">Удержал башню</span>
+               </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="checkbox" name="trashed-the-hotel">
+                  <span class="appointment__checkbox">Разгромил отель</span>
+               </label>
+              </li>
+            </ul>
+          </fieldset>
 
+          <fieldset class="appointment__fieldset">
+            <legend><span class="visually-hidden">Контакты</span></legend>
+            <label class="appointment__label">
+              Номер телефона
+              <input class="appointment__input" type="tel" name="phone" placeholder="Номер, пожалуйста">
+            </label>
+            <label class="appointment__label">
+              Адрес почты
+              <input class="appointment__input" type="email" name="e-mail" placeholder="Введите почту *">
+            </label>
+          </fieldset>
+
+          <fieldset class="appointment__fieldset">
+            <legend class="appointment__legend">С каким приложением путешествовали?</legend>
+            <ul class="appointment__list">
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="radio" name="operating system" value="pink-on-ios" checked>
+                  <span class="appointment__radio">Pink для iOS</span>
+               </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="checkbox" name="operating system" value="pink-on-android">
+                  <span class="appointment__checkbox">Pink на Android</span>
+               </label>
+              </li>
+              <li class="appointment__item">
+                <label class="appointment__label">
+                  <input class="appointment__input visually-hidden"  type="checkbox" name="operating system" value="pink-on-windows-Phone">
+                  <span class="appointment__checkbox">Windows Phone</span>
+               </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="appointment__fieldset">
+            <legend><span class="appointment__legend">Опишите свои эмоции</span></legend>
+            <label class="appointment__label">
+              <textarea class="appointment__input appointment__input--textarea" cols="30" rows="4" name="info">Можно прям в красках, не стесняясь в выражениях</textarea>
+            </label>
+          </fieldset>
+          <button class="appointment__button button" type="submit">Отправить форму</button>
+          <p class="appointment__explanation">* — Обязательные поля</p>
+        </form>
       </section>
-
-      <section class="page-main__section advantages">
-        <h2 class="visually-hidden">Преимущества</h2>
-        <p class="advantages__slogan">
-          Устали от серости мегаполиса?
-        </p>
-        <p class="advantages__slogan">
-          Нам есть, что вам предложить!
-        </p>
-
-        <ul class="advantages__list">
-          <li class="advantages__item">
-            <h3 class="advantages__title">Поднимает настроение</h3>
-            <p class="advantages__description">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
-            <img class="advantages__image" width="157" height="320" src="#" alt="телефон, на эране надпись 'привет всем' на фотографмм с розовым фильтром ">
-          </li>
-          <li class="advantages__item">
-            <h3 class="advantages__title">Меняет мир вокруг</h3>
-            <p class="advantages__description">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
-            <img class="advantages__image" width="157" height="320" src="#" alt="телефон, на эране надпись 'привет всем' на фотографмм с розовым фильтром ">
-          </li>
-          <li class="advantages__item">
-            <h3 class="advantages__title">Заводит новых друзей</h3>
-            <p class="advantages__description">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
-            <img class="advantages__image" width="157" height="320" src="img/content/iphone-helloy-all.png" alt="телефон, на эране надпись 'привет всем' на фотографмм с розовым фильтром ">
-          </li>
-        </ul>
-
-      </section>
-
-      <section class="page-main__section feedbacks slider">
-        <h2 class="visually-hidden">Отзывы</h2>
-        <div class="feedbacks__list slider__list">
-          <blockquote class="feedbacks__item slider__item">
-            <cite class="feedbacks__author-name">Николай Петров</cite>
-            <p class="feedbacks__author-age">25 лет</p>
-            <p class="feedbacks__author-profession">Водитель трамвая</p>
-            <p class="feedbacks__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
-          </blockquote>
-        </div>
-        <p class="feedbacks__toggles slider__toggles">
-          <button class="slider__toggle slider__toggle--current">
-            <span class="visually-hidden">1</span>
-          </button>
-          <button class="slider__toggle">
-            <span class="visually-hidden">2</span>
-          </button>
-          <button class="slider__toggle">
-            <span class="visually-hidden">3</span>
-          </button>
-        </p>
-      </section>
-
-      <section class="page-main__section price slider">
-        <h2 class="visually-hidden">Прайслист</h2>
-        <table class="price__list slider__list">
-          <tr>
-            <th></th>
-            <th class="price__column-head slider-item">
-              <p class="price__title">База</p>
-              <p class="price__cost">1,99 USD</p>
-            </th>
-            <th class="price__column-head price__column-head--hit slider-item slider__item--current">
-              <p class="price__title">Стандарт</p>
-              <p class="price__cost">3,99 USD</p>
-            </th>
-            <th class="price__column-head slider-item">
-              <p class="price__title">Анлим</p>
-              <p class="price__cost">9,99 USD</p>
-            </th>
-          </tr>
-          <tr>
-            <td class="price__row-head">Розовый фильтр</td>
-            <td class="price__check price__check--yes"><span class="visually-hidden">да</span></td>
-            <td class="price__check price__check--yes"><span class="visually-hidden">да</span></td>
-            <td class="price__check price__check--yes"><span class="visually-hidden">да</span></td>
-          </tr>
-          <tr>
-            <td class="price__row-head">Смайлики</td>
-            <td class="price__check price__check--no"><span class="visually-hidden">нет</span></td>
-            <td class="price__check price__check--yes"><span class="visually-hidden">да</span></td>
-            <td class="price__check price__check--yes"><span class="visually-hidden">да</span></td>
-          </tr>
-          <tr>
-            <td class="price__row-head">Коментарии</td>
-            <td class="price__check price__check--no"><span class="visually-hidden">нет</span></td>
-            <td class="price__check price__check--no"><span class="visually-hidden">нет</span></td>
-            <td class="price__check price__check--yes"><span class="visually-hidden">да</span></td>
-          </tr>
-        </table>
-
-        <p class="price__toggles slider__toggles">
-          <button class="slider__toggle slider__toggle--current">
-            <span class="visually-hidden">1</span>
-          </button>
-          <button class="slider__toggle">
-            <span class="visually-hidden">2</span>
-          </button>
-          <button class="slider__toggle">
-            <span class="visually-hidden">3</span>
-          </button>
-        </p>
-      </section>
-      <section class="page-main_section contacts">
-        <h2 class="visually-hidden">Контакты</h2>
-        <p class="contacts__title">Остались вопросы?<br>Свяжитесь с нами!</p>
-        <dl class="contacts__list">
-          <div class="contacts__item">
-            <dt class="contacts__term">Звоните</dt>
-            <dd class="contacts__info">
-              <a class="contacts__text contacts__text--phone" href="tel:+78125556666">+7 (812) 555-66-66</a>
-            </dd>
-          </div>
-          <div class="contacts__item">
-            <dt class="contacts__term">Пишите</dt>
-            <dd class="contacts__info">
-              <a class="contacts__text contacts__text--email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-            </dd>
-          </div>
-          <div class="contacts__item">
-            <dt class="contacts__term">Приезжайте в гости</dt>
-            <dd class="contacts__info">
-              <a class="contacts__text contacts__text--address" href="">ул. Большая Конюшенная, 19/8</a>
-            </dd>
-          </div>
-        </dl>
-
-        <img class="contacts__image" width="320" height="200" src="img/content/map-mark@1x.png" alt="Карта с меткой местоположения">
-      </section>
-
     </main>
 
     <footer class="page__footer page-footer">
