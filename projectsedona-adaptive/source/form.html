@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Седона адаптив Оставить отзыв</title>
+  </head>
+  <body class="page__body">
+    <header class="page-header">
+      <a class="page-header__logo" href="#">
+        <img class="page-header__logo-image" width="108" height="84" src="img/content/logotype@1x.svg" alt="Барбершоп туристического города Седона">
+      </a>
+      <nav class="main-nav">
+        <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item site-list__item--active">
+            <a href="index.html">Главная</a>
+          </li>
+          <li class="site-list__item">
+            <a href="catalog.html">Фото и видео</a>
+          </li>
+          <li class="site-list__item">
+            <a href="#" title="Вы на странице для отзыва">Форма отзыва</a>
+          </li>
+          <li class="site-list__item">
+            <a href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page__main page-main">
+      <h1 class="visually-hidden">Форма для отзыва о Седоне</h1>
+      <section class="page-main__section promo">
+        <h2 class="promo__heading">Оставьте свой отзыв</h2>
+        <p class="promo__content">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
+      </section>
+      <section class="page-main__section reviews">
+        <h2 class="visually-hidden">Форма для отзыва</h2>
+        <form class="reviews__form"  action="https://echo.htmlacademy.ru" method="post">
+          <fieldset class="reviews__fieldset">
+            <legend class="reviews__legend">Представьтесь:</legend>
+            <ul class="reviews__list">
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  Имя:*
+                  <input class="reviews__input" type="text" name="first-name" placeholder="Петр">
+                </label>
+              </li>
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  Фамилия*:
+                  <input class="reviews__input" type="text" name="second-name" placeholder="Иванов">
+                </label>
+              </li>
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  Отчество:
+                  <input class="reviews__input" type="text" name="third-name" placeholder="Александрович">
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="reviews__fieldset">
+            <legend class="reviews__legend">Контактная информация:</legend>
+            <ul class="reviews__list">
+              <li class="reviews__item">
+                <label class="reviews__label reviews__label--phone">
+                  Контактный телефон*:
+                  <input class="reviews__input" type="tel" name="phone" placeholder="Введите телефон">
+                </label>
+              </li>
+              <li class="reviews__item">
+                <label class="reviews__label reviews__label--email">
+                  Электронная почта*:
+                  <input class="reviews__input" type="email" name="email" placeholder="Введите e-mail">
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="reviews__fieldset">
+            <legend class="reviews__legend">Ваше общее впечатление:</legend>
+            <ul class="reviews__list">
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  <input class="reviews__input visually-hidden"  type="radio" name="impression" value="positive" checked>
+                  <span class="reviews__radio">Скорее положительное</span>
+                </label>
+              </li>
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  <input class="reviews__input visually-hidden"  type="radio" name="impression" value="negative">
+                  <span class="reviews__radio">Скорее отрицательное</span>
+                </label>
+              </li>
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  <input class="reviews__input visually-hidden"  type="radio" name="impression" value="dont-know">
+                  <span class="reviews__radio">Затрудняюсь ответить</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="reviews__fieldset">
+            <legend class="reviews__legend">Посещенные достопримечательности:</legend>
+            <ul class="reviews__list">
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  <input class="reviews__input visually-hidden"  type="checkbox" name="devil-bridge" checked>
+                  <span class="reviews__radio">Мост Дьявола</span>
+               </label>
+              </li>
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  <input class="reviews__input visually-hidden"  type="checkbox" name="mountain-bell" checked>
+                  <span class="reviews__radio">Гора-Колокол</span>
+               </label>
+              </li>
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  <input class="reviews__input visually-hidden"  type="checkbox" name="slide-park" checked>
+                  <span class="reviews__radio">Слайд-парк</span>
+               </label>
+              </li>
+              <li class="reviews__item">
+                <label class="reviews__label">
+                  <input class="reviews__input visually-hidden"  type="checkbox" name="red-rocks">
+                  <span class="reviews__radio">Красные скалы</span>
+               </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="reviews__fieldset">
+            <legend class="reviews__legend">Опишите свои эмоции:</legend>
+            <label class="reviews__label">
+              <textarea class="reviews__input reviews__input--textarea" cols="30" rows="4" name="info">Опишите подробно все свои восторги</textarea>
+            </label>
+          </fieldset>
+
+          <button class="reviews__button button" type="submit">Отправить отзыв</button>
+        </form>
+      </section>
+      <section class="page-main__section pop-up">
+        <h2 class="visually-hidden">Всплывающее окно</h2>
+        <ul class="pop-up__list">
+          <li class="pop-up__item pop-up__item--falure">
+            <h3 class="pop-up__heading">Что-то пошло не так!</h3>
+            <p class="pop-up__message">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+            <button class="pop-up__button" type="button">Ок</button>
+          </li>
+          <li class="pop-up__item pop-up__item--success">
+            <h3 class="pop-up__heading">Ваш отзыв отправлен!</h3>
+            <p class="pop-up__message">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.</p>
+            <button class="pop-up__button" type="button">Закрыть окно</button>
+          </li>
+        </ul>
+      </section>
+
+
+    </main>
+
+    <footer class="page__footer page-footer">
+      <p class="page-footer__title">#visitsedona</p>
+
+      <div class="page-footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--twitter" href="https://vk.com/htmlacademy">
+              <span class="visually-hidden">
+                Мы в Твиттере
+              </span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+              <span class="visually-hidden">
+                Мы в Фейсбуке
+              </span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--youtube" href="https://www.instagram.com/htmlacademy">
+              <span class="visually-hidden">
+                Мы в Ютубе
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__developer developer">
+        <a class="developer__link" href="https://htmlacademy.ru/intensive/adaptive">
+          Разработано
+          <span class="visually-hidden">в HTMLAcademy</span>
+          <img class="developer__icon" width="27" height="34" src="img/content/htmlacademy.svg" alt="Логотип HTML Academy">
+        </a>
+      </div>
+
+    </footer>
+
+  </body>
+</html>
