@@ -31,111 +31,111 @@
     </header>
     <main class="page__main page-main">
       <h1 class="visually-hidden">Выбор программы в Кэт-энерджи</h1>
-      <section class="page-main__section appointment">
+      <section class="page-main__section form">
         <h2 class="visually-hidden">Подбор программы</h2>
-        <p class="appointment__intro">Заполните анкету, и мы подберем программу питания для вашего кота</p>
-        <form class="appointment__form"  action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="appointment__fieldset">
+        <p class="form__intro">Заполните анкету, и мы подберем программу питания для вашего кота</p>
+        <form class="form__body" action="https://echo.htmlacademy.ru" method="post">
+          <fieldset class="form__group field-group">
             <legend><span class="visually-hidden">Данные о коте</span></legend>
-            <ul class="appointment__list">
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <span class="visually-hidden">Имя:*</span>
-                  <input class="appointment__input" type="text" name="name" placeholder="Барсик">
+            <ul class="field-group__list">
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <span class="field-group__lead">Имя:*</span>
+                  <input class="field-group__input" type="text" name="name" placeholder="Барсик">
                 </label>
               </li>
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <span class="visually-hidden">Вес (кг):</span>
-                  <input class="appointment__input" type="number" name="weight" placeholder="7">
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <span class="field-group__lead">Вес (кг):</span>
+                  <input class="field-group__input" type="number" name="weight" placeholder="7">
                 </label>
               </li>
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <span class="visually-hidden">Возвраст (лет):</span>
-                  <input class="appointment__input" type="number" name="refund" placeholder="7">
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <span class="field-group__lead">Возвраст (лет):</span>
+                  <input class="field-group__input" type="number" name="refund" placeholder="7">
                 </label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="appointment__fieldset">
+          <fieldset class="form__group field-group">
             <legend><span class="visually-hidden">Варианты программы</span></legend>
-            <ul class="appointment__list">
-              <li class="appointment__item">
-                <label class="appointment__label appointment__label--slim">
-                  <input class="appointment__input visually-hidden"  type="radio" name="programs" value="slim" checked>
-                  <span class="appointment__radio">Похудение</span>
+            <ul class="field-group__list">
+              <li class="field-group__item">
+                <label class="field-group__label field-group__label--slim">
+                  <input class="field-group__input visually-hidden"  type="radio" name="programs" value="slim" checked>
+                  <span class="field-group__lead">Похудение</span>
                 </label>
               </li>
-              <li class="appointment__item">
-                <label class="appointment__label appointment__label--pro">
-                  <input class="appointment__input visually-hidden"  type="radio" name="beard-style" value="logger">
-                  <span class="appointment__radio">Набор массы</span>
+              <li class="field-group__item">
+                <label class="field-group__label field-group__label--pro">
+                  <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="logger">
+                  <span class="field-group__lead">Набор массы</span>
                 </label>
               </li>
-              <li class="appointment__item">
-                <label class="appointment__label appointment__label--dont-know">
-                  <input class="appointment__input visually-hidden"  type="radio" name="beard-style" value="polar">
-                  <span class="appointment__radio">Не знаю (нужен ваш совет)</span>
+              <li class="field-group__item">
+                <label class="field-group__label field-group__label--dont-know">
+                  <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="polar">
+                  <span class="field-group__lead">Не знаю (нужен ваш совет)</span>
                 </label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="appointment__fieldset">
+          <fieldset class="form__group field-group">
             <legend><span class="visually-hidden">Контактные данные(владельца кота)</span></legend>
-            <ul class="appointment__list">
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <span class="visually-hidden">E-mail:*</span>
-                  <input class="appointment__input" type="email" name="email" placeholder="kuklachev@gmail.com">
+            <ul class="field-group__list">
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <span class="field-group__lead">E-mail:*</span>
+                  <input class="field-group__input" type="email" name="email" placeholder="kuklachev@gmail.com">
                 </label>
               </li>
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <span class="visually-hidden">Телефон:*</span>
-                  <input class="appointment__input" type="tel" name="phone" placeholder="8 (960) 900-60-90">
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <span class="field-group__lead">Телефон:*</span>
+                  <input class="field-group__input" type="tel" name="phone" placeholder="8 (960) 900-60-90">
                 </label>
               </li>
             </ul>
           </fieldset>
 
-          <fieldset class="appointment__fieldset">
+          <fieldset class="form__group field-group">
             <legend><span class="visually-hidden">Комментарий</span></legend>
-            <label class="appointment__label">
-              <textarea class="appointment__input appointment__input--textarea" cols="30" rows="4" name="info">Расскажите обо всех повадках кота</textarea>
+            <label class="field-group__label">
+              <textarea class="field-group__input field-group__input--textarea" cols="30" rows="4" name="info">Расскажите обо всех повадках кота</textarea>
             </label>
           </fieldset>
-          <fieldset class="appointment__fieldset">
+          <fieldset class="form__group field-group">
             <legend><span class="visually-hidden">Дополнительно</span></legend>
-            <ul class="appointment__list">
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <input class="appointment__input visually-hidden"  type="checkbox" name="addition-product" value="sweetener" checked>
-                  <span class="appointment__radio">Сахарозаменитель</span>
+            <ul class="field-group__list">
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <input class="field-group__input visually-hidden"  type="checkbox" name="addition-product" value="sweetener" checked>
+                  <span class="field-group__lead">Сахарозаменитель</span>
                </label>
               </li>
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <input class="appointment__input visually-hidden"  type="checkbox" name="addition-product" value="drink-water">
-                  <span class="appointment__radio">Питьевая вода</span>
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <input class="field-group__input visually-hidden"  type="checkbox" name="addition-product" value="drink-water">
+                  <span class="field-group__lead">Питьевая вода</span>
                </label>
               </li>
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <input class="appointment__input visually-hidden"  type="checkbox" name="addition-product" value="milk">
-                  <span class="appointment__radio">Молоко</span>
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <input class="field-group__input visually-hidden"  type="checkbox" name="addition-product" value="milk">
+                  <span class="field-group__lead">Молоко</span>
                </label>
               </li>
-              <li class="appointment__item">
-                <label class="appointment__label">
-                  <input class="appointment__input visually-hidden"  type="checkbox" name="addition-product" value="vitamins">
-                  <span class="appointment__radio">Витамины</span>
+              <li class="field-group__item">
+                <label class="field-group__label">
+                  <input class="field-group__input visually-hidden"  type="checkbox" name="addition-product" value="vitamins">
+                  <span class="field-group__lead">Витамины</span>
                </label>
               </li>
             </ul>
           </fieldset>
-          <button class="appointment__button button" type="submit">Отправить заявку</button>
-          <p class="appointment__explanation">* — Обязательные поля</p>
+          <button class="form__button button" type="submit">Отправить заявку</button>
+          <p class="form__explanation">* — Обязательные поля</p>
         </form>
       </section>
       <section class="page-main__section contacts">

@@ -39,116 +39,130 @@
     </header>
     <main class="page__main page-main">
       <h1 class="visually-hidden">Записаться на стрижку в Барбершоп "Бородинский"</h1>
-      <section class="page-main__section appointment">
+      <section class="page-main__section form">
         <h2 class="visually-hidden">Форма для отправки данных</h2>
-        <div class=" appointment__wrapper">
-          <form class="appointment__form"  action="https://echo.htmlacademy.ru" method="post">
-            <fieldset class="appointment__fieldset">
+        <div class=" form__wrapper">
+          <form class="form__body"  action="https://echo.htmlacademy.ru" method="post">
+            <fieldset class="form__group field-group">
               <legend><span class="visually-hidden">ФИО</span></legend>
-              <label class="appointment__label">
-                <span class="visually-hidden">Фамилия</span>
-                <input class="appointment__input" type="text" name="second-name" placeholder="Фамилия">
-              </label>
-              <label class="appointment__label">
-                <span class="visually-hidden">Имя</span>
-                <input class="appointment__input" type="text" name="first-name" placeholder="Имя">
-              </label>
-              <label class="appointment__label">
-                <span class="visually-hidden">Отчестство</span>
-                <input class="appointment__input" type="text" name="third-name" placeholder="Отчество">
-              </label>
+              <ul class="field-group__list">
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <span class="visually-hidden">Фамилия</span>
+                    <input class="field-group__input" type="text" name="second-name" placeholder="Фамилия">
+                  </label>
+                </li>
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <span class="visually-hidden">Имя</span>
+                    <input class="field-group__input" type="text" name="first-name" placeholder="Имя">
+                  </label>
+                </li>
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <span class="visually-hidden">Отчестство</span>
+                    <input class="field-group__input" type="text" name="third-name" placeholder="Отчество">
+                  </label>
+                </li>
+              </ul>
             </fieldset>
-            <fieldset class="appointment__fieldset">
+            <fieldset class="form__group field-group">
               <legend><span class="visually-hidden">Контакты</span></legend>
-              <label class="appointment__label">
-                <span class="visually-hidden">Контактный телефон</span>
-                <input class="appointment__input" type="text" name="phone" placeholder="Контактный телефон">
-              </label>
-              <label class="appointment__label">
-                <span class="visually-hidden">Контактный e-mail</span>
-                <input class="appointment__input" type="email" name="email" placeholder="Контактный e-mail">
-              </label>
+              <ul class="field-group__list">
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <span class="visually-hidden">Контактный телефон</span>
+                    <input class="field-group__input" type="text" name="phone" placeholder="Контактный телефон">
+                  </label>
+                </li>
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <span class="visually-hidden">Контактный e-mail</span>
+                    <input class="field-group__input" type="email" name="email" placeholder="Контактный e-mail">
+                  </label>
+                </li>
+              </ul>
             </fieldset>
-            <fieldset class="appointment__fieldset">
+            <fieldset class="form__group field-group">
               <legend><span class="visually-hidden">Дополнительная информация</span></legend>
-              <label class="appointment__label">
-                <textarea class="appointment__input appointment__input--textarea" cols="30" rows="4" name="info">Доп. информация для мастера</textarea>
+              <label class="field-group__label">
+                <textarea class="field-group__input field-group__input--textarea" cols="30" rows="4" name="info">Доп. информация для мастера</textarea>
               </label>
             </fieldset>
 
-            <fieldset class="appointment__fieldset">
+            <fieldset class="form__group field-group">
               <legend><span class="visually-hidden">Выберете модель бороды</span></legend>
-              <ul class="appointment__list">
-                <li class="appointment__item">
-                  <label class="appointment__label appointment__label--admiral">
-                    <input class="appointment__input visually-hidden"  type="radio" name="beard-style" value="admiral" checked>
-                    <span class="appointment__radio">Адмирал</span>
+              <ul class="field-group__list">
+                <li class="field-group__item">
+                  <label class="field-group__label field-group__label--admiral">
+                    <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="admiral" checked>
+                    <span class="field-group__lead">Адмирал</span>
                   </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label appointment__label--logger">
-                    <input class="appointment__input visually-hidden"  type="radio" name="beard-style" value="logger">
-                    <span class="appointment__radio">Лесоруб</span>
+                <li class="field-group__item">
+                  <label class="field-group__label field-group__label--logger">
+                    <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="logger">
+                    <span class="field-group__lead">Лесоруб</span>
                   </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label appointment__label--polar">
-                    <input class="appointment__input visually-hidden"  type="radio" name="beard-style" value="polar">
-                    <span class="appointment__radio">Полярник</span>
+                <li class="field-group__item">
+                  <label class="field-group__label field-group__label--polar">
+                    <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="polar">
+                    <span class="field-group__lead">Полярник</span>
                   </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label appointment__label--boyar">
-                    <input class="appointment__input visually-hidden"  type="radio" name="beard-style" value="boyar">
-                    <span class="appointment__radio">Боярин</span>
+                <li class="field-group__item">
+                  <label class="field-group__label field-group__label--boyar">
+                    <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="boyar">
+                    <span class="field-group__lead">Боярин</span>
                   </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label appointment__label--sage">
-                    <input class="appointment__input visually-hidden"  type="radio" name="beard-style" value="sage">
-                    <span class="appointment__radio">Мудрец</span>
+                <li class="field-group__item">
+                  <label class="field-group__label field-group__label--sage">
+                    <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="sage">
+                    <span class="field-group__lead">Мудрец</span>
                   </label>
                 </li>
               </ul>
             </fieldset>
 
-            <fieldset class="appointment__fieldset">
+            <fieldset class="form__group field-group">
               <legend><span class="visually-hidden">Дополнительные услуги</span></legend>
-              <ul class="appointment__list">
-                <li class="appointment__item">
-                  <label class="appointment__label">
-                    <input class="appointment__input visually-hidden"  type="checkbox" name="addition-services" value="coloring" checked>
-                    <span class="appointment__radio">Подкрасить бороду</span>
+              <ul class="field-group__list">
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-services" value="coloring" checked>
+                    <span class="field-group__lead">Подкрасить бороду</span>
                  </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label">
-                    <input class="appointment__input visually-hidden"  type="checkbox" name="addition-services" value="wind-up-a-mustache" checked>
-                    <span class="appointment__radio">Накрутить усы</span>
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-services" value="wind-up-a-mustache" checked>
+                    <span class="field-group__lead">Накрутить усы</span>
                  </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label">
-                    <input class="appointment__input visually-hidden"  type="checkbox" name="addition-services" value="coloring">
-                    <span class="appointment__radio">Причесать бороду</span>
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-services" value="coloring">
+                    <span class="field-group__lead">Причесать бороду</span>
                  </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label">
-                    <input class="appointment__input visually-hidden"  type="checkbox" name="addition-services" value="trim-the-temples">
-                    <span class="appointment__radio">Подровнять виски</span>
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-services" value="trim-the-temples">
+                    <span class="field-group__lead">Подровнять виски</span>
                  </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label">
-                    <input class="appointment__input visually-hidden"  type="checkbox" name="addition-services" value="remove-gray-hair">
-                    <span class="appointment__radio">Убрать седину</span>
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-services" value="remove-gray-hair">
+                    <span class="field-group__lead">Убрать седину</span>
                  </label>
                 </li>
-                <li class="appointment__item">
-                  <label class="appointment__label">
-                    <input class="appointment__input visually-hidden"  type="checkbox" name="addition-services" value="polish-the-bald-spot">
-                    <span class="appointment__radio">Отполировать лысину</span>
+                <li class="field-group__item">
+                  <label class="field-group__label">
+                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-services" value="polish-the-bald-spot">
+                    <span class="field-group__lead">Отполировать лысину</span>
                  </label>
                 </li>
               </ul>
