@@ -1,2 +1,18 @@
-body { background: red; } // Начните писать стили здесь
-body { color: green; }
+@import "global/global.scss";
+@import "global/fonts.scss";
+
+@import "global/mixins.scss";
+
+@import "blocks/page";
+@import "blocks/page-header";
+@import "blocks/main-nav";
+@import "blocks/page-main";
+@import "blocks/promo";
+@import "blocks/catalog-sections";
+@import "blocks/process";
+@import "blocks/example";
+@import "blocks/contacts";
+@import "blocks/page-footer";
+@import "blocks/logo";
+@import "blocks/social";
+@import "blocks/developer";
