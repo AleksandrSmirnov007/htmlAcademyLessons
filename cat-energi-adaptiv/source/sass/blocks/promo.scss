@@ -1,0 +1,25 @@
+.promo {
+  font-family: $oswald;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 27px;
+  color: $white;
+  background-image: linear-gradient(to top, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)),
+                    url("../../img/background/index-background-@x1.jpg");
+}
+
+.promo__heading {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 36px;
+  line-height: 36px;
+
+}
+
+.promo__slogan {
+  margin-top: 0;
+  margin-bottom: 29px;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
