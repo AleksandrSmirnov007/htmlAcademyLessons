@@ -1,0 +1,37 @@
+.example {
+  background-color: #eaeaea;
+}
+
+.example__heading {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.example__title {
+  color: $special-dark-grey;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+.example__description {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.example__price-total {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.example__toggle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+}

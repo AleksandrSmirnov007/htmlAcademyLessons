@@ -1,12 +1,13 @@
 .catalog-sections {
   color: $black;
-  font-family: $oswald;
   font-weight: 400;
   text-align: left;
 }
 
 .catalog-sections__list {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .catalog-sections__item {

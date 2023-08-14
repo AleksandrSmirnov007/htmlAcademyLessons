@@ -1,4 +1,21 @@
 .process {
   background-color: $white;
+}
+
+.process__heading {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.process__list {
+  list-style-type: none;
   color: $special_dark-grey;
+}
+
+.process__text {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
 }
