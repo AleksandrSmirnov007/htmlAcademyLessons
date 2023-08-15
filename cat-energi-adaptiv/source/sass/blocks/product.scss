@@ -3,3 +3,32 @@
   font-weight: 400;
   line-height: 36px;
 }
+
+.product__list {
+  list-style-type: none;
+}
+
+.product__title {
+  color: $special-dark-grey-2;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.product__details-termin,
+.product__details-description {
+  color: $special-dark-grey;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.product__button {
+  color: $white;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: $basic-green;
+}
