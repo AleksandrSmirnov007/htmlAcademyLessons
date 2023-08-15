@@ -47,6 +47,10 @@
 .main-nav__link {
   text-decoration: none;
   color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
 }
 
 .promo {
@@ -188,5 +192,11 @@
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
+}
+
+.product__heading {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
 }
 /*# sourceMappingURL=style.css.map */
