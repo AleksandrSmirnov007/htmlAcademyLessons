@@ -3,6 +3,7 @@
 }
 
 .example__heading {
+  font-family: $font-heading;
   font-size: 36px;
   font-weight: 400;
   line-height: 40px;
@@ -10,19 +11,21 @@
 
 .example__title {
   color: $special-dark-grey;
-  font-family: Arial;
+  font-family: $font-body;
   font-size: 12px;
   font-weight: 400;
   line-height: 12px;
 }
 
 .example__description {
+  font-family: $font-heading;
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
 }
 
 .example__price-total {
+  font-family: $font-heading;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -30,6 +33,7 @@
 }
 
 .example__toggle {
+  font-family: $font-heading;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;

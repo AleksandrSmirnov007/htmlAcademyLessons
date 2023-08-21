@@ -1,4 +1,5 @@
 .contacts__heading {
+  font-family: $font-heading;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -7,7 +8,7 @@
 
 .contacts__address {
   color: $special-dark-grey;
-  font-family: Arial;
+  font-family: $font-body;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;

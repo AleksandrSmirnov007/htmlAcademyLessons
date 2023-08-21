@@ -15,18 +15,21 @@
 }
 
 .catalog-sections__heading {
+  font-family: $font-heading;
   font-size: 24px;
   line-height: 37px;
   text-transform: uppercase;
 }
 
 .catalog-sections__description {
+  font-family: $font-heading;
   font-size: 14px;
   line-height: 18px;
 }
 
 
 .catalog-sections__link {
+  font-family: $font-heading;
   color: $black;
   font-size: 16px;
   line-height: 16px;

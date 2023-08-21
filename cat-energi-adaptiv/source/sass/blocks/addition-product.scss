@@ -1,4 +1,5 @@
 .addition-product__heading {
+  font-family: $font-heading;
   color: $black;
   font-size: 24px;
   font-weight: 400;
@@ -10,6 +11,7 @@
 }
 
 .addition-product__title {
+  font-family: $font-heading;
   color: $special-dark-grey-2;
   font-size: 16px;
   font-weight: 400;
@@ -20,16 +22,9 @@
 .addition-product__quantity,
 .addition-product__price {
   color: $special-dark-grey;
-  font-family: Arial;
+  font-family: $font-body;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
 }
 
-.addition-product__button {
-  color: $white;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  background-color: $basic-green;
-}

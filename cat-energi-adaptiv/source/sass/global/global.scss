@@ -1,4 +1,4 @@
-$basic-green: #68B738;
+$color-primary: #68B738; // $basic-green
 $basic_green-2: #5eaa2f;
 $white: #ffffff;
 $black: #000000;
@@ -11,4 +11,5 @@ $special_dark-grey: #444444;
 $special_dark-grey-2: #222222;
 $status_error: #ff8282;
 
-$oswald: "Oswald", sans-serif;
+$font-heading: "Oswald", sans-serif; // $oswald
+$font-body: "Arial", sans-serif;

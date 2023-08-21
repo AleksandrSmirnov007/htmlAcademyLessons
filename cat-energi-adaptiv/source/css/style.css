@@ -24,20 +24,24 @@
 }
 
 .button {
+  font-family: "Oswald", sans-serif;
   text-decoration: none;
+  border: none;
   text-transform: uppercase;
-}
-
-.button--secondary {
   color: #ffffff;
+  background-color: #68B738;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  background-color: #68B738;
+}
+
+.button--secondary {
+  color: #444444;
+  background-color: #f2f2f2;
 }
 
 .page {
-  font-family: "Oswald", sans-serif;
+  font-family: "Arial", sans-serif;
   color: #000000;
   background-color: #ffffff;
 }
@@ -47,6 +51,7 @@
 }
 
 .main-nav {
+  font-family: "Oswald", sans-serif;
   font-weight: 500;
   background-color: #ffffff;
   color: #000000;
@@ -75,6 +80,7 @@
 }
 
 .promo__heading {
+  font-family: "Oswald", sans-serif;
   margin-top: 0;
   margin-bottom: 25px;
   font-size: 36px;
@@ -82,6 +88,7 @@
 }
 
 .promo__slogan {
+  font-family: "Oswald", sans-serif;
   margin-top: 0;
   margin-bottom: 29px;
   font-size: 14px;
@@ -106,17 +113,20 @@
 }
 
 .catalog-sections__heading {
+  font-family: "Oswald", sans-serif;
   font-size: 24px;
   line-height: 37px;
   text-transform: uppercase;
 }
 
 .catalog-sections__description {
+  font-family: "Oswald", sans-serif;
   font-size: 14px;
   line-height: 18px;
 }
 
 .catalog-sections__link {
+  font-family: "Oswald", sans-serif;
   color: #000000;
   font-size: 16px;
   line-height: 16px;
@@ -128,6 +138,7 @@
 }
 
 .process__heading {
+  font-family: "Oswald", sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 40px;
@@ -139,7 +150,7 @@
 }
 
 .process__text {
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -150,6 +161,7 @@
 }
 
 .example__heading {
+  font-family: "Oswald", sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 40px;
@@ -157,19 +169,21 @@
 
 .example__title {
   color: #444444;
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 12px;
 }
 
 .example__description {
+  font-family: "Oswald", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
 }
 
 .example__price-total {
+  font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -177,6 +191,7 @@
 }
 
 .example__toggle {
+  font-family: "Oswald", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -184,6 +199,7 @@
 }
 
 .contacts__heading {
+  font-family: "Oswald", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -192,7 +208,7 @@
 
 .contacts__address {
   color: #444444;
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -200,7 +216,7 @@
 
 .developer {
   color: #444444;
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
@@ -208,6 +224,7 @@
 }
 
 .product__heading {
+  font-family: "Oswald", sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 36px;
@@ -218,6 +235,7 @@
 }
 
 .product__title {
+  font-family: "Oswald", sans-serif;
   color: #222222;
   font-size: 16px;
   font-weight: 400;
@@ -228,13 +246,14 @@
 .product__details-termin,
 .product__details-description {
   color: #444444;
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
 }
 
 .show-more__title {
+  font-family: "Oswald", sans-serif;
   color: #111111;
   font-size: 16px;
   font-weight: 400;
@@ -244,20 +263,20 @@
 
 .show-more__slogan {
   color: #444444;
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
 }
 
 .show-more__button {
-  color: #444444;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
 }
 
 .addition-product__heading {
+  font-family: "Oswald", sans-serif;
   color: #000000;
   font-size: 24px;
   font-weight: 400;
@@ -269,6 +288,7 @@
 }
 
 .addition-product__title {
+  font-family: "Oswald", sans-serif;
   color: #222222;
   font-size: 16px;
   font-weight: 400;
@@ -279,21 +299,14 @@
 .addition-product__quantity,
 .addition-product__price {
   color: #444444;
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
 }
 
-.addition-product__button {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  background-color: #68B738;
-}
-
 .buyer-info {
+  font-family: "Oswald", sans-serif;
   padding-top: 48px;
   padding-bottom: 43px;
   background-image: linear-gradient(to top, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), url("../../img/background/background-cat-in-bag@1x.png");
@@ -301,7 +314,7 @@
 
 .buyer-info__text {
   text-align: center;
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
@@ -309,6 +322,7 @@
 }
 
 .form__heading {
+  font-family: "Oswald", sans-serif;
   color: #000000;
   font-size: 36px;
   font-weight: 400;
@@ -316,6 +330,7 @@
 }
 
 .form__intro {
+  font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -323,7 +338,7 @@
 }
 
 .form__explanation {
-  font-family: Arial;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
@@ -339,15 +354,12 @@
 
 .field-group__lead,
 .field-group__input {
+  font-family: "Oswald", sans-serif;
   color: #444444;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
-}
-
-.field-group__input {
-  font-family: "Oswald", sans-serif;
 }
 
 .field-group__input::placeholder {
@@ -359,6 +371,7 @@
 }
 
 .field-group__heading {
+  font-family: "Oswald", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 26px;

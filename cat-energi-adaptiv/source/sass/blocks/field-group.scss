@@ -8,15 +8,12 @@
 
 .field-group__lead,
 .field-group__input {
+  font-family: $font-heading;
   color: $special-dark-grey;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
-}
-
-.field-group__input {
-  font-family: $oswald;
 }
 
 .field-group__input::placeholder {
@@ -28,6 +25,7 @@
 }
 
 .field-group__heading {
+  font-family: $font-heading;
   font-size: 24px;
   font-weight: 400;
   line-height: 26px;
