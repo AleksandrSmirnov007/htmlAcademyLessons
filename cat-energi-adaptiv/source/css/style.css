@@ -74,7 +74,7 @@
 .promo {
   font-weight: 400;
   text-align: center;
-  padding-top: 27px;
+  padding: 27px 20px 0;
   color: #ffffff;
   background-image: linear-gradient(to top, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), url("../../img/background/index-background-@x1.jpg");
 }
@@ -96,10 +96,15 @@
   text-transform: uppercase;
 }
 
+.promo__image {
+  margin-bottom: 3px;
+}
+
 .catalog-sections {
   color: #000000;
   font-weight: 400;
   text-align: left;
+  padding: 20px;
 }
 
 .catalog-sections__list {
@@ -113,6 +118,10 @@
 }
 
 .catalog-sections__heading {
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 7px;
+  padding-left: 91px;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
   line-height: 37px;
@@ -120,12 +129,19 @@
 }
 
 .catalog-sections__description {
+  margin: 0;
+  margin-right: 33px;
+  margin-left: 20px;
+  padding: 22px 0;
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   line-height: 18px;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .catalog-sections__link {
+  display: block;
+  padding: 15px 19px 18px;
   font-family: "Oswald", sans-serif;
   color: #000000;
   font-size: 16px;
@@ -135,9 +151,12 @@
 
 .process {
   background-color: #ffffff;
+  padding: 0 20px 29px;
 }
 
 .process__heading {
+  margin-top: 0;
+  margin-bottom: 40px;
   font-family: "Oswald", sans-serif;
   font-size: 36px;
   font-weight: 400;
@@ -145,11 +164,19 @@
 }
 
 .process__list {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
   color: #444444;
 }
 
+.process__item {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 .process__text {
+  margin: 0;
   font-family: "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -158,9 +185,12 @@
 
 .example {
   background-color: #eaeaea;
+  padding: 25px 20px 40px;
 }
 
 .example__heading {
+  margin-top: 0;
+  margin-bottom: 40px;
   font-family: "Oswald", sans-serif;
   font-size: 36px;
   font-weight: 400;
@@ -183,6 +213,8 @@
 }
 
 .example__price-total {
+  margin-top: 0;
+  margin-bottom: 40px;
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-weight: 400;

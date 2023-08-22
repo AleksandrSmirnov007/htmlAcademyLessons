@@ -1,8 +1,11 @@
 .example {
   background-color: #eaeaea;
+  padding: 25px 20px 40px;
 }
 
 .example__heading {
+  margin-top: 0;
+  margin-bottom: 40px;
   font-family: $font-heading;
   font-size: 36px;
   font-weight: 400;
@@ -25,6 +28,8 @@
 }
 
 .example__price-total {
+  margin-top: 0;
+  margin-bottom: 40px;
   font-family: $font-heading;
   font-size: 14px;
   font-weight: 400;

@@ -1,7 +1,7 @@
 .promo {
   font-weight: 400;
   text-align: center;
-  padding-top: 27px;
+  padding: 27px 20px 0;
   color: $white;
   background-image: linear-gradient(to top, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)),
                     url("../../img/background/index-background-@x1.jpg");
@@ -23,4 +23,8 @@
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
+}
+
+.promo__image {
+  margin-bottom: 3px;
 }
