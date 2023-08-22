@@ -13,11 +13,12 @@
 
 .catalog-sections__item {
   background-color: $basic_grey;
+  padding: 30px 20px 18px;
+  margin-bottom: 20px;
 }
 
 .catalog-sections__heading {
   margin: 0;
-  padding-top: 30px;
   padding-bottom: 7px;
   padding-left: 91px;
   font-family: $font-heading;
@@ -40,7 +41,7 @@
 
 .catalog-sections__link {
   display: block;
-  padding: 15px 19px 18px;
+  padding: 15px 19px 0;
   font-family: $font-heading;
   color: $black;
   font-size: 16px;

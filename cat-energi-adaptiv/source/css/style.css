@@ -77,6 +77,7 @@
   padding: 27px 20px 0;
   color: #ffffff;
   background-image: linear-gradient(to top, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), url("../../img/background/index-background-@x1.jpg");
+  background-color: #68b738;
 }
 
 .promo__heading {
@@ -115,11 +116,12 @@
 
 .catalog-sections__item {
   background-color: #f2f2f2;
+  padding: 30px 20px 18px;
+  margin-bottom: 20px;
 }
 
 .catalog-sections__heading {
   margin: 0;
-  padding-top: 30px;
   padding-bottom: 7px;
   padding-left: 91px;
   font-family: "Oswald", sans-serif;
@@ -141,7 +143,7 @@
 
 .catalog-sections__link {
   display: block;
-  padding: 15px 19px 18px;
+  padding: 15px 19px 0;
   font-family: "Oswald", sans-serif;
   color: #000000;
   font-size: 16px;
@@ -222,6 +224,10 @@
   text-transform: uppercase;
 }
 
+.example__images {
+  margin-bottom: 15px;
+}
+
 .example__toggle {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
@@ -230,7 +236,12 @@
   text-transform: uppercase;
 }
 
+.contacts__head-container {
+  padding: 26px 20px;
+}
+
 .contacts__heading {
+  margin: 0;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -239,6 +250,7 @@
 }
 
 .contacts__address {
+  margin: 0;
   color: #444444;
   font-family: "Arial", sans-serif;
   font-size: 14px;
@@ -246,7 +258,23 @@
   line-height: 20px;
 }
 
+.page-footer {
+  padding: 7px 20px 0;
+}
+
+.page-footer__logo {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 32px 0;
+}
+
+.social {
+  padding-top: 20px;
+  padding-bottom: 21px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
 .developer {
+  padding: 22px 0;
   color: #444444;
   font-family: "Arial", sans-serif;
   font-size: 16px;
