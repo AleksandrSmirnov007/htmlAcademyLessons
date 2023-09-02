@@ -1,0 +1,22 @@
+.form__heading {
+  font-family: $font-heading;
+  color: $black;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.form__intro {
+  font-family: $font-heading;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.form__explanation {
+  font-family: $font-body;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}

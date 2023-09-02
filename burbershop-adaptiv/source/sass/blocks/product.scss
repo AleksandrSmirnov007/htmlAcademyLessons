@@ -1,0 +1,29 @@
+.product__heading {
+  font-family: $font-heading;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.product__list {
+  list-style-type: none;
+}
+
+.product__title {
+  font-family: $font-heading;
+  color: $special-dark-grey-2;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.product__details-termin,
+.product__details-description {
+  color: $special-dark-grey;
+  font-family: $font-body;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+

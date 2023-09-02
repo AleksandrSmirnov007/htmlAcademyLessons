@@ -1,0 +1,16 @@
+.buyer-info {
+  font-family: $font-heading;
+  padding-top: 48px;
+  padding-bottom: 43px;
+  background-image: linear-gradient(to top, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)),
+                    url("../../img/background/background-cat-in-bag@1x.png");
+}
+
+.buyer-info__text {
+  text-align: center;
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $white;
+}
