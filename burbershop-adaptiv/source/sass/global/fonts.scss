@@ -1,18 +1,23 @@
 @font-face {
-  font-family: "Oswald";
+  font-family: "PT Sans Narrow";
   font-style: normal;
   font-weight: 400;
 
-  src: url("../../fonts/oswaldregular.woff2") format(woff2);
+  src: 
+    url("../../fonts/pt-sans-narrow-regular.woff2") format("woff2"),
+    url("../../fonts/pt-sans-narrow-regular.woff") format("woff");
+
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Oswald";
+  font-family: "PT Sans Narrow";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
 
-  src: url("../../fonts/oswaldmedium.woff2") format("woff2");
+  src:
+    url("../../fonts/pt-sans-narrow-bold.woff2") format("woff2"),
+    url("../../fonts/pt-sans-narrow-bold.woff") format("woff");
   font-display: swap;
 }
 

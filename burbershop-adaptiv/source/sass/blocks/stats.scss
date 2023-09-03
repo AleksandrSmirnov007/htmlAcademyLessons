@@ -1,0 +1,52 @@
+.stats {
+  background-color: $darkgrey;
+  color: #ffffff;
+}
+
+.stats__wrapper {
+  @media (min-width: $tablet-width) {
+    padding: 0 64px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: auto;
+    max-width: 960px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.stats__header {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.stats__slogan {
+  margin: 0;
+}
+
+.stats__intro {
+  margin: 0;
+}
+
+.stats__legend {
+  margin: 0;
+}
+
+// Добавим модификатор верхней легенды в стили и вложим в селектор медиавыражение: при мобильной ширине она будет спрятана.
+.stats__legend--top {
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+}
+
+.stats__legend--bottom {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.stats__list {
+  margin: 0;
+}

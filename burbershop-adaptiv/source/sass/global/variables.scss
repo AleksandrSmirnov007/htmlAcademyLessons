@@ -1,16 +1,12 @@
-$color-primary: #68b738; // $basic-green
-$basic_green-2: #5eaa2f;
-$white: #ffffff;
-$black: #000000;
-$special_black: #111111;
-$basic_grey: #f2f2f2;
-$special_grey: #cdcdcd;
-$special_grey-2: #ebebeb;
-$special_grey-3: #666666;
-$special_grey-4: #d9d9d9;
-$special_dark-grey: #444444;
-$special_dark-grey-2: #222222;
-$status_error: #ff8282;
+// colors
 
-$font-heading: "Oswald", sans-serif; // $oswald
-$font-body: "Arial", sans-serif;
+$special-dark-grey: #242424;
+$darkgrey: #292929;
+$lightgrey: #f8f5f2;
+
+
+// Viewports
+
+$tablet-width: 768px;
+$desktop-width: 1200px;
+$mobile-width-only: 767px; // пока непонятно зачем эта переменная

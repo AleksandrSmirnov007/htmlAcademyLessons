@@ -2,7 +2,9 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Барбершоп адаптив</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
     <header class="page__header page-header">
@@ -11,7 +13,7 @@
       </a>
       <nav class="page-header__main-nav main-nav">
         <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
-        <div class="main-nav__wraper">
+        <div class="main-nav__wrapper">
           <ul class="main-nav__list site-list">
             <li class="site-list__item site-list__item--active">
               <a href="">Главная</a>
@@ -29,11 +31,14 @@
               <a href="#">HTML Academy</a>
             </li>
           </ul>
-          <div class="main-nav__list user-list">
-            <a class="user-list__login" href="login.html">
-              <svg  class="user-list__login-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.3" fill="#000"><path d="M7 2h7v12H7v2h9V0H7v2Z"/><path d="M7 9H0V7h7V4l4 4-4 4V9Z"/></g></svg>
-            </a>
-          </div>
+          <ul class="main-nav__list user-list">
+            <li class="user-list__item">
+              <a class="user-list__login" href="login.html">
+                <svg  class="user-list__login-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.3" fill="#fff"><path d="M7 2h7v12H7v2h9V0H7v2Z"/><path d="M7 9H0V7h7V4l4 4-4 4V9Z"/></g></svg>
+                <span class="visually-hidden">Войти</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -47,55 +52,56 @@
             <p class="stats__intro">Мужская стрижка требует<br>
                                     точного подхода. Обратимся<br>
                                     к статистике:</p>
-            <p class="stats__legends stats__legends--top">
-              <small>
-                * — приведённые данные ложь
-              </small>
-            </p>
-            <dl class="stats__list">
-              <div class="stats__item">
-                <dt class="stats__number">
-                  1500<sup>*</sup>
-                </dt>
-                <dd class="stats__description">
-                  рублей<br>
-                  вложений
-                </dd>
-              </div>
-              <div class="stats__item">
-                <dt class="stats__number">
-                  7 200
-                </dt>
-                <dd class="stats__description">
-                  секунд<br>
-                  времени мастера
-                </dd>
-              </div>
-              <div class="stats__item">
-                <dt class="stats__number">
-                  90 000
-                </dt>
-                <dd class="stats__description">
-                  постриженных<br>
-                  волос
-                </dd>
-              </div>
-              <div class="stats__item">
-                <dt class="stats__number">
-                  500 000<sup>*</sup>
-                </dt>
-                <dd class="stats__description">
-                  лайков и<br>
-                  комплиментов
-                </dd>
-              </div>
-            </dl>
-            <p class="stats__legends stats__legends--bottom">
+            <p class="stats__legend stats__legend--top">
               <small>
                 * — приведённые данные ложь
               </small>
             </p>
           </header>
+
+          <dl class="stats__list">
+            <div class="stats__item">
+              <dt class="stats__number">
+                1500<sup>*</sup>
+              </dt>
+              <dd class="stats__description">
+                рублей<br>
+                вложений
+              </dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__number">
+                7 200
+              </dt>
+              <dd class="stats__description">
+                секунд<br>
+                времени мастера
+              </dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__number">
+                90 000
+              </dt>
+              <dd class="stats__description">
+                постриженных<br>
+                волос
+              </dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__number">
+                500 000<sup>*</sup>
+              </dt>
+              <dd class="stats__description">
+                лайков и<br>
+                комплиментов
+              </dd>
+            </div>
+          </dl>
+          <p class="stats__legend stats__legend--bottom">
+            <small>
+              * — приведённые данные ложь
+            </small>
+          </p>
         </div>
       </section>
       <section class="page-main__section advantages">

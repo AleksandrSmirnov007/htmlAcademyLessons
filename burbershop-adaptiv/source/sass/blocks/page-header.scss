@@ -1,0 +1,27 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+  background-color: #242424;
+  color: #ffffff;
+}
+
+.page-header__logo {
+  height: 85px;
+
+  @media (min-width: $tablet-width) {
+    order: 2;
+    height: 400px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 651px;
+  }
+}
+
+// также можно прописать такое вне предыдущего селектора но это не предпочтительно
+// @media (min-width: $tablet-width) {
+//   .page-header__logo {
+//     order: 2;
+//     height: 400px;
+//   }
+// }
