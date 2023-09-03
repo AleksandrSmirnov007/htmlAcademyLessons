@@ -1,16 +1,36 @@
 .main-nav {
+  outline: 5px solid rgba(0, 255, 0, 0.8);
+  outline-offset: -5px;
+
   font-family: $font-heading;
   font-weight: 500;
   background-color: $white;
   color: $black;
+  position: absolute;
+
+}
+
+.main-nav__toggle {
+  position: absolute;
+  width: 24px;
+  height: 16px;
+  top: 24px;
+  right: 0;
 }
 
 .main-nav__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  text-align: center;
+}
 
-
+@media (min-width: $tablet-width) {
+  .main-nav__list {
+    width: 440px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .main-nav__link {
