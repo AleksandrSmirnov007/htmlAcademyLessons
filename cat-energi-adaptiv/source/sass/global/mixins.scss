@@ -1,0 +1,5 @@
+ // использовал в main-nav__toggle для практики
+ @mixin size($block-width, $block-height: $block-width) { // можно задать только одно значение тогда ширина и высота будут равны этому значению
+    width: $block-width;
+    height: $block-height; 
+ }

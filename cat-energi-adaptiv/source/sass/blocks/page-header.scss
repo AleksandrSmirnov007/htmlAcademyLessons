@@ -1,42 +1,60 @@
-.page-header__wrapper {
-  outline: 5px solid rgba(255, 0, 0, 0.8);
-  outline-offset: -3px;
-  width: 280px;
+.page-header {
   margin: 0 auto;
-  display: grid;
-  place-content: center;
+  min-height: 65px;
+  display: flex;
+  flex-direction: column;
 
   position: relative;
 
   @media (min-width: $tablet-width) {
+    min-height: 76px;
     display: grid;
     grid-template-columns: 174px 1fr;
     column-gap: 93px;
     width: $tablet-width;
     margin: 0 auto;
+    padding-top: 24px;
   }
 
   @media (min-width: $desktop-width) {
+    min-height: 110px;
     width: $desktop-width;
     grid-template-columns: 202px 1fr;
     column-gap: 538px;
+    padding-top: 53px;
+  }
+}
+
+.page-header__logo {
+  display: block;
+  outline: 1px solid green;
+  outline-offset: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 23px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $special_grey-5; 
+
+  @media (min-width: $tablet-width) {
+    height: 52px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 59px;
   }
 }
 
 
-
-
-
-.page-header__logo {
-  outline: 5px solid rgba(0, 255, 0, 0.8);
-  outline-offset: -3px;
-  height: 66px;
-}
 
 
 .page-header__logo-image {
   position: absolute;
   top: 10px;
-  left: 0;
+  left: 20px;
+
+  @media (min-width: $tablet-width) {
+    position: static;
+  }
 }
 

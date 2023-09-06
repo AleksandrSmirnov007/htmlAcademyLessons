@@ -12,6 +12,19 @@
   src: url("../../fonts/oswaldmedium.woff2") format("woff2");
   font-display: swap;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -54,60 +67,85 @@
   background-color: #ffffff;
 }
 
-.page-header__wrapper {
-  outline: 5px solid rgba(255, 0, 0, 0.8);
-  outline-offset: -3px;
-  width: 280px;
+.page-header {
   margin: 0 auto;
-  display: grid;
-  place-content: center;
+  min-height: 65px;
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 @media (min-width: 768px) {
-  .page-header__wrapper {
+  .page-header {
+    min-height: 76px;
     display: grid;
     grid-template-columns: 174px 1fr;
     column-gap: 93px;
     width: 768px;
     margin: 0 auto;
+    padding-top: 24px;
   }
 }
 @media (min-width: 1440px) {
-  .page-header__wrapper {
+  .page-header {
+    min-height: 110px;
     width: 1440px;
     grid-template-columns: 202px 1fr;
     column-gap: 538px;
+    padding-top: 53px;
   }
 }
 
 .page-header__logo {
-  outline: 5px solid rgba(0, 255, 0, 0.8);
-  outline-offset: -3px;
-  height: 66px;
+  display: block;
+  outline: 1px solid green;
+  outline-offset: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 23px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e6e6e6;
+}
+@media (min-width: 768px) {
+  .page-header__logo {
+    height: 52px;
+  }
+}
+@media (min-width: 1440px) {
+  .page-header__logo {
+    height: 59px;
+  }
 }
 
 .page-header__logo-image {
   position: absolute;
   top: 10px;
-  left: 0;
+  left: 20px;
+}
+@media (min-width: 768px) {
+  .page-header__logo-image {
+    position: static;
+  }
 }
 
 .main-nav {
-  outline: 5px solid rgba(0, 255, 0, 0.8);
-  outline-offset: -5px;
   font-family: "Oswald", sans-serif;
   font-weight: 500;
   background-color: #ffffff;
   color: #000000;
-  position: absolute;
 }
 
 .main-nav__toggle {
   position: absolute;
-  width: 24px;
-  height: 16px;
   top: 24px;
-  right: 0;
+  right: 20px;
+  width: 18px;
+  height: 18px;
+}
+@media (min-width: 768px) {
+  .main-nav__toggle {
+    display: none;
+  }
 }
 
 .main-nav__list {
@@ -125,12 +163,15 @@
   }
 }
 .main-nav__link {
+  display: block;
   text-decoration: none;
   color: #000000;
   font-size: 20px;
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
+  padding: 22px 0 24px;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .promo {

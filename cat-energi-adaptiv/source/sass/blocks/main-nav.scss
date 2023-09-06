@@ -1,21 +1,21 @@
 .main-nav {
-  outline: 5px solid rgba(0, 255, 0, 0.8);
-  outline-offset: -5px;
 
   font-family: $font-heading;
   font-weight: 500;
   background-color: $white;
   color: $black;
-  position: absolute;
 
 }
 
 .main-nav__toggle {
   position: absolute;
-  width: 24px;
-  height: 16px;
   top: 24px;
-  right: 0;
+  right: 20px;
+  @include size(18px);
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+
 }
 
 .main-nav__list {
@@ -34,10 +34,13 @@
 }
 
 .main-nav__link {
+  display: block;
   text-decoration: none;
   color: $black;
   font-size: 20px;
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
+  padding: 22px 0 24px;
+  border-bottom: 1px solid $special_grey-5;
 }
