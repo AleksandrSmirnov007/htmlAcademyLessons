@@ -1,19 +1,40 @@
 .promo {
   font-weight: 400;
-  text-align: center;
-  padding: 27px 20px 0;
+  padding: 27px 20px 20px;
   color: $white;
   background-image: linear-gradient(to top, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)),
                     url("../../img/background/index-background-@x1.jpg");
   background-color: rgb(104, 183, 56);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    color: $black;
+    background-image: none;
+    background-color: $white;
+    outline: 1px solid green;
+    outline-offset: -1px;
+  }
 }
 
 .promo__heading {
   font-family: $font-heading;
   margin-top: 0;
   margin-bottom: 25px;
+  font-style: normal;
+  font-weight: 400;
   font-size: 36px;
   line-height: 36px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    text-align: start;
+    width: 424px;
+    font-size: 60px;
+    line-height: 60px;
+  }
 
 }
 
