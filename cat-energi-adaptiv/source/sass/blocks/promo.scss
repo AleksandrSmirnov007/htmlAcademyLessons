@@ -16,6 +16,15 @@
     background-color: $white;
     outline: 1px solid green;
     outline-offset: -1px;
+    padding: 0 30px;
+  }
+
+  
+  @media (min-width: $desktop-width) {
+
+    outline: 1px solid green;
+    outline-offset: -1px;
+    padding: 0 110px 0;
   }
 }
 
@@ -30,12 +39,18 @@
   text-align: center;
 
   @media (min-width: $tablet-width) {
-    text-align: start;
+    align-self: start;
+    text-align: left;
     width: 424px;
     font-size: 60px;
     line-height: 60px;
+    margin-bottom: 40px;
+    margin-left: 87px;
   }
 
+  @media (min-width: $tablet-width) {
+    margin-left: 80px;
+  }
 }
 
 .promo__slogan {

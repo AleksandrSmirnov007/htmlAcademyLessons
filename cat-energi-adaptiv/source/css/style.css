@@ -188,6 +188,14 @@
     background-color: #ffffff;
     outline: 1px solid green;
     outline-offset: -1px;
+    padding: 0 30px;
+  }
+}
+@media (min-width: 1440px) {
+  .promo {
+    outline: 1px solid green;
+    outline-offset: -1px;
+    padding: 0 110px 0;
   }
 }
 
@@ -203,10 +211,18 @@
 }
 @media (min-width: 768px) {
   .promo__heading {
-    text-align: start;
+    align-self: start;
+    text-align: left;
     width: 424px;
     font-size: 60px;
     line-height: 60px;
+    margin-bottom: 40px;
+    margin-left: 87px;
+  }
+}
+@media (min-width: 768px) {
+  .promo__heading {
+    margin-left: 80px;
   }
 }
 
