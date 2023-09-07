@@ -1,6 +1,16 @@
 .example {
   background-color: #eaeaea;
   padding: 25px 20px 40px;
+
+  @media (min-width: $tablet-width) {
+    padding: 43px 30px 55px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 26px 110px 65px;
+
+  }
+
 }
 
 .example__heading {
@@ -10,7 +20,12 @@
   font-size: 36px;
   font-weight: 400;
   line-height: 40px;
+
+  @media (min-width: $tablet-width) {
+    background-color: $white;
+  }
 }
+
 
 .example__title {
   color: $special-dark-grey;

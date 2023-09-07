@@ -33,6 +33,12 @@
     row-gap: 37px;
 
   }
+
+    
+  @media (min-width: $desktop-width) {
+    grid-template-columns: auto auto auto auto;
+    column-gap: 80px;
+  }
 }
 
 .process__item {

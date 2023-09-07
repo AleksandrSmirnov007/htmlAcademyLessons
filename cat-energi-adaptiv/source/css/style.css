@@ -343,6 +343,12 @@
     row-gap: 37px;
   }
 }
+@media (min-width: 1440px) {
+  .process__list {
+    grid-template-columns: auto auto auto auto;
+    column-gap: 80px;
+  }
+}
 
 .process__item {
   margin-top: 0;
@@ -361,6 +367,16 @@
   background-color: #eaeaea;
   padding: 25px 20px 40px;
 }
+@media (min-width: 768px) {
+  .example {
+    padding: 43px 30px 55px;
+  }
+}
+@media (min-width: 1440px) {
+  .example {
+    padding: 26px 110px 65px;
+  }
+}
 
 .example__heading {
   margin-top: 0;
@@ -369,6 +385,11 @@
   font-size: 36px;
   font-weight: 400;
   line-height: 40px;
+}
+@media (min-width: 768px) {
+  .example__heading {
+    background-color: #ffffff;
+  }
 }
 
 .example__title {
