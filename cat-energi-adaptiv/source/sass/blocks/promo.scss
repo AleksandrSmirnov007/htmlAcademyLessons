@@ -14,16 +14,11 @@
     color: $black;
     background-image: none;
     background-color: $white;
-    outline: 1px solid green;
-    outline-offset: -1px;
     padding: 0 30px;
   }
 
   
   @media (min-width: $desktop-width) {
-
-    outline: 1px solid green;
-    outline-offset: -1px;
     padding: 0 110px 0;
   }
 }

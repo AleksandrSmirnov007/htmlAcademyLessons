@@ -1,6 +1,14 @@
 .process {
   background-color: $white;
   padding: 0 20px 29px;
+
+  @media (min-width: $tablet-width) {
+    padding: 45px 30px 47px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 71px 110px 0;
+  }
 }
 
 .process__heading {
@@ -17,6 +25,14 @@
   padding: 0;
   list-style-type: none;
   color: $special_dark-grey;
+  
+  @media (min-width: $tablet-width) {
+    display:  grid;
+    grid-template-columns: 230px 230px;
+    column-gap: 154px;
+    row-gap: 37px;
+
+  }
 }
 
 .process__item {
