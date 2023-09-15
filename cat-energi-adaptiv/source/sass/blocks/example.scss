@@ -1,14 +1,14 @@
 .example {
-  background-color: #eaeaea;
+  background-color: $special_grey-6;
   padding: 25px 20px 40px;
 
   @media (min-width: $tablet-width) {
     padding: 43px 30px 55px;
+    background-color: $white;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 26px 110px 65px;
-
+    padding: 26px 0 65px;
   }
 
 }
@@ -17,11 +17,20 @@
   margin-top: 0;
   margin-bottom: 40px;
 
-  @media (min-width: $tablet-width) {
+
+  @media (min-width: $desktop-width) {
     background-color: $white;
+    padding: 0 110px;
   }
 }
 
+
+.example__content-wrapper {
+  @media (min-width: $desktop-width) {
+    background-color: $basic_grey;
+    padding: 0 110px;
+  }
+}
 
 .example__termin {
   color: $special-dark-grey;
