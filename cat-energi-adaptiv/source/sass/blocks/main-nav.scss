@@ -1,9 +1,15 @@
 .main-nav {
-
   font-family: $font-heading;
   font-weight: 500;
   background-color: $white;
   color: $black;
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    right: 95px;
+    top: 51px;
+    width: 500px;
+  }
 
 }
 
@@ -14,8 +20,7 @@
   @include size(18px);
   @media (min-width: $tablet-width) {
     display: none;
-  }
-
+    }
 }
 
 .main-nav__list {
@@ -23,19 +28,36 @@
   padding: 0;
   list-style-type: none;
   text-align: center;
-}
 
-@media (min-width: $tablet-width) {
-  .main-nav__list {
-    width: 440px;
+  position: absolute;
+  width: 100%;
+
+  // display: none; в мобильной версии по умолчанию скрыто
+
+  @media (min-width: $tablet-width) {
+    min-width: 440px;
     display: flex;
     flex-wrap: wrap;
+    position: static;
+    display: flex;
+    margin-right: -15px;
   }
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: end;
+    margin-right: -15px;
+  }
+
+
 }
 
 .main-nav__link {
   display: block;
   text-decoration: none;
+  background-color: $white;
   color: $black;
   font-size: 20px;
   font-weight: 500;
@@ -43,4 +65,18 @@
   text-transform: uppercase;
   padding: 22px 0 24px;
   border-bottom: 1px solid $special_grey-5;
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 18px 15px 10px;
+    border-bottom: transparent;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+  }
 }

@@ -1,0 +1,17 @@
+.block-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  font-family: $font-heading;
+
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}

@@ -35,19 +35,19 @@
     </header>
     <main class="page__main page-main">
       <header class="page-main__promo promo">
-        <h1 class="promo__heading">Функциональное питание для котов</h1>
+        <h1 class="promo__heading block-title">Функциональное питание для котов</h1>
         <p class="promo__slogan">Занялся собой? Займись котом!</p>
         <img class="promo__image" width="280" height="270" src="img/content/index-promo@1x.png" alt="Упаковка Кат-энерджи 'курица'">
         <a class="promo__button button" href="#">Подобрать программу</a>
       </header>
 
-      <section class="page-main__section catalog-sections">
+      <section class="page-main__sections catalog-sections">
         <h2 class="visually-hidden">Разделы каталога</h2>
         <div class="catalog-sections__wrapper">
           <ul class="catalog-sections__list">
             <li class="catalog-sections__item catalog-sections__item--slim">
               <h3 class="catalog-sections__heading">Похудение</h3>
-              <p class="catalog-sections__description">
+              <p class="catalog-sections__description content-text">
                 Ваш кот весит больше собаки и почти утратил способность лазить по деревьям?
                  Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.
               </p>
@@ -55,7 +55,7 @@
             </li>
             <li class="catalog-sections__item catalog-sections__item--pro">
               <h3 class="catalog-sections__heading">Набор массы</h3>
-              <p class="catalog-sections__description">
+              <p class="catalog-sections__description content-text">
                 Заработать авторитет среди дворовых котов и даже собак?
                  Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
               </p>
@@ -66,27 +66,27 @@
       </section>
 
       <section class="page-main__section process">
-        <h2 class="process__heading">
+        <h2 class="process__heading block-title">
           Как это работает
         </h2>
         <ol class="process__list">
           <li class="process__item">
-            <p class="process__text process__text--leaf">
+            <p class="process__text process__text--leaf content-text">
               Функциональное питание содержит только полезные питательные вещества.
             </p>
           </li>
           <li class="process__item">
-            <p class="process__text process__text--powder">
+            <p class="process__text process__text--powder content-text">
               Выпускается в виде порошка, который нужно лишь залить кипятком и готово.
             </p>
           </li>
           <li class="process__item">
-            <p class="process__text process__text--food">
+            <p class="process__text process__text--food content-text">
               Замените один-два приема обычной еды на наше функциональное питание.
             </p>
           </li>
           <li class="process__item">
-            <p class="process__text process__text--scales">
+            <p class="process__text process__text--scales content-text">
               Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
             </p>
           </li>
@@ -94,38 +94,49 @@
       </section>
 
       <section class="page-main__section example">
-        <h2 class="example__heading">
-          Живой пример
-        </h2>
-        <dl class="example__list">
-          <div class="example__item">
-            <dt class="example__title">
-              снижение веса
-            </dt>
-            <dd class="example__description">
-              5 кг
-            </dd>
-          </div>
-          <div class="example__item">
-            <dt class="example__title">
-              затрачено времени
-            </dt>
-            <dd class="example__description">
-              60 дней
-            </dd>
-          </div>
-        </dl>
 
-        <p class="example__price-total">Затраты на питание: 15 000 РУБ.</p>
+        <div class="example__text-wrapper">
+          <h2 class="example__heading block-title">
+            Живой пример
+          </h2>
+          <p class="example__description content-text">
+            Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на
+            Cat Energy Slim. Отличный результат без изнуряющих тренировок!
+              При этом он не менял своих привычек и по-прежнему спит по 16 часов в день. 
+          </p>
 
-        <div class="example__images">
-          <img class="example__image" width="243" height="232" src="img/content/before@1x.jpg" alt="фото кота до употребления, кот толстый">
-          <img class="example__image" width="280" height="232" src="img/content/after@1x.jpg" alt="фото кота после употребления, кот стройный">
+          <dl class="example__list">
+            <div class="example__item">
+              <dt class="example__termin">
+                снижение веса
+              </dt>
+              <dd class="example__description-termin">
+                5 кг
+              </dd>
+            </div>
+            <div class="example__item">
+              <dt class="example__termin">
+                затрачено времени
+              </dt>
+              <dd class="example__description-termin">
+                60 дней
+              </dd>
+            </div>
+          </dl>
+
+          <p class="example__price-total">Затраты на питание: 15 000 РУБ.</p>
         </div>
 
-        <div class="example__toggles">
-          <button class="example__toggle button" type="button">Было</button>
-          <button class="example__toggle button" type="button">Стало</button>
+        <div class="example__image-wrapper">
+          <div class="example__images">
+            <img class="example__image" width="243" height="232" src="img/content/before@1x.jpg" alt="фото кота до употребления, кот толстый">
+            <img class="example__image" width="280" height="232" src="img/content/after@1x.jpg" alt="фото кота после употребления, кот стройный">
+          </div>
+
+          <div class="example__toggles">
+            <button class="example__toggle button" type="button">Было</button>
+            <button class="example__toggle button" type="button">Стало</button>
+          </div>
         </div>
       </section>
 
@@ -133,7 +144,7 @@
         <h2 class="visually-hidden">Контакты</h2>
         <header class="contacts__head-container">
           <p class="contacts__heading">Приглашаем к сотрудничеству дилеров!</p>
-          <p class="contacts__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+          <p class="contacts__address content-text content-text--address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
         </header>
         <img class="contacts__map" width="320" height="362" src="img/content/location@1x.png" alt="изображение карты с расположением нашего офиса">
       </section>

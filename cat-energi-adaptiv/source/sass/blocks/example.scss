@@ -16,10 +16,6 @@
 .example__heading {
   margin-top: 0;
   margin-bottom: 40px;
-  font-family: $font-heading;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 40px;
 
   @media (min-width: $tablet-width) {
     background-color: $white;
@@ -27,7 +23,7 @@
 }
 
 
-.example__title {
+.example__termin {
   color: $special-dark-grey;
   font-family: $font-body;
   font-size: 12px;
@@ -35,7 +31,7 @@
   line-height: 12px;
 }
 
-.example__description {
+.example__description-termin {
   font-family: $font-heading;
   font-size: 24px;
   font-weight: 400;
