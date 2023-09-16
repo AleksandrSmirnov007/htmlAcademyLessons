@@ -32,7 +32,7 @@
   position: absolute;
   width: 100%;
 
-  // display: none; в мобильной версии по умолчанию скрыто
+  display: none; //в мобильной версии по умолчанию скрыто
 
   @media (min-width: $tablet-width) {
     min-width: 440px;

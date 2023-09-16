@@ -219,6 +219,7 @@ img {
   text-align: center;
   position: absolute;
   width: 100%;
+  display: none;
 }
 @media (min-width: 768px) {
   .main-nav__list {
@@ -262,31 +263,39 @@ img {
 
 .promo {
   font-weight: 400;
-  padding: 27px 20px 0;
   color: #ffffff;
   background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 302px, #ffffff 302px), url("../../img/background/index-background-@x1.jpg");
   background-repeat: no-repeat;
   background-position: top 0 center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 @media (min-width: 768px) {
   .promo {
     color: #000000;
     background-image: none;
     background-color: #ffffff;
-    padding: 0 30px;
   }
 }
 @media (min-width: 1440px) {
   .promo {
-    padding: 0 110px 0;
     background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 302px, #ffffff 302px), url("../../img/background/index-background-@x1.jpg");
   }
 }
 
+.promo__wrapper {
+  max-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .promo__wrapper {
+    max-width: 768px;
+  }
+}
+
 .promo__heading {
+  padding-top: 27px;
   font-family: "Oswald", sans-serif;
   margin-top: 0;
   margin-bottom: 25px;
@@ -294,9 +303,10 @@ img {
 }
 @media (min-width: 768px) {
   .promo__heading {
+    max-width: 537px;
+    padding: 62px 0 0 117px;
     align-self: start;
     text-align: left;
-    width: 424px;
     margin-bottom: 40px;
     margin-left: 87px;
   }
@@ -326,12 +336,6 @@ img {
     line-height: 20px;
     align-self: start;
     text-align: left;
-    margin-left: 90px;
-  }
-}
-@media (min-width: 1440px) {
-  .promo__slogan {
-    margin-left: 80px;
   }
 }
 
@@ -341,8 +345,9 @@ img {
 
 .promo__button {
   padding: 8px 44px;
-  width: 100%;
   text-align: center;
+  align-self: stretch;
+  margin: 0 20px;
 }
 @media (min-width: 768px) {
   .promo__button {
@@ -355,7 +360,6 @@ img {
   color: #000000;
   font-weight: 400;
   text-align: left;
-  padding: 20px;
 }
 @media (min-width: 768px) {
   .catalog-sections {
