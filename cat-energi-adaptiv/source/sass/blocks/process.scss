@@ -1,38 +1,44 @@
 .process {
   background-color: $white;
-  padding: 0 20px 29px;
-
-  @media (min-width: $tablet-width) {
-    padding: 45px 30px 47px;
-  }
-
-  @media (min-width: $desktop-width) {
-    padding: 71px 110px 0;
-  }
 }
 
 .process__heading {
-  margin-top: 0;
-  margin-bottom: 40px;
+  padding: 0 20px;
+  max-width: 320px;
+  margin: 0 auto 40px;
+
+  @media (min-width: $tablet-width) {
+    max-width: $tablet-width;
+    padding: 45px 30px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: $desktop-width;
+    padding: 71px 110px 0;
+  }
+
 }
 
 .process__list {
-  margin: 0;
-  padding: 0;
+  max-width: 320px;
+  padding: 0 20px 29px;
+  margin: 0 auto;
   list-style-type: none;
   color: $special_dark-grey;
-  
+
   @media (min-width: $tablet-width) {
+    max-width: $tablet-width;
+    padding: 0 30px 47px;
     display:  grid;
-    grid-template-columns: 230px 230px;
+    grid-template-columns: 1fr 1fr;
     column-gap: 154px;
     row-gap: 37px;
-
   }
 
-    
   @media (min-width: $desktop-width) {
-    grid-template-columns: auto auto auto auto;
+    max-width: $desktop-width;
+    padding: 0 110px 0;
+    grid-template-columns: repeat(4, auto);
     column-gap: 80px;
   }
 }

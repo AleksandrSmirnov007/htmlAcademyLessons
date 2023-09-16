@@ -9,25 +9,30 @@
 }
 
 .catalog-sections__list {
+  max-width: 320px;
+  padding: 20px;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
   display: grid;
   row-gap: 20px;
 
   @media (min-width: $tablet-width) {
+    max-width: $tablet-width;
+    padding: 0 30px;
     row-gap: 30px;
   }
 
   @media (min-width: $desktop-width) {
-    grid-template-columns: 570px 570px;
+    max-width: $desktop-width;
+    padding: 0 110px;
+    grid-template-columns: 1fr 1fr;
     column-gap: 80px;
   }
 }
 
 .catalog-sections__item {
   background-color: $basic_grey;
-  padding: 30px 20px 0; 
+  padding: 30px 20px 0;
 
 }
 
