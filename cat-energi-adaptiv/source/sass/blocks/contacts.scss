@@ -1,5 +1,14 @@
 .contacts__head-container {
+  max-width: 320px;
+  margin: 0 auto;
   padding: 26px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media (min-width: $tablet-width) {
+    max-width: $tablet-width;
+    padding: 56px 70px;
+    grid-template-columns: 172px 1fr 160px;
+  }
 }
 
 .contacts__heading {
