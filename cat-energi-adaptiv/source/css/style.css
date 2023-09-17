@@ -626,12 +626,6 @@ img {
   background-color: transparent;
 }
 
-@media (min-width: 1440px) {
-  .contacts {
-    position: relative;
-  }
-}
-
 .contacts__head-container {
   max-width: 320px;
   margin: 0 auto;
@@ -646,12 +640,13 @@ img {
 @media (min-width: 1440px) {
   .contacts__head-container {
     max-width: 1440px;
-    outline: 1px solid red;
+    position: relative;
+    padding: 0;
+    max-height: 0;
   }
 }
 
 .contacts__head {
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -665,6 +660,9 @@ img {
     background-color: #ffffff;
     padding: 56px 80px;
     column-gap: 87px;
+    position: absolute;
+    top: 95px;
+    left: 110px;
   }
 }
 
