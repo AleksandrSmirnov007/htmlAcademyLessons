@@ -93,9 +93,16 @@ img {
 
 .page {
   font-family: "Arial", sans-serif;
+  min-width: 320px;
   height: 100%;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 18px;
+}
+@media (min-width: 768px) {
+  .page {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .page__body {
@@ -103,6 +110,18 @@ img {
   min-height: 100%;
   color: #000000;
   background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .page-header__nav {
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+@media (min-width: 768px) {
+  .page-header__nav {
+    width: 708px;
+    margin: 0 auto;
+  }
 }
 
 .site-menu {
