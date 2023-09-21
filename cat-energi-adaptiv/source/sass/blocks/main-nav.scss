@@ -5,47 +5,14 @@
   color: $black;
 }
 
-.main-nav__toggle {
-  position: absolute;
-  top: 24px;
-  right: 20px;
-  @include size(18px);
-  @media (min-width: $tablet-width) {
-    display: none;
-    }
-}
-
 .main-nav__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
   text-align: center;
-
-  position: absolute;
-  min-width: 100%;
-//в мобильной версии по умолчанию скрыто
-  // display: none;
-
-  @media (min-width: $tablet-width) {
-    max-width: 460px;
-    flex-wrap: wrap;
-    position: static;
-    display: flex;
-    margin-right: -15px;
-  }
-
-  @media (min-width: $tablet-width) {
-    max-width: 500px;
-    flex-wrap: wrap;
-    position: static;
-    display: flex;
-    margin-right: -15px;
-  }
-
 }
 
 .main-nav__link {
-  display: block;
   text-decoration: none;
   background-color: $white;
   color: $black;
@@ -53,15 +20,12 @@
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
-  padding: 22px 0 24px;
   border-bottom: 1px solid $special_grey-5;
 
   @media (min-width: $tablet-width) {
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-    padding: 18px 15px 10px;
-    border-bottom: 1px solid transparent;
   }
 
   @media (min-width: $desktop-width) {

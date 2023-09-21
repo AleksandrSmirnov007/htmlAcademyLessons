@@ -11,18 +11,3 @@
   color: $black;
   background-color: $white;
 }
-
-.page__footer {
-  max-width: 320px;
-  margin: 0 auto;
-
-  @media (min-width: $tablet-width) {
-    max-width: $tablet-width;
-    padding: 0 30px;
-  }
-
-  @media (min-width: $desktop-width) {
-    max-width: $desktop-width;
-    padding: 0 110px;
-  }
-}

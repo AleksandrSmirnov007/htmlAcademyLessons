@@ -18,53 +18,12 @@
   }
 }
 
-.promo__wrapper {
-  max-width: 320px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media (min-width: $tablet-width) {
-    max-width: $tablet-width;
-    min-height: 872px;
-    position: relative;
-    padding-bottom: 526px; //делаем отступ для кнопки снизу, что бы при наполнении техстовым контентом блока ее позиция относительно картинки не менялась
-  }
-
-  @media (min-width: $desktop-width) {
-    max-width: $desktop-width;
-    min-height: 585px; // на десктопе высота блока в макете уменьшается, использую min-heightдля возможности роста блока вниз при заполнении
-    padding-bottom: 185px; //делаем отступ для кнопки снизу, что бы при наполнении техстовым контентом блока ее позиция относительно картинки не менялась
-  }
-}
-
 .promo__heading {
-  padding-top: 27px;
   font-family: $font-heading;
-  margin-top: 0;
-  margin-bottom: 25px;
-  text-align: center;
-
-  @media (min-width: $tablet-width) {
-    max-width: 537px; // прибавляем паддинг слева
-    padding: 62px 0 0 117px; //верх право низ лево
-    align-self: start;
-    text-align: left;
-    margin-bottom: 40px;
-  }
-
-  @media (min-width: $desktop-width) {
-    max-width: 610px; // прибавляем паддинг слева
-    padding: 114px 0 0 190px; //верх право низ лево
-    margin-bottom: 52px;
-  }
 }
 
 .promo__slogan {
   font-family: $font-heading;
-  margin-top: 0;
-  margin-bottom: 29px;
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
@@ -72,46 +31,5 @@
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 20px;
-    align-self: start;
-    text-align: left;
-    max-width: 537px; // прибавляем паддинг слева
-    padding-left: 119px; //верх право низ лево
-    margin-bottom: 49px;
-  }
-
-  @media (min-width: $desktop-width) {
-    max-width: 610px; // прибавляем паддинг слева
-    padding-left: 190px; //верх право низ лево
-    margin-bottom: 52px;
-  }
-}
-
-.promo__image {
-  margin-bottom: 3px;
-  @media (min-width: $tablet-width) {
-    position: absolute;
-    bottom: 0; // выводим из потока и прикрепляем к низу блока
-  }
-  @media (min-width: $desktop-width) {
-    bottom: auto;
-    left: 558px;
-    top: 32px; // вывоиим из потока и помещаем справа в блоке
-  }
-}
-
-.promo__button {
-  padding: 8px 44px;
-  text-align: center;
-  align-self: stretch;
-  margin: 0 20px;
-
-  @media (min-width: $tablet-width) {
-    max-width: max-content;
-    padding: 14px 26px;
-    margin-left: 120px;
-  }
-
-  @media (min-width: $desktop-width) {
-    margin-left: 190px;
   }
 }
