@@ -1,43 +1,67 @@
+// site-menu являентся ребенком page-header__nav, но выделен в отдельный блок пэтому будем стилизовать все элементы в этом файле
+
 .site-menu {
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  list-style-type: none; // по тегу site-menu  является списком, избавляемся от отступов и меток присовоенных по умолчанию.
+  font-family: $font-heading; // шрифт пунктов меню Освальд используем переменную одержащию этот шрифт
+  text-transform: uppercase; // пункты меню в верхнем регистре, а вот цвет и подчеркивание (color, text-decoration) не наследуются поэтому зададим их позже непосредственно к ссыкам пунктов меню для селектора site-menu__link
+  line-height: 1; // высота строки равна 1(то есть равна размеру шрифта)
 
   @media (max-width: $mobile-width-only) {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1; /* 100% */
+    font-size: 20px; // в мобильной версии шрифт 20px жирность: 500,
+    font-weight: 500; // в мобильной версии вес шрифта 500
+    border-top: 1px solid $special_grey-5; // декоративные граница 1px серого цвета над меню (такие же будут под каждым пунктом меню) и такое только в мобильной версии
+    text-align: center; // в мобильной версии пункты меню центрируются в своих полях
   }
 
-  @media (min-width: $tablet-width) {
-    color: #000;
-    font-size: 18px;
-    font-weight: 400;
+  @media (min-width: $tablet-width) {  
+    font-size: 18px; // начиная с версии для планшетов и шире ширина 768px размер шрифта 18px
     line-height: 24px; /* 133.333% */
+    display: flex; // начиная с версии для планшетов и шире пункты меню располагаются слева направо. Используем для этого флекс, так как спомощью флекса можно создать кирпичную кладку из пунктов меню если оно будет состоять из нескольких строк.
+    justify-content: flex-end; // теперь меню прижато к правому краю родителя page-header__nav
   }
 }
 
-// .site-menu__item--active {
+.site-menu__item {
+  @media (max-width: $mobile-width-only) {
+    border-bottom: 1px solid $special_grey-5; // только в мобильной версии заданы нижние границы у пунктов меню. реализовал через обертки элементов списка 
+  }
+}
 
-//   @media (min-width: $tablet-width) {
-//       position: relative;
+.site-menu__item--active { // отмечае текущую(активную) страницу сайта подчеркиванием послокой снизу 
+  @media (min-width: $tablet-width) {
+    position: relative; // задаем элементу списка что бы привязать к нему абсолютно спозиционированный псевдоэлемент 
 
-//       &::after {
-//         position: absolute;
-//         bottom: 8px;
-//         left: 18px;
-//         right: 18px;
-//         content: "";
-//         height: 2px;
-//         background-color: $color-primary;
-//       }
-//   }
-// }
+    &::after { // создаем псевдоэлемент выделяющей полоски под активным элементом site-menu 
+      position: absolute; //позиционируем абсолютно к ближайшему по родственникам с позицией relative активного элемента списка .site-menu__item--active
+      bottom: 8px; // вниз от нижней границы .site-menu__item--active на 8px
+      left: 18px; // эта величина завистит от паддингов которые мы задим позже непоредственно классу site-menu__link  
+      right: 18px; // эта величина завистит от паддингов которые мы задим позже непоредственно классу site-menu__link  
+      content: ""; // необходимое условие существоание псевдоэлемента
+      height: 2px; // высота полоски 
+      background-color: $color-primary; // цвет полоски
+    }
+  }
+
+  @media (min-width: $desktop-width) { // в версии для десктопа полоска из псевдоэлемента меняет цвет на белый
+    &::after {
+      background-color: $white;
+    }
+  }
+}
 
 .site-menu__link {
-  color: #000;
-  font-family: $font-heading;
-  text-transform: uppercase;
-  text-decoration: none;
+  display: block; // для взаимодействия с падингами по умолчанию inline вроде и веритакальные не работают как надо
+  padding: 22px 20px 24px; // верхний боковые нижний
+  color: $black; // непосредствено задаем цвет ссылкам, из за юзер-агент они не наследуют его, 
+  text-decoration: none; // так же убираем подчеркивание по этой же причине
+
+  @media (min-width: $tablet-width) { // при ширине для планшета и шире меняются расстояния между элемнтами
+    padding: 17px; // растояние между элементами по горизонтали в среднем 34px делим его на два паддинга получаем 17px вертикальные тоже заодно задаем 17px
+  }
+
+  @media (min-width: $desktop-width) {
+    color: $white; // пункты меню для десктопа становяться белыми
+  }
 }

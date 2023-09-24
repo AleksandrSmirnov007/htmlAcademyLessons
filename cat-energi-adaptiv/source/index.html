@@ -9,8 +9,8 @@
 
   </head>
   <body class="page__body">
-    <header class="page__header page-header">
-      <nav class="page-header__nav main-nav">
+    <header class="page__header page-header">     
+      <nav class="page-header__nav main-nav page-header__nav--closed"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс page-header__nav--closed, для открытого состояния и отображения кнопки-крестик добавить класс page-header__nav--opened  --> 
 
         <div class="page-header__bar">
           <a class="page-header__logo logo" href="#">
@@ -24,7 +24,7 @@
         </div>
 
         <ul class="page-header__list site-menu">
-          <li class="site-menu__item site-menu__item--active">
+          <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item--active -->
             <a class="site-menu__link" href="#" title="Мы на главной странице">Главная</a>
           </li>
           <li class="site-menu__item">
@@ -39,7 +39,7 @@
 
     <main class="page__main page-main">
       <header class="page-main__promo promo">
-        <div class="promo__wrapper">
+        <div class="promo__container">
           <h1 class="promo__heading block-title">Функциональное питание для котов</h1>
           <p class="promo__slogan">Занялся собой? Займись котом!</p>
           <img class="promo__image" width="280" height="270" src="img/content/index-promo@1x.png" alt="Упаковка Кат-энерджи 'курица'">
