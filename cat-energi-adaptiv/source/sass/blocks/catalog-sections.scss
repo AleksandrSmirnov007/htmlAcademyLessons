@@ -1,29 +1,60 @@
-Закончил .promo
-начать с .catalog-sections
 
 .catalog-sections {
-  color: $black;
-  font-weight: 400;
-  text-align: left;
+  padding-top: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 82px;
+  }
 }
 
-.catalog-sections__list {
-  list-style-type: none;
+.catalog-section__container {
+  @media (min-width: $desktop-width) { // на ширине для планшетов секции каталога выстраиваются в две колонки между которыми растояние  80px(используем для этого gap)
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
 }
 
 .catalog-sections__item {
-  background-color: $basic_grey;
+  position: relative; // для позиционирования изоражений в зеленых кружках
+  padding: 24px 20px 18px; // 24px растояние от верхнего края зеленого кружка до верхней границы серого фона, 20px  отступ слева (отступ справа 33px по макету ну тут это не учитываю) 18px отступ от ссылки снизу до нижней границы серого фона
+
+  background-color: $basic_grey;   // серый фон только на элементах catalog-sections__item
+  @media (min-width: $tablet-width) {
+    padding: 77px 316px 52px 53px;
+  }
+  @media (min-width: $desktop-width) {
+    padding: 47px 55px 59px; // для десктопов отступ севрху так же до зеленого кружка (изображения внутри кружков выходят за границы
+  }
+
+  & + & { // селектор "соседний комбинатор" если рядям идут два элемнта на одном уровне то стили указанные в скобказх применяются ко второму
+    margin-top: 20px; // здесь и далее применяется ко второму .catalog-sections__item
+
+    @media (min-width: $tablet-width) {
+      margin-top: 30px;
+    }
+    @media (min-width: $desktop-width) {
+      margin-top: 0; // отсутп второго элемента не жужен, так как теперь они находятся не друг под другом
+
+    }
+  }
 }
 
+закончил здесь далее все переделывать
 
 .catalog-sections__heading {
   font-family: $font-heading;
+  font-weight: 400;
   font-size: 24px;
   line-height: 37px;
   text-transform: uppercase;
 }
 
-.catalog-sections__description {
+.catalog-sections__text {
   @media (min-width: $tablet-width) {
     color: $black;
   }

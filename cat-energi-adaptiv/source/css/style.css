@@ -392,29 +392,67 @@ img {
   background-color: #f2f2f2;
 }
 
-Закончил .promo начать с .catalog-sections .catalog-sections {
-  color: #000000;
-  font-weight: 400;
-  text-align: left;
+.catalog-sections {
+  padding-top: 20px;
+}
+@media (min-width: 768px) {
+  .catalog-sections {
+    padding-top: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .catalog-sections {
+    padding-top: 82px;
+  }
 }
 
-.catalog-sections__list {
-  list-style-type: none;
+@media (min-width: 1440px) {
+  .catalog-section__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
 }
 
 .catalog-sections__item {
+  position: relative;
+  padding: 24px 20px 18px;
   background-color: #f2f2f2;
 }
+@media (min-width: 768px) {
+  .catalog-sections__item {
+    padding: 77px 316px 52px 53px;
+  }
+}
+@media (min-width: 1440px) {
+  .catalog-sections__item {
+    padding: 47px 55px 59px;
+  }
+}
+.catalog-sections__item + .catalog-sections__item {
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .catalog-sections__item + .catalog-sections__item {
+    margin-top: 30px;
+  }
+}
+@media (min-width: 1440px) {
+  .catalog-sections__item + .catalog-sections__item {
+    margin-top: 0;
+  }
+}
 
-.catalog-sections__heading {
+закончил здесь далее все переделывать .catalog-sections__heading {
   font-family: "Oswald", sans-serif;
+  font-weight: 400;
   font-size: 24px;
   line-height: 37px;
   text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
-  .catalog-sections__description {
+  .catalog-sections__text {
     color: #000000;
   }
 }
