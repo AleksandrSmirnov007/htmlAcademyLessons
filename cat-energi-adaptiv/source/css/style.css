@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Oswald";
   font-style: normal;
@@ -443,12 +442,64 @@ img {
   }
 }
 
-закончил здесь далее все переделывать .catalog-sections__heading {
+.catalog-sections__heading {
+  position: relative;
+  min-height: 50px;
+  margin: 0;
+  margin-bottom: 22px;
+  padding-left: 68px;
+  display: flex;
+  align-items: center;
   font-family: "Oswald", sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 37px;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .catalog-sections__heading {
+    position: static;
+    padding-left: 0;
+    font-size: 36px;
+  }
+}
+@media (min-width: 1440px) {
+  .catalog-sections__heading {
+    position: relative;
+    padding-left: 162px;
+    min-height: 100px;
+    margin-bottom: 39px;
+  }
+}
+.catalog-sections__heading::before, .catalog-sections__heading::after {
+  position: absolute;
+  content: "";
+}
+.catalog-sections__heading::before {
+  top: 0;
+  left: 0;
+  background-color: #68b738;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+@media (min-width: 768px) {
+  .catalog-sections__heading::before {
+    width: 200px;
+    height: 200px;
+    top: calc(50% - 100px);
+    right: 62px;
+    left: auto;
+  }
+}
+@media (min-width: 1440px) {
+  .catalog-sections__heading::before {
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    right: auto;
+    left: 0;
+  }
 }
 
 @media (min-width: 768px) {
