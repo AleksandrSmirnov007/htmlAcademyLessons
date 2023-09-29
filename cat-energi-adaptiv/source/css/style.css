@@ -501,6 +501,25 @@ img {
     left: 0;
   }
 }
+.catalog-sections__heading::after {
+  background-size: contain;
+}
+
+.catalog-sections__heading--slim::after {
+  width: 36px;
+  height: 50px;
+  top: -3px;
+  left: 7px;
+  background-image: url("../../img/icons/cat-slim.svg");
+}
+
+.catalog-sections__heading--pro::after {
+  width: 67px;
+  height: 28px;
+  top: 11px;
+  left: -9px;
+  background-image: url("../../img/icons/cat-pro.svg");
+}
 
 @media (min-width: 768px) {
   .catalog-sections__text {
