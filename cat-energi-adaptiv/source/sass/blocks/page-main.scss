@@ -3,6 +3,8 @@
 }
 
 .page-main__heading {
+  margin: 0; // обычно элемениты с этим классом имеют тег P обнуляем стандартные маржины
+  margin-bottom: 40px; // на макете все элементы .page-main__heading на мобильной версии имеют отсуп вниз 40px
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -10,6 +12,7 @@
   font-family: $font-heading;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 32px; // отсуп на мекете больше и разные но здесь почемуто взято 32рх возможно потом будем доделывать непосредственно в блоках а это значение будет по умолчанию причем отступы для десктопа далее не будут прописаны. Посморим.
     font-size: 60px;
     line-height: 60px;
   }
