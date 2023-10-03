@@ -66,6 +66,8 @@
     }
   }
 
+
+
     &::after {
       @media (min-width: $tablet-width) { // Порядковые бекграундные номера только в вериях планшета и десктопа
         content: counter(process); // выводим текущее значение счетчика  в контент псевдоэлемента который будет отвечать за бекграундный порядковый номер
@@ -82,4 +84,19 @@
     }
 }
 
-// ПРОДОЛЖИТЬ ОТСЮДА ЗАДАТЬ ЭЛЕМЕНТАМ ИЗОБРАЖЕНИЯ ЧЕРЕЗ МОДИФИКАТОРЫ
+// подклбчаем изображения для каждого элемента свое, используем модификаторы
+.process__item--leaf::before {
+  background-image: url("../../img/icons/icon_leaf.svg");
+}
+
+.process__item--powder::before {
+  background-image: url("../../img/icons/icon_tub.svg");
+}
+
+.process__item--food::before {
+  background-image: url("../../img/icons/icon_eat.svg");
+}
+
+.process__item--scales::before {
+  background-image: url("../../img/icons/icon_alarm.svg");
+}

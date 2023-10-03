@@ -1,17 +1,63 @@
 .example {
+  padding: 25px 0 40px;
   background-color: $special_grey-6;
 
   @media (min-width: $tablet-width) {
-    background-color: $white;
+    padding-top: 43px;
+    padding-bottom: 56px;
+    border-top: 1px solid $special_grey-5; // появляется полоска между process  и  example реалзуем это через верхнюю границу 
+    background-image: linear-gradient(to top, $special_grey-6 462px, $white 462px); // двух-цветный фон, идем снизу на верх серый до 462рх потом белый
   }
-}
-.example__columns-wrapper {
+
   @media (min-width: $desktop-width) {
-    background-color: $basic_grey;
+    padding-bottom: 75px; // верхний паддинг остается так же 43px
   }
 }
 
-.example__termin {
+.example__container { // на эране десктопа блок разделяется на две колонки
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.example__content { //включает в себя текстовую информацию блока
+  margin-bottom: 40px;
+  @media (min-width: $tablet-width) { 
+    display: grid;
+    grid-template-columns: 366px 1fr;
+    column-gap: 32px; //не понятно как вычисленное значение 
+  }
+  @media (min-width: $desktop-width ) {
+    grid-template-columns: 366px 70px 1fr; // 366 рх понятно два dt и dl идут рядом через gap 24px, но 70 рх? 
+    margin-bottom: 0; // так как блок делится на две колонкм в левой .example__content и он нижней границей примыкает к границе блока родителя то отступ вниз 40рх не нужен
+  }
+}
+
+.example__heading {
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1; // осторожно злая арифметика но, как понял это только в less мы получим -1,  в scss распознает что это работа c grid 
+  }
+}
+
+.example__text {
+  color: $special_dark-grey;
+  margin: 0;
+  margin-bottom: 20px;
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+    margin-top: 63px; // нижний отступ у верхнего элемента на .example___text задан через класс page-main__heading, но на версий для планшета и десктопа я его обнулил   
+    margin-bottom: 54px;
+  }
+  @media (min-width: $desktop-width) {
+    grid-column: 1 / 3; // родителем этого элемента является .example__content в нем три стобцца, на ширине эрана элемент занимет первые два. 
+    margin-top: 146px;
+    margin-bottom: 70px;
+  }
+}
+////////////////////////////////// продолжть отсюда
+.example__title {
   color: $special-dark-grey;
   font-family: $font-body;
   font-size: 12px;
@@ -19,14 +65,14 @@
   line-height: 12px;
 }
 
-.example__description-termin {
+.example__definition {
   font-family: $font-heading;
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
 }
 
-.example__price-total {
+.example__spending {
   font-family: $font-heading;
   font-size: 14px;
   font-weight: 400;
@@ -34,7 +80,7 @@
   text-transform: uppercase;
 }
 
-.example__toggle {
+.switcher__button {
   font-family: $font-heading;
   font-size: 16px;
   font-weight: 400;

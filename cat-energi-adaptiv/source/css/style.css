@@ -213,7 +213,7 @@ img {
 }
 @media (min-width: 768px) {
   .page-main__heading {
-    margin-bottom: 32px;
+    margin-bottom: 0;
     font-size: 60px;
     line-height: 60px;
   }
@@ -690,22 +690,92 @@ img {
   }
 }
 
+.process__item--leaf::before {
+  background-image: url("../../img/icons/icon_leaf.svg");
+}
+
+.process__item--powder::before {
+  background-image: url("../../img/icons/icon_tub.svg");
+}
+
+.process__item--food::before {
+  background-image: url("../../img/icons/icon_eat.svg");
+}
+
+.process__item--scales::before {
+  background-image: url("../../img/icons/icon_alarm.svg");
+}
+
 .example {
+  padding: 25px 0 40px;
   background-color: #eaeaea;
 }
 @media (min-width: 768px) {
   .example {
-    background-color: #ffffff;
+    padding-top: 43px;
+    padding-bottom: 56px;
+    border-top: 1px solid #e6e6e6;
+    background-image: linear-gradient(to top, #eaeaea 462px, #ffffff 462px);
+  }
+}
+@media (min-width: 1440px) {
+  .example {
+    padding-bottom: 75px;
   }
 }
 
 @media (min-width: 1440px) {
-  .example__columns-wrapper {
-    background-color: #f2f2f2;
+  .example__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
   }
 }
 
-.example__termin {
+.example__content {
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .example__content {
+    display: grid;
+    grid-template-columns: 366px 1fr;
+    column-gap: 32px;
+  }
+}
+@media (min-width: 1440px) {
+  .example__content {
+    grid-template-columns: 366px 70px 1fr;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .example__heading {
+    grid-column: 1/-1;
+  }
+}
+
+.example__text {
+  color: #444444;
+  margin: 0;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .example__text {
+    grid-column: 1/-1;
+    margin-top: 63px;
+    margin-bottom: 54px;
+  }
+}
+@media (min-width: 1440px) {
+  .example__text {
+    grid-column: 1/3;
+    margin-top: 146px;
+    margin-bottom: 70px;
+  }
+}
+
+.example__title {
   color: #444444;
   font-family: "Arial", sans-serif;
   font-size: 12px;
@@ -713,14 +783,14 @@ img {
   line-height: 12px;
 }
 
-.example__description-termin {
+.example__definition {
   font-family: "Oswald", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
 }
 
-.example__price-total {
+.example__spending {
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -728,7 +798,7 @@ img {
   text-transform: uppercase;
 }
 
-.example__toggle {
+.switcher__button {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   font-weight: 400;
