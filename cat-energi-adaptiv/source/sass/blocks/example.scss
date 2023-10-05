@@ -54,18 +54,58 @@
     grid-column: 1 / 3; // родителем этого элемента является .example__content в нем три стобцца, на ширине эрана элемент занимет первые два. 
     margin-top: 146px;
     margin-bottom: 70px;
+
   }
 }
-////////////////////////////////// продолжть отсюда
-.example__title {
+
+.example__list {
+  margin-bottom: 34px; //  будем использовать отступ от списка а example-definition спозиционироем c помощью отрицательных маржинов и пусть выпадабт вниз из списка на 14рх и тогда визуально отсуп до следующего элемнта будет 20px
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0; // не оспользуем отступ у списка, используется отступ у .example-content
+  }
+  @media (min-width: $desktop-width) {
+    margin-bottom: 60px;
+    grid-column: 1 / 2; // display grid также задан и родителю (example-content) , а он разбит на две колонки. Помещаем example-list в первую из  них
+    gap: 42px; // изменяем промежуток между элементами во внутренней сетке
+  }
+}
+
+.example__item {
+  padding: 14px 8px 0;
+  display: flex; 
+  flex-direction: column-reverse; // меняем элементы местами
+  align-items: center; //выравниваем по вертикальной оси
+  border: 1px solid $special_grey;
+  border-radius: 3px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 15px; // паддинг меняется на 1рх в юольшую сторону
+  }
+}
+
+ .example__title {
+  width: 87px; // ширина текстового обьекта 77 величина стертой рамки в сумме с обоих сторон 10рх итого 87px
+  margin-bottom: -10px;
+  padding: 0 4px;
+  text-align: center;
+  background-color: $special_grey-6;
   color: $special-dark-grey;
   font-family: $font-body;
   font-size: 12px;
   font-weight: 400;
-  line-height: 12px;
+  line-height: 1;
+  text-transform: lowercase;
 }
 
+//////////////////////////////////////продолжить отсюда
+
 .example__definition {
+  padding-bottom: 7px;
+  margin-left: 0;  // у тегов dd есть отступ слева, обнуляем
   font-family: $font-heading;
   font-size: 24px;
   font-weight: 400;
