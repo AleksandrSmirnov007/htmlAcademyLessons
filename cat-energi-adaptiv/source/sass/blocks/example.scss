@@ -89,8 +89,8 @@
 
  .example__title {
   width: 87px; // ширина текстового обьекта 77 величина стертой рамки в сумме с обоих сторон 10рх итого 87px
-  margin-bottom: -10px;
-  padding: 0 4px;
+  margin-bottom: -10px; // элемент спускается вниз но что бы не расширять example__item используем отрицательный маржин
+  padding: 0 4px; // неюольшие горизонталные отсупы
   text-align: center;
   background-color: $special_grey-6;
   color: $special-dark-grey;
@@ -99,25 +99,55 @@
   font-weight: 400;
   line-height: 1;
   text-transform: lowercase;
+
+  @media (min-width: $tablet-width) {
+    width: auto; // связано с тем что теперь текс не в две строчки ширина надписи зависит от содержимого
+    margin-bottom: -6px; // надпись выпадает из example__item на 5рх округляем до четного 6рх
+    padding: 0 7px; // горизонтальные паддинги в этом элементе у нас отвечают за растояние до рамки от example__item по горизонтали
+    background-color: $white; // элемент вместе с блоком меняет фон на белый
+    font-size: 14px; // шриф становиться больше 
+  }
+
+  @media (min-width: $desktop-width) {
+    background-color: $basic_grey; // фон меняется опять на серый но на другой серый
+  }
 }
 
 //////////////////////////////////////продолжить отсюда
 
 .example__definition {
-  padding-bottom: 7px;
-  margin-left: 0;  // у тегов dd есть отступ слева, обнуляем
+  margin-left: 0;  // у тегов dd есть отступ слева, обнуляем его
+  margin-bottom: 8px; //по сути это растояние вниз до exaple__title так как спомощь флекса выше мы поменяли направление оси и тем самым поменяли порядок элементов в родителе
   font-family: $font-heading;
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
+  text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 11px; // растояние до нижнего элемента выросло
+  }
 }
 
 .example__spending {
+  margin: 0;  //обнуляем отступы у тега <p>
+  text-align: center; 
   font-family: $font-heading;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    padding-left: 178px;
+    text-align: right;
+    margin-top: 11px;
+  }
+  @media (min-width: $desktop-width) {
+    padding: 0;
+    grid-column: 1 / 2; //////////////////// продолжить отсюда
+  }
 }
 
 .switcher__button {
