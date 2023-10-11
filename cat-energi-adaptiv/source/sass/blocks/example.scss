@@ -5,7 +5,7 @@
   @media (min-width: $tablet-width) {
     padding-top: 43px;
     padding-bottom: 56px;
-    border-top: 1px solid $special_grey-5; // появляется полоска между process  и  example реалзуем это через верхнюю границу 
+    border-top: 1px solid $special_grey-5; // появляется полоска между process  и  example реалзуем это через верхнюю границу
     background-image: linear-gradient(to top, $special_grey-6 462px, $white 462px); // двух-цветный фон, идем снизу на верх серый до 462рх потом белый
   }
 
@@ -24,20 +24,20 @@
 
 .example__content { //включает в себя текстовую информацию блока
   margin-bottom: 40px;
-  @media (min-width: $tablet-width) { 
+  @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 366px 1fr;
-    column-gap: 32px; //не понятно как вычисленное значение 
+    column-gap: 32px; //не понятно как вычисленное значение
   }
   @media (min-width: $desktop-width ) {
-    grid-template-columns: 366px 70px 1fr; // 366 рх понятно два dt и dl идут рядом через gap 24px, но 70 рх? 
+    grid-template-columns: 366px 70px 1fr; // 366 рх понятно два dt и dl идут рядом через gap 24px, но 70 рх?
     margin-bottom: 0; // так как блок делится на две колонкм в левой .example__content и он нижней границей примыкает к границе блока родителя то отступ вниз 40рх не нужен
   }
 }
 
 .example__heading {
   @media (min-width: $tablet-width) {
-    grid-column: 1 / -1; // осторожно злая арифметика но, как понял это только в less мы получим -1,  в scss распознает что это работа c grid 
+    grid-column: 1 / -1; // осторожно злая арифметика но, как понял это только в less мы получим -1,  в scss распознает что это работа c grid
   }
 }
 
@@ -47,11 +47,11 @@
   margin-bottom: 20px;
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1;
-    margin-top: 63px; // нижний отступ у верхнего элемента на .example___text задан через класс page-main__heading, но на версий для планшета и десктопа я его обнулил   
+    margin-top: 63px; // нижний отступ у верхнего элемента на .example___text задан через класс page-main__heading, но на версий для планшета и десктопа я его обнулил
     margin-bottom: 54px;
   }
   @media (min-width: $desktop-width) {
-    grid-column: 1 / 3; // родителем этого элемента является .example__content в нем три стобцца, на ширине эрана элемент занимет первые два. 
+    grid-column: 1 / 3; // родителем этого элемента является .example__content в нем три стобцца, на ширине эрана элемент занимет первые два.
     margin-top: 146px;
     margin-bottom: 70px;
 
@@ -76,7 +76,7 @@
 
 .example__item {
   padding: 14px 8px 0;
-  display: flex; 
+  display: flex;
   flex-direction: column-reverse; // меняем элементы местами
   align-items: center; //выравниваем по вертикальной оси
   border: 1px solid $special_grey;
@@ -105,7 +105,7 @@
     margin-bottom: -6px; // надпись выпадает из example__item на 5рх округляем до четного 6рх
     padding: 0 7px; // горизонтальные паддинги в этом элементе у нас отвечают за растояние до рамки от example__item по горизонтали
     background-color: $white; // элемент вместе с блоком меняет фон на белый
-    font-size: 14px; // шриф становиться больше 
+    font-size: 14px; // шриф становиться больше
   }
 
   @media (min-width: $desktop-width) {
@@ -113,7 +113,6 @@
   }
 }
 
-//////////////////////////////////////продолжить отсюда
 
 .example__definition {
   margin-left: 0;  // у тегов dd есть отступ слева, обнуляем его
@@ -132,7 +131,7 @@
 
 .example__spending {
   margin: 0;  //обнуляем отступы у тега <p>
-  text-align: center; 
+  text-align: center;
   font-family: $font-heading;
   font-size: 14px;
   font-weight: 400;
@@ -145,17 +144,66 @@
     margin-top: 11px;
   }
   @media (min-width: $desktop-width) {
-    padding: 0;
-    grid-column: 1 / 2; //////////////////// продолжить отсюда
+    padding-left: 0;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 42px 1fr; // разбиваем на сетку равные стобцы по краям а средний будем использовать как промежуток элементам в htmlмы добавили роблочк span теперь можно управлят ьими как элементами grid
+    text-align: left;
+
+    span:first-child {
+      grid-column: 1 / 2;
+    }
+
+    span:last-child {
+      grid-column: 3 / 4;
+      justify-self: center;
+    }
   }
 }
 
-.switcher__button {
-  font-family: $font-heading;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-transform: uppercase;
-  color: $black;
-  background-color: transparent;
+.example__images {
+  margin-bottom: 15px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 50% 50%; // почему то не 1fr 1fr
+    padding: 0 58px;
+    overflow: hidden; //скрывает содержимое, выходящее за пределы контейнера.
+    img {
+      width: 592px; // 592px
+      height: 511px; // 511px
+      max-width: none; // размер картинок будет больше чем родитель и заданооое значение max-width: 100% теперь помешает, поэтому отключаем его значением none
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+    width: 592px;
+  }
 }
+
+.example__image {
+  display: none; // изначально скроем две картинки
+  height: 232px;
+  width: auto;
+
+  @media (min-width: $tablet-width) {
+    display: flex; // пока не понятно зачем
+    overflow: hidden; //скрывает содержимое, выходящее за пределы контейнера.
+  }
+}
+
+.example__image--active {
+  display: flex;
+}
+
+.example__image--after {
+  justify-self: end;
+}
+/// тут еще много вопросов как стыковать картинки.
+///
+///
+/// кнопки "было" "стало" стилизованны в файле switcher.scss
+///
