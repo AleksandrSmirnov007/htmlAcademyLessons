@@ -1,4 +1,24 @@
+.switcher {
+  display: grid;
+  grid-template-columns: 49px 1fr 49px;
+  gap: 13px;
+  padding: 0 35px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 60px;
+    grid-template-columns: 70px 1fr 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+  }
+}
+
 .switcher__button {
+  display: block;
+  padding: 0 2px 2px; // непонятно как получить это значение
+
   font-family: $font-heading;
   font-size: 16px;
   font-weight: 400;
@@ -6,4 +26,16 @@
   text-transform: uppercase;
   color: $black;
   background-color: transparent;
+  border: none;
+
+  &:last-child { //  определяем "стало" в третий стобик
+    grid-column: 3/4;
+  }
+  @media (min-width: $tablet-width) {
+    padding-bottom: 4px;
+    border-bottom: 1px dotted rgba($black, 0.25);
+    justify-self: center;
+    font-size: 20px;
+    line-height: normal;
+  }
 }

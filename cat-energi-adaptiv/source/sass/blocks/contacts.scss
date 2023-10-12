@@ -1,3 +1,31 @@
+.contacts {
+  @media (min-width: $desktop-width) {
+    position: relative;
+    z-index: 0; // относительно этого элемента будем позиционировать другие поэтому обнуляем z-index
+    min-height: 400px;
+    padding: 40px 0 52px; // непонятно. нигде не участвуют эти вертикальные паддинги.
+
+    grid-template-columns: 1220px; // один столбец шириной 1440-110*2 такой прием дает отступы с прва и слева по 110рх
+    align-items: center; // непонятно зачем центрирование
+    justify-content: center; // непонятно зачем центрирование
+    background-color: transparent;
+  }
+}
+
+.contacts__container {
+  padding: 26px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (min-width: $tablet-width) {
+    padding: 56px 40px; // смотрим минимальные отсупы от элементов до края родителя
+    grid-template-columns: 172px 172px;
+    justify-content: space-between; // при определенных выше ширинах столбцов раскидает их по краям добавив между ними промежуток автоматической ширины
+  }
+
+  ////////////продолжить отсюда
+}
+
 .contacts__heading {
   margin: 0;
   font-family: $font-heading;
