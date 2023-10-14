@@ -1,18 +1,19 @@
 .contacts {
   @media (min-width: $desktop-width) {
     position: relative;
+    display: grid;
     z-index: 0; // относительно этого элемента будем позиционировать другие поэтому обнуляем z-index
     min-height: 400px;
     padding: 40px 0 52px; // непонятно. нигде не участвуют эти вертикальные паддинги.
 
-    grid-template-columns: 1220px; // один столбец шириной 1440-110*2 такой прием дает отступы с прва и слева по 110рх
-    align-items: center; // непонятно зачем центрирование
-    justify-content: center; // непонятно зачем центрирование
+    grid-template-columns: 1220px; // один столбец шириной 1440-110*2 такой прием дает отступы с права и слева по 110рх
+    align-items: center; // внутри лежащий единсттвенный элемент будет центрироваться по вертикали
+    justify-content: center; // родитель будет шириной 1440 рх(или больше) а единственный столб шириной 1220рх за счет justify-content: center; будет центриваться по горизонтали
     background-color: transparent;
   }
 }
 
-.contacts__container {
+.contacts__container { // приступить сразу после стилизации contacts__map
   padding: 26px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,22 +24,60 @@
     justify-content: space-between; // при определенных выше ширинах столбцов раскидает их по краям добавив между ними промежуток автоматической ширины
   }
 
-  ////////////продолжить отсюда
+  @media (min-width: $desktop-width) {
+    width: 565px;
+    position: relative; // Свойство position: static предотвращает влияние z-индекса.(инфа из вкладки styles в инструментах разработчика в браузере
+    margin: 0; //  ранее мы  задали контейнеру маржин left и right: auto(это центрирует по горизонтали) сдесь нам это не нужно, обнуляем отступ
+    z-index: 1; // что бы разместить над картой контейнер с контактами нужно поднять z-index так как карта в html идет позже чем контейнер
+    padding: 56px 80px; // вертикальныне паддинги не меняютя а вот горизонтальные меняются с 40рх до 80рх
+    background-color: $white; // до это цвет фона под текст контактов был за счет .contact, теперь непосредственно зададим .contact__container
+  }
 }
 
 .contacts__heading {
   margin: 0;
+  padding-right: 10px;
   font-family: $font-heading;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    padding-right: 0; // на этой ширине используем space-between у родителя и падинг нам теперь не нужен
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .contacts__address {
+  margin: 0;
   color: $special-dark-grey;
   font-family: $font-body;
-  font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 20px; //  font-size задается через .page 14px
+  @media (min-width: $tablet-width) {
+    display: flex; // предварительно разбил текст на два span и при флексе с ними можно взаимодействовать как с элементами во флекс контейнере
+    flex-direction: column; // нужно оттолкнуть два текста друг от друга по вертикали для этого меняем ось на вертикальную
+    justify-content: space-between; // разносим по краям
+    text-align: right; // текст ориентировоан по правому краю
+  }
+}
+
+.contacts__map { // нужно стлилизовать сразу с .contacts что бы растянуть на всю ширину и высоту блока
+  display: block; // по умолчанию inline-block и снизу изображения есть небольшой отступ из-за инлайн-блок
+  width: 100%; //растягиваем по всей ширине
+  height: 362px; // такая высота для мобильной версии
+
+  border: none; // не знаю зачем, границ и так нет вроде, может в других браузерах по умолчанию есть.
+  @media (min-width: $tablet-width) {
+    height: 400px; // ничего не меняется кроме высоты
+  }
+
+  @media (min-width: $desktop-width) {
+    position: absolute; // предварительно .contacts мы задали position: relative; далее растянем картинку задав нулевые отступы
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
