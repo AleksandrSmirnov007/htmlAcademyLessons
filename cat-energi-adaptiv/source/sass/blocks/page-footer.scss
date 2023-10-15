@@ -1,12 +1,31 @@
-.page-footer__list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+.page-footer {
+  padding: 20px 0 22px;
+  background-color: $basic_grey;
+  @media (min-width: $tablet-width) {
+    padding: 56px 0;
+  }
+}
 
-  outline: 1px solid green;
-  outline-offset: -1px;
+.page-footer__container {
+  // для млбильной версии устраивает что элементы идут в стандартном потоке по умолчанию, адля версий палншета и шире зададим сетку
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 164px 1fr 164px; // элементы в третьем столбце по ширине в сумме составят 163рх округлим до четного (164px). В первом столбце ширина элемента меньше чем 164рх но список соц сетей в среднем столбце должен по точно по середине, поэтому крайние стобцы деалем одинаковыми и равными 164рх
+    gap: 16px; // на макете он не обозначен, но добавим его произвольно что бы столбцы не сливались между собой
+  }
 }
 
 .page-footer__logo {
-  border-bottom: 1px solid $special_grey-4;
+  @media (max-width: $mobile-width-only) { // такая формулировка позволить нам применить данное рпавтло только для мобильной версии, для версии экрана шире востановятся настройки по умолчанию
+    margin-bottom: 32px;
+  }
+}
+
+.page-footer__social {
+  margin: 0;
+  @media (max-width: $mobile-width-only) { // такая формулировка позволить нам применить данное рпавтло только для мобильной версии, для версии экрана шире востановятся настройки по умолчанию
+    margin-bottom: 22px;
+    border-top: 1px solid $special_grey-4;
+    border-bottom: 1px solid $special_grey-4; // остальные своства для списка социальных сетей будут добовлены через файл social.scss
+  }
 }
