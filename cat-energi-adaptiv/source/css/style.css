@@ -197,6 +197,9 @@ img {
     color: #ffffff;
   }
 }
+.site-menu__link--catalog {
+  color: #111111;
+}
 
 .page-main__header {
   padding: 28px 0 40px;
@@ -214,12 +217,6 @@ img {
 @media (min-width: 768px) {
   .page-main__heading {
     margin-bottom: 0;
-    font-size: 60px;
-    line-height: 60px;
-  }
-}
-@media (min-width: 1300px) {
-  .page-main__heading {
     font-size: 60px;
     line-height: 60px;
   }
@@ -1117,102 +1114,9 @@ img {
   text-decoration: none;
 }
 
-.product__heading {
-  font-family: "Oswald", sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 36px;
-}
-
-.product__list {
-  list-style-type: none;
-}
-
-.product__title {
-  font-family: "Oswald", sans-serif;
-  color: #222222;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-transform: uppercase;
-}
-
-.product__details-termin,
-.product__details-description {
-  color: #444444;
-  font-family: "Arial", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-}
-
-.show-more__title {
-  font-family: "Oswald", sans-serif;
-  color: #111111;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-transform: uppercase;
-}
-
-.show-more__slogan {
-  color: #444444;
-  font-family: "Arial", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-}
-
-.show-more__button {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.addition-product__heading {
-  font-family: "Oswald", sans-serif;
-  color: #000000;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.addition-product__list {
-  list-style-type: none;
-}
-
-.addition-product__title {
-  font-family: "Oswald", sans-serif;
-  color: #222222;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 16px;
-  text-transform: uppercase;
-}
-
-.addition-product__quantity,
-.addition-product__price {
-  color: #444444;
-  font-family: "Arial", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 14px;
-}
-
-.buyer-info {
-  font-family: "Oswald", sans-serif;
-  padding-top: 48px;
-  padding-bottom: 43px;
-  background-image: linear-gradient(to top, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), url("../../img/background/background-cat-in-bag@1x.png");
-}
-
-.buyer-info__text {
-  text-align: center;
-  font-family: "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #ffffff;
+.cards__container {
+  width: 320px;
+  padding: 27px 0 35px;
 }
 
 .form__heading {
