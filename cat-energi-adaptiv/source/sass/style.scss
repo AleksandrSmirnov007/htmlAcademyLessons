@@ -25,7 +25,9 @@
 @import "blocks/developer.scss";
 
 // каталог
-@import "blocks/cards.scss";
+@import "blocks/catalog-list";
+@import "blocks/card.scss";
+@import "blocks/show-more.scss";
 
 // форма
 @import "blocks/form.scss";

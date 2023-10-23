@@ -1,4 +1,42 @@
+.show-more {
+  position: relative; // для крестика
+  padding: 78px 20px 25px;
+  text-align: center;
+
+  &::before, // рисуем крестик( делаем сразу две палки )
+  &::after {
+    top: 40px; // растояние от верхней границы родителя плюс пол высоты креста.
+    left: calc(50% - 15px); // по горизонтали серидина половина родителя минус половина ширины креста
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #d3d3d3;
+    @media (min-width: $tablet-width) {
+      width: 60px;
+      top: 82px;
+      left: calc(50% - 30px);
+    }
+  }
+
+  &::after {  // поворачиваем
+    transform: rotateZ(90deg); // закончили рисовать крестик
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 161px 38px 38px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 81px;
+  }
+  @media (min-width: $desktop-width) {
+    padding-bottom: 40px; // на два пикселя
+  }
+}
+
 .show-more__title {
+  margin: 0;
+  margin-bottom: 8px;
   font-family: $font-heading;
   color: $special_black;
   font-size: 16px;
@@ -7,15 +45,22 @@
   text-transform: uppercase;
 }
 
-.show-more__slogan {
+.show-more__text {
+  margin-top: 0;
+  margin-bottom: 21px;
   color: $special-dark-grey;
   font-family: $font-body;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
+
+  @media (min-width: $tablet-width) {
+    flex-grow: 1;
+  }
 }
 
 .show-more__button {
+  width: 100%;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;

@@ -1,0 +1,27 @@
+.catalog-list__container {
+  @media (max-width: $mobile-width-only) {
+    padding: 27px 0 19px;
+    width: auto;
+  }
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 62px;
+  }
+}
+
+.catalog-list__item {
+  @media (max-width: $mobile-width-only) {
+    border-bottom: 1px solid $special_grey-2;
+    &:first-of-type { // первому элементу с классом catalog-list__item (и только с таким классом другие не в счет) рисукм верхнюю границу
+      border-top: 1px solid $special-grey-2;
+    }
+  }
+
+}

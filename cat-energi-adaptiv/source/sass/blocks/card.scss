@@ -1,0 +1,38 @@
+.card {
+  padding: 11px 20px 14px;
+  display: grid;
+  grid-template-areas: "image link"
+                        "image list"
+                        "button button";
+  grid-template-columns: 1fr 1fr;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "link" "list" "button";
+    grid-template-rows: 172px repeat(3, auto);
+    padding: 0 38px 40px;
+    background-image: linear-gradient(to bottom, transparent 0, transparent 81px, $basic_grey 81px);
+  }
+}
+
+.card__link {
+  grid-area: link;
+}
+
+.card__heading {
+  margin: 0;
+}
+
+.card__image {
+  grid-area: image;
+  margin: auto;
+}
+
+.card__list {
+  grid-area: list;
+}
+
+.card__button {
+  grid-area: button;
+  width: 100%;
+}

@@ -18,3 +18,12 @@
   }
 }
 
+.page-main__heading--catalog {
+  @media (max-width: $mobile-width-only) {
+    padding: 0 20px;
+  }
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1; // размещаем на два стобца в планшетной версии
+    margin-bottom: 22px; // до карточек 82рх вниз но у нас еще gap 60рх
+  }
+}
