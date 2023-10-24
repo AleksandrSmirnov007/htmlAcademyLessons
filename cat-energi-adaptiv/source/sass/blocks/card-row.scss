@@ -1,0 +1,55 @@
+.card-row {
+  padding: 13px 0 19px;
+  border-top: 1px solid $special_grey;
+  &:last-of-type {
+    border-bottom: 1px solid $special_grey; // нижняя граница под последним элементом
+  }
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: end;
+    padding: 26px 38px 28px;
+    border-left: 1px solid $special_grey;
+    border-right: 1px solid $special_grey;
+  }
+}
+
+.card-row__heading {
+  margin: 0;
+  margin-bottom: 13px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 25px;
+  }
+}
+
+.card-row__list {
+  margin: 0;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr auto; // тем самым растущий по щирине левый столб прибивает правый к правому краю(и визуально эффект похож на space-between)
+
+  @media (min-width: $tablet-width) {
+    gap: 49px;
+    justify-items: end;  // обьем и суммы в планшете нужно ориентировать по правому краю можно запутаться во флексах justify-content, а в гридах justify-items и еще во флексах есть align-content b align-items
+    align-items: end; // от card-row__list до нижнего элемента 22рх но с card-row__heading в одной грид-строчке но card-row__heading отсуп до нжнего элемента 25рх, поэтому выравниванием прижмем элементы к нижней границе строчки, а маржин-ботомм эитх элементов будем регулировать отступы
+    grid-template-columns: 1fr minmax(44px,auto); // почти тоже самое но с минимальной штриной 250р и 50р имеют разную ширину поэтому берем по наибольшей
+    margin-bottom: 22px;
+  }
+
+  ///доделывать версию десктопа сдесь и сетки .card-row
+  ///  плюс к этому делать два столба в catalog-additional__container
+  ///   что бы во втором разместить оффер
+}
+
+.card-row__definition {
+  margin-left: 0;
+}
+
+.card-row__button {
+  width: 100%;
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+  }
+}
