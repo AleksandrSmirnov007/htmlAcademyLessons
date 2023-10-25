@@ -13,14 +13,32 @@
     border-left: 1px solid $special_grey;
     border-right: 1px solid $special_grey;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 16px 0;
+    align-items: center;
+    grid-template-columns: 305px 305px 245px; // делим на три столба  в среднем столюце будет .card-row__list с двумя элементами внутри если включить сетку в фигме то первый стоб равен стобу сетки 245рх  второй столб выбивается из сетки его начало совпадает с сеткой а правый край выходит за 245рх сделаем стобы шире а ростояние между ними узкое 20рх певый столб будет 245+(80-20) =305 шириной и тем самым левый край второго стобца совпадет по сетке(245  80  245  80  245 80 245 ) второй столб аналогично 305, а последний 245рх ширина кнопки "заказать" совпадает с шириной стобца сетки
+    gap: 20px;
+    border-left: none;
+    border-right: none;
+  }
 }
 
 .card-row__heading {
+  font-family: $font-heading;
   margin: 0;
   margin-bottom: 13px;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 400;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 25px;
+    font-size: 20px;
+  }
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
   }
 }
 
@@ -30,17 +48,23 @@
   display: grid;
   grid-template-columns: 1fr auto; // тем самым растущий по щирине левый столб прибивает правый к правому краю(и визуально эффект похож на space-between)
 
+  font-size: 14px;
+  line-height: 1;
+
   @media (min-width: $tablet-width) {
     gap: 49px;
     justify-items: end;  // обьем и суммы в планшете нужно ориентировать по правому краю можно запутаться во флексах justify-content, а в гридах justify-items и еще во флексах есть align-content b align-items
     align-items: end; // от card-row__list до нижнего элемента 22рх но с card-row__heading в одной грид-строчке но card-row__heading отсуп до нжнего элемента 25рх, поэтому выравниванием прижмем элементы к нижней границе строчки, а маржин-ботомм эитх элементов будем регулировать отступы
     grid-template-columns: 1fr minmax(44px,auto); // почти тоже самое но с минимальной штриной 250р и 50р имеют разную ширину поэтому берем по наибольшей
     margin-bottom: 22px;
-  }
 
-  ///доделывать версию десктопа сдесь и сетки .card-row
-  ///  плюс к этому делать два столба в catalog-additional__container
-  ///   что бы во втором разместить оффер
+    font-size: 16px;
+    line-height: 125%;
+  }
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+    justify-items: start;// для планшетной версии прижимаются к левому краю
+  }
 }
 
 .card-row__definition {
@@ -51,5 +75,8 @@
   width: 100%;
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1;
+  }
+  @media (min-width: $desktop-width) {
+    grid-column: auto;
   }
 }

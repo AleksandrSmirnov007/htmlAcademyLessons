@@ -1269,6 +1269,19 @@ img {
 .catalog-additional__container {
   padding-top: 25px;
 }
+@media (min-width: 768px) {
+  .catalog-additional__container {
+    padding-bottom: 69px;
+  }
+}
+@media (min-width: 1300px) {
+  .catalog-additional__container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 80px;
+    padding-bottom: 86px;
+  }
+}
 
 .catalog-additional__heading {
   margin: 0;
@@ -1279,6 +1292,11 @@ img {
   font-weight: 400;
   line-height: 24px;
   /* 100% */
+}
+@media (min-width: 1300px) {
+  .catalog-additional__heading {
+    grid-column: 1/-1;
+  }
 }
 
 .catalog-additional__list {
@@ -1304,14 +1322,35 @@ img {
     border-right: 1px solid #cdcdcd;
   }
 }
+@media (min-width: 1300px) {
+  .card-row {
+    padding: 16px 0;
+    align-items: center;
+    grid-template-columns: 305px 305px 245px;
+    gap: 20px;
+    border-left: none;
+    border-right: none;
+  }
+}
 
 .card-row__heading {
+  font-family: "Oswald", sans-serif;
   margin: 0;
   margin-bottom: 13px;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .card-row__heading {
     margin-bottom: 25px;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1300px) {
+  .card-row__heading {
+    margin-bottom: 0;
   }
 }
 
@@ -1320,6 +1359,8 @@ img {
   margin-bottom: 15px;
   display: grid;
   grid-template-columns: 1fr auto;
+  font-size: 14px;
+  line-height: 1;
 }
 @media (min-width: 768px) {
   .card-row__list {
@@ -1328,6 +1369,14 @@ img {
     align-items: end;
     grid-template-columns: 1fr minmax(44px, auto);
     margin-bottom: 22px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
+@media (min-width: 1300px) {
+  .card-row__list {
+    margin-bottom: 0;
+    justify-items: start;
   }
 }
 
@@ -1342,6 +1391,23 @@ img {
   .card-row__button {
     grid-column: 1/-1;
   }
+}
+@media (min-width: 1300px) {
+  .card-row__button {
+    grid-column: auto;
+  }
+}
+
+.offer {
+  min-height: 290px;
+  background-color: #5eaa2f;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-image: url("");
+}
+
+.offer__text {
+  line-height: 20px;
 }
 
 .form__heading {
