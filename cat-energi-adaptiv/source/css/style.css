@@ -1399,15 +1399,38 @@ img {
 }
 
 .offer {
-  min-height: 290px;
+  position: relative;
+  color: #ffffff;
   background-color: #5eaa2f;
   background-repeat: no-repeat;
   background-position: 0 100%;
-  background-image: url("");
+  background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 100%), url("../../img/background/cat-in-bag-960x960.png");
+  padding: 186px 58px 43px;
+  text-align: center;
+}
+.offer:before {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 82px;
+  top: 58px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+}
+@media (min-width: 768px) {
+  .offer {
+    padding: 70px 124px 70px 422px;
+    text-align: left;
+  }
 }
 
 .offer__text {
+  font-size: 16px;
   line-height: 20px;
+  margin: 0;
 }
 
 .form__heading {
