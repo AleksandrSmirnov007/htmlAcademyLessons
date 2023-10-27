@@ -21,14 +21,30 @@
     margin-left: auto;
     margin-right: auto;
 
-    background-color: red;
+    background-image: url("../../img/icons/icon_gift.svg");
 
-////////////////////////продолджить отсюда добавить картинку в псевдоэлемент
+    @media (min-width: $tablet-width) {
+      margin: 0;
+      left: 77px;
+      right: auto;
+    }
+    @media (min-width: $desktop-width) {
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
   }
 
   @media (min-width: $tablet-width) {
     padding: 70px 124px 70px 422px;
     text-align: left;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 184px 42px 42px;
+    text-align: center;
   }
 }
 

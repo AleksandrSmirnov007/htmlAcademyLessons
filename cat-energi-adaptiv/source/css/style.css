@@ -1418,12 +1418,33 @@ img {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: red;
+  background-image: url("../../img/icons/icon_gift.svg");
+}
+@media (min-width: 768px) {
+  .offer:before {
+    margin: 0;
+    left: 77px;
+    right: auto;
+  }
+}
+@media (min-width: 1300px) {
+  .offer:before {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media (min-width: 768px) {
   .offer {
     padding: 70px 124px 70px 422px;
     text-align: left;
+  }
+}
+@media (min-width: 1300px) {
+  .offer {
+    padding: 184px 42px 42px;
+    text-align: center;
   }
 }
 
