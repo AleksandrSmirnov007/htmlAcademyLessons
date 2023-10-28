@@ -1505,13 +1505,39 @@ legend {
 
 .form__container--submit {
   padding: 34px 20px 32px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .form__container--submit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    text-align: left;
+    align-items: center;
+  }
+}
+
+.form__button {
+  display: block;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .form__button {
+    margin-bottom: 21px;
+  }
 }
 
 .form__explanation {
+  margin: 0;
   font-family: "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
+}
+@media (min-width: 768px) {
+  .form__explanation {
+    font-size: 16px;
+  }
 }
 
 .field-group {
