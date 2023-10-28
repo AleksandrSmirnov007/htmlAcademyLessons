@@ -1,17 +1,43 @@
-.form__heading {
-  font-family: $font-heading;
-  color: $black;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 36px;
+.form__container {
+  @media (max-width: $mobile-width-only) {
+    width: 320px;
+  }
+  @media (min-width: $tablet-width) {
+    padding-top: 40px;
+  }
 }
 
-.form__intro {
+.form__group {
+  border: none;
+  margin: 0; // обнуляю все отступы потому, что под классом .form__group у меня идет тег fieldset и при заданных паддингах странное поведение тег legend внутри не реагирует на них никак а также после легенд появляется отступ до полей раввный заданному вертикальному паддингу, пэтому я я все обнулил  а отступы буду реалиизовать дополнительными оберткой внутри fieldset 
+  padding: 0;
+}
+
+.form__heading {
+  margin-left: 20px;
+  margin-right: 20px;
+  @media (min-width: $tablet-width) {
+    margin: 0 40px 54px;
+  }
+}
+
+.form__subheading {
+  margin: 0 20px 14px;
+
   font-family: $font-heading;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    margin: 0 40px 66px;
+    font-size: 20px;
+    line-height: 30px; /* 150% */
+  }
+}
+
+.form__container--submit {
+  padding: 34px 20px 32px;
 }
 
 .form__explanation {

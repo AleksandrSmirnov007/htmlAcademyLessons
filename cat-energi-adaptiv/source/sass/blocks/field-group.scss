@@ -1,9 +1,39 @@
 .field-group {
-  border: none;
+  margin: 0;
+  @media (max-width: $mobile-width-only) {
+    padding: 24px 20px;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid $special_grey-4;
+    &--contacts,
+    &--comment,
+    &--additional {
+      border: none;
+      padding-bottom: 0;
+    }
+  }
 }
 
 .field-group__list {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+  @media (min-width: $tablet-width) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  &--radio {
+    gap: 13px;
+  }
+  &--checkbox {
+    @media (min-width: $tablet-width) {
+      grid-template-columns: 1fr 1fr; 
+      row-gap: 32px;
+      column-gap: 60px;
+    }
+  }
 }
 
 .field-group__lead,
@@ -25,8 +55,15 @@
 }
 
 .field-group__heading {
+  display: block; // так как это теги span и у них display: inline; и отступы работают не как в блочной модели
+  margin-bottom: 35px;
   font-family: $font-heading;
   font-size: 24px;
   font-weight: 400;
   line-height: 26px;
+  @media (min-width: $tablet-width) {
+    width: max-content;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }

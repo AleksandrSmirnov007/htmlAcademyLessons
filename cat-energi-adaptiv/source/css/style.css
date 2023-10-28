@@ -23,6 +23,11 @@ img {
   height: auto;
 }
 
+legend {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1454,20 +1459,52 @@ img {
   margin: 0;
 }
 
-.form__heading {
-  font-family: "Oswald", sans-serif;
-  color: #000000;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 36px;
+@media (max-width: 767px) {
+  .form__container {
+    width: 320px;
+  }
+}
+@media (min-width: 768px) {
+  .form__container {
+    padding-top: 40px;
+  }
 }
 
-.form__intro {
+.form__group {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form__heading {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (min-width: 768px) {
+  .form__heading {
+    margin: 0 40px 54px;
+  }
+}
+
+.form__subheading {
+  margin: 0 20px 14px;
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .form__subheading {
+    margin: 0 40px 66px;
+    font-size: 20px;
+    line-height: 30px;
+    /* 150% */
+  }
+}
+
+.form__container--submit {
+  padding: 34px 20px 32px;
 }
 
 .form__explanation {
@@ -1478,11 +1515,43 @@ img {
 }
 
 .field-group {
-  border: none;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .field-group {
+    padding: 24px 20px;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .field-group--contacts, .field-group--comment, .field-group--additional {
+    border: none;
+    padding-bottom: 0;
+  }
 }
 
 .field-group__list {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+@media (min-width: 768px) {
+  .field-group__list {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+.field-group__list--radio {
+  gap: 13px;
+}
+@media (min-width: 768px) {
+  .field-group__list--checkbox {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 32px;
+    column-gap: 60px;
+  }
 }
 
 .field-group__lead,
@@ -1504,9 +1573,18 @@ img {
 }
 
 .field-group__heading {
+  display: block;
+  margin-bottom: 35px;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 26px;
+}
+@media (min-width: 768px) {
+  .field-group__heading {
+    width: max-content;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
