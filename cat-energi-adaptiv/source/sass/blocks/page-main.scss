@@ -1,5 +1,11 @@
-.page-main__header {
-  padding: 28px 0 40px;
+
+.page-main__header--form {
+  @media (min-width: $tablet-width) {
+    padding: 0 40px;
+  }
+  @media (min-width: $desktop-width) {
+    padding: 0;
+  }
 }
 
 .page-main__heading {
@@ -25,5 +31,27 @@
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1; // размещаем на два стобца в планшетной версии
     margin-bottom: 22px; // до карточек 82рх вниз но у нас еще gap 60рх
+  }
+}
+
+
+.page-main__heading--form {
+  @media (min-width: $tablet-width) {
+    margin: 0 0 54px;
+  }
+}
+
+.page-main__subheading {
+  margin: 0 0 14px;
+
+  font-family: $font-heading;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    margin: 0 0 66px;
+    font-size: 20px;
+    line-height: 30px; /* 150% */
   }
 }

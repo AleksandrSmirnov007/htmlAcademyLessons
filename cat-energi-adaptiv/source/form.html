@@ -36,116 +36,119 @@
     </header>
     <main class="page__main page-main">
       <h1 class="visually-hidden">Выбор программы в Кэт-энерджи</h1>
-      <section class="page-main__section form form__container container">
-        <h2 class="form__heading page-main__heading">Подбор программы</h2>
-        <p class="form__subheading">Заполните анкету, и мы подберем программу питания для вашего кота</p>
-        <form class="form__body" action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="form__group field-group">
+
+      <header class="page-main__header page-main__header--form container">
+        <h2 class="page-main__heading page-main__heading--form">Подбор программы</h2>
+        <p class="page-main__subheading page-main__subheading--form">Заполните анкету, и мы подберем программу питания для вашего кота</p>
+      </header>
+
+      <section class="page-main__section form">
+        <form class="form__container container" action="https://echo.htmlacademy.ru" method="post">
+          <fieldset class="form__group form__group--cat field-group">
             <legend><span class="visually-hidden">Данные о коте</span></legend>
             <ul class="field-group__list">
               <li class="field-group__item">
-                <label class="field-group__label">
-                  <span class="field-group__lead">Имя:*</span>
-                  <input class="field-group__input" type="text" name="name" placeholder="Барсик">
+                <label class="field">
+                  <span class="field__lead">Имя:*</span>
+                  <input class="field__input" type="text" name="name" placeholder="Барсик">
                 </label>
               </li>
               <li class="field-group__item">
-                <label class="field-group__label">
-                  <span class="field-group__lead">Вес (кг):</span>
-                  <input class="field-group__input" type="number" name="weight" placeholder="7">
+                <label class="field">
+                  <span class="field__lead">Вес (кг):</span>
+                  <input class="field__input" type="number" name="weight" placeholder="7">
                 </label>
               </li>
               <li class="field-group__item">
-                <label class="field-group__label">
-                  <span class="field-group__lead">Возвраст (лет):</span>
-                  <input class="field-group__input" type="number" name="refund" placeholder="7">
+                <label class="field">
+                  <span class="field__lead">Возвраст (лет):</span>
+                  <input class="field__input" type="number" name="refund" placeholder="7">
                 </label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form__group field-group">
+          <fieldset class="form__group form__group--target field-group">
             <legend><span class="visually-hidden">Варианты программы</span></legend>
-            <ul class="field-group__list field-group__list--radio">
+            <ul class="field-group__list field-group__list--target">
               <li class="field-group__item">
-                <label class="field-group__label field-group__label--slim">
-                  <input class="field-group__input visually-hidden"  type="radio" name="programs" value="slim" checked>
-                  <span class="field-group__lead field-group__lead--radio">Похудение</span>
+                <label class="control control--radio">
+                  <input class="control__input visually-hidden"  type="radio" name="programs" value="slim" checked>
+                  <span class="control__lead">Похудение</span>
                 </label>
               </li>
               <li class="field-group__item">
-                <label class="field-group__label field-group__label--pro">
-                  <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="logger">
-                  <span class="field-group__lead field-group__lead--radio">Набор массы</span>
+                <label class="control control--radio">
+                  <input class="control__input visually-hidden"  type="radio" name="beard-style" value="logger">
+                  <span class="control__lead">Набор массы</span>
                 </label>
               </li>
               <li class="field-group__item">
-                <label class="field-group__label field-group__label--dont-know">
-                  <input class="field-group__input visually-hidden"  type="radio" name="beard-style" value="polar">
-                  <span class="field-group__lead field-group__lead--radio">Не знаю (нужен ваш совет)</span>
+                <label class="control control--radio">
+                  <input class="control__input visually-hidden"  type="radio" name="beard-style" value="polar">
+                  <span class="control__lead">Не знаю (нужен ваш совет)</span>
                 </label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form__group">
-            <div class="field-group field-group--contacts">
-              <legend><span class="field-group__heading">Контактные данные(владельца кота)</span></legend>
-              <ul class="field-group__list">
-                <li class="field-group__item">
-                  <label class="field-group__label">
-                    <span class="field-group__lead">E-mail:*</span>
-                    <input class="field-group__input" type="email" name="email" placeholder="kuklachev@gmail.com">
-                  </label>
-                </li>
-                <li class="field-group__item">
-                  <label class="field-group__label">
-                    <span class="field-group__lead">Телефон:*</span>
-                    <input class="field-group__input" type="tel" name="phone" placeholder="8 (960) 900-60-90">
-                  </label>
-                </li>
-              </ul>
-            </div>  
+          <fieldset class="form__group form__group--contacts field-group">
+            <legend><span class="field-group__heading">Контактные данные(владельца кота)</span></legend>
+            <ul class="field-group__list field-group__list--contacts">
+              <li class="field-group__item">
+                <label class="field">
+                  <span class="field__lead">E-mail:*</span>
+                  <input class="field__input" type="email" name="email" placeholder="kuklachev@gmail.com">
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field">
+                  <span class="field__lead">Телефон:*</span>
+                  <input class="field__input" type="tel" name="phone" placeholder="8 (960) 900-60-90">
+                </label>
+              </li>
+            </ul>
           </fieldset>
 
-          <fieldset class="form__group">
-            <div class="field-group field-group--comment">
-              <legend><span class="field-group__heading">Комментарий</span></legend>
-              <label class="field-group__label">
-                <textarea class="field-group__input field-group__input--textarea" cols="30" rows="4" name="info">Расскажите обо всех повадках кота</textarea>
+          <div class="form__group form__group--comment field-group">
+              <label class="field-group__heading" for="comment">Комментарий</label>
+              <div class="field">
+                <label class="field-group__label">
+                  <textarea class="field__input" id="comment" name="comment" rows="5" placeholder="Расскажите обо всех повадках кота"></textarea>
+                </label>
+              </div>
+          </div>
+
+          <fieldset class="form__group form__group--additional field__group">
+
+            <legend><span class="field-group__heading">Дополнительно</span></legend>
+            <ul class="field-group__list field-group__list--additional">
+              <li class="field-group__item">
+                <label class="control control--checkbox">
+                  <input class="control__input visually-hidden"  type="checkbox" name="addition-product" value="sweetener" checked>
+                  <span class="control__lead">Сахарозаменитель</span>
               </label>
-            </div>
-            </fieldset>
-          <fieldset class="form__group">
-            <div class="field-group field-group--additional">
-              <legend><span class="field-group__heading">Дополнительно</span></legend>
-              <ul class="field-group__list field-group__list--checkbox">
-                <li class="field-group__item">
-                  <label class="field-group__label">
-                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-product" value="sweetener" checked>
-                    <span class="field-group__lead">Сахарозаменитель</span>
-                </label>
-                </li>
-                <li class="field-group__item">
-                  <label class="field-group__label">
-                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-product" value="drink-water">
-                    <span class="field-group__lead">Питьевая вода</span>
-                </label>
-                </li>
-                <li class="field-group__item">
-                  <label class="field-group__label">
-                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-product" value="milk">
-                    <span class="field-group__lead">Молоко</span>
-                </label>
-                </li>
-                <li class="field-group__item">
-                  <label class="field-group__label">
-                    <input class="field-group__input visually-hidden"  type="checkbox" name="addition-product" value="vitamins">
-                    <span class="field-group__lead">Витамины</span>
-                </label>
-                </li>
-              </ul>
-            </div>
+              </li>
+              <li class="field-group__item">
+                <label class="control control--checkbox">
+                  <input class="control__input visually-hidden"  type="checkbox" name="addition-product" value="drink-water">
+                  <span class="control__lead">Питьевая вода</span>
+              </label>
+              </li>
+              <li class="field-group__item">
+                <label class="control control--checkbox">
+                  <input class="control__input visually-hidden"  type="checkbox" name="addition-product" value="milk">
+                  <span class="control__lead">Молоко</span>
+              </label>
+              </li>
+              <li class="field-group__item">
+                <label class="control control--checkbox">
+                  <input class="control__input visually-hidden"  type="checkbox" name="addition-product" value="vitamins">
+                  <span class="control__lead">Витамины</span>
+              </label>
+              </li>
+            </ul>
+
           </fieldset>
-          <div class="form__container container form__container--submit">
+          <div class="form__footer">
             <button class="form__button button" type="submit">Отправить заявку</button>
             <p class="form__explanation">* — Обязательные поля</p>
           </div>

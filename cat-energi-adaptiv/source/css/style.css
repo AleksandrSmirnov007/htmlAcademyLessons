@@ -206,8 +206,15 @@ legend {
   color: #111111;
 }
 
-.page-main__header {
-  padding: 28px 0 40px;
+@media (min-width: 768px) {
+  .page-main__header--form {
+    padding: 0 40px;
+  }
+}
+@media (min-width: 1300px) {
+  .page-main__header--form {
+    padding: 0;
+  }
 }
 
 .page-main__heading {
@@ -236,6 +243,29 @@ legend {
   .page-main__heading--catalog {
     grid-column: 1/-1;
     margin-bottom: 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-main__heading--form {
+    margin: 0 0 54px;
+  }
+}
+
+.page-main__subheading {
+  margin: 0 0 14px;
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .page-main__subheading {
+    margin: 0 0 66px;
+    font-size: 20px;
+    line-height: 30px;
+    /* 150% */
   }
 }
 
@@ -1459,14 +1489,18 @@ legend {
   margin: 0;
 }
 
-@media (max-width: 767px) {
-  .form__container {
-    width: 320px;
-  }
-}
 @media (min-width: 768px) {
   .form__container {
-    padding-top: 40px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+  }
+}
+@media (min-width: 1300px) {
+  .form__container {
+    padding: 0;
+    column-gap: 80px;
   }
 }
 
@@ -1476,44 +1510,30 @@ legend {
   padding: 0;
 }
 
-.form__heading {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-@media (min-width: 768px) {
-  .form__heading {
-    margin: 0 40px 54px;
-  }
+.form__group--contacts,
+.form__group--comment,
+.form__group--additional,
+.form__footer {
+  grid-column: 1/-1;
 }
 
-.form__subheading {
-  margin: 0 20px 14px;
-  font-family: "Oswald", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  text-transform: uppercase;
-}
-@media (min-width: 768px) {
-  .form__subheading {
-    margin: 0 40px 66px;
-    font-size: 20px;
-    line-height: 30px;
-    /* 150% */
-  }
-}
-
-.form__container--submit {
-  padding: 34px 20px 32px;
+.form__footer {
+  padding: 34px 0 32px;
   text-align: center;
 }
 @media (min-width: 768px) {
-  .form__container--submit {
+  .form__footer {
+    padding: 54px 0 72px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     text-align: left;
     align-items: center;
+  }
+}
+@media (min-width: 1300px) {
+  .form__footer {
+    padding: 61px 0 82px;
   }
 }
 
@@ -1540,22 +1560,6 @@ legend {
   }
 }
 
-.field-group {
-  margin: 0;
-}
-@media (max-width: 767px) {
-  .field-group {
-    padding: 24px 20px;
-    position: relative;
-    border: none;
-    border-bottom: 1px solid #d9d9d9;
-  }
-  .field-group--contacts, .field-group--comment, .field-group--additional {
-    border: none;
-    padding-bottom: 0;
-  }
-}
-
 .field-group__list {
   list-style-type: none;
   padding: 0;
@@ -1563,25 +1567,32 @@ legend {
   display: grid;
   gap: 14px;
 }
-@media (min-width: 768px) {
-  .field-group__list {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-.field-group__list--radio {
+.field-group__list--target {
   gap: 13px;
 }
+@media (min-width: 1300px) {
+  .field-group__list--contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
+}
 @media (min-width: 768px) {
-  .field-group__list--checkbox {
+  .field-group__list--additional {
     grid-template-columns: 1fr 1fr;
     row-gap: 32px;
     column-gap: 60px;
   }
 }
+@media (min-width: 1300px) {
+  .field-group__list--additional {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
+  }
+}
 
-.field-group__lead,
-.field-group__input {
+.field__lead,
+.field__input {
   font-family: "Oswald", sans-serif;
   color: #444444;
   font-size: 16px;
@@ -1590,12 +1601,8 @@ legend {
   text-transform: uppercase;
 }
 
-.field-group__input::placeholder {
+.field__input::placeholder {
   color: #444444;
-}
-
-.field-group__lead--radio {
-  color: #222222;
 }
 
 .field-group__heading {
@@ -1609,8 +1616,19 @@ legend {
 @media (min-width: 768px) {
   .field-group__heading {
     width: max-content;
-    padding-left: 40px;
-    padding-right: 40px;
   }
+}
+
+.control {
+  font-family: "Oswald", sans-serif;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.control--checkbox .control__lead {
+  color: #000000;
 }
 /*# sourceMappingURL=style.css.map */

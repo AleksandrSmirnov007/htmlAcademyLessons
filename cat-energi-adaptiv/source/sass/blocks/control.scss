@@ -1,0 +1,13 @@
+
+.control {
+  font-family: $font-heading;
+  color: $special-dark-grey-2;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.control--checkbox .control__lead {
+    color: $black;
+  }
