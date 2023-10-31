@@ -3,10 +3,22 @@
   flex-direction: column;
   background-color: #242424;
   color: #ffffff;
+  outline: 5px solid green;
+  outline-offset: -2px;
+
+  @media (min-width: $tablet-width) {
+    background-color: #000000;
+    background-image: url("../../image/bg-header.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% -9px;
+  }
 }
 
 .page-header__logo {
   height: 85px;
+  text-align: center; // у тега img display: inline поэтому  можно с ориентировать логотип посередине как текст 
+  outline: 5px solid red;
+  outline-offset: -5px; 
 
   @media (min-width: $tablet-width) {
     order: 2;
@@ -16,6 +28,11 @@
   @media (min-width: $desktop-width) {
     height: 651px;
   }
+}
+
+.page-header__logo img {
+  width: 226px;
+  height: 85px; // svg не искажаеся а просто увеличивается поле сверху и снизу картинки
 }
 
 // также можно прописать такое вне предыдущего селектора но это не предпочтительно
