@@ -3,26 +3,29 @@
   flex-direction: column;
   background-color: #242424;
   color: #ffffff;
-  outline: 5px solid green;
-  outline-offset: -2px;
 
-  @media (min-width: $tablet-width) {
-    background-color: #000000;
-    background-image: url("../../image/bg-header.jpg");
-    background-repeat: no-repeat;
-    background-position: 50% -9px;
-  }
+
 }
 
 .page-header__logo {
   height: 85px;
-  text-align: center; // у тега img display: inline поэтому  можно с ориентировать логотип посередине как текст 
-  outline: 5px solid red;
-  outline-offset: -5px; 
+  text-align: center; // у тега img display: inline поэтому  можно с ориентировать логотип посередине как текст
 
   @media (min-width: $tablet-width) {
-    order: 2;
-    height: 400px;
+    order: 2; // меняем местами с main-nav
+    height: 400px; //  делаем большим блоком весь header по макету высотой 469рх шапка 72рх почему тио тут размер 400 а не 469-72=397 видимо округлено до 400
+    @media (min-width: $tablet-width) {
+      background-color: #000000;
+      background-image: url("../../image/bg-header.jpg");
+      background-repeat: no-repeat;
+      background-position: 50% -9px; // при поднимаем картинку согласно макета по какимнибудь элементам картинки можгно ориентироваться
+
+    }
+    @media (min-width: $desktop-width) {
+      height: 648px; // весь блок header на макете 720рх блок main-nav 69px (720-69 = 651px) но тут почему то взяли 648px;
+      background-position: 50% 0; // на десктопной версии смещения по игреку нет обнуляем
+      background-size: cover; //это способ заставить картинку занять всю доступную площадь и при этом не деформироваться. Зададим background-size: cover — cover переводится с английского как «обложка».
+    }
   }
 
   @media (min-width: $desktop-width) {
@@ -33,6 +36,9 @@
 .page-header__logo img {
   width: 226px;
   height: 85px; // svg не искажаеся а просто увеличивается поле сверху и снизу картинки
+  @media (min-width:$desktop-width) {
+    margin-top: 57px; //  в фигме 57px от верхней границы Лого вверх до Шапки с меню
+  }
 }
 
 // также можно прописать такое вне предыдущего селектора но это не предпочтительно

@@ -1,8 +1,12 @@
-.main-nav {
-  outline: 5px solid yellow;
-  outline-offset: -5px;
-}
+//// продолжить отсюда демонстрация № 2 шаг № 3 (Зададим базовые стили для кнопки переключения меню.)
 
+
+.main-nav {
+  position: relative; // подготовливаем почву для позиционирования main-nav__toggle
+  width: auto; // непонятно зачем
+  min-height: 51px; // высота одного пункта меню
+  background-color: #826550; // удобнее взять из стайлгайда
+}
 .main-nav__list {
   margin: 0;
   padding: 0;
