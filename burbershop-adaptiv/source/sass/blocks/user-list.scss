@@ -1,11 +1,41 @@
-@media (min-width: $tablet-width) {
-  .user-list {
+.user-list {
+  @media (min-width: $tablet-width) {
     width: 60px;
   }
-}
-
-@media (min-width: $desktop-width) {
-  .user-list {
+  @media (min-width: $desktop-width) {
     width: 150px;
   }
 }
+
+.user-list__login {
+  position: relative; // тут понятно зачем - будем размежать иконку "войти"
+  display: block;
+  color: #ffffff;
+  background-color: #6a4d38;
+  line-height: 18px; /* 133.333% */
+  padding: 17px 21px;
+  padding-left: 47px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #624530;
+  }
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #624530;
+  }
+}
+
+
+
+.user-list__login-icon {
+  position: absolute;
+  line-height: 18px;
+  top: 17px;
+  left: 21px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.3;
+  fill: #ffffff;
+}
+

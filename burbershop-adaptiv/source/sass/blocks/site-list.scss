@@ -1,11 +1,28 @@
-@media (min-width: $tablet-width) {
-  .site-list {
+.site-list {
+  font-weight: bold;
+  @media (min-width: $tablet-width) {
     width: 570px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 780px;
   }
 }
 
-@media (min-width: $desktop-width) {
-  .site-list {
-    width: 780px;
-  }
+.site-list a {
+  position: relative; // пока непонятно зачем
+  display: block;  // далее будем применять паддинги ссылки по умолчанию inline-block паддинги будут работать не так как в блочной модели
+  padding: 12px 21px;
+  padding-bottom: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px; /* 133.333% */
+  background-color: #826550;
+  // box-shadow: 0px 1px 0px 0px #71543f, 0px 1px 0px 0px #886e5b inset; так задано в фигме но на практике выглядит плохо нижняя тень закрывается следующим элементом проще задать такие тени спомошь разных верних и нижних границ элемента
+  // box-shadow: 0px 1px 0px 0px red, 0px 1px 0px 0px green inset; --- взял для наглядности зеленый и красный цвет
+  border-bottom: 1px solid #71543f;
+  border-top: 1px solid #886e5b;
+
 }

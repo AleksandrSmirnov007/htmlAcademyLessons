@@ -132,6 +132,44 @@ img {
   box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3), 0 16px 0 0 rgba(255, 255, 255, 0.3);
 }
 
+@media (max-width: 767px) {
+  .main-nav--closed .site-list__item {
+    display: none;
+  }
+  .main-nav--closed .site-list__item--active {
+    display: block;
+  }
+
+  .main-nav--closed .site-list__item--active a {
+    padding-right: 70px;
+    padding-left: 70px;
+    text-align: center;
+  }
+
+  .main-nav--closed .user-list__item {
+    display: none;
+  }
+}
+.main-nav--opened .main-nav__wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 70px;
+  z-index: 10;
+  min-height: 80vh;
+  background-color: #6a4d38;
+}
+.main-nav--opened .main-nav__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 8px;
+  box-shadow: inset 4px 0 7px -2px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
 .main-nav--opened .main-nav__toggle {
   top: 0;
   left: 0;
@@ -153,6 +191,11 @@ img {
 }
 .main-nav--opened .main-nav__toggle::after {
   transform: rotate(-45deg);
+}
+
+.main-nav--opened .main-nav__toggle:active::before,
+.main-nav--opened .main-nav__toggle:active::after {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 @media (min-width: 768px) {
@@ -180,6 +223,9 @@ img {
   color: #ffffff;
 }
 
+.site-list {
+  font-weight: bold;
+}
 @media (min-width: 768px) {
   .site-list {
     width: 570px;
@@ -190,6 +236,23 @@ img {
     width: 780px;
   }
 }
+
+.site-list a {
+  position: relative;
+  display: block;
+  padding: 12px 21px;
+  padding-bottom: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+  /* 133.333% */
+  background-color: #826550;
+  border-bottom: 1px solid #71543f;
+  border-top: 1px solid #886e5b;
+}
+
 @media (min-width: 768px) {
   .user-list {
     width: 60px;
@@ -200,6 +263,37 @@ img {
     width: 150px;
   }
 }
+
+.user-list__login {
+  position: relative;
+  display: block;
+  color: #ffffff;
+  background-color: #6a4d38;
+  line-height: 18px;
+  /* 133.333% */
+  padding: 17px 21px;
+  padding-left: 47px;
+  text-decoration: none;
+}
+.user-list__login:hover {
+  background-color: #624530;
+}
+.user-list__login:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #624530;
+}
+
+.user-list__login-icon {
+  position: absolute;
+  line-height: 18px;
+  top: 17px;
+  left: 21px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.3;
+  fill: #ffffff;
+}
+
 .stats {
   background-color: #292929;
   color: #ffffff;

@@ -2,7 +2,7 @@
 
 
 .main-nav {
-  position: relative; // подготовливаем почву для позиционирования main-nav__toggle
+  position: relative; // подготовливаем почву для позиционирования main-nav__toggle а также в открытом виде будем позицонировать main-nav__wrapper по абсолюту к main-nav
   width: auto; // непонятно зачем
   min-height: 51px; // высота одного пункта меню
   background-color: #826550; // удобнее взять из стайлгайда
@@ -45,6 +45,52 @@
               0 16px 0 0 rgba(255, 255, 255, 0.3);
 }
 
+//открытие и закрытие должно быть реализовано только в мобильной версии
+
+@media (max-width: $mobile-width-only) { // нужно обратить внимание что тут именно MAX-width делаем отображение текущего пункта меню
+  .main-nav--closed .site-list__item {
+    display: none; // скрываем все элементы списка
+
+    &--active {  // используем класс модификатор присваемый текущему пункту меню
+      display: block; // задаем ему вместо display: none;
+
+    }
+  }
+
+  .main-nav--closed .site-list__item--active a { // задаем непосредстенно ссылке, это связано с вопросом об величине области взоимодействия с элементов // непонятно посему нспользуют класс ссылки, а используют вложенный селектор
+    padding-right: 70px; // теперь текст пунктов меню не наедет на кнопку меню
+    padding-left: 70px; // возьмем и слева такой же отступ что бы проще отцентровать п горизонтали
+    text-align: center; // пункты в меню отцентрированы погоризонтали
+  } // если поменять класс main-nav--closed на класс .main-nav--opened(при открытом меню) то эти правила не применятся
+
+  .main-nav--closed .user-list__item { // так же скрываем user-list (кнопка "войти")
+    display: none;
+  }
+}
+
+
+.main-nav--opened .main-nav__wrapper { //В открытом меню обёртка выпадает из потока, все пункты открыты.
+  position: absolute;
+  top: 0;
+  right: 0; // растягиваем так как ширина не задана
+  left: 70px; // справа соглассно макету отступ широной с ширину кнопки
+  z-index: 10; // что бы наверняка всплыло на всеми элементами и был запас для индексов ниже
+  min-height: 80vh; // пусть высота составлянет 80% от высоты вьюпорта
+  background-color: #6a4d38;
+
+  &::before { // затеняем левый край как на мекете наклвдывя сверху прозрачный псевдоэлемент с внутренней тенью
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 8px;
+    box-shadow: inset 4px 0 7px -2px rgba(0, 0, 0, 0.4); // РАСШИФРОВАТЬ И НАЧАЬТЬ ОТСЮДА
+    z-index: 2;
+
+  }
+}
+
 // Пропишем изображение на кнопке в виде креста при открытом main-nav
 .main-nav--opened .main-nav__toggle {
   top: 0; // позиционируем в левом верхнем углу кнопку при открытом меню
@@ -64,13 +110,17 @@
   }
 
   &::before{
-    transform: rotateZ(45deg); // по умоляанию вращается по оси Z
+    transform: rotateZ(45deg); // по умолчанию вращается по оси Z
     box-shadow: none; //
   }
   &::after {
     transform: rotate(-45deg);
   }
+}
 
+.main-nav--opened .main-nav__toggle:active::before,
+.main-nav--opened .main-nav__toggle:active::after {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .main-nav__wrapper {
