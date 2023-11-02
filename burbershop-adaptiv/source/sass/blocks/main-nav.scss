@@ -1,4 +1,4 @@
-//// продолжить отсюда демонстрация № 2 шаг № 3 (Зададим базовые стили для кнопки переключения меню.)
+
 
 
 .main-nav {
@@ -7,32 +7,73 @@
   min-height: 51px; // высота одного пункта меню
   background-color: #826550; // удобнее взять из стайлгайда
 }
-.main-nav__list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+
+.main-nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 70px;
+  height: 50px;
+  background-color: #6a4d38;
+  cursor: pointer;
+  border: none;
+  &:hover,
+  &:active {
+    background-color: #624530;
+  }
+}
+/// пишем изображение кнопки "бургера" (такое изображение при закрытом меню)
+.main-nav--closed .main-nav__toggle::before {// если на теге nav вместе main-nav с классом висит еще класс модификатор main-nav--closed значит меню  находиться в закрытом состоянии и кнопка должна имет изобрадение три полоски (или по другому вид бургера) так вот в этом случае создаем псевдоэлемент в виде одной полоски (самой верхней) а нижние полоски добавляем к этой полоске как тени(тем самым кнопка не нуждается в загрузке картинки)
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  content: "";
+  width: 36px;
+  height: 2px;
+  background-color: #ffffff;
+
+  box-shadow: 0 8px 0 0 #ffffff,
+              0 16px 0 0 #ffffff; // box-shadow: смещение_по_горизонтали смещение_по_вертикали размытие увеличение размера цвет;
 }
 
-.main-nav__list a {
-  color: #ffffff;
+//  в состоянии нажатия на кнопку прозрачность рисунка 30%
+.main-nav--closed .main-nav__toggle:active::before { // при нажатии у псевдоэлемнта и его теней  меняем белый цвет на белый с 30% процентов прозрачностью
+  background-color: rgba(255, 255, 255, 0.3); // в Less используется функция fade Установка абсолютной непрозрачности цвета. Может применяться к цветам независимо от того, имеют они уже значение непрозрачности или нет. В scss пока аналога не нашел пока сделаю через rgba
+  box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3),
+              0 16px 0 0 rgba(255, 255, 255, 0.3);
 }
 
-@media (min-width: $tablet-width) {
-  .main-nav__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 640px;
-    margin: 0 auto;
+// Пропишем изображение на кнопке в виде креста при открытом main-nav
+.main-nav--opened .main-nav__toggle {
+  top: 0; // позиционируем в левом верхнем углу кнопку при открытом меню
+  left: 0;
+  right: auto; // ставим по умолчанию ьак как было задано
+
+  &::before,
+  &::after {
+    position: absolute; // позиция тела кнопки отлична от position: static и псевдо элемент before спозиционируется от него
+    content: "";
+    width: 36px; //ширина и выстота креста 26 находим гипотенузу корень квадр из (26*26 + 26*26)
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    top: 24px; // 50(высщта кнопки)/2 - 2(высота палки)/2 Центрируем обе палки по вертикали
+    left: 17px; //70(ширина кнопки) - 36 (ширина палок) итого 34рх лелим на два отступа по обоим сторонам поровну. Итого 17рх
   }
 
-  .main-nav__toggle {
-    display: none;
+  &::before{
+    transform: rotateZ(45deg); // по умоляанию вращается по оси Z
+    box-shadow: none; //
   }
+  &::after {
+    transform: rotate(-45deg);
+  }
+
 }
 
 .main-nav__wrapper {
-
   @media (min-width: $tablet-width) {
     display: flex;
     flex-wrap: wrap;
@@ -45,4 +86,14 @@
     width: 960px;
 
   }
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.main-nav__list a {
+  color: #ffffff;
 }
