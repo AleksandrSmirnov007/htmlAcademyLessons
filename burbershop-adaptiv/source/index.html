@@ -11,7 +11,7 @@
       <a class="page-header__logo" href="#">
         <img class="page-header__logo-image" width="226" height="30" src="image/content/logotype@1x.svg" alt="Барбершоп «Бородинский»">
       </a>
-      <nav class="main-nav main-nav--nojs main-nav--opened"> <!-- добавляем по умолчанию класс --nojs и рассматриваем такой сценарий удалим его с помошью джаваскрипта, а на случай если джаваскрипт не сработает будем использовать класс nojs для стилизации без javascript -->
+      <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- добавляем по умолчанию класс --nojs и рассматриваем такой сценарий удалим его с помошью джаваскрипта, а на случай если джаваскрипт не сработает будем использовать класс nojs для стилизации без javascript -->
         <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
         <div class="main-nav__wrapper">
           <ul class="main-nav__list site-list">
@@ -262,6 +262,44 @@
         </div>
       </div>
     </footer>
+  <!-- скрипт на кнопку меню открытие и закрытие меню -->
+  <script>
+    var navMain = document.querySelector('.main-nav');
+    var navToggle = document.querySelector('.main-nav__toggle');
 
+    navMain.classList.remove('.main-nav--nojs');
+
+    navToggle.addEventListener('click', function() { //  по обьекту в переменной применить метод addEventListener опрелелить произошло ли событие клик, если да то применить фукцию далее излагается функция
+      if(navMain.classList.contains('main-nav--closed')) { // если, к переменной navMain применить метод для определения перечня классов из этого перечня проверить методом на содержание класса main-nav--closed и в этом перечне правда содержиться данный класс то сделать что в фигурных скобках
+        navMain.classList.remove('main-nav--closed'); // по переменой navMain применить метод classlist (определить перечень классов) по перечню применить метод удалить класс с именем main-nav--closed
+        navMain.classList.add('main-nav--opened'); // по переменой navMain применить метод classlist (определить перечень классов) по перечню применить метод добавить класс с именем main-nav--opened
+      } else {  // в противном случае если верхнее условие не выполнилось то сделать следущее (указываем что нужно сделать в фигурных скобках)
+        navMain.classList.add('main-nav--closed'); // добавить в перечень классов обьекта в переменной navMain класс .main-nav--closed
+        navMain.classList.remove('main-nav--opened'); // удалить в перечне классов обьекта в переменной navMain класс .main-nav--opened
+      }
+
+    });
+  </script>
+
+  <script>
+    var navMain = document.querySelector('.main-nav');  // cоздаем переменную navMain и помещаем в нее обьект с классом .main-nav
+    var navToggle = document.querySelector('.main-nav__toggle'); // cоздаем переменную navToggle и помещаем в нее обьект с классом .main-nav__toggle
+
+    navMain.classList.remove('main-nav--nojs'); // из переменной navMain выделить с помощью метода .classList перечень классов удалить с помощью метода remove класс nav-main--nojs (тем самым имееи логику если джаваскрипт включен то он сам удалит класс который предназначен для работы без скрипта )
+
+    navToggle.addEventListener('click', function() {
+      if (navMain.classList.contains('main-nav--closed')) {
+        navMain.classList.remove('main-nav--closed');
+        navMain.classList.add('main-nav--opened');
+      } else {
+        navMain.classList.add('main-nav--closed');
+        navMain.classList.remove('main-nav--opened');
+      }
+    });
+  </script>
+
+  <!-- //////////////////////////////два раза вставил скрипт но он не работает разобраться-->
+  <!-- два скрипта поледовательно могут не работать так как один будет добавлять класс а другой скрипт убирать  этот
+  оставить один скрипт но пред этим сверитьтих между соббой и вынести в песочницу и добится работы там -->
   </body>
 </html>
