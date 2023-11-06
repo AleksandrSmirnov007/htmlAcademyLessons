@@ -1,11 +1,72 @@
 .site-list {
   font-weight: bold;
   @media (min-width: $tablet-width) {
+    display: flex; // делаем стандартную "кирпичную кладку" кладку меню
+    flex-wrap: wrap;
+    justify-content: flex-start; // пока непонятно зачем, такое выравнивание по умлчанию
     width: 570px;
+    flex-grow: 1; // условие для резиновой верстки
   }
 
   @media (min-width: $desktop-width) {
     width: 780px;
+  }
+}
+
+.site-list__item {
+  @media (min-width: $tablet-width) {
+    margin-right: 32px;
+    &:last-child {  // убираем отступ у последнего элемента
+      margin-right: 0;
+    }
+
+    &--active { // стилизуем текущий(активный элемент меню)
+      position: relative; // следующим шагом создадим псевдоэлемент, а пока подготовимся к его позиционированию
+
+      &::after { // элемент отличется от других подчеркиванием создадим черту посред
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: #826550;
+      }
+    }
+  }
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+
+    &--active::after {
+      right: 30px;
+      left: 30px;
+    }
+  }
+}
+
+.site-list__item a[href] { // способ выбрать все ссылки в меню кроме текущей
+  @media (min-width: $tablet-width) {
+    &:hover {
+      color: #856550;
+      background-color: #000000;
+    }
+    &:active {
+      color: #ffffff;
+      background-color: #000000;
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &:hover {
+      color: #000000;
+      background-color: #ffffff;
+    }
+    &:active {
+      color: rbga(0, 0, 0, 0.3);
+      background-color: #ffffff;
+      opacity: 1; // переопределяем так как на ширине планшета в этом случае проздачность была 0.3
+    }
   }
 }
 
@@ -24,5 +85,15 @@
   // box-shadow: 0px 1px 0px 0px red, 0px 1px 0px 0px green inset; --- взял для наглядности зеленый и красный цвет
   border-bottom: 1px solid #71543f;
   border-top: 1px solid #886e5b;
-
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    padding-top: 25px;
+    padding-bottom: 23px;
+    border: none; // границы в версии планщета не нужны
+    background: none; // обнуляем бекграунд полностью (можно было вместо этого еще написать background-color: transparent;)
+  }
+  @media (min-width: $desktop-width) {
+    padding-right: 31px;
+    padding-left: 31px;
+  }
 }

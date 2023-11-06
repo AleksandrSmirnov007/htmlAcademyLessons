@@ -3,7 +3,8 @@
     width: 60px;
   }
   @media (min-width: $desktop-width) {
-    width: 150px;
+    width: auto;
+    min-width: 150px;
   }
 }
 
@@ -11,22 +12,86 @@
   position: relative; // тут понятно зачем - будем размежать иконку "войти"
   display: block;
   color: #ffffff;
-  background-color: #6a4d38;
   line-height: 18px; /* 133.333% */
   padding: 17px 21px;
   padding-left: 47px;
   text-decoration: none;
+  // бекграунд берем за счет фона main-nav
 
-  &:hover {
-    background-color: #624530;
+  // &:hover {
+  //   background-color: #624530;
+  // }
+  // &:active {
+  //   color: rgba(255, 255, 255, 0.3);
+  //   background-color: #624530;
+  // }
+
+  @media (min-width: $tablet-width) {
+    width: 60px;
+    height: 70px;
+    padding: 0;
+
+    span { // выбираем спан вложенный в .user-list__login
+      position: absolute; // таким способом прячем надпись "Войти"
+      opacity: 0;
+    }
+
+    &:hover .user-list__login-icon { // ховер на ссылке но мы стилизуем внутренние элементы ссылки
+      opacity: 1;
+
+      polygon {
+        fill: #826550;
+      }
+    }
+
+    &:active .user-list__login-icon {
+      opacity: 0.3;
+      polygon {
+        fill: #ffffff;
+      }
+    }
   }
-  &:active {
-    color: rgba(255, 255, 255, 0.3);
-    background-color: #624530;
+  @media (min-width: $desktop-width) {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding-top: 25px;
+    padding-right: 30px;
+    padding-bottom: 23px;
+    padding-left: 50px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    span {
+      position: static;
+      opacity: 1;
+    }
+
+    &:hover {
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+      background-color: #ffffff;
+    }
+
+    &:hover .user-list__login-icon {
+      opacity: 0.3;
+      polygon {
+        fill: #000000;
+      }
+    }
+
+    &:active .user-list__login-icon {
+      opacity: 0.1;
+    }
   }
 }
-
-
 
 .user-list__login-icon {
   position: absolute;
@@ -37,5 +102,12 @@
   height: 16px;
   opacity: 0.3;
   fill: #ffffff;
+  @media (min-width: $tablet-width) {
+    top: 29px;
+    left: 12px;
+  }
+  @media (min-width: $desktop-width) {
+    left: 15px;
+  }
 }
 

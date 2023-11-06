@@ -1,11 +1,11 @@
-
-
-
 .main-nav {
   position: relative; // подготовливаем почву для позиционирования main-nav__toggle а также в открытом виде будем позицонировать main-nav__wrapper по абсолюту к main-nav
   width: auto; // непонятно зачем
   min-height: 51px; // высота одного пункта меню
-  background-color: #826550; // удобнее взять из стайлгайда
+  background-color: #826550; // удобнее взять из стайлгайда // так же будет визуально подложкой для .user-list
+  @media (min-width: $tablet-width) {
+    background-color: #000000;
+  }
 }
 
 .main-nav__toggle {
@@ -22,6 +22,9 @@
   &:hover,
   &:active {
     background-color: #624530;
+  }
+  @media (min-width: $tablet-width) {
+    display: none;
   }
 }
 /// пишем изображение кнопки "бургера" (такое изображение при закрытом меню)
@@ -156,20 +159,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 640px;
+    // width: 640px; <-- удалим величину в пикселях что бы сделать резиновую верстку
+    // Сделаем обертку-центровщик резиновым, для этого зададим ему размер в процентах, вычислим доли ширины родителя, аона равна ширине экрана (в данном случае 768px) для этого поделим 640рх/768рх = 0,83(3) Примерно 84 % так и запишем
+    width: 84%;
     margin: 0 auto;
+
+        /* 960px / .84 ~= 1142px (центровка начнётся чуть раньше 1200px) */ /// так и не понял что это
+    max-width: 960px;
   }
 
-  @media (min-width: $desktop-width) {
-    width: 960px;
-
-  }
+  // @media (min-width: $desktop-width) {    <--------------- удалили фиксированнную ширину
+  //   width: 960px;
+  // }
 }
 
 .main-nav__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
+
+  outline: 5px solid fade-out(green, 0.5); // добавляем прозрачности с помощью функции в scss fade-out(\$color,.2) и можно также замениить ее на функции transparentize(\$color,.2); // непонимаю пока в чем разница между этими функциями
+  outline-offset: -5px;
 }
 
 .main-nav__list a {
