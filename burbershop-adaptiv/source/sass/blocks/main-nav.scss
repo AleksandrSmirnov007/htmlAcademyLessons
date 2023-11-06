@@ -177,9 +177,6 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-
-  outline: 5px solid fade-out(green, 0.5); // добавляем прозрачности с помощью функции в scss fade-out(\$color,.2) и можно также замениить ее на функции transparentize(\$color,.2); // непонимаю пока в чем разница между этими функциями
-  outline-offset: -5px;
 }
 
 .main-nav__list a {

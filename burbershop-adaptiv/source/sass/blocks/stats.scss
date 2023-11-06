@@ -21,7 +21,28 @@
   padding: 28px 20px;
   background-color: #ffffff;
   color: #000000;
-}
+  @media (min-width: $tablet-width) {
+    position: relative; // зададим шапке position: relative, чтобы спозиционировать декоративный уголок слева.
+    padding-top: 32px; // я на макете увидел 25рх
+    padding-right: 34px;
+    padding-left: 34px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; // в планшетной версии stats__header разделяется на две колонки
+
+    &::before { // создадим псевдоэлемент для декративного уголка сбоку
+      content: "";
+      position: absolute;
+      width: 23px;
+      height: 23px;
+      top: 42px; // я насчитал 35рх (высота блока 179рх - растояние от нижней границы блока до нижней границы декоративного элемента 121рх  - высота деоративного элемента 23px = растоянию от верхней границы псевдоэлемента до верхней границы stats__header (по другому там не померить в виду особенности дизайна
+      left: -23px;
+      // background-color: red;  // это фоновый цвет взят для наглядности что бы проверить наш псевдоэлемент
+      //Заменим фоновый цвет SVG-картинкой, вставленной прямо в стили с помощью data URI. В атрибуте points описаны точки, из которых собирается треугольник.
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Cpolygon points='0,0 1,0 1,1' fill='white'/%3E%3C/svg%3E");
+    }
+  }
+}///ПРОДОЛЖИТЬ ОТСЮДА Шаг 19 выполнен
 
 .stats__slogan {
   margin: 0;
@@ -93,12 +114,29 @@
 
 .stats__item:nth-child(2) {
   background-color: fade-out(#ffffff, 0.95); /// задаю для тренировки через функции scss потренироваться вобщем background-color: rgba(255, 255, 255, 0.05); тоже самое что и background-color: fade-out(#ffffff, 0.95);
-}/////////////////////////////продолжить отсюда
+}
+
+.stats__item:nth-child(4) {
+  background-color: fade-out(#ffffff, 0.88); /// в макете идет #fffffff, 12%
+}
 
 .stats__number {
-  display: block;
+  // color задается через stats
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1; /* 100% */
+
+  sup {
+    position: static; // непонял зачем, изначально так же position: static;
+    vertical-align: baseline; //стандартно от браузера тег sup имеет vertical-align: supper;
+    margin-left: 5px; // растояние слева от звездочки до числа
+    font-size: inherit; // размер шрифта пусть наследует у stats__number // стандартно от браузера тег sup имеет font-size: small; vertical-align: supper;
+  }
 }
 
 .stats__description {
-
+  // color задается через stats
+  text-align: right;
+  font-size: 18px;
+  line-height: 1; /* 100% */
 }
