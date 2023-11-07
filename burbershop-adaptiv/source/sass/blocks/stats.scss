@@ -42,7 +42,12 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Cpolygon points='0,0 1,0 1,1' fill='white'/%3E%3C/svg%3E");
     }
   }
-}///ПРОДОЛЖИТЬ ОТСЮДА Шаг 19 выполнен
+  @media (min-width: $desktop-width) {
+    grid-template-columns: auto; //сбрасываем (было 1fr 1fr)
+    grid-template-rows: min-content 1fr min-content; //  тем самым прибьем нижний элемент к нижней границе родителя за счет того что средний болк займет все возможное пространство
+    align-content: start; // непонятно зачем...
+  }
+}
 
 .stats__slogan {
   margin: 0;
@@ -53,22 +58,36 @@
   font-weight: bold;
   line-height: 1; /* 100% */
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 17px; // я измерил -  24рх(может макет поменяли)
+    text-transform: none;
+  }
+  @media (min-width: $desktop-width) {
+    margin-bottom: 32px; // на макете 38px(может поменяли макет);
+  }
 }
 
 .stats__intro {
   margin: 0;
-  margin-right: 20px;
-  margin-left: 20px;
+  text-align: center;
 
   color: #000;
   text-align: center;
   font-size: 20px;
-  line-height: 1.3; /* 135% */
+  line-height: 1.35; /* 135% */
 
   @media (max-width: $mobile-width-only) {
     br {
       display: none;  // теи самым уберем тегт br, но только для мобильной версии
     }
+  }
+  @media (min-width: $tablet-width) {
+    padding-top: 4px; // разница между отступами сверху (25px и 29 px) получается что stats__intro будет ниже чем stats__slogan на 4рх
+    padding-left: 34px; // растояние от отсередины так как у нас grid-template-columns: 1fr 1fr;
+    text-align: left;
   }
 }
 
@@ -99,27 +118,42 @@
   margin: 0;
   margin-bottom: 20px;
   background-color: #353535; // возмем за основной цвет хотя, практически у каждого элемента свой цвет (зададим позже)
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .stats__item {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  @media (min-width: $tablet-width) {
+    display: block;
+    padding-top: 25px;
+    padding-left: 34px;
+    padding-right: 34px;
+    padding-bottom: 30px;
+  }
 }
 
 .stats__item:nth-child(1) {
   background-color: rgba(45, 38, 130, 0.05);
-  // background-color: fade-out(#2d2682, 0.95);
+  @media (min-width: $tablet-width) {
+    background-color: fade-out(#ffffff, 0.95);
+  }
 }
 
 .stats__item:nth-child(2) {
-  background-color: fade-out(#ffffff, 0.95); /// задаю для тренировки через функции scss потренироваться вобщем background-color: rgba(255, 255, 255, 0.05); тоже самое что и background-color: fade-out(#ffffff, 0.95);
+  background-color: fade-out(#ffffff, 0.88); /// задаю для тренировки через функции scss потренироваться вобщем background-color: rgba(255, 255, 255, 0.12); тоже самое что и background-color: fade-out(#ffffff, 0.88);
 }
 
 .stats__item:nth-child(4) {
   background-color: fade-out(#ffffff, 0.88); /// в макете идет #fffffff, 12%
+  @media (min-width: $tablet-width) {
+    background-color: fade-out(#ffffff, 0.95);
+  }
 }
-
 .stats__number {
   // color задается через stats
   font-size: 40px;
@@ -132,11 +166,25 @@
     margin-left: 5px; // растояние слева от звездочки до числа
     font-size: inherit; // размер шрифта пусть наследует у stats__number // стандартно от браузера тег sup имеет font-size: small; vertical-align: supper;
   }
+
+  @media (min-width: $tablet-width) {
+    font-size: 72px;
+    margin-bottom: 12px;
+  }
 }
 
 .stats__description {
   // color задается через stats
+  margin: 0;
   text-align: right;
   font-size: 18px;
   line-height: 1; /* 100% */
+  @media (min-width: $tablet-width) {
+    text-align: left;
+    font-size: 20px;
+
+    br {
+      display: none;
+    }
+  }
 }
