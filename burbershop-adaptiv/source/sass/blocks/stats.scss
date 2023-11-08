@@ -5,7 +5,12 @@
 
 .stats__wrapper {
   @media (min-width: $tablet-width) {
+    $stats-shift: -179px; // Создадим локальную переменную, которая будет хранить значение смещения. на 179px блок залезает на предыдущий блок .page-header 
     padding: 0 64px;
+    position: relative;
+    top: $stats-shift; // при position: relative; свойство top: -179px; сместит вверх относительно своего положения  при этом все остальные элементы в потоке не изменят своего положения 
+    margin-bottom: $stats-shift; // нижний отступ у .stats__wrapper будет отрицательным тем самым stats__wraper подтянул бы в себя нижний блок но так он уже смещен вверх относительно своего положения в потоке то визуально нижний блок пойдет сразу без промежутка // хотя на данном этапе это выглядит странно так как фон от <section> stats налезает на фон <section> advantages 
+    
   }
 
   @media (min-width: $desktop-width) {
@@ -45,7 +50,7 @@
   @media (min-width: $desktop-width) {
     grid-template-columns: auto; //сбрасываем (было 1fr 1fr)
     grid-template-rows: min-content 1fr min-content; //  тем самым прибьем нижний элемент к нижней границе родителя за счет того что средний болк займет все возможное пространство
-    align-content: start; // непонятно зачем...
+    align-content: start; // непонятно зачем, так как изнально так и было
   }
 }
 
@@ -89,11 +94,15 @@
     padding-left: 34px; // растояние от отсередины так как у нас grid-template-columns: 1fr 1fr;
     text-align: left;
   }
+  @media (min-width: $desktop-width) {
+    padding-left: 0;
+    margin-bottom: 16px;
+  }
 }
 
 .stats__legend {
   margin: 0;
-  display: block; // верчний элементе эьоь класс находится в теге p. А в нижнем элементе этот класс находится в теге small(display: inline;) Доделаем легенду: сделаем блочной в ситуации, когда это просто <small> и опишем свойства текста, общие и для нижней, и для верхней вариаций.
+  display: block; // в верхний элементе этот класс находится в теге p. А в нижнем элементе этот класс находится в теге small(display: inline;) Доделаем легенду: сделаем блочной в ситуации, когда это просто <small> и опишем свойства текста, общие и для нижней, и для верхней вариаций.
   font-size: 20px;
   line-height: 1; /* 100% */
 }
@@ -121,6 +130,9 @@
   @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: $desktop-width) {
+    margin: 0; //непонятно зачем... в демонстрации "уберем нижний отступ у списка" но изначально там и так обнуляется все маржины
   }
 }
 

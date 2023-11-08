@@ -470,6 +470,9 @@ img {
 @media (min-width: 768px) {
   .stats__wrapper {
     padding: 0 64px;
+    position: relative;
+    top: -179px;
+    margin-bottom: -179px;
   }
 }
 @media (min-width: 1200px) {
@@ -560,6 +563,12 @@ img {
     text-align: left;
   }
 }
+@media (min-width: 1200px) {
+  .stats__intro {
+    padding-left: 0;
+    margin-bottom: 16px;
+  }
+}
 
 .stats__legend {
   margin: 0;
@@ -597,6 +606,11 @@ img {
   .stats__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .stats__list {
+    margin: 0;
   }
 }
 
