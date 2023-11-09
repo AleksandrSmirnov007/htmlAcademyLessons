@@ -478,6 +478,8 @@ img {
 @media (min-width: 1200px) {
   .stats__wrapper {
     margin: auto;
+    top: -159px;
+    margin-bottom: -159px;
     max-width: 960px;
     display: grid;
     grid-template-columns: 1fr 2fr;

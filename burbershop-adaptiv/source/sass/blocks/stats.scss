@@ -14,9 +14,12 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin: auto;
+    $stats-shift: -159px; // локальная переменная
+    margin: auto; // центрует по горизонтали
+    top: $stats-shift;      /// аналогично планшетной версии
+    margin-bottom: $stats-shift; // 
+  
     max-width: 960px;
-
     display: grid;
     grid-template-columns: 1fr 2fr;
   }
