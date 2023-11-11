@@ -161,49 +161,115 @@
   }
 }
 
+// .example__images {
+//   margin-bottom: 15px;
+//   margin: 0 auto;
+
+//   @media (min-width: $tablet-width) {
+//     margin: 0;
+//     display: grid;
+//     grid-template-columns: 50% 50%;
+//     padding: 0 58px;
+//     overflow: hidden;
+//     img {
+//       width: 592px; 
+//       height: 511px;
+//       // размер картинок будет больше чем родитель и заданооое значение max-width: 100% теперь помешает, поэтому отключаем его значением none
+//       max-width: none; 
+//     }
+//   }
+
+//   @media (min-width: $desktop-width) {
+//     padding: 0;
+//     width: 592px;
+//   }
+// }
+
+// .example__image {
+//   // изначально скроем две картинки
+//   display: none; 
+//   height: 232px;
+//   width: auto;
+
+//   @media (min-width: $tablet-width) {
+    
+//     display: flex;
+//      // пока не понятно зачем
+//     overflow: hidden; 
+//     //скрывает содержимое, выходящее за пределы контейнера.
+//   }
+// }
+
+// .example__image--active {
+//   display: flex;
+// }
+
+// .example__image--after {
+//   justify-self: end;
+// }
+/// тут еще много вопросов как стыковать картинки.
+///
+///
+/// кнопки "было" "стало" стилизованны в файле switcher.scss
+///
+
+
 .example__images {
   margin-bottom: 15px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr min-content;
 
   @media (min-width: $tablet-width) {
-    margin: 0;
-    display: grid;
-    grid-template-columns: 50% 50%; // почему то не 1fr 1fr
     padding: 0 58px;
-    overflow: hidden; //скрывает содержимое, выходящее за пределы контейнера.
-    img {
-      width: 592px; // 592px
-      height: 511px; // 511px
-      max-width: none; // размер картинок будет больше чем родитель и заданооое значение max-width: 100% теперь помешает, поэтому отключаем его значением none
-    }
   }
-
   @media (min-width: $desktop-width) {
     padding: 0;
     width: 592px;
   }
 }
 
-.example__image {
-  display: none; // изначально скроем две картинки
-  height: 232px;
-  width: auto;
-
-  @media (min-width: $tablet-width) {
-    display: flex; // пока не понятно зачем
-    overflow: hidden; //скрывает содержимое, выходящее за пределы контейнера.
+.example__image-wrapper {
+  overflow: hidden; 
+  //скрывает содержимое, выходящее за пределы контейнера.
+  &:last-child {
+    display: none; 
+    // равняем картинку внутри по правому краю так ширина обертки будет меняться 
+    justify-content: end;
+    // задаем отступ для картинки так как она меньше чем 280px при высоте 232рх
+    width: 140px;
+    @media (min-width: $tablet-width) {
+      display: flex;
+      width: 296px;
+    }
   }
 }
 
-.example__image--active {
-  display: flex;
+.example__image {
+  height: 232px;
+  @media (min-width: $tablet-width) {
+    height: 511px;
+  }
+}
+
+.example__image--before {
+  min-width: 280px;
+  max-width: 280px;
+  margin-left: 10px;
+  @media (min-width: $tablet-width) {
+    margin-left: 50px;
+    min-width: 536px;
+    max-width: 536px;
+  }
 }
 
 .example__image--after {
-  justify-self: end;
+  min-width: 243px;
+  max-width: 243px;
+  margin-right: 10px; 
+  @media (min-width: $tablet-width) {
+    margin-right: 0;
+    min-width: 536px;
+    max-width: 536px;
+  }
 }
-/// тут еще много вопросов как стыковать картинки.
-///
-///
-/// кнопки "было" "стало" стилизованны в файле switcher.scss
-///

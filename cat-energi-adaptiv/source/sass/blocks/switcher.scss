@@ -4,6 +4,25 @@
   gap: 13px;
   padding: 0 35px;
   align-items: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 86px;
+    height: 14px;
+    border-radius: 7px;
+    border: 1px solid #cdcdcd;
+    background-color: #ffffff;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    @media (min-width: $tablet-width) {
+      width: 426px;
+      height: 6px;
+      border-radius: 6px;
+      background-color: #dcdcdc;
+    }
+  }
+
 
   @media (min-width: $tablet-width) {
     padding: 0 60px;
@@ -14,6 +33,40 @@
     padding: 0;
   }
 }
+
+
+.switcher__bar {
+  margin-left: 6px;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  width: 36px;
+  position: relative;
+  &::after {
+    display: block;
+    content: "";
+    height: 6px;
+    border-radius: 3px;
+    background-color: #68B738;
+
+    @media (min-width: $tablet-width) {
+      position: absolute;
+      right: -17px;
+      top: -17px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 1px solid #cdcdcd;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
+      background-image: radial-gradient(ellipse at center,  #68B738 0%, #68B738 4px, #ffffff 4px,#ffffff);
+    }
+  }
+  @media (min-width: $tablet-width) {
+    margin-left: 12px;
+    width: 196px;
+  }
+}
+ 
 
 .switcher__button {
   display: block;
