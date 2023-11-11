@@ -60,13 +60,24 @@ legend {
   background-color: #ffffff;
 }
 
+.page-header__logo {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.main-nav {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  background-color: #ffffff;
+  color: #000000;
+}
 @media (max-width: 767px) {
-  .page-header__nav {
+  .main-nav {
     border-bottom: 1px solid #e6e6e6;
   }
 }
 @media (min-width: 768px) {
-  .page-header__nav {
+  .main-nav {
     width: 708px;
     margin: 0 auto;
     padding: 24px 0;
@@ -76,13 +87,13 @@ legend {
   }
 }
 @media (min-width: 1300px) {
-  .page-header__nav {
+  .main-nav {
     width: 1220px;
   }
 }
 
 @media (max-width: 767px) {
-  .page-header__bar {
+  .main-nav__bar {
     width: 320px;
     margin: 0 auto;
     padding: 12px 20px 13px;
@@ -93,33 +104,68 @@ legend {
   }
 }
 
-.page-header__logo {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
-.page-header__toggle {
+.main-nav__toggle {
   border: none;
   width: 40px;
   height: 40px;
   background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-image: url("../../img/icons/burger-button.svg");
-  display: none;
+  position: relative;
+}
+.main-nav__toggle::before {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  left: 12px;
+  content: "";
+  width: 24px;
+  height: 1.5px;
+  background-color: #000000;
+  box-shadow: 0 8px 0 0 #000000, 0 16px 0 0 #000000;
 }
 @media (max-width: 767px) {
-  .page-header__nav--closed .page-header__toggle {
+  .main-nav--closed .main-nav__toggle {
     display: block;
   }
-  .page-header__nav--opened .page-header__toggle {
+  .main-nav--opened .main-nav__toggle {
     display: block;
     background-image: url("../../img/icons/");
   }
 }
 @media (min-width: 768px) {
-  .page-header__toggle {
+  .main-nav__toggle {
     display: none;
+  }
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.main-nav__link {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e6e6e6;
+}
+@media (min-width: 768px) {
+  .main-nav__link {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+@media (min-width: 1300px) {
+  .main-nav__link {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
   }
 }
 
