@@ -41,7 +41,15 @@
   height: 40px;
   background-color: transparent;
   position: relative;
-  &::before { //    рисуем кнопку бургер с помощью псведоэлемента и его теней
+  display: block;
+
+  @media (min-width: $tablet-width) { //начиная с ширины для планшетов 768 px и больше (шире) ( версия для десктопов включается также по умолчанию так как она шире 768 px) бургер кнопка для вызова меню не будет отображаться. 
+    display: none; 
+  }
+}
+
+.main-nav--opened .main-nav__toggle {
+  &::before { //    рисуем кнопку бургер(когда меню закрыыто) с помощью псведоэлемента и его теней
     position: absolute;
     top: 12px;
     right: 12px;
@@ -53,22 +61,29 @@
     box-shadow: 0 8px 0 0 $black,
                 0 16px 0 0 $black;   
   }
+}
 
-  @media (max-width: $mobile-width-only) {
-    .main-nav--closed & {  // такая конструкция при сборке scss в css добавит медиазапрос   @media (max-width: 767px) { с вложенным селектором .page-header__nav--closed .page-header__toggle { display: block;}}
-      display: block;  // то есть если к элементу  .page-header__nav добавят модификатор .page-header__nav--closed то тогда page-header__toggle станет display: block;
-    }
+.main-nav--closed .main-nav__toggle {
+  &::before,
+  &::after { //    рисуем кнопку крест(когда меню открыто) с помощью псведоэлемента и его теней
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    content: "";
+    width: 24px;
+    height: 1.5px;
+    background-color: $black;
 
-    .main-nav--opened & { // такая конструкция при сборке scss в css добавит медиазапрос   @media (max-width: 767px) { с вложенным селектором .page-header__nav--opened .page-header__toggle { display: block; background-image: url("../../img/icons/....") }} /Тем самым заменится картинка кнопки-бкргер на кнопку-крестик
-      display: block;
-      background-image: url("../../img/icons/")// ??? не взять из макета картинку крестика, подождем уроков по svg наверно ее можно нарисовать самому
-    }
   }
-
-  @media (min-width: $tablet-width) { //начиная с ширины для планшетов 768 px и больше (шире) ( версия для десктопов включается также по умолчанию так как она шире 768 px) бургер кнопка для вызова меню не будет отображаться. 
-    display: none; 
+  &::after {
+    transform: rotateZ(45deg);
+  }
+  &::before {
+    transform: rotateZ(-45deg);
   }
 }
+
 
 .main-nav__list {
   margin: 0;
