@@ -16,24 +16,26 @@
           <a class="page-header__logo logo" href="#">
             <img class="logo__image" width="34" height="38" src="img/content/logo@1x.svg" alt="Логотип Кэт-энерджи">
             <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="" aria-hidden="true">
+            <img class="logo__image-large" width="174" height="52" src="img/content/logo-large.svg" alt="Логотип Кэт-энерджи крупный">
           </a>
 
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
           </button>
         </div>
-
-        <ul class="page-header__list site-menu">
-          <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item--active -->
-            <a class="site-menu__link" href="#" title="Мы на главной странице">Главная</a>
-          </li>
-          <li class="site-menu__item">
-            <a class="site-menu__link" href="catalog.html">Каталог продукции</a>
-          </li>
-          <li class="site-menu__item">
-            <a class="site-menu__link" href="form.html">Подбор программы</a>
-          </li>
-        </ul>
+        <div class="main-nav__wrapper">
+          <ul class="site-menu">
+            <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item--active -->
+              <a class="site-menu__link" href="#" title="Мы на главной странице">Главная</a>
+            </li>
+            <li class="site-menu__item">
+              <a class="site-menu__link" href="catalog.html">Каталог продукции</a>
+            </li>
+            <li class="site-menu__item">
+              <a class="site-menu__link" href="form.html">Подбор программы</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -186,9 +188,25 @@
         <a class="page-footer__developer developer" href="https://htmlacademy.ru/intensive/adaptive">
           <span class="visually-hidden">Разработано в</span>
           HTMLAcademy
-          <img class="developer__image" width="27" height="34" src="img/content/logo-html.svg" alt="Логотип HTML Academy">
+          <img class="developer__image" width="27" height="34" src="img/content/logo-html-academy.svg" alt="Логотип HTML Academy">
         </a>
       </div>
     </footer>
+    <script>
+      var navMain = document.querySelector('.main-nav');
+      var navToggle = document.querySelector('.main-nav__toggle');
+
+      navMain.classList.remove('main-nav--nojs');
+      navToggle.addEventListener('click', function(){
+        if (navMain.classList.contains('main-nav--closed')) {
+          navMain.classList.remove('main-nav--closed');
+          navMain.classList.add('main-nav--opened');
+        } else {
+          navMain.classList.remove('main-nav--opened');
+          navMain.classList.add('main-nav--closed');
+        }
+
+      });
+    </script>
   </body>
 </html>

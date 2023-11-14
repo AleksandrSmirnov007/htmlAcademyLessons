@@ -1,10 +1,10 @@
 .main-nav {
+  position: relative;
   font-family: $font-heading;
   font-weight: 500;
-  background-color: $white;
   color: $black;
 
-  @media (max-width: $mobile-width-only) { // только для мобильной версии (для ширины равной или меньше 767px) 
+  @media (max-width: $mobile-width-only) { // только для мобильной версии (для ширины равной или меньше 767px)
     border-bottom: 1px solid $special_grey-5; // добавляет нижнюю границу серым цветом в 1px для навигаации. Такие же граница для элементов списка навигации потом сделаем в вверху в топе
   }
 
@@ -18,17 +18,17 @@
     gap: 16px; //   добавим промежуток между элементами, пусть всего 16px, а меню сайта (главная, каталог продукции, подбор программы) выравним по правому краю потом.
   }
 
-  @media (min-width: $desktop-width) { // для версии десктопа ничего тогда не поменяется кроме ширины page-header__nav ширина экрана 1440px, но блок будет меньше на ширину отступов справа и слева 110px*2 Итого: 1440-110*2=1220 px 
+  @media (min-width: $desktop-width) { // для версии десктопа ничего тогда не поменяется кроме ширины page-header__nav ширина экрана 1440px, но блок будет меньше на ширину отступов справа и слева 110px*2 Итого: 1440-110*2=1220 px
     width: 1220px;
   }
 }
 
-.main-nav__bar { 
-  @media (max-width: $mobile-width-only) { // только для мобильной версии (для ширины равной или меньше 767px) 
+.main-nav__bar {
+  @media (max-width: $mobile-width-only) { // только для мобильной версии (для ширины равной или меньше 767px)
     width: 320px; // что бы при увеличении ширины элементы лого и кнопка вызова меню все равно оставались на одном растоянии друг от друга
     margin: 0 auto; // центрируем элемент по горизонтали отностиельно родительского блока(page-header__nav который тянется на всю ширину <header>, а также <body> , а также <html> , а также вьюпорта)
     padding: 12px 20px 13px;
-    display: grid; // элемент page-header__bar включает в себя элементы .page-header__logo(внутри которого два элемента лого) и .page-header__toggle 
+    display: grid; // элемент page-header__bar включает в себя элементы .page-header__logo(внутри которого два элемента лого) и .page-header__toggle
     grid-template-columns: 34px 1fr 34px; // задали симметричную сетку по горизонтали. 34px это ширина левого элемента в блоке лого, кнопка же шириной 24px. Но нам нужна симметричная сетка(тогда центральтный элемент можно выставить по центру например с помошь правила justify-self: center;  поэтому крайние столбцы делаем одинаковыми, равными ширине, равной ширине самого широкого 34px.Однако так как блок лого сосотоит из двух элементов нужно разместить его в первых двух столбцах и построить в нем сетку стобцов 34px и 1fr . Тогда сетко лого совпадет с сеткой .page-header__bar в первых двух столбцах и выравние по точно центру будет возможно.
     gap: 16px; // тут промежуток скорее для приличия -  визуально ничего не изменится.
     align-items: center; // выравнивание элементов по вертикали по центру
@@ -43,23 +43,33 @@
   position: relative;
   display: block;
 
-  @media (min-width: $tablet-width) { //начиная с ширины для планшетов 768 px и больше (шире) ( версия для десктопов включается также по умолчанию так как она шире 768 px) бургер кнопка для вызова меню не будет отображаться. 
-    display: none; 
+  @media (min-width: $tablet-width) { //начиная с ширины для планшетов 768 px и больше (шире) ( версия для десктопов включается также по умолчанию так как она шире 768 px) бургер кнопка для вызова меню не будет отображаться.
+    display: none;
+  }
+}
+
+.main-nav__wrapper {
+  @media (max-width: $mobile-width-only) {
+    position: absolute;
+    top: 100%;
+    width: 100%;
   }
 }
 
 .main-nav--opened .main-nav__toggle {
-  &::before { //    рисуем кнопку бургер(когда меню закрыыто) с помощью псведоэлемента и его теней
+  &::before { //    рисуем кнопку бургер(когда меню закрыто) с помощью псведоэлемента и его теней
     position: absolute;
     top: 12px;
-    right: 12px;
-    left: 12px;
+    //центрируем по горизонтали right: 0; left: 0; margin-right: 0; margin-left: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     content: "";
     width: 24px;
     height: 1.5px;
     background-color: $black;
     box-shadow: 0 8px 0 0 $black,
-                0 16px 0 0 $black;   
+                0 16px 0 0 $black;
   }
 }
 
@@ -67,50 +77,26 @@
   &::before,
   &::after { //    рисуем кнопку крест(когда меню открыто) с помощью псведоэлемента и его теней
     position: absolute;
-    top: 12px;
-    right: 12px;
-    left: 12px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0px;
+    margin: auto;
     content: "";
     width: 24px;
     height: 1.5px;
     background-color: $black;
-
   }
   &::after {
-    transform: rotateZ(45deg);
+    transform: rotate(45deg);
   }
   &::before {
-    transform: rotateZ(-45deg);
+    transform: rotate(-45deg);
   }
 }
 
-
-.main-nav__list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-align: center;
-}
-
-.main-nav__link {
-  text-decoration: none;
-  background-color: $white;
-  color: $black;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 20px;
-  text-transform: uppercase;
-  border-bottom: 1px solid $special_grey-5;
-
-  @media (min-width: $tablet-width) {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-  }
-
-  @media (min-width: $desktop-width) {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
+.main-nav--closed .main-nav__wrapper {
+  @media (max-width: $mobile-width-only) {
+    display: none;
   }
 }

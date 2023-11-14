@@ -1,9 +1,18 @@
-// этот блок (page-header) стилизуем после блока page
-// сам тег header имеет свойство display: block; и па ширине равен body, a body по ширине равен html, а html по ширине равен ширине вьюпорта ИТОГО  <header>...</header> (он же класс .page-header) по ширине равен ширине вьпорта. Это нас устраивает и смысла стилизовать хеадер нет. поэтому начнем сразу с page-header__nav   
-
-
-
-
+.page-header {
+  @media (min-width: $desktop-width) {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      top: 0;
+      left: 50%;
+      right: 0;
+      bottom: 0;
+      // background-color: rgba(104, 183, 56, 0.85);
+    }
+  }
+}
 
 .page-header__logo {
   grid-column-start: 1; // использую такую форму правил  потому, что sass поймет к примеру grid-colomn: 1 / 3; как арифметические действия и в css пойдет не правильное выражение grid-column: 0.33333... наверно но попрововал оказалось в css идет grid-column: 1/3; правильно.

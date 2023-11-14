@@ -1,8 +1,29 @@
-.logo { //yужно не забыть добавить строку c @import "blocks/logo.scss"; в style.scss
-  display: grid; // тип блока грид, можно прописывать ширины стобцов. 
+.logo { //нужно не забыть добавить строку c @import "blocks/logo.scss"; в style.scss
+  display: grid; // тип блока грид, можно прописывать ширины стобцов.
   grid-template-columns: 34px 1fr; // Тем самым мы задали сетку о которой говорили в элементе .page-header__bar, но уже внутри блока logo.
   align-items: center; // также выравнивание элементов по вертикали по центру но уже внутри .page-header__logo
   gap: 16px; // задаем такойже гэп что бы сетка блока лого точно легла на сетку родителя .page-header__bar
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+.logo__image, // прячем логотипы которые только на мобильнои экране
+.logo__sign {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.logo__image-large {
+  display: none;
+  @media (min-width: $tablet-width) { // открывем логотип по-больше начина с экрана планшета
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    transform: scale(1.161); // была ширина 174 теперь нужно 202 находим коэфициент 202/174   // не нашел другого способа увеличить логотип (нашел этот метод сдесь https://stackoverflow.com/questions/24463096/change-svg-viewbox-size-with-css )
+  }
 }
 
 .logo__sign {

@@ -60,15 +60,30 @@ legend {
   background-color: #ffffff;
 }
 
+@media (min-width: 1300px) {
+  .page-header {
+    position: relative;
+  }
+  .page-header::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 .page-header__logo {
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
 .main-nav {
+  position: relative;
   font-family: "Oswald", sans-serif;
   font-weight: 500;
-  background-color: #ffffff;
   color: #000000;
 }
 @media (max-width: 767px) {
@@ -118,11 +133,20 @@ legend {
   }
 }
 
+@media (max-width: 767px) {
+  .main-nav__wrapper {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+}
+
 .main-nav--opened .main-nav__toggle::before {
   position: absolute;
   top: 12px;
-  right: 12px;
-  left: 12px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
   content: "";
   width: 24px;
   height: 1.5px;
@@ -132,50 +156,26 @@ legend {
 
 .main-nav--closed .main-nav__toggle::before, .main-nav--closed .main-nav__toggle::after {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  left: 12px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0px;
+  margin: auto;
   content: "";
   width: 24px;
   height: 1.5px;
   background-color: #000000;
 }
 .main-nav--closed .main-nav__toggle::after {
-  transform: rotateZ(45deg);
+  transform: rotate(45deg);
 }
 .main-nav--closed .main-nav__toggle::before {
-  transform: rotateZ(-45deg);
+  transform: rotate(-45deg);
 }
 
-.main-nav__list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-align: center;
-}
-
-.main-nav__link {
-  text-decoration: none;
-  background-color: #ffffff;
-  color: #000000;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 20px;
-  text-transform: uppercase;
-  border-bottom: 1px solid #e6e6e6;
-}
-@media (min-width: 768px) {
-  .main-nav__link {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-  }
-}
-@media (min-width: 1300px) {
-  .main-nav__link {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
+@media (max-width: 767px) {
+  .main-nav--closed .main-nav__wrapper {
+    display: none;
   }
 }
 
@@ -184,6 +184,32 @@ legend {
   grid-template-columns: 34px 1fr;
   align-items: center;
   gap: 16px;
+}
+@media (min-width: 768px) {
+  .logo {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo__image,
+.logo__sign {
+    display: none;
+  }
+}
+
+.logo__image-large {
+  display: none;
+}
+@media (min-width: 768px) {
+  .logo__image-large {
+    display: block;
+  }
+}
+@media (min-width: 1300px) {
+  .logo__image-large {
+    transform: scale(1.161);
+  }
 }
 
 .logo__sign {
@@ -194,9 +220,6 @@ legend {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-  line-height: 1;
 }
 @media (max-width: 767px) {
   .site-menu {
@@ -212,7 +235,14 @@ legend {
     line-height: 24px;
     /* 133.333% */
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
+  }
+}
+@media (min-width: 1300px) {
+  .site-menu {
+    margin-left: auto;
+    width: 520px;
   }
 }
 
@@ -243,6 +273,12 @@ legend {
 }
 
 .site-menu__link {
+  background-color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  line-height: 1;
   display: block;
   padding: 22px 20px 24px;
   color: #000000;
@@ -251,11 +287,18 @@ legend {
 @media (min-width: 768px) {
   .site-menu__link {
     padding: 17px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
   }
 }
 @media (min-width: 1300px) {
   .site-menu__link {
     color: #ffffff;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
   }
 }
 .site-menu__link--catalog {
@@ -342,7 +385,7 @@ legend {
 }
 
 .promo {
-  padding-top: 27px;
+  padding-top: 8px;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -373,7 +416,6 @@ legend {
     bottom: 0;
     left: 50%;
     z-index: -2;
-    background-color: rgba(104, 183, 56, 0.85);
     background-repeat: no-repeat;
     background-position: 0 100%;
     background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 100%), url("../../img/background/index-background-720x694.jpg");
@@ -438,7 +480,7 @@ legend {
 }
 @media (min-width: 1300px) {
   .promo__image {
-    top: 30px;
+    top: 0;
     left: calc(50% - 162px);
     width: 552px;
     height: 499px;

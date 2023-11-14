@@ -4,9 +4,6 @@
   margin: 0;
   padding: 0;
   list-style-type: none; // по тегу site-menu  является списком, избавляемся от отступов и меток присовоенных по умолчанию.
-  font-family: $font-heading; // шрифт пунктов меню Освальд используем переменную одержащию этот шрифт
-  text-transform: uppercase; // пункты меню в верхнем регистре, а вот цвет и подчеркивание (color, text-decoration) не наследуются поэтому зададим их позже непосредственно к ссыкам пунктов меню для селектора site-menu__link
-  line-height: 1; // высота строки равна 1(то есть равна размеру шрифта)
 
   @media (max-width: $mobile-width-only) {
     font-size: 20px; // в мобильной версии шрифт 20px жирность: 500,
@@ -19,7 +16,13 @@
     font-size: 18px; // начиная с версии для планшетов и шире ширина 768px размер шрифта 18px
     line-height: 24px; /* 133.333% */
     display: flex; // начиная с версии для планшетов и шире пункты меню располагаются слева направо. Используем для этого флекс, так как спомощью флекса можно создать кирпичную кладку из пунктов меню если оно будет состоять из нескольких строк.
+    flex-wrap: wrap;
     justify-content: flex-end; // теперь меню прижато к правому краю родителя page-header__nav
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: auto;
+    width: 520px;
   }
 }
 
@@ -52,6 +55,13 @@
 }
 
 .site-menu__link {
+  background-color: $white;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: $font-heading; // шрифт пунктов меню Освальд используем переменную одержащию этот шрифт
+  line-height: 1; // высота строки равна 1(то есть равна размеру шрифта)
+
   display: block; // для взаимодействия с падингами по умолчанию inline вроде и веритакальные не работают как надо
   padding: 22px 20px 24px; // верхний боковые нижний
   color: $black; // непосредствено задаем цвет ссылкам, из за юзер-агент они не наследуют его,
@@ -59,10 +69,17 @@
 
   @media (min-width: $tablet-width) { // при ширине для планшета и шире меняются расстояния между элемнтами
     padding: 17px; // растояние между элементами по горизонтали в среднем 34px делим его на два паддинга получаем 17px вертикальные тоже заодно задаем 17px
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
   }
 
   @media (min-width: $desktop-width) {
     color: $white; // пункты меню для десктопа становяться белыми
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
   }
   &--catalog {
     color: #111111;
