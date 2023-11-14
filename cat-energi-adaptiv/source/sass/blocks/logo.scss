@@ -3,6 +3,15 @@
   grid-template-columns: 34px 1fr; // Тем самым мы задали сетку о которой говорили в элементе .page-header__bar, но уже внутри блока logo.
   align-items: center; // также выравнивание элементов по вертикали по центру но уже внутри .page-header__logo
   gap: 16px; // задаем такойже гэп что бы сетка блока лого точно легла на сетку родителя .page-header__bar
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
   @media (min-width: $tablet-width) {
     display: block;
   }

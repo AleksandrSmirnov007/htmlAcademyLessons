@@ -57,23 +57,6 @@
 }
 
 .main-nav--opened .main-nav__toggle {
-  &::before { //    рисуем кнопку бургер(когда меню закрыто) с помощью псведоэлемента и его теней
-    position: absolute;
-    top: 12px;
-    //центрируем по горизонтали right: 0; left: 0; margin-right: 0; margin-left: 0;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    content: "";
-    width: 24px;
-    height: 1.5px;
-    background-color: $black;
-    box-shadow: 0 8px 0 0 $black,
-                0 16px 0 0 $black;
-  }
-}
-
-.main-nav--closed .main-nav__toggle {
   &::before,
   &::after { //    рисуем кнопку крест(когда меню открыто) с помощью псведоэлемента и его теней
     position: absolute;
@@ -92,6 +75,23 @@
   }
   &::before {
     transform: rotate(-45deg);
+  }
+}
+
+.main-nav--closed .main-nav__toggle {
+  &::before { //    рисуем кнопку бургер(когда меню закрыто) с помощью псведоэлемента и его теней
+    position: absolute;
+    top: 12px;
+    //центрируем по горизонтали right: 0; left: 0; margin-right: 0; margin-left: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    content: "";
+    width: 24px;
+    height: 1.5px;
+    background-color: $black;
+    box-shadow: 0 8px 0 0 $black,
+                0 16px 0 0 $black;
   }
 }
 
