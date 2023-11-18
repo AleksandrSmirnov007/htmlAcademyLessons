@@ -38,3 +38,11 @@
 .logo__sign {
   justify-self: center; // центруем по горизонтали логотип в виде шрифта
 }
+
+.page-footer__logo {
+  grid-template-columns: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 128px;
+  height: 24px;
+}

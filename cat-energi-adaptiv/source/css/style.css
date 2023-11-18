@@ -222,6 +222,14 @@ legend {
   justify-self: center;
 }
 
+.page-footer__logo {
+  grid-template-columns: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 128px;
+  height: 24px;
+}
+
 .site-menu {
   margin: 0;
   padding: 0;
@@ -1308,7 +1316,7 @@ legend {
 }
 
 .page-footer {
-  padding: 20px 0 22px;
+  padding: 39px 0 22px;
   background-color: #f2f2f2;
 }
 @media (min-width: 768px) {
@@ -1343,7 +1351,7 @@ legend {
 }
 
 .social {
-  padding: 0 12px;
+  padding: 20px 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1365,6 +1373,9 @@ legend {
   display: block;
   padding: 8px;
   color: #666666;
+  width: 24px;
+  height: 24px;
+  background-color: red;
 }
 
 .developer {
