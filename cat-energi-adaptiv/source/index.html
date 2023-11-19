@@ -135,12 +135,12 @@
                 <img class="example__image example__image--after" width="280" height="232" src="img/content/cat-skinny.png" alt="фото кота после употребления, кот стройный">
               </div>
             </div>
-
-            <div class="example__switcher switcher">
-              <button class="switcher__button" type="button">Было</button>
-              <div class="switcher__bar switcher__bar--before"></div>
+            <!-- switcher -->
+            <div class="example__switcher switcher switcher--before">
+              <button class="switcher__button switcher__button--before" type="button">Было</button>
+              <div class="switcher__bar"></div>
               <input class="switcher__range" type="range" value="58" min="17" max="83">
-              <button class="switcher__button" type="button">Стало</button>
+              <button class="switcher__button switcher__button--after" type="button">Стало</button>
             </div>
           </div>
 
@@ -210,6 +210,39 @@
           navMain.classList.add('main-nav--closed');
         }
 
+      });
+    </script>
+
+    <script>
+      var exampleSwitcher = document.querySelector('.example__switcher');
+      var buttonBefore = document.querySelector('.switcher__button--before');
+      var buttonAfter = document.querySelector('.switcher__button--after'); // забыл точку искал 30 минут
+
+      var imageBefore = document.querySelector('.example__image--before');
+      var imageAfter = document.querySelector('.example__image--after');
+
+
+
+      buttonBefore.addEventListener('click', function(){
+        if (exampleSwitcher.classList.contains('switcher--after')) {
+          exampleSwitcher.classList.remove('switcher--after');
+          exampleSwitcher.classList.add('switcher--before');
+
+          imageAfter.classList.remove('example__image--active');
+          imageBefore.classList.add('example__image--active');
+          console.log(buttonBefore);
+          console.log(imageBefore);
+        }
+      });
+
+      buttonAfter.addEventListener('click', function(){
+        if (exampleSwitcher.classList.contains('switcher--before')) {
+          exampleSwitcher.classList.remove('switcher--before');
+          exampleSwitcher.classList.add('switcher--after');
+
+          imageBefore.classList.remove('example__image--active');
+          imageAfter.classList.add('example__image--active');
+        }
       });
     </script>
   </body>

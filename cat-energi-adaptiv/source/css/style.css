@@ -139,6 +139,10 @@ legend {
   }
 }
 
+.main-nav--nojs .main-nav__toggle {
+  display: none;
+}
+
 @media (max-width: 767px) {
   .main-nav__wrapper {
     position: absolute;
@@ -183,6 +187,14 @@ legend {
   .main-nav--closed .main-nav__wrapper {
     display: none;
   }
+}
+
+.main-nav--nojs .main-nav__toggle {
+  display: none;
+}
+.main-nav--nojs .main-nav__wrapper {
+  position: static;
+  display: block;
 }
 
 .logo {
@@ -1058,13 +1070,13 @@ legend {
 }
 
 .example__images {
-  margin-bottom: 15px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr min-content;
+  margin-bottom: 15px;
 }
 @media (min-width: 768px) {
   .example__images {
+    display: grid;
+    grid-template-columns: 1fr min-content;
     padding: 0 58px;
   }
 }
@@ -1077,14 +1089,14 @@ legend {
 
 .example__image-wrapper {
   overflow: hidden;
+  display: grid;
 }
 .example__image-wrapper:last-child {
-  display: none;
-  justify-content: end;
-  width: 140px;
+  width: 280px;
 }
 @media (min-width: 768px) {
   .example__image-wrapper:last-child {
+    justify-content: end;
     display: flex;
     width: 296px;
   }
@@ -1093,6 +1105,11 @@ legend {
 .example__image {
   height: 232px;
 }
+@media (max-width: 767px) {
+  .example__image {
+    display: none;
+  }
+}
 @media (min-width: 768px) {
   .example__image {
     height: 511px;
@@ -1100,9 +1117,8 @@ legend {
 }
 
 .example__image--before {
-  min-width: 280px;
-  max-width: 280px;
-  margin-left: 10px;
+  width: 280px;
+  justify-self: center;
 }
 @media (min-width: 768px) {
   .example__image--before {
@@ -1113,15 +1129,20 @@ legend {
 }
 
 .example__image--after {
-  min-width: 243px;
-  max-width: 243px;
-  margin-right: 10px;
+  width: 243px;
+  justify-self: center;
 }
 @media (min-width: 768px) {
   .example__image--after {
     margin-right: 0;
     min-width: 536px;
     max-width: 536px;
+  }
+}
+
+@media (max-width: 767px) {
+  .example__image--active {
+    display: block;
   }
 }
 
@@ -1169,12 +1190,12 @@ legend {
   }
 }
 
-.switcher__bar--before::after {
+.switcher--before .switcher__bar::after {
   left: 6px;
   right: auto;
 }
 
-.switcher__bar--after::after {
+.switcher--after .switcher__bar::after {
   left: auto;
   right: 6px;
 }
@@ -1220,7 +1241,7 @@ legend {
   cursor: pointer;
   width: 34px;
   height: 34px;
-  -webkit-appearance: none;
+  -moz-appearance: none;
   margin-top: -14px;
   background-color: #68b738;
   box-shadow: inset 0 0 0 1px #cdcdcd, inset 0 0 0 13px #ffffff, 0px 1px 3px rgba(0, 0, 0, 0.16);
@@ -1249,6 +1270,17 @@ legend {
     font-size: 20px;
     line-height: normal;
   }
+  .switcher__button:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+}
+
+.switcher:hover .switcher__button {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.switcher:focus-within .switcher__button {
+  border-bottom: 1px solid transparent;
 }
 
 @media (min-width: 1300px) {
