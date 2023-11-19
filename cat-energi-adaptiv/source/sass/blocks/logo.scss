@@ -17,12 +17,6 @@
   }
 }
 
-.logo__image, // прячем логотипы которые только на мобильнои экране
-.logo__sign {
-  @media (min-width: $tablet-width) {
-    display: none;
-  }
-}
 
 .logo__image-large {
   display: none;

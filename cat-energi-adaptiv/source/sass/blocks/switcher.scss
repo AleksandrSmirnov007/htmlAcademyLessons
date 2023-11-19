@@ -6,24 +6,6 @@
   align-items: center;
   position: relative;
 
-  &::before {
-    content: "";
-    width: 86px;
-    height: 14px;
-    border-radius: 7px;
-    border: 1px solid #cdcdcd;
-    background-color: #ffffff;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    @media (min-width: $tablet-width) {
-      width: 426px;
-      height: 6px;
-      border-radius: 6px;
-      background-color: #dcdcdc;
-    }
-  }
-
-
   @media (min-width: $tablet-width) {
     padding: 0 60px;
     grid-template-columns: 70px 1fr 70px;
@@ -36,37 +18,92 @@
 
 
 .switcher__bar {
-  margin-left: 6px;
+  height: 14px;
+  background-color: $white;
+  border: 1px solid $special_grey;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  width: 36px;
   position: relative;
+  border-radius: 6px;
   &::after {
-    display: block;
+    position: absolute;
+    top: 3px;
+    width: 36px;
     content: "";
     height: 6px;
     border-radius: 3px;
     background-color: #68B738;
-
-    @media (min-width: $tablet-width) {
-      position: absolute;
-      right: -17px;
-      top: -17px;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background-color: #ffffff;
-      border: 1px solid #cdcdcd;
-      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
-      background-image: radial-gradient(ellipse at center,  #68B738 0%, #68B738 4px, #ffffff 4px,#ffffff);
-    }
   }
   @media (min-width: $tablet-width) {
-    margin-left: 12px;
-    width: 196px;
+    display: none;
   }
 }
- 
+
+.switcher__bar--before::after {
+  left: 6px;
+  right: auto; // для переключения из положения --after (
+}
+
+.switcher__bar--after::after {
+  left: auto;
+  right: 6px;
+}
+
+
+.switcher__range {
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+
+// для хрома
+.switcher__range::-webkit-slider-runnable-track {  // стилизация полоски ползунка
+  border-radius: 6px;
+  height: 6px;
+  background-color: #dcdcdc;
+}
+
+.switcher__range::-webkit-slider-thumb { // стилизация полоски ползунка
+  border-radius: 50%;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  -webkit-appearance: none;
+  margin-top: -14px;
+  background-color: $color-primary; // зеленая точка внутри ползунка
+  box-shadow: inset 0 0 0 1px $special_grey, // граница в 1рх по краю
+              inset 0 0 0 13px $white, // белый фон накрывает зеленый бекграунд на 13рх внутрь от края
+              0px 1px 3px rgba(0, 0, 0, 0.16); // обычная тень вниз
+}
+
+
+//для мозилы
+.switcher__range::-moz-range-track {
+  border-radius: 6px;
+  height: 6px;
+  background-color: #dcdcdc;
+}
+
+.switcher__range::-moz-range-thumb {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  -webkit-appearance: none;
+  margin-top: -14px;
+  background-color: $color-primary; // зеленая точка внутри ползунка
+  box-shadow: inset 0 0 0 1px $special_grey, // граница в 1рх по краю
+              inset 0 0 0 13px $white, // белый фон накрывает зеленый бекграунд на 13рх внутрь от края
+              0px 1px 3px rgba(0, 0, 0, 0.16); // обычная тень вниз
+}
 
 .switcher__button {
   display: block;

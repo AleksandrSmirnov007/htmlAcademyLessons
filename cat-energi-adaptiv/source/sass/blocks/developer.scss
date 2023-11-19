@@ -5,4 +5,15 @@
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover path {
+    fill: $color-primary;
+  }
+  &:active {
+    opacity: 0.3;
+  }
 }

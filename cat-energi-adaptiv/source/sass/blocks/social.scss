@@ -1,7 +1,15 @@
 .social {
+  margin-bottom: 22px;
   padding: 20px 12px; // не понятно почему 12рх
-  display: flex;
-  flex-wrap: wrap; // разрешаем занимать элементам несколко строк
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 24px);
+  gap: 32px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+    grid-template-columns: repeat(auto-fit, 30px);
+    gap: 24px;
+  }
   justify-content: center; // центрируем в данном случае по горизонтали
   list-style-type: none; // убираем признаки списка по умолчанию. Делаем это в этом файле что бы если мы и доавим еще куданибудь в новое место список соц сетей то значки списка уже будут отсутствовать
   @media (min-width: $tablet-width) {
@@ -10,16 +18,35 @@
 }
 
 .social__item {
-  margin: 0 4px; // сделаем неюльшие отступы элементов друго от друга по горизонтали
-  display: flex;
-  align-items: center; // выровниваем элементы по вертикали
+  margin: 0; // сделаем неюльшие отступы элементов друго от друга по горизонтали
 }
 
 .social__link {
-  display: block; // по умолчанию ссылки имеют  display: inline; но при таком не работают как надо вертикальные паддинги
-  padding: 8px; //задаем рамку из падингов для увеличения зоны клика(возможно)
   color: $special_grey-3; // не понятно пока почему задается ссылкам цвет шрифта если будут участвовать иконки.
   width: 24px;
   height: 24px;
-  background-color: red;
+  display: grid;
+  place-content: center;
+
+  @media (min-width: $tablet-width) {
+    width: 30px;
+    height: 30px;
+    svg {
+      transform: scale(1.43);
+    }
+  }
+
+  &:hover:not(.social__link--facebook) path {
+    fill: $color-primary;
+  }
+  &--facebook:hover path{
+    stroke: $color-primary;
+  }
+
+  &:active:not(.social__link--facebook) path {
+    fill: fade-out($color-primary, 0.7);
+  }
+  &--facebook:active path{
+    stroke: fade-out($color-primary, 0.7);
+  }
 }
