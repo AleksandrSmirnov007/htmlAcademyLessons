@@ -17,7 +17,7 @@
 }
 
 
-.switcher__bar {
+.switcher__toggler {
   height: 14px;
   background-color: $white;
   border: 1px solid $special_grey;
@@ -39,12 +39,12 @@
   }
 }
 
-.switcher--before .switcher__bar::after {
+.switcher--before .switcher__toggler::after {
   left: 6px;
   right: auto; // для переключения из положения --after (
 }
 
-.switcher--after .switcher__bar::after {
+.switcher--after .switcher__toggler::after {
   left: auto;
   right: 6px;
 }

@@ -161,15 +161,15 @@
   }
 }
 
-// изображение
+// переключаемые изображение
 .example__images {
-  margin: 0 auto;
   margin-bottom: 15px;
 
   @media (min-width: $tablet-width) {
     display: grid;
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: 1fr 50%;
     padding: 0 58px;
+    overflow: hidden; // хотя сдесь и так все работало
   }
   @media (min-width: $desktop-width) {
     padding: 0;
@@ -177,54 +177,36 @@
   }
 }
 
-.example__image-wrapper {
-  overflow: hidden;
-  display: grid;
-  //скрывает содержимое, выходящее за пределы контейнера.
-  &:last-child {
-    // равняем картинку внутри по правому краю так ширина обертки будет меняться
-    // задаем отступ для картинки так как она меньше чем 280px при высоте 232рх
-    width: 280px;
-    @media (min-width: $tablet-width) {
-      justify-content: end;
-      display: flex;
-      width: 296px;
-    }
-  }
-}
-
 .example__image {
-  height: 232px;
-  @media (max-width: $mobile-width-only) {
-    display: none;
-  }
-  @media (min-width: $tablet-width) {
-    height: 511px;
-  }
-}
-
-.example__image--before {
+  display: none;
+  overflow: hidden;
   width: 280px;
-  justify-self: center;
+  height: 232px;
+  place-content: center;
   @media (min-width: $tablet-width) {
-    margin-left: 50px;
-    min-width: 536px;
-    max-width: 536px;
-  }
-}
+    width: 296px;
+    height: 511px;
+    display: grid;
+    justify-content: start;
 
-.example__image--after {
-  width: 243px;
-  justify-self: center;
-  @media (min-width: $tablet-width) {
-    margin-right: 0;
-    min-width: 536px;
-    max-width: 536px;
+    img {
+      margin-left: -29px;  // двигать первого кота ( по сути это свойство со значением передаеится обоим картинкам но на вторую оно не действует так как второая картинка позиционируется от правого края и margin-left для нее значения не имеет
+      max-width: none;
+      height: 511px;
+      width: auto;  // так даже больше похоже на макет высота 511рх фотку с толстым котом прижимаем влева(justify-content: start) с тощим котом прижимаем влево (justify-content: end) видимо в архиве проекта
+    }
+
+    &:last-child { // контейнер с изображением(img) второго кота
+      justify-content: end;
+      img {
+        margin-right: -2px; // двигать второго кота. как видно выше позиционируем по горизонтали в конец -  тоесть от правого края и у img сделаем отступ справа, положительный что бы отодвинуть влево и отрицательный что бы сместить вправо
+      }
+    }
   }
 }
 
 .example__image--active {
   @media (max-width: $mobile-width-only) {
-    display: block;
+    display: flex;
   }
 }
