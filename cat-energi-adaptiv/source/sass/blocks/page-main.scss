@@ -1,5 +1,7 @@
 
 .page-main__header--form {
+  padding-top: 27px;
+  padding-bottom: 39px;
   @media (min-width: $tablet-width) {
     padding: 0 40px;
   }
@@ -36,13 +38,14 @@
 
 
 .page-main__heading--form {
+  margin-bottom: 37px;
   @media (min-width: $tablet-width) {
     margin: 0 0 54px;
   }
 }
 
 .page-main__subheading {
-  margin: 0 0 14px;
+  margin: 0;
 
   font-family: $font-heading;
   font-size: 14px;

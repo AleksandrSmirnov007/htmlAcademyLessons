@@ -26,6 +26,7 @@ img {
 legend {
   padding-left: 0;
   padding-right: 0;
+  width: 100%;
 }
 
 .visually-hidden {
@@ -351,6 +352,10 @@ legend {
   color: #111111;
 }
 
+.page-main__header--form {
+  padding-top: 27px;
+  padding-bottom: 39px;
+}
 @media (min-width: 768px) {
   .page-main__header--form {
     padding: 0 40px;
@@ -391,6 +396,9 @@ legend {
   }
 }
 
+.page-main__heading--form {
+  margin-bottom: 37px;
+}
 @media (min-width: 768px) {
   .page-main__heading--form {
     margin: 0 0 54px;
@@ -398,7 +406,7 @@ legend {
 }
 
 .page-main__subheading {
-  margin: 0 0 14px;
+  margin: 0;
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -1393,22 +1401,16 @@ legend {
 
 .social {
   margin-bottom: 22px;
-  padding: 20px 12px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 24px);
-  gap: 32px;
+  padding: 12px 12px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style-type: none;
 }
 @media (min-width: 768px) {
   .social {
-    margin-bottom: 0;
-    grid-template-columns: repeat(auto-fit, 30px);
-    gap: 24px;
-  }
-}
-@media (min-width: 768px) {
-  .social {
+    margin-bottom: -11px;
+    margin-top: -11px;
     padding: 0;
   }
 }
@@ -1419,15 +1421,15 @@ legend {
 
 .social__link {
   color: #666666;
-  width: 24px;
-  height: 24px;
+  width: 46px;
+  height: 40px;
   display: grid;
   place-content: center;
 }
 @media (min-width: 768px) {
   .social__link {
-    width: 30px;
-    height: 30px;
+    width: 52px;
+    height: 52px;
   }
   .social__link svg {
     transform: scale(1.43);
@@ -1792,6 +1794,9 @@ legend {
   margin: 0;
 }
 
+.form__container {
+  width: auto;
+}
 @media (min-width: 768px) {
   .form__container {
     padding: 0 40px;
@@ -1811,6 +1816,11 @@ legend {
   border: none;
   margin: 0;
   padding: 0;
+}
+
+.form__group--cat {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 24px;
 }
 
 .form__group--contacts,
@@ -1863,12 +1873,32 @@ legend {
   }
 }
 
+legend {
+  width: 100%;
+}
+
+.field-group__heading {
+  display: block;
+  margin-bottom: 35px;
+  width: 280px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26px;
+}
+@media (min-width: 768px) {
+  .field-group__heading {
+    width: max-content;
+  }
+}
+
 .field-group__list {
   list-style-type: none;
   padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 14px;
+  margin: 0 auto;
+  width: 280px;
 }
 .field-group__list--target {
   gap: 13px;
@@ -1894,6 +1924,10 @@ legend {
   }
 }
 
+.field-group__item:not(:last-child) {
+  margin-bottom: 13px;
+}
+
 .field__lead,
 .field__input {
   font-family: "Oswald", sans-serif;
@@ -1908,18 +1942,21 @@ legend {
   color: #444444;
 }
 
-.field-group__heading {
-  display: block;
-  margin-bottom: 35px;
-  font-family: "Oswald", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 26px;
+.field {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: 13px;
 }
-@media (min-width: 768px) {
-  .field-group__heading {
-    width: max-content;
-  }
+
+.field__lead {
+  margin-right: 13px;
+}
+
+.field__input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e7e7e7;
 }
 
 .control {

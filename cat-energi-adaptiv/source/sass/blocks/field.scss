@@ -1,0 +1,16 @@
+.field {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: 13px;
+}
+
+.field__lead {
+  margin-right: 13px;
+}
+
+.field__input {
+  width: 100%; //при родителе display: grid инпут займет всю ширины ячейки в сетке
+  padding: 14px;
+  border: 1px solid #e7e7e7;
+}
