@@ -20,20 +20,37 @@
   border: none;
   margin: 0; // обнуляю все отступы потому, что под классом .form__group у меня идет тег fieldset и при заданных паддингах странное поведение тег legend внутри не реагирует на них никак а также после легенд появляется отступ до полей раввный заданному вертикальному паддингу, пэтому я я все обнулил  а отступы буду реалиизовать дополнительными оберткой внутри fieldset
   padding: 0;
+
+  &--cat {
+    padding-bottom: 24px;
+  }
+  &--target {
+    padding-top: 22px;
+    padding-bottom: 20px;
+  }
 }
 
-.form__group--cat {
+.form__group--cat,
+.form__group--target {
   border-bottom: 1px solid $special_grey-4;
-  padding-bottom: 24px;
+  @media (min-width: $tablet-width) {
+    border-bottom: none;
+  }
 }
 
-
-.form__group--contacts,
-.form__group--comment,
-.form__group--additional,
-.form__footer {
-  grid-column: 1 / -1;
+.form__group {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 50%;
+    right: 0;
+    top: 42px;
+    background-color: $color-primary;
+  }
 }
+
 .form__footer {
   padding: 34px 0 32px;
   text-align: center;

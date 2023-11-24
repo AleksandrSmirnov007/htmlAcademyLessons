@@ -48,7 +48,7 @@
         <form class="form__container container" action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="form__group form__group--cat field-group">
             <legend><span class="visually-hidden">Данные о коте</span></legend>
-            <ul class="field-group__list">
+            <ul class="field-group__list field-group__list--cat">
               <li class="field-group__item">
                 <label class="field">
                   <span class="field__lead">Имя:*</span>
@@ -70,7 +70,11 @@
             </ul>
           </fieldset>
           <fieldset class="form__group form__group--target field-group">
-            <legend><span class="visually-hidden">Варианты программы</span></legend>
+            <legend>
+              <div class="form__group-heading-wrapper">
+                <span class="visually-hidden">Варианты программы</span>
+              </div>
+            </legend>
             <ul class="field-group__list field-group__list--target">
               <li class="field-group__item">
                 <label class="control control--radio">
@@ -93,7 +97,9 @@
             </ul>
           </fieldset>
           <fieldset class="form__group form__group--contacts field-group">
-            <legend><span class="field-group__heading">Контактные данные(владельца кота)</span></legend>
+            <div class="form__group-heading-wrapper">
+              <legend><span class="field-group__heading field-group__heading--contacts">Контактные данные (владельца кота)</span></legend>
+            </div>
             <ul class="field-group__list field-group__list--contacts">
               <li class="field-group__item">
                 <label class="field">
@@ -111,7 +117,9 @@
           </fieldset>
 
           <div class="form__group form__group--comment field-group">
-              <label class="field-group__heading" for="comment">Комментарий</label>
+            <div class="form__group-heading-wrapper">
+              <label class="field-group__heading field-group__heading--comment" for="comment">Комментарий</label>
+            </div>
               <div class="field">
                 <label class="field__label">
                   <textarea class="field__input" id="comment" name="comment" rows="5" placeholder="Расскажите обо всех повадках кота"></textarea>
@@ -120,8 +128,11 @@
           </div>
 
           <fieldset class="form__group form__group--additional field__group">
-
-            <legend><span class="field-group__heading">Дополнительно</span></legend>
+            <legend>
+              <div class="form__group-heading-wrapper">
+                <span class="field-group__heading field-group__heading--additional">Дополнительно</span>
+              </div>
+            </legend>
             <ul class="field-group__list field-group__list--additional">
               <li class="field-group__item">
                 <label class="control control--checkbox">
