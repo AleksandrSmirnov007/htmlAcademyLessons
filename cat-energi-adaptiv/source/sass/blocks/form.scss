@@ -30,9 +30,9 @@
   }
 }
 
-.form__group--cat,
 .form__group--target {
   border-bottom: 1px solid $special_grey-4;
+  border-top: 1px solid $special_grey-4;
   @media (min-width: $tablet-width) {
     border-bottom: none;
   }

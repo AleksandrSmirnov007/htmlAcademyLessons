@@ -1827,13 +1827,12 @@ legend {
   padding-bottom: 20px;
 }
 
-.form__group--cat,
 .form__group--target {
   border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
 }
 @media (min-width: 768px) {
-  .form__group--cat,
-.form__group--target {
+  .form__group--target {
     border-bottom: none;
   }
 }
