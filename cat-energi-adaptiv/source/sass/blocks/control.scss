@@ -6,6 +6,52 @@
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 15px;
+}
+
+.control__input {
+  width: 30px;
+  height: 30px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  margin: 0;
+  opacity: 0;
+}
+
+.control__lead {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 15px;
+  align-items: center;
+
+  &::before,
+  &::after {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 1px solid $special_grey;
+  }
+}
+
+.control--radio .control__lead::before,
+.control--radio .control__lead::after {
+  border-radius: 50%;
+}
+
+.control--radio .control__input:checked + .control__lead::after{
+  background-color: $color-primary;
+  border: 1px solid $special_grey;
+  box-shadow: inset 0 0 0 7px $white;
+  border-radius: 50%;
 }
 
 .control--checkbox .control__lead {

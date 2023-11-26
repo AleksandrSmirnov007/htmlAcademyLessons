@@ -1,7 +1,6 @@
 // Правда, стоит отметить, что в этом макете выносные элементы — это в основном разделители около заголовков и товаров. Они скорее относятся к декоративным элементам, поэтому при построении крупной сетки мы не будем на них опираться.
 
 .form__container {
-  width: auto;
   @media (min-width: $tablet-width) {
     padding: 0 40px;
     display: grid;
@@ -14,41 +13,28 @@
   }
 }
 
-
-
 .form__group {
   border: none;
   margin: 0; // обнуляю все отступы потому, что под классом .form__group у меня идет тег fieldset и при заданных паддингах странное поведение тег legend внутри не реагирует на них никак а также после легенд появляется отступ до полей раввный заданному вертикальному паддингу, пэтому я я все обнулил  а отступы буду реалиизовать дополнительными оберткой внутри fieldset
   padding: 0;
 
-  &--cat {
-    padding-bottom: 24px;
-  }
   &--target {
     padding-top: 22px;
     padding-bottom: 20px;
+    margin-top: 24px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid $special_grey-4;
+    border-top: 1px solid $special_grey-4;
   }
-}
 
-.form__group--target {
-  border-bottom: 1px solid $special_grey-4;
-  border-top: 1px solid $special_grey-4;
-  @media (min-width: $tablet-width) {
-    border-bottom: none;
+  &--comment {
+    margin-top: 24px;
   }
-}
 
-.form__group {
-  position: relative;
-  &::after {
-    position: absolute;
-    content: "";
-    height: 2px;
-    width: 50%;
-    right: 0;
-    top: 42px;
-    background-color: $color-primary;
-  }
+  &--additional {
+    margin-top: 22px;
+  } 
+
 }
 
 .form__footer {
