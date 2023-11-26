@@ -3,10 +3,39 @@
   grid-template-columns: max-content 1fr;
   align-items: center;
   gap: 13px;
+
+  &--textarea {
+    grid-template-columns: auto;
+  }
 }
 
 .field__input {
   width: 100%; //при родителе display: grid инпут займет всю ширины ячейки в сетке
   padding: 14px;
   border: 1px solid #e7e7e7;
+  @media (min-width: $tablet-width) {
+    padding: 11px 19px;
+  }
+}
+
+.field:hover .field__input {
+  border-color: $special_grey;
+}
+
+.field__input:focus,
+.field__input:focus-visible {
+  outline: none;
+  outline: 2px solid $special_dark-grey;
+}
+
+
+.field .field__input--error {
+  outline: 2px solid $status_error;
+}
+
+.field textarea {
+  line-height: 2;
+  height: 150px;
+  padding-right: 12px;
+  resize: none; // убираем уголок в правом нижнем углу отвечающий за изменение пользователем размера textarea
 }

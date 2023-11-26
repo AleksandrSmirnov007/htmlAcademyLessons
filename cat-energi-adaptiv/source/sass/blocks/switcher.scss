@@ -32,7 +32,7 @@
     content: "";
     height: 6px;
     border-radius: 3px;
-    background-color: #68B738;
+    background-color: $color-primary;
   }
   @media (min-width: $tablet-width) {
     display: none;
@@ -117,6 +117,7 @@
   color: $black;
   background-color: transparent;
   border: none;
+  border-bottom: 1px solid transparent;
 
   &:last-child { //  определяем "стало" в третий стобик
     grid-column: 3/4;

@@ -1,4 +1,5 @@
 .contacts {
+  background-color: $basic_grey;
   @media (min-width: $desktop-width) {
     position: relative;
     display: grid;
@@ -9,7 +10,7 @@
     grid-template-columns: 1220px; // один столбец шириной 1440-110*2 такой прием дает отступы с права и слева по 110рх
     align-items: center; // внутри лежащий единсттвенный элемент будет центрироваться по вертикали
     justify-content: center; // родитель будет шириной 1440 рх(или больше) а единственный столб шириной 1220рх за счет justify-content: center; будет центриваться по горизонтали
-    background-color: transparent;
+
   }
 }
 
