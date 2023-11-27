@@ -309,6 +309,9 @@ legend {
   color: #000000;
   text-decoration: none;
 }
+.site-menu__link:not([href]) {
+  cursor: default;
+}
 @media (max-width: 767px) {
   .site-menu__link {
     background-color: #ffffff;
@@ -337,27 +340,21 @@ legend {
 @media (min-width: 1300px) {
   .site-menu__link {
     color: #111111;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
   }
 }
 
 @media (min-width: 1300px) {
   .site-menu--index .site-menu__link {
     color: #ffffff;
-    background-color: transparent;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
-  }
-  .site-menu--index .site-menu__link:not([href]) {
-    cursor: default;
   }
   .site-menu--index .site-menu__link[href]:hover {
     color: rgba(255, 255, 255, 0.6);
-    background-color: transparent;
   }
   .site-menu--index .site-menu__link[href]:active {
     color: rgba(255, 255, 255, 0.3);
-    background-color: transparent;
   }
 }
 

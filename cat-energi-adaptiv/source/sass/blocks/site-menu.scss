@@ -59,18 +59,6 @@
 }
 
 .site-menu__link {
-  @media (max-width: $mobile-width-only) {
-    background-color: $white;
-    
-    &[href]:hover {
-      background-color: $basic_grey;
-    }
-  
-    &[href]:active {
-      background-color: $special_grey-6;
-    }
-  }
-  
   font-size: 20px;
   font-weight: 500;
   text-transform: uppercase;
@@ -82,6 +70,20 @@
   color: $black; // непосредствено задаем цвет ссылкам, из за юзер-агент они не наследуют его,
   text-decoration: none; // так же убираем подчеркивание по этой же причине
 
+  &:not([href]) {
+    cursor: default;
+  }
+  @media (max-width: $mobile-width-only) {
+    background-color: $white;
+    
+    &[href]:hover {
+      background-color: $basic_grey;
+    }
+  
+    &[href]:active {
+      background-color: $special_grey-6;
+    }
+  }
 
   @media (min-width: $tablet-width) { // при ширине для планшета и шире меняются расстояния между элемнтами
     padding: 17px; // растояние между элементами по горизонтали в среднем 34px делим его на два паддинга получаем 17px вертикальные тоже заодно задаем 17px
@@ -101,27 +103,21 @@
 
   @media (min-width: $desktop-width) {
     color: $special_black;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
   }
 }
 
 .site-menu--index .site-menu__link {
   @media (min-width: $desktop-width) {
     color: $white; // пункты меню для десктопа становяться белыми только на главной странице
-    background-color: transparent;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
-    &:not([href]) {
-      cursor: default;
-    }
 
     &[href]:hover {
       color: fade-out($white, 0.4);
-      background-color: transparent;
     }
     &[href]:active { // 
       color: fade-out($white, 0.7);
-      background-color: transparent;
     }
   }
 }
