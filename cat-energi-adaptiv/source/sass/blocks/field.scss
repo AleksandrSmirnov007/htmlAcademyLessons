@@ -7,6 +7,26 @@
   &--textarea {
     grid-template-columns: auto;
   }
+  &--email,
+  &--telephone {
+    position: relative;
+    svg {
+      position: absolute;
+      right: 15px;
+    }
+  }
+
+  &--email {
+    svg {
+      stroke: $special_dark-grey-2;
+    }
+  }
+
+  &--telephone {
+    svg {
+      fill: $special_dark-grey-2;
+    }
+  }
 }
 
 .field__input {
@@ -18,8 +38,29 @@
   }
 }
 
-.field:hover .field__input {
-  border-color: $special_grey;
+.field__input { // отступы для изображения на полях вводf? что бы текст не надезал на иконки
+  &--bg-image {
+  padding-right: 50px;
+  }
+}
+
+.field:hover {  
+  .field__input {
+      border-color: $special_grey;
+    }
+}
+
+//подсвечиваем иконки зеленым при фокусе
+.field--email:focus-within {
+  svg {
+    stroke: $color-primary;
+  }
+}
+
+.field--telephone:focus-within {
+  svg {
+    fill: $color-primary;
+  }
 }
 
 .field__input:focus,
@@ -29,9 +70,18 @@
 }
 
 
-.field .field__input--error {
+.field--error .field__input {
   outline: 2px solid $status_error;
 }
+
+.field--email.field--error svg {
+  stroke: $status_error;
+}
+
+.field--telephone.field--error svg {
+  fill: $status_error;
+}
+
 
 .field textarea {
   line-height: 2;

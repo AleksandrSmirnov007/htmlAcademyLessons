@@ -291,14 +291,14 @@ legend {
     background-color: #68b738;
   }
 }
+
 @media (min-width: 1300px) {
-  .site-menu__item--active::after {
+  .site-menu--index .site-menu__item--active::after {
     background-color: #ffffff;
   }
 }
 
 .site-menu__link {
-  background-color: #ffffff;
   font-size: 20px;
   font-weight: 500;
   text-transform: uppercase;
@@ -309,11 +309,16 @@ legend {
   color: #000000;
   text-decoration: none;
 }
-.site-menu__link[href]:hover {
-  background-color: #f2f2f2;
-}
-.site-menu__link[href]:active {
-  background-color: #eaeaea;
+@media (max-width: 767px) {
+  .site-menu__link {
+    background-color: #ffffff;
+  }
+  .site-menu__link[href]:hover {
+    background-color: #f2f2f2;
+  }
+  .site-menu__link[href]:active {
+    background-color: #eaeaea;
+  }
 }
 @media (min-width: 768px) {
   .site-menu__link {
@@ -331,26 +336,29 @@ legend {
 }
 @media (min-width: 1300px) {
   .site-menu__link {
+    color: #111111;
+  }
+}
+
+@media (min-width: 1300px) {
+  .site-menu--index .site-menu__link {
     color: #ffffff;
     background-color: transparent;
     font-size: 20px;
     font-weight: 400;
     line-height: 20px;
   }
-  .site-menu__link:not([href]) {
+  .site-menu--index .site-menu__link:not([href]) {
     cursor: default;
   }
-  .site-menu__link[href]:hover {
+  .site-menu--index .site-menu__link[href]:hover {
     color: rgba(255, 255, 255, 0.6);
     background-color: transparent;
   }
-  .site-menu__link[href]:active {
+  .site-menu--index .site-menu__link[href]:active {
     color: rgba(255, 255, 255, 0.3);
     background-color: transparent;
   }
-}
-.site-menu__link--catalog {
-  color: #111111;
 }
 
 .page-main__header--form {
@@ -2045,6 +2053,19 @@ legend {
 .field--textarea {
   grid-template-columns: auto;
 }
+.field--email, .field--telephone {
+  position: relative;
+}
+.field--email svg, .field--telephone svg {
+  position: absolute;
+  right: 15px;
+}
+.field--email svg {
+  stroke: #222222;
+}
+.field--telephone svg {
+  fill: #222222;
+}
 
 .field__input {
   width: 100%;
@@ -2057,8 +2078,20 @@ legend {
   }
 }
 
+.field__input--bg-image {
+  padding-right: 50px;
+}
+
 .field:hover .field__input {
   border-color: #cdcdcd;
+}
+
+.field--email:focus-within svg {
+  stroke: #68b738;
+}
+
+.field--telephone:focus-within svg {
+  fill: #68b738;
 }
 
 .field__input:focus,
@@ -2067,8 +2100,16 @@ legend {
   outline: 2px solid #444444;
 }
 
-.field .field__input--error {
+.field--error .field__input {
   outline: 2px solid #ff8282;
+}
+
+.field--email.field--error svg {
+  stroke: #ff8282;
+}
+
+.field--telephone.field--error svg {
+  fill: #ff8282;
 }
 
 .field textarea {
