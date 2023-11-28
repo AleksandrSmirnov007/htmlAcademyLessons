@@ -44,6 +44,11 @@
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 23px;
+    font-size: 20px;
+    line-height: 22px;
+  }
 }
 
 .show-more__text {
@@ -57,6 +62,9 @@
 
   @media (min-width: $tablet-width) {
     flex-grow: 1;
+    font-size: 16px;
+    line-height: 18px;
+    width: 220px;
   }
 }
 

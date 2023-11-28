@@ -11,6 +11,7 @@
     font-weight: 500; // в мобильной версии вес шрифта 500
     border-top: 1px solid $special_grey-5; // декоративные граница 1px серого цвета над меню (такие же будут под каждым пунктом меню) и такое только в мобильной версии
     text-align: center; // в мобильной версии пункты меню центрируются в своих полях
+    background-color: $white; // фон у списка целмком так как если давать ссылкам по отделности то просвечивают сквозь границы при определенном маштабе
   }
 
   @media (min-width: $tablet-width) {
@@ -74,12 +75,11 @@
     cursor: default;
   }
   @media (max-width: $mobile-width-only) {
-    background-color: $white;
-    
+
     &[href]:hover {
       background-color: $basic_grey;
     }
-  
+
     &[href]:active {
       background-color: $special_grey-6;
     }
@@ -116,7 +116,7 @@
     &[href]:hover {
       color: fade-out($white, 0.4);
     }
-    &[href]:active { // 
+    &[href]:active { //
       color: fade-out($white, 0.7);
     }
   }

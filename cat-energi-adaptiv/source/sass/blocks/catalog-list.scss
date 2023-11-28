@@ -1,7 +1,6 @@
 .catalog-list__container {
   @media (max-width: $mobile-width-only) {
     padding: 27px 0 19px;
-    width: auto;
   }
   @media (min-width: $tablet-width) {
     display: grid;
@@ -18,7 +17,10 @@
 
 .catalog-list__item {
   @media (max-width: $mobile-width-only) {
-    border-bottom: 1px solid $special_grey-2;
+    margin-right: -21px;
+    margin-left: -21px;
+    border: 1px solid $special_grey-2;
+    border-top: none;
     &:first-of-type { // первому элементу с классом catalog-list__item (и только с таким классом другие не в счет) рисукм верхнюю границу
       border-top: 1px solid $special-grey-2;
     }
