@@ -1601,6 +1601,8 @@ legend {
 .card__button {
   grid-area: button;
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .show-more {
@@ -1804,6 +1806,8 @@ legend {
 }
 
 .card-row__button {
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -1820,12 +1824,18 @@ legend {
 .offer {
   position: relative;
   color: #ffffff;
+  background-size: cover;
   background-color: #5eaa2f;
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 100%), url("../../img/background/cat-in-bag-960x960.png");
   padding: 186px 58px 43px;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .offer {
+    background-position: 50% 60%;
+  }
 }
 .offer:before {
   position: absolute;

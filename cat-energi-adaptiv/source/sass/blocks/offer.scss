@@ -1,6 +1,7 @@
 .offer {
   position: relative;
   color: $white;
+  background-size: cover;
   background-color: $basic_green-2;
   background-repeat: no-repeat;
   background-position: 0 100%; //Позиция изображения левый край изображения от левого края блока и нижний край изображения от нижнего края блока
@@ -9,6 +10,9 @@
 
   padding: 186px 58px 43px;
   text-align: center;
+  @media (min-width: $tablet-width) {
+    background-position: 50% 60%;
+  }
 
   &:before {
     position: absolute;
