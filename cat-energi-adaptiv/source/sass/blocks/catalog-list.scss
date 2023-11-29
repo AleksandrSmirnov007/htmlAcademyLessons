@@ -1,6 +1,6 @@
 .catalog-list__container {
   @media (max-width: $mobile-width-only) {
-    padding: 27px 0 19px;
+    padding: 0 0 19px;
   }
   @media (min-width: $tablet-width) {
     display: grid;
@@ -15,15 +15,22 @@
   }
 }
 
+.catalog-list {
+  border-bottom: 1px solid $special_grey-2;
+}
+
 .catalog-list__item {
+  position: relative;
   @media (max-width: $mobile-width-only) {
-    margin-right: -21px;
-    margin-left: -21px;
-    border: 1px solid $special_grey-2;
-    border-top: none;
-    &:first-of-type { // первому элементу с классом catalog-list__item (и только с таким классом другие не в счет) рисукм верхнюю границу
-      border-top: 1px solid $special-grey-2;
+    &:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: calc(50% - 50vw) ;
+      right: 0;
+      height: 1px;
+      width: 100vw;
+      background-color: $special_grey-2;
     }
   }
-
 }

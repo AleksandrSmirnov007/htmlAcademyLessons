@@ -12,7 +12,7 @@
 
 .page-main__heading {
   margin: 0; // обычно элемениты с этим классом имеют тег P обнуляем стандартные маржины
-  margin-bottom: 40px; // на макете все элементы .page-main__heading на мобильной версии имеют отсуп вниз 40px
+  padding-bottom: 40px; // на макете все элементы .page-main__heading на мобильной версии имеют отсуп вниз 40px
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -27,9 +27,7 @@
 }
 
 .page-main__heading--catalog {
-  @media (max-width: $mobile-width-only) {
-    padding: 0 20px;
-  }
+  padding-top: 27px;
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1; // размещаем на два стобца в планшетной версии
     margin-bottom: 22px; // до карточек 82рх вниз но у нас еще gap 60рх
