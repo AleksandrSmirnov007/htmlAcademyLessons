@@ -8,8 +8,8 @@
 
   @media (min-width: $tablet-width) {
     grid-template-columns: 1fr;
-    grid-template-areas: "image" "link" "list" "button";
-    grid-template-rows: 172px repeat(3, auto);
+    grid-template-areas: "image" "." "link" "list" "button";
+    grid-template-rows: 208px 34px repeat(3, auto);
     padding: 0 38px 40px;
     background-image: linear-gradient(to bottom, transparent 0, transparent 81px, $basic_grey 81px);
   }
@@ -47,13 +47,19 @@
 
 .card__image {
   grid-area: image;
-  margin: auto;
+  @media (min-width: $tablet-width) {
+    // transform: scale(2.37);
+    align-self: end;
+    justify-self: center;
+  }
 }
 
 .card__list {
   grid-area: list;
   display: grid;
   grid-template-columns: max-content 1fr;
+  font-size: 12px;
+  line-height:  16px;
   @media (min-width: $tablet-width) {
     font-size: 16px;
     line-height: 1; /* 100% */
@@ -65,6 +71,7 @@
     padding-top: 7px;
     padding-bottom: 9px;
     border-bottom: 1px solid $special_grey;
+    font-weight: 400;
   }
 }
 

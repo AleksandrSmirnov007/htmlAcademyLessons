@@ -1514,8 +1514,8 @@ legend {
 @media (min-width: 768px) {
   .card {
     grid-template-columns: 1fr;
-    grid-template-areas: "image" "link" "list" "button";
-    grid-template-rows: 172px repeat(3, auto);
+    grid-template-areas: "image" "." "link" "list" "button";
+    grid-template-rows: 208px 34px repeat(3, auto);
     padding: 0 38px 40px;
     background-image: linear-gradient(to bottom, transparent 0, transparent 81px, #f2f2f2 81px);
   }
@@ -1560,13 +1560,20 @@ legend {
 
 .card__image {
   grid-area: image;
-  margin: auto;
+}
+@media (min-width: 768px) {
+  .card__image {
+    align-self: end;
+    justify-self: center;
+  }
 }
 
 .card__list {
   grid-area: list;
   display: grid;
   grid-template-columns: max-content 1fr;
+  font-size: 12px;
+  line-height: 16px;
 }
 @media (min-width: 768px) {
   .card__list {
@@ -1581,6 +1588,7 @@ legend {
     padding-top: 7px;
     padding-bottom: 9px;
     border-bottom: 1px solid #cdcdcd;
+    font-weight: 400;
   }
 }
 
