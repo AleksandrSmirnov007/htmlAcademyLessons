@@ -15,10 +15,6 @@
   }
 }
 
-.catalog-list {
-  border-bottom: 1px solid $special_grey-2;
-}
-
 .catalog-list__item {
   position: relative;
   @media (max-width: $mobile-width-only) {

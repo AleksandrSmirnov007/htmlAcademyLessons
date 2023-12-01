@@ -10,8 +10,10 @@
 
   padding: 186px 58px 43px;
   text-align: center;
+  margin-bottom: 35px;
   @media (min-width: $tablet-width) {
     background-position: 50% 60%;
+    margin-bottom: 76px;
   }
 
   &:before {

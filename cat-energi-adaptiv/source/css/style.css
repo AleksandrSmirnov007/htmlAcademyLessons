@@ -1491,10 +1491,6 @@ legend {
   }
 }
 
-.catalog-list {
-  border-bottom: 1px solid #ebebeb;
-}
-
 .catalog-list__item {
   position: relative;
 }
@@ -1577,7 +1573,6 @@ legend {
   grid-template-columns: max-content 1fr;
   margin-bottom: 9px;
   margin-top: 14px;
-  font-size: 12px;
   line-height: 16px;
 }
 @media (min-width: 768px) {
@@ -1585,6 +1580,7 @@ legend {
     font-size: 16px;
     line-height: 1;
     /* 100% */
+    margin-bottom: 32px;
   }
 }
 
@@ -1700,13 +1696,14 @@ legend {
   line-height: 20px;
 }
 
+@media (max-width: 767px) {
+  .catalog-additional {
+    border-top: 1px solid #ebebeb;
+  }
+}
+
 .catalog-additional__container {
   padding-top: 25px;
-}
-@media (min-width: 768px) {
-  .catalog-additional__container {
-    padding-bottom: 69px;
-  }
 }
 @media (min-width: 1300px) {
   .catalog-additional__container {
@@ -1724,12 +1721,49 @@ legend {
   font-family: "Oswald", sans-serif;
   font-size: 24px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1;
   /* 100% */
+}
+@media (min-width: 768px) {
+  .catalog-additional__heading {
+    font-size: 36px;
+  }
 }
 @media (min-width: 1300px) {
   .catalog-additional__heading {
     grid-column: 1/-1;
+  }
+}
+.catalog-additional__heading span {
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  width: max-content;
+  padding-left: 22px;
+  padding-right: 22px;
+  margin-left: -22px;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .catalog-additional__heading span {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: -40px;
+  }
+}
+
+.catalog-additional__heading::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  left: 0;
+  right: 0;
+  margin-top: 16px;
+  background-color: #68b738;
+}
+@media (min-width: 768px) {
+  .catalog-additional__heading::before {
+    margin-top: 22px;
   }
 }
 
@@ -1737,6 +1771,12 @@ legend {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  margin-bottom: 35px;
+}
+@media (min-width: 768px) {
+  .catalog-additional__list {
+    margin-bottom: 69px;
+  }
 }
 
 .card-row {
@@ -1844,10 +1884,12 @@ legend {
   background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 100%), url("../../img/background/cat-in-bag-960x960.png");
   padding: 186px 58px 43px;
   text-align: center;
+  margin-bottom: 35px;
 }
 @media (min-width: 768px) {
   .offer {
     background-position: 50% 60%;
+    margin-bottom: 76px;
   }
 }
 .offer:before {
