@@ -373,7 +373,7 @@ legend {
 
 .page-main__heading {
   margin: 0;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -389,12 +389,11 @@ legend {
 }
 
 .page-main__heading--catalog {
-  padding-top: 27px;
+  margin-top: 27px;
 }
 @media (min-width: 768px) {
   .page-main__heading--catalog {
-    grid-column: 1/-1;
-    margin-bottom: 22px;
+    margin-bottom: 82px;
   }
 }
 
@@ -409,6 +408,7 @@ legend {
 
 .page-main__subheading {
   margin: 0;
+  width: 230px;
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -417,6 +417,7 @@ legend {
 }
 @media (min-width: 768px) {
   .page-main__subheading {
+    width: 330px;
     margin: 0 0 66px;
     font-size: 20px;
     line-height: 30px;
@@ -1472,10 +1473,11 @@ legend {
 }
 
 @media (max-width: 767px) {
-  .catalog-list__container {
-    padding: 0 0 19px;
+  .catalog-list {
+    border-bottom: 1px solid #ebebeb;
   }
 }
+
 @media (min-width: 768px) {
   .catalog-list__container {
     display: grid;
@@ -1508,11 +1510,11 @@ legend {
 }
 
 .card {
-  padding: 19px 0 25px;
+  padding-top: 19px;
+  padding-bottom: 25px;
   display: grid;
-  grid-template-areas: "image link" "image list" ". ." "button button";
+  grid-template-areas: "image link" "image list" "button button";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto 13px auto;
 }
 @media (min-width: 768px) {
   .card {
@@ -1563,7 +1565,7 @@ legend {
 
 .card__image {
   grid-area: image;
-  align-self: end;
+  align-self: center;
   justify-self: center;
 }
 
@@ -1571,7 +1573,7 @@ legend {
   grid-area: list;
   display: grid;
   grid-template-columns: max-content 1fr;
-  margin-bottom: 9px;
+  margin-bottom: 22px;
   margin-top: 14px;
   line-height: 16px;
 }
@@ -1696,20 +1698,22 @@ legend {
   line-height: 20px;
 }
 
-@media (max-width: 767px) {
-  .catalog-additional {
-    border-top: 1px solid #ebebeb;
-  }
-}
-
 .catalog-additional__container {
   padding-top: 25px;
+  padding-bottom: 35px;
+}
+@media (min-width: 768px) {
+  .catalog-additional__container {
+    padding-top: 68px;
+    padding-bottom: 69px;
+  }
 }
 @media (min-width: 1300px) {
   .catalog-additional__container {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 80px;
+    padding-top: 75px;
     padding-bottom: 86px;
   }
 }
@@ -1778,6 +1782,11 @@ legend {
     margin-bottom: 69px;
   }
 }
+@media (min-width: 1300px) {
+  .catalog-additional__list {
+    margin-bottom: 0;
+  }
+}
 
 .card-row {
   padding: 13px 0 19px;
@@ -1833,6 +1842,7 @@ legend {
   margin-bottom: 15px;
   display: grid;
   grid-template-columns: 1fr auto;
+  gap: 20px;
   font-size: 14px;
   line-height: 1;
 }
@@ -1884,12 +1894,18 @@ legend {
   background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 100%), url("../../img/background/cat-in-bag-960x960.png");
   padding: 186px 58px 43px;
   text-align: center;
-  margin-bottom: 35px;
 }
 @media (min-width: 768px) {
   .offer {
     background-position: 50% 60%;
-    margin-bottom: 76px;
+    padding: 70px 124px 70px 422px;
+    text-align: left;
+  }
+}
+@media (min-width: 1300px) {
+  .offer {
+    padding: 184px 42px 42px;
+    text-align: center;
   }
 }
 .offer:before {
@@ -1917,18 +1933,6 @@ legend {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-  }
-}
-@media (min-width: 768px) {
-  .offer {
-    padding: 70px 124px 70px 422px;
-    text-align: left;
-  }
-}
-@media (min-width: 1300px) {
-  .offer {
-    padding: 184px 42px 42px;
-    text-align: center;
   }
 }
 

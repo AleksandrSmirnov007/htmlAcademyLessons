@@ -1,12 +1,11 @@
 .card {
-  padding: 19px 0 25px;
+  padding-top: 19px;
+  padding-bottom: 25px;
   display: grid;
   grid-template-areas: "image link"
                         "image list"
-                        ". ."  // вставляем пустую  строку между изоражением, списком и  кнопкой
                         "button button";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto 13px auto; // задаем размер путой строки 13рх
 
   @media (min-width: $tablet-width) {
     grid-template-columns: 1fr;
@@ -49,7 +48,7 @@
 
 .card__image {
   grid-area: image;
-  align-self: end;
+  align-self: center;
   justify-self: center;
 }
 
@@ -57,7 +56,7 @@
   grid-area: list;
   display: grid;
   grid-template-columns: max-content 1fr;
-  margin-bottom: 9px;
+  margin-bottom: 22px;
   margin-top: 14px;
   line-height:  16px;
   @media (min-width: $tablet-width) {

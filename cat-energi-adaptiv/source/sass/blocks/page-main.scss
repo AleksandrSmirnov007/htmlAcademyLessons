@@ -12,7 +12,7 @@
 
 .page-main__heading {
   margin: 0; // обычно элемениты с этим классом имеют тег P обнуляем стандартные маржины
-  padding-bottom: 40px; // на макете все элементы .page-main__heading на мобильной версии имеют отсуп вниз 40px
+  margin-bottom: 40px; // на макете все элементы .page-main__heading на мобильной версии имеют отсуп вниз 40px
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -27,10 +27,9 @@
 }
 
 .page-main__heading--catalog {
-  padding-top: 27px;
+  margin-top: 27px;
   @media (min-width: $tablet-width) {
-    grid-column: 1 / -1; // размещаем на два стобца в планшетной версии
-    margin-bottom: 22px; // до карточек 82рх вниз но у нас еще gap 60рх
+    margin-bottom: 82px; // до карточек 82рх вниз но у нас еще gap 60рх
   }
 }
 
@@ -44,13 +43,14 @@
 
 .page-main__subheading {
   margin: 0;
-
+  width: 230px;
   font-family: $font-heading;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   text-transform: uppercase;
   @media (min-width: $tablet-width) {
+    width: 330px;
     margin: 0 0 66px;
     font-size: 20px;
     line-height: 30px; /* 150% */

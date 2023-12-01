@@ -47,7 +47,7 @@
   margin-bottom: 15px;
   display: grid;
   grid-template-columns: 1fr auto; // тем самым растущий по щирине левый столб прибивает правый к правому краю(и визуально эффект похож на space-between)
-
+  gap: 20px;
   font-size: 14px;
   line-height: 1;
 

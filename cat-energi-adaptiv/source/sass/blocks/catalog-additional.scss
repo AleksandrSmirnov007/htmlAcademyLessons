@@ -1,18 +1,15 @@
-.catalog-additional {
-  @media (max-width: $mobile-width-only) {
-    border-top: 1px solid $special_grey-2;
-  }
-}
-
 .catalog-additional__container {
   padding-top: 25px;
+  padding-bottom: 35px;
   @media (min-width: $tablet-width) {
-    
+    padding-top: 68px;
+    padding-bottom: 69px;
   }
   @media (min-width: $desktop-width) {
     display: grid;
     grid-template-columns: 1fr auto; // разделяем блок, что бы справа поставить .catalog-addition__promo
     gap: 80px; // __promo находиться в последнем столбце сетки в фигме первые три занимает catalog-aditional__list
+    padding-top: 75px;
     padding-bottom: 86px;
   }
 }
@@ -39,7 +36,7 @@
     padding-left: 22px;
     padding-right: 22px;
     margin-left: -22px;
-    display: flex; // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше) 
+    display: flex; // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше)
     @media (min-width: $tablet-width) {
       padding-left: 40px;
       padding-right: 40px;
@@ -68,5 +65,8 @@
   margin-bottom: 35px;
   @media (min-width: $tablet-width) {
     margin-bottom: 69px;
+  }
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
   }
 }

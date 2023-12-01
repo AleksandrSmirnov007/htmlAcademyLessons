@@ -1,7 +1,10 @@
-.catalog-list__container {
+.catalog-list {
   @media (max-width: $mobile-width-only) {
-    padding: 0 0 19px;
+    border-bottom: 1px solid $special_grey-2;
   }
+}
+
+.catalog-list__container {
   @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr;
