@@ -2281,6 +2281,7 @@ legend {
 }
 
 .control__input {
+  z-index: 1;
   width: 30px;
   height: 30px;
   grid-column: 1/2;
@@ -2364,5 +2365,9 @@ legend {
 
 .control:hover .control__lead::before {
   border: 1px solid #bababa;
+}
+
+.control:focus-within .control__lead::before {
+  outline: 2px solid #444444;
 }
 /*# sourceMappingURL=style.css.map */

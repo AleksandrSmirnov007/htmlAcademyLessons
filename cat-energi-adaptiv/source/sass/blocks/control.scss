@@ -20,12 +20,13 @@
 }
 
 .control__input {
+  z-index: 1; // добавлено что бы поднять наверх относительно декоративных элементов для прямого взоимодействия
   width: 30px;
   height: 30px;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   margin: 0;
-  opacity: 0;
+  opacity: 0; // скрыто прозрачностью
   @media (min-width: $tablet-width) {
     width: 40px;
     height: 40px;
@@ -98,4 +99,8 @@
 
 .control:hover .control__lead::before {
   border: 1px solid #bababa;
+}
+
+.control:focus-within .control__lead::before {
+  outline: 2px solid $special_dark-grey;
 }
