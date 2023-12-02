@@ -55,7 +55,7 @@
 .card__list {
   grid-area: list;
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-bottom: 22px;
   margin-top: 14px;
   line-height:  16px;
@@ -67,6 +67,7 @@
 }
 
 .card__title {
+  text-wrap: wrap;
   @media (min-width: $tablet-width) {
     padding-top: 7px;
     padding-bottom: 9px;

@@ -1572,7 +1572,7 @@ legend {
 .card__list {
   grid-area: list;
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-bottom: 22px;
   margin-top: 14px;
   line-height: 16px;
@@ -1586,6 +1586,9 @@ legend {
   }
 }
 
+.card__title {
+  text-wrap: wrap;
+}
 @media (min-width: 768px) {
   .card__title {
     padding-top: 7px;
@@ -1711,7 +1714,7 @@ legend {
 @media (min-width: 1300px) {
   .catalog-additional__container {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: repeat(4, 1fr);
     gap: 80px;
     padding-top: 75px;
     padding-bottom: 86px;
@@ -1719,6 +1722,7 @@ legend {
 }
 
 .catalog-additional__heading {
+  grid-column: 1/-1;
   margin: 0;
   margin-bottom: 36px;
   color: #000000;
@@ -1736,6 +1740,7 @@ legend {
 @media (min-width: 1300px) {
   .catalog-additional__heading {
     grid-column: 1/-1;
+    margin-bottom: 0;
   }
 }
 .catalog-additional__heading span {
@@ -1772,6 +1777,7 @@ legend {
 }
 
 .catalog-additional__list {
+  grid-column: 1/4;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -1904,7 +1910,7 @@ legend {
 }
 @media (min-width: 1300px) {
   .offer {
-    padding: 184px 42px 42px;
+    padding: 184px 20px 42px;
     text-align: center;
   }
 }

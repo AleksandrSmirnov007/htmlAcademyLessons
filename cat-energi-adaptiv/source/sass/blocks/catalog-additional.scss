@@ -7,13 +7,14 @@
   }
   @media (min-width: $desktop-width) {
     display: grid;
-    grid-template-columns: 1fr auto; // разделяем блок, что бы справа поставить .catalog-addition__promo
+    grid-template-columns: repeat(4, 1fr); // разделяем блок, что бы справа поставить .catalog-addition__promo
     gap: 80px; // __promo находиться в последнем столбце сетки в фигме первые три занимает catalog-aditional__list
     padding-top: 75px;
     padding-bottom: 86px;
   }
 }
 .catalog-additional__heading {
+  grid-column: 1 / -1;
   margin: 0;
   margin-bottom: 36px;
   color: $black;
@@ -26,6 +27,7 @@
   }
   @media (min-width: $desktop-width) {
     grid-column: 1 / -1;
+    margin-bottom: 0;
   }
 
   span {
@@ -59,6 +61,7 @@
 }
 
 .catalog-additional__list {
+  grid-column: 1 / 4;
   margin: 0;
   padding: 0;
   list-style-type: none;
