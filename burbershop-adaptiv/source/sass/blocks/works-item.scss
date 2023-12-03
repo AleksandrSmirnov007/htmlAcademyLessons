@@ -9,27 +9,28 @@
 }
 
 .works-item--work-of-month::before {
-    position: absolute;
-    content: "работа месяца";
-    background-image: url("../../image/label.svg"),
-                      linear-gradient(to left, transparent 0, transparent 10px, #826550 10px);
-    background-position: left center;
-    top: 401px;
-    background-size: 176px 50px;
-    width: 176px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 18px;
-    padding-right: 30px;
-    display: grid;
-    align-items: center;
+  z-index: 2; // добавлю на всякий случай в учебном проекте при отключении этого свойсва псевдолемент уходит под фото  // разобраться почему у них уходит
+  position: absolute;
+  content: "работа месяца";
+  background-image: url("../../image/label.svg"),
+                    linear-gradient(to left, transparent 0, transparent 10px, #826550 10px);
+  background-position: left center;
+  top: 401px;
+  background-size: 176px 50px;
+  width: 176px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 30px;
+  display: grid;
+  align-items: center;
 
-    color: #FFF;
+  color: #FFF;
 
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 27px; /* 135% */
-    text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px; /* 135% */
+  text-transform: uppercase;
   }
 
 .works-item__image-wrapper {

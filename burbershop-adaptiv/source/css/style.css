@@ -780,6 +780,7 @@ img {
 }
 
 .works-item--work-of-month::before {
+  z-index: 2;
   position: absolute;
   content: "работа месяца";
   background-image: url("../../image/label.svg"), linear-gradient(to left, transparent 0, transparent 10px, #826550 10px);
