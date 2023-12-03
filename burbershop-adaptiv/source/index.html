@@ -9,7 +9,11 @@
   <body class="page__body">
     <header class="page__header page-header">
       <a class="page-header__logo" href="#">
-        <img class="page-header__logo-image" width="226" height="30" src="image/content/logotype@1x.svg" alt="Барбершоп «Бородинский»">
+        <picture> <!-- добавляем адаптацию с помощью блока picture для логотипа -->
+          <source media="(min-width: 1200px)" srcset="image/content/logotype-desktop.svg"> <!-- сорс с запросами располагают в порядке убывания ширины так как браузер берет первое удолетворяющее условие с шириной и высотой svg пока не ясно наверно через css -->
+          <source media="(min-width: 768px)" srcset="image/content/logotype-tablet.svg">
+          <img class="page-header__logo-image" width="226" height="30" src="image/content/logotype-mobile.svg" alt="Логотип «Бородинский»">
+        </picture>
       </a>
       <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- добавляем по умолчанию класс --nojs и рассматриваем такой сценарий удалим его с помошью джаваскрипта, а на случай если джаваскрипт не сработает будем использовать класс nojs для стилизации без javascript -->
         <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
@@ -19,7 +23,7 @@
               <a>Главная</a>
             </li>
             <li class="site-list__item">
-              <a href="#">Наши работы</a>
+              <a href="works.html">Наши работы</a>
             </li>
             <li class="site-list__item">
               <a href="form.html">Записаться</a>

@@ -4,6 +4,9 @@
 @import "global/global.scss";
 @import "global/mixins.scss";
 
+// all pages
+@import "blocks/container.scss";
+
 // главная страница
 
 @import "blocks/page.scss";
@@ -16,3 +19,10 @@
 
 // каталог
 
+
+
+@import "blocks/page-title.scss";
+@import "blocks/works.scss";
+@import "blocks/works-item";
+
+@import "blocks/services.scss";

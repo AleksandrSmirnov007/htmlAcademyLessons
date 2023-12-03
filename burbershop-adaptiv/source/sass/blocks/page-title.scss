@@ -1,0 +1,23 @@
+.page-title {
+  padding: 32px 0 35px;
+}
+
+.page-title__title {
+  margin: 0;
+  color: $black;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1; /* 100% */
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    font-size: 40px;
+  }
+}
+
+.page-title__button {
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+}

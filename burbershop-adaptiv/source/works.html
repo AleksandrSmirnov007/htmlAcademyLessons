@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Барбершоп адаптив. Фото</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="page__body">
+    <header class="page__header page-header">
+      <a class="page-header__logo" href="#">
+        <picture> <!-- добавляем адаптацию с помощью блока picture для логотипа -->
+          <source media="(min-width: 1200px)" srcset="image/content/logotype-desktop.svg"> <!-- сорс с запросами располагают в порядке убывания ширины так как браузер берет первое удолетворяющее условие с шириной и высотой svg пока не ясно наверно через css -->
+          <source media="(min-width: 768px)" srcset="image/content/logotype-tablet.svg">
+          <img class="page-header__logo-image" width="226" height="30" src="image/content/logotype-mobile.svg" alt="Логотип «Бородинский»">
+        </picture>
+      </a>
+      <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- добавляем по умолчанию класс --nojs и рассматриваем такой сценарий удалим его с помошью джаваскрипта, а на случай если джаваскрипт не сработает будем использовать класс nojs для стилизации без javascript -->
+        <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <div class="main-nav__wrapper">
+          <ul class="main-nav__list site-list">
+            <li class="site-list__item">
+              <a href="index.html">Главная</a>
+            </li>
+            <li class="site-list__item site-list__item--active">
+              <a title="Мы на странице 'Наши работы'">работы</a>
+            </li>
+            <li class="site-list__item">
+              <a href="form.html">Записаться</a>
+            </li>
+            <li class="site-list__item">
+              <a href="#">Контакты</a>
+            </li>
+            <li class="site-list__item">
+              <a href="#">HTML Academy</a>
+            </li>
+          </ul>
+          <ul class="main-nav__list user-list">
+            <li class="user-list__item">
+              <a class="user-list__login" href="login.html">
+                <svg class="user-list__login-icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/><polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/></svg>
+                <span>Войти</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="page__main page-main--inner">
+      <header class="page-title container">
+        <h1 class="page-title__title">Наши работы</h1>
+        <a class="page-title__button button" href="index.html">на главную</a>
+      </header>
+      <section class="page-main__section works">
+        <ul class="works__list container">
+          <li class="works__photo">
+            <article class="works-item works-item--lead works-item--work-of-month">
+              <p class="works-item__image-wrapper">
+                <img class="works-item__image" width="280" height="480" src="image/content/photo-1-mobile.jpg" alt="Постриженный мужчина в профиль">
+              </p>
+              <div class="works-item__review">
+                <h2 class="works-item__title">Лжепётр Мчиславский</h2>
+                <blockquote class="works-item__text">Где я только не стригся, но так как делаете это вы — не умеет никто другой! Еще раз спасибо и до скорого!</blockquote>
+                <ul class="works-item__parameter-list">
+                  <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                  <li class="works-item__parameter-item works-item__parameter-item--shaving">Бритье</li>
+                  <li class="works-item__parameter-item works-item__parameter-item--moustache">Усы</li>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="works__photo">
+            <article class="works-item">
+              <p class="works-item__image-wrapper">
+                <img class="works-item__image" width="280" height="176" src="image/content/photo-2-mobile.jpg" alt="Постриженный мужчина в профиль">
+              </p>
+              <div class="works-item__review">
+                <h2 class="works-item__title">Саша Мальцев</h2>
+                <blockquote class="works-item__text">Попросил омолодить и омолодили! Кто теперь скажет, что мне 45? </blockquote>
+                <ul class="works-item__parameter-list">
+                  <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="works__photo">
+            <article class="works-item">
+              <p class="works-item__image-wrapper">
+                <img class="works-item__image" width="280" height="176" src="image/content/photo-3-mobile.jpg" alt="Постриженный мужчина в профиль">
+              </p>
+              <div class="works-item__review">
+                <h2 class="works-item__title">Владимир Иваныч</h2>
+                <blockquote class="works-item__text">К зимнему сезону — готов!</blockquote>
+                <ul class="works-item__parameter-list">
+                  <li class="works-item__parameter-item works-item__parameter-item--shaving">Бритье</li>
+                  <li class="works-item__parameter-item works-item__parameter-item--moustache">Усы</li>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="works__photo">
+            <article class="works-item">
+              <p class="works-item__image-wrapper">
+                <img class="works-item__image" width="280" height="176" src="image/content/photo-4-mobile.jpg" alt="Постриженный мужчина в профиль">
+              </p>
+              <div class="works-item__review">
+                <h2 class="works-item__title">Винстон Синий</h2>
+                <blockquote class="works-item__text">Как только зарастаю и волосы начинают мешать видеть — бегом в Бородинский!</blockquote>
+                <ul class="works-item__parameter-list">
+                  <li class="works-item__parameter-item works-item__parameter-item--haircut">Стрижка</li>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+
+      <section class="page-main__section services">
+        <div class="services__wrapper container">
+          <h2 class="services__heading">Прейскурант</h2>
+          <ul class="services__list">
+            <li class="services__item">
+              <h3 class="services__title">Классическая стрижка</h3>
+              <p class="services__description">(с мытьём головы)</p>
+              <b class="services__price">1 500 руб.</b>
+            </li>
+            <li class="services__item">
+              <h3 class="services__title">Современный вариант</h3>
+              <p class="services__description">(с мытьём головы)</p>
+              <b class="services__price">1 500 руб.</b>
+            </li>
+            <li class="services__item">
+              <h3 class="services__title">Индивидуальный подход</h3>
+              <p class="services__description">(с мытьём головы)</p>
+              <b class="services__price">2 000 руб.</b>
+            </li>
+            <li class="services__item">
+              <h3 class="services__title">Бритьё головы</h3>
+              <p class="services__description">(без мытья)</p>
+              <b class="services__price">500 руб.</b>
+            </li>
+            <li class="services__item">
+              <h3 class="services__title">Бритьё головы</h3>
+              <p class="services__description">(с мытьём головы)</p>
+              <b class="services__price">1 500 руб.</b>
+            </li>
+          </ul>
+          <div class="services__discount">
+            <p class="services__discount-text">C 10:00 до 14:00 скидка 20%</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer class="page__footer page-footer">
+      <div class="page-footer__wrapper">
+        <div class="page-footer__contacts contacts">
+          <b class="contacts__title"></b>
+          <p class="contacts__text">
+            г. Санкт-Петербург, ул. Большая Конюшенная 19/8
+            <a class="contacts__phone"  href="+78125556666">
+              <span class="contacts__phone-mobile">+7 (812) 555-66-66</span>
+            </a>
+          </p>
+        </div>
+        <div class="page-footer__social social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
+                <span class="visually-hidden">
+                  Мы в Вконтакте
+                </span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+                <span class="visually-hidden">
+                  Мы в Фейсбуке
+                </span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--instagramm" href="https://www.instagram.com/htmlacademy">
+                <span class="visually-hidden">
+                  Мы в Инстаграмме
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__copyright copyright">
+          <p class="copyright__text">Разработано</p>
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTMLAcademy</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var navMain = document.querySelector('.main-nav');            // cоздаем переменную navMain и помещаем в нее обьект с классом .main-nav // уделить особое внимание тому, что перед наименованием класса стоит точка так как querySelector выбирает элемент по классу.
+      var navToggle = document.querySelector('.main-nav__toggle');              // cоздаем переменную navToggle и помещаем в нее обьект с классом .main-nav__toggle
+
+      navMain.classList.remove('main-nav--nojs');     // из переменной navMain выделить с помощью метода .classList перечень классов удалить с помощью метода remove класс nav-main--nojs (тем самым имееи логику если джаваскрипт включен то он сам удалит намеинование класса который предназначен для работы без скрипта ) //случайно поставил перед найменованием класса точку ".main-nav--nojs" и скрипт не работал так как  метод .classList работает не с самими классами а с их наименованиями
+
+      navToggle.addEventListener('click', function() {                     //  по обьекту в переменной применить метод addEventListener опрелелить произошло ли событие клик, если да то применить фукцию далее излагается функция
+        if(navMain.classList.contains('main-nav--closed')) {               // если, к переменной navMain применить метод для определения перечня классов из этого перечня проверить методом на содержание класса main-nav--closed и в этом перечне правда содержиться данный класс то сделать что в фигурных скобках
+          navMain.classList.remove('main-nav--closed');                    // по переменой navMain применить метод classlist (определить перечень классов) по перечню применить метод удалить класс с именем main-nav--closed
+          navMain.classList.add('main-nav--opened');                       // по переменой navMain применить метод classlist (определить перечень классов) по перечню применить метод добавить класс с именем main-nav--opened
+        } else {                                                   // в противном случае если верхнее условие не выполнилось то сделать следущее (указываем что нужно сделать в фигурных скобках)
+          navMain.classList.add('main-nav--closed');                 // добавить в перечень классов обьекта в переменной navMain класс .main-nav--closed
+          navMain.classList.remove('main-nav--opened');              // удалить в перечне классов обьекта в переменной navMain класс .main-nav--opened
+        }
+      });
+    </script>
+
+  </body>
+</html>

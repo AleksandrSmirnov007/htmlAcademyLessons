@@ -1,0 +1,18 @@
+
+.works {
+  padding-bottom: 34px;
+  &::after {
+    position: absolute;
+    content: "";
+    height: 34px;
+    left: 0;
+    right: 0;
+    background-image: url("../../image/icon/angle.svg");
+    background-position: center bottom;
+  }
+}
+
+.works__list {
+  padding: 0;
+  list-style-type: none;
+}
