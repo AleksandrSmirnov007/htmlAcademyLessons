@@ -1,5 +1,11 @@
 .page-title {
   padding: 32px 0 35px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+  }
 }
 
 .page-title__title {
@@ -13,6 +19,7 @@
 
   @media (min-width: $tablet-width) {
     font-size: 40px;
+    text-align: left;
   }
 }
 

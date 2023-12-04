@@ -1,15 +1,14 @@
 
 .works {
   padding-bottom: 34px;
-  &::after {
-    position: absolute;
-    content: "";
-    height: 34px;
-    left: 0;
-    right: 0;
-    background-image: url("../../image/icon/angle.svg");
-    background-position: center bottom;
+  position: relative;
+  @media (min-width: $tablet-width) {
+    padding-bottom: 40px;
   }
+  @media (min-width: $desktop-width) {
+    padding-bottom: 90px;
+  }
+ 
 }
 
 .works__list {

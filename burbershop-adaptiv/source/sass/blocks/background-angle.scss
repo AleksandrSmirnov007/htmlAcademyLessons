@@ -1,0 +1,58 @@
+
+// вставлть между блоками
+.background-angle { // специально не задаю размер псевдоэлементы спозиционирутся на одной горизонтали
+  position: relative;
+  &::after,
+  &::before {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 34px;
+    left: 0;
+    width: 50%;
+    @media (min-width: $tablet-width) {
+      height: 40px;
+    }
+    @media (min-width: $desktop-width) {
+      height: 64px;
+    }
+  }
+
+  &::before {
+    left: auto;
+    right: 0;
+  }
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.background-angle--dark {
+  &::after {
+    background-image: linear-gradient(to top right, #353535 50%, transparent calc(50% + 1px)); // добавляем промежуток в 1рх в нем произойдет смешивание цветов и сглашивание наклонных пиксельных линий// https://ru.stackoverflow.com/questions/737936/Линейный-градиент-как-делаются-чёткий-градиент-по-схеме
+  }
+  &::before {
+    background-image: linear-gradient(to top left, #353535 50%,  transparent calc(50% + 1px));
+  }
+}
+
+.background-angle--light {
+  &::after {
+    background-image: linear-gradient(to top right, #F8F5F2 49%, transparent calc(50% + 1px)); 
+  }
+  &::before {
+    background-image: linear-gradient(to top left, #F8F5F2 49%, transparent calc(50% + 1px));
+  }
+}
+
+.background-angle--header-bottom {
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+}
+
+.background-angle--works-bottom {
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
