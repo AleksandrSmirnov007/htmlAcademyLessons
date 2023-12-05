@@ -57,7 +57,11 @@
           <li class="works__photo">
             <article class="works-item works-item--lead works-item--work-of-month">
               <p class="works-item__image-wrapper">
-                <img class="works-item__image" width="280" height="480" src="image/content/photo-1-mobile.jpg" alt="Постриженный мужчина в профиль">
+                <picture>
+                  <source class="(min-wdith: 1200px)" srcset="image/content/photo-1-desktop.jpg, image/content/photo-1-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" srcset="image/content/photo-1-tablet.jpg, image/content/photo-1-tablet@2x.jpg 2x">
+                  <img class="works-item__image" width="280" height="480" src="image/content/photo-1-mobile.jpg" srcset="image/content/photo-1-mobile@2x.jpg 2x" alt="Постриженный мужчина в профиль">
+                </picture>
               </p>
               <div class="works-item__review">
                 <h2 class="works-item__title">Лжепётр Мчиславский</h2>
@@ -74,7 +78,7 @@
           <li class="works__photo">
             <article class="works-item">
               <p class="works-item__image-wrapper">
-                <img class="works-item__image" width="280" height="176" src="image/content/photo-2-mobile.jpg" alt="Постриженный мужчина в профиль">
+                <img class="works-item__image" width="280" height="176" src="image/content/photo-2-mobile.jpg" srcset="image/content/photo-2-mobile@2x.jpg 2x" alt="Постриженный мужчина в профиль">
               </p>
               <div class="works-item__review">
                 <h2 class="works-item__title">Саша Мальцев</h2>
@@ -89,7 +93,7 @@
           <li class="works__photo">
             <article class="works-item">
               <p class="works-item__image-wrapper">
-                <img class="works-item__image" width="280" height="176" src="image/content/photo-3-mobile.jpg" alt="Постриженный мужчина в профиль">
+                <img class="works-item__image" width="280" height="176" src="image/content/photo-3-mobile.jpg" srcset="image/content/photo-3-mobile@2x.jpg 2x" alt="Постриженный мужчина в профиль">
               </p>
               <div class="works-item__review">
                 <h2 class="works-item__title">Владимир Иваныч</h2>
@@ -105,7 +109,7 @@
           <li class="works__photo">
             <article class="works-item">
               <p class="works-item__image-wrapper">
-                <img class="works-item__image" width="280" height="176" src="image/content/photo-4-mobile.jpg" alt="Постриженный мужчина в профиль">
+                <img class="works-item__image" width="280" height="176" src="image/content/photo-4-mobile.jpg" srcset="image/content/photo-4-mobile@2x.jpg 2x" alt="Постриженный мужчина в профиль">
               </p>
               <div class="works-item__review">
                 <h2 class="works-item__title">Винстон Синий</h2>
