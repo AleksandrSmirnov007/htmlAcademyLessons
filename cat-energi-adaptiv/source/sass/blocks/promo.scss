@@ -1,13 +1,59 @@
 .promo {
   padding-top: 8px; // подогнал исходя из картинки бекграунда пользуясь инструментами разработчика в браузере
   text-align: center;
+  position: relative;
+  z-index: 0;
+
+  &::before, // картинка бекграунда будет на before а зеленый фильтр будет на after 
+  &::after { 
+    z-index: -2; // Иначе псевдоэлемент перекрывает все блоки выше, но если поставить -1, то далее мы выводим из потока еще и .promo__image же уменьшаем z-index но оно должно быть выше этого псевдоэлемента (promo::after)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 302px;
+    @media (min-width: $tablet-width) { // в версии планшета нет бекграунда
+      display: none;
+    }
+    @media (min-width: $desktop-width) {
+      display: block;
+      top: -200px; //вехняя граница выше верхней границы родителя на 200px
+      right: 0; // по правой границе родителя
+      bottom: 0; // по нижней границе родителя
+      left: 50%; // от середины блока родителя по горизонтали
+      height: 694px;
+    }
+  }
+
+  &::before {
+    background-color: $color-primary;
+    background-size: 320px 302px;
+    background-repeat: no-repeat;
+    background-image: url("../../img/background/bg-promo-mobile.jpg");
+    background-position: 50% 50%;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/background/bg-promo-mobile@2x.jpg");
+    }
+
+    @media (min-width: $desktop-width) {
+      background-size: 720px 694px;
+      background-image: url("../../img/background/bg-promo-desktop.jpg");
+      
+      @media (min-resolution: 2dppx) {
+        background-image: url("../../img/background/bg-promo-desktop@2x.jpg");
+      }
+    }
+
+  }
+
+  &::after {
+    background-color: rgba(104, 183, 56, 0.85); // маска зеного цвета after находится над before так он ниже в коде
+  }
+
   @media (max-width: $mobile-width-only) {
     color: $white; // в мобильной версии цвет всего текста белый
-    background-color: $color-primary; // цвет фона подбираем совпадаюштй с преимущественным цветом фонового изображения
-    background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 302px, #ffffff 302px), // маска из прозрачного цвета сврху вниз(to bottom - к низу) стартуем зеленым на 0px заканчиваем имже на 302px (связано с высотой фонового изображения) далее до конца блока вниз белый с 302px
-                      url("../../img/background/index-background-@x1.jpg"); // подложеное изображение под маску
-    background-position: 50% 0; // расположение фонового изображения по Х(горизонтали) Х=50% т.е. по центру блока, по У (вертикали) У=0 то есть прикрепить к верхней границе блока
-    background-repeat: no-repeat;
   }
 
   @media (min-width: $tablet-width) {
@@ -15,24 +61,6 @@
     background-image: none; // изображения нет,
     background-color: transparent; // фон прозрачный
     text-align: left; // выравнивание текста по левому краю
-  }
-
-  @media (min-width: $desktop-width) { // фоновое изображение выходит за рамки блока - делаем псевдо элемент и задаем ему наш фон
-    position: relative; // теперь мы сможем позиционировать относительно нашего блока псевдоэлемент
-    &::after {
-      content: "";
-      position: absolute; // для поизиционирования относительно родителя (.promo)
-      top: -200px; //вехняя граница выше верхней границы родителя на 200px
-      right: 0; // по правой границе родителя
-      bottom: 0; // по нижней границе родителя
-      left: 50%; // от середины блока родителя по горизонтали
-      z-index: -2; // Иначе псевдоэлемент перекрывает все блоки выше, но если поставить -1, то далее мы выводим из потока еще и .promo__image же уменьшаем z-index но оно должно быть выше этого псевдоэлемента (promo::after)
-
-      background-repeat: no-repeat;
-      background-position: 0 100%; //Позиция изображения левый край изображения от левого края блока и нижний край изображения от нижнего края блока
-      background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0px, rgba(104, 183, 56, 0.85) 100%),
-      url("../../img/background/index-background-720x694.jpg");
-    }
   }
 }
 
