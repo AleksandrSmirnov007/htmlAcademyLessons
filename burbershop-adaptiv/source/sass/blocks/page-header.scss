@@ -14,27 +14,20 @@
   @media (min-width: $tablet-width) {
     order: 2; // меняем местами с main-nav
     height: 400px; //  делаем большим блоком весь header по макету высотой 469рх шапка 72рх почему тио тут размер 400 а не 469-72=397 видимо округлено до 400
-    @media (min-width: $tablet-width) {
-      background-color: #000000;
-      background-image: url("../../image/bg-header.jpg");
-      background-repeat: no-repeat;
-      background-position: 50% -9px; // при поднимаем картинку согласно макета по какимнибудь элементам картинки можгно ориентироваться
+    background-color: #000000;
+    background-image: url("../../image/bg-header.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% -9px; // при поднимаем картинку согласно макета по какимнибудь элементам картинки можгно ориентироваться
 
-      @media (min-resolution: 2dppx) { // загрузка большой картинки для ретина-экранов
-        background-image: url("../../image/bg-header@2x.jpg");
-        background-size: 1536px auto; // картинка 1ч по ширине 768 рх ретина будет   1536px в демонстрации почему то  background-size: 1338px auto;??
-      }
-    }
-
-    @media (min-width: $desktop-width) {
-      height: 648px; // весь блок header на макете 720рх блок main-nav 69px (720-69 = 651px) но тут почему то взяли 648px; // 
-      background-position: center 0; // на десктопной версии смещения по игреку нет обнуляем
-      background-size: cover; //это способ заставить картинку занять всю доступную площадь и при этом не деформироваться. Зададим background-size: cover — cover переводится с английского как «обложка».
+    @media (min-resolution: 2dppx) { // загрузка большой картинки для ретина-экранов
+      background-image: url("../../image/bg-header@2x.jpg");
+      background-size: 1536px auto; // картинка 1ч по ширине 768 рх ретина будет   1536px в демонстрации почему то  background-size: 1338px auto;??
     }
   }
-
   @media (min-width: $desktop-width) {
-    height: 651px;
+    height: 648px; // весь блок header на макете 720рх блок main-nav 69px (720-69 = 651px) но тут почему то взяли 648px; // 
+    background-position: center 0; // на десктопной версии смещения по игреку нет обнуляем
+    background-size: cover;
   }
 }
 

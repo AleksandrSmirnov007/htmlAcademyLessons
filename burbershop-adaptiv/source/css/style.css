@@ -139,32 +139,23 @@ img {
   .page-header__logo {
     order: 2;
     height: 400px;
-  }
-}
-@media (min-width: 768px) and (min-width: 768px) {
-  .page-header__logo {
     background-color: #000000;
     background-image: url("../../image/bg-header.jpg");
     background-repeat: no-repeat;
     background-position: 50% -9px;
   }
 }
-@media (min-width: 768px) and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-width: 768px) and (min-resolution: 2dppx) {
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 2dppx) {
   .page-header__logo {
     background-image: url("../../image/bg-header@2x.jpg");
     background-size: 1536px auto;
   }
 }
-@media (min-width: 768px) and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .page-header__logo {
     height: 648px;
     background-position: center 0;
     background-size: cover;
-  }
-}
-@media (min-width: 1200px) {
-  .page-header__logo {
-    height: 651px;
   }
 }
 

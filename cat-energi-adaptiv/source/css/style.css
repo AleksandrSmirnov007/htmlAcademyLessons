@@ -79,12 +79,6 @@ legend {
   grid-column-start: 1;
   grid-column-end: 3;
 }
-@media (min-width: 768px) {
-  .page-header__logo .logo__image,
-.page-header__logo .logo__sign {
-    display: none;
-  }
-}
 
 .main-nav {
   position: relative;
@@ -203,34 +197,28 @@ legend {
   align-items: center;
   gap: 16px;
 }
+@media (min-width: 768px) {
+  .logo {
+    display: block;
+  }
+}
 .logo:hover {
   opacity: 0.8;
 }
 .logo:active {
   opacity: 0.6;
 }
-@media (min-width: 768px) {
-  .logo {
-    display: block;
-  }
-}
 
-.logo__image-large {
-  display: none;
-}
-@media (min-width: 768px) {
-  .logo__image-large {
-    display: block;
-  }
-}
-@media (min-width: 1300px) {
-  .logo__image-large {
-    transform: scale(1.161);
-  }
-}
-
-.logo__sign {
+.logo__sign-wrapper {
+  width: 101px;
+  height: 18px;
   justify-self: center;
+}
+
+@media (min-width: 768px) {
+  .logo__sign {
+    display: none;
+  }
 }
 
 .page-footer__logo {

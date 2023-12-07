@@ -14,9 +14,18 @@
 
         <div class="main-nav__bar">
           <a class="page-header__logo logo" href="#">
-            <img class="logo__image" width="34" height="38" src="img/content/logo@1x.svg" alt="Логотип Кэт-энерджи">
-            <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="" aria-hidden="true">
-            <img class="logo__image-large" width="174" height="52" src="img/content/logo-large.svg" alt="Логотип Кэт-энерджи крупный">
+            <picture>
+              <source media="(min-width: 1300px)" srcset="img/content/logo-tablet.svg" width="202px" height="59"> <!-- оказалось можно добавить в source атрибуты новые width  и heihgt и они перекрывают те которые у img -->
+              <source media="(min-width: 768px)" srcset="img/content/logo-tablet.svg" width="174px" height="52">
+              <img class="logo__image" width="34" height="38" src="img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи">
+            </picture>
+            
+            <div class="logo__sign-wrapper">
+              <picture>
+                <source media="(min-width: 768px)" srcset="#" width="0" height="0"> <!-- отмена загрузки картинки, можно ли так делать не знаю -->
+                <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
+              </picture>
+            </div>
           </a>
 
           <button class="main-nav__toggle" type="button">
@@ -44,7 +53,11 @@
         <div class="promo__container container">
           <h1 class="promo__heading">Функциональное питание для котов</h1>
           <p class="promo__text">Занялся собой? Займись котом!</p>
-          <img class="promo__image" width="280" height="270" src="img/content/index-promo@1x.png" alt="Упаковка Кат-энерджи 'курица'">
+          <picture>
+            <source media="(min-width: 1300px)" srcset="img/content/index-promo-desktop.png, img/content/index-promo-desktop@2x.png 2x">
+            <source media="(min-width: 786px)" srcset="img/content/index-promo-tablet.png, img/content/index-promo-tablet@2x.png 2x">
+            <img class="promo__image" width="280" height="270" src="img/content/index-promo-mobile.png" srcset="img/content/index-promo-mobile@2x.png 2x" alt="Упаковка Кат-энерджи 'курица'">
+          </picture>
           <a class="promo__button button" href="#">Подобрать программу</a>
         </div>
       </header>

@@ -4,6 +4,10 @@
   align-items: center; // также выравнивание элементов по вертикали по центру но уже внутри .page-header__logo
   gap: 16px; // задаем такойже гэп что бы сетка блока лого точно легла на сетку родителя .page-header__bar
 
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+  
   &:hover {
     opacity: 0.8;
   }
@@ -11,26 +15,18 @@
   &:active {
     opacity: 0.6;
   }
-
-  @media (min-width: $tablet-width) {
-    display: block;
-  }
 }
 
-
-.logo__image-large {
-  display: none;
-  @media (min-width: $tablet-width) { // открывем логотип по-больше начина с экрана планшета
-    display: block;
-  }
-
-  @media (min-width: $desktop-width) {
-    transform: scale(1.161); // была ширина 174 теперь нужно 202 находим коэфициент 202/174   // не нашел другого способа увеличить логотип (нашел этот метод сдесь https://stackoverflow.com/questions/24463096/change-svg-viewbox-size-with-css )
-  }
+.logo__sign-wrapper {
+  width: 101px;  // пришлось ограничить тег picture оберткой так как он занимала всю возможную ширину, а на него вроде нельзя прописывать стили так как он исчезающий   
+  height: 18px;
+  justify-self: center; // центруем по горизонтали логотип в виде шрифта
 }
 
 .logo__sign {
-  justify-self: center; // центруем по горизонтали логотип в виде шрифта
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .page-footer__logo {
