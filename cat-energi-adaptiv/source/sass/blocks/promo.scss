@@ -2,7 +2,6 @@
   padding-top: 8px; // подогнал исходя из картинки бекграунда пользуясь инструментами разработчика в браузере
   text-align: center;
   position: relative;
-  z-index: 0;
 
   &::before, // картинка бекграунда будет на before а зеленый фильтр будет на after 
   &::after { 
@@ -31,13 +30,14 @@
     background-size: 320px 302px;
     background-repeat: no-repeat;
     background-image: url("../../img/background/bg-promo-mobile.jpg");
-    background-position: left 50%;
+    background-position: 50% 50%;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../../img/background/bg-promo-mobile@2x.jpg");
     }
 
     @media (min-width: $desktop-width) {
+      background-position: left 50%;
       background-size: 720px 694px;
       background-image: url("../../img/background/bg-promo-desktop.jpg");
       

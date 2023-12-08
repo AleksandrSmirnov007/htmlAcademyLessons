@@ -12,9 +12,18 @@
 
         <div class="main-nav__bar">
           <a class="page-header__logo logo" href="#">
-            <img class="logo__image" width="34" height="38" src="img/content/logo@1x.svg" alt="Логотип Кэт-энерджи">
-            <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="" aria-hidden="true">
-            <img class="logo__image-large" width="174" height="52" src="img/content/logo-large.svg" alt="Логотип Кэт-энерджи крупный">
+            <picture>
+              <source media="(min-width: 1300px)" srcset="img/content/logo-tablet.svg" width="202px" height="59"> <!-- оказалось можно добавить в source атрибуты новые width  и heihgt и они перекрывают те которые у img -->
+              <source media="(min-width: 768px)" srcset="img/content/logo-tablet.svg" width="174px" height="52">
+              <img class="logo__image" width="34" height="38" src="img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи">
+            </picture>
+            
+            <div class="logo__sign-wrapper">
+              <picture>
+                <source media="(min-width: 768px)" srcset="#" width="0" height="0"> <!-- отмена загрузки картинки, можно ли так делать не знаю -->
+                <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
+              </picture>
+            </div>
           </a>
 
           <button class="main-nav__toggle" type="button">
@@ -22,8 +31,8 @@
           </button>
         </div>
         <div class="main-nav__wrapper">
-          <ul class="site-menu site-menu--form">
-            <li class="site-menu__item">
+          <ul class="site-menu site-menu--index">
+            <li class="site-menu__item"> <!-- текущая страница сайта отмечается классом site-menu__item--active -->
               <a class="site-menu__link" href="index.html">Главная</a>
             </li>
             <li class="site-menu__item">

@@ -7,14 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
+
     <header class="page__header page-header">
       <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс page-header__nav--closed, для открытого состояния и отображения кнопки-крестик добавить класс page-header__nav--opened  -->
 
         <div class="main-nav__bar">
           <a class="page-header__logo logo" href="#">
-            <img class="logo__image" width="34" height="38" src="img/content/logo@1x.svg" alt="Логотип Кэт-энерджи">
-            <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="" aria-hidden="true">
-            <img class="logo__image-large" width="174" height="52" src="img/content/logo-large.svg" alt="Логотип Кэт-энерджи крупный">
+            <picture>
+              <source media="(min-width: 1300px)" srcset="img/content/logo-tablet.svg" width="202px" height="59"> <!-- оказалось можно добавить в source атрибуты новые width  и heihgt и они перекрывают те которые у img -->
+              <source media="(min-width: 768px)" srcset="img/content/logo-tablet.svg" width="174px" height="52">
+              <img class="logo__image" width="34" height="38" src="img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи">
+            </picture>
+            
+            <div class="logo__sign-wrapper">
+              <picture>
+                <source media="(min-width: 768px)" srcset="#" width="0" height="0"> <!-- отмена загрузки картинки, можно ли так делать не знаю -->
+                <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
+              </picture>
+            </div>
           </a>
 
           <button class="main-nav__toggle" type="button">
@@ -22,8 +32,8 @@
           </button>
         </div>
         <div class="main-nav__wrapper">
-          <ul class="site-menu">
-            <li class="site-menu__item">
+          <ul class="site-menu site-menu--index">
+            <li class="site-menu__item"> <!-- текущая страница сайта отмечается классом site-menu__item--active -->
               <a class="site-menu__link" href="index.html">Главная</a>
             </li>
             <li class="site-menu__item site-menu__item--active">
@@ -41,11 +51,10 @@
       <section class="page-main__section catalog-list">
         <div class="catalog-list__container container">
           <article class="catalog-list__item card">
-            <img class="card__image" width="68" height="86" src="img/catalog/catalog-1@1x-68x86-chicken500.png" alt="Упаковка Кэт-энерджи с курицей 500 грамм.">
             <a class="card__link" href="#">
               <h3 class="card__heading">Cat energy pro 500 г</h3>
             </a>
-
+            <img class="card__image" width="68" height="86" src="img/catalog/chicken-500g.png" srcset="img/catalog/chicken-500g@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 500 грамм.">
             <dl class="card__list">
               <dt class="card__title">Масса</dt>
               <dd class="card__definition">500 г</dd>
@@ -63,7 +72,7 @@
             <a class="card__link" href="#">
               <h3 class="card__heading">Cat energy pro 1000 г</h3>
             </a>
-            <img class="card__image" width="84" height="101" src="img/catalog/catalog-2@1x-84x101-chicken1000.png" alt="Упаковка Кэт-энерджи с курицей 1000 грамм.">
+            <img class="card__image" width="84" height="101" src="img/catalog/chicken-1000g.png" srcset="img/catalog/chicken-1000g@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 1000 грамм.">
             <dl class="card__list">
               <dt class="card__title">Масса</dt>
               <dd class="card__definition">1000 г</dd>
@@ -81,7 +90,7 @@
             <a class="card__link" href="#">
               <h3 class="card__heading">Cat energy pro 500 г</h3>
             </a>
-            <img class="card__image" width="68" height="78" src="img/catalog/catalog-3@1x-68x78-fish500.png" alt="Упаковка Кэт-энерджи с рыбой 500 грамм.">
+            <img class="card__image" width="68" height="78" src="img/catalog/fish-500g.png" srcset="img/catalog/fish-500g@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 500 грамм.">
             <dl class="card__list">
               <dt class="card__title">Масса</dt>
               <dd class="card__definition">500 г</dd>
@@ -99,7 +108,7 @@
             <a class="card__link" href="#">
               <h3 class="card__heading">Cat energy pro 1000 г</h3>
             </a>
-            <img class="card__image" width="84" height="101" src="img/catalog/catalog-4@1x84x101-fish1000.png" alt="Упаковка Кэт-энерджи с рыбой 1000 грамм">
+            <img class="card__image" width="84" height="101" src="img/catalog/fish-1000g.png" srcset="img/catalog/fish-1000g@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 1000 грамм">
             <dl class="card__list">
               <dt class="card__title">Масса</dt>
               <dd class="card__definition">1000 г</dd>
@@ -117,7 +126,7 @@
             <a class="card__link" href="#">
               <h3 class="card__heading">Cat energy slim 500 г</h3>
             </a>
-            <img class="card__image" width="68" height="78" src="img/catalog/catalog-5@1x-68x78-buckwheat500.png" alt="Упаковка Кэт-энерджи с гречкой 500 грамм.">
+            <img class="card__image" width="68" height="78" src="img/catalog/buckwheat-500g.png" srcset="img/catalog/buckwheat-500g@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 500 грамм.">
             <dl class="card__list">
               <dt class="card__title">Масса</dt>
               <dd class="card__definition">500 г</dd>
@@ -135,7 +144,7 @@
             <a class="card__link" href="#">
               <h3 class="card__heading">Cat energy slim 1000 г</h3>
             </a>
-            <img class="card__image" width="84" height="100" src="img/catalog/catalog-6@1x-84x100-buckwheat1000.png" alt="Упаковка Кэт-энерджи с гречкой 1000 грамм.">
+            <img class="card__image" width="84" height="100" src="img/catalog/buckwheat-1000g.png" srcset="img/catalog/buckwheat-1000g@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 1000 грамм.">
             <dl class="card__list">
               <dt class="card__title">Масса</dt>
               <dd class="card__definition">1000 г</dd>
@@ -153,7 +162,7 @@
             <a class="card__link" href="#">
               <h3 class="card__heading">Cat energy slim 500 г</h3>
             </a>
-            <img class="card__image" width="72" height="84" src="img/catalog/catalog-7@1x-72x84-rice500.png" alt="Упаковка Кэт-энерджи с рисом 500 грамм.">
+            <img class="card__image" width="72" height="84" src="img/catalog/rice-500g.png" srcset="img/catalog/rice-500g@2x.png 2x" alt="Упаковка Кэт-энерджи с рисом 500 грамм.">
             <dl class="card__list">
               <dt class="card__title">Масса</dt>
               <dd class="card__definition">500 г</dd>
