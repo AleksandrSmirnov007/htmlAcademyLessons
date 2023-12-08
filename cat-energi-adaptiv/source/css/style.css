@@ -464,7 +464,7 @@ legend {
   background-size: 320px 302px;
   background-repeat: no-repeat;
   background-image: url("../../img/background/bg-promo-mobile.jpg");
-  background-position: 50% 50%;
+  background-position: left 50%;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .promo::before {
