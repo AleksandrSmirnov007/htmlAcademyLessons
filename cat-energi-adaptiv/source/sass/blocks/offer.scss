@@ -9,9 +9,11 @@
   background-position: 0 100%; //Позиция изображения левый край изображения от левого края блока и нижний край изображения от нижнего края блока
   background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
                     url("../../img/background/bg-cat-in-bag-mobile.jpg"); /// добавить картинку
-  @media (min-resolution: 2dppx) {
+
+  @media   (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image:  linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
     url("../../img/background/bg-cat-in-bag-mobile@2x.jpg");
+    background-size: 560px auto;
   }
 
   @media (min-width: $tablet-width) {
@@ -22,9 +24,10 @@
     background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
                       url("../../img/background/bg-cat-in-bag-tablet.jpg"); /// добавить картинку
 
-    @media (min-resolution: 2dppx) {
+    @media   (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image:  linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
                       url("../../img/background/bg-cat-in-bag-tablet@2x.jpg");
+    background-size: 1414px auto;
     }
   }
 
@@ -35,10 +38,11 @@
     background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
                       url("../../img/background/bg-cat-in-bag-desktop.jpg"); /// добавить картинку
 
-    @media (min-resolution: 2dppx) {
+    @media   (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image:  linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
                       url("../../img/background/bg-cat-in-bag-desktop@2x.jpg");
     }
+    background-size: 490px auto;
   }
 
   &:before {

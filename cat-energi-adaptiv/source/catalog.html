@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Кэт-энерджи адаптив. Каталог</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-    <link rel="icon" href="favicon.ico"> <!-- 16x16 -->
-    <link rel="icon" href="images/favicons/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="images/favicons/152.png"> <!-- 152×152 -->
-    <link rel="manifest" href="manifest.webmanifest"> <!-- только для apple. link сылается на json-файл в корне проекта в котором првисанн массив данных для иконок (путь к иконкам, тип и размер) -->
+    <link rel="icon" size="16x16" href="./favicon.ico"> <!-- 16x16 -->
+    <link rel="icon" href="./img/favicons/favicon-32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./images/favicons/152.png"> <!-- 152×152 -->
+    <link rel="manifest" href="./manifest.webmanifest"> <!-- только для apple. link сылается на json-файл в корне проекта в котором првисанн массив данных для иконок (путь к иконкам, тип и размер) -->
 
   </head>
   <body class="page__body">
@@ -20,15 +20,15 @@
         <div class="main-nav__bar">
           <a class="page-header__logo logo" href="#">
             <picture>
-              <source media="(min-width: 1300px)" srcset="img/content/logo-tablet.svg" width="202px" height="59"> <!-- оказалось можно добавить в source атрибуты новые width  и heihgt и они перекрывают те которые у img -->
-              <source media="(min-width: 768px)" srcset="img/content/logo-tablet.svg" width="174px" height="52">
-              <img class="logo__image" width="34" height="38" src="img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи">
+              <source media="(min-width: 1300px)" srcset="./img/content/logo-tablet.svg" width="202px" height="59"> <!-- оказалось можно добавить в source атрибуты новые width  и heihgt и они перекрывают те которые у img -->
+              <source media="(min-width: 768px)" srcset="./img/content/logo-tablet.svg" width="174px" height="52">
+              <img class="logo__image" width="34" height="38" src="./img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи">
             </picture>
 
             <div class="logo__sign-wrapper">
               <picture>
                 <source media="(min-width: 768px)" srcset="#" width="0" height="0"> <!-- отмена загрузки картинки, можно ли так делать не знаю -->
-                <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
+                <img class="logo__sign" width="101" height="18" src="./img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
               </picture>
             </div>
           </a>
@@ -40,13 +40,13 @@
         <div class="main-nav__wrapper">
           <ul class="site-menu">
             <li class="site-menu__item"> <!-- текущая страница сайта отмечается классом site-menu__item--active -->
-              <a class="site-menu__link" href="index.html">Главная</a>
+              <a class="site-menu__link" href="./index.html">Главная</a>
             </li>
             <li class="site-menu__item site-menu__item--active">
               <a class="site-menu__link" title="Мы на странице каталога">Каталог продукции</a>
             </li>
             <li class="site-menu__item">
-              <a class="site-menu__link" href="form.html">Подбор программы</a>
+              <a class="site-menu__link" href="./form.html">Подбор программы</a>
             </li>
           </ul>
         </div>
@@ -66,8 +66,8 @@
 
             <div class="card__image">
               <picture>
-                <source media="(min-width: 768px)" srcset="img/catalog/chicken-500g-tablet.png, img/catalog/chicken-500g-tablet@2x.png 2x" width="161" height="172">
-                <img width="68" height="86" src="img/catalog/chicken-500g-mobile.png" srcset="img/catalog/chicken-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 500 грамм.">
+                <source media="(min-width: 768px)" srcset="./img/catalog/chicken-500g-tablet.png 1x, ./img/catalog/chicken-500g-tablet@2x.png 2x" width="161" height="172">
+                <img width="68" height="86" src="./img/catalog/chicken-500g-mobile.png" srcset="./img/catalog/chicken-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 500 грамм.">
               </picture>
             </div>
 
@@ -91,8 +91,8 @@
 
             <div class="card__image">
               <picture>
-                <source media="(min-width: 768px)" srcset="img/catalog/chicken-1000g-tablet.png, img/catalog/chicken-1000g-tablet@2x.png 2x" width="168" height="206">
-                <img width="84" height="101" src="img/catalog/chicken-1000g-mobile.png" srcset="img/catalog/chicken-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 1000 грамм.">
+                <source media="(min-width: 768px)" srcset="./img/catalog/chicken-1000g-tablet.png 1x, ./img/catalog/chicken-1000g-tablet@2x.png 2x" width="168" height="206">
+                <img width="84" height="101" src="./img/catalog/chicken-1000g-mobile.png" srcset="./img/catalog/chicken-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 1000 грамм.">
               </picture>
             </div>
 
@@ -116,8 +116,8 @@
 
             <div class="card__image">
               <picture>
-                <source media="(min-width: 768px)" srcset="img/catalog/fish-500g-tablet.png, img/catalog/fish-500g-tablet@2x.png 2x" width="163" height="174">
-                <img class="card__image" width="68" height="78" src="img/catalog/fish-500g-mobile.png" srcset="img/catalog/fish-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 500 грамм.">
+                <source media="(min-width: 768px)" srcset="./img/catalog/fish-500g-tablet.png 1x, ./img/catalog/fish-500g-tablet@2x.png 2x" width="163" height="174">
+                <img class="card__image" width="68" height="78" src="./img/catalog/fish-500g-mobile.png" srcset="./img/catalog/fish-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 500 грамм.">
               </picture>
             </div>
 
@@ -141,8 +141,8 @@
 
             <div class="card__image">
               <picture>
-                <source media="(min-width: 768px)" srcset="img/catalog/fish-1000g-tablet.png, img/catalog/fish-1000g-tablet@2x.png 2x" width="168" height="200">
-                <img class="card__image" width="84" height="101" src="img/catalog/fish-1000g-mobile.png" srcset="img/catalog/fish-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 1000 грамм">
+                <source media="(min-width: 768px)" srcset="./img/catalog/fish-1000g-tablet.png 1x, ./img/catalog/fish-1000g-tablet@2x.png 2x" width="168" height="200">
+                <img class="card__image" width="84" height="101" src="./img/catalog/fish-1000g-mobile.png" srcset="./img/catalog/fish-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 1000 грамм">
               </picture>
             </div>
 
@@ -166,8 +166,8 @@
 
             <div class="card__image">
               <picture>
-                <source media="(min-width: 768px)" srcset="img/catalog/buckwheat-500g-tablet.png, img/catalog/buckwheat-500g-tablet@2x.png 2x" width="161" height="171">
-                <img class="card__image" width="68" height="78" src="img/catalog/buckwheat-500g-mobile.png" srcset="img/catalog/buckwheat-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 500 грамм.">
+                <source media="(min-width: 768px)" srcset="./img/catalog/buckwheat-500g-tablet.png 1x, ./img/catalog/buckwheat-500g-tablet@2x.png 2x" width="161" height="171">
+                <img class="card__image" width="68" height="78" src="./img/catalog/buckwheat-500g-mobile.png" srcset="./img/catalog/buckwheat-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 500 грамм.">
               </picture>
             </div>
 
@@ -193,8 +193,8 @@
 
             <div class="card__image">
               <picture>
-                <source media="(min-width: 768px)" srcset="img/catalog/buckwheat-1000g-tablet.png, img/catalog/buckwheat-1000g-tablet@2x.png 2x" width="168" height="200">
-                <img class="card__image" width="84" height="100" src="img/catalog/buckwheat-1000g-mobile.png" srcset="img/catalog/buckwheat-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 1000 грамм.">
+                <source media="(min-width: 768px)" srcset="./img/catalog/buckwheat-1000g-tablet.png 1x, ./img/catalog/buckwheat-1000g-tablet@2x.png 2x" width="168" height="200">
+                <img class="card__image" width="84" height="100" src="./img/catalog/buckwheat-1000g-mobile.png" srcset="./img/catalog/buckwheat-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 1000 грамм.">
               </picture>
             </div>
 
@@ -218,8 +218,8 @@
 
             <div class="card__image">
               <picture>
-                <source media="(min-width: 768px)" srcset="img/catalog/rice-500g-tablet.png, img/catalog/rice-500g-tablet@2x.png 2x" width="163" height="174">
-                <img class="card__image" width="72" height="84" src="img/catalog/rice-500g-mobile.png" srcset="img/catalog/rice-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рисом 500 грамм.">
+                <source media="(min-width: 768px)" srcset="./img/catalog/rice-500g-tablet.png 1x, ./img/catalog/rice-500g-tablet@2x.png 2x" width="163" height="174">
+                <img class="card__image" width="72" height="84" src="./img/catalog/rice-500g-mobile.png" srcset="./img/catalog/rice-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рисом 500 грамм.">
               </picture>
             </div>
 
@@ -318,7 +318,7 @@
             <span>Санкт-Петербург</span></p>
         </div>
 
-        <!-- <img class="contacts__map" width="320" height="362" src="img/content/location@1x.png" alt="изображение карты с расположением нашего офиса"> -->
+        <!-- <img class="contacts__map" width="320" height="362" src="./img/content/location@1x.png" alt="изображение карты с расположением нашего офиса"> -->
         <!-- заменили обычную картинку на интерактивную карту В принципе все тоже самое тот же класс и iframe занмает место карты и позиционируется также за счет класса-->
         <!-- чтобы ее добавить нужно ее собрать для этого нуно перейтив конструктор интрактивных карт яндекса  https://yandex.ru/map-constructor/  там отредактировать карту добавить метки и получить код iframe -->
         <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7123d8e12831f533a7d11328fd657ad637cf1f52ed41f1c0242c16253c8135ae&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
@@ -329,7 +329,7 @@
       <div class="page-footer__container container">
 
         <a class="page-footer__logo logo" href="index.html">
-          <img class="logo__image" width="128" height="24" src="img/content/logo-text.svg" alt="Логотип Кэт-энерджи">
+          <img class="logo__image" width="128" height="24" src="./img/content/logo-text.svg" alt="Логотип Кэт-энерджи">
         </a>
 
         <ul class="page-footer__social social">
