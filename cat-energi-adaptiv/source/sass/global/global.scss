@@ -15,6 +15,11 @@ legend {
   padding-right: 0;
 }
 
+picture {
+  width: max-content;
+  height: max-content;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
