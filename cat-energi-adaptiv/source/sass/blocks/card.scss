@@ -52,6 +52,10 @@
   justify-self: center;
 }
 
+.card__img {
+  width: auto;  // хотя я применял width и height на source в теге pictire и в инлайне задавался новый размер картинки, но у в учебном проекте сделано так (исправил)
+}
+
 .card__list {
   grid-area: list;
   display: grid;

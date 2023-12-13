@@ -22,15 +22,11 @@
             <picture>
               <source media="(min-width: 1300px)" srcset="./img/content/logo-tablet.svg" width="202px" height="59"> <!-- оказалось можно добавить в source атрибуты новые width  и heihgt и они перекрывают те которые у img -->
               <source media="(min-width: 768px)" srcset="./img/content/logo-tablet.svg" width="174px" height="52">
-              <img class="logo__image" width="34" height="38" src="./img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи">
+              <img class="logo__image" width="34" height="38" src="./img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи" aria-hidden="true">
             </picture>
 
-            <div class="logo__sign-wrapper">
-              <picture>
-                <source media="(min-width: 768px)" srcset="#" width="0" height="0"> <!-- отмена загрузки картинки, можно ли так делать не знаю -->
-                <img class="logo__sign" width="101" height="18" src="./img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
-              </picture>
-            </div>
+            <img class="logo__sign" width="101" height="18" src="./img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
+
           </a>
 
           <button class="main-nav__toggle" type="button">
@@ -67,7 +63,7 @@
             <div class="card__image">
               <picture>
                 <source media="(min-width: 768px)" srcset="./img/catalog/chicken-500g-tablet.png 1x, ./img/catalog/chicken-500g-tablet@2x.png 2x" width="161" height="172">
-                <img width="68" height="86" src="./img/catalog/chicken-500g-mobile.png" srcset="./img/catalog/chicken-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 500 грамм.">
+                <img class="card__img" width="68" height="86" src="./img/catalog/chicken-500g-mobile.png" srcset="./img/catalog/chicken-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 500 грамм." aria-hidden="true">
               </picture>
             </div>
 
@@ -92,7 +88,7 @@
             <div class="card__image">
               <picture>
                 <source media="(min-width: 768px)" srcset="./img/catalog/chicken-1000g-tablet.png 1x, ./img/catalog/chicken-1000g-tablet@2x.png 2x" width="168" height="206">
-                <img width="84" height="101" src="./img/catalog/chicken-1000g-mobile.png" srcset="./img/catalog/chicken-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 1000 грамм.">
+                <img class="card__img" width="84" height="101" src="./img/catalog/chicken-1000g-mobile.png" srcset="./img/catalog/chicken-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с курицей 1000 грамм." aria-hidden="true">
               </picture>
             </div>
 
@@ -117,7 +113,7 @@
             <div class="card__image">
               <picture>
                 <source media="(min-width: 768px)" srcset="./img/catalog/fish-500g-tablet.png 1x, ./img/catalog/fish-500g-tablet@2x.png 2x" width="163" height="174">
-                <img class="card__image" width="68" height="78" src="./img/catalog/fish-500g-mobile.png" srcset="./img/catalog/fish-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 500 грамм.">
+                <img class="card__img" width="68" height="78" src="./img/catalog/fish-500g-mobile.png" srcset="./img/catalog/fish-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 500 грамм." aria-hidden="true">
               </picture>
             </div>
 
@@ -142,7 +138,7 @@
             <div class="card__image">
               <picture>
                 <source media="(min-width: 768px)" srcset="./img/catalog/fish-1000g-tablet.png 1x, ./img/catalog/fish-1000g-tablet@2x.png 2x" width="168" height="200">
-                <img class="card__image" width="84" height="101" src="./img/catalog/fish-1000g-mobile.png" srcset="./img/catalog/fish-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 1000 грамм">
+                <img class="card__img" width="84" height="101" src="./img/catalog/fish-1000g-mobile.png" srcset="./img/catalog/fish-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рыбой 1000 грамм" aria-hidden="true">
               </picture>
             </div>
 
@@ -167,7 +163,7 @@
             <div class="card__image">
               <picture>
                 <source media="(min-width: 768px)" srcset="./img/catalog/buckwheat-500g-tablet.png 1x, ./img/catalog/buckwheat-500g-tablet@2x.png 2x" width="161" height="171">
-                <img class="card__image" width="68" height="78" src="./img/catalog/buckwheat-500g-mobile.png" srcset="./img/catalog/buckwheat-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 500 грамм.">
+                <img class="card__img" width="68" height="78" src="./img/catalog/buckwheat-500g-mobile.png" srcset="./img/catalog/buckwheat-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 500 грамм." aria-hidden="true">
               </picture>
             </div>
 
@@ -194,7 +190,7 @@
             <div class="card__image">
               <picture>
                 <source media="(min-width: 768px)" srcset="./img/catalog/buckwheat-1000g-tablet.png 1x, ./img/catalog/buckwheat-1000g-tablet@2x.png 2x" width="168" height="200">
-                <img class="card__image" width="84" height="100" src="./img/catalog/buckwheat-1000g-mobile.png" srcset="./img/catalog/buckwheat-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 1000 грамм.">
+                <img class="card__img" width="84" height="100" src="./img/catalog/buckwheat-1000g-mobile.png" srcset="./img/catalog/buckwheat-1000g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с гречкой 1000 грамм." aria-hidden="true">
               </picture>
             </div>
 
@@ -219,7 +215,7 @@
             <div class="card__image">
               <picture>
                 <source media="(min-width: 768px)" srcset="./img/catalog/rice-500g-tablet.png 1x, ./img/catalog/rice-500g-tablet@2x.png 2x" width="163" height="174">
-                <img class="card__image" width="72" height="84" src="./img/catalog/rice-500g-mobile.png" srcset="./img/catalog/rice-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рисом 500 грамм.">
+                <img class="card__img" width="72" height="84" src="./img/catalog/rice-500g-mobile.png" srcset="./img/catalog/rice-500g-mobile@2x.png 2x" alt="Упаковка Кэт-энерджи с рисом 500 грамм." aria-hidden="true">
               </picture>
             </div>
 

@@ -24,15 +24,10 @@
             <picture>
               <source media="(min-width: 1300px)" srcset="./img/content/logo-tablet.svg" width="202px" height="59"> <!-- оказалось можно добавить в source атрибуты новые width  и heihgt и они перекрывают те которые у img -->
               <source media="(min-width: 768px)" srcset="./img/content/logo-tablet.svg" width="174px" height="52">
-              <img class="logo__image" width="34" height="38" src="./img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи">
+              <img class="logo__image" width="34" height="38" src="./img/content/logo-mobile.svg" alt="Логотип Кэт-энерджи" aria-hidden="true">
             </picture>
 
-            <div class="logo__sign-wrapper">
-              <picture>
-                <source media="(min-width: 768px)" srcset="#" width="0" height="0"> <!-- отмена загрузки картинки, можно ли так делать не знаю -->
-                <img class="logo__sign" width="101" height="18" src="./img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
-              </picture>
-            </div>
+            <img class="logo__sign" width="101" height="18" src="./img/content/logo-text.svg" alt="текст 'cat energi'" aria-hidden="true">
           </a>
 
           <button class="main-nav__toggle" type="button">
@@ -63,9 +58,9 @@
           <picture>
             <source media="(min-width: 1300px)" srcset="./img/content/index-promo-desktop.png 1x, ./img/content/index-promo-desktop@2x.png 2x">
             <source media="(min-width: 768px)" srcset="./img/content/index-promo-tablet.png 1x, ./img/content/index-promo-tablet@2x.png 2x">
-            <img class="promo__image" width="280" height="270" src="./img/content/index-promo-mobile.png" srcset="./img/content/index-promo-mobile@2x.png 2x" alt="Упаковка Кат-энерджи 'курица'">
+            <img class="promo__image" width="280" height="270" src="./img/content/index-promo-mobile.png" srcset="./img/content/index-promo-mobile@2x.png 2x" alt="Упаковка Кат-энерджи 'курица'" aria-hidden="true">
           </picture>
-          <a class="promo__button button" href="#">Подобрать программу</a>
+          <a class="promo__button button" href="./form.html">Подобрать программу</a>
         </div>
       </header>
 
@@ -79,7 +74,7 @@
               Ваш кот весит больше собаки и почти утратил способность лазить по деревьям?
                 Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.
             </p>
-            <a class="catalog-sections__link" href="">Каталог SLIM</a>
+            <a class="catalog-sections__link" href="#">Каталог SLIM</a>
           </article>
 
           <article class="catalog-sections__item">
@@ -151,13 +146,13 @@
               <div class="example__image example__image--before example__image--active">
                 <picture>
                   <source media="(min-width: 1000px)" srcset="./img/content/cat-fat-tablet.png, ./img/content/cat-fat-tablet@2x.png 2x" width="677" height="520">
-                  <img width="280" height="232" src="./img/content/cat-fat-mobile.png" srcset="./img/content/cat-fat-mobile@2x.png 2x" alt="фото кота до употребления, кот толстый">
+                  <img width="280" height="232" src="./img/content/cat-fat-mobile.png" srcset="./img/content/cat-fat-mobile@2x.png 2x" alt="фото кота до употребления, кот толстый" aria-hidden="true">
                 </picture>
               </div>
               <div class="example__image example__image--after">
                 <picture>
                   <source width="545" height="520" media="(min-width: 768px)" srcset="./img/content/cat-skinny-tablet.png, ./img/content/cat-skinny-tablet@2x.png 2x">
-                  <img width="243" height="232" src="img/content/cat-skinny-tablet.png" srcset="./img/content/cat-fat-tablet@2x.png 2x" alt="фото кота после употребления, кот стройный">
+                  <img width="243" height="232" src="img/content/cat-skinny-tablet.png" srcset="./img/content/cat-fat-tablet@2x.png 2x" alt="фото кота после употребления, кот стройный" aria-hidden="true">
                 </picture>
               </div>
             </div>
@@ -197,7 +192,7 @@
       <div class="page-footer__container container">
 
         <a class="page-footer__logo logo" href="index.html">
-          <img class="logo__image" width="128" height="24" src="./img/content/logo-text.svg" alt="Логотип Кэт-энерджи">
+          <img class="logo__image" width="128" height="24" src="./img/content/logo-text.svg" alt="Логотип Кэт-энерджи" aria-hidden="true">
         </a>
 
         <ul class="page-footer__social social">
