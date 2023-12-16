@@ -17,7 +17,9 @@
   cursor: pointer;
   border: none;
 }
-.main-nav__toggle:hover, .main-nav__toggle:active {
+
+.main-nav__toggle:hover,
+.main-nav__toggle:active {
   background-color: #624530;
 }
 
@@ -37,10 +39,11 @@
   box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3), 0 16px 0 0 rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 320px) {
   .main-nav--closed .site-list__item {
     display: none;
   }
+
   .main-nav--closed .site-list__item--active {
     display: block;
   }
@@ -55,6 +58,7 @@
     display: none;
   }
 }
+
 .main-nav--opened .main-nav__wrapper {
   position: absolute;
   top: 0;
@@ -64,6 +68,7 @@
   min-height: 80vh;
   background-color: #6a4d38;
 }
+
 .main-nav--opened .main-nav__wrapper::before {
   content: "";
   position: absolute;
@@ -104,7 +109,9 @@
   left: 0;
   right: auto;
 }
-.main-nav--opened .main-nav__toggle::before, .main-nav--opened .main-nav__toggle::after {
+
+.main-nav--opened .main-nav__toggle::before,
+.main-nav--opened .main-nav__toggle::after {
   position: absolute;
   content: "";
   width: 36px;
@@ -114,10 +121,12 @@
   top: 24px;
   left: 17px;
 }
+
 .main-nav--opened .main-nav__toggle::before {
   transform: rotateZ(45deg);
   box-shadow: none;
 }
+
 .main-nav--opened .main-nav__toggle::after {
   transform: rotate(-45deg);
 }
@@ -136,6 +145,7 @@
     margin: 0 auto;
   }
 }
+
 @media (min-width: 1200px) {
   .main-nav__wrapper {
     width: 960px;
@@ -153,13 +163,15 @@
 }
 
 .site-list {
-  font-weight: bold;
+  font-weight: 700;
 }
+
 @media (min-width: 768px) {
   .site-list {
     width: 570px;
   }
 }
+
 @media (min-width: 1200px) {
   .site-list {
     width: 780px;
@@ -187,6 +199,7 @@
     width: 60px;
   }
 }
+
 @media (min-width: 1200px) {
   .user-list {
     width: 150px;
@@ -204,13 +217,16 @@
   padding-left: 47px;
   text-decoration: none;
 }
+
 .user-list__login:hover {
   background-color: #624530;
 }
+
 .user-list__login:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #624530;
 }
+
 .user-list__login-icon {
   position: absolute;
   line-height: 18px;
