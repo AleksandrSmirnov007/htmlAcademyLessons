@@ -8,3 +8,17 @@ svg {
   display: flex;
   flex-direction: column;
 }
+
+.sprite-icon { /*  управляем цветом спрайта через класс на svg в котором use  */
+  fill: red;
+}
+
+.sprite-icon-hover-blue {
+  stroke: black;
+} 
+
+.sprite-icon-hover-blue:hover {
+  fill: blue;
+  stroke: blue;
+  opacity: 0.5;
+}
