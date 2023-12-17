@@ -8,8 +8,8 @@
 }
 
 .page-header__logo {
-  height: 85px;
-  text-align: center; // у тега img display: inline поэтому  можно с ориентировать логотип посередине как текст
+  display: grid;
+  justify-content: center; // у тега img display: inline поэтому  можно с ориентировать логотип посередине как текст
 
   @media (min-width: $tablet-width) {
     order: 2; // меняем местами с main-nav
@@ -25,27 +25,12 @@
     }
   }
   @media (min-width: $desktop-width) {
-    height: 648px; // весь блок header на макете 720рх блок main-nav 69px (720-69 = 651px) но тут почему то взяли 648px; // 
+    height: 648px; // весь блок header на макете 720рх блок main-nav 69px (720-69 = 651px) но тут почему то взяли 648px; //
     background-position: center 0; // на десктопной версии смещения по игреку нет обнуляем
     background-size: cover;
   }
 }
 
-.page-header__logo img {
-  width: 226px;
-  height: 85px; // svg не искажаеся а просто увеличивается поле сверху и снизу картинки
-
-  @media (min-width: $tablet-width) {
-    width: 370px;
-    height: auto; // на этой ширине высота логотипа не подпирает высоту блока сделаем ее пропорциональной
-    display: block; // для использования маржинов нужна блочноя модель, но при этом text-align перестает действовать поэтому использем боковые маржины авто
-    margin: 0 auto;
-    margin-top: 40px;
-  }
-  @media (min-width:$desktop-width) {
-    margin-top: 57px; //  в фигме 57px от верхней границы Лого вверх до Шапки с меню
-  }
-}
 
 // также можно прописать такое вне предыдущего селектора но это не предпочтительно
 // @media (min-width: $tablet-width) {

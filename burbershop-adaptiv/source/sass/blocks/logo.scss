@@ -1,0 +1,31 @@
+.logo {
+  display: block;
+  width: 226px;
+  height: 85px;
+
+  @media (min-width: 768px) {
+    width: 370px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
+
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 57px;
+  }
+}
+
+.logo__burbershop {
+  display: none;
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+.logo__moustache  {
+  display: none;
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}

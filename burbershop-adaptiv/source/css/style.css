@@ -38,6 +38,43 @@ img {
   overflow: hidden;
 }
 
+.logo {
+  display: block;
+  width: 226px;
+  height: 85px;
+}
+@media (min-width: 768px) {
+  .logo {
+    width: 370px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .logo {
+    margin-top: 57px;
+  }
+}
+
+.logo__burbershop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .logo__burbershop {
+    display: block;
+  }
+}
+
+.logo__moustache {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .logo__moustache {
+    display: block;
+  }
+}
+
 .container {
   width: 280px;
   margin: 0 auto;
@@ -132,8 +169,8 @@ img {
 }
 
 .page-header__logo {
-  height: 85px;
-  text-align: center;
+  display: grid;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .page-header__logo {
@@ -156,25 +193,6 @@ img {
     height: 648px;
     background-position: center 0;
     background-size: cover;
-  }
-}
-
-.page-header__logo img {
-  width: 226px;
-  height: 85px;
-}
-@media (min-width: 768px) {
-  .page-header__logo img {
-    width: 370px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    margin-top: 40px;
-  }
-}
-@media (min-width: 1200px) {
-  .page-header__logo img {
-    margin-top: 57px;
   }
 }
 
