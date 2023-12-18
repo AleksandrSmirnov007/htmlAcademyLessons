@@ -22,9 +22,6 @@
     left: auto;
     right: 0;
   }
-  @media (min-width: $desktop-width) {
-    display: none;
-  }
 }
 
 .background-angle--dark {
@@ -38,7 +35,7 @@
 
 .background-angle--light {
   &::after {
-    background-image: linear-gradient(to top right, #F8F5F2 49%, transparent calc(50% + 1px)); 
+    background-image: linear-gradient(to top right, #F8F5F2 49%, transparent calc(50% + 1px));
   }
   &::before {
     background-image: linear-gradient(to top left, #F8F5F2 49%, transparent calc(50% + 1px));

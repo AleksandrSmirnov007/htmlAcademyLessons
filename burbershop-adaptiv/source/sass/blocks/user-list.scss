@@ -9,46 +9,34 @@
 }
 
 .user-list__login {
-  position: relative; // тут понятно зачем - будем размежать иконку "войти"
+  position: relative; // тут понятно зачем - будем размещать иконку "войти"
   display: block;
   color: #ffffff;
   line-height: 18px; /* 133.333% */
   padding: 17px 21px;
   padding-left: 47px;
   text-decoration: none;
-  // бекграунд берем за счет фона main-nav
-
-  // &:hover {
-  //   background-color: #624530;
-  // }
-  // &:active {
-  //   color: rgba(255, 255, 255, 0.3);
-  //   background-color: #624530;
-  // }
 
   @media (min-width: $tablet-width) {
     width: 60px;
     height: 70px;
     padding: 0;
 
-    span { // выбираем спан вложенный в .user-list__login
-      position: absolute; // таким способом прячем надпись "Войти"
+    span { /* выбираем спан вложенный в .user-list__login */
+      position: absolute; /* таким способом прячем надпись "Войти" */
       opacity: 0;
     }
 
     &:hover .user-list__login-icon { // ховер на ссылке но мы стилизуем внутренние элементы ссылки
       opacity: 1;
 
-      polygon {
-        fill: #826550;
-      }
+      fill: #826550;  /* когда svg был прописан инлайн все работало через дополнительный селетор по тегу polygon {fill:#826550}.  После этого удалили svg добавили через use и теперь его можно перкрасить просто применив fill к обертке svg для вызова */
+
     }
 
     &:active .user-list__login-icon {
       opacity: 0.3;
-      polygon {
-        fill: #ffffff;
-      }
+      fill: #ffffff;
     }
   }
   @media (min-width: $desktop-width) {
@@ -82,9 +70,7 @@
 
     &:hover .user-list__login-icon {
       opacity: 0.3;
-      polygon {
-        fill: #000000;
-      }
+      fill: #000000;
     }
 
     &:active .user-list__login-icon {

@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
+
+    <!-- Это видимо называется спрайт (внутри файла) отсюда по id можно будет вызывать svg через use с адресом xlink:href="#..."  -->
+    <!-- <svg style="display: none;">
+      <symbol viewBox="0 0 16 16" id="icon-login">
+        <polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/>
+        <polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
+      </symbol>
+
+      <symbol viewBox="0 0 16 16" id="icon-comb">
+        <path d="M10.4.75L.76 10.4a1.21 1.21 0 000 1.72l1 1 .52.5 1.9 1.9a.33.33 0 10.43-.52l-1.72-1.68a.25.25 0 010-.38.26.26 0 01.38 0L5 14.65a.33.33 0 10.46-.46l-1.71-1.7a.26.26 0 010-.38.27.27 0 01.39 0l1.71 1.71a.33.33 0 10.46-.46l-1.72-1.7a.25.25 0 010-.38.26.26 0 01.38 0L6.66 13a.32.32 0 00.46 0 .33.33 0 000-.47l-1.71-1.72a.26.26 0 010-.38.27.27 0 01.39 0l1.71 1.71a.33.33 0 10.49-.46L6.24 10a.26.26 0 010-.38.27.27 0 01.39 0l1.71 1.71a.33.33 0 00.46-.46L7.09 9.13a.26.26 0 010-.38.27.27 0 01.39 0l1.71 1.71a.33.33 0 00.46-.46L7.92 8.3a.26.26 0 010-.38.27.27 0 01.39 0L10 9.63a.33.33 0 00.46-.46L8.77 7.45a.26.26 0 010-.38.27.27 0 01.39 0l1.69 1.73a.33.33 0 00.47 0 .35.35 0 000-.47L9.6 6.62a.26.26 0 010-.38.27.27 0 01.39 0L11.7 8a.33.33 0 10.46-.46l-1.72-1.7a.27.27 0 11.38-.38l1.71 1.71a.32.32 0 00.46 0 .33.33 0 000-.47l-1.71-1.76a.26.26 0 010-.38.27.27 0 01.39 0l1.71 1.71a.33.33 0 00.46-.46l-1.73-1.7a.26.26 0 010-.38.27.27 0 01.39 0l1.71 1.71a.32.32 0 00.46 0 .33.33 0 000-.47L13 3.26a.26.26 0 010-.38.27.27 0 01.39 0L15 4.59a.33.33 0 00.47 0 .34.34 0 000-.46L13.6 2.24l-.51-.51-1-1a1.23 1.23 0 00-1.69.02z"/>
+      </symbol>
+    </svg> -->
+
+    <!--После того как откатали вызов спрайтов из нутри index.html, можно вынести спрайт в отдельный файл (например sprites.svg) и указывать путь к нему при обращении к экземпляру иконки. (use с адресом xlink:href="sprites.svg#...")Обратите внимание, что во внешнем спрайте должен быть указан атрибут xmlns="http://www.w3.org/2000/svg", иначе ничего не заработает. -->
+
     <header class="page__header page-header">
       <a class="page-header__logo" href="#">
         <svg class="logo" width="370" height="153" role="img" viewBox="0 0 370 153" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Барбершоп 'бородинский'">
@@ -31,32 +46,59 @@
             <path d="M168.16 123.85h1.4c5.44.28 9.71 1.73 12.42 4.72 2.74-3 7-4.46 12.47-4.72h1.36c12.13.82 17.65 9.5 27.34 13.19a11.2 11.2 0 0 0 4.8 1c2.48-.27 4.06-2.78 3.74-5.58-.34-3-3.28-5.61-6.57-4.17-.43.2-.83.47-1.17.8-.25.23-.53.83-1.17.61-.6-.5 0-1.23.3-1.65a6 6 0 0 1 6.09-3c5.64.4 10.68 5.34 9.82 12.82C237.07 149 226.87 152 214.8 153h-3.94a48.43 48.43 0 0 1-28.81-11 49.12 49.12 0 0 1-28.95 11h-3.86c-12.18-1.07-22.48-4-24.27-15.46-.68-8.16 4.19-12.17 9.83-12.58a6.11 6.11 0 0 1 6.15 3c.28.46.8 1.17.31 1.72-.6.11-.9-.37-1.17-.61a4 4 0 0 0-2.82-1.23c-3.87-.14-6.1 4.15-4.55 7.61a4.35 4.35 0 0 0 3.38 2.52 11.7 11.7 0 0 0 4.8-1 24.04 24.04 0 0 0 3.87-1.9c7.36-4.26 13.12-10.31 23.4-11.22Z" fill="#fff"/>
           </g>
         </svg>
-
       </a>
+
       <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- добавляем по умолчанию класс --nojs и рассматриваем такой сценарий удалим его с помошью джаваскрипта, а на случай если джаваскрипт не сработает будем использовать класс nojs для стилизации без javascript -->
         <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
         <div class="main-nav__wrapper">
           <ul class="main-nav__list site-list">
             <li class="site-list__item site-list__item--active">
-              <a>Главная</a>
+              <a>
+                <svg class="site-list__icon-comb" width="16" height="16">
+                  <use xlink:href="./sprites.svg#icon-comb"></use>
+                </svg>
+                Главная
+              </a>
             </li>
             <li class="site-list__item">
-              <a href="works.html">Наши работы</a>
+              <a href="works.html">
+                <svg class="site-list__icon-comb" width="16" height="16">
+                  <use xlink:href="./sprites.svg#icon-comb"></use>
+                </svg>
+                Наши работы
+              </a>
             </li>
             <li class="site-list__item">
-              <a href="form.html">Записаться</a>
+              <a href="form.html">
+                <svg class="site-list__icon-comb" width="16" height="16">
+                  <use xlink:href="./sprites.svg#icon-comb"></use>
+                </svg>
+                Записаться
+              </a>
             </li>
             <li class="site-list__item">
-              <a href="#">Контакты</a>
+              <a href="#">
+                <svg class="site-list__icon-comb" width="16" height="16">
+                  <use xlink:href="./sprites.svg#icon-comb"></use>
+                </svg>
+                Контакты
+              </a>
             </li>
             <li class="site-list__item">
-              <a href="#">HTML Academy</a>
+              <a href="#">
+                <svg class="site-list__icon-comb" width="16" height="16">
+                  <use xlink:href="./sprites.svg#icon-comb"></use>
+                </svg>
+                HTML Academy
+              </a>
             </li>
           </ul>
           <ul class="main-nav__list user-list">
             <li class="user-list__item">
               <a class="user-list__login" href="login.html">
-                <svg class="user-list__login-icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/><polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/></svg>
+                <svg class="user-list__login-icon" width="16" height="16">
+                  <use xlink:href="./sprites.svg#icon-login"></use>
+                </svg>
                 <span>Войти</span>
               </a>
             </li>

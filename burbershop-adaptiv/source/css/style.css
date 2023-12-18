@@ -115,11 +115,6 @@ img {
   left: auto;
   right: 0;
 }
-@media (min-width: 1200px) {
-  .background-angle {
-    display: none;
-  }
-}
 
 .background-angle--dark::after {
   background-image: linear-gradient(to top right, #353535 50%, transparent calc(50% + 1px));
@@ -422,7 +417,7 @@ img {
     background-color: #ffffff;
   }
   .site-list__item a[href]:active {
-    color: rbga(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.3);
     background-color: #ffffff;
     opacity: 1;
   }
@@ -459,6 +454,47 @@ img {
   }
 }
 
+.site-list__icon-comb {
+  position: absolute;
+  top: 15px;
+  left: auto;
+  right: 15px;
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+  opacity: 0.3;
+}
+@media (min-width: 768px) {
+  .site-list__icon-comb {
+    top: 8px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .site-list a[href] .site-list__icon-comb {
+    opacity: 1;
+    fill: #826550;
+  }
+  .site-list a[href]:active .site-list__icon-comb {
+    opacity: 0.9;
+    fill: #ffffff;
+  }
+}
+@media (min-width: 1200px) {
+  .site-list__icon-comb {
+    top: 28px;
+    left: 8px;
+    margin: 0;
+  }
+  .site-list a[href]:hover .site-list__icon-comb {
+    opacity: 0.3;
+    fill: #000000;
+  }
+  .site-list a[href]:active .site-list__icon-comb {
+    opacity: 0.1;
+  }
+}
+
 @media (min-width: 768px) {
   .user-list {
     width: 60px;
@@ -488,19 +524,18 @@ img {
     padding: 0;
   }
   .user-list__login span {
+    /* выбираем спан вложенный в .user-list__login */
     position: absolute;
+    /* таким способом прячем надпись "Войти" */
     opacity: 0;
   }
   .user-list__login:hover .user-list__login-icon {
     opacity: 1;
-  }
-  .user-list__login:hover .user-list__login-icon polygon {
     fill: #826550;
+    /* когда svg был прописан инлайн все работало через дополнительный селетор по тегу polygon {fill:#826550}.  После этого удалили svg добавили через use и теперь его можно перкрасить просто применив fill к обертке svg для вызова */
   }
   .user-list__login:active .user-list__login-icon {
     opacity: 0.3;
-  }
-  .user-list__login:active .user-list__login-icon polygon {
     fill: #ffffff;
   }
 }
@@ -533,8 +568,6 @@ img {
   }
   .user-list__login:hover .user-list__login-icon {
     opacity: 0.3;
-  }
-  .user-list__login:hover .user-list__login-icon polygon {
     fill: #000000;
   }
   .user-list__login:active .user-list__login-icon {

@@ -63,7 +63,7 @@
       background-color: #ffffff;
     }
     &:active {
-      color: rbga(0, 0, 0, 0.3);
+      color: rgba(0, 0, 0, 0.3);
       background-color: #ffffff;
       opacity: 1; // переопределяем так как на ширине планшета в этом случае проздачность была 0.3
     }
@@ -95,5 +95,49 @@
   @media (min-width: $desktop-width) {
     padding-right: 31px;
     padding-left: 31px;
+  }
+}
+
+
+.site-list__icon-comb {
+  position: absolute;
+  top: 15px;
+  left: auto;
+  right: 15px;
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+  opacity: 0.3;
+
+  @media (min-width: $tablet-width) {
+    top: 8px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    .site-list a[href] & {
+      opacity: 1;
+      fill: #826550;
+    }
+
+    .site-list a[href]:active & {
+      opacity: 0.9;
+      fill: #ffffff;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 28px;
+    left: 8px;
+    margin: 0;
+
+    .site-list a[href]:hover & {
+      opacity: 0.3;
+      fill: #000000;
+    }
+
+    .site-list a[href]:active & {
+      opacity: 0.1;
+    }
   }
 }
