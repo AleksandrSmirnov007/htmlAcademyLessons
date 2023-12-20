@@ -205,6 +205,14 @@ picture {
 }
 @media (min-width: 768px) {
   .logo {
+    grid-template-columns: 60px 101px;
+    gap: 12px;
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    width: 202px;
+    height: 59px;
     display: block;
   }
 }
@@ -215,6 +223,31 @@ picture {
   opacity: 0.6;
 }
 
+@media (min-width: 768px) {
+  .logo__image-small {
+    display: none;
+  }
+}
+@media (min-width: 1300px) {
+  .logo__image-small {
+    display: none;
+  }
+}
+
+.logo__image-middle {
+  display: none;
+}
+@media (min-width: 768px) {
+  .logo__image-middle {
+    display: block;
+  }
+}
+@media (min-width: 1300px) {
+  .logo__image-middle {
+    display: none;
+  }
+}
+
 .logo__sign {
   width: 101px;
   height: 18px;
@@ -222,10 +255,21 @@ picture {
 }
 @media (min-width: 768px) {
   .logo__sign {
+    justify-self: start;
+  }
+}
+@media (min-width: 1300px) {
+  .logo__sign {
     display: none;
-    width: 101px;
-    height: 18px;
-    justify-self: center;
+  }
+}
+
+.logo__large {
+  display: none;
+}
+@media (min-width: 1300px) {
+  .logo__large {
+    display: block;
   }
 }
 

@@ -5,6 +5,13 @@
   gap: 16px; // задаем такойже гэп что бы сетка блока лого точно легла на сетку родителя .page-header__bar
 
   @media (min-width: $tablet-width) {
+    grid-template-columns: 60px 101px;
+    gap: 12px;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 202px;
+    height: 59px;
     display: block;
   }
   
@@ -17,6 +24,25 @@
   }
 }
 
+.logo__image-small {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.logo__image-middle {
+  display: none;
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
 
 .logo__sign {
 
@@ -25,12 +51,20 @@
   justify-self: center; // центруем по горизонтали логотип в виде шрифта
   
   @media (min-width: $tablet-width) {
+    justify-self: start; // центруем по горизонтали логотип в виде шрифта
+  }
+  @media (min-width: $desktop-width) {
     display: none;
-    width: 101px;  // пришлось ограничить тег picture оберткой так как он занимала всю возможную ширину, а на него вроде нельзя прописывать стили так как он исчезающий   
-    height: 18px;
-    justify-self: center; // центруем по горизонтали логотип в виде шрифта
   }
 }
+
+.logo__large {
+  display: none;
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}
+
 
 .page-footer__logo {
   grid-template-columns: auto;
