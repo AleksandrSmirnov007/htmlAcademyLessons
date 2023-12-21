@@ -19,11 +19,11 @@
 }
 
 .social__link {
-  color: $special_grey-3; // не понятно пока почему задается ссылкам цвет шрифта если будут участвовать иконки.
   width: 46px;
   height: 40px;
   display: grid;
   place-content: center;
+  color: $special_grey-3; // не понятно пока почему задается ссылкам цвет шрифта если будут участвовать иконки. теперь понятно. перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
 
   @media (min-width: $tablet-width) {
     width: 52px;
@@ -33,17 +33,11 @@
     }
   }
 
-  &:hover:not(.social__link--facebook) path {
-    fill: $color-primary;
-  }
-  &--facebook:hover path{
-    stroke: $color-primary;
+  &:hover {
+    color: $color-primary; // перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
   }
 
-  &:active:not(.social__link--facebook) path {
-    fill: fade-out($color-primary, 0.7);
-  }
-  &--facebook:active path{
-    stroke: fade-out($color-primary, 0.7);
+  &:active {
+    color: fade-out($color-primary, 0.7);
   }
 }

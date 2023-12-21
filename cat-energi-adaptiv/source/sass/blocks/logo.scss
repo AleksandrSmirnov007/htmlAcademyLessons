@@ -9,10 +9,10 @@
     gap: 12px;
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
+    display: block;
     width: 202px;
     height: 59px;
-    display: block;
   }
   
   &:hover {
@@ -46,7 +46,7 @@
 
 .logo__sign {
 
-  width: 101px;  // пришлось ограничить тег picture оберткой так как он занимала всю возможную ширину, а на него вроде нельзя прописывать стили так как он исчезающий   
+  width: 101px; 
   height: 18px;
   justify-self: center; // центруем по горизонтали логотип в виде шрифта
   

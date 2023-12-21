@@ -10,10 +10,14 @@
   align-items: center;
   justify-content: space-between;
 
-  &:hover path {
-    fill: $color-primary;
-  }
-  &:active {
-    opacity: 0.3;
-  }
+  color: $special_grey-3; // перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
+
+}
+
+.developer:hover .developer__logo {
+    color: $color-primary;
+}
+
+.developer:active {
+  opacity: 0.3;
 }

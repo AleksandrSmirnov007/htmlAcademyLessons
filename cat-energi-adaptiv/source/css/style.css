@@ -209,11 +209,11 @@ picture {
     gap: 12px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1300px) {
   .logo {
+    display: block;
     width: 202px;
     height: 59px;
-    display: block;
   }
 }
 .logo:hover {
@@ -1492,11 +1492,11 @@ picture {
 }
 
 .social__link {
-  color: #666666;
   width: 46px;
   height: 40px;
   display: grid;
   place-content: center;
+  color: #666666;
 }
 @media (min-width: 768px) {
   .social__link {
@@ -1507,17 +1507,11 @@ picture {
     transform: scale(1.43);
   }
 }
-.social__link:hover:not(.social__link--facebook) path {
-  fill: #68b738;
+.social__link:hover {
+  color: #68b738;
 }
-.social__link--facebook:hover path {
-  stroke: #68b738;
-}
-.social__link:active:not(.social__link--facebook) path {
-  fill: rgba(104, 183, 56, 0.3);
-}
-.social__link--facebook:active path {
-  stroke: rgba(104, 183, 56, 0.3);
+.social__link:active {
+  color: rgba(104, 183, 56, 0.3);
 }
 
 .developer {
@@ -1530,10 +1524,13 @@ picture {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #666666;
 }
-.developer:hover path {
-  fill: #68b738;
+
+.developer:hover .developer__logo {
+  color: #68b738;
 }
+
 .developer:active {
   opacity: 0.3;
 }
@@ -1633,10 +1630,6 @@ picture {
   grid-area: image;
   align-self: end;
   justify-self: center;
-}
-
-.card__img {
-  width: auto;
 }
 
 .card__list {
