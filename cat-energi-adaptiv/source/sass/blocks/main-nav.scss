@@ -37,8 +37,8 @@
 
 .main-nav__toggle {
   border: none; // убираем границу на кнопке которая была по умолчанию
-  width: 40px; //такая ширина бургер-кнопки сделана для увеличения зоны взаимодествия с кнопкой, хоть и визуально кнопка меньшего размера меньшего размера... 24px
-  height: 40px;
+  width: 44px; //такая ширина бургер-кнопки сделана для увеличения зоны взаимодествия с кнопкой, хоть и визуально кнопка меньшего размера меньшего размера... 24px
+  height: 39px;
   background-color: transparent;
   position: relative;
   display: block;
@@ -89,14 +89,14 @@
 .main-nav--closed .main-nav__toggle {
   &::before { //    рисуем кнопку бургер(когда меню закрыто) с помощью псведоэлемента и его теней
     position: absolute;
-    top: 12px;
+    top: 10px;
     //центрируем по горизонтали right: 0; left: 0; margin-right: 0; margin-left: 0;
     right: 0;
     left: 0;
     margin: 0 auto;
     content: "";
     width: 24px;
-    height: 1.5px;
+    height: 2px;
     background-color: $black;
     box-shadow: 0 8px 0 0 $black,
                 0 16px 0 0 $black;

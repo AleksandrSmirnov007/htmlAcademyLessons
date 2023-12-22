@@ -25,6 +25,7 @@
 }
 
 .logo__image-small {
+  margin-top: -6px;
   @media (min-width: $tablet-width) {
     display: none;
   }

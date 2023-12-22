@@ -1,5 +1,5 @@
 .example {
-  padding: 25px 0 40px;
+  padding: 25px 0 42px;
   background-color: $special_grey-6;
 
   @media (min-width: $tablet-width) {
@@ -44,7 +44,7 @@
 .example__text {
   color: $special_dark-grey;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1;
     margin-top: 63px; // нижний отступ у верхнего элемента на .example___text задан через класс page-main__heading, но на версий для планшета и десктопа я его обнулил
@@ -58,7 +58,7 @@
 }
 
 .example__list {
-  margin-bottom: 34px; //  будем использовать отступ от списка а example-definition спозиционироем c помощью отрицательных маржинов и пусть выпадабт вниз из списка на 14рх и тогда визуально отсуп до следующего элемнта будет 20px
+  margin-bottom: 28px; //  будем использовать отступ от списка а example-definition спозиционироем c помощью отрицательных маржинов и пусть выпадабт вниз из списка на 14рх и тогда визуально отсуп до следующего элемнта будет 20px
   margin-top: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -162,7 +162,7 @@
 
 // переключаемые изображение
 .example__images {
-  margin-bottom: 15px;
+  margin-bottom: 21px;
 
   @media (min-width: $tablet-width) {
     display: grid;

@@ -68,6 +68,9 @@
           <h1 class="promo__heading">Функциональное питание для котов</h1>
           <p class="promo__text">Занялся собой? Займись котом!</p>
           <picture>
+            <source type="image/webp" media="(min-width: 1300px)" srcset="./img/content/index-promo-desktop.webp 1x, ./img/content/index-promo-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="./img/content/index-promo-tablet.webp 1x, ./img/content/index-promo-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="./img/content/index-promo-mobile.webp 1x, ./img/content/index-promo-mobile.webp 2x">
             <source media="(min-width: 1300px)" srcset="./img/content/index-promo-desktop.png 1x, ./img/content/index-promo-desktop@2x.png 2x">
             <source media="(min-width: 768px)" srcset="./img/content/index-promo-tablet.png 1x, ./img/content/index-promo-tablet@2x.png 2x">
             <img class="promo__image" width="280" height="270" src="./img/content/index-promo-mobile.png" srcset="./img/content/index-promo-mobile@2x.png 2x" alt="Упаковка Кат-энерджи 'курица'" aria-hidden="true">
@@ -157,14 +160,16 @@
             <div class="example__images">
               <div class="example__image example__image--before example__image--active">
                 <picture>
-                  <source media="(min-width: 1000px)" srcset="./img/content/cat-fat-tablet.png, ./img/content/cat-fat-tablet@2x.png 2x" width="677" height="520">
+                  <source type-="image/webp" media="(min-width: 768px)" srcset="./img/content/cat-fat-tablet.webp, ./img/content/cat-fat-tablet@2x.webp 2x">
+                  <source type-="image/webp" srcset="./img/content/cat-fat-mobile.webp, ./img/content/cat-fat-mobile@2x.webp 2x">
+                  <source media="(min-width: 768px)" srcset="./img/content/cat-fat-tablet.png, ./img/content/cat-fat-tablet@2x.png 2x">
                   <img width="280" height="232" src="./img/content/cat-fat-mobile.png" srcset="./img/content/cat-fat-mobile@2x.png 2x" alt="фото кота до употребления, кот толстый" aria-hidden="true">
                 </picture>
               </div>
               <div class="example__image example__image--after">
                 <picture>
-                  <source width="545" height="520" media="(min-width: 768px)" srcset="./img/content/cat-skinny-tablet.png, ./img/content/cat-skinny-tablet@2x.png 2x">
-                  <img width="243" height="232" src="img/content/cat-skinny-tablet.png" srcset="./img/content/cat-fat-tablet@2x.png 2x" alt="фото кота после употребления, кот стройный" aria-hidden="true">
+                  <source type="image/webp" srcset="./img/content/cat-skinny-tablet.webp, ./img/content/cat-skinny-tablet@2x.webp 2x">
+                  <img width="243" height="232" src="img/content/cat-skinny-tablet.png" srcset="./img/content/cat-skinny-tablet@2x.png 2x" alt="фото кота после употребления, кот стройный" aria-hidden="true">
                 </picture>
               </div>
             </div>
@@ -187,7 +192,7 @@
         <h2 class="visually-hidden">Контакты</h2>
 
         <div class="contacts__container container">
-          <p class="contacts__heading">Приглашаем к сотрудничеству дилеров!</p>
+          <p class="contacts__heading">Приглашаем<br>к сотрудничеству дилеров!</p>
           <p class="contacts__address">
             <span>ул. Большая Конюшенная, д. 19/8</span>
             <span>Санкт-Петербург</span></p>
