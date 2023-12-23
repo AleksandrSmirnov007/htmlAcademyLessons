@@ -3,6 +3,14 @@
   text-align: center;
   position: relative;
 
+  @media (min-width: $tablet-width) {
+    padding-top: 33px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 0;
+  }
+
   &::before, // картинка бекграунда будет на before а зеленый фильтр будет на after 
   &::after { 
     z-index: -2; // Иначе псевдоэлемент перекрывает все блоки выше, но если поставить -1, то далее мы выводим из потока еще и .promo__image же уменьшаем z-index но оно должно быть выше этого псевдоэлемента (promo::after)
@@ -17,7 +25,7 @@
     }
     @media (min-width: $desktop-width) {
       display: block;
-      top: -200px; //вехняя граница выше верхней границы родителя на 200px
+      top: -141px; //вехняя граница зеленого бекграунда с котом на десктопе
       right: 0; // по правой границе родителя
       bottom: 0; // по нижней границе родителя
       left: 50%; // от середины блока родителя по горизонтали
@@ -70,8 +78,8 @@
     padding: 0 90px 526px; // 90px отсупы справа и слева внутри блока по макету, 526px от кнопки (подобрать программу) вниз до конца блока
   }
   @media (min-width: $desktop-width) {
-    min-height: 582px; // непонял откуда эта высота
-    padding: 20px 610px 95px 80px; // 80px
+    min-height: 636px; // непонял откуда эта высота
+    padding: 85px 610px 95px 80px; // 80px
   }
 }
 
@@ -84,7 +92,7 @@
   font-weight: 400;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 41px;
+    margin-bottom: 39px;
     font-size: 60px;
   }
 
@@ -101,7 +109,7 @@
 
   @media (min-width: $tablet-width) {
     font-size: 20px;
-    margin-bottom: 49px;
+    margin-bottom: 50px;
   }
 }
 

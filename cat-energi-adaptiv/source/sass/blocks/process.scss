@@ -2,7 +2,10 @@
 
 .process {
   padding-top: 21px; // в данном случае никаикх маржинов между блоками  не задано а использованы паддинги, для ширины и горизонтальных отступов на разных экранах к этому классу миксуется класс .container
-  padding-bottom: 49px; 
+  padding-bottom: 49px;
+  @media (min-width: $tablet-width) {
+    padding-top: 45px;
+  }
 }
 
 .process__list {
@@ -12,6 +15,7 @@
   color: $special_dark-grey;
 
   @media (min-width: $tablet-width) {
+    padding-top: 32px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 60px; // растояние между полосками сетки макета для планшета
@@ -33,6 +37,7 @@
 
 
   @media (min-width: $tablet-width) {
+    gap: 32px;
     position: relative; // для ширины планшета и шире будет перестроение элементов, будем делать это относительно process__item
     z-index: 0; // непонятно зачем, возможно что бы сделать относительные индексы для внутренних элементов
     min-height: 280px; // высота псевдоэлемента(зададим его позже) с порядковым номером элемента самый большой вызуальный элемента
@@ -99,4 +104,11 @@
 
 .process__item--scales::before {
   background-image: url("../../img/icons/icon_alarm.svg");
+}
+
+.procces__br {
+  display: none;
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
 }

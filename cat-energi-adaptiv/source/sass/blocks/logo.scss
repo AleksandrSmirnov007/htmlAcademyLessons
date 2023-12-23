@@ -53,6 +53,7 @@
   
   @media (min-width: $tablet-width) {
     justify-self: start; // центруем по горизонтали логотип в виде шрифта
+    margin-top: 6px;
   }
   @media (min-width: $desktop-width) {
     display: none;
@@ -67,10 +68,15 @@
 }
 
 
-.page-footer__logo {
-  grid-template-columns: auto;
+.page-footer__logo { 
+  grid-template-columns: auto; // так верхнее лого display: grid; и делится на две колонки (обнуляем это)
   margin-left: auto;
   margin-right: auto;
   width: 128px;
   height: 24px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+    margin-top: 4px;
+  }
 }

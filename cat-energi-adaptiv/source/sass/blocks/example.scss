@@ -28,6 +28,7 @@
     display: grid;
     grid-template-columns: 366px 1fr;
     column-gap: 32px; //не понятно как вычисленное значение
+    margin-bottom: 88px;
   }
   @media (min-width: $desktop-width ) {
     grid-template-columns: 366px 70px 1fr; // 366 рх понятно два dt и dl идут рядом через gap 24px, но 70 рх?
@@ -49,6 +50,7 @@
     grid-column: 1 / -1;
     margin-top: 63px; // нижний отступ у верхнего элемента на .example___text задан через класс page-main__heading, но на версий для планшета и десктопа я его обнулил
     margin-bottom: 54px;
+    padding-right: 20px;
   }
   @media (min-width: $desktop-width) {
     grid-column: 1 / 3; // родителем этого элемента является .example__content в нем три стобцца, на ширине эрана элемент занимет первые два.
@@ -65,6 +67,7 @@
   grid-gap: 32px;
   @media (min-width: $tablet-width) {
     margin-bottom: 0; // не оспользуем отступ у списка, используется отступ у .example-content
+    gap: 43px;
   }
   @media (min-width: $desktop-width) {
     margin-bottom: 60px;
@@ -82,7 +85,7 @@
   border-radius: 3px;
 
   @media (min-width: $tablet-width) {
-    padding-top: 15px; // паддинг меняется на 1рх в юольшую сторону
+    padding-top: 12px; // паддинг меняется на 1рх в юольшую сторону
   }
 }
 
@@ -138,9 +141,11 @@
   text-transform: uppercase;
 
   @media (min-width: $tablet-width) {
-    padding-left: 178px;
+    padding-left: 120px;
     text-align: right;
-    margin-top: 11px;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 4px;
   }
   @media (min-width: $desktop-width) {
     padding-left: 0;
@@ -169,6 +174,7 @@
     grid-template-columns: 1fr 50%;
     padding: 0 58px;
     overflow: hidden; // хотя сдесь и так все работало
+    margin-bottom: 26px;
   }
   @media (min-width: $desktop-width) {
     padding: 0;
@@ -189,9 +195,7 @@
     justify-content: start;
 
     img {
-      margin-left: -29px;  // двигать первого кота ( по сути это свойство со значением передаеится обоим картинкам но на вторую оно не действует так как второая картинка позиционируется от правого края и margin-left для нее значения не имеет
-      max-width: none;
-      height: 511px;
+      margin-left: -6px;  // двигать первого кота ( по сути это свойство со значением передаеится обоим картинкам но на вторую оно не действует так как второая картинка позиционируется от правого края и margin-left для нее значения не имеет
       width: auto;  // так даже больше похоже на макет высота 511рх фотку с толстым котом прижимаем влева(justify-content: start) с тощим котом прижимаем влево (justify-content: end) видимо в архиве проекта
     }
 

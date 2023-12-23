@@ -259,6 +259,7 @@ picture {
 @media (min-width: 768px) {
   .logo__sign {
     justify-self: start;
+    margin-top: 6px;
   }
 }
 @media (min-width: 1300px) {
@@ -283,6 +284,12 @@ picture {
   width: 128px;
   height: 24px;
 }
+@media (min-width: 768px) {
+  .page-footer__logo {
+    margin: 0;
+    margin-top: 4px;
+  }
+}
 
 .site-menu {
   margin: 0;
@@ -300,6 +307,7 @@ picture {
 }
 @media (min-width: 768px) {
   .site-menu {
+    margin-right: -16px;
     font-size: 18px;
     line-height: 24px;
     /* 133.333% */
@@ -366,7 +374,7 @@ picture {
 }
 @media (min-width: 768px) {
   .site-menu__link {
-    padding: 17px;
+    padding: 18px;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
@@ -380,6 +388,8 @@ picture {
 }
 @media (min-width: 1300px) {
   .site-menu__link {
+    padding-bottom: 24px;
+    padding-left: 16px;
     color: #111111;
     font-size: 20px;
     font-weight: 400;
@@ -489,6 +499,16 @@ picture {
   text-align: center;
   position: relative;
 }
+@media (min-width: 768px) {
+  .promo {
+    padding-top: 33px;
+  }
+}
+@media (min-width: 1300px) {
+  .promo {
+    padding-top: 0;
+  }
+}
 .promo::before, .promo::after {
   z-index: -2;
   content: "";
@@ -506,7 +526,7 @@ picture {
 @media (min-width: 1300px) {
   .promo::before, .promo::after {
     display: block;
-    top: -200px;
+    top: -141px;
     right: 0;
     bottom: 0;
     left: 50%;
@@ -562,8 +582,8 @@ picture {
 }
 @media (min-width: 1300px) {
   .promo__container {
-    min-height: 582px;
-    padding: 20px 610px 95px 80px;
+    min-height: 636px;
+    padding: 85px 610px 95px 80px;
   }
 }
 
@@ -577,7 +597,7 @@ picture {
 }
 @media (min-width: 768px) {
   .promo__heading {
-    margin-bottom: 41px;
+    margin-bottom: 39px;
     font-size: 60px;
   }
 }
@@ -593,7 +613,7 @@ picture {
 @media (min-width: 768px) {
   .promo__text {
     font-size: 20px;
-    margin-bottom: 49px;
+    margin-bottom: 50px;
   }
 }
 
@@ -643,7 +663,7 @@ picture {
 }
 @media (min-width: 768px) {
   .button {
-    padding: 14px 26px;
+    padding: 17px 26px;
     width: auto;
     font-size: 20px;
     line-height: 1;
@@ -686,12 +706,15 @@ picture {
 }
 @media (min-width: 768px) {
   .catalog-sections__item {
-    padding: 77px 316px 52px 53px;
+    padding: 71px 311px 62px 53px;
   }
 }
 @media (min-width: 1300px) {
   .catalog-sections__item {
-    padding: 47px 55px 59px;
+    padding-top: 47px;
+    padding-left: 55px;
+    padding-right: 53px;
+    padding-bottom: 59px;
   }
 }
 .catalog-sections__item + .catalog-sections__item {
@@ -724,6 +747,7 @@ picture {
 }
 @media (min-width: 768px) {
   .catalog-sections__heading {
+    margin-bottom: 16px;
     position: static;
     padding-left: 0;
     font-size: 36px;
@@ -753,8 +777,8 @@ picture {
   .catalog-sections__heading::before {
     width: 200px;
     height: 200px;
-    top: calc(50% - 100px);
-    right: 62px;
+    top: 92px;
+    right: 61px;
     left: auto;
   }
 }
@@ -769,6 +793,7 @@ picture {
 }
 .catalog-sections__heading::after {
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .catalog-sections__heading--slim::after {
@@ -782,7 +807,7 @@ picture {
   .catalog-sections__heading--slim::after {
     width: 140px;
     height: 194px;
-    top: calc(50% - 111px);
+    top: 81px;
     left: auto;
     right: 92px;
   }
@@ -808,7 +833,7 @@ picture {
   .catalog-sections__heading--pro::after {
     width: 268px;
     height: 112px;
-    top: calc(50% - 56px);
+    top: 135px;
     left: auto;
     right: 28px;
   }
@@ -835,12 +860,12 @@ picture {
     color: #000000;
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 48px;
+    margin-bottom: 57px;
   }
 }
 @media (min-width: 1300px) {
   .catalog-sections__text {
-    margin-bottom: 23px;
+    margin-bottom: 32px;
   }
 }
 
@@ -874,12 +899,18 @@ picture {
   .catalog-sections__link {
     font-size: 20px;
     line-height: 20px;
+    gap: 24px;
   }
 }
 
 .process {
   padding-top: 21px;
   padding-bottom: 49px;
+}
+@media (min-width: 768px) {
+  .process {
+    padding-top: 45px;
+  }
 }
 
 .process__list {
@@ -890,6 +921,7 @@ picture {
 }
 @media (min-width: 768px) {
   .process__list {
+    padding-top: 32px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 60px;
@@ -911,6 +943,7 @@ picture {
 }
 @media (min-width: 768px) {
   .process__item {
+    gap: 32px;
     position: relative;
     z-index: 0;
     min-height: 280px;
@@ -974,6 +1007,15 @@ picture {
   background-image: url("../../img/icons/icon_alarm.svg");
 }
 
+.procces__br {
+  display: none;
+}
+@media (min-width: 768px) {
+  .procces__br {
+    display: block;
+  }
+}
+
 .example {
   padding: 25px 0 42px;
   background-color: #eaeaea;
@@ -1008,6 +1050,7 @@ picture {
     display: grid;
     grid-template-columns: 366px 1fr;
     column-gap: 32px;
+    margin-bottom: 88px;
   }
 }
 @media (min-width: 1300px) {
@@ -1033,6 +1076,7 @@ picture {
     grid-column: 1/-1;
     margin-top: 63px;
     margin-bottom: 54px;
+    padding-right: 20px;
   }
 }
 @media (min-width: 1300px) {
@@ -1053,6 +1097,7 @@ picture {
 @media (min-width: 768px) {
   .example__list {
     margin-bottom: 0;
+    gap: 43px;
   }
 }
 @media (min-width: 1300px) {
@@ -1073,7 +1118,7 @@ picture {
 }
 @media (min-width: 768px) {
   .example__item {
-    padding-top: 15px;
+    padding-top: 12px;
   }
 }
 
@@ -1133,9 +1178,11 @@ picture {
 }
 @media (min-width: 768px) {
   .example__spending {
-    padding-left: 178px;
+    padding-left: 120px;
     text-align: right;
-    margin-top: 11px;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 4px;
   }
 }
 @media (min-width: 1300px) {
@@ -1164,6 +1211,7 @@ picture {
     grid-template-columns: 1fr 50%;
     padding: 0 58px;
     overflow: hidden;
+    margin-bottom: 26px;
   }
 }
 @media (min-width: 1300px) {
@@ -1188,9 +1236,7 @@ picture {
     justify-content: start;
   }
   .example__image img {
-    margin-left: -29px;
-    max-width: none;
-    height: 511px;
+    margin-left: -6px;
     width: auto;
   }
   .example__image:last-child {
@@ -1219,6 +1265,7 @@ picture {
   .switcher {
     padding: 0 60px;
     grid-template-columns: 70px 1fr 70px;
+    gap: 7px;
   }
 }
 @media (min-width: 1300px) {
@@ -1369,7 +1416,7 @@ picture {
 }
 @media (min-width: 768px) {
   .contacts__container {
-    padding: 56px 40px;
+    padding: 58px 40px 60px;
     grid-template-columns: 172px 172px;
     justify-content: space-between;
   }
@@ -1396,6 +1443,7 @@ picture {
 }
 @media (min-width: 768px) {
   .contacts__heading {
+    padding-top: 4px;
     padding-right: 0;
     font-size: 20px;
     line-height: 26px;

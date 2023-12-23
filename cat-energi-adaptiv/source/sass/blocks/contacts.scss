@@ -20,7 +20,7 @@
   grid-template-columns: 1fr 1fr;
 
   @media (min-width: $tablet-width) {
-    padding: 56px 40px; // смотрим минимальные отсупы от элементов до края родителя
+    padding: 58px 40px 60px; // смотрим минимальные отсупы от элементов до края родителя
     grid-template-columns: 172px 172px;
     justify-content: space-between; // при определенных выше ширинах столбцов раскидает их по краям добавив между ними промежуток автоматической ширины
   }
@@ -44,6 +44,7 @@
   line-height: 20px;
   text-transform: uppercase;
   @media (min-width: $tablet-width) {
+    padding-top: 4px;
     padding-right: 0; // на этой ширине используем space-between у родителя и падинг нам теперь не нужен
     font-size: 20px;
     line-height: 26px;
