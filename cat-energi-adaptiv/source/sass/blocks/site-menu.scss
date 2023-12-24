@@ -103,7 +103,8 @@
 
 
   @media (min-width: $desktop-width) {
-    padding-bottom: 24px;
+    padding-top: 23px;
+    padding-bottom: 21px;
     padding-left: 16px; // корректируем немного под перфект пиксель
     color: $special_black;
     font-size: 20px;

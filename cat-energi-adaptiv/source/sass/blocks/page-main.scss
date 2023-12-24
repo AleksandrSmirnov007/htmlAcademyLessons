@@ -1,9 +1,10 @@
 
 .page-main__header--form {
   padding-top: 27px;
-  padding-bottom: 39px;
+  padding-bottom: 40px;
   @media (min-width: $tablet-width) {
     padding: 0 40px;
+    padding-top: 33px;
   }
   @media (min-width: $desktop-width) {
     padding: 0;
@@ -35,9 +36,13 @@
 
 
 .page-main__heading--form {
-  margin-bottom: 37px;
+  margin-bottom: 34px;
   @media (min-width: $tablet-width) {
     margin: 0 0 54px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 47px;
   }
 }
 

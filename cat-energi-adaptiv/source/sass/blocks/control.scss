@@ -44,6 +44,7 @@
 
   @media (min-width: $tablet-width) {
     grid-template-columns: 40px 1fr;
+    gap: 20px;
   }
 
   &::before {

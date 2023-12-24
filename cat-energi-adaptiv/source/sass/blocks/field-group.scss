@@ -1,6 +1,7 @@
 .field-group__heading {
   display: block; // так как это теги span и у них display: inline; и отступы работают не как в блочной модели
-  margin-bottom: 35px;
+  margin-bottom: 34px;
+  margin-top: 26px;
 
   font-family: $font-heading;
   font-size: 24px;
@@ -8,9 +9,14 @@
   line-height: 26px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 76px;
+    margin-bottom: 75px;
     font-size: 36px;
     line-height: 1;
+    margin-top: 40px;
+
+    &--comment {
+      margin-bottom: 77px;
+    }
 
     &--additional {
       margin-bottom: 57px;
@@ -30,7 +36,14 @@
       padding-left: 40px;
       padding-right: 40px;
       margin-right: -40px;
+      margin-left: -40px;
     }
+  }
+}
+
+.field-group__br-mobile {
+  @media (min-width: $tablet-width) {
+    display: none;
   }
 }
 
@@ -55,7 +68,13 @@
   gap: 14px;
 
   @media (min-width: $tablet-width) {
-    gap: 20px;
+    gap: 21px;
+  }
+
+  &--target {
+    @media (min-width: $tablet-width) {
+      gap: 13px;
+    }
   }
 
   &--contacts {
@@ -65,7 +84,9 @@
       column-gap: 80px;
     }
   }
-  &--additional{
+  &--additional {
+    gap: 12px;
+    
     @media (min-width: $tablet-width) {
       grid-template-columns: 1fr 1fr; 
       row-gap: 32px;
@@ -77,6 +98,7 @@
     }
   }
 }
+
 
 .field-group__item--disabled {
   opacity: 0.3;

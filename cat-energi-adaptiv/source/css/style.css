@@ -108,6 +108,7 @@ picture {
 }
 @media (min-width: 1300px) {
   .main-nav {
+    padding-top: 53px;
     width: 1220px;
   }
 }
@@ -388,7 +389,8 @@ picture {
 }
 @media (min-width: 1300px) {
   .site-menu__link {
-    padding-bottom: 24px;
+    padding-top: 23px;
+    padding-bottom: 21px;
     padding-left: 16px;
     color: #111111;
     font-size: 20px;
@@ -411,11 +413,12 @@ picture {
 
 .page-main__header--form {
   padding-top: 27px;
-  padding-bottom: 39px;
+  padding-bottom: 40px;
 }
 @media (min-width: 768px) {
   .page-main__header--form {
     padding: 0 40px;
+    padding-top: 33px;
   }
 }
 @media (min-width: 1300px) {
@@ -451,11 +454,16 @@ picture {
 }
 
 .page-main__heading--form {
-  margin-bottom: 37px;
+  margin-bottom: 34px;
 }
 @media (min-width: 768px) {
   .page-main__heading--form {
     margin: 0 0 54px;
+  }
+}
+@media (min-width: 1300px) {
+  .page-main__heading--form {
+    padding-top: 47px;
   }
 }
 
@@ -663,7 +671,7 @@ picture {
 }
 @media (min-width: 768px) {
   .button {
-    padding: 17px 26px;
+    padding: 16px 26px;
     width: auto;
     font-size: 20px;
     line-height: 1;
@@ -2153,9 +2161,9 @@ picture {
 }
 .form__group--target {
   padding-top: 22px;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
   margin-top: 24px;
-  margin-bottom: 22px;
+  margin-bottom: 27px;
   margin-right: -21px;
   margin-left: -21px;
   padding-left: 21px;
@@ -2187,7 +2195,7 @@ picture {
   }
 }
 .form__group--additional {
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 @media (min-width: 768px) {
   .form__group--additional {
@@ -2220,10 +2228,11 @@ picture {
 .form__button {
   display: block;
   width: 100%;
+  line-height: 1;
 }
 @media (max-width: 767px) {
   .form__button {
-    margin-bottom: 21px;
+    margin-bottom: 23px;
   }
 }
 
@@ -2237,12 +2246,14 @@ picture {
 @media (min-width: 768px) {
   .form__explanation {
     font-size: 16px;
+    margin-bottom: 6px;
   }
 }
 
 .field-group__heading {
   display: block;
-  margin-bottom: 35px;
+  margin-bottom: 34px;
+  margin-top: 26px;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
   font-weight: 400;
@@ -2250,9 +2261,13 @@ picture {
 }
 @media (min-width: 768px) {
   .field-group__heading {
-    margin-bottom: 76px;
+    margin-bottom: 75px;
     font-size: 36px;
     line-height: 1;
+    margin-top: 40px;
+  }
+  .field-group__heading--comment {
+    margin-bottom: 77px;
   }
   .field-group__heading--additional {
     margin-bottom: 57px;
@@ -2273,6 +2288,13 @@ picture {
     padding-left: 40px;
     padding-right: 40px;
     margin-right: -40px;
+    margin-left: -40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .field-group__br-mobile {
+    display: none;
   }
 }
 
@@ -2300,7 +2322,12 @@ picture {
 }
 @media (min-width: 768px) {
   .field-group__list {
-    gap: 20px;
+    gap: 21px;
+  }
+}
+@media (min-width: 768px) {
+  .field-group__list--target {
+    gap: 13px;
   }
 }
 @media (min-width: 1300px) {
@@ -2309,6 +2336,9 @@ picture {
     grid-template-columns: 1fr 1fr;
     column-gap: 80px;
   }
+}
+.field-group__list--additional {
+  gap: 12px;
 }
 @media (min-width: 768px) {
   .field-group__list--additional {
@@ -2357,7 +2387,12 @@ picture {
   display: grid;
   grid-template-columns: max-content 1fr;
   align-items: center;
-  gap: 13px;
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .field {
+    gap: 18px;
+  }
 }
 .field--textarea {
   grid-template-columns: auto;
@@ -2368,22 +2403,23 @@ picture {
 .field--email svg, .field--telephone svg {
   position: absolute;
   right: 15px;
-}
-.field--email svg {
-  stroke: #222222;
-}
-.field--telephone svg {
-  fill: #222222;
+  color: #222222;
 }
 
 .field__input {
   width: 100%;
-  padding: 14px;
+  padding-top: 9px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
   border: 1px solid #e7e7e7;
 }
 @media (min-width: 768px) {
   .field__input {
-    padding: 11px 19px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 19px;
+    padding-left: 19px;
   }
 }
 
@@ -2396,11 +2432,11 @@ picture {
 }
 
 .field--email:focus-within svg {
-  stroke: #68b738;
+  color: #68b738;
 }
 
 .field--telephone:focus-within svg {
-  fill: #68b738;
+  color: #68b738;
 }
 
 .field__input:focus,
@@ -2423,9 +2459,15 @@ picture {
 
 .field textarea {
   line-height: 2;
-  height: 150px;
+  height: 153px;
+  padding-top: 4px;
   padding-right: 12px;
   resize: none;
+}
+@media (min-width: 768px) {
+  .field textarea {
+    height: 175px;
+  }
 }
 
 .control {
@@ -2474,6 +2516,7 @@ picture {
 @media (min-width: 768px) {
   .control__lead {
     grid-template-columns: 40px 1fr;
+    gap: 20px;
   }
 }
 .control__lead::before {

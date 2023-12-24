@@ -2,7 +2,13 @@
   display: grid;
   grid-template-columns: max-content 1fr;
   align-items: center;
-  gap: 13px;
+  gap: 12px;
+
+  @media (min-width: $tablet-width) {
+    gap: 18px;
+  }
+
+
 
   &--textarea {
     grid-template-columns: auto;
@@ -13,28 +19,23 @@
     svg {
       position: absolute;
       right: 15px;
-    }
-  }
-
-  &--email {
-    svg {
-      stroke: $special_dark-grey-2;
-    }
-  }
-
-  &--telephone {
-    svg {
-      fill: $special_dark-grey-2;
+      color:  $special_dark-grey-2
     }
   }
 }
 
 .field__input {
   width: 100%; //при родителе display: grid инпут займет всю ширины ячейки в сетке
-  padding: 14px;
+  padding-top: 9px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
   border: 1px solid #e7e7e7;
   @media (min-width: $tablet-width) {
-    padding: 11px 19px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 19px;
+    padding-left: 19px;
   }
 }
 
@@ -50,16 +51,16 @@
     }
 }
 
-//подсвечиваем иконки зеленым при фокусе
+//подсвечиваем иконки зеленым при фокусе на инпуте
 .field--email:focus-within {
   svg {
-    stroke: $color-primary;
+    color: $color-primary;
   }
 }
 
 .field--telephone:focus-within {
   svg {
-    fill: $color-primary;
+    color: $color-primary;
   }
 }
 
@@ -85,7 +86,12 @@
 
 .field textarea {
   line-height: 2;
-  height: 150px;
+  height: 153px;
+  padding-top: 4px;
   padding-right: 12px;
   resize: none; // убираем уголок в правом нижнем углу отвечающий за изменение пользователем размера textarea
+
+  @media (min-width: $tablet-width) {
+    height: 175px;
+  }
 }
