@@ -29,8 +29,14 @@
 
 .page-main__heading--catalog {
   margin-top: 27px;
+  margin-bottom: 36px;
   @media (min-width: $tablet-width) {
+    margin-top: 36px;
     margin-bottom: 82px; // до карточек 82рх вниз но у нас еще gap 60рх
+  }
+  @media (min-width: $desktop-width) {
+    margin-top: 47px;
+    margin-bottom: 84px; // до карточек 82рх вниз но у нас еще gap 60рх
   }
 }
 

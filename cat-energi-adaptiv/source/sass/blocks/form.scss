@@ -57,6 +57,9 @@
 
   &--contacts {
     margin-bottom: 24px;
+    @media (min-width: $desktop-width) {
+      margin-bottom: 28px;
+    }
   }
 
   &--comment {
@@ -70,6 +73,9 @@
     margin-bottom: 36px;
     @media (min-width: $tablet-width) {
       margin-bottom: 54px;
+    }
+    @media (min-width: $desktop-width) {
+      margin-bottom: 62px;
     }
   } 
 }

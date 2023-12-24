@@ -117,7 +117,7 @@ picture {
   .main-nav__bar {
     width: 320px;
     margin: 0 auto;
-    padding: 12px 20px 13px;
+    padding: 14px 20px 13px;
     display: grid;
     grid-template-columns: 34px 1fr 34px;
     gap: 16px;
@@ -375,7 +375,10 @@ picture {
 }
 @media (min-width: 768px) {
   .site-menu__link {
-    padding: 18px;
+    padding-top: 18px;
+    padding-bottom: 16px;
+    padding-right: 18px;
+    padding-left: 18px;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
@@ -446,10 +449,18 @@ picture {
 
 .page-main__heading--catalog {
   margin-top: 27px;
+  margin-bottom: 36px;
 }
 @media (min-width: 768px) {
   .page-main__heading--catalog {
+    margin-top: 36px;
     margin-bottom: 82px;
+  }
+}
+@media (min-width: 1300px) {
+  .page-main__heading--catalog {
+    margin-top: 47px;
+    margin-bottom: 84px;
   }
 }
 
@@ -662,6 +673,7 @@ picture {
   font-weight: 400;
   text-align: center;
   padding: 11px;
+  font-size: 16px;
 }
 .button:hover {
   background-color: #5eaa2f;
@@ -1497,12 +1509,12 @@ picture {
     flex-direction: column;
     justify-content: space-between;
     text-align: right;
+    margin-bottom: 4px;
   }
 }
 @media (min-width: 1300px) {
   .contacts__address {
     text-align: left;
-    margin-bottom: 4px;
   }
 }
 
@@ -1642,7 +1654,7 @@ picture {
 }
 @media (min-width: 1300px) {
   .catalog-list__container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 245px);
     column-gap: 80px;
     row-gap: 62px;
   }
@@ -1665,8 +1677,8 @@ picture {
 }
 
 .card {
-  padding-top: 19px;
-  padding-bottom: 25px;
+  padding-top: 21px;
+  padding-bottom: 24px;
   display: grid;
   grid-template-areas: "image link" "image list" "button button";
   grid-template-columns: 1fr 1fr;
@@ -1675,9 +1687,16 @@ picture {
   .card {
     grid-template-columns: 1fr;
     grid-template-areas: "image" "." "link" "list" "button";
-    grid-template-rows: 208px 34px repeat(3, auto);
-    padding: 0 38px 40px;
+    grid-template-rows: 213px 28px repeat(3, auto);
+    padding: 0 38px 39px;
     background-image: linear-gradient(to bottom, transparent 0, transparent 81px, #f2f2f2 81px);
+  }
+}
+@media (min-width: 1300px) {
+  .card {
+    padding-left: 40px;
+    padding-right: 35px;
+    padding-bottom: 41px;
   }
 }
 
@@ -1720,16 +1739,27 @@ picture {
 
 .card__image {
   grid-area: image;
-  align-self: end;
+  align-self: center;
   justify-self: center;
+}
+@media (min-width: 768px) {
+  .card__image {
+    align-self: end;
+  }
+}
+@media (min-width: 1300px) {
+  .card__image {
+    margin-bottom: 6px;
+  }
 }
 
 .card__list {
+  margin-top: 14px;
+  margin-bottom: 22px;
+  font-size: 12px;
   grid-area: list;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 22px;
-  margin-top: 14px;
   line-height: 16px;
 }
 @media (min-width: 768px) {
@@ -1737,7 +1767,13 @@ picture {
     font-size: 16px;
     line-height: 1;
     /* 100% */
-    margin-bottom: 32px;
+    margin-top: 13px;
+    margin-bottom: 34px;
+  }
+}
+@media (min-width: 768px) {
+  .card__list {
+    margin-right: 4px;
   }
 }
 
@@ -1747,7 +1783,7 @@ picture {
 @media (min-width: 768px) {
   .card__title {
     padding-top: 7px;
-    padding-bottom: 9px;
+    padding-bottom: 8px;
     border-bottom: 1px solid #cdcdcd;
     font-weight: 400;
   }
@@ -1760,23 +1796,39 @@ picture {
 @media (min-width: 768px) {
   .card__definition {
     padding-top: 7px;
-    padding-bottom: 9px;
+    padding-bottom: 8px;
     border-bottom: 1px solid #cdcdcd;
     width: 100%;
     text-align: right;
   }
 }
 
+.card__definition:last-of-type {
+  text-transform: uppercase;
+}
+
 .card__button {
   grid-area: button;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+@media (min-width: 768px) {
+  .card__button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+@media (min-width: 1300px) {
+  .card__button {
+    margin-right: 5px;
+    width: auto;
+  }
 }
 
 .show-more {
   position: relative;
-  padding: 78px 20px 25px;
+  padding: 78px 0 25px;
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -1784,6 +1836,7 @@ picture {
     padding: 161px 38px 38px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 81px;
     border: 2px solid #f2f2f2;
   }
@@ -1804,6 +1857,16 @@ picture {
   line-height: 20px;
   text-transform: uppercase;
 }
+@media (min-width: 768px) {
+  .show-more__title {
+    padding: 0 34px;
+  }
+}
+@media (min-width: 1300px) {
+  .show-more__title {
+    padding: 0;
+  }
+}
 .show-more__title::before, .show-more__title::after {
   top: 40px;
   left: calc(50% - 15px);
@@ -1816,7 +1879,7 @@ picture {
 @media (min-width: 768px) {
   .show-more__title::before, .show-more__title::after {
     width: 60px;
-    top: 82px;
+    top: 79px;
     left: calc(50% - 30px);
   }
 }
@@ -1846,6 +1909,7 @@ picture {
     font-size: 16px;
     line-height: 18px;
     width: 220px;
+    text-align: center;
   }
 }
 
@@ -1855,6 +1919,12 @@ picture {
   font-weight: 400;
   line-height: 20px;
 }
+@media (min-width: 768px) {
+  .show-more__button {
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+}
 
 .catalog-additional__container {
   padding-top: 25px;
@@ -1863,7 +1933,7 @@ picture {
 @media (min-width: 768px) {
   .catalog-additional__container {
     padding-top: 68px;
-    padding-bottom: 69px;
+    padding-bottom: 75px;
   }
 }
 @media (min-width: 1300px) {
@@ -1879,7 +1949,7 @@ picture {
 .catalog-additional__heading {
   grid-column: 1/-1;
   margin: 0;
-  margin-bottom: 36px;
+  margin-bottom: 34px;
   color: #000000;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
@@ -1890,6 +1960,7 @@ picture {
 @media (min-width: 768px) {
   .catalog-additional__heading {
     font-size: 36px;
+    margin-bottom: 81px;
   }
 }
 @media (min-width: 1300px) {
@@ -1910,9 +1981,15 @@ picture {
 }
 @media (min-width: 768px) {
   .catalog-additional__heading span {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 35px;
+    padding-right: 38px;
     margin-right: -40px;
+    margin-left: 1px;
+  }
+}
+@media (min-width: 1300px) {
+  .catalog-additional__heading span {
+    margin-left: -35px;
   }
 }
 
@@ -1950,7 +2027,7 @@ picture {
 }
 
 .card-row {
-  padding: 13px 0 19px;
+  padding: 13px 0 18px;
   border-top: 1px solid #cdcdcd;
 }
 .card-row:last-of-type {
@@ -1961,17 +2038,19 @@ picture {
     display: grid;
     grid-template-columns: 1fr auto;
     justify-content: end;
-    padding: 26px 38px 28px;
+    padding: 26px 38px 27px;
     border-left: 1px solid #cdcdcd;
     border-right: 1px solid #cdcdcd;
   }
 }
 @media (min-width: 1300px) {
   .card-row {
-    padding: 16px 0;
+    padding: 0;
+    padding-top: 14px;
+    padding-bottom: 17px;
     align-items: center;
-    grid-template-columns: 305px 305px 245px;
-    gap: 20px;
+    grid-template-columns: 287px 287px 245px;
+    gap: 37px;
     border-left: none;
     border-right: none;
   }
@@ -2028,15 +2107,25 @@ picture {
 .card-row__definition {
   margin-left: 0;
 }
+@media (min-width: 1300px) {
+  .card-row__definition {
+    margin-top: 9px;
+  }
+}
+
+.card-row__definition:last-of-type {
+  text-transform: uppercase;
+}
 
 .card-row__button {
-  padding-top: 10px;
-  padding-bottom: 10px;
   width: 100%;
 }
 @media (min-width: 768px) {
   .card-row__button {
+    font-size: 16px;
     grid-column: 1/-1;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
 @media (min-width: 1300px) {
@@ -2047,7 +2136,7 @@ picture {
 
 .offer {
   position: relative;
-  padding: 186px 58px 43px;
+  padding: 188px 58px 42px;
   text-align: center;
   color: #ffffff;
   background-size: cover;
@@ -2065,7 +2154,7 @@ picture {
 @media (min-width: 768px) {
   .offer {
     background-position: 50% 50%;
-    padding: 70px 124px 70px 422px;
+    padding: 73px 124px 68px 422px;
     text-align: left;
     background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), url("../../img/background/bg-cat-in-bag-tablet.jpg");
   }
@@ -2121,6 +2210,11 @@ picture {
   font-size: 16px;
   line-height: 20px;
   margin: 0;
+}
+@media (min-width: 1300px) {
+  .offer__text {
+    padding: 0 10px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2186,6 +2280,11 @@ picture {
 .form__group--contacts {
   margin-bottom: 24px;
 }
+@media (min-width: 1300px) {
+  .form__group--contacts {
+    margin-bottom: 28px;
+  }
+}
 .form__group--comment {
   margin-bottom: 22px;
 }
@@ -2200,6 +2299,11 @@ picture {
 @media (min-width: 768px) {
   .form__group--additional {
     margin-bottom: 54px;
+  }
+}
+@media (min-width: 1300px) {
+  .form__group--additional {
+    margin-bottom: 62px;
   }
 }
 

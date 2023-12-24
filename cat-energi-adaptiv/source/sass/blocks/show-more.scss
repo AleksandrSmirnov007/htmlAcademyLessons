@@ -1,12 +1,13 @@
 .show-more {
   position: relative; // для крестика
-  padding: 78px 20px 25px;
+  padding: 78px 0 25px;
   text-align: center;
 
   @media (min-width: $tablet-width) {
     padding: 161px 38px 38px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 81px;
     border: 2px solid $basic_grey;
   }
@@ -24,6 +25,13 @@
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 34px;
+  }
+  @media (min-width: $desktop-width) {
+    padding: 0;
+  }
   &::before, // рисуем крестик( делаем сразу две палки ) псевдоэлемент before у show-more уже занят( c помощью него реализована граница карточки)
   &::after {
     top: 40px; // растояние от верхней границы родителя плюс пол высоты креста.
@@ -35,7 +43,7 @@
     background-color: #d3d3d3;
     @media (min-width: $tablet-width) {
       width: 60px;
-      top: 82px;
+      top: 79px;
       left: calc(50% - 30px);
     }
   }
@@ -64,6 +72,7 @@
     font-size: 16px;
     line-height: 18px;
     width: 220px;
+    text-align: center;
   }
 }
 
@@ -72,4 +81,9 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
 }

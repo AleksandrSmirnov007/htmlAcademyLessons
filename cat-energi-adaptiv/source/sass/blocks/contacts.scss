@@ -63,11 +63,12 @@
     flex-direction: column; // нужно оттолкнуть два текста друг от друга по вертикали для этого меняем ось на вертикальную
     justify-content: space-between; // разносим по краям
     text-align: right; // текст ориентировоан по правому краю
+    margin-bottom: 4px;
   }
 
   @media (min-width: $desktop-width) {
     text-align: left;
-    margin-bottom: 4px;
+
   }
 }
 

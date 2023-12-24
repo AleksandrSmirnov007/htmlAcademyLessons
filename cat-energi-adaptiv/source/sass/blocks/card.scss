@@ -1,6 +1,6 @@
 .card {
-  padding-top: 19px;
-  padding-bottom: 25px;
+  padding-top: 21px;
+  padding-bottom: 24px;
   display: grid;
   grid-template-areas: "image link"
                         "image list"
@@ -10,9 +10,15 @@
   @media (min-width: $tablet-width) {
     grid-template-columns: 1fr;
     grid-template-areas: "image" "." "link" "list" "button";
-    grid-template-rows: 208px 34px repeat(3, auto);
-    padding: 0 38px 40px;
+    grid-template-rows: 213px 28px repeat(3, auto);
+    padding: 0 38px 39px;
     background-image: linear-gradient(to bottom, transparent 0, transparent 81px, $basic_grey 81px);
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 40px;
+    padding-right: 35px;
+    padding-bottom: 41px;
   }
 }
 
@@ -48,29 +54,43 @@
 
 .card__image {
   grid-area: image;
-  align-self: end;
+  align-self: center;
   justify-self: center;
+  @media (min-width: $tablet-width) {
+    align-self: end;
+  }
+  @media (min-width: $desktop-width) {
+    margin-bottom: 6px;
+  }
 }
 
 .card__list {
+
+  margin-top: 14px;
+  margin-bottom: 22px;
+  font-size: 12px;
   grid-area: list;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 22px;
-  margin-top: 14px;
+  
+  
   line-height:  16px;
   @media (min-width: $tablet-width) {
     font-size: 16px;
     line-height: 1; /* 100% */
-    margin-bottom: 32px;
+    margin-top: 13px;
+    margin-bottom: 34px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-right: 4px;
   }
 }
-
 .card__title {
   text-wrap: wrap;
   @media (min-width: $tablet-width) {
     padding-top: 7px;
-    padding-bottom: 9px;
+    padding-bottom: 8px;
     border-bottom: 1px solid $special_grey;
     font-weight: 400;
   }
@@ -81,17 +101,29 @@
   margin: 0;
   @media (min-width: $tablet-width) {
     padding-top: 7px;
-    padding-bottom: 9px;
+    padding-bottom: 8px;
     border-bottom: 1px solid $special_grey;
     width: 100%;
     text-align: right;
   }
+}
 
+.card__definition:last-of-type {
+  text-transform: uppercase;  // поднимаем верхний регистр у значения цены (Р)
 }
 
 .card__button {
   grid-area: button;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 5px;
+    width: auto;
+  }
 }

@@ -3,7 +3,7 @@
   padding-bottom: 35px;
   @media (min-width: $tablet-width) {
     padding-top: 68px;
-    padding-bottom: 69px;
+    padding-bottom: 75px;
   }
   @media (min-width: $desktop-width) {
     display: grid;
@@ -16,7 +16,7 @@
 .catalog-additional__heading {
   grid-column: 1 / -1;
   margin: 0;
-  margin-bottom: 36px;
+  margin-bottom: 34px;
   color: $black;
   font-family: $font-heading;
   font-size: 24px;
@@ -24,6 +24,7 @@
   line-height: 1; /* 100% */
   @media (min-width: $tablet-width) {
     font-size:  36px;
+    margin-bottom: 81px;
   }
   @media (min-width: $desktop-width) {
     grid-column: 1 / -1;
@@ -40,9 +41,13 @@
     margin-left: -22px;
     display: flex; // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше)
     @media (min-width: $tablet-width) {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 35px;
+      padding-right: 38px;
       margin-right: -40px;
+      margin-left: 1px;
+    }
+    @media (min-width: $desktop-width) {
+      margin-left: -35px;
     }
   }
 }

@@ -1,5 +1,5 @@
 .card-row {
-  padding: 13px 0 19px;
+  padding: 13px 0 18px;
   border-top: 1px solid $special_grey;
   &:last-of-type {
     border-bottom: 1px solid $special_grey; // нижняя граница под последним элементом
@@ -9,16 +9,18 @@
     display: grid;
     grid-template-columns: 1fr auto;
     justify-content: end;
-    padding: 26px 38px 28px;
+    padding: 26px 38px 27px;
     border-left: 1px solid $special_grey;
     border-right: 1px solid $special_grey;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 16px 0;
+    padding: 0;
+    padding-top: 14px;
+    padding-bottom: 17px;
     align-items: center;
-    grid-template-columns: 305px 305px 245px; // делим на три столба  в среднем столюце будет .card-row__list с двумя элементами внутри если включить сетку в фигме то первый стоб равен стобу сетки 245рх  второй столб выбивается из сетки его начало совпадает с сеткой а правый край выходит за 245рх сделаем стобы шире а ростояние между ними узкое 20рх певый столб будет 245+(80-20) =305 шириной и тем самым левый край второго стобца совпадет по сетке(245  80  245  80  245 80 245 ) второй столб аналогично 305, а последний 245рх ширина кнопки "заказать" совпадает с шириной стобца сетки
-    gap: 20px;
+    grid-template-columns: 287px 287px 245px; // делим на три столба  в среднем столюце будет .card-row__list с двумя элементами внутри если включить сетку в фигме то первый стоб равен стобу сетки 245рх  второй столб выбивается из сетки его начало совпадает с сеткой а правый край выходит за 245рх сделаем стобы шире а ростояние между ними узкое 20рх певый столб будет 245+(80-20) =305 шириной и тем самым левый край второго стобца совпадет по сетке(245  80  245  80  245 80 245 ) второй столб аналогично 305, а последний 245рх ширина кнопки "заказать" совпадает с шириной стобца сетки
+    gap: 37px;
     border-left: none;
     border-right: none;
   }
@@ -69,14 +71,22 @@
 
 .card-row__definition {
   margin-left: 0;
+  @media (min-width: $desktop-width) {
+    margin-top: 9px;
+  }
+}
+
+.card-row__definition:last-of-type {
+  text-transform: uppercase;
 }
 
 .card-row__button {
-  padding-top: 10px;
-  padding-bottom: 10px;
   width: 100%;
   @media (min-width: $tablet-width) {
+    font-size: 16px;
     grid-column: 1 / -1;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
   @media (min-width: $desktop-width) {
     grid-column: auto;
