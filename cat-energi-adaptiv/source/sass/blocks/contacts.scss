@@ -26,6 +26,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    grid-template-columns: 172px 155px;
     width: 565px;
     position: relative; // Свойство position: static предотвращает влияние z-индекса.(инфа из вкладки styles в инструментах разработчика в браузере
     margin: 0; //  ранее мы  задали контейнеру маржин left и right: auto(это центрирует по горизонтали) сдесь нам это не нужно, обнуляем отступ
@@ -62,6 +63,11 @@
     flex-direction: column; // нужно оттолкнуть два текста друг от друга по вертикали для этого меняем ось на вертикальную
     justify-content: space-between; // разносим по краям
     text-align: right; // текст ориентировоан по правому краю
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: left;
+    margin-bottom: 4px;
   }
 }
 
