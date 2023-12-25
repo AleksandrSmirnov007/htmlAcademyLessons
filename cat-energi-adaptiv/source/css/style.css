@@ -102,7 +102,7 @@ picture {
     margin: 0 auto;
     padding: 24px 0;
     display: grid;
-    grid-template-columns: 174px 1fr;
+    grid-template-columns: auto 1fr;
     gap: 16px;
   }
 }
@@ -206,15 +206,14 @@ picture {
 }
 @media (min-width: 768px) {
   .logo {
-    grid-template-columns: 60px 101px;
+    grid-template-columns: 60px 1fr;
     gap: 12px;
   }
 }
 @media (min-width: 1300px) {
   .logo {
-    display: block;
-    width: 202px;
-    height: 59px;
+    grid-template-columns: 70px 1fr;
+    gap: 15px;
   }
 }
 .logo:hover {
@@ -224,35 +223,25 @@ picture {
   opacity: 0.6;
 }
 
-.logo__image-small {
-  margin-top: -6px;
+.logo__image {
+  width: 34px;
+  height: 38px;
 }
 @media (min-width: 768px) {
-  .logo__image-small {
-    display: none;
+  .logo__image {
+    width: 60px;
+    height: 52px;
   }
 }
 @media (min-width: 1300px) {
-  .logo__image-small {
-    display: none;
-  }
-}
-
-.logo__image-middle {
-  display: none;
-}
-@media (min-width: 768px) {
-  .logo__image-middle {
-    display: block;
-  }
-}
-@media (min-width: 1300px) {
-  .logo__image-middle {
-    display: none;
+  .logo__image {
+    width: 70px;
+    height: 59px;
   }
 }
 
 .logo__sign {
+  display: block;
   width: 101px;
   height: 18px;
   justify-self: center;
@@ -260,21 +249,6 @@ picture {
 @media (min-width: 768px) {
   .logo__sign {
     justify-self: start;
-    margin-top: 6px;
-  }
-}
-@media (min-width: 1300px) {
-  .logo__sign {
-    display: none;
-  }
-}
-
-.logo__large {
-  display: none;
-}
-@media (min-width: 1300px) {
-  .logo__large {
-    display: block;
   }
 }
 
@@ -516,7 +490,16 @@ picture {
 .promo {
   padding-top: 26px;
   text-align: center;
-  position: relative;
+  background-color: #63A63C;
+  background-image: url("../img/background/bg-promo-mobile.jpg"), linear-gradient(#63a63b 0, #63a63b 302px, #ffffff 302px);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .promo {
+    background-image: url("../../img/background/bg-promo-mobile@2x.jpg"), linear-gradient(#63a63b 0, #63a63b 302px, #ffffff 302px);
+    background-size: auto 302px, auto auto;
+  }
 }
 @media (min-width: 768px) {
   .promo {
@@ -526,48 +509,21 @@ picture {
 @media (min-width: 1300px) {
   .promo {
     padding-top: 0;
-  }
-}
-.promo::before, .promo::after {
-  z-index: -2;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 302px;
-}
-@media (min-width: 768px) {
-  .promo::before, .promo::after {
-    display: none;
+    position: relative;
   }
 }
 @media (min-width: 1300px) {
-  .promo::before, .promo::after {
-    display: block;
-    top: -141px;
+  .promo::before {
+    background-color: #63A63C;
+    position: absolute;
+    z-index: -2;
+    content: "";
+    top: -300px;
     right: 0;
-    bottom: 0;
+    bottom: 82px;
     left: 50%;
-    height: 694px;
-  }
-}
-.promo::before {
-  background-color: #68b738;
-  background-size: 320px 302px;
-  background-repeat: no-repeat;
-  background-image: url("../../img/background/bg-promo-mobile.jpg");
-  background-position: 50% 50%;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-  .promo::before {
-    background-image: url("../../img/background/bg-promo-mobile@2x.jpg");
-  }
-}
-@media (min-width: 1300px) {
-  .promo::before {
-    background-position: left 50%;
-    background-size: 720px 694px;
+    background-position: left bottom;
+    background-size: 1044px 696px;
     background-image: url("../../img/background/bg-promo-desktop.jpg");
   }
 }

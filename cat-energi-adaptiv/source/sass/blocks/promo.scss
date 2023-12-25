@@ -1,7 +1,20 @@
 .promo {
   padding-top: 26px; // подогнал исходя из картинки бекграунда пользуясь инструментами разработчика в браузере
   text-align: center;
-  position: relative;
+  background-color: #63A63C;
+
+  background-image: url("../img/background/bg-promo-mobile.jpg"),
+                    linear-gradient(#63a63b 0, #63a63b 302px, $white 302px);
+
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  @media (min-resolution: 2dppx) {
+    background-image: url("../../img/background/bg-promo-mobile@2x.jpg"),
+                      linear-gradient(#63a63b 0, #63a63b 302px, #ffffff 302px);
+    background-size: auto 302px, // соответственно размер изображения 
+                     auto auto; // соответсвенно размер линеар-градиента (нельзя забывать что background-size можно отдельно задаватьчерез запятую все элементам background-image в последовательности в которой они идут в background-image)
+  }
+
 
   @media (min-width: $tablet-width) {
     padding-top: 33px;
@@ -9,45 +22,23 @@
 
   @media (min-width: $desktop-width) {
     padding-top: 0;
-  }
-
-  &::before, // картинка бекграунда будет на before а зеленый фильтр будет на after 
-  &::after { 
-    z-index: -2; // Иначе псевдоэлемент перекрывает все блоки выше, но если поставить -1, то далее мы выводим из потока еще и .promo__image же уменьшаем z-index но оно должно быть выше этого псевдоэлемента (promo::after)
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 302px;
-    @media (min-width: $tablet-width) { // в версии планшета нет бекграунда
-      display: none;
-    }
-    @media (min-width: $desktop-width) {
-      display: block;
-      top: -141px; //вехняя граница зеленого бекграунда с котом на десктопе
-      right: 0; // по правой границе родителя
-      bottom: 0; // по нижней границе родителя
-      left: 50%; // от середины блока родителя по горизонтали
-      height: 694px;
-    }
+    position: relative;
   }
 
   &::before {
-    background-color: $color-primary;
-    background-size: 320px 302px;
-    background-repeat: no-repeat;
-    background-image: url("../../img/background/bg-promo-mobile.jpg");
-    background-position: 50% 50%;
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../../img/background/bg-promo-mobile@2x.jpg");
-    }
-
+// используем картинку с уже наложенным фоном
     @media (min-width: $desktop-width) {
-      background-position: left 50%;
-      background-size: 720px 694px;
-      background-image: url("../../img/background/bg-promo-desktop.jpg");
+      background-color: #63A63C;
+      position: absolute;
+      z-index: -2; // Иначе псевдоэлемент перекрывает все блоки выше, но если поставить -1, то далее мы выводим из потока еще и .promo__image же уменьшаем z-index но оно должно быть выше этого псевдоэлемента (promo::after)
+      content: "";
+      top: -300px; //вехняя граница зеленого бекграунда с котом на десктопе
+      right: 0; // по правой границе родителя
+      bottom: 82px; // по нижней границе родителя
+      left: 50%; // от середины блока родителя по горизонтали
+      background-position: left bottom;
+      background-size: 1044px 696px;
+      background-image: url("../../img/background/bg-promo-desktop.jpg"); // изображение взято из фигмы в режиме дизайнера, маска была натянута не на все изображение пришлось разворошить всеь макет и наложить и скачать png группы выделеных элементов (в контексном меню это предлагается ) далее создаем точечный рисунок открываем его через paint сограняем как png а в скуше оптимизируем и конвертируем в jpg) и делаем ресайз под ретину и обычные экраны 
       
       @media (min-resolution: 2dppx) {
         background-image: url("../../img/background/bg-promo-desktop@2x.jpg");

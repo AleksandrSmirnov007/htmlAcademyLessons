@@ -5,14 +5,13 @@
   gap: 16px; // задаем такойже гэп что бы сетка блока лого точно легла на сетку родителя .page-header__bar
 
   @media (min-width: $tablet-width) {
-    grid-template-columns: 60px 101px;
+    grid-template-columns: 60px 1fr;
     gap: 12px;
   }
 
   @media (min-width: $desktop-width) {
-    display: block;
-    width: 202px;
-    height: 59px;
+    grid-template-columns: 70px 1fr;
+    gap: 15px;
   }
   
   &:hover {
@@ -24,46 +23,27 @@
   }
 }
 
-.logo__image-small {
-  margin-top: -6px;
+.logo__image {
+  width: 34px;
+  height: 38px;
   @media (min-width: $tablet-width) {
-    display: none;
+    width: 60px;
+    height: 52px;
   }
   @media (min-width: $desktop-width) {
-    display: none;
+    width: 70px;
+    height: 59px;
   }
 }
-
-.logo__image-middle {
-  display: none;
-  @media (min-width: $tablet-width) {
-    display: block;
-  }
-  @media (min-width: $desktop-width) {
-    display: none;
-  }
-}
-
 
 .logo__sign {
-
+  display: block;
   width: 101px; 
   height: 18px;
   justify-self: center; // центруем по горизонтали логотип в виде шрифта
   
   @media (min-width: $tablet-width) {
     justify-self: start; // центруем по горизонтали логотип в виде шрифта
-    margin-top: 6px;
-  }
-  @media (min-width: $desktop-width) {
-    display: none;
-  }
-}
-
-.logo__large {
-  display: none;
-  @media (min-width: $desktop-width) {
-    display: block;
   }
 }
 
