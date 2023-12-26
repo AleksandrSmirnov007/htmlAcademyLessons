@@ -522,6 +522,7 @@ picture {
     right: 0;
     bottom: 82px;
     left: 50%;
+    background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 1044px 696px;
     background-image: url("../../img/background/bg-promo-desktop.jpg");
@@ -1581,9 +1582,9 @@ picture {
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
+  grid-template-columns: 1fr auto;
   color: #666666;
 }
 

@@ -6,9 +6,9 @@
   line-height: normal;
   text-decoration: none;
 
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
+  grid-template-columns: 1fr auto;
 
   color: $special_grey-3; // перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
 
