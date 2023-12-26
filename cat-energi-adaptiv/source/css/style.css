@@ -473,6 +473,7 @@ picture {
 
 .container {
   width: 280px;
+  max-width: 280px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1927,6 +1928,7 @@ picture {
   }
 }
 .catalog-additional__heading span {
+  max-width: 320px;
   position: relative;
   z-index: 1;
   background-color: #ffffff;
@@ -1938,6 +1940,7 @@ picture {
 }
 @media (min-width: 768px) {
   .catalog-additional__heading span {
+    max-width: 700px;
     padding-left: 35px;
     padding-right: 38px;
     margin-right: -40px;
@@ -1946,6 +1949,7 @@ picture {
 }
 @media (min-width: 1300px) {
   .catalog-additional__heading span {
+    max-width: 1300px;
     margin-left: -35px;
   }
 }
@@ -2335,6 +2339,7 @@ picture {
   }
 }
 .field-group__heading span {
+  max-width: 320px;
   position: relative;
   z-index: 1;
   background-color: #ffffff;
@@ -2420,26 +2425,6 @@ picture {
   pointer-events: none;
 }
 
-.field__lead,
-.field__input,
-.control__lead,
-.control__input {
-  font-family: "Oswald", sans-serif;
-  color: #444444;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
-}
-@media (min-width: 768px) {
-  .field__lead,
-.field__input,
-.control__lead,
-.control__input {
-    font-size: 20px;
-  }
-}
-
 .field__input::placeholder {
   color: #444444;
 }
@@ -2465,6 +2450,22 @@ picture {
   position: absolute;
   right: 15px;
   color: #222222;
+}
+
+.field__lead,
+.field__input {
+  font-family: "Oswald", sans-serif;
+  color: #444444;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .field__lead,
+.field__input {
+    font-size: 20px;
+  }
 }
 
 .field__input {
@@ -2550,6 +2551,22 @@ picture {
   pointer-events: none;
 }
 
+.control__lead,
+.control__input {
+  font-family: "Oswald", sans-serif;
+  color: #444444;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .control__lead,
+.control__input {
+    font-size: 20px;
+  }
+}
+
 .control__input {
   z-index: 1;
   width: 30px;
@@ -2567,6 +2584,7 @@ picture {
 }
 
 .control__lead {
+  max-width: 280px;
   grid-column: 1/-1;
   grid-row: 1/2;
   display: grid;

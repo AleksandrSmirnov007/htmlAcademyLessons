@@ -32,6 +32,7 @@
   }
 
   span {
+    max-width: 320px;
     position: relative; // только для z-index что бы сделать выше before (зеленая линия )
     z-index: 1;
     background-color: $white;
@@ -41,12 +42,15 @@
     margin-left: -22px;
     display: flex; // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше)
     @media (min-width: $tablet-width) {
+
+      max-width: 700px;
       padding-left: 35px;
       padding-right: 38px;
       margin-right: -40px;
       margin-left: 1px;
     }
     @media (min-width: $desktop-width) {
+      max-width: 1300px;
       margin-left: -35px;
     }
   }

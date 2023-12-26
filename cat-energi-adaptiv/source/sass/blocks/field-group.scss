@@ -1,4 +1,5 @@
 .field-group__heading {
+
   display: block; // так как это теги span и у них display: inline; и отступы работают не как в блочной модели
   margin-bottom: 34px;
   margin-top: 26px;
@@ -24,6 +25,7 @@
   }
 
   span {
+    max-width: 320px;
     position: relative; // только для z-index что бы сделать выше before (зеленая линия )
     z-index: 1;
     background-color: $white;
@@ -103,21 +105,6 @@
 .field-group__item--disabled {
   opacity: 0.3;
   pointer-events: none;
-}
-
-.field__lead,
-.field__input,
-.control__lead,
-.control__input {
-  font-family: $font-heading;
-  color: $special-dark-grey;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
-  @media (min-width: $tablet-width) {
-    font-size: 20px;
-  }
 }
 
 .field__input::placeholder {

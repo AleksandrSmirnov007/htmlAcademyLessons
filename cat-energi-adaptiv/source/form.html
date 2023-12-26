@@ -51,26 +51,15 @@
       <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс page-header__nav--closed, для открытого состояния и отображения кнопки-крестик добавить класс page-header__nav--opened  -->
 
         <div class="main-nav__bar">
-          <a class="page-header__logo logo" href="index.html">
+          <a class="page-header__logo logo" href="#">
+            <picture>
+              <source media="(min-width: 1300px)" srcset="./img/content/logo-image-large.svg">
+              <source media="(min-width: 768px)" srcset="./img/content/logo-image-medium.svg">
+              <img class="logo__image" width="34" height="38" src="./img/content/logo-image-small.svg" alt="Логотип Кет энержи">
+            </picture>
 
-            <svg class="logo__image-small" width="34" height="38">
-              <use xlink:href="./sprites.svg#logo-image-small"></use>
-            </svg>
-            
-            <svg class="logo__image-middle" width="60" height="52" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="./sprites.svg#logo-image-middle"></use>
-            </svg>
-
-            <svg class="logo__sign"  width="101" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="./sprites.svg#logo-sign"></use>
-            </svg>
-
-            <svg class="logo__large" width="202" height="59" viewBox="0 0 202 59" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="./sprites.svg#logo-large"></use>
-            </svg>
-
-        </a>
-
+            <img class="logo__sign" width="101" height="18" src="./img/content/logo-text.svg" alt="">
+          </a>
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
           </button>
@@ -240,9 +229,7 @@
       <div class="page-footer__container container">
 
         <a class="page-footer__logo logo" href="index.html">
-          <svg width="128" height="24" alt="Логотип Кет Энержи">
-            <use xlink:href="sprites.svg#logo-sign"></use>       
-          </svg>
+          <img width="128" height="24" src="./img/content/logo-text.svg" alt="Логотип Кет-энержи">
         </a>
 
         <ul class="page-footer__social social">

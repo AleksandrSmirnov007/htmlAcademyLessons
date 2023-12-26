@@ -19,6 +19,20 @@
   pointer-events: none;
 }
 
+
+.control__lead,
+.control__input {
+  font-family: $font-heading;
+  color: $special-dark-grey;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
+}
+
 .control__input {
   z-index: 1; // добавлено что бы поднять наверх относительно декоративных элементов для прямого взоимодействия
   width: 30px;
@@ -34,6 +48,7 @@
 }
 
 .control__lead {
+  max-width: 280px;
   grid-column: 1 / -1;
   grid-row: 1 / 2;
 
@@ -43,6 +58,7 @@
   align-items: center;
 
   @media (min-width: $tablet-width) {
+
     grid-template-columns: 40px 1fr;
     gap: 20px;
   }

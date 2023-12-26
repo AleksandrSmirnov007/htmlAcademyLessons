@@ -24,6 +24,19 @@
   }
 }
 
+.field__lead,
+.field__input {
+  font-family: $font-heading;
+  color: $special-dark-grey;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
+}
+
 .field__input {
   width: 100%; //при родителе display: grid инпут займет всю ширины ячейки в сетке
   padding-top: 9px;
