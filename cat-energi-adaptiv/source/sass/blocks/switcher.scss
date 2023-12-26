@@ -137,11 +137,12 @@
   }
 }
 
-.switcher:hover .switcher__button {
+.switcher__button:hover {
   border-bottom: 1px solid fade-out($black, 0.6);
+  cursor: pointer;
 }
 
 
-.switcher:focus-within .switcher__button {
+.switcher__button:active {
   border-bottom: 1px solid transparent;
 }

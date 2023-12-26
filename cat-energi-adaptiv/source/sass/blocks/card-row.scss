@@ -54,7 +54,7 @@
   line-height: 1;
 
   @media (min-width: $tablet-width) {
-    gap: 49px;
+    gap: 10px;
     justify-items: end;  // обьем и суммы в планшете нужно ориентировать по правому краю можно запутаться во флексах justify-content, а в гридах justify-items и еще во флексах есть align-content b align-items
     align-items: end; // от card-row__list до нижнего элемента 22рх но с card-row__heading в одной грид-строчке но card-row__heading отсуп до нжнего элемента 25рх, поэтому выравниванием прижмем элементы к нижней границе строчки, а маржин-ботомм эитх элементов будем регулировать отступы
     grid-template-columns: 1fr minmax(44px,auto); // почти тоже самое но с минимальной штриной 250р и 50р имеют разную ширину поэтому берем по наибольшей

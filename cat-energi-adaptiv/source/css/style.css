@@ -473,7 +473,6 @@ picture {
 
 .container {
   width: 280px;
-  max-width: 280px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1388,11 +1387,12 @@ picture {
   }
 }
 
-.switcher:hover .switcher__button {
+.switcher__button:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
-.switcher:focus-within .switcher__button {
+.switcher__button:active {
   border-bottom: 1px solid transparent;
 }
 
@@ -2049,7 +2049,7 @@ picture {
 }
 @media (min-width: 768px) {
   .card-row__list {
-    gap: 49px;
+    gap: 10px;
     justify-items: end;
     align-items: end;
     grid-template-columns: 1fr minmax(44px, auto);
@@ -2339,7 +2339,6 @@ picture {
   }
 }
 .field-group__heading span {
-  max-width: 320px;
   position: relative;
   z-index: 1;
   background-color: #ffffff;
@@ -2438,6 +2437,7 @@ picture {
 @media (min-width: 768px) {
   .field {
     gap: 18px;
+    font-size: 20px;
   }
 }
 .field--textarea {
@@ -2461,12 +2461,6 @@ picture {
   line-height: 1;
   text-transform: uppercase;
 }
-@media (min-width: 768px) {
-  .field__lead,
-.field__input {
-    font-size: 20px;
-  }
-}
 
 .field__input {
   width: 100%;
@@ -2485,7 +2479,12 @@ picture {
   }
 }
 
-.field__input--bg-image {
+.field__input::placeholder {
+  opacity: 1;
+  color: #222222;
+}
+
+.field--icon .field__input {
   padding-right: 50px;
 }
 
@@ -2493,11 +2492,7 @@ picture {
   border-color: #cdcdcd;
 }
 
-.field--email:focus-within svg {
-  color: #68b738;
-}
-
-.field--telephone:focus-within svg {
+.field--icon:focus-within svg {
   color: #68b738;
 }
 
@@ -2505,18 +2500,16 @@ picture {
 .field__input:focus-visible {
   outline: none;
   outline: 2px solid #444444;
+  outline-offset: -2px;
 }
 
-.field--error .field__input {
+.field__input:not(:placeholder-shown):invalid {
   outline: 2px solid #ff8282;
+  outline-offset: -2px;
 }
 
-.field--email.field--error svg {
-  stroke: #ff8282;
-}
-
-.field--telephone.field--error svg {
-  fill: #ff8282;
+.field__input:not(:placeholder-shown):invalid + .field__icon {
+  color: #ff8282;
 }
 
 .field textarea {
@@ -2584,7 +2577,6 @@ picture {
 }
 
 .control__lead {
-  max-width: 280px;
   grid-column: 1/-1;
   grid-row: 1/2;
   display: grid;

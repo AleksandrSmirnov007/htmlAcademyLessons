@@ -25,7 +25,6 @@
   }
 
   span {
-    max-width: 320px;
     position: relative; // только для z-index что бы сделать выше before (зеленая линия )
     z-index: 1;
     background-color: $white;

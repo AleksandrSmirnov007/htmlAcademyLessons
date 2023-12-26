@@ -6,9 +6,8 @@
 
   @media (min-width: $tablet-width) {
     gap: 18px;
+    font-size: 20px;
   }
-
-
 
   &--textarea {
     grid-template-columns: auto;
@@ -24,6 +23,9 @@
   }
 }
 
+
+
+
 .field__lead,
 .field__input {
   font-family: $font-heading;
@@ -32,9 +34,7 @@
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
-  @media (min-width: $tablet-width) {
-    font-size: 20px;
-  }
+
 }
 
 .field__input {
@@ -52,10 +52,13 @@
   }
 }
 
-.field__input { // отступы для изображения на полях вводf? что бы текст не надезал на иконки
-  &--bg-image {
+.field__input::placeholder {
+  opacity: 1;
+  color: $special_dark-grey-2;
+}
+
+.field--icon .field__input { // отступы для изображения на полях вводf? что бы текст не надезал на иконки
   padding-right: 50px;
-  }
 }
 
 .field:hover {  
@@ -65,13 +68,7 @@
 }
 
 //подсвечиваем иконки зеленым при фокусе на инпуте
-.field--email:focus-within {
-  svg {
-    color: $color-primary;
-  }
-}
-
-.field--telephone:focus-within {
+.field--icon:focus-within {
   svg {
     color: $color-primary;
   }
@@ -81,19 +78,17 @@
 .field__input:focus-visible {
   outline: none;
   outline: 2px solid $special_dark-grey;
+  outline-offset: -2px;
 }
 
 
-.field--error .field__input {
+.field__input:not(:placeholder-shown):invalid {
   outline: 2px solid $status_error;
+  outline-offset: -2px;
 }
 
-.field--email.field--error svg {
-  stroke: $status_error;
-}
-
-.field--telephone.field--error svg {
-  fill: $status_error;
+.field__input:not(:placeholder-shown):invalid + .field__icon {
+  color: $status_error;
 }
 
 

@@ -51,7 +51,7 @@
       <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс page-header__nav--closed, для открытого состояния и отображения кнопки-крестик добавить класс page-header__nav--opened  -->
 
         <div class="main-nav__bar">
-          <a class="page-header__logo logo" href="#">
+          <a class="page-header__logo logo" href="index.html">
             <picture>
               <source media="(min-width: 1300px)" srcset="./img/content/logo-image-large.svg">
               <source media="(min-width: 768px)" srcset="./img/content/logo-image-medium.svg">
@@ -95,13 +95,13 @@
               <li class="field-group__item">
                 <label class="field">
                   <span class="field__lead">Имя:*</span>
-                  <input class="field__input" type="text" name="name" placeholder="Барсик">
+                  <input class="field__input" type="text" name="name" placeholder="Барсик" required>
                 </label>
               </li>
               <li class="field-group__item">
                 <label class="field">
                   <span class="field__lead">Вес (кг):*</span>
-                  <input class="field__input" type="number" name="weight" placeholder="7">
+                  <input class="field__input" type="number" name="weight" placeholder="7" required>
                 </label>
               </li>
               <li class="field-group__item">
@@ -141,19 +141,19 @@
             </legend>
             <ul class="field-group__list field-group__list--contacts">
               <li class="field-group__item">
-                <label class="field field--email">
+                <label class="field field--icon field--email">
                   <span class="field__lead">E-mail:*</span>
-                  <input class="field__input field__input--bg-image field__input--error" type="email" name="email" placeholder="kuklachev@gmail.com">
-                  <svg class="field__image" width="19" height="14" aria-hidden="true">
+                  <input class="field__input field__input--error" type="email" name="email" placeholder="kuklachev@gmail.com" required>
+                  <svg class="field__icon" width="19" height="14" aria-hidden="true">
                     <use xlink:href="#email-icon"></use>
                   </svg>
                 </label>
               </li>
               <li class="field-group__item">
-                <label class="field field--telephone">
+                <label class="field field--icon field--telephone">
                   <span class="field__lead">Телефон:*</span>
-                  <input class="field__input field__input--bg-image field__input--telephone" type="tel" name="phone" placeholder="8 (960) 900-60-90">
-                  <svg class="field__image" width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <input class="field__input field__input--telephone" type="tel" name="phone" placeholder="8 (960) 900-60-90" required>
+                  <svg class="field__icon" width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <use xlink:href="#telephone-icon"></use>
                   </svg>
                 </label>
