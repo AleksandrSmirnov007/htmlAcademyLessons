@@ -5,6 +5,8 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
 
+const htmlmin = require("gulp-htmlmin");
+
 // Styles
 
 export const styles = () => {
@@ -17,6 +19,24 @@ export const styles = () => {
     .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
+
+// html
+
+const html = () => {
+  return gulp.src('source/*.html')
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(gulp.dest('source'));
+}
+
+exports.html = html;
+
+// test task
+
+const proba = () => {
+  console.log("пробная задача запустилась")
+}
+
+exports.proba = proba;
 
 // Server
 
@@ -40,5 +60,7 @@ const watcher = () => {
 }
 
 export default gulp.series(
-  styles, server, watcher
+  styles, server, watcher, html
 );
+
+
