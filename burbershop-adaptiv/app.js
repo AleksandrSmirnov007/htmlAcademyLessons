@@ -1,1 +1,3 @@
-console.log(2 + 2);
+module.exports = function hello () {
+	console.log("Hello Gulp!");
+}
