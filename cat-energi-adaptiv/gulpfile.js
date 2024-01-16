@@ -8,6 +8,9 @@ import htmlmin from 'gulp-htmlmin';
 import terser from 'gulp-terser';
 import rename from 'gulp-rename';
 
+import csso from 'postcss-csso';
+import imagemin from 'gulp-imagemin';
+
 import sync from 'browser-sync';
 
 // Styles
@@ -17,9 +20,11 @@ export const styles = () => {
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer(),
+      csso()
     ]))
-    .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
+    .pipe(rename("style.min.css"))
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
     .pipe(sync.stream());
 }
 
@@ -41,12 +46,27 @@ export const scripts = () => {
     .pipe(sync.stream());
 }
 
+// Images
+
+export const optimizeImages = () => {
+  return gulp.src("source/img/**/*.{png,jpg,svg}")
+    .pipe(imagemin())
+    .pipe(gulp.dest("build/img"))
+}
+
+
+const copyImages = () => {
+  return gulp.src("source/img/**/*.{png,jpg,svg}")
+    .pipe(gulp.dest("build/img"))
+}
+
+
 // Server
 
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'source'
+      baseDir: 'build'
     },
     cors: true,
     notify: false,
