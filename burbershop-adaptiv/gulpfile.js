@@ -1,3 +1,5 @@
+
+
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const sass = require('gulp-dart-sass');
@@ -10,7 +12,7 @@ const csso = require("postcss-csso");
 const rename = require("gulp-rename");
 const terser = require("gulp-terser");
 //  при подключении squoosh возникает ошибка (версия node 20.11.0)
-// const squoosh = require("gulp-libsquoosh");
+
 
 const webp = require('gulp-webp'); // поставилась gulp-webp 5.0.0 с этой версией не работает, поставил 4.0.1 заработало(Иcправил версию в package.json и в консоли написал npm i, пакет откатился до версии указанной посмотреть пакеты и их версии можно командой npm list --depth=0  )
 const svgstore = require('gulp-svgstore'); // поставилась gulp-webp версия 7.*.*  с этой версией не работает, поставил 6.0.0 заработало(Иcправил версию в package.json и в консоли написал npm i, пакет откатился до версии указанной посмотреть пакеты и их версии можно командой npm list --depth=0  )
@@ -102,8 +104,7 @@ const copy = (done) => {
     "source/fonts/*.{woff2,woff}",
     "source/*.ico",
     "source/image/**/*.svg",
-    "!source/image/icon/*.svg",
-    "manifest.webmanifest"  // нужно кстати добавить этот файл
+    "!source/image/icon/*.svg"
   ], {
     base: "source"})
     .pipe(gulp.dest("build"));

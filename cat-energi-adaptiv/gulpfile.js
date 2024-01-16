@@ -3,7 +3,12 @@ import plumber from 'gulp-plumber';
 import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
-import browser from 'browser-sync';
+
+import htmlmin from 'gulp-htmlmin';
+import terser from 'gulp-terser';
+import rename from 'gulp-rename';
+
+import sync from 'browser-sync';
 
 // Styles
 
@@ -15,13 +20,31 @@ export const styles = () => {
       autoprefixer()
     ]))
     .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
-    .pipe(browser.stream());
+    .pipe(sync.stream());
+}
+
+// html
+
+export const html = () => {
+  return gulp.src("source/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"));
+}
+
+// Scripts
+
+export const scripts = () => {
+  return gulp.src("source/js/script.js")
+    .pipe(terser())
+    .pipe(rename("script.min.js"))
+    .pipe(gulp.dest("build/js"))
+    .pipe(sync.stream());
 }
 
 // Server
 
 const server = (done) => {
-  browser.init({
+  sync.init({
     server: {
       baseDir: 'source'
     },
@@ -36,7 +59,7 @@ const server = (done) => {
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
-  gulp.watch('source/*.html').on('change', browser.reload);
+  gulp.watch('source/*.html').on('change', sync.reload);
 }
 
 

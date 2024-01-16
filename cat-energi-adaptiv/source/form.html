@@ -29,7 +29,7 @@
       </symbol>
 
       <symbol id="facebook-icon" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M11.5 0.833252H8.75002C7.53445 0.833252 6.36866 1.30674 5.50911 2.14957C4.64957 2.99239 4.16669 4.1355 4.16669 5.32743V8.02394H1.41669V11.6193H4.16669V18.81H7.83335V11.6193H10.5834L11.5 8.02394H7.83335V5.32743C7.83335 5.08905 7.92993 4.86042 8.10184 4.69186C8.27375 4.52329 8.50691 4.4286 8.75002 4.4286H11.5V0.833252Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>          
+        <path d="M11.5 0.833252H8.75002C7.53445 0.833252 6.36866 1.30674 5.50911 2.14957C4.64957 2.99239 4.16669 4.1355 4.16669 5.32743V8.02394H1.41669V11.6193H4.16669V18.81H7.83335V11.6193H10.5834L11.5 8.02394H7.83335V5.32743C7.83335 5.08905 7.92993 4.86042 8.10184 4.69186C8.27375 4.52329 8.50691 4.4286 8.75002 4.4286H11.5V0.833252Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
       </symbol>
 
       <symbol id="email-icon" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -42,7 +42,7 @@
         </g>
       </symbol>
 
-      <symbol id="htmlacademy-icon" width="27" height="34" viewBox="0 0 27 34" fill="none" xmlns="http://www.w3.org/2000/svg">  
+      <symbol id="htmlacademy-icon" width="27" height="34" viewBox="0 0 27 34" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M13.64.02 13.5 0 0 1.4v24.61L13.5 34 27 26.01V1.41L13.64 0Zm11.6 25L13.5 31.96 1.77 25.02v-10.1l11.68 6.93.02 1.25-8.02-4.75v1.23l8.04 4.8.02 1.3-8.05-4.76v1.22l8.04 4.81 8.12-4.83V16.9l3.62-2.15v10.26Zm0-11.57L22 15.33l-1.48.88-7.06-4.19-.01 1.23 6.04 3.57-.06.03-.13.07-.86.5-4.98-2.95-.01 1.22 3.93 2.33-.93.61-.02.01-2.97-1.74-.01 1.23 1.94 1.13-1.98 1.19L1.8 13.58l11.63-6.96 11.8 6.83Zm0-1.22L13.43 5.3 1.77 12.22V2.99L13.5 1.76 25.23 3v9.24Z" fill="currentColor"/>
       </symbol>
     </svg>
@@ -262,28 +262,13 @@
         <a class="page-footer__developer developer" href="https://htmlacademy.ru/intensive/adaptive">
           <span class="visually-hidden">Разработано в</span>
           <span>HTMLAcademy</span>
-          <svg class="developer__logo" width="27" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">  
+          <svg class="developer__logo" width="27" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#htmlacademy-icon"></use>
           </svg>
         </a>
       </div>
     </footer>
 
-    <script>
-      var navMain = document.querySelector('.main-nav');
-      var navToggle = document.querySelector('.main-nav__toggle');
-
-      navMain.classList.remove('main-nav--nojs');
-      navToggle.addEventListener('click', function(){
-        if (navMain.classList.contains('main-nav--closed')) {
-          navMain.classList.remove('main-nav--closed');
-          navMain.classList.add('main-nav--opened');
-        } else {
-          navMain.classList.remove('main-nav--opened');
-          navMain.classList.add('main-nav--closed');
-        }
-
-      });
-    </script>
+    <script src="./js/script.js" ></script>
   </body>
 </html>
