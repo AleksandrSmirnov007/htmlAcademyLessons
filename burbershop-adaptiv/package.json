@@ -36,8 +36,8 @@
     "webp": "gulp createWebp",
     "sprite": "gulp sprite",
     "copy": "gulp copy",
-    "clean":"gulp clean",
-    "build":"gulp build"
+    "clean": "gulp clean",
+    "build": "gulp build"
   },
   "browserslist": [
     "last 2 versions",

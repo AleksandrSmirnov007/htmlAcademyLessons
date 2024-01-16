@@ -102,7 +102,8 @@ const copy = (done) => {
     "source/fonts/*.{woff2,woff}",
     "source/*.ico",
     "source/image/**/*.svg",
-    "!source/image/icon/*.svg"
+    "!source/image/icon/*.svg",
+    "manifest.webmanifest"  // нужно кстати добавить этот файл
   ], {
     base: "source"})
     .pipe(gulp.dest("build"));
@@ -138,6 +139,7 @@ exports.server = server;
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
+  gulp.watch('source/js/script.js', gulp.series(scripts));
   gulp.watch('source/*.html').on('change', sync.reload);
 }
 
@@ -160,7 +162,21 @@ const build = gulp.series(
 exports.build = build;
 
 exports.default = gulp.series(
-  styles, html, server, watcher
-);
+  clean,
+  copy,
+  copyImages,
 
+  gulp.parallel(
+    styles,
+    html,
+    scripts,
+    sprite,
+    createWebp
+  ),
+  // далее можно не включать задачи в gulp.series() так как и так они находятся внутри поледовательных зачач идущих после пралельных
+  gulp.series(
+    server,
+    watcher
+  )
+);
 
