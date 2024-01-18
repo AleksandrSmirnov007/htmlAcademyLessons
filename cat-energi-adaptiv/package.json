@@ -6,6 +6,7 @@
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "10.4.0",
     "browser-sync": "2.27.7",
+    "del": "^7.1.0",
     "gulp": "4.0.2",
     "gulp-dart-sass": "^1.0.2",
     "gulp-htmlmin": "^5.0.1",
@@ -13,7 +14,9 @@
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "9.0.1",
     "gulp-rename": "^2.0.0",
+    "gulp-svgstore": "^9.0.0",
     "gulp-terser": "^2.1.0",
+    "gulp-webp": "^5.0.0",
     "postcss": "8.3.11",
     "postcss-csso": "^6.0.1",
     "stylelint": "13.13.1",
@@ -23,12 +26,19 @@
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "lint": "npm run editorconfig && npm run stylelint",
-    "build": "gulp styles",
+    "styles": "gulp styles",
     "start": "gulp",
+
     "html": "gulp html",
     "scripts": "gulp scripts",
-    "images": "gulp optimizeImages"
+    "images": "gulp optimizeImages",
+    "copyimg": "gulp copyImages",
+    "webp": "gulp createWebp",
+    "sprites": "gulp sprite",
+    "copy": "gulp copy",
+    "clean": "gulp clean",
 
+    "build": "gulp build"
   },
   "browserslist": [
     "last 2 versions",

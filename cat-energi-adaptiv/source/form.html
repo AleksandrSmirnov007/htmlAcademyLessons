@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Кэт-энерджи адаптив. Подбор программы</title>
-    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
 
 
     <!-- https://stackoverflow.com/questions/48956465/favicon-standard-2023-svg-ico-png-and-dimensions  -->
 
     <!--  https://up.htmlacademy.ru/profession/frontender-lite/2/lite-adaptive/2/module/6/item/4-->
-    <link rel="icon" href="./favicon.ico">
-    <link rel="icon" href="./img/favicons/32.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="./images/favicons/180.png" sizes="180x180" > <!-- iOS Safari -->
-    <link rel="manifest" href="./manifest.webmanifest"> <!-- Android Chrome полагается на манифест веб-приложения. Хотя этот манифест не предназначен для Android Chrome, в настоящее время он является его основным сторонником. Android ожидает значок размером 192x192 PNG, прозрачность разрешена и приветствуется. -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/favicons/180.png" sizes="180x180" > <!-- iOS Safari -->
+    <link rel="manifest" href="manifest.webmanifest"> <!-- Android Chrome полагается на манифест веб-приложения. Хотя этот манифест не предназначен для Android Chrome, в настоящее время он является его основным сторонником. Android ожидает значок размером 192x192 PNG, прозрачность разрешена и приветствуется. -->
 
 
 
@@ -53,12 +53,12 @@
         <div class="main-nav__bar">
           <a class="page-header__logo logo" href="index.html">
             <picture>
-              <source media="(min-width: 1300px)" srcset="./img/content/logo-image-large.svg">
-              <source media="(min-width: 768px)" srcset="./img/content/logo-image-medium.svg">
-              <img class="logo__image" width="34" height="38" src="./img/content/logo-image-small.svg" alt="Логотип Кет энержи">
+              <source media="(min-width: 1300px)" srcset="img/content/logo-image-large.svg">
+              <source media="(min-width: 768px)" srcset="img/content/logo-image-medium.svg">
+              <img class="logo__image" width="34" height="38" src="img/content/logo-image-small.svg" alt="Логотип Кет энержи">
             </picture>
 
-            <img class="logo__sign" width="101" height="18" src="./img/content/logo-text.svg" alt="">
+            <img class="logo__sign" width="101" height="18" src="img/content/logo-text.svg" alt="">
           </a>
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
@@ -67,10 +67,10 @@
         <div class="main-nav__wrapper">
           <ul class="site-menu">
             <li class="site-menu__item"> <!-- текущая страница сайта отмечается классом site-menu__item--active -->
-              <a class="site-menu__link" href="./index.html">Главная</a>
+              <a class="site-menu__link" href="index.html">Главная</a>
             </li>
             <li class="site-menu__item">
-              <a class="site-menu__link" href="./catalog.html">Каталог продукции</a>
+              <a class="site-menu__link" href="catalog.html">Каталог продукции</a>
             </li>
             <li class="site-menu__item site-menu__item--active">
               <a class="site-menu__link"  title="Мы на странице подбора программы">Подбор программы</a>
@@ -217,7 +217,7 @@
           <span>Санкт-Петербург</span></p>
         </div>
 
-        <!-- <img class="contacts__map" width="320" height="362" src="./img/content/location@1x.png" alt="изображение карты с расположением нашего офиса"> -->
+        <!-- <img class="contacts__map" width="320" height="362" src="img/content/location@1x.png" alt="изображение карты с расположением нашего офиса"> -->
         <!-- заменили обычную картинку на интерактивную карту В принципе все тоже самое тот же класс и iframe занмает место карты и позиционируется также за счет класса-->
         <!-- чтобы ее добавить нужно ее собрать для этого нуно перейтив конструктор интрактивных карт яндекса  https://yandex.ru/map-constructor/  там отредактировать карту добавить метки и получить код iframe -->
         <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7123d8e12831f533a7d11328fd657ad637cf1f52ed41f1c0242c16253c8135ae&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
@@ -229,7 +229,7 @@
       <div class="page-footer__container container">
 
         <a class="page-footer__logo logo" href="index.html">
-          <img width="128" height="24" src="./img/content/logo-text.svg" alt="Логотип Кет-энержи">
+          <img width="128" height="24" src="img/content/logo-text.svg" alt="Логотип Кет-энержи">
         </a>
 
         <ul class="page-footer__social social">
@@ -237,7 +237,7 @@
             <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
               <span class="visually-hidden">Мы в Вконтакте</span>
               <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <use xlink:href="#vk-icon"></use>
+                <use xlink:href="img/sprite.svg#vk-icon"></use>
               </svg>
             </a>
           </li>
@@ -245,7 +245,7 @@
             <a class="social__link social__link--instagramm" href="https://www.facebook.com/htmlacademy">
               <span class="visually-hidden">Мы в Инстаграмм</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <use xlink:href="#instagramm-icon"></use>
+                <use xlink:href="img/sprite.svg#instagramm-icon"></use>
               </svg>
             </a>
           </li>
@@ -253,7 +253,7 @@
             <a class="social__link social__link--facebook" href="https://www.instagram.com/htmlacademy">
               <span class="visually-hidden">Мы в Фейсбук</span>
               <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <use xlink:href="#facebook-icon"></use>
+                <use xlink:href="img/sprite.svg#facebook-icon"></use>
               </svg>
             </a>
           </li>
@@ -263,12 +263,12 @@
           <span class="visually-hidden">Разработано в</span>
           <span>HTMLAcademy</span>
           <svg class="developer__logo" width="27" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="#htmlacademy-icon"></use>
+            <use xlink:href="img/sprite.svg#htmlacademy-icon"></use>
           </svg>
         </a>
       </div>
     </footer>
 
-    <script src="./js/script.js" ></script>
+    <script src="js/script.min.js" ></script>
   </body>
 </html>
