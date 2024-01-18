@@ -1,40 +1,31 @@
 @import "global/fonts.scss";
 @import "global/variables.scss";
-
 @import "global/global.scss";
 @import "global/mixins.scss";
-
 @import "blocks/page.scss";
 @import "blocks/page-header.scss";
-@import "blocks/main-nav.scss"; 
+@import "blocks/main-nav.scss";
 @import "blocks/logo.scss";
 @import "blocks/site-menu.scss";
 @import "blocks/page-main.scss";
 @import "blocks/container.scss";
 @import "blocks/promo.scss";
-
 @import "blocks/button.scss";
 @import "blocks/catalog-sections.scss";
 @import "blocks/process.scss";
 @import "blocks/example.scss";
-
 @import "blocks/switcher.scss";
-
 @import "blocks/contacts.scss";
 @import "blocks/page-footer.scss";
 @import "blocks/social.scss";
 @import "blocks/developer.scss";
-
-
 // каталог
 @import "blocks/catalog-list";
 @import "blocks/card.scss";
 @import "blocks/show-more.scss";
-
 @import "blocks/catalog-additional.scss";
 @import "blocks/card-row.scss";
 @import "blocks/offer.scss";
-
 // форма
 @import "blocks/form.scss";
 @import "blocks/field-group.scss";
