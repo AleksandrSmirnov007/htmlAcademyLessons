@@ -25,14 +25,17 @@
   }
 
   span {
-    position: relative; // только для z-index что бы сделать выше before (зеленая линия )
+    position: relative;
+    // только для z-index что бы сделать выше before (зеленая линия )
     z-index: 1;
     background-color: $white;
     width: max-content;
     padding-left: 22px;
     padding-right: 22px;
     margin-left: -22px;
-    display: flex; // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше) 
+    display: flex;
+    // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше)
+
     @media (min-width: $tablet-width) {
       padding-left: 40px;
       padding-right: 40px;
@@ -56,6 +59,7 @@
   right: 0;
   margin-top: 16px;
   background-color: $color-primary;
+
   @media (min-width: $tablet-width) {
     margin-top: 22px;
   }
@@ -85,14 +89,16 @@
       column-gap: 80px;
     }
   }
+
   &--additional {
     gap: 12px;
-    
+
     @media (min-width: $tablet-width) {
-      grid-template-columns: 1fr 1fr; 
+      grid-template-columns: 1fr 1fr;
       row-gap: 32px;
       column-gap: 60px;
     }
+
     @media (min-width: $desktop-width) {
       grid-template-columns: repeat(4, 1fr);
       column-gap: 80px;
@@ -109,4 +115,3 @@
 .field__input::placeholder {
   color: $special-dark-grey;
 }
-

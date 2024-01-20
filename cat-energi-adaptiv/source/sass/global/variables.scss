@@ -1,4 +1,5 @@
-$color-primary: #68b738; // $basic-green
+$color-primary: #68b738;
+// $basic-green
 $basic_green-2: #5eaa2f;
 $white: #ffffff;
 $black: #000000;
@@ -13,10 +14,10 @@ $special_grey-6: #eaeaea;
 $special_dark-grey: #444444;
 $special_dark-grey-2: #222222;
 $status_error: #ff8282;
-
-$font-heading: "Oswald", sans-serif; // $oswald
+$font-heading: "Oswald", sans-serif;
+// $oswald
 $font-body: "Arial", sans-serif;
-
 $tablet-width: 768px;
-$desktop-width: 1300px; //  1440-1300 =140 то есть версия для десктопов будет срабатывать на 140 раньше, но унас есть запас за счет отступов по 110рх
+$desktop-width: 1300px;
+//  1440-1300 =140 то есть версия для десктопов будет срабатывать на 140 раньше, но унас есть запас за счет отступов по 110рх
 $mobile-width-only: 767px;

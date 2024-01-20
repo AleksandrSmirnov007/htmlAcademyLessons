@@ -12,19 +12,18 @@
   &--textarea {
     grid-template-columns: auto;
   }
+
   &--email,
   &--telephone {
     position: relative;
+
     svg {
       position: absolute;
       right: 15px;
-      color:  $special_dark-grey-2
+      color: $special_dark-grey-2;
     }
   }
 }
-
-
-
 
 .field__lead,
 .field__input {
@@ -34,7 +33,6 @@
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
-
 }
 
 .field__input {
@@ -44,6 +42,7 @@
   padding-left: 14px;
   padding-right: 14px;
   border: 1px solid #e7e7e7;
+
   @media (min-width: $tablet-width) {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -61,10 +60,10 @@
   padding-right: 50px;
 }
 
-.field:hover {  
+.field:hover {
   .field__input {
-      border-color: $special_grey;
-    }
+    border-color: $special_grey;
+  }
 }
 
 //подсвечиваем иконки зеленым при фокусе на инпуте
@@ -76,7 +75,6 @@
 
 .field__input:focus,
 .field__input:focus-visible {
-  outline: none;
   outline: 2px solid $special_dark-grey;
   outline-offset: -2px;
 }

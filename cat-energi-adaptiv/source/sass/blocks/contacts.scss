@@ -1,5 +1,6 @@
 .contacts {
   background-color: $basic_grey;
+
   @media (min-width: $desktop-width) {
     position: relative;
     display: grid;
@@ -10,7 +11,6 @@
     grid-template-columns: 1220px; // один столбец шириной 1440-110*2 такой прием дает отступы с права и слева по 110рх
     align-items: center; // внутри лежащий единсттвенный элемент будет центрироваться по вертикали
     justify-content: center; // родитель будет шириной 1440 рх(или больше) а единственный столб шириной 1220рх за счет justify-content: center; будет центриваться по горизонтали
-
   }
 }
 
@@ -44,6 +44,7 @@
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
+
   @media (min-width: $tablet-width) {
     padding-top: 4px;
     padding-right: 0; // на этой ширине используем space-between у родителя и падинг нам теперь не нужен
@@ -57,7 +58,8 @@
   color: $special-dark-grey;
   font-family: $font-body;
   font-weight: 400;
-  line-height: 20px; //  font-size задается через .page 14px
+  line-height: 20px; // font-size задается через .page 14px
+
   @media (min-width: $tablet-width) {
     display: flex; // предварительно разбил текст на два span и при флексе с ними можно взаимодействовать как с элементами во флекс контейнере
     flex-direction: column; // нужно оттолкнуть два текста друг от друга по вертикали для этого меняем ось на вертикальную
@@ -68,7 +70,6 @@
 
   @media (min-width: $desktop-width) {
     text-align: left;
-
   }
 }
 
@@ -77,7 +78,9 @@
   width: 100%; //растягиваем по всей ширине
   height: 362px; // такая высота для мобильной версии
 
-  border: none; // не знаю зачем, границ и так нет вроде, может в других браузерах по умолчанию есть.
+  border: none;
+  // не знаю зачем, границ и так нет вроде, может в других браузерах по умолчанию есть.
+
   @media (min-width: $tablet-width) {
     height: 400px; // ничего не меняется кроме высоты
   }

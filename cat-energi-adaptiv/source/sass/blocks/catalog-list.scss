@@ -20,12 +20,13 @@
 
 .catalog-list__item {
   position: relative;
+
   @media (max-width: $mobile-width-only) {
-    &:before {
+    &::before {
       position: absolute;
       content: "";
       top: 0;
-      left: calc(50% - 50vw) ;
+      left: calc(50% - 50vw);
       right: 0;
       height: 1px;
       width: 100vw;

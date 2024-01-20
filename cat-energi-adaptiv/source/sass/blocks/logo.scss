@@ -13,7 +13,7 @@
     grid-template-columns: 70px 1fr;
     gap: 15px;
   }
-  
+
   &:hover {
     opacity: 0.8;
   }
@@ -26,10 +26,12 @@
 .logo__image {
   width: 34px;
   height: 38px;
+
   @media (min-width: $tablet-width) {
     width: 60px;
     height: 52px;
   }
+
   @media (min-width: $desktop-width) {
     width: 70px;
     height: 59px;
@@ -38,17 +40,17 @@
 
 .logo__sign {
   display: block;
-  width: 101px; 
+  width: 101px;
   height: 18px;
   justify-self: center; // центруем по горизонтали логотип в виде шрифта
-  
+
   @media (min-width: $tablet-width) {
     justify-self: start; // центруем по горизонтали логотип в виде шрифта
   }
 }
 
 
-.page-footer__logo { 
+.page-footer__logo {
   grid-template-columns: auto; // так верхнее лого display: grid; и делится на две колонки (обнуляем это)
   margin-left: auto;
   margin-right: auto;

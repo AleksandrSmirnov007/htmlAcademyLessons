@@ -9,6 +9,6 @@
         ]
       }
     ],
-    "unit-whitelist": ["em", "rem", "s", "px", "%", "fr", "dppx", "dpi", "deg", "vw"]
+    "unit-allowed-list": ["em", "rem", "s", "px", "%", "fr", "dppx", "dpi", "deg", "vw"]
   }
 }

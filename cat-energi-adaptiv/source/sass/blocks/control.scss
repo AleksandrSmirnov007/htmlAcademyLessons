@@ -28,6 +28,7 @@
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
+
   @media (min-width: $tablet-width) {
     font-size: 20px;
   }
@@ -41,6 +42,7 @@
   grid-row: 1 / 2;
   margin: 0;
   opacity: 0; // скрыто прозрачностью
+
   @media (min-width: $tablet-width) {
     width: 40px;
     height: 40px;
@@ -74,6 +76,7 @@
     content: "";
     width: 30px;
     height: 30px;
+
     @media (min-width: $tablet-width) {
       width: 40px;
       height: 40px;
@@ -86,11 +89,12 @@
   border-radius: 50%;
 }
 
-.control--radio .control__input:checked + .control__lead::after{
+.control--radio .control__input:checked + .control__lead::after {
   width: 14px;
   height: 14px;
   background-color: $color-primary;
   border-radius: 50%;
+
   @media (min-width: $tablet-width) {
     width: 18px;
     height: 18px;
@@ -98,20 +102,22 @@
 }
 
 
-.control--checkbox .control__input:checked + .control__lead::after{
+.control--checkbox .control__input:checked + .control__lead::after {
   width: 26px;
   height: 26px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 20px 20px;
   background-image: url("../../img/icons/check-mark.svg");
+
   @media (min-width: $tablet-width) {
     background-size: 26px 26px;
   }
 }
+
 .control--checkbox .control__lead {
-    color: $black;
-  }
+  color: $black;
+}
 
 .control:hover .control__lead::before {
   border: 1px solid #bababa;

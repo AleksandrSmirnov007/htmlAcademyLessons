@@ -1,10 +1,12 @@
 .catalog-additional__container {
   padding-top: 25px;
   padding-bottom: 35px;
+
   @media (min-width: $tablet-width) {
     padding-top: 68px;
     padding-bottom: 75px;
   }
+
   @media (min-width: $desktop-width) {
     display: grid;
     grid-template-columns: repeat(4, 1fr); // разделяем блок, что бы справа поставить .catalog-addition__promo
@@ -13,6 +15,7 @@
     padding-bottom: 86px;
   }
 }
+
 .catalog-additional__heading {
   grid-column: 1 / -1;
   margin: 0;
@@ -22,10 +25,13 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 1; /* 100% */
+
+
   @media (min-width: $tablet-width) {
-    font-size:  36px;
+    font-size: 36px;
     margin-bottom: 81px;
   }
+
   @media (min-width: $desktop-width) {
     grid-column: 1 / -1;
     margin-bottom: 0;
@@ -41,14 +47,15 @@
     padding-right: 22px;
     margin-left: -22px;
     display: flex; // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше)
-    @media (min-width: $tablet-width) {
 
+    @media (min-width: $tablet-width) {
       max-width: 700px;
       padding-left: 35px;
       padding-right: 38px;
       margin-right: -40px;
       margin-left: 1px;
     }
+
     @media (min-width: $desktop-width) {
       max-width: 1300px;
       margin-left: -35px;
@@ -64,6 +71,7 @@
   right: 0;
   margin-top: 16px;
   background-color: $color-primary;
+
   @media (min-width: $tablet-width) {
     margin-top: 22px;
   }
@@ -75,9 +83,11 @@
   padding: 0;
   list-style-type: none;
   margin-bottom: 35px;
+
   @media (min-width: $tablet-width) {
     margin-bottom: 69px;
   }
+
   @media (min-width: $desktop-width) {
     margin-bottom: 0;
   }

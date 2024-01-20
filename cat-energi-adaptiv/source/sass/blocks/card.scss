@@ -2,9 +2,10 @@
   padding-top: 21px;
   padding-bottom: 24px;
   display: grid;
-  grid-template-areas: "image link"
-                        "image list"
-                        "button button";
+  grid-template-areas:
+    "image link"
+    "image list"
+    "button button";
   grid-template-columns: 1fr 1fr;
 
   @media (min-width: $tablet-width) {
@@ -30,6 +31,7 @@
   font-weight: 400;
   line-height: 20px; /* 125% */
   text-transform: uppercase;
+
   @media (min-width: $tablet-width) {
     justify-self: center;
   }
@@ -44,6 +46,7 @@
   line-height: 20px; /* 125% */
   text-transform: uppercase;
   width: 90px;
+
   @media (min-width: $tablet-width) {
     width: 155px;
     text-align: center;
@@ -56,25 +59,25 @@
   grid-area: image;
   align-self: center;
   justify-self: center;
+
   @media (min-width: $tablet-width) {
     align-self: end;
   }
+
   @media (min-width: $desktop-width) {
     margin-bottom: 6px;
   }
 }
 
 .card__list {
-
   margin-top: 14px;
   margin-bottom: 22px;
   font-size: 12px;
   grid-area: list;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
-  
-  line-height:  16px;
+  line-height: 16px;
+
   @media (min-width: $tablet-width) {
     font-size: 16px;
     line-height: 1; /* 100% */
@@ -86,8 +89,10 @@
     margin-right: 4px;
   }
 }
+
 .card__title {
   text-wrap: wrap;
+
   @media (min-width: $tablet-width) {
     padding-top: 7px;
     padding-bottom: 8px;
@@ -99,6 +104,7 @@
 .card__definition {
   justify-self: end;
   margin: 0;
+
   @media (min-width: $tablet-width) {
     padding-top: 7px;
     padding-bottom: 8px;
@@ -117,6 +123,7 @@
   width: 100%;
   padding-top: 11px;
   padding-bottom: 11px;
+
   @media (min-width: $tablet-width) {
     font-size: 16px;
     padding: 12px;
