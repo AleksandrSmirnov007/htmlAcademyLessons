@@ -1,6 +1,7 @@
 .page-header {
   @media (min-width: $desktop-width) {
     position: relative;
+
     &::before {
       content: "";
       position: absolute;

@@ -52,7 +52,7 @@
 }
 
 
-.site-menu--index .site-menu__item--active{  //на странице индекса на ширине десктопа полоска под иеню белая из-за фона
+.site-menu--index .site-menu__item--active {  //на странице индекса на ширине десктопа полоска под иеню белая из-за фона
   @media (min-width: $desktop-width) { // в версии для десктопа полоска из псевдоэлемента меняет цвет на белый
     &::after {
       background-color: $white;
@@ -75,8 +75,8 @@
   &:not([href]) {
     cursor: default;
   }
-  @media (max-width: $mobile-width-only) {
 
+  @media (max-width: $mobile-width-only) {
     &[href]:hover {
       background-color: $basic_grey;
     }
@@ -118,11 +118,13 @@
 
 .site-menu--index .site-menu__link {
   @media (min-width: $desktop-width) {
-    color: $white; // пункты меню для десктопа становяться белыми только на главной странице
+    // пункты меню для десктопа становяться белыми только на главной странице
+    color: $white;
 
     &[href]:hover {
       color: fade-out($white, 0.4);
     }
+
     &[href]:active { //
       color: fade-out($white, 0.7);
     }

@@ -1,18 +1,22 @@
 .promo {
   padding-top: 26px; // подогнал исходя из картинки бекграунда пользуясь инструментами разработчика в браузере
   text-align: center;
-  background-color: #63A63C;
+  background-color: #63a63c;
 
-  background-image: url("../img/background/bg-promo-mobile.jpg"),
-                    linear-gradient(#63a63b 0, #63a63b 302px, $white 302px);
+  background-image:
+    url("../img/background/bg-promo-mobile.jpg"),
+    linear-gradient(#63a63b 0, #63a63b 302px, $white 302px);
 
   background-repeat: no-repeat;
   background-position: 50% 0;
+
   @media (min-resolution: 2dppx) {
-    background-image: url("../../img/background/bg-promo-mobile@2x.jpg"),
-                      linear-gradient(#63a63b 0, #63a63b 302px, #ffffff 302px);
-    background-size: auto 302px, // соответственно размер изображения 
-                     auto auto; // соответсвенно размер линеар-градиента (нельзя забывать что background-size можно отдельно задаватьчерез запятую все элементам background-image в последовательности в которой они идут в background-image)
+    background-image:
+      url("../../img/background/bg-promo-mobile@2x.jpg"),
+      linear-gradient(#63a63b 0, #63a63b 302px, #ffffff 302px);
+    background-size:
+      auto 302px, // соответственно размер изображения
+      auto auto; // соответсвенно размер линеар-градиента (нельзя забывать что background-size можно отдельно задаватьчерез запятую все элементам background-image в последовательности в которой они идут в background-image)
   }
 
 
@@ -26,9 +30,9 @@
   }
 
   &::before {
-// используем картинку с уже наложенным фоном
+    // используем картинку с уже наложенным фоном
     @media (min-width: $desktop-width) {
-      background-color: #63A63C;
+      background-color: #63a63c;
       position: absolute;
       z-index: -2; // Иначе псевдоэлемент перекрывает все блоки выше, но если поставить -1, то далее мы выводим из потока еще и .promo__image же уменьшаем z-index но оно должно быть выше этого псевдоэлемента (promo::after)
       content: "";
@@ -39,13 +43,12 @@
       background-repeat: no-repeat;
       background-position: left bottom;
       background-size: 1044px 696px;
-      background-image: url("../../img/background/bg-promo-desktop.jpg"); // изображение взято из фигмы в режиме дизайнера, маска была натянута не на все изображение пришлось разворошить всеь макет и наложить и скачать png группы выделеных элементов (в контексном меню это предлагается ) далее создаем точечный рисунок открываем его через paint сограняем как png а в скуше оптимизируем и конвертируем в jpg) и делаем ресайз под ретину и обычные экраны 
-      
+      background-image: url("../../img/background/bg-promo-desktop.jpg"); // изображение взято из фигмы в режиме дизайнера, маска была натянута не на все изображение пришлось разворошить всеь макет и наложить и скачать png группы выделеных элементов (в контексном меню это предлагается ) далее создаем точечный рисунок открываем его через paint сограняем как png а в скуше оптимизируем и конвертируем в jpg) и делаем ресайз под ретину и обычные экраны
+
       @media (min-resolution: 2dppx) {
         background-image: url("../../img/background/bg-promo-desktop@2x.jpg");
       }
     }
-
   }
 
   &::after {
@@ -69,6 +72,7 @@
     position: relative; // для позиционирования промо-картинки
     padding: 0 90px 526px; // 90px отсупы справа и слева внутри блока по макету, 526px от кнопки (подобрать программу) вниз до конца блока
   }
+
   @media (min-width: $desktop-width) {
     min-height: 636px; // непонял откуда эта высота
     padding: 85px 610px 95px 80px; // 80px
@@ -87,7 +91,6 @@
     margin-bottom: 39px;
     font-size: 60px;
   }
-
 }
 
 .promo__text {
@@ -107,6 +110,7 @@
 
 .promo__image {
   width: 280px;
+
   @media (min-width: $tablet-width) {
     position: absolute;
     left: 0;
@@ -115,6 +119,7 @@
     width: 709px;
     height: 609px;
   }
+
   @media (min-width: $desktop-width) {
     top: 0;
     left: calc(50% - 162px); //Для десктопов левый край картинки залезает на первую половину страницы на 162px;

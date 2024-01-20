@@ -36,7 +36,8 @@
     "sprites": "gulp sprite",
     "copy": "gulp copy",
     "clean": "gulp clean",
-    "build": "gulp build"
+    "build": "gulp build",
+    "lint": "npm run stylelint"
   },
   "browserslist": [
     "last 2 versions",

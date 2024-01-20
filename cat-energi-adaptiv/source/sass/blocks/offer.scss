@@ -7,12 +7,14 @@
   background-color: $basic_green-2;
   background-repeat: no-repeat;
   background-position: 0 100%; //Позиция изображения левый край изображения от левого края блока и нижний край изображения от нижнего края блока
-  background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
-                    url("../../img/background/bg-cat-in-bag-mobile.jpg"); /// добавить картинку
+  background-image:
+    linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
+    url("../../img/background/bg-cat-in-bag-mobile.jpg"); /// добавить картинку
 
-  @media   (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    background-image:  linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
-    url("../../img/background/bg-cat-in-bag-mobile@2x.jpg");
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image:
+      linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
+      url("../../img/background/bg-cat-in-bag-mobile@2x.jpg");
     background-size: 560px auto;
   }
 
@@ -21,31 +23,34 @@
     padding: 73px 124px 68px 422px;
     text-align: left;
 
-    background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
-                      url("../../img/background/bg-cat-in-bag-tablet.jpg"); /// добавить картинку
+    background-image:
+      linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
+      url("../../img/background/bg-cat-in-bag-tablet.jpg"); /// добавить картинку
 
-    @media   (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    background-image:  linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
-                      url("../../img/background/bg-cat-in-bag-tablet@2x.jpg");
-    background-size: 1414px auto;
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image:
+        linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
+        url("../../img/background/bg-cat-in-bag-tablet@2x.jpg");
+      background-size: 1414px auto;
     }
   }
 
   @media (min-width: $desktop-width) {
     padding: 184px 20px 42px;
     text-align: center;
-
-    background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
-                      url("../../img/background/bg-cat-in-bag-desktop.jpg"); /// добавить картинку
-
-    @media   (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    background-image:  linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
-                      url("../../img/background/bg-cat-in-bag-desktop@2x.jpg");
-    }
     background-size: 490px auto;
+    background-image:
+      linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
+      url("../../img/background/bg-cat-in-bag-desktop.jpg"); /// добавить картинку
+
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image:
+        linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 0, rgba(104, 183, 56, 0.85) 100%), // задаем сполошной немного прозрачный фон выше картинки
+        url("../../img/background/bg-cat-in-bag-desktop@2x.jpg");
+    }
   }
 
-  &:before {
+  &::before {
     position: absolute;
     content: "";
     width: 80px;
@@ -55,7 +60,6 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
     background-image: url("../../img/icons/icon_gift.svg");
 
     @media (min-width: $tablet-width) {
@@ -63,6 +67,7 @@
       left: 77px;
       right: auto;
     }
+
     @media (min-width: $desktop-width) {
       left: 0;
       right: 0;
@@ -71,7 +76,6 @@
     }
   }
 }
-
 
 .offer__text {
   font-size: 16px;

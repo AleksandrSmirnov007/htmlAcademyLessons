@@ -11,6 +11,7 @@
     margin-top: 81px;
     border: 2px solid $basic_grey;
   }
+
   @media (min-width: $desktop-width) {
     padding-bottom: 40px; // на два пикселя
   }
@@ -29,10 +30,13 @@
   @media (min-width: $tablet-width) {
     padding: 0 34px;
   }
+
   @media (min-width: $desktop-width) {
     padding: 0;
   }
-  &::before, // рисуем крестик( делаем сразу две палки ) псевдоэлемент before у show-more уже занят( c помощью него реализована граница карточки)
+
+  // рисуем крестик( делаем сразу две палки ) псевдоэлемент before у show-more уже занят( c помощью него реализована граница карточки)
+  &::before,
   &::after {
     top: 40px; // растояние от верхней границы родителя плюс пол высоты креста.
     left: calc(50% - 15px); // по горизонтали серидина половина родителя минус половина ширины креста
@@ -41,6 +45,7 @@
     width: 30px;
     height: 2px;
     background-color: #d3d3d3;
+
     @media (min-width: $tablet-width) {
       width: 60px;
       top: 79px;
@@ -49,8 +54,10 @@
   }
 
   &::after {  // поворачиваем
-    transform: rotateZ(90deg); // закончили рисовать крестик
+    // закончили рисовать крестик
+    transform: rotateZ(90deg);
   }
+
   @media (min-width: $tablet-width) {
     margin-bottom: 23px;
     font-size: 20px;
