@@ -128,19 +128,19 @@
 
 // подклбчаем изображения для каждого элемента свое, используем модификаторы
 .process__item--leaf::before {
-  background-image: url("../../img/icons/icon_leaf.svg");
+  background-image: url("../img/icons/icon_leaf.svg");
 }
 
 .process__item--powder::before {
-  background-image: url("../../img/icons/icon_tub.svg");
+  background-image: url("../img/icons/icon_tub.svg");
 }
 
 .process__item--food::before {
-  background-image: url("../../img/icons/icon_eat.svg");
+  background-image: url("../img/icons/icon_eat.svg");
 }
 
 .process__item--scales::before {
-  background-image: url("../../img/icons/icon_alarm.svg");
+  background-image: url("../img/icons/icon_alarm.svg");
 }
 
 .proccess__br {

@@ -12,7 +12,7 @@
 
   @media (min-resolution: 2dppx) {
     background-image:
-      url("../../img/background/bg-promo-mobile@2x.jpg"),
+      url("../img/background/bg-promo-mobile@2x.jpg"),
       linear-gradient(#63a63b 0, #63a63b 302px, #ffffff 302px);
     background-size:
       auto 302px, // соответственно размер изображения
@@ -43,10 +43,10 @@
       background-repeat: no-repeat;
       background-position: left bottom;
       background-size: 1044px 696px;
-      background-image: url("../../img/background/bg-promo-desktop.jpg"); // изображение взято из фигмы в режиме дизайнера, маска была натянута не на все изображение пришлось разворошить всеь макет и наложить и скачать png группы выделеных элементов (в контексном меню это предлагается ) далее создаем точечный рисунок открываем его через paint сограняем как png а в скуше оптимизируем и конвертируем в jpg) и делаем ресайз под ретину и обычные экраны
+      background-image: url("../img/background/bg-promo-desktop.jpg"); // изображение взято из фигмы в режиме дизайнера, маска была натянута не на все изображение пришлось разворошить всеь макет и наложить и скачать png группы выделеных элементов (в контексном меню это предлагается ) далее создаем точечный рисунок открываем его через paint сограняем как png а в скуше оптимизируем и конвертируем в jpg) и делаем ресайз под ретину и обычные экраны
 
       @media (min-resolution: 2dppx) {
-        background-image: url("../../img/background/bg-promo-desktop@2x.jpg");
+        background-image: url("../img/background/bg-promo-desktop@2x.jpg");
       }
     }
   }
