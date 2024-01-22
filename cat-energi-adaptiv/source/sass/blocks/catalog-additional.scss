@@ -39,14 +39,14 @@
 
   span {
     max-width: 320px;
-    position: relative; // только для z-index что бы сделать выше before (зеленая линия )
+    position: relative; // только для z-index что бы сделать выше before (зеленая линия).
     z-index: 1;
     background-color: $white;
     width: max-content;
     padding-left: 22px;
     padding-right: 22px;
     margin-left: -22px;
-    display: flex; // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше)
+    display: flex; // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше).
 
     @media (min-width: $tablet-width) {
       max-width: 700px;
@@ -63,8 +63,8 @@
   }
 }
 
-.catalog-additional__heading::before { // тут именно только before, только тогда этот элемент встанет у самой верхней граници в отличии от after!!! потомучто первый родитель не является position: relative; и позиционировать от верха будем зачет margin-top; оно сместит на определенное количество пикселей вниз отностиельно верхней границы field-group__heading
-  position: absolute; // ни у одного его родителя нет позиии отличающейся от static поэтому возможно элементы тянуться до границ html
+.catalog-additional__heading::before { // тут именно только before, только тогда этот элемент встанет у самой верхней граници в отличии от after!!! потомучто первый родитель не является position: relative; и позиционировать от верха будем зачет margin-top; оно сместит на определенное количество пикселей вниз отностиельно верхней границы field-group__heading.
+  position: absolute; // ни у одного его родителя нет позиии отличающейся от static поэтому возможно элементы тянуться до границ html.
   content: "";
   height: 2px;
   left: 0;
