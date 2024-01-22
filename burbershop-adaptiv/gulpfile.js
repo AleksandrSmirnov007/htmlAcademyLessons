@@ -1,28 +1,25 @@
+//  https://www.dev-notes.ru/articles/javascript-require-vs-import/
 
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import sass from 'gulp-dart-sass';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 
-const gulp = require('gulp');
-const plumber = require('gulp-plumber');
-const sass = require('gulp-dart-sass');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
+import htmlmin from 'gulp-htmlmin';
+import terser from 'gulp-terser';
+import rename from 'gulp-rename';
+import csso from 'postcss-csso';
+import imagemin from 'gulp-imagemin';
+import webp from 'gulp-webp';
+import svgstore from 'gulp-svgstore';
+import {deleteAsync} from 'del'; // на npmjs.com написано так добавлять
 
+import sync from 'browser-sync';
 
-const htmlmin = require("gulp-htmlmin");
-const csso = require("postcss-csso");
-const rename = require("gulp-rename");
-const terser = require("gulp-terser");
-//  при подключении squoosh возникает ошибка (версия node 20.11.0)
-
-
-const webp = require('gulp-webp'); // поставилась gulp-webp 5.0.0 с этой версией не работает, поставил 4.0.1 заработало(Иcправил версию в package.json и в консоли написал npm i, пакет откатился до версии указанной посмотреть пакеты и их версии можно командой npm list --depth=0  )
-const svgstore = require('gulp-svgstore'); // поставилась gulp-webp версия 7.*.*  с этой версией не работает, поставил 6.0.0 заработало(Иcправил версию в package.json и в консоли написал npm i, пакет откатился до версии указанной посмотреть пакеты и их версии можно командой npm list --depth=0  )
-const del = require('del');
-
-
-const sync = require('browser-sync').create();
 // Styles
 
-const styles = () => {
+export const styles = () => {
   return gulp.src('source/sass/style.scss', { sourcemaps: true })
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
@@ -35,91 +32,85 @@ const styles = () => {
     .pipe(sync.stream());
 }
 
-exports.styles = styles;
-
 // html
 
-const html = () => {
-    return gulp.src('source/*.html')
-      .pipe(htmlmin({ collapseWhitespace: true }))
-      .pipe(gulp.dest('build'));
+export const html = () => {
+  return gulp.src("source/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"));
 }
 
-exports.html = html;
+// Scripts
 
-//scripts
-
-const scripts = () => {
+export const scripts = () => {
   return gulp.src("source/js/script.js")
     .pipe(terser())
     .pipe(rename("script.min.js"))
-    .pipe(gulp.dest("build/js"));
+    .pipe(gulp.dest("build/js"))
+    .pipe(sync.stream());
 }
 
-exports.scripts = scripts;
+// Images
 
-// images (squoosh  закоментрован и при функция optimazeImages() не сработает Закоментирую строчку .pipe(squoosh()) изображения на прямую копируются в папку build/image)
-const optimizeImages = () => {
-  return gulp.src("source/image/**/*.{jpg,png,svg}")
-  // .pipe(squoosh())
-  .pipe(gulp.dest("build/image"));
+export const optimizeImages = () => {
+  return gulp.src("source/image/**/*.{png,jpg,svg}")
+    .pipe(imagemin())
+    .pipe(gulp.dest("build/image"))
 }
 
-exports.optimizeImages = optimizeImages;
 
-const copyImages = () => {
-  return gulp.src("source/image/**/*.{jpg,png,svg}")
-  .pipe(gulp.dest("build/image"));
+export const copyImages = () => {
+  return gulp.src("source/image/**/*.{png,jpg,svg}")
+    .pipe(gulp.dest("build/image"))
 }
 
-exports.copyImages = copyImages;
+// WebP
 
-// Webp
-
-const createWebp = () => {
+export const createWebp = () => {
   return gulp.src("source/image/**/*.{jpg,png}")
-  .pipe(webp({quality: 90}))
-  .pipe(gulp.dest("build/image"));
+    .pipe(webp({quality: 90}))
+    .pipe(gulp.dest("build/image"))
 }
 
-exports.createWebp = createWebp;
 
 // Sprite
 
-const sprite = () => {
-  return gulp.src("source/image/icon/*.svg")
-  .pipe(svgstore({
-    inlineSvg: true
-  }))
-  .pipe(rename("sprite.svg"))
-  .pipe(gulp.dest("build/image"));
+export const sprite = () => {
+  return gulp.src("source/image/sprites/*.svg")
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/image"));
 }
 
-exports.sprite = sprite;
+// Copy
 
-// Copy other files
-
-const copy = (done) => {
+ export const copy = (done) => {
   gulp.src([
     "source/fonts/*.{woff2,woff}",
     "source/*.ico",
     "source/image/**/*.svg",
-    "!source/image/icon/*.svg"
+    "!source/image/sprites/*.svg",
   ], {
-    base: "source"})
-    .pipe(gulp.dest("build"));
+    base: "source"
+  })
+    .pipe(gulp.dest("build"))
   done();
 }
 
-exports.copy = copy;
+// Clean
 
-// clean
+export const clean = () => {
+  return deleteAsync("build");
+};
 
-const clean = () => {
-  return del("build");
+// Reload
+
+const reload = (done) => {
+  sync.reload();
+  done();
 }
-
-exports.clean = clean;
 
 // Server
 
@@ -135,19 +126,19 @@ const server = (done) => {
   done();
 }
 
-exports.server = server;
 // Watcher
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
-  gulp.watch('source/js/script.js', gulp.series(scripts));
-  gulp.watch('source/*.html').on('change', sync.reload);
+  gulp.watch("source/js/script.js", gulp.series(scripts));
+  // gulp.watch('source/*.html').on('change', sync.reload); // заменил эту строку из обновления от Кекса в разделе препроцессоров на нижнюю, так как при каждом изменении html-файлов нужно запускать теперь еше функцию минификации html.
+  gulp.watch("source/*.html", gulp.series(html, reload));
 }
 
 
-// Build можно обратить внимание: паралельные задачи стоят последовательным блоком в конце последавательных задач
+// Build
 
-const build = gulp.series(
+export const build = gulp.series(
   clean,
   copy,
   optimizeImages,
@@ -157,16 +148,16 @@ const build = gulp.series(
     scripts,
     sprite,
     createWebp
-  )
+  ),
 );
 
-exports.build = build;
 
-exports.default = gulp.series(
+// Default
+
+export default gulp.series(
   clean,
   copy,
   copyImages,
-
   gulp.parallel(
     styles,
     html,
@@ -174,10 +165,8 @@ exports.default = gulp.series(
     sprite,
     createWebp
   ),
-  // далее можно не включать задачи в gulp.series() так как и так они находятся внутри поледовательных зачач идущих после пралельных
   gulp.series(
     server,
     watcher
   )
 );
-
