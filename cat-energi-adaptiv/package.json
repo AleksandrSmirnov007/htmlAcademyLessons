@@ -3,7 +3,7 @@
   "private": true,
   "description": "Личный проект «{{projectTitle}}» от HTML Academy",
   "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "1.0.0",
+    "@htmlacademy/editorconfig-cli": "^2.0.8",
     "autoprefixer": "10.4.0",
     "browser-sync": "2.27.7",
     "del": "^7.1.0",
