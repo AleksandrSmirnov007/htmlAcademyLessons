@@ -13,7 +13,7 @@ import csso from 'postcss-csso';
 import imagemin from 'gulp-imagemin';
 import webp from 'gulp-webp';
 import svgstore from 'gulp-svgstore';
-import {deleteAsync} from 'del'; // на npmjs.com написано так добавлять
+import deleteAsync from 'del'; // на npmjs.com написано добавлять import {deleteAsync} from 'del' но со временем это стало выдвать ошибку - снял скобки все заработало
 
 import sync from 'browser-sync';
 
