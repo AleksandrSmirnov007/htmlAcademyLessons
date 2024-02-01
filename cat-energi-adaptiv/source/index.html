@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <!-- обязательно добавить следующую строку -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="магазин корма для котов">
     <title>Кэт-энерджи адаптив</title>
     <link rel="stylesheet" href="css/style.min.css">
 
@@ -11,6 +12,13 @@
     <!--  Откуда брать фавиконки и как их приготовить https://www.favicon-generator.org/-->
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/32.svg" type="image/svg+xml">
+    <link rel="preload" href="css/style.min.css" as="style" crossorigin>
+    <link rel="preload" href="img/background/bg-promo-mobile.jpg" as="image" crossorigin>
+
+    <link rel="preload" href="js/script.min.js" as="script" crossorigin>
+    <link rel="preload" href="img/background/bg-promo-mobile.jpg" as="image" crossorigin>
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/oswaldmedium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="apple-touch-icon" href="images/favicons/180.png" sizes="180x180" > <!-- iOS Safari -->
     <link rel="manifest" href="manifest.webmanifest"> <!-- Android Chrome полагается на манифест веб-приложения. Хотя этот манифест не предназначен для Android Chrome, в настоящее время он является его основным сторонником. Android ожидает значок размером 192x192 PNG, прозрачность разрешена и приветствуется. -->
 
@@ -153,13 +161,13 @@
                   <source type-="image/webp" media="(min-width: 768px)" srcset="img/content/cat-fat-tablet.webp, img/content/cat-fat-tablet@2x.webp 2x">
                   <source type-="image/webp" srcset="img/content/cat-fat-mobile.webp, img/content/cat-fat-mobile@2x.webp 2x">
                   <source media="(min-width: 768px)" srcset="img/content/cat-fat-tablet.png, img/content/cat-fat-tablet@2x.png 2x">
-                  <img width="280" height="232" src="img/content/cat-fat-mobile.png" srcset="img/content/cat-fat-mobile@2x.png 2x" alt="фото кота до употребления, кот толстый" aria-hidden="true">
+                  <img width="280" height="232" loading="lazy" src="img/content/cat-fat-mobile.png" srcset="img/content/cat-fat-mobile@2x.png 2x" alt="фото кота до употребления, кот толстый" aria-hidden="true">
                 </picture>
               </div>
               <div class="example__image example__image--after">
                 <picture>
                   <source type="image/webp" srcset="img/content/cat-skinny-tablet.webp, img/content/cat-skinny-tablet@2x.webp 2x">
-                  <img width="243" height="232" src="img/content/cat-skinny-tablet.png" srcset="img/content/cat-skinny-tablet@2x.png 2x" alt="фото кота после употребления, кот стройный" aria-hidden="true">
+                  <img width="243" height="232" loading="lazy" src="img/content/cat-skinny-tablet.png" srcset="img/content/cat-skinny-tablet@2x.png 2x" alt="фото кота после употребления, кот стройный" aria-hidden="true">
                 </picture>
               </div>
             </div>
@@ -191,7 +199,7 @@
         <!-- <img class="contacts__map" width="320" height="362" src="img/content/location@1x.png" alt="изображение карты с расположением нашего офиса"> -->
         <!-- заменили обычную картинку на интерактивную карту В принципе все тоже самое тот же класс и iframe занмает место карты и позиционируется также за счет класса-->
         <!-- чтобы ее добавить нужно ее собрать для этого нуно перейтив конструктор интрактивных карт яндекса  https://yandex.ru/map-constructor/  там отредактировать карту добавить метки и получить код iframe -->
-        <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7123d8e12831f533a7d11328fd657ad637cf1f52ed41f1c0242c16253c8135ae&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+        <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7123d8e12831f533a7d11328fd657ad637cf1f52ed41f1c0242c16253c8135ae&amp;source=constructor" width="100%" height="400" frameborder="0" title="месторасположение"></iframe>
       </footer>
     </main>
 
