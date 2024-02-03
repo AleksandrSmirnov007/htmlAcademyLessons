@@ -1,5 +1,6 @@
 
 
+
 html {
   border: 1px soli #ff0000;
   box-sizing: border-box;
@@ -35,6 +36,36 @@ body {
   color: #999999;
 }
 
+.complete,
+.in-work {
+  position: relative;
+}
+
+.complete::after,
+.in-work::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+}
+
 .complete a {
   color: #333333;
+}
+
+.complete {
+  background-color: rgb(197, 246, 197);
+}
+
+.in-work a {
+  color: #666666;
+}
+
+.in-work {
+  background-color: rgb(246, 243, 197);
+}
+
+.not-start a{
+  color: #d6d5d5;
 }
