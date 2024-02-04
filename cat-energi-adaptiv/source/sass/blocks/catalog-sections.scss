@@ -7,7 +7,7 @@
   }
 }
 
-.catalog-section__container {
+.catalog-sections__container {
   @media (min-width: $desktop-width) { // на ширине для планшетов секции каталога выстраиваются в две колонки между которыми растояние  80px(используем для этого gap)
     display: grid;
     grid-template-columns: 1fr 1fr;

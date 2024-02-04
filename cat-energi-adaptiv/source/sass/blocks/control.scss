@@ -120,7 +120,7 @@
 }
 
 .control:hover .control__lead::before {
-  border: 1px solid #bababa;
+  border: 1px solid $special_grey-1;
 }
 
 .control:focus-within .control__lead::before {

@@ -1,11 +1,11 @@
 .promo {
   padding-top: 26px; // подогнал исходя из картинки бекграунда пользуясь инструментами разработчика в браузере
   text-align: center;
-  background-color: #63a63c;
+  background-color: $color-primary-700;
 
   background-image:
     url("../img/background/bg-promo-mobile.jpg"),
-    linear-gradient(#63a63b 0, #63a63b 302px, $white 302px);
+    linear-gradient($color-primary-800 0, $color-primary-800 302px, $white 302px);
 
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -13,7 +13,7 @@
   @media (min-resolution: 2dppx) {
     background-image:
       url("../img/background/bg-promo-mobile@2x.jpg"),
-      linear-gradient(#63a63b 0, #63a63b 302px, #ffffff 302px);
+      linear-gradient($color-primary-800 0, $color-primary-800 302px, $white 302px);
     background-size:
       auto 302px, // соответственно размер изображения
       auto auto; // соответсвенно размер линеар-градиента (нельзя забывать что background-size можно отдельно задаватьчерез запятую все элементам background-image в последовательности в которой они идут в background-image)
@@ -32,7 +32,7 @@
   &::before {
     // используем картинку с уже наложенным фоном
     @media (min-width: $desktop-width) {
-      background-color: #63a63c;
+      background-color: $color-primary-700;
       position: absolute;
       z-index: -2; // Иначе псевдоэлемент перекрывает все блоки выше, но если поставить -1, то далее мы выводим из потока еще и .promo__image же уменьшаем z-index но оно должно быть выше этого псевдоэлемента (promo::after)
       content: "";

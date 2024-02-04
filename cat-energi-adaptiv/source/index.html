@@ -25,7 +25,7 @@
   <body class="page__body">
 
     <header class="page__header page-header">
-      <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс page-header__nav--closed, для открытого состояния и отображения кнопки-крестик добавить класс page-header__nav--opened  -->
+      <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс page-header__nav- -closed, для открытого состояния и отображения кнопки-крестик добавить класс page-header__nav- -opened  -->
 
         <div class="main-nav__bar">
           <a class="page-header__logo logo" href="index.html">
@@ -43,7 +43,7 @@
         </div>
         <div class="main-nav__wrapper">
           <ul class="site-menu site-menu--index">
-            <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item--active -->
+            <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item- -active -->
               <a class="site-menu__link" title="Мы на главной странице">Главная</a>
             </li>
             <li class="site-menu__item">
@@ -77,7 +77,7 @@
       </header>
 
       <section class="page-main__section catalog-sections">
-        <div class="catalog-section__container container">
+        <div class="catalog-sections__container container">
           <h2 class="visually-hidden">Разделы каталога</h2>
 
           <article class="catalog-sections__item">
@@ -157,8 +157,8 @@
             <div class="example__images">
               <div class="example__image example__image--before example__image--active">
                 <picture>
-                  <source type-="image/webp" media="(min-width: 768px)" srcset="img/content/cat-fat-tablet.webp, img/content/cat-fat-tablet@2x.webp 2x">
-                  <source type-="image/webp" srcset="img/content/cat-fat-mobile.webp, img/content/cat-fat-mobile@2x.webp 2x">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/content/cat-fat-tablet.webp, img/content/cat-fat-tablet@2x.webp 2x">
+                  <source type="image/webp" srcset="img/content/cat-fat-mobile.webp, img/content/cat-fat-mobile@2x.webp 2x">
                   <source media="(min-width: 768px)" srcset="img/content/cat-fat-tablet.png, img/content/cat-fat-tablet@2x.png 2x">
                   <img width="280" height="232" loading="lazy" src="img/content/cat-fat-mobile.png" srcset="img/content/cat-fat-mobile@2x.png 2x" alt="фото кота до употребления, кот толстый" aria-hidden="true">
                 </picture>
@@ -198,7 +198,7 @@
         <!-- <img class="contacts__map" width="320" height="362" src="img/content/location@1x.png" alt="изображение карты с расположением нашего офиса"> -->
         <!-- заменили обычную картинку на интерактивную карту В принципе все тоже самое тот же класс и iframe занмает место карты и позиционируется также за счет класса-->
         <!-- чтобы ее добавить нужно ее собрать для этого нуно перейтив конструктор интрактивных карт яндекса  https://yandex.ru/map-constructor/  там отредактировать карту добавить метки и получить код iframe -->
-        <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7123d8e12831f533a7d11328fd657ad637cf1f52ed41f1c0242c16253c8135ae&amp;source=constructor" width="100%" height="400" frameborder="0" title="месторасположение"></iframe>
+        <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A7123d8e12831f533a7d11328fd657ad637cf1f52ed41f1c0242c16253c8135ae&amp;source=constructor" style="border: none;" width="320" height="400" title="месторасположение"></iframe>
       </footer>
     </main>
 

@@ -75,7 +75,7 @@
   /* stylelint-enable */
   border-radius: 6px;
   height: 6px;
-  background-color: #dcdcdc;
+  background-color: $special_grey-9;
 }
 
 /* stylelint-disable */
@@ -91,7 +91,7 @@
   background-color: $color-primary; // зеленая точка внутри ползунка
   box-shadow: inset 0 0 0 1px $special_grey, // граница в 1рх по краю
     inset 0 0 0 13px $white, // белый фон накрывает зеленый бекграунд на 13рх внутрь от края
-    0 10px 3px rgba(#000000, 0.16); // обычная тень вниз
+    0 10px 3px rgba($black, 0.16); // обычная тень вниз
 }
 
 
@@ -101,7 +101,7 @@
   /* stylelint-enable */
   border-radius: 6px;
   height: 6px;
-  background-color: #dcdcdc;
+  background-color: $special_grey-9;
 }
 
 /* stylelint-disable */
@@ -117,7 +117,7 @@
   box-shadow:
     inset 0 0 0 1px $special_grey, // граница в 1рх по краю
     inset 0 0 0 13px $white, // белый фон накрывает зеленый бекграунд на 13рх внутрь от края
-    0 1px 3px rgba(#000000, 0.16); // обычная тень вниз в sass можно указывать цвет в таком формате
+    0 1px 3px rgba(black, 0.16); // обычная тень вниз в sass можно указывать цвет в таком формате
 }
 
 .switcher__button {

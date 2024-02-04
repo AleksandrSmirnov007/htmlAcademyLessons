@@ -44,7 +44,7 @@
     content: "";
     width: 30px;
     height: 2px;
-    background-color: #d3d3d3;
+    background-color: $special_grey-8;
 
     @media (min-width: $tablet-width) {
       width: 60px;
