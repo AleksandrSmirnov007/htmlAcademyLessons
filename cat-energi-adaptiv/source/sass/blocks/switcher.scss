@@ -1,10 +1,10 @@
 .switcher {
+  position: relative;
+  padding: 0 35px;
   display: grid;
   grid-template-columns: 49px 1fr 49px;
   gap: 13px;
-  padding: 0 35px;
   align-items: center;
-  position: relative;
 
   @media (min-width: $tablet-width) {
     padding: 0 60px;
@@ -21,11 +21,11 @@
 .switcher__toggler {
   margin-top: -4px;
   height: 14px;
-  background-color: $white;
-  border: 1px solid $special_grey;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   position: relative;
+  background-color: $white;
+  border: 1px solid $special_grey;
   border-radius: 6px;
 
   &::after {
@@ -82,12 +82,11 @@
 .switcher__range::-webkit-slider-thumb { // стилизация бегунка
   -webkit-appearance: none;
   /* stylelint-enable */
-  border-radius: 50%;
-  cursor: pointer;
+  margin-top: -14px;
   width: 34px;
   height: 34px;
-
-  margin-top: -14px;
+  border-radius: 50%;
+  cursor: pointer;
   background-color: $color-primary; // зеленая точка внутри ползунка
   box-shadow: inset 0 0 0 1px $special_grey, // граница в 1рх по краю
     inset 0 0 0 13px $white, // белый фон накрывает зеленый бекграунд на 13рх внутрь от края
@@ -99,20 +98,20 @@
 /* stylelint-disable */
 .switcher__range::-moz-range-track {
   /* stylelint-enable */
-  border-radius: 6px;
   height: 6px;
   background-color: $special_grey-9;
+  border-radius: 6px;
 }
 
 /* stylelint-disable */
 .switcher__range::-moz-range-thumb {
   -moz-appearance: none;
   /* stylelint-enable */
-  border-radius: 50%;
-  cursor: pointer;
   width: 34px;
   height: 34px;
   margin-top: -14px;
+  border-radius: 50%;
+  cursor: pointer;
   background-color: $color-primary; // зеленая точка внутри ползунка
   box-shadow:
     inset 0 0 0 1px $special_grey, // граница в 1рх по краю
@@ -140,10 +139,10 @@
 
   @media (min-width: $tablet-width) {
     padding-bottom: 4px;
-    border-bottom: 1px dotted rgba($black, 0.25);
     justify-self: center;
     font-size: 20px;
     line-height: normal;
+    border-bottom: 1px dotted rgba($black, 0.25);
 
     &:hover {
       border-bottom: 1px solid fade-out($black, 0.6);

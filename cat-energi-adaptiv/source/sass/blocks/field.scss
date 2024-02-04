@@ -91,10 +91,10 @@
 
 
 .field textarea {
-  line-height: 2;
   height: 153px;
   padding-top: 4px;
   padding-right: 12px;
+  line-height: 2;
   resize: none; // убираем уголок в правом нижнем углу отвечающий за изменение пользователем размера textarea
 
   @media (min-width: $tablet-width) {

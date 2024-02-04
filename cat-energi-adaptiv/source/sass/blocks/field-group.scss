@@ -10,10 +10,10 @@
   line-height: 26px;
 
   @media (min-width: $tablet-width) {
+    margin-top: 40px;
     margin-bottom: 75px;
     font-size: 36px;
     line-height: 1;
-    margin-top: 40px;
 
     &--comment {
       margin-bottom: 77px;
@@ -28,19 +28,19 @@
     position: relative;
     // только для z-index что бы сделать выше before (зеленая линия )
     z-index: 1;
-    background-color: $white;
-    width: max-content;
     padding-left: 22px;
     padding-right: 22px;
     margin-left: -22px;
     display: flex;
+    width: max-content;
+    background-color: $white;
     // после этого бек становиться белым у блока а не у текста (до этого текст залезал своим беком на другой текст выше)
 
     @media (min-width: $tablet-width) {
-      padding-left: 40px;
-      padding-right: 40px;
       margin-right: -40px;
       margin-left: -40px;
+      padding-left: 40px;
+      padding-right: 40px;
     }
   }
 }
@@ -53,11 +53,11 @@
 
 .field-group__heading::before { // тут именно только before, только тогда этот элемент встанет у самой верхней граници в отличии от after!!! потомучто первый родитель не является position: relative; и позиционировать от верха будем зачет margin-top; оно сместит на определенное количество пикселей вниз отностиельно верхней границы field-group__heading
   position: absolute; // ни у одного его родителя нет позиии отличающейся от static поэтому возможно элементы тянуться до границ html
+  margin-top: 16px;
   content: "";
   height: 2px;
   left: 0;
   right: 0;
-  margin-top: 16px;
   background-color: $color-primary;
 
   @media (min-width: $tablet-width) {
@@ -66,11 +66,11 @@
 }
 
 .field-group__list {
-  list-style-type: none;
   padding: 0;
   margin: 0;
   display: grid;
   gap: 14px;
+  list-style-type: none;
 
   @media (min-width: $tablet-width) {
     gap: 21px;

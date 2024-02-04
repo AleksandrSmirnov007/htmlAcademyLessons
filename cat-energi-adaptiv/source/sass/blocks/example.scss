@@ -27,15 +27,15 @@
   margin-bottom: 40px;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 88px;
     display: grid;
     grid-template-columns: 366px 1fr;
     column-gap: 32px; //не понятно как вычисленное значение
-    margin-bottom: 88px;
   }
 
   @media (min-width: $desktop-width) {
-    grid-template-columns: 366px 70px 1fr; // 366 рх понятно два dt и dl идут рядом через gap 24px, но 70 рх?
     margin-bottom: 0; // так как блок делится на две колонкм в левой .example__content и он нижней границей примыкает к границе блока родителя то отступ вниз 40рх не нужен
+    grid-template-columns: 366px 70px 1fr; // 366 рх понятно два dt и dl идут рядом через gap 24px, но 70 рх?
   }
 }
 
@@ -46,9 +46,9 @@
 }
 
 .example__text {
-  color: $special_dark-grey;
   margin: 0;
   margin-bottom: 18px;
+  color: $special_dark-grey;
 
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1;
@@ -98,12 +98,12 @@
 }
 
 .example__title {
-  width: 87px; // ширина текстового обьекта 77 величина стертой рамки в сумме с обоих сторон 10рх итого 87px
   margin-bottom: -10px; // элемент спускается вниз но что бы не расширять example__item используем отрицательный маржин
+  width: 87px; // ширина текстового обьекта 77 величина стертой рамки в сумме с обоих сторон 10рх итого 87px
   padding: 0 4px; // неюольшие горизонталные отсупы
-  text-align: center;
-  background-color: $special_grey-6;
   color: $special-dark-grey;
+  background-color: $special_grey-6;
+  text-align: center;
   font-family: $font-body;
   font-size: 12px;
   font-weight: 400;
@@ -134,9 +134,9 @@
   text-transform: uppercase;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 11px; // растояние до нижнего элемента выросло
     font-size: 30px;
     line-height: 37px;
-    margin-bottom: 11px; // растояние до нижнего элемента выросло
   }
 }
 
@@ -150,11 +150,11 @@
   text-transform: uppercase;
 
   @media (min-width: $tablet-width) {
+    margin-top: 4px;
     padding-left: 120px;
     text-align: right;
     font-size: 20px;
     line-height: 30px;
-    margin-top: 4px;
   }
 
   @media (min-width: $desktop-width) {
@@ -182,11 +182,11 @@
   margin-bottom: 21px;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 26px;
+    padding: 0 58px;
     display: grid;
     grid-template-columns: 1fr 50%;
-    padding: 0 58px;
     overflow: hidden; // хотя сдесь и так все работало
-    margin-bottom: 26px;
   }
 
   @media (min-width: $desktop-width) {
@@ -198,10 +198,10 @@
 
 .example__image {
   display: none;
-  overflow: hidden;
   width: 280px;
   height: 232px;
   place-content: center;
+  overflow: hidden;
 
   @media (min-width: $tablet-width) {
     width: 296px;

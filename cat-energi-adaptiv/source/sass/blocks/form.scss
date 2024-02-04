@@ -8,16 +8,16 @@
   }
 
   @media (min-width: $desktop-width) {
-    grid-template-columns: 1fr 1fr;
     padding: 0;
+    grid-template-columns: 1fr 1fr;
     column-gap: 80px;
   }
 }
 
 .form__group {
-  border: none;
   margin: 0; // обнуляю все отступы потому, что под классом .form__group у меня идет тег fieldset и при заданных паддингах странное поведение тег legend внутри не реагирует на них никак а также после легенд появляется отступ до полей раввный заданному вертикальному паддингу, пэтому я я все обнулил  а отступы буду реалиизовать дополнительными оберткой внутри fieldset
   padding: 0;
+  border: none;
 
   @media (min-width: $desktop-width) {
     grid-column: 1 / -1;
@@ -91,12 +91,12 @@
   text-align: center;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 72px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    text-align: left;
     align-items: center;
-    margin-bottom: 72px;
+    text-align: left;
   }
 
   @media (min-width: $desktop-width) {
@@ -124,7 +124,7 @@
   line-height: 16px;
 
   @media (min-width: $tablet-width) {
-    font-size: 16px;
     margin-bottom: 6px;
+    font-size: 16px;
   }
 }

@@ -32,7 +32,6 @@
   &::before {
     // используем картинку с уже наложенным фоном
     @media (min-width: $desktop-width) {
-      background-color: $color-primary-700;
       position: absolute;
       z-index: -2; // Иначе псевдоэлемент перекрывает все блоки выше, но если поставить -1, то далее мы выводим из потока еще и .promo__image же уменьшаем z-index но оно должно быть выше этого псевдоэлемента (promo::after)
       content: "";
@@ -40,6 +39,7 @@
       right: 0; // по правой границе родителя
       bottom: 82px; // по нижней границе родителя
       left: 50%; // от середины блока родителя по горизонтали
+      background-color: $color-primary-700;
       background-repeat: no-repeat;
       background-position: left bottom;
       background-size: 1044px 696px;
@@ -60,10 +60,10 @@
   }
 
   @media (min-width: $tablet-width) {
+    text-align: left; // выравнивание текста по левому краю
     color: $black; // для планшетов: цвет текста черный,
     background-image: none; // изображения нет,
     background-color: transparent; // фон прозрачный
-    text-align: left; // выравнивание текста по левому краю
   }
 }
 
@@ -74,8 +74,8 @@
   }
 
   @media (min-width: $desktop-width) {
-    min-height: 636px; // непонял откуда эта высота
     padding: 85px 610px 95px 80px; // 80px
+    min-height: 636px; // непонял откуда эта высота
   }
 }
 
@@ -103,8 +103,8 @@
   text-transform: uppercase;
 
   @media (min-width: $tablet-width) {
-    font-size: 20px;
     margin-bottom: 50px;
+    font-size: 20px;
   }
 }
 
@@ -113,9 +113,9 @@
 
   @media (min-width: $tablet-width) {
     position: absolute;
+    z-index: -1;
     left: 0;
     bottom: 0;
-    z-index: -1;
     width: 709px;
     height: 609px;
   }

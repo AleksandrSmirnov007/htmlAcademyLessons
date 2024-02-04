@@ -1,14 +1,14 @@
 .developer {
-  letter-spacing: 0.01em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
   color: $special-dark-grey;
   font-family: $font-body;
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr auto;
+  letter-spacing: 0.01em;
 }
 
 .developer__logo {

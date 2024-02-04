@@ -37,12 +37,12 @@
 }
 
 .main-nav__toggle {
-  border: none; // убираем границу на кнопке которая была по умолчанию
+  position: relative;
+  display: block;
   width: 44px; //такая ширина бургер-кнопки сделана для увеличения зоны взаимодествия с кнопкой, хоть и визуально кнопка меньшего размера меньшего размера... 24px
   height: 39px;
   background-color: transparent;
-  position: relative;
-  display: block;
+  border: none; // убираем границу на кнопке которая была по умолчанию
 
   @media (min-width: $tablet-width) { //начиная с ширины для планшетов 768 px и больше (шире) ( версия для десктопов включается также по умолчанию так как она шире 768 px) бургер кнопка для вызова меню не будет отображаться.
     display: none;
@@ -62,10 +62,10 @@
 
 .main-nav__wrapper {
   @media (max-width: $mobile-width-only) {
+    z-index: 2;
     position: absolute;
     top: 100%;
     width: 100%;
-    z-index: 2;
   }
 }
 
@@ -73,12 +73,12 @@
   &::before,
   &::after { //    рисуем кнопку крест(когда меню открыто) с помощью псведоэлемента и его теней
     position: absolute;
+    content: "";
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
-    content: "";
     width: 24px;
     height: 1.5px;
     background-color: $black;
