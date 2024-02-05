@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "^2.0.8",
     "@linthtml/linthtml": "^0.9.4",
     "linthtml-config-htmlacademy": "^1.0.3",
     "stylelint": "^14.16.1",
