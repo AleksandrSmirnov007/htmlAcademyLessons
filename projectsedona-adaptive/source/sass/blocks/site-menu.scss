@@ -1,0 +1,82 @@
+// site-menu являентся ребенком page-header__nav, но выделен в отдельный блок пэтому будем стилизовать все элементы в этом файле
+
+.site-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; // по тегу site-menu  является списком, избавляемся от отступов и меток присовоенных по умолчанию.
+
+  @media (max-width: $mobile-width-only) {
+    font-size: 18px; // в мобильной версии шрифт 20px жирность: 500,
+    font-weight: 700; // в мобильной версии вес шрифта 500
+    text-align: center; // в мобильной версии пункты меню центрируются в своих полях
+    background-color: $color-primary; // фон у списка целмком так как если давать ссылкам по отделности то просвечивают сквозь границы при определенном маштабе
+  }
+}
+
+.site-menu__item {
+  @media (max-width: $mobile-width-only) {
+    border-top: 1px solid fade-out($basic_white, 0.8);
+    border-bottom: 1px solid fade-out($basic_black, 0.8);
+  }
+}
+
+.site-menu__item--active a { // отмечае текущую(активную) страницу сайта
+  @media (min-width: $tablet-width) {
+    color: $color-secondary;
+  }
+}
+
+.site-menu__link {
+  display: block; // для взаимодействия с падингами по умолчанию inline вроде и веритакальные не работают как надо
+  padding: 18px 20px; // верхний боковые нижний
+  color: $basic_white; // непосредствено задаем цвет ссылкам, из за юзер-агент они не наследуют его,
+  text-decoration: none; // так же убираем подчеркивание по этой же причине
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: $font-heading; // шрифт пунктов меню Освальд используем переменную одержащию этот шрифт
+  line-height: 1; // высота строки равна 1(то есть равна размеру шрифта)
+
+  &:not([href]) {
+    cursor: default;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    &[href]:hover {
+      background-color: $color-primary-400;
+    }
+
+    &[href]:active {
+      background-color: $color-primary-800;
+    }
+  }
+
+  @media (min-width: $tablet-width) { // при ширине для планшета и шире меняются расстояния между элемнтами
+    padding-top: 18px; // растояние между элементами по горизонтали в среднем 34px делим его на два паддинга получаем 17px вертикальные тоже заодно задаем 17px
+    padding-bottom: 16px;
+    padding-right: 18px;
+    padding-left: 18px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+
+    &[href]:hover {
+      color: fade-out($basic_black, 0.4); // 1 - opacity 0.6 = 0.7
+    }
+
+    &[href]:active { // далее для всех ширин нужно прописывать селектор по атрибуту
+      color: fade-out($basic_black, 0.7); // 1 - opacity 0.3 = 0.7
+    }
+  }
+
+
+  @media (min-width: $desktop-width) {
+    padding-top: 23px;
+    padding-bottom: 21px;
+    padding-left: 16px; // корректируем немного под перфект пиксель
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+

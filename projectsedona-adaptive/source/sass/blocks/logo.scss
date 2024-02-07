@@ -1,0 +1,20 @@
+.logo {
+  text-align: center;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.logo__image {
+  width: 102px;
+  height: 84px;
+
+  @media (min-width: $desktop-width) {
+    width: 186px;
+    height: 96px;
+  }
+}

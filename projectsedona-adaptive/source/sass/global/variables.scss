@@ -1,0 +1,21 @@
+// colors
+$color-primary: #81b3d2;
+$color-primary-400: #669ec0;
+$color-primary-800: #5496bd;
+$color-secondary: #766357;
+
+
+$basic-white: #ffffff;
+$basic-black: #000000;
+$special_black: #333333;
+$basic_gray: #f2f2f2;
+$special_gray-400: #e5e5e5;
+$special_gray-800: #d5d5d5;
+$status_error: #ff0000;
+
+$font-heading: "PT Sans", sans-serif;
+// widthes
+$tablet-width: 768px;
+$desktop-width: 1200px;
+//  1280-80 =1200 то есть версия для десктопов будет срабатывать на 80 раньше, но унас есть запас за счет отступов по 40рх
+$mobile-width-only: 767px;

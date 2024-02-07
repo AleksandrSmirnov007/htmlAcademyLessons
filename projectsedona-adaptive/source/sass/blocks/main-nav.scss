@@ -1,0 +1,108 @@
+.main-nav {
+  position: relative;
+  font-family: $font-heading;
+  font-weight: 700;
+  color: $basic_black;
+}
+
+.main-nav__bar {
+  @media (max-width: $mobile-width-only) { // только для мобильной версии (для ширины равной или меньше 767px)
+    margin: 0 auto; // центрируем элемент по горизонтали отностиельно родительского блока(page-header__nav который тянется на всю ширину <header>, а также <body> , а также <html> , а также вьюпорта)
+    padding: 0 20px;
+    display: grid; // элемент page-header__bar включает в себя элементы .page-header__logo(внутри которого два элемента лого) и .page-header__toggle
+    grid-template-columns: 34px 1fr 34px; // задали симметричную сетку по горизонтали. 34px это ширина левого элемента в блоке лого, кнопка же шириной 24px. Но нам нужна симметричная сетка(тогда центральтный элемент можно выставить по центру например с помошь правила justify-self: center;  поэтому крайние столбцы делаем одинаковыми, равными ширине, равной ширине самого широкого 34px.Однако так как блок лого сосотоит из двух элементов нужно разместить его в первых двух столбцах и построить в нем сетку стобцов 34px и 1fr . Тогда сетко лого совпадет с сеткой .page-header__bar в первых двух столбцах и выравние по точно центру будет возможно.
+    gap: 16px; // тут промежуток скорее для приличия -  визуально ничего не изменится.
+    align-items: center; // выравнивание элементов по вертикали по центру
+  }
+}
+
+.main-nav__toggle {
+  position: relative;
+  display: block;
+  width: 44px; //такая ширина бургер-кнопки сделана для увеличения зоны взаимодествия с кнопкой, хоть и визуально кнопка меньшего размера меньшего размера... 24px
+  height: 39px;
+  background-color: transparent;
+  border: none; // убираем границу на кнопке которая была по умолчанию
+  z-index: 4;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: $tablet-width) { //начиная с ширины для планшетов 768 px и больше (шире) ( версия для десктопов включается также по умолчанию так как она шире 768 px) бургер кнопка для вызова меню не будет отображаться.
+    display: none;
+  }
+}
+
+.main-nav--nojs {
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav__wrapper {
+    position: static;
+    display: block;
+  }
+}
+
+.main-nav__wrapper {
+  @media (max-width: $mobile-width-only) {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.main-nav--opened .main-nav__toggle {
+  &::before,
+  &::after { //    рисуем кнопку крест(когда меню открыто) с помощью псведоэлемента и его теней
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 28px;
+    height: 4px;
+    background-color: $basic_white;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
+
+.main-nav--closed .main-nav__toggle {
+  &::before { //    рисуем кнопку бургер(когда меню закрыто) с помощью псведоэлемента и его теней
+    position: absolute;
+    top: 10px;
+    //центрируем по горизонтали right: 0; left: 0; margin-right: 0; margin-left: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    content: "";
+    width: 23px;
+    height: 4px;
+    background-color: $color-primary;
+    box-shadow:
+      0 9px 0 0 $color-primary,
+      0 18px 0 0 $color-primary;
+  }
+}
+
+.main-nav--closed .main-nav__wrapper {
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+}

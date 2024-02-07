@@ -1,0 +1,26 @@
+.developer {
+  width: max-content;
+  display: grid;
+  align-items: center;
+  grid-template-columns: max-content max-content;
+  color: $basic_black;
+  font-family: $font-heading;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+.developer__logo {
+  margin-left: 10px;
+  color: $basic_black;; // перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
+}
+
+.developer:hover .developer__logo {
+  color: $color-primary;
+}
+
+.developer:active {
+  opacity: 0.3;
+}

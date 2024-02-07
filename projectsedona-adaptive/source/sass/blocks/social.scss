@@ -1,0 +1,39 @@
+.social {
+  margin-bottom: 21px;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: -11px;
+    margin-top: -11px;
+    padding: 0;
+  }
+}
+
+.social__item {
+  margin: 0; // сделаем неюльшие отступы элементов друго от друга по горизонтали
+}
+
+.social__link {
+  margin: 3px;
+  width: 46px;
+  height: 48px;
+  display: grid;
+  place-content: center;
+  color: $color-primary; // не понятно пока почему задается ссылкам цвет шрифта если будут участвовать иконки. Теперь понятно. перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
+  background-color: $color-primary;
+  @media (min-width: $tablet-width) {
+
+  }
+
+  &:hover {
+    background-color: $color-primary-400; // перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
+  }
+
+  &:active {
+    background-color: $color-primary-800;
+  }
+}
