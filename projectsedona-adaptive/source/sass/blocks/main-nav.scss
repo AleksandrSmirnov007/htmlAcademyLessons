@@ -2,7 +2,7 @@
   position: relative;
   font-family: $font-heading;
   font-weight: 700;
-  color: $basic_black;
+  color: $basic-black;
 }
 
 .main-nav__bar {
@@ -71,7 +71,7 @@
     margin: auto;
     width: 28px;
     height: 4px;
-    background-color: $basic_white;
+    background-color: $basic-white;
   }
 
   &::after {

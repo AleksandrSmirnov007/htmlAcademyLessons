@@ -7,6 +7,16 @@
   &:active {
     opacity: 0.6;
   }
+
+  @media(min-width: $tablet-width) {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 51px);
+  }
+
+  @media(min-width: $desktop-width) {
+    left: calc(50% - 93px);
+  }
 }
 
 .logo__image {

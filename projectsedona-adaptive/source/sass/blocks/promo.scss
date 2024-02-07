@@ -1,0 +1,51 @@
+.promo {
+  width: 100%;
+  height: 389px;
+  background-repeat: no-repeat;
+  background-position:
+    left 50% bottom 0,
+    50% 90px,
+    50% 0;
+  background-size:
+    1200px 57px,
+    282px 214px,
+    901px 389px;
+  background-image:
+    url("../img/background/intro-triangle.svg"),
+    url("../img/background/background-text-index.svg"),
+    url("../img/background/back-mobile.jpg");
+
+  @media(min-resolution: 2dppx) {
+    background-image:
+    url("../img/background/intro-triangle.svg"),
+    url("../img/background/background-text-index.svg"),
+    url("../img/background/back-mobile@2x.jpg");
+  }
+  // протестировать (может нужно указать другой размер для двойной плотности)
+  // размер бекграунда jpg нормальный для 1x и 2x экранов
+
+
+  // начиная с планшетной версии загружаем большие изображения и увеличиваем размер svg, также изменяется отступ сверху для текста-бекграунда
+  @media(min-width: $tablet-width) {
+    height: 517px;
+    background-position:
+      left 50% bottom 0,
+      50% 78px,
+      50% 0;
+    background-size:
+      1200px 57px,
+      459px 349px,
+      1200px 518px;
+    background-image:
+      url("../img/background/intro-triangle.svg"),
+      url("../img/background/background-text-index.svg"),
+      url("../img/background/back-desktop.jpg");
+
+      @media(min-resolution: 2dppx) {
+        background-image:
+        url("../img/background/intro-triangle.svg"),
+        url("../img/background/background-text-index.svg"),
+        url("../img/background/back-desktop@2x.jpg");
+      }
+  }
+}

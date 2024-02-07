@@ -1,22 +1,42 @@
-// site-menu являентся ребенком page-header__nav, но выделен в отдельный блок пэтому будем стилизовать все элементы в этом файле
-
 .site-menu {
   margin: 0;
   padding: 0;
   list-style-type: none; // по тегу site-menu  является списком, избавляемся от отступов и меток присовоенных по умолчанию.
-
+  text-align: center;
   @media (max-width: $mobile-width-only) {
-    font-size: 18px; // в мобильной версии шрифт 20px жирность: 500,
-    font-weight: 700; // в мобильной версии вес шрифта 500
-    text-align: center; // в мобильной версии пункты меню центрируются в своих полях
+    font-size: 18px;
+    font-weight: 700;
+
     background-color: $color-primary; // фон у списка целмком так как если давать ссылкам по отделности то просвечивают сквозь границы при определенном маштабе
   }
+
+  @media(min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 153px 153px 156px 153px 153px;
+    justify-content: center;
+  }
+
+  @media(min-width: $desktop-width) {
+    grid-template-columns: 239px 239px 244px 239px 239px;
+  }
+}
+//займем пустыми псевдоэлементами две центральные ячейки под логотипом, остальные пункты меню разместятся в своюодных
+.site-menu::before {
+  content: "";
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.site-menu::after {
+  content: "";
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
 }
 
 .site-menu__item {
   @media (max-width: $mobile-width-only) {
-    border-top: 1px solid fade-out($basic_white, 0.8);
-    border-bottom: 1px solid fade-out($basic_black, 0.8);
+    border-top: 1px solid fade-out($basic-white, 0.8);
+    border-bottom: 1px solid fade-out($basic-black, 0.8);
   }
 }
 
@@ -29,7 +49,7 @@
 .site-menu__link {
   display: block; // для взаимодействия с падингами по умолчанию inline вроде и веритакальные не работают как надо
   padding: 18px 20px; // верхний боковые нижний
-  color: $basic_white; // непосредствено задаем цвет ссылкам, из за юзер-агент они не наследуют его,
+  color: $basic-white; // непосредствено задаем цвет ссылкам, из за юзер-агент они не наследуют его,
   text-decoration: none; // так же убираем подчеркивание по этой же причине
   font-size: 20px;
   font-weight: 700;
@@ -52,31 +72,17 @@
   }
 
   @media (min-width: $tablet-width) { // при ширине для планшета и шире меняются расстояния между элемнтами
-    padding-top: 18px; // растояние между элементами по горизонтали в среднем 34px делим его на два паддинга получаем 17px вертикальные тоже заодно задаем 17px
-    padding-bottom: 16px;
-    padding-right: 18px;
-    padding-left: 18px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
+    padding: 22px 0 20px;
+    color: $basic-black;
+    font-size: 14px;
 
     &[href]:hover {
-      color: fade-out($basic_black, 0.4); // 1 - opacity 0.6 = 0.7
+      color: $color-primary;
     }
 
     &[href]:active { // далее для всех ширин нужно прописывать селектор по атрибуту
       color: fade-out($basic_black, 0.7); // 1 - opacity 0.3 = 0.7
     }
-  }
-
-
-  @media (min-width: $desktop-width) {
-    padding-top: 23px;
-    padding-bottom: 21px;
-    padding-left: 16px; // корректируем немного под перфект пиксель
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
   }
 }
 
