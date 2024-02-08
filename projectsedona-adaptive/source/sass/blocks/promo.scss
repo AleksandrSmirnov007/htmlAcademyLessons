@@ -3,7 +3,7 @@
   height: 389px;
   background-repeat: no-repeat;
   background-position:
-    left 50% bottom 0,
+    left 50% bottom -7px,
     50% 90px,
     50% 0;
   background-size:
@@ -11,13 +11,13 @@
     282px 214px,
     901px 389px;
   background-image:
-    url("../img/background/intro-triangle.svg"),
+    url("../img/background/intro-triangle-mod.svg"),
     url("../img/background/background-text-index.svg"),
     url("../img/background/back-mobile.jpg");
 
   @media(min-resolution: 2dppx) {
     background-image:
-    url("../img/background/intro-triangle.svg"),
+    url("../img/background/intro-triangle-mod.svg"),
     url("../img/background/background-text-index.svg"),
     url("../img/background/back-mobile@2x.jpg");
   }
@@ -29,7 +29,7 @@
   @media(min-width: $tablet-width) {
     height: 517px;
     background-position:
-      left 50% bottom 0,
+      left 50% bottom -7px,
       50% 78px,
       50% 0;
     background-size:
@@ -37,13 +37,13 @@
       459px 349px,
       1200px 518px;
     background-image:
-      url("../img/background/intro-triangle.svg"),
+      url("../img/background/intro-triangle-mod.svg"),
       url("../img/background/background-text-index.svg"),
       url("../img/background/back-desktop.jpg");
 
       @media(min-resolution: 2dppx) {
         background-image:
-        url("../img/background/intro-triangle.svg"),
+        url("../img/background/intro-triangle-mod.svg"),
         url("../img/background/background-text-index.svg"),
         url("../img/background/back-desktop@2x.jpg");
       }

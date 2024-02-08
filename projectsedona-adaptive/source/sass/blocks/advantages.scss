@@ -3,16 +3,28 @@
 }
 
 .advantages__header {
+  padding: 32px 0 11px;
   background-color: $basic-white;
+  @media (min-width: $tablet-width) {
+    padding: 43px 0 52px;
+    width: 520px;
+  }
 }
+
 .advantages__slogan {
+  margin: 0;
+  margin-bottom: 25px;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
   color: $basic-black;
+  @media(min-width: $tablet-width) {
+    font-size: 21px;
+  }
 }
 
 .advantages__intro {
+  margin: 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 26px;
@@ -24,43 +36,117 @@
   padding: 0;
   list-style-type: none;
   background-color: $special-gray-600;
+  counter-reset: counter-item-advantages; /*запускаем функцию счетчик, видимо ка только создается элемент в данном случае список */
+
+  @media(min-width: $tablet-width) {
+    width: $tablet-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media(min-width: $desktop-width) {
+    width: $desktop-width;
+  }
 }
 
 .advantages__item {
-  padding-top: 25px 0;
   text-align: center;
+  counter-increment: counter-item-advantages; /* добавляем единицу (по умолчанию функция +1) счетчик будет увеличиватся на единицу при рендере каждого .advantages__item в принципе можно вписать это в любой элемент присутсвующий элемент например .advantages__title или .advantages__description и будет также работать и прибавляться единица */
+  @media (min-width: $tablet-width) {
+    min-height: 256px;
+  }
+}
+
+.advantages__item--large {
+  padding-top: 15px;
+  color: $basic-white;
+  background-color: $color-primary;
+  @media (min-width: $tablet-width) {
+    padding-top: 0;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.advantages__item--large:first-of-type {
+  padding-top: 30px;
+  background-size: 768px 36px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: url("../img/background/down-triangle.svg");
+  @media(min-width: $tablet-width) {
+    padding-top: 0;
+    background-image: none;
+  }
+}
+
+.advantages__item--small:not(:last-child) .advantages__description {
+  border-bottom: 1px solid $special-gray-900;
+  @media (min-width: $tablet-width) {
+    border: none;
+  }
 }
 
 .advantages__title {
+  padding-top: 25px;
   width: 280px;
   margin: 0 auto;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
-  padding-top: 25px;
-  padding-bottom: 50px;
+  @media (min-width: $tablet-width) {
+    width: auto;
+    padding: 42px 62px 0;
+  }
 }
 
 .advantages__description {
   margin: 0 auto;
+  padding-bottom: 25px;
   width: 280px;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-  padding-bottom: 25px;
+  @media (min-width: $tablet-width) {
+    width: auto;
+    padding: 0 40px 42px;
+  }
+}
+
+.advantages__description::before {
+  display: block;
+  margin: 14px auto 22px;
+  content: "— №" counter(counter-item-advantages) " —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
+}
+
+.advantages__image-wrapper {
+  @media(min-width: $tablet-width) {
+    grid-column: span 2;
+  }
+}
+
+.advantages__item--large:nth-of-type(2n) .advantages__head-wrapper {
+  @media (min-width: $tablet-width) {
+    order: 2;
+  }
 }
 
 .advantages__image {
+  object-fit: cover;
+  height: 260px;
   display: block;
   margin: 0 auto;
-}
-.advantages__item--large {
-  color: $basic-white;
-  background-color: $color-primary;
-}
 
-.advantages__item--small:not(:last-child) .advantages__description {
-  border-bottom: 1px solid $special-gray-900;
+  @media (min-width: $tablet-width) {
+    width: 512px;
+    height: 256px;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 800px;
+  }
 }
 
 .advantages__details-list {
@@ -72,6 +158,13 @@
   color: $basic-black;
   background-color: $basic-white;
   text-align: left;
+  @media(min-width: $tablet-width) {
+    grid-column: 1 / -1;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
 }
 
 .advantages__details-item {
@@ -79,6 +172,23 @@
   margin: 0 auto;
   padding-left: 50px;
   padding-bottom: 26px;
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+    padding: 158px 39px 42px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 80px;
+  }
+}
+
+.advantages__details-item:nth-child(2) {
+  @media (min-width: $tablet-width) {
+    order: 2;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 }
 
 .advantages__details-title {
@@ -87,6 +197,37 @@
   color: $basic-black;
   margin: 0;
   margin-bottom: 25px;
+  position: relative;
+}
+
+.advantages__details-title::before {
+  position: absolute;
+  left: -52px;
+  top: -10px;
+  content: "";
+  width: 40px;
+  height: 38px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  @media (min-width: $tablet-width) {
+    width: 76px;
+    height: 75px;
+    left: calc(50% - 40px);
+    top: calc(-70px - 100%);
+  }
+}
+
+.advantages__details-title--housing::before {
+  background-image: url("../img/background/icon-house.svg");
+}
+
+.advantages__details-title--souvenirs::before {
+  background-image: url("../img/background/icon-gift.svg");
+}
+
+.advantages__details-title--food::before {
+  background-image: url("../img/background/icon-burger.svg");
 }
 
 .advantages__details-description {

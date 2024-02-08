@@ -1,8 +1,6 @@
-<svg width="1199.900024" height="57.000000" viewBox="0 0 1199.9 57" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<desc>
-			Created with Pixso.
-	</desc>
-	<defs/>
-	<path id="Vector" d="M249.6 23.7L0 0L0 57L249.6 57L600 57L249.6 0L249.6 23.7Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
-	<path id="Vector" d="M950.4 23.7L950.4 0L600 57L950.4 57L1199.9 57L1199.9 0L950.4 23.7Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+<svg width="1200" height="57" viewBox="0 0 1200 57" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<path d="M249.6 23.7L0 0L0 57L249.6 57L600 57L249.6 0L249.6 23.7Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+	<path d="M950.4 23.7L950.4 0L600 57L950.4 57L1199.9 57L1199.9 0L950.4 23.7Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+  <rect x="0" y="57" width="1200" height="10" fill="#ffffff" stroke="#ffffff"/>
+</svg>
 </svg>

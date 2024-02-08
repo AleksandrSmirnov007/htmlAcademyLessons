@@ -1,0 +1,13 @@
+<svg width="19.905457" height="14.000000" viewBox="0 0 19.9055 14" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<linearGradient id="paint_linear_1335_230_0" x1="9.952705" y1="0.000000" x2="9.952705" y2="14.000000" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#FFFFFF"/>
+			<stop offset="1.000000" stop-color="#E1E1E1"/>
+		</linearGradient>
+	</defs>
+	<path id="icon-youtube.svg" d="M17.1 0L2.79999 0C1.29999 0 0 1.30005 0 2.80005L0 11.1001C0 12.7 1.29999 14 2.79999 14L17.1 14C18.7 14 19.9 12.7 19.9 11.2L19.9 2.80005C20 1.30005 18.7 0 17.1 0ZM7 10.3999L7 3.6001L13.8 7L7 10.3999Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+	<path id="icon-youtube.svg" d="M17.1 0L2.79999 0C1.29999 0 0 1.30005 0 2.80005L0 11.1001C0 12.7 1.29999 14 2.79999 14L17.1 14C18.7 14 19.9 12.7 19.9 11.2L19.9 2.80005C20 1.30005 18.7 0 17.1 0ZM7 10.3999L7 3.6001L13.8 7L7 10.3999Z" fill="url(#paint_linear_1335_230_0)" fill-opacity="0" fill-rule="nonzero"/>
+</svg>

@@ -1,0 +1,29 @@
+.search {
+  background-color: $basic-white;
+  padding: 33px 0 49px;
+}
+
+.search__container {
+  @media (min-width: $tablet-width) {
+    width: 458px;
+  }
+}
+
+.search__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.search__text {
+  color: $special-black;
+  font-size: 14px;
+  margin-bottom: 27px;
+}
+
+.search__button {
+  font-size: 21px;
+  font-weight: 700;
+  width: 100%
+}

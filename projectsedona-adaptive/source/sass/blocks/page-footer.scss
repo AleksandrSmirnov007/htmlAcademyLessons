@@ -1,27 +1,34 @@
 .page-footer {
-  padding: 38px 26px;
   background-color: $basic_white;
-  text-align: center;
-
-  @media (min-width: $tablet-width) {
-    padding: 33px 0;
-  }
 }
 
 .page-footer__container {
-  background-color: aqua;
-  // для мобильной версии устраивает что элементы идут в стандартном потоке по умолчанию, а для версий палншета и шире зададим сетку
+  padding: 38px 0 23px;
   @media (min-width: $tablet-width) {
+    padding: 33px 60px;
     display: grid;
-    grid-template-columns: 170px 1fr 170px; // элементы в третьем столбце по ширине в сумме составят 163рх округлим до четного (164px). В первом столбце ширина элемента меньше чем 164рх но список соц сетей в среднем столбце должен по точно по середине, поэтому крайние стобцы деалем одинаковыми и равными 164рх
+    grid-template-columns: max-content 1fr max-content; // элементы в третьем столбце по ширине в сумме составят 163рх округлим до четного (164px). В первом столбце ширина элемента меньше чем 164рх но список соц сетей в среднем столбце должен по точно по середине, поэтому крайние стобцы деалем одинаковыми и равными 164рх
     gap: 16px; // на макете он не обозначен, но добавим его произвольно что бы столбцы не сливались между собой
     align-items: center;
   }
 }
 
 .page-footer__link {
-  @media (max-width: $mobile-width-only) { // такая формулировка позволить нам применить данное рпавтло только для мобильной версии, для версии экрана шире востановятся настройки по умолчанию
-    margin-bottom: 32px;
+  font-size: 21px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 32px;
+  color: $basic-black;
+  display: block;
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+}
+
+.page-footer__link-text {
+  margin: 0;
+  @media (min-width: $tablet-width) {
+    text-align: left;
   }
 }
 

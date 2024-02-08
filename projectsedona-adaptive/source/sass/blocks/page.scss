@@ -19,6 +19,10 @@
     font-size: 16px;
     line-height: 24px;
   }
+
+  @media (min-width: $desktop-width) {
+    background-color: $basic-gray;
+  }
 }
 
 .page__body {
@@ -26,6 +30,10 @@
   min-height: 100%; // теперь body не может быть меньше по высоте чем html, а значит и меньше чем высота вьпорта так как боди ребенок html. Кпримеру удалил <main>...</main> контента мало но высота боди все равно равна высоте вьюпорта ( проверил добавив боди следующие правила outline: 1px solid green; outline-offset: -4px;) Если еонтента много то боди просто вываливается из html вниз и это нормально.
   color: $basic-black;
   background-color: $basic-white;
+  max-width: $desktop-width;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 14px 7px fade-out($basic-black, 0.9);
 
   // Стили для нагдлядного представления где находится body отностельно html (outline: 1px solid green; outline-offset: -4px;)
 }

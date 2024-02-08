@@ -35,5 +35,8 @@
 
   &:active {
     background-color: $color-primary-800;
+    svg {
+      opacity: 0.3;
+    }
   }
 }
