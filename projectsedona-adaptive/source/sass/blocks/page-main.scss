@@ -1,1 +1,34 @@
+.page-main__section {
+  text-align: center;
+}
 
+
+.page-main__header {
+  padding: 32px 0 11px;
+  background-color: $basic-white;
+  @media (min-width: $tablet-width) {
+    padding: 43px 0 52px;
+    width: 520px;
+  }
+}
+
+
+.page-main__heading {
+  margin: 0;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: $basic-black;
+  @media(min-width: $tablet-width) {
+    font-size: 21px;
+  }
+}
+
+.page-main__subheading {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color: $basic-black;
+}
