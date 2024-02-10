@@ -44,55 +44,130 @@
     <main class="page__main page-main">
       <h1 class="visually-hidden">Туристический город Седона</h1>
 
-      <header class="page-main__header promo promo--short">
+      <header class="page-main__header promo promo--short"></header>
 
-      </header>
       <section class="page-main__section media">
 
         <h2 class="visually-hidden">Фото и видео из мест города Седона</h2>
-        <div class="page-main__header container">
+        <div class="page-main__header page-main__header--catalog container">
           <p class="page-main__heading">Фото и видео</p>
           <p class="page-main__subheading">Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике.</p>
         </div>
 
-        <ul class="media__list">
-          <li class="media__item">
-            <img class="media__image" width="280" height="280" src="img/catalog/photo-1-@1x-280x280.jpg" alt="Фото асфальтовай дороги к холмам">
-            <h3 class="media__heading">неродные просторы</h3>
-            <p class="media__author">Автор фото: Борис</p>
-            <button class="media__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="media__like-counter">1350</span>
-          </li>
-          <li class="media__item">
-            <img class="media__image" width="280" height="280" src="img/catalog/photo-2-@1x-280x280.jpg" alt="Фото кактуса на фоне скал">
-            <h3 class="media__heading">Местная растительность</h3>
-            <p class="media__author">Автор фото: Сергей</p>
-            <button class="media__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="media__like-counter">143</span>
-          </li>
-          <li class="media__item">
-            <img class="media__image" width="280" height="280" src="img/catalog/photo-3-@1x-280x280.jpg" alt="Фото Петляющей среди деревьев дороги">
-            <h3 class="media__heading">Дорога на север</h3>
-            <p class="media__author">Автор фото: Петр</p>
-            <button class="media__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="media__like-counter">96</span>
-          </li>
-          <li class="media__item">
-            <img class="media__image" width="280" height="280" src="img/catalog/photo-4-@1x-280x280.jpg" alt="Фото моста дьявола">
-            <h3 class="media__heading">Мост дьявола</h3>
-            <p class="media__author">Автор фото: Антон</p>
-            <button class="media__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="media__like-counter">254</span>
+        <ul class="gallery__list container">
+          <li class="gallery__item">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-1-desktop.webp 1x, img/catalog/photo-1-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-1-tablet.webp 1x, img/catalog/photo-1-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/catalog/photo-1-mobile.webp 1x, img/catalog/photo-1-mobile@2x.webp 2x">
+
+              <source media="(min-width: 1200px)" srcset="img/catalog/photo-1-desktop.jpg 1x, img/catalog/photo-1-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/catalog/photo-1-tablet.jpg 1x, img/catalog/photo-1-tablet@2x.jpg 2x">
+              <img class="gallery__image" width="280" height="280" src="img/catalog/photo-1-mobile.jpg" srcset="img/catalog/photo-1-mobile@2x.jpg 2x" alt="Фото асфальтовой дороги к холмам" aria-hidden="true">
+            </picture>
+
+            <div class="gallery__bar">
+              <h3 class="gallery__heading">неродные просторы</h3>
+              <p class="gallery__author">Автор фото: Борис</p>
+
+              <div class="gallery__likes">
+                <button class="gallery__button-like button" type="button">
+                  <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#like-icon"></use>
+                  </svg>
+                  <span class="visually-hidden">мне нравится</span>
+                </button>
+                <span class="gallery__like-counter">1350</span>
+              </div>
+            </div>
           </li>
 
+          <li class="gallery__item">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-2-desktop.webp 1x, img/catalog/photo-2-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-2-tablet.webp 1x, img/catalog/photo-2-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/catalog/photo-2-mobile.webp 1x, img/catalog/photo-2-mobile@2x.webp 2x">
+
+              <source media="(min-width: 1200px)" srcset="img/catalog/photo-2-desktop.jpg 1x, img/catalog/photo-2-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/catalog/photo-2-tablet.jpg 1x, img/catalog/photo-2-tablet@2x.jpg 2x">
+              <img class="gallery__image" width="280" height="280" src="img/catalog/photo-2-mobile.jpg" srcset="img/catalog/photo-2-mobile@2x.jpg 2x" alt="Фото кактуса на фоне скал" aria-hidden="true">
+            </picture>
+            <div class="gallery__bar">
+              <h3 class="gallery__heading">Местная растительность</h3>
+              <p class="gallery__author">Автор фото: Сергей</p>
+              <div class="gallery__likes">
+                <button class="gallery__button-like button" type="button">
+                  <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#like-icon"></use>
+                  </svg>
+                  <span class="visually-hidden">мне нравится</span>
+                </button>
+                <span class="gallery__like-counter">143</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="gallery__item">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-3-desktop.webp 1x, img/catalog/photo-3-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-3-tablet.webp 1x, img/catalog/photo-3-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/catalog/photo-3-mobile.webp 1x, img/catalog/photo-3-mobile@2x.webp 2x">
+
+              <source media="(min-width: 1200px)" srcset="img/catalog/photo-3-desktop.jpg 1x, img/catalog/photo-3-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/catalog/photo-3-tablet.jpg 1x, img/catalog/photo-3-tablet@2x.jpg 2x">
+              <img class="gallery__image" width="280" height="280" src="img/catalog/photo-3-mobile.jpg" srcset="img/catalog/photo-3-mobile@2x.jpg 2x" alt="Фото асфальтовой дороги среди леса" aria-hidden="true">
+            </picture>
+
+            <div class="gallery__bar">
+              <h3 class="gallery__heading">Дорога на север</h3>
+              <p class="gallery__author">Автор фото: Петр</p>
+              <div class="gallery__likes">
+                <button class="gallery__button-like button" type="button">
+                  <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#like-icon"></use>
+                  </svg>
+                  <span class="visually-hidden">мне нравится</span>
+                </button>
+                <span class="gallery__like-counter">96</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="gallery__item">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-4-desktop.webp 1x, img/catalog/photo-4-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-4-tablet.webp 1x, img/catalog/photo-4-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/catalog/photo-4-mobile.webp 1x, img/catalog/photo-4-mobile@2x.webp 2x">
+
+              <source media="(min-width: 1200px)" srcset="img/catalog/photo-4-desktop.jpg 1x, img/catalog/photo-4-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/catalog/photo-4-tablet.jpg 1x, img/catalog/photo-4-tablet@2x.jpg 2x">
+              <img class="gallery__image" width="280" height="280" src="img/catalog/photo-4-mobile.jpg" srcset="img/catalog/photo-4-mobile@2x.jpg 2x" alt="Фото моста дьявола" aria-hidden="true">
+            </picture>
+
+            <div class="gallery__bar">
+              <h3 class="gallery__heading">Мост дьявола</h3>
+              <p class="gallery__author">Автор фото: Антон</p>
+              <div class="gallery__likes">
+                <button class="gallery__button-like button" type="button">
+                  <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#like-icon"></use>
+                  </svg>
+                  <span class="visually-hidden">мне нравится</span>
+                </button>
+                <span class="gallery__like-counter">254</span>
+              </div>
+            </div>
+          </li>
         </ul>
       </section>
+
       <section class="page-main__section video">
         <h2 class="visually-hidden">Видеопрезентация</h2>
-        <p class="video__heading">Все еще сомневаетесь?</p>
-        <p class="video__intro">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
-        <img class="video__preview" width="320" height="201" src="img/catalog/video-preview@1x-320x201.jpg" alt="Фото дороги между скал">
-        <video class="video__video" controls width="320" height="201">
+        <div class="page-main__header page-main__header--video container">
+          <p class="page-main__heading">Все еще сомневаетесь?</p>
+          <p class="page-main__subheading">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
+        </div>
+        <video class="video__video" controls width="320" height="201" poster="img/catalog/video-preview@1x-320x201.jpg" alt="Видео дороги между скал"></video>
           <source src="#" type="video/mp4">
         </video>
         <div class="video__control">

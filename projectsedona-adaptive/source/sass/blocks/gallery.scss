@@ -1,0 +1,138 @@
+.gallery__list {
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+  border-top: 1px solid $special-gray-400;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.gallery__item {
+  border-bottom: 1px solid $special-gray-400;
+  padding: 22px 0 15px;
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    border-bottom: none;
+    background-color: $basic-gray;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: relative;
+  }
+}
+
+.gallery__item:nth-child(2n + 1) {
+  @media (min-width: $tablet-width) {
+    background-color: $special-gray-500;
+  }
+}
+
+.gallery__item:first-child {
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+    background-color: $basic-gray;
+  }
+}
+
+.gallery__image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery__item:first-child .gallery__image {
+  @media (min-width: $tablet-width) {
+    height: 400px;
+  }
+}
+
+.gallery__bar {
+  @media (min-width: $tablet-width) {
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+    "heading likes"
+    "autor likes";
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: $basic-white;
+    background-color: fade-out($basic-black, 0.7);
+  }
+}
+
+.gallery__heading {
+  margin-top: 11px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  @media (min-width: $tablet-width) {
+    margin-top: 22px;
+  }
+}
+
+.gallery__author {
+  font-size: 14px;
+  margin: 0;
+  text-transform: none;
+  margin-bottom: 10px;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 13px;
+  }
+
+}
+
+.gallery__likes {
+  align-self: center;
+  grid-area: likes;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gallery__button-like {
+  width: 23px;
+  height: 21px;
+  padding: 0;
+  color: fade-out($basic-black, 0.7);
+  background-color: transparent;
+  cursor: pointer;
+  @media (min-width: $desktop-width) {
+    color: $basic-white;
+  }
+}
+
+.gallery__likes:hover .gallery__button-like {
+  background-color: transparent;
+  color: $color-primary-800;
+}
+
+.gallery__likes:active .gallery__button-like {
+  background-color: transparent;
+  color: $color-primary;
+  transform: translateY(5px);
+}
+
+.gallery__like-counter {
+  vertical-align: bottom;
+  margin-left: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  @media (min-width: $tablet-width) {
+    margin-left: 5px;
+    display: inline-block;
+    min-width: 52px;
+    text-align: left;
+  }
+}

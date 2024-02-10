@@ -12,6 +12,20 @@
   }
 }
 
+.page-main__header--catalog {
+  @media (min-width: $tablet-width) {
+    width: 430px;
+  }
+}
+
+.page-main__header--video {
+  width: 266px;
+  @media (min-width: $tablet-width) {
+    width: 430px;
+  }
+}
+
+
 
 .page-main__heading {
   margin: 0;
