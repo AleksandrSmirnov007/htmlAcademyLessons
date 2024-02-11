@@ -1,0 +1,10 @@
+.video__video {
+  @media (min-width: $tablet-width) {
+    width: 648px;
+    height: 500px;
+  }
+  @media (min-width: $desktop-width) {
+    width: 800px;
+    height: 500px;
+  }
+}
