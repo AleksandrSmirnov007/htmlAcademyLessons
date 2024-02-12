@@ -1,0 +1,43 @@
+//label
+.field {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.field--phone, .field--email {
+  grid-template-columns: auto;
+
+  .field__lead {
+    margin-left: 42px;
+  }
+}
+
+// input
+.field__input {
+  min-width: 0; // изначально у инпута есть минимальная ширина, сбрасываем иначе при нашем шрифте инпуты вылезают за границы
+  box-sizing: border-box;
+  padding: 18px 22px 14px;
+  border: none;
+  background-color: $basic-gray;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: inherit;
+  font-weight: 700;
+
+  &::placeholder {
+    color: $basic-black;
+  }
+}
+
+.field--textarea {
+  display: block;
+
+  .field__input {
+    width: 100%;
+  }
+}
+
+
