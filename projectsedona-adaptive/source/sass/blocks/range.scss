@@ -1,0 +1,53 @@
+.range {
+  width: 100%;
+  height: 45px;
+  margin: 0;
+  display: block;
+  background-color: fade-out($basic-black, 0.4);
+  /* stylelint-disable */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* stylelint-enable */
+  appearance: none;
+}
+
+// для хрома
+/* stylelint-disable */
+.range::-webkit-slider-runnable-track {  // стилизация полоски ползунка
+  /* stylelint-enable */
+  height: 3px;
+  background-color: fade-out($basic-white, 0.8);
+}
+
+/* stylelint-disable */
+.range::-webkit-slider-thumb { // стилизация бегунка
+  -webkit-appearance: none;
+  /* stylelint-enable */
+  margin-top: -5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: $basic-white;
+}
+
+
+//для мозилы
+/* stylelint-disable */
+.range::-moz-range-track {
+  /* stylelint-enable */
+  height: 3px;
+  background-color: fade-out($basic-white, 0.8);
+}
+
+/* stylelint-disable */
+.range::-moz-range-thumb {
+  -moz-appearance: none;
+  /* stylelint-enable */
+  margin-top: -5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: $basic-white;
+}
