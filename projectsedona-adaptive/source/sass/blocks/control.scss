@@ -1,0 +1,88 @@
+.control {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 26px;
+  font-family: $font-heading;
+  color: $basic-black;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.control--disabled,
+.control:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.control__input {
+  // добавлено что бы поднять наверх относительно декоративных элементов для прямого взоимодействия
+  z-index: 1;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  // скрыто прозрачностью
+  opacity: 0;
+  // так как инпут по индексу вышедругих а по умолчанию имеет cursor: default
+  cursor: pointer;
+}
+
+.control__lead {
+  // ратягиваем .control__lead на весь .control и продублируем сетку и добавим псевдоэлементы для декорации инпута
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 26px;
+}
+
+.control__lead:before {
+  // align-self: start; поднимет вверх декративный чекбокс если в .control__lead будет 2 строки и более.
+  align-self: start;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  content: "";
+  width: 48px;
+  height: 48px;
+  background-color: $basic-gray;
+
+}
+
+.control--radio .control__lead:before {
+  border-radius: 50%;
+}
+
+
+.control--radio .control__input:checked + .control__lead:after {
+  align-self: start;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  content: "";
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 14px solid transparent;
+  background-color: $basic-black;
+  background-clip: content-box;
+}
+
+
+.control--checkbox .control__input:checked + .control__lead:after {
+  align-self: start;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  content: "";
+  width: 48px;
+  height: 48px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../img/background/tick.svg");
+}
