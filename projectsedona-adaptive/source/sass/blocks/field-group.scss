@@ -6,7 +6,42 @@
   &:not(:last-of-type) {
     border-bottom: 1px solid $special-gray-500;
   }
+
+  @media (min-width: $tablet-width) {
+    border-bottom: none;
+  }
 }
+
+.field-group--name {
+  @media (min-width: $tablet-width) {
+    border-left: 1px solid $special-gray-500;
+  }
+}
+
+.field-group--contacts {
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+  }
+}
+
+.field-group--impressions {
+  @media (min-width: $tablet-width) {
+    order: -1;
+  }
+}
+
+.field-group--attractions {
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+  }
+}
+
+.field-group--emotions {
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+  }
+}
+
 
 .field-group__heading {
   padding-top: 20px;

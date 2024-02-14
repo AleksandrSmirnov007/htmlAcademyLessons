@@ -5,6 +5,7 @@
   @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border: none;
   }
 }
 

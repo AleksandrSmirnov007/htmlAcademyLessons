@@ -54,7 +54,7 @@
         </div>
 
         <form class="form__body"  action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="form__group field-group">
+          <fieldset class="form__group field-group field-group--name">
             <legend class="field-group__heading">Представьтесь:</legend>
             <ul class="field-group__list">
               <li class="field-group__item">
@@ -77,7 +77,7 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form__group field-group">
+          <fieldset class="form__group field-group field-group--contacts">
             <legend class="field-group__heading">Контактная информация:</legend>
             <ul class="field-group__list">
               <li class="field-group__item">
@@ -95,7 +95,7 @@
             </ul>
           </fieldset>
 
-          <fieldset class="form__group field-group">
+          <fieldset class="form__group field-group field-group--impressions">
             <legend class="field-group__heading">Ваше общее впечатление:</legend>
             <ul class="field-group__list">
               <li class="field-group__item">
@@ -118,7 +118,7 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form__group field-group">
+          <fieldset class="form__group field-group field-group--attractions">
             <legend class="field-group__heading">Посещенные достопримечательности:</legend>
             <ul class="field-group__list">
               <li class="field-group__item">
@@ -148,7 +148,7 @@
             </ul>
           </fieldset>
 
-          <fieldset class="form__group field-group">
+          <fieldset class="form__group field-group field-group--emotions">
             <legend class="field-group__heading">Опишите свои эмоции:</legend>
             <label class="field field--textarea">
               <textarea class="field__input field__input--textarea" cols="30" rows="4" name="info">Опишите подробно все свои восторги</textarea>
@@ -158,11 +158,12 @@
           <button class="form__button button" type="submit">Отправить отзыв</button>
         </form>
       </section>
+
       <section class="page-main__section pop-up">
         <h2 class="visually-hidden">Всплывающее окно</h2>
-        <ul class="pop-up__list">
+        <ul class="pop-up__content container">
           <li class="pop-up__item pop-up__item--falure">
-            <h3 class="pop-up__heading">Что-то пошло не так!</h3>
+            <h3 class="pop-up__heading ">Что-то пошло не так!</h3>
             <p class="pop-up__message">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
             <button class="pop-up__button" type="button">Ок</button>
           </li>
@@ -173,8 +174,6 @@
           </li>
         </ul>
       </section>
-
-
     </main>
 
     <footer class="page__footer page-footer container">
@@ -220,6 +219,7 @@
         </a>
       </div>
     </footer>
+
     <script src="js/script.min.js"></script>
 
   </body>
