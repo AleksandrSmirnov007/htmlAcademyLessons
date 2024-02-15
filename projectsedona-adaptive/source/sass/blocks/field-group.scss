@@ -1,5 +1,5 @@
 .field-group {
-  padding: 19px 20px 5px;
+  padding: 19px 20px 20px;
   margin: 0;
   border: none;
 
@@ -8,19 +8,19 @@
   }
 
   @media (min-width: $tablet-width) {
-    border-bottom: none;
+    margin-bottom: 70px;
+    padding: 19px 60px 0;
+
+    &:not(:last-of-type) {
+      border-bottom: none;
+    }
   }
 }
+
 
 .field-group--name {
   @media (min-width: $tablet-width) {
     border-left: 1px solid $special-gray-500;
-  }
-}
-
-.field-group--contacts {
-  @media (min-width: $tablet-width) {
-    grid-column: 1 / -1;
   }
 }
 
@@ -30,28 +30,81 @@
   }
 }
 
-.field-group--attractions {
-  @media (min-width: $tablet-width) {
-    grid-column: 1 / -1;
-  }
-}
-
-.field-group--emotions {
-  @media (min-width: $tablet-width) {
-    grid-column: 1 / -1;
-  }
-}
-
-
 .field-group__heading {
   padding-top: 20px;
   font-size: 18px;
   font-weight: 700;
+  @media (min-width: $tablet-width) {
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+  }
 }
+
+.field-group--contacts,
+.field-group--attractions,
+.field-group--emotions {
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+    // Делаем полоску прерывающуяся на .field-group__heading Если бы fieldet не имел особонности при стилизации то можно было бы сделать ее за счет border на fieldet и margin-top с отрицательным знавением на legend но отрицительный маржин не переносит legend выше чем верхняя граница
+    .field-group__heading {
+      span {
+        display: inline-block;
+        padding-right: 60px;
+        padding-left: 60px;
+        z-index: 0;
+        background-color: $basic-white;
+        max-width: 360px;
+
+        &::before {
+          z-index: -1;
+          left: 0;
+          right: 0;
+          top: 50%;
+          bottom: 0;
+          position: absolute;
+          content: "";
+          height: 1px;
+          background-color: $special-gray-500;
+        }
+      }
+    }
+  }
+}
+
+.field-group--contacts {
+  margin-bottom: 58px;
+}
+
+.field-group--emotions {
+  margin-bottom: 58px;
+}
+
 
 .field-group__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
   text-align: left;
+  display: grid;
+  row-gap: 20px;
+
+  &--radio {
+    @media (min-width: $tablet-width) {
+      row-gap: 30px;
+    }
+  }
+
+  &--checkbox {
+    row-gap: 34px;
+
+    @media (min-width: $tablet-width) {
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 27px;
+      row-gap: 42px;
+      column-gap:60px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 }

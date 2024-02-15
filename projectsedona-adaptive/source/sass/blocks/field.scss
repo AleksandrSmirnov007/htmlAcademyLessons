@@ -4,7 +4,6 @@
   grid-template-columns: auto 1fr;
   gap: 15px;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .field--phone, .field--email {
@@ -37,7 +36,12 @@
 
   .field__input {
     width: 100%;
+
+    @media (min-width: $tablet-width) {
+      margin-top: 34px;
+    }
   }
+
 }
 
 

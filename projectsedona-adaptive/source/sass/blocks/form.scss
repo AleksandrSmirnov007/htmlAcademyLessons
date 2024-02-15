@@ -1,3 +1,7 @@
+.form {
+  margin-bottom: 60px;
+}
+
 .form__body {
   border-top: 1px solid $special-gray-500;
   display: flex;
@@ -11,4 +15,16 @@
 
 .form__button {
   margin: 0 20px;
+  @media (min-width: $tablet-width) {
+    margin-left: 60px;
+    margin-right: 0;
+  }
+}
+
+.form__note {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 60px;
+  height: min-content;
+  align-self: center;
 }
