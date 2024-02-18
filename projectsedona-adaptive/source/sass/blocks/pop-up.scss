@@ -9,8 +9,113 @@
   width: 100%;
   height: 100%;
   place-content: center;
+
+
 }
 
 .pop-up--opened {
-  display: grid;
+  display: block;
+}
+
+.pop-up__content {
+  display: none;
+  padding: 40px 0 0;
+  min-width: 320px;
+  list-style-type: none;
+  position: absolute;
+  top: 116px;
+  left: 0;
+  right: 0;
+  background-color: $basic-white;
+  //  в макете было box-shadow: 0 4px 4px 0 fade-out($basic-black, 0.75); но верхняяя граница не явна
+  box-shadow: 0 4px 6px 0 fade-out($basic-black, 0.75);
+
+  &--shown {
+    display: block;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 52px 0 0;
+
+    &--falure {
+      top: 209px;
+      width: 400px;
+
+      .pop-up__heading {
+        padding: 0 30px;
+      }
+    }
+
+    &--success {
+      top: 162px;
+      width: 640px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+
+    &--falure {
+      top: 236px;
+    }
+
+    &--success {
+      top: 94px;
+    }
+  }
+}
+
+
+
+.pop-up__heading {
+  font-size: 18px;
+  font-weight: 700px;
+  line-height: 26px;
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0 40px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+  }
+}
+
+.pop-up__message {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0 44px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+  }
+}
+
+.pop-up__button-container {
+  padding-bottom: 35px;
+  @media (min-width: $tablet-width) {
+    padding-bottom: 46px;
+  }
+}
+
+.pop-up__content--success .pop-up__button-container {
+  padding: 20px;
+  background-color: $basic-gray;
+  @media (min-width: $tablet-width) {
+    padding: 44px 91px;
+  }
+}
+
+.pop-up__button {
+  padding-right: 63px;
+  padding-left: 63px;
+}
+
+
+.pop-up__content--falure {
+  @media (min-width: $tablet-width) {
+    width: 400px;
+
+    .pop-up__heading {
+      padding: 0 30px;
+    }
+  }
 }

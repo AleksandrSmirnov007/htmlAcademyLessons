@@ -11,6 +11,10 @@
     gap: 16px; // на макете он не обозначен, но добавим его произвольно что бы столбцы не сливались между собой
     align-items: center;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 33px 120px;
+  }
 }
 
 .page-footer__link {

@@ -3,13 +3,16 @@
 }
 
 .form__body {
-  border-top: 1px solid $special-gray-500;
   display: flex;
   flex-direction: column;
   @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 60px;
   }
 }
 
@@ -22,9 +25,12 @@
 }
 
 .form__note {
-  display: inline-block;
+  display: none;
   margin-left: auto;
   margin-right: 60px;
   height: min-content;
   align-self: center;
+  @media (min-width: $tablet-width) {
+    display: inline-block;
+  }
 }

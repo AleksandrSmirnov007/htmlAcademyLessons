@@ -2,18 +2,11 @@
   padding: 19px 20px 20px;
   margin: 0;
   border: none;
-
-  &:not(:last-of-type) {
-    border-bottom: 1px solid $special-gray-500;
-  }
+  position: relative; // для позиционирования черты около заглавий формы
 
   @media (min-width: $tablet-width) {
     margin-bottom: 70px;
     padding: 19px 60px 0;
-
-    &:not(:last-of-type) {
-      border-bottom: none;
-    }
   }
 }
 
@@ -34,11 +27,44 @@
   padding-top: 20px;
   font-size: 18px;
   font-weight: 700;
-  @media (min-width: $tablet-width) {
-    padding-top: 0;
-    position: relative;
+  width: 100%;
+
+// Делаем полоску в 1px из за особенностей fieldset свойство border-top выглядит не та как обычно
+  &:before {
+    position: absolute;
+    content: "";
+    border-top: 1px solid $special-gray-500;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
     width: 100%;
   }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 0;
+    // теперь черта не упирается в стенки контейнера а имеет отступ, спозиционируем ее относительно .field-group__heading в не .field-group как было ранее
+    position: relative;
+    z-index: 0;
+
+    // опускаем черту на середину заголовка для ширины планшета
+    &::before {
+      top: 50%;
+      z-index: -1;
+    }
+  }
+}
+
+
+// убираем черту у груп полей name и impressions
+.field-group--name,
+.field-group--impressions {
+  @media (min-width: $tablet-width) {
+    .field-group__heading::before {
+      display: none;
+    }
+  }
+
 }
 
 .field-group--contacts,
@@ -46,27 +72,14 @@
 .field-group--emotions {
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1;
-    // Делаем полоску прерывающуяся на .field-group__heading Если бы fieldet не имел особонности при стилизации то можно было бы сделать ее за счет border на fieldet и margin-top с отрицательным знавением на legend но отрицительный маржин не переносит legend выше чем верхняя граница
+
     .field-group__heading {
       span {
         display: inline-block;
         padding-right: 60px;
         padding-left: 60px;
-        z-index: 0;
         background-color: $basic-white;
         max-width: 360px;
-
-        &::before {
-          z-index: -1;
-          left: 0;
-          right: 0;
-          top: 50%;
-          bottom: 0;
-          position: absolute;
-          content: "";
-          height: 1px;
-          background-color: $special-gray-500;
-        }
       }
     }
   }
