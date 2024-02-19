@@ -1,10 +1,12 @@
 .gallery__list {
+  margin-bottom: 0;
   padding: 0;
   list-style-type: none;
   text-align: left;
   border-top: 1px solid $special-gray-400;
 
   @media (min-width: $tablet-width) {
+    border-top: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-right: 60px;
@@ -17,16 +19,30 @@
 }
 
 .gallery__item {
-  border-bottom: 1px solid $special-gray-400;
-  padding: 22px 0 15px;
+  // border-bottom: 1px solid $special-gray-400; заменил псевдоэлементами смотреть ниже
+  padding: 23px 0 15px;
   @media (min-width: $tablet-width) {
     padding: 0;
-    border-bottom: none;
+    // border-bottom: none;
     background-color: $basic-gray;
   }
 
   @media (min-width: $desktop-width) {
     position: relative;
+  }
+}
+
+.gallery__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-top:  1px solid $special-gray-400;
+  transform: translateY(-23px);
+
+  @media (min-width: $tablet-width) {
+    display: none;
   }
 }
 
@@ -75,8 +91,8 @@
 }
 
 .gallery__heading {
-  margin-top: 11px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 6px;
   font-size: 14px;
   font-weight: 700;
   @media (min-width: $tablet-width) {
@@ -88,7 +104,7 @@
   font-size: 14px;
   margin: 0;
   text-transform: none;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   @media (min-width: $tablet-width) {
     margin-bottom: 13px;
   }
@@ -127,7 +143,7 @@
 
 .gallery__like-counter {
   vertical-align: bottom;
-  margin-left: 14px;
+  margin-left: 10px;
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
