@@ -3,11 +3,11 @@
 }
 
 .page-footer__container {
-  padding: 38px 0 23px;
+  padding: 41px 0 23px;
   @media (min-width: $tablet-width) {
     padding: 33px 60px;
     display: grid;
-    grid-template-columns: max-content 1fr max-content; // элементы в третьем столбце по ширине в сумме составят 163рх округлим до четного (164px). В первом столбце ширина элемента меньше чем 164рх но список соц сетей в среднем столбце должен по точно по середине, поэтому крайние стобцы деалем одинаковыми и равными 164рх
+    grid-template-columns: 166px 1fr 166px; // элементы в третьем столбце по ширине в сумме составят 163рх округлим до четного (164px). В первом столбце ширина элемента меньше чем 164рх но список соц сетей в среднем столбце должен по точно по середине, поэтому крайние стобцы деалем одинаковыми и равными 164рх
     gap: 16px; // на макете он не обозначен, но добавим его произвольно что бы столбцы не сливались между собой
     align-items: center;
   }
@@ -21,7 +21,7 @@
   font-size: 21px;
   font-weight: 700;
   text-decoration: none;
-  margin-bottom: 32px;
+  margin-bottom: 35px;
   color: $basic-black;
   display: block;
   @media (min-width: $tablet-width) {

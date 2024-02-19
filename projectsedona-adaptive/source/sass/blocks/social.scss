@@ -1,5 +1,6 @@
+
 .social {
-  margin-bottom: 21px;
+  margin-bottom: 38px;
   padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
@@ -7,9 +8,9 @@
   list-style-type: none;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: -11px;
-    margin-top: -11px;
+    margin-bottom: 0;
     padding: 0;
+
   }
 }
 

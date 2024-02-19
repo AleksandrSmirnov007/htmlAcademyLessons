@@ -1,6 +1,13 @@
 .search {
   background-color: $basic-white;
-  padding: 33px 0 49px;
+  padding: 36px 0 49px;
+  @media (min-width: $tablet-width) {
+    padding: 59px 0 58px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 59px 0 68px;
+  }
 }
 
 .search__container {
@@ -11,19 +18,44 @@
 
 .search__title {
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   font-size: 21px;
   font-weight: 700;
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    margin-bottom: 33px;
+  }
 }
 
 .search__text {
   color: $special-black;
   font-size: 14px;
-  margin-bottom: 27px;
+  margin-bottom: 26px;
+  line-height: 24px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 37px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 42px;
+  }
+}
+
+.search__br-tablet {
+  display: none;
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
 }
 
 .search__button {
   font-size: 21px;
   font-weight: 700;
-  width: 100%
+  width: 100%;
+  padding: 18px 0 23px;
+
+  @media (min-width: $tablet-width) {
+    padding: 15px 0 20px;
+  }
 }

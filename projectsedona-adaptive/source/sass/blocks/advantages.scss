@@ -18,6 +18,13 @@
   }
 }
 
+.advantages__br-desktop {
+  display: none;
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}
+
 .advantages__item {
   text-align: center;
   counter-increment: counter-item-advantages; /* добавляем единицу (по умолчанию функция +1) счетчик будет увеличиватся на единицу при рендере каждого .advantages__item в принципе можно вписать это в любой элемент присутсвующий элемент например .advantages__title или .advantages__description и будет также работать и прибавляться единица */
@@ -39,7 +46,7 @@
 }
 
 .advantages__item--large:first-of-type {
-  padding-top: 30px;
+  padding-top: 45px;
   background-size: 768px 36px;
   background-position: center top;
   background-repeat: no-repeat;
@@ -50,12 +57,52 @@
   }
 }
 
+
+.advantages__head-wrapper {
+  padding-bottom: 14px;
+  @media (min-width: $tablet-width) {
+    padding-bottom: 0;
+  }
+}
+
+.advantages__item--large:nth-of-type(2n) .advantages__head-wrapper {
+  padding-bottom: 10px;
+  @media (min-width: $tablet-width) {
+    padding-bottom: 0;
+    order: 2;
+  }
+}
+
+
+.advantages__item--small .advantages__description {
+  width: 255px;
+  @media (min-width: $tablet-width) {
+    width: 240px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 380px;
+  }
+}
+
+.advantages__item:nth-child(4) .advantages__description {
+  @media (min-width: $tablet-width) {
+    width: 205px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 318px;
+  }
+}
+
 .advantages__item--small:not(:last-child) .advantages__description {
   border-bottom: 1px solid $special-gray-900;
+
   @media (min-width: $tablet-width) {
     border: none;
   }
 }
+
 
 .advantages__title {
   padding-top: 25px;
@@ -65,39 +112,41 @@
   font-size: 18px;
   line-height: 26px;
   @media (min-width: $tablet-width) {
-    width: auto;
-    padding: 42px 62px 0;
+    width: 150px;
+    font-size: 21px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 43px;
   }
 }
 
 .advantages__description {
   margin: 0 auto;
-  padding-bottom: 25px;
+  padding-bottom: 24px;
   width: 280px;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   @media (min-width: $tablet-width) {
     width: auto;
-    padding: 0 40px 42px;
+    padding: 0 30px 42px;
   }
 }
 
 .advantages__description::before {
   display: block;
-  margin: 14px auto 22px;
+  margin: 12px auto 17px;
   content: "— №" counter(counter-item-advantages) " —"; /*выводим нашу переменую в контенте созданного псевдоэлемента, в ковычки фкнцию ставить нельзя потому что она воспримается как строчный контент, в кавычки ставим только сторочные элементы которые не изменяются */
+  @media (min-width: $tablet-width) {
+    margin: 11px auto 24px;
+  }
 }
 
 .advantages__image-wrapper {
   @media(min-width: $tablet-width) {
     grid-column: span 2;
-  }
-}
-
-.advantages__item--large:nth-of-type(2n) .advantages__head-wrapper {
-  @media (min-width: $tablet-width) {
-    order: 2;
   }
 }
 
@@ -121,7 +170,7 @@
   margin: 0;
   padding: 0;
   padding-top: 35px;
-  padding-bottom: 9px;
+  padding-bottom: 8px;
   list-style-type: none;
   color: $basic-black;
   background-color: $basic-white;
@@ -139,11 +188,11 @@
   width: 280px;
   margin: 0 auto;
   padding-left: 50px;
-  padding-bottom: 26px;
+  padding-bottom: 25px;
 
   @media (min-width: $tablet-width) {
     width: auto;
-    padding: 158px 39px 42px;
+    padding: 156px 39px 61px;
   }
 
   @media (min-width: $desktop-width) {
@@ -154,8 +203,13 @@
 .advantages__details-item:nth-child(2) {
   @media (min-width: $tablet-width) {
     order: 2;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding: 156px 32px 61px;
+  }
+}
+
+.advantages__details-item:nth-child(3) {
+  @media (min-width: $tablet-width) {
+    padding: 156px 50px 61px;
   }
 }
 
@@ -164,17 +218,21 @@
   line-height: 26px;
   color: $basic-black;
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 17px;
   position: relative;
+  @media (min-width: $tablet-width) {
+    font-size: 21px;
+    margin-bottom: 24px;
+  }
 }
 
 .advantages__details-title::before {
   position: absolute;
-  left: -52px;
-  top: -10px;
+  left: -50px;
+  top: -9px;
   content: "";
   width: 40px;
-  height: 38px;
+  height: 37px;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
@@ -182,7 +240,7 @@
     width: 76px;
     height: 75px;
     left: calc(50% - 40px);
-    top: calc(-70px - 100%);
+    top: calc(-74px - 100%);
   }
 }
 
@@ -200,4 +258,6 @@
 
 .advantages__details-description {
   margin: 0;
+  line-height: 21px;
+  font-size: 14px;
 }

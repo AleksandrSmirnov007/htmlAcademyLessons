@@ -7,8 +7,12 @@
   padding: 32px 0 11px;
   background-color: $basic-white;
   @media (min-width: $tablet-width) {
-    padding: 43px 0 52px;
+    padding: 41px 0 52px;
     width: 520px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 54px 0 43px;
   }
 }
 
@@ -25,17 +29,17 @@
   }
 }
 
-
-
 .page-main__heading {
+  padding: 0 10px;
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 29px;
   font-weight: 700;
   font-size: 18px;
-  line-height: 26px;
+  line-height: 27px;
   color: $basic-black;
   @media(min-width: $tablet-width) {
     font-size: 21px;
+    margin-bottom: 31px;
   }
 }
 

@@ -1,14 +1,14 @@
 .promo {
   background-color: $color-primary;
   width: 100%;
-  height: 388px;
+  height: 390px;
   background-repeat: no-repeat;
   background-position:
     left 50% bottom -7px,
     50% 90px,
     50% 100%;
   background-size:
-    1200px 57px,
+    1200px 67px,
     282px 214px,
     901px 389px;
   background-image:
@@ -29,11 +29,11 @@
   @media(min-width: $tablet-width) {
     height: 517px;
     background-position:
-      left 50% bottom -7px,
+      left 50% bottom -11px,
       50% 78px,
       50% 100%;
     background-size:
-      1200px 57px,
+      1200px 67px,
       459px 349px,
       1200px 518px;
     background-image:
