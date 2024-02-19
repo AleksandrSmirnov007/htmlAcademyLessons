@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- почему то при нажатии клавиши ентер для перехада на новую строку в элементе style создается новый элемент и код ломается  -->
+  <style style="display: block; white-space: pre;" contenteditable="">
+    * {
+      font-size: 18px;
+      background-color: green;
+      border: 5px solid teal;
+    }
+  </style>
+
+
+  <style class="text" style="display: block; white-space: pre;" contenteditable="">
+  .text {
+    font-size: 20px;
+    background-color: rgb(37, 143, 125);
+    border: 5px solid red;
+  }
+
+  </style>
+
+
+</body>
+</html>
