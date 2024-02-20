@@ -52,13 +52,13 @@
 
 
 .promo--short {
-  height: 158px;
+  height: 157px;
   background-position:
-    left 50% bottom -7px,
+    left 50% bottom -10px,
     left 50% bottom 67px,
     50% 100%;
   background-size:
-    1200px 57px,
+    1200px 67px,
     229px 39px,
     901px 389px;
   background-image:
@@ -76,12 +76,35 @@
   @media(min-width: $tablet-width) {
     height: 290px;
     background-position:
-      left 50% bottom -7px,
+      left 50% bottom -10px,
       left 50% bottom 117px,
       50% 100%;
     background-size:
-      1200px 57px,
-      456px 77px,
+      1200px 67px,
+      456px 78px,
+      1200px 518px;
+    background-image:
+      url("../img/background/intro-triangle-mod.svg"),
+      url("../img/background/sedona-text.svg"),
+      url("../img/background/back-desktop.jpg");
+
+      @media(min-resolution: 2dppx) {
+        background-image:
+        url("../img/background/intro-triangle-mod.svg"),
+        url("../img/background/sedona-text.svg"),
+        url("../img/background/back-desktop@2x.jpg");
+      }
+  }
+
+  @media(min-width: $desktop-width) {
+    height: 301px;
+    background-position:
+      left 50% bottom -10px,
+      left 50% bottom 121px,
+      50% 100%;
+    background-size:
+      1200px 67px,
+      456px 78px,
       1200px 518px;
     background-image:
       url("../img/background/intro-triangle-mod.svg"),

@@ -1,5 +1,5 @@
 .form {
-  margin-bottom: 60px;
+  margin-bottom: 36px;
 }
 
 .form__body {
@@ -17,7 +17,12 @@
 }
 
 .form__button {
-  margin: 0 20px;
+  margin: 20px;
+  margin-bottom: 1px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 37px;
+
   @media (min-width: $tablet-width) {
     margin-left: 60px;
     margin-right: 0;

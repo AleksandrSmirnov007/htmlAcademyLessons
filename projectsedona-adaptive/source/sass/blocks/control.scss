@@ -1,6 +1,6 @@
 .control {
   display: grid;
-  grid-template-columns: 48px 1fr;
+  grid-template-columns: 54px 1fr;
   align-items: center;
   gap: 26px;
   font-family: $font-heading;
@@ -23,8 +23,8 @@
   z-index: 1;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   margin: 0;
   // скрыто прозрачностью
   opacity: 0;
@@ -38,7 +38,7 @@
   grid-row: 1 / 2;
   position: relative;
   display: grid;
-  grid-template-columns: 48px 1fr;
+  grid-template-columns: 54px 1fr;
   align-items: center;
   gap: 26px;
 }
@@ -49,8 +49,8 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   content: "";
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   background-color: $basic-gray;
 
 }
@@ -65,10 +65,10 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   content: "";
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  border: 14px solid transparent;
+  border: 17px solid transparent;
   background-color: $basic-black;
   background-clip: content-box;
 }
@@ -79,8 +79,8 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   content: "";
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("../img/background/tick.svg");

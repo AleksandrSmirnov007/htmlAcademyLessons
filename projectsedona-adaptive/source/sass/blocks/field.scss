@@ -6,11 +6,17 @@
   align-items: center;
 }
 
+.field__lead {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+
 .field--phone, .field--email {
   grid-template-columns: auto;
 
   .field__lead {
-    margin-left: 42px;
+    margin-left: 23px;
   }
 }
 
@@ -33,9 +39,12 @@
 
 .field--textarea {
   display: block;
+  margin-top: -5px;
 
   .field__input {
+    resize: auto;
     width: 100%;
+    padding: 12px 20px 17px;
 
     @media (min-width: $tablet-width) {
       margin-top: 34px;

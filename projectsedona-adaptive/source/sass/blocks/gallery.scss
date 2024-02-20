@@ -3,7 +3,7 @@
   padding: 0;
   list-style-type: none;
   text-align: left;
-  border-top: 1px solid $special-gray-400;
+  // border-top: 1px solid $special-gray-400;
 
   @media (min-width: $tablet-width) {
     border-top: none;
@@ -14,6 +14,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    padding: 0;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -96,7 +97,8 @@
   font-size: 14px;
   font-weight: 700;
   @media (min-width: $tablet-width) {
-    margin-top: 22px;
+    margin-top: 16px;
+    margin-bottom: 1px;
   }
 }
 
@@ -106,7 +108,7 @@
   text-transform: none;
   margin-bottom: 14px;
   @media (min-width: $tablet-width) {
-    margin-bottom: 13px;
+    margin-bottom: 15px;
   }
 
 }
@@ -116,6 +118,9 @@
   grid-area: likes;
   cursor: pointer;
   user-select: none;
+  @media (min-width: $tablet-width) {
+    margin-top: 4px;
+  }
 }
 
 .gallery__button-like {
@@ -125,6 +130,7 @@
   color: fade-out($basic-black, 0.7);
   background-color: transparent;
   cursor: pointer;
+
   @media (min-width: $desktop-width) {
     color: $basic-white;
   }
@@ -152,5 +158,6 @@
     display: inline-block;
     min-width: 52px;
     text-align: left;
+    vertical-align: top;
   }
 }

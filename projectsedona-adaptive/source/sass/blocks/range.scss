@@ -23,9 +23,9 @@
 .range::-webkit-slider-thumb { // стилизация бегунка
   -webkit-appearance: none;
   /* stylelint-enable */
-  margin-top: -5px;
-  width: 13px;
-  height: 13px;
+  margin-top: -2px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   cursor: pointer;
   background-color: $basic-white;
@@ -44,9 +44,9 @@
 .range::-moz-range-thumb {
   -moz-appearance: none;
   /* stylelint-enable */
-  margin-top: -5px;
-  width: 13px;
-  height: 13px;
+  margin-top: -2px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   cursor: pointer;
   background-color: $basic-white;

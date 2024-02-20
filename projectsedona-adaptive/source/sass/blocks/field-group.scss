@@ -1,5 +1,5 @@
 .field-group {
-  padding: 19px 20px 20px;
+  padding: 19px 20px 27px;
   margin: 0;
   border: none;
   position: relative; // для позиционирования черты около заглавий формы
@@ -26,6 +26,7 @@
 .field-group__heading {
   padding-top: 20px;
   font-size: 18px;
+  line-height: 26px;
   font-weight: 700;
   width: 100%;
 
@@ -85,14 +86,15 @@
   }
 }
 
-.field-group--contacts {
-  margin-bottom: 58px;
-}
+@media (min-width) {
+  .field-group--contacts {
+    margin-bottom: 58px;
+  }
 
-.field-group--emotions {
-  margin-bottom: 58px;
+  .field-group--emotions {
+    margin-bottom: 58px;
+  }
 }
-
 
 .field-group__list {
   margin: 0;
@@ -103,13 +105,15 @@
   row-gap: 20px;
 
   &--radio {
+    margin-top: 5px;
+    row-gap: 15px;
     @media (min-width: $tablet-width) {
       row-gap: 30px;
     }
   }
 
   &--checkbox {
-    row-gap: 34px;
+    row-gap: 27px;
 
     @media (min-width: $tablet-width) {
       padding-left: 100px;
