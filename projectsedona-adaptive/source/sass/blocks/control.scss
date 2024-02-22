@@ -41,6 +41,10 @@
   grid-template-columns: 54px 1fr;
   align-items: center;
   gap: 26px;
+
+  @media (min-width: $tablet-width) {
+    gap: 20px;
+  }
 }
 
 .control__lead:before {
@@ -73,6 +77,18 @@
   background-clip: content-box;
 }
 
+
+.control--checkbox .control__lead {
+  @media (min-width: $tablet-width) {
+    margin-right: -20px;
+    gap: 25px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: -20px;
+    gap: 25px;
+  }
+}
 
 .control--checkbox .control__input:checked + .control__lead:after {
   align-self: start;

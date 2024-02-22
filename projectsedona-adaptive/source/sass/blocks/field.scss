@@ -12,11 +12,61 @@
   line-height: 1;
 }
 
+.field__lead--full {
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
 .field--phone, .field--email {
   grid-template-columns: auto;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    bottom: 0;
+    right: 0;
+    background-color: $special-gray-450;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
   .field__lead {
     margin-left: 23px;
+
+    @media (min-width: $tablet-width) {
+      text-align: left;
+    }
+
+    @media (min-width: $tablet-width) {
+      margin-left: 0;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: auto 1fr;
+
+  }
+}
+
+.field {
+  &--phone::before {
+    background-size: 18px 18px;
+    background-image: url("../img/background/phone.svg");
+  }
+
+  &--email::before {
+    background-size: 16px 12px;
+    background-image: url("../img/background/mail.svg");
+  }
+}
+
+.field--phone {
+  @media (min-width: $desktop-width) {
+    margin-right: 79px;
   }
 }
 
@@ -24,7 +74,7 @@
 .field__input {
   min-width: 0; // изначально у инпута есть минимальная ширина, сбрасываем иначе при нашем шрифте инпуты вылезают за границы
   box-sizing: border-box;
-  padding: 18px 22px 14px;
+  padding: 16px 20px 16px;
   border: none;
   background-color: $basic-gray;
   font-size: 18px;
@@ -47,7 +97,9 @@
     padding: 12px 20px 17px;
 
     @media (min-width: $tablet-width) {
-      margin-top: 34px;
+      padding-top: 17px;
+      padding-bottom: 12px;
+      margin-top: 44px;
     }
   }
 

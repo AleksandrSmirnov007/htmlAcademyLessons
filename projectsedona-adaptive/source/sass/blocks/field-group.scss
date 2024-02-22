@@ -7,19 +7,54 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 70px;
     padding: 19px 60px 0;
+
+    &:last-of-type {
+      margin-bottom: 51px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 66px;
+    padding: 19px 60px 0;
+
+    &:last-of-type {
+      margin-bottom: 51px;
+    }
   }
 }
+
 
 
 .field-group--name {
   @media (min-width: $tablet-width) {
     border-left: 1px solid $special-gray-500;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 80px;
+  }
 }
 
 .field-group--impressions {
   @media (min-width: $tablet-width) {
     order: -1;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 65px;
+
+    .field-group__heading span {
+      text-align: center;
+      padding-right: 15px;
+    }
+  }
+}
+
+
+.field-group__br-tablet {
+  display: none;
+  @media (min-width: $tablet-width) {
+    display: block;
   }
 }
 
@@ -47,6 +82,7 @@
     // теперь черта не упирается в стенки контейнера а имеет отступ, спозиционируем ее относительно .field-group__heading в не .field-group как было ранее
     position: relative;
     z-index: 0;
+    font-size: 21px;
 
     // опускаем черту на середину заголовка для ширины планшета
     &::before {
@@ -61,11 +97,17 @@
 .field-group--name,
 .field-group--impressions {
   @media (min-width: $tablet-width) {
-    .field-group__heading::before {
-      display: none;
+    .field-group__heading {
+      text-align: left;
+      span {
+        display: block;
+        margin-right: -20px;
+      }
+      &::before {
+        display: none;
+      }
     }
   }
-
 }
 
 .field-group--contacts,
@@ -80,21 +122,19 @@
         padding-right: 60px;
         padding-left: 60px;
         background-color: $basic-white;
-        max-width: 360px;
       }
     }
   }
 }
 
-@media (min-width) {
-  .field-group--contacts {
-    margin-bottom: 58px;
-  }
-
-  .field-group--emotions {
-    margin-bottom: 58px;
-  }
+.field-group--contacts {
+  margin-bottom: 58px;
 }
+
+.field-group--emotions {
+  margin-bottom: 58px;
+}
+
 
 .field-group__list {
   margin: 0;
@@ -104,11 +144,32 @@
   display: grid;
   row-gap: 20px;
 
+  &--name {
+    @media (min-width: $tablet-width) {
+      margin-top: 40px;
+    }
+  }
+
   &--radio {
     margin-top: 5px;
     row-gap: 15px;
     @media (min-width: $tablet-width) {
-      row-gap: 30px;
+      margin-top: 41px;
+      row-gap: 25px;
+    }
+  }
+
+  &--contacts {
+    @media (min-width: $tablet-width) {
+      margin-top: 8px;
+      row-gap: 26px;
+      margin-bottom: -20px;
+    }
+
+    @media (min-width: $desktop-width) {
+      margin-top: 55px;
+      margin-bottom: -9px;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -116,12 +177,20 @@
     row-gap: 27px;
 
     @media (min-width: $tablet-width) {
-      padding-left: 100px;
-      padding-right: 100px;
+      padding-left: 96px;
+      padding-right: 96px;
       padding-top: 27px;
-      row-gap: 42px;
+      row-gap: 33px;
       column-gap:60px;
       grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $desktop-width) {
+      padding-right: 0;
+      padding-left: 0;
+      column-gap: 10px;
+      grid-template-columns: 250px 248px 228px 1fr;
+
     }
   }
 }

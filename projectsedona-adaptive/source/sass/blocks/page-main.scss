@@ -19,6 +19,22 @@
 .page-main__header--form {
   padding-top: 36px;
   padding-bottom: 18px;
+  @media (min-width: $tablet-width) {
+    padding-top: 63px;
+    padding-bottom: 84px;
+    .page-main__heading {
+      font-size: 30px;
+    }
+
+    .page-main__subheading {
+      padding: 0 42px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 113px;
+    padding-bottom: 57px;
+  }
 }
 
 
