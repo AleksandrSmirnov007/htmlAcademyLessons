@@ -1,9 +1,8 @@
 .range {
-  width: 100%;
-  height: 45px;
-  margin: 0;
+  border: none;
+  margin: auto 0;
   display: block;
-  background-color: fade-out($basic-black, 0.4);
+  background-color: transparent;
   /* stylelint-disable */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -23,7 +22,7 @@
 .range::-webkit-slider-thumb { // стилизация бегунка
   -webkit-appearance: none;
   /* stylelint-enable */
-  margin-top: -2px;
+  margin-top: -3px;
   width: 9px;
   height: 9px;
   border-radius: 50%;

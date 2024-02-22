@@ -15,6 +15,7 @@
           <a class="page-header__logo logo" href="index.html">
             <picture>
               <source media="(min-width: 1200px)" srcset="img/content/logo-large.svg">
+              <source media="(min-width: 768px)" srcset="img/content/logo-medium.svg">
               <img class="logo__image" width="102" height="84" src="img/content/logo-small.svg" alt="Логотип Кет энержи">
             </picture>
           </a>
@@ -27,11 +28,11 @@
             <li class="site-menu__item"> <!-- текущая страница сайта отмечается классом site-menu__item- -active -->
               <a class="site-menu__link" href="index.html">Главная</a>
             </li>
-            <li class="site-menu__item site-menu__item--active">
-              <a class="site-menu__link" title="Мы на странице c каталогом">Фото и видео</a>
-            </li>
             <li class="site-menu__item">
-              <a class="site-menu__link" href="form.html">Форма отзыва</a>
+              <a class="site-menu__link" href="catalog.html">Фото и видео</a>
+            </li>
+            <li class="site-menu__item site-menu__item--active">
+              <a class="site-menu__link" title="Мы на странице для отзывов">Форма отзыва</a>
             </li>
             <li class="site-menu__item">
               <a class="site-menu__link" href="form.html">Html Academy</a>
@@ -44,7 +45,7 @@
     <main class="page__main page-main">
       <h1 class="visually-hidden">Форма для отзыва о Седоне</h1>
 
-      <header class="page-main__header promo promo--short"></header>
+      <header class="page-main__promo promo promo--short"></header>
 
       <section class="page-main__section form">
         <h2 class="visually-hidden">Форма для отзыва</h2>
@@ -124,7 +125,7 @@
           </fieldset>
           <fieldset class="form__group field-group field-group--attractions">
             <legend class="field-group__heading">
-              <span>Посещенные <br class="field-group__br-tablet">достопримечательности:</span>
+              <span>Посещенные <br class="field-group__br-tablet"> достопримечательности:</span>
             </legend>
             <ul class="field-group__list field-group__list--checkbox">
               <li class="field-group__item">

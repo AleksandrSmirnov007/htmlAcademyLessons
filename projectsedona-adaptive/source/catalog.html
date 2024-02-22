@@ -15,6 +15,7 @@
           <a class="page-header__logo logo" href="index.html">
             <picture>
               <source media="(min-width: 1200px)" srcset="img/content/logo-large.svg">
+              <source media="(min-width: 768px)" srcset="img/content/logo-medium.svg">
               <img class="logo__image" width="102" height="84" src="img/content/logo-small.svg" alt="Логотип Кет энержи">
             </picture>
           </a>
@@ -44,7 +45,7 @@
     <main class="page__main page-main">
       <h1 class="visually-hidden">Туристический город Седона</h1>
 
-      <header class="page-main__header promo promo--short"></header>
+      <header class="page-main__promo promo promo--short"></header>
 
       <section class="page-main__section media">
 
@@ -179,8 +180,10 @@
             </svg>
           </button>
 
-          <input class="video__range range" type="range" id="rangeInput" name="rangeInput" min="0" max="100" value="21" oninput="amount.value=rangeInput.value">
-          <output class="visually-hidden" id="amount" name="amount" for="rangeInput">0</output>
+          <div class="video__range-wrapper">
+            <input class="video__range range" type="range" id="rangeInput" name="rangeInput" min="0" max="100" value="21" oninput="amount.value=rangeInput.value">
+            <output class="visually-hidden" id="amount" name="amount" for="rangeInput">0</output>
+          </div>
 
           <button class="video__button video__button--subtitles button">
             <span class="visually-hidden">Субтитры</span>

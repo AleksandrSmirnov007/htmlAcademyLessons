@@ -53,7 +53,11 @@
   font-size: 14px;
   font-weight: 400;
   @media (min-width: $tablet-width) {
-    margin-top: 10px;
+    margin-top: 6px;
     display: inline-block;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-top: 6px;
   }
 }

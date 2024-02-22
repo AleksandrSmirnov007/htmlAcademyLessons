@@ -48,10 +48,10 @@
 
 .site-menu__link {
   display: block; // для взаимодействия с падингами по умолчанию inline вроде и веритакальные не работают как надо
-  padding: 18px 20px; // верхний боковые нижний
+  padding: 20px 18px 16px; // верхний боковые нижний
   color: $basic-white; // непосредствено задаем цвет ссылкам, из за юзер-агент они не наследуют его,
   text-decoration: none; // так же убираем подчеркивание по этой же причине
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   font-family: $font-heading; // шрифт пунктов меню Освальд используем переменную одержащию этот шрифт

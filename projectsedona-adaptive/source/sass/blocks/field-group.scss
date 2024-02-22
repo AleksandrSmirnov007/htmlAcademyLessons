@@ -1,11 +1,11 @@
 .field-group {
-  padding: 19px 20px 27px;
+  padding: 19px 20px 26px;
   margin: 0;
   border: none;
   position: relative; // для позиционирования черты около заглавий формы
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 70px;
+    margin-bottom: 68px;
     padding: 19px 60px 0;
 
     &:last-of-type {
@@ -13,8 +13,8 @@
     }
   }
 
-  @media (min-width: $tablet-width) {
-    margin-bottom: 66px;
+  @media (min-width: $desktop-width) {
+    margin-bottom: 64px;
     padding: 19px 60px 0;
 
     &:last-of-type {
@@ -52,7 +52,7 @@
 
 
 .field-group__br-tablet {
-  display: none;
+  display: inline;
   @media (min-width: $tablet-width) {
     display: block;
   }
@@ -128,11 +128,16 @@
 }
 
 .field-group--contacts {
-  margin-bottom: 58px;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 58px;
+  }
 }
 
+
 .field-group--emotions {
-  margin-bottom: 58px;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 58px;
+  }
 }
 
 
@@ -142,11 +147,13 @@
   list-style-type: none;
   text-align: left;
   display: grid;
-  row-gap: 20px;
+  row-gap: 21px;
 
   &--name {
     @media (min-width: $tablet-width) {
-      margin-top: 40px;
+      margin-top: 37px;
+      margin-left: -1px;
+      row-gap: 21px;
     }
   }
 
@@ -155,15 +162,21 @@
     row-gap: 15px;
     @media (min-width: $tablet-width) {
       margin-top: 41px;
-      row-gap: 25px;
+      row-gap: 23px;
+    }
+
+    @media (min-width: $desktop-width) {
+      margin-top: 37px;
+      row-gap: 24px;
     }
   }
 
   &--contacts {
+    margin-top: 4px;
     @media (min-width: $tablet-width) {
-      margin-top: 8px;
+      margin-top: 11px;
       row-gap: 26px;
-      margin-bottom: -20px;
+      margin-bottom: -8px;
     }
 
     @media (min-width: $desktop-width) {
@@ -174,12 +187,13 @@
   }
 
   &--checkbox {
-    row-gap: 27px;
+    row-gap: 26px;
 
     @media (min-width: $tablet-width) {
       padding-left: 96px;
       padding-right: 96px;
-      padding-top: 27px;
+      margin-top: 27px;
+      margin-bottom: 5px;
       row-gap: 33px;
       column-gap:60px;
       grid-template-columns: 1fr 1fr;

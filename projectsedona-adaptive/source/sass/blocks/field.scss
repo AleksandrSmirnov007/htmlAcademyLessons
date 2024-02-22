@@ -41,7 +41,7 @@
       text-align: left;
     }
 
-    @media (min-width: $tablet-width) {
+    @media (min-width: $desktop-width) {
       margin-left: 0;
     }
   }
@@ -85,11 +85,15 @@
   &::placeholder {
     color: $basic-black;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 22px;
+  }
 }
 
 .field--textarea {
   display: block;
-  margin-top: -5px;
+  margin-top: -3px;
 
   .field__input {
     resize: auto;
@@ -99,7 +103,7 @@
     @media (min-width: $tablet-width) {
       padding-top: 17px;
       padding-bottom: 12px;
-      margin-top: 44px;
+      margin-top: 41px;
     }
   }
 

@@ -4,10 +4,10 @@
 
 
 .page-main__header {
-  padding: 32px 0 10px;
+  padding: 30px 0 11px;
   background-color: $basic-white;
   @media (min-width: $tablet-width) {
-    padding: 41px 0 52px;
+    padding: 44px 0 52px;
     width: 520px;
   }
 
@@ -18,11 +18,21 @@
 
 .page-main__header--form {
   padding-top: 36px;
-  padding-bottom: 18px;
+  padding-bottom: 17px;
+
+  .page-main__heading {
+    margin-bottom: 28px;
+  }
+
+  .page-main__subheading {
+    line-height: 24px;
+  }
+
   @media (min-width: $tablet-width) {
     padding-top: 63px;
     padding-bottom: 84px;
     .page-main__heading {
+      margin-bottom: 33px;
       font-size: 30px;
     }
 
@@ -42,7 +52,7 @@
   @media (min-width: $tablet-width) {
     width: 430px;
     padding-top: 64px;
-    padding-bottom: 56px;
+    padding-bottom: 53px;
   }
 
   @media (min-width: $desktop-width) {
@@ -53,7 +63,7 @@
 
 .page-main__header--video {
   width: 266px;
-  padding: 32px 0 30px;
+  padding: 32px 0 25px;
   @media (min-width: $tablet-width) {
     padding-top: 57px;
     padding-bottom: 72px;
@@ -69,7 +79,7 @@
 .page-main__heading {
   padding: 0 10px;
   margin: 0;
-  margin-bottom: 27px;
+  margin-bottom: 30px;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
@@ -94,7 +104,7 @@
   margin: 0;
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 26px;
   color: $basic-black;
 }
 
