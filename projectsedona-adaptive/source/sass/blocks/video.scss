@@ -79,3 +79,23 @@
     color: $basic-white;
   }
 }
+
+.video__button:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: $special-black;
+
+  @media (min-width: $tablet-width) {
+    color: $basic-white;
+    opacity: 0.6;
+  }
+}
+
+.video__button:active {
+  color: $special-black;
+  opacity: 0.3;
+  @media (min-width: $tablet-width) {
+    color: $basic-white;
+    opacity: 0.3;
+  }
+}

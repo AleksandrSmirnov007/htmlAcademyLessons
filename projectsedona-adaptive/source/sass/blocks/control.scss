@@ -102,6 +102,20 @@
   background-image: url("../img/background/tick.svg");
 }
 
-.control:hover .control__before {
-  background-color: $special-gray-400;
+.control:hover .control__lead::before {
+    background-color: $special-gray-400;
+}
+
+.control:active {
+  .control__lead::before {
+    background-color: $special-gray-800;
+  }
+
+  .control__lead::after {
+    opacity: 0.3;
+  }
+}
+
+.control__input:focus + .control__lead::before {
+  outline: 4px solid $color-primary;
 }

@@ -50,3 +50,55 @@
   cursor: pointer;
   background-color: $basic-white;
 }
+
+//hover
+//hover для хрома
+.range:hover::-webkit-slider-runnable-track {
+  cursor: pointer;
+  background-color: fade-out($basic-white, 0.5);
+}
+
+.range:hover::-webkit-slider-thumb {
+  cursor: pointer;
+  background-color: $basic-white;
+  outline: 4px solid fade-out($color-primary, 0.5);
+}
+
+
+//hover для мозилы
+.range:hover::-moz-range-track {
+  cursor: pointer;
+  background-color: fade-out($basic-white, 0.5);
+}
+
+
+.range:hover::-moz-range-thumb {
+  cursor: pointer;
+  background-color: $basic-white;
+  outline: 4px solid fade-out($color-primary, 0.5);
+}
+
+
+//active
+//active для хрома
+.range:active::-webkit-slider-runnable-track {
+  background-color: fade-out($color-primary, 0.5);
+}
+
+.range:active::-webkit-slider-thumb {
+  cursor: pointer;
+  background-color: $color-primary;
+}
+
+
+//active для мозилы
+.range:active::-moz-range-track {
+  cursor: pointer;
+  background-color: fade-out($color-primary, 0.2);
+}
+
+
+.range:active::-moz-range-thumb {
+  cursor: pointer;
+  background-color: $color-primary;
+}
