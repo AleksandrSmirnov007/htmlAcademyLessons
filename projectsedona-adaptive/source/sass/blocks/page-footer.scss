@@ -4,6 +4,7 @@
 
 .page-footer__container {
   padding: 41px 0 23px;
+
   @media (min-width: $tablet-width) {
     padding: 33px 60px;
     display: grid;
@@ -24,6 +25,7 @@
   margin-bottom: 35px;
   color: $basic-black;
   display: block;
+
   @media (min-width: $tablet-width) {
     margin: 0;
   }
@@ -31,6 +33,7 @@
 
 .page-footer__link-text {
   margin: 0;
+
   @media (min-width: $tablet-width) {
     text-align: left;
   }

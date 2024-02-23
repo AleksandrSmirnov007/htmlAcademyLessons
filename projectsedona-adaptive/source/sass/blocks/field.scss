@@ -4,6 +4,16 @@
   grid-template-columns: auto 1fr;
   gap: 15px;
   align-items: center;
+
+  &--phone::before {
+    background-size: 18px 18px;
+    background-image: url("../img/background/phone.svg");
+  }
+
+  &--email::before {
+    background-size: 16px 12px;
+    background-image: url("../img/background/mail.svg");
+  }
 }
 
 .field__lead {
@@ -18,7 +28,8 @@
   }
 }
 
-.field--phone, .field--email {
+.field--phone,
+.field--email {
   grid-template-columns: auto;
   position: relative;
 
@@ -48,21 +59,9 @@
 
   @media (min-width: $desktop-width) {
     grid-template-columns: auto 1fr;
-
   }
 }
 
-.field {
-  &--phone::before {
-    background-size: 18px 18px;
-    background-image: url("../img/background/phone.svg");
-  }
-
-  &--email::before {
-    background-size: 16px 12px;
-    background-image: url("../img/background/mail.svg");
-  }
-}
 
 .field--phone {
   @media (min-width: $desktop-width) {
@@ -108,7 +107,6 @@
     }
   }
 }
-
 
 .field:hover:not(:focus-within) .field__input {
   background-color: $special-gray-400;

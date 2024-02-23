@@ -12,6 +12,7 @@
   grid-template-columns: 34px 1fr 34px; // задали симметричную сетку по горизонтали. 34px это ширина левого элемента в блоке лого, кнопка же шириной 24px. Но нам нужна симметричная сетка(тогда центральтный элемент можно выставить по центру например с помошь правила justify-self: center;  поэтому крайние столбцы делаем одинаковыми, равными ширине, равной ширине самого широкого 34px.Однако так как блок лого сосотоит из двух элементов нужно разместить его в первых двух столбцах и построить в нем сетку стобцов 34px и 1fr . Тогда сетко лого совпадет с сеткой .page-header__bar в первых двух столбцах и выравние по точно центру будет возможно.
   gap: 16px; // тут промежуток скорее для приличия -  визуально ничего не изменится.
   align-items: center; // выравнивание элементов по вертикали по центру
+
   @media (min-width: $tablet-width) {
     margin: 0;
     display: block;
@@ -54,10 +55,10 @@
 }
 
 .main-nav__wrapper {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
 
   @media (min-width: $tablet-width) {
     z-index: auto;
@@ -108,8 +109,9 @@
 }
 
 .main-nav--closed .main-nav__wrapper {
-    display: none;
-    @media (min-width: $tablet-width) {
-      display: block;
-    }
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
 }

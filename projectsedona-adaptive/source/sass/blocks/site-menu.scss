@@ -3,6 +3,7 @@
   padding: 0;
   list-style-type: none; // по тегу site-menu  является списком, избавляемся от отступов и меток присовоенных по умолчанию.
   text-align: center;
+
   @media (max-width: $mobile-width-only) {
     font-size: 18px;
     font-weight: 700;
@@ -10,13 +11,13 @@
     background-color: $color-primary; // фон у списка целмком так как если давать ссылкам по отделности то просвечивают сквозь границы при определенном маштабе
   }
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 153px 153px 156px 153px 153px;
     justify-content: center;
   }
 
-  @media(min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     grid-template-columns: 239px 239px 244px 239px 239px;
   }
 }
@@ -85,4 +86,3 @@
     }
   }
 }
-

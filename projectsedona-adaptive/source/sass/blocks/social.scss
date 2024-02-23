@@ -10,7 +10,6 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 0;
     padding: 0;
-
   }
 }
 
@@ -26,9 +25,6 @@
   place-content: center;
   color: $color-primary; // не понятно пока почему задается ссылкам цвет шрифта если будут участвовать иконки. Теперь понятно. перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
   background-color: $color-primary;
-  @media (min-width: $tablet-width) {
-
-  }
 
   &:hover {
     background-color: $color-primary-400; // перевел цвета svg fill и stroke на currentColor и теперь можно управлять через color: (причем у одних иконок это fill a у других это stroke
@@ -36,6 +32,7 @@
 
   &:active {
     background-color: $color-primary-800;
+
     svg {
       opacity: 0.3;
     }

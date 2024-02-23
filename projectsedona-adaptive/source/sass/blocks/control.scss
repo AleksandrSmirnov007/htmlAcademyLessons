@@ -47,7 +47,7 @@
   }
 }
 
-.control__lead:before {
+.control__lead::before {
   // align-self: start; поднимет вверх декративный чекбокс если в .control__lead будет 2 строки и более.
   align-self: start;
   grid-column: 1 / 2;
@@ -56,15 +56,14 @@
   width: 54px;
   height: 54px;
   background-color: $basic-gray;
-
 }
 
-.control--radio .control__lead:before {
+.control--radio .control__lead::before {
   border-radius: 50%;
 }
 
 
-.control--radio .control__input:checked + .control__lead:after {
+.control--radio .control__input:checked + .control__lead::after {
   align-self: start;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -90,7 +89,7 @@
   }
 }
 
-.control--checkbox .control__input:checked + .control__lead:after {
+.control--checkbox .control__input:checked + .control__lead::after {
   align-self: start;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -103,7 +102,7 @@
 }
 
 .control:hover .control__lead::before {
-    background-color: $special-gray-400;
+  background-color: $special-gray-400;
 }
 
 .control:active {

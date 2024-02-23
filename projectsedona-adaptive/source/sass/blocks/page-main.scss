@@ -6,6 +6,7 @@
 .page-main__header {
   padding: 30px 0 11px;
   background-color: $basic-white;
+
   @media (min-width: $tablet-width) {
     padding: 44px 0 52px;
     width: 520px;
@@ -31,6 +32,7 @@
   @media (min-width: $tablet-width) {
     padding-top: 63px;
     padding-bottom: 84px;
+
     .page-main__heading {
       margin-bottom: 33px;
       font-size: 30px;
@@ -46,7 +48,6 @@
     padding-bottom: 57px;
   }
 }
-
 
 .page-main__header--catalog {
   @media (min-width: $tablet-width) {
@@ -64,6 +65,7 @@
 .page-main__header--video {
   width: 266px;
   padding: 32px 0 25px;
+
   @media (min-width: $tablet-width) {
     padding-top: 57px;
     padding-bottom: 72px;
@@ -73,7 +75,6 @@
   @media (min-width: $desktop-width) {
     padding-top: 61px;
   }
-
 }
 
 .page-main__heading {
@@ -84,7 +85,8 @@
   font-size: 18px;
   line-height: 27px;
   color: $basic-black;
-  @media(min-width: $tablet-width) {
+
+  @media (min-width: $tablet-width) {
     font-size: 21px;
     margin-bottom: 31px;
   }

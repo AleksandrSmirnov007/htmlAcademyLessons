@@ -1,11 +1,12 @@
 .video {
   margin-bottom: 40px;
+
   @media (min-width: $tablet-width) {
     position: relative;
     width: 648px;
   }
 
-    @media (min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     width: 800px;
     margin-bottom: 83px;
   }
@@ -33,6 +34,7 @@
   gap: 17px;
   align-content: center;
   background-color: $basic-gray;
+
   @media (min-width: $tablet-width) {
     position: absolute;
     bottom: 0;
@@ -75,6 +77,7 @@
   height: 40px;
   padding: 0;
   background-color: transparent;
+
   @media (min-width: $tablet-width) {
     color: $basic-white;
   }
@@ -94,6 +97,7 @@
 .video__button:active {
   color: $special-black;
   opacity: 0.3;
+
   @media (min-width: $tablet-width) {
     color: $basic-white;
     opacity: 0.3;

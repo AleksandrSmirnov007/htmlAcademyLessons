@@ -16,17 +16,17 @@
     url("../img/background/background-text-index.svg"),
     url("../img/background/back-mobile.jpg");
 
-  @media(min-resolution: 2dppx) {
+  @media (min-resolution: 2dppx) {
     background-image:
-    url("../img/background/intro-triangle-mod.svg"),
-    url("../img/background/background-text-index.svg"),
-    url("../img/background/back-mobile@2x.jpg");
+      url("../img/background/intro-triangle-mod.svg"),
+      url("../img/background/background-text-index.svg"),
+      url("../img/background/back-mobile@2x.jpg");
   }
   // протестировать (может нужно указать другой размер для двойной плотности)
   // размер бекграунда jpg нормальный для 1x и 2x экранов
 
   // начиная с планшетной версии загружаем большие изображения и увеличиваем размер svg, также изменяется отступ сверху для текста-бекграунда
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     height: 517px;
     background-position:
       left 50% bottom -11px,
@@ -41,15 +41,14 @@
       url("../img/background/background-text-index.svg"),
       url("../img/background/back-desktop.jpg");
 
-      @media(min-resolution: 2dppx) {
-        background-image:
+    @media (min-resolution: 2dppx) {
+      background-image:
         url("../img/background/intro-triangle-mod.svg"),
         url("../img/background/background-text-index.svg"),
         url("../img/background/back-desktop@2x.jpg");
-      }
+    }
   }
 }
-
 
 .promo--short {
   height: 157px;
@@ -66,14 +65,14 @@
     url("../img/background/sedona-text.svg"),
     url("../img/background/back-mobile.jpg");
 
-  @media(min-resolution: 2dppx) {
+  @media (min-resolution: 2dppx) {
     background-image:
-    url("../img/background/intro-triangle-mod.svg"),
-    url("../img/background/sedona-text.svg"),
-    url("../img/background/back-mobile@2x.jpg");
+      url("../img/background/intro-triangle-mod.svg"),
+      url("../img/background/sedona-text.svg"),
+      url("../img/background/back-mobile@2x.jpg");
   }
 
-  @media(min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     height: 290px;
     background-position:
       left 50% bottom -10px,
@@ -88,15 +87,15 @@
       url("../img/background/sedona-text.svg"),
       url("../img/background/back-desktop.jpg");
 
-      @media(min-resolution: 2dppx) {
-        background-image:
+    @media (min-resolution: 2dppx) {
+      background-image:
         url("../img/background/intro-triangle-mod.svg"),
         url("../img/background/sedona-text.svg"),
         url("../img/background/back-desktop@2x.jpg");
-      }
+    }
   }
 
-  @media(min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     height: 301px;
     background-position:
       left 50% bottom -10px,
@@ -111,11 +110,11 @@
       url("../img/background/sedona-text.svg"),
       url("../img/background/back-desktop.jpg");
 
-      @media(min-resolution: 2dppx) {
-        background-image:
+    @media (min-resolution: 2dppx) {
+      background-image:
         url("../img/background/intro-triangle-mod.svg"),
         url("../img/background/sedona-text.svg"),
         url("../img/background/back-desktop@2x.jpg");
-      }
+    }
   }
 }
