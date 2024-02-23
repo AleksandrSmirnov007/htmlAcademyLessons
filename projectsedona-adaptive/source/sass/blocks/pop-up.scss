@@ -30,37 +30,12 @@
   //  в макете было box-shadow: 0 4px 4px 0 fade-out($basic-black, 0.75); но верхняяя граница не явна
   box-shadow: 0 4px 6px 0 fade-out($basic-black, 0.75);
 
-  &--shown {
+  &--active {
     display: block;
   }
 
   @media (min-width: $tablet-width) {
     padding: 52px 0 0;
-
-    &--falure {
-      top: 209px;
-      width: 400px;
-
-      .pop-up__heading {
-        padding: 0 30px;
-      }
-    }
-
-    &--success {
-      top: 162px;
-      width: 640px;
-    }
-  }
-
-  @media (min-width: $desktop-width) {
-
-    &--falure {
-      top: 236px;
-    }
-
-    &--success {
-      top: 94px;
-    }
   }
 }
 
@@ -68,7 +43,7 @@
 
 .pop-up__heading {
   font-size: 18px;
-  font-weight: 700px;
+  font-weight: 700;
   line-height: 26px;
   margin: 0;
   margin-bottom: 25px;
@@ -83,6 +58,7 @@
   margin: 0;
   margin-bottom: 25px;
   padding: 0 44px;
+  line-height: 24px;
 
   @media (min-width: $tablet-width) {
     font-size: 14px;
@@ -105,17 +81,73 @@
 }
 
 .pop-up__button {
-  padding-right: 63px;
-  padding-left: 63px;
+  padding: 18px 63px;
+  min-width: 178px;
+  font-size: 18px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 21px;
+    padding: 16px;
+  }
 }
 
 
 .pop-up__content--falure {
   @media (min-width: $tablet-width) {
+    top: 209px;
     width: 400px;
+    padding-top: 50px;
 
     .pop-up__heading {
-      padding: 0 30px;
+      padding: 0 91px;
+      line-height: 40px;
     }
+
+    .pop-up__message {
+      margin-bottom: 37px;
+    }
+
+    .pop-up__button-container {
+      padding-bottom: 48px;
+    }
+
+    .pop-up__button {
+      min-width: 273px;
+    }
+
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 236px;
+  }
+}
+
+
+.pop-up__content--success {
+
+  .pop-up__button-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: $tablet-width) {
+    top: 162px;
+    width: 640px;
+
+    .pop-up__heading {
+      margin-bottom: 33px;
+    }
+
+    .pop-up__message {
+      margin-bottom: 43px;
+    }
+
+    .button {
+      padding-bottom: 13px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 94px;
   }
 }
