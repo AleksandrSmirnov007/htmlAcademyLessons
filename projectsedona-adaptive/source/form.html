@@ -160,7 +160,7 @@
               <span>Опишите свои эмоции:</span>
             </legend>
             <label class="field field--textarea">
-              <textarea class="field__input field__input--textarea" cols="30" rows="5" name="info">Опишите подробно все свои восторги</textarea>
+              <textarea class="field__input field__input--textarea" cols="30" rows="5" name="info" placeholder="Опишите подробно все свои восторги"></textarea>
             </label>
           </fieldset>
 
@@ -170,18 +170,19 @@
       </section>
 
 
-      <!-- использовать класс pop-up--opened для открытия модального окна -->
-      <section class="page-main__section pop-up  pop-up--opened">
+      <!-- в section.pop-up  дабавить класс .pop-up--opened для открытия модального окна -->
+      <section class="page-main__section pop-up">
         <h2 class="visually-hidden">Всплывающее окно</h2>
         <ul class="pop-up__list">
-          <li class="pop-up__content pop-up__content--falure container">
+          <!-- для отображения нужного контента в модальном окне добавить класс  .pop-up__content--active -->
+          <li class="pop-up__content pop-up__content--falure pop-up__content--active container">
             <h3 class="pop-up__heading">Что-то пошло не так!</h3>
             <p class="pop-up__message">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
             <div class="pop-up__button-container">
               <button class="pop-up__button button" type="button">Ок</button>
             </div>
           </li>
-          <li class="pop-up__content pop-up__content--success pop-up__content--active container">
+          <li class="pop-up__content pop-up__content--success container">
             <h3 class="pop-up__heading">Ваш отзыв отправлен!</h3>
             <p class="pop-up__message">Спасибо за ваше участие, ваш отзыв уже поступил к нам.<br>В ближайшее время мы опубликуем его на сайте.</p>
             <div class="pop-up__button-container">

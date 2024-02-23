@@ -101,3 +101,7 @@
   background-repeat: no-repeat;
   background-image: url("../img/background/tick.svg");
 }
+
+.control:hover .control__before {
+  background-color: $special-gray-400;
+}

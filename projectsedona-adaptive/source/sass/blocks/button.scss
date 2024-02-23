@@ -19,4 +19,17 @@
     color: fade-out($basic-white, 0.7);
     background-color: $color-primary-800;
   }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:active,
+  &--disabled,
+  &--disabled:hover,
+  &--disabled:active {
+    color: $basic-white;
+    background-color: $special-gray-400;
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+  }
 }

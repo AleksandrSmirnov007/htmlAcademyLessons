@@ -96,7 +96,8 @@
   margin-top: -3px;
 
   .field__input {
-    resize: auto;
+    // скроет треугольник ресайза у textarea
+    resize: none;
     width: 100%;
     padding: 12px 20px 17px;
 
@@ -106,7 +107,20 @@
       margin-top: 41px;
     }
   }
-
 }
 
 
+.field:hover:not(:focus-within) .field__input {
+  background-color: $special-gray-400;
+  cursor: pointer;
+}
+
+.field__input:focus {
+  outline: 4px solid $special-gray-400;
+  background-color: $basic-white;
+
+  // скрывает плейсхолдер при фокусе
+  &::placeholder {
+    color: transparent;
+  }
+}

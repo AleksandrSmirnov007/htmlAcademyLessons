@@ -17,6 +17,21 @@ import {deleteAsync} from 'del'; // на npmjs.com написано так до�
 
 import sync from 'browser-sync';
 
+// generation css file дополнительная функция для просмотра получившегося после компиляции scss кода
+
+export const stylesEdit = () => {
+  return gulp.src('source/sass/style.scss', { sourcemaps: true })
+    .pipe(plumber())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([
+      autoprefixer()
+    ]))
+    .pipe(rename("style.min.css"))
+    .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
+    .pipe(sync.stream());
+}
+
+
 // Styles
 
 export const styles = () => {

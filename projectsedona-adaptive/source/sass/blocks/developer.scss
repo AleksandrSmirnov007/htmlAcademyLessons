@@ -32,4 +32,8 @@
 
 .developer:active {
   opacity: 0.3;
+
+  .developer__logo {
+    color: $basic-black;
+  }
 }
