@@ -2,10 +2,21 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Седона адаптив. Каталог</title>
+    <title>Седона адаптив. Форма</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Туристический город Седона">
     <link rel="stylesheet" href="css/style.min.css">
+
+    <link rel="preload" href="js/script.min.js" as="style" crossorigin="anonymous">
+
+    <link rel="icon" href="favicon.ico"> <!-- 32x32 -->
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple.png"> <!-- 180×180 -->
+    <link rel="manifest" href="manifest.webmanifest">
+
+
+    <!-- для генерации различных размеров иконок для манифеста можно использовать сервис https://www.favicon-generator.org/ Но сервис выдал максимальный размер 310х310 png. Размер 512х512 как в примере в учебних материалах получил через конвертацию svg в png  на ресурсе https://image.online-convert.com/ru/convert/svg-to-png  -->
+    <!-- Ничего страшного, что список одной фавиконки получился столь длинным — 4 пункта. Во-первых, браузер загружает фавиконку асинхронно. Во-вторых, он сначала посмотрит на весь список фавиконок и загрузит только одну — самую подходящую. -->
   </head>
   <body class="page__body">
     <header class="page__header page-header">
