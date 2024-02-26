@@ -1,3 +1,10 @@
+.gallery {
+  @media (max-width: $mobile-width-only) {
+    position: relative;
+    border-bottom: 1px solid $special-gray-400;
+  }
+}
+
 .gallery__list {
   margin-bottom: 0;
   padding: 0;

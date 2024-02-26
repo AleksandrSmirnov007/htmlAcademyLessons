@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Туристический город Седона">
     <link rel="stylesheet" href="css/style.min.css">
-
-    <link rel="preload" href="js/script.min.js" as="style" crossorigin="anonymous">
-
-    <link rel="icon" href="favicon.ico"> <!-- 32x32 -->
+    <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png"> <!-- 180×180 -->
     <link rel="manifest" href="manifest.webmanifest">
-
+    <link rel="preload" href="fonts/ptsans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="css/style.min.css" as="style" crossorigin="anonymous">
+    <link rel="preload" href="js/script.min.js" as="script" crossorigin="anonymous">
+    <link rel="preload" href="img/background/back-mobile.jpg" as="image" type="image/jpg" crossorigin="anonymous">
 
     <!-- для генерации различных размеров иконок для манифеста можно использовать сервис https://www.favicon-generator.org/ Но сервис выдал максимальный размер 310х310 png. Размер 512х512 как в примере в учебних материалах получил через конвертацию svg в png  на ресурсе https://image.online-convert.com/ru/convert/svg-to-png  -->
     <!-- Ничего страшного, что список одной фавиконки получился столь длинным — 4 пункта. Во-первых, браузер загружает фавиконку асинхронно. Во-вторых, он сначала посмотрит на весь список фавиконок и загрузит только одну — самую подходящую. -->
@@ -96,7 +97,7 @@
             <ul class="field-group__list field-group__list--contacts">
               <li class="field-group__item">
                 <label class="field field--phone">
-                  <span class="field__lead"><span class="field__lead--full">Контактный </span>телефон*:</span>
+                  <span class="field__lead"><span class="field__lead-full">Контактный </span>телефон*:</span>
                   <input class="field__input" type="tel" name="phone" placeholder="Введите телефон">
                 </label>
               </li>
@@ -181,11 +182,11 @@
       </section>
 
 
-      <!-- в section.pop-up  дабавить класс .pop-up--opened для открытия модального окна -->
+      <!-- в section.pop-up  дабавить класс .pop-up- -opened для открытия модального окна -->
       <section class="page-main__section pop-up">
         <h2 class="visually-hidden">Всплывающее окно</h2>
         <ul class="pop-up__list">
-          <!-- для отображения нужного контента в модальном окне добавить класс  .pop-up__content--active -->
+          <!-- для отображения нужного контента в модальном окне добавить класс  .pop-up__content- -active -->
           <li class="pop-up__content pop-up__content--falure pop-up__content--active container">
             <h3 class="pop-up__heading">Что-то пошло не так!</h3>
             <p class="pop-up__message">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>

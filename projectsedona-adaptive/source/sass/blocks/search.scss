@@ -4,16 +4,11 @@
 
   @media (min-width: $tablet-width) {
     padding: 59px 0 58px;
+    width: 458px;
   }
 
   @media (min-width: $desktop-width) {
     padding: 59px 0 68px;
-  }
-}
-
-.search__container {
-  @media (min-width: $tablet-width) {
-    width: 458px;
   }
 }
 
