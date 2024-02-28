@@ -2,36 +2,55 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Pink - Социальная сеть (адаптив)</title>
+    <title>Pink. Главная. адаптив</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Туристический город Седона">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple.png"> <!-- 180×180 -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preload" href="fonts/ptsans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="css/style.min.css" as="style" crossorigin="anonymous">
+    <link rel="preload" href="js/script.min.js" as="script" crossorigin="anonymous">
+    <link rel="preload" href="img/background/back-mobile.jpg" as="image" type="image/jpg" crossorigin="anonymous">
   </head>
   <body class="page__body">
-    <header class="page-header">
-      <nav class="page-header__nav main-nav">
-        <a class="page-header__logo" href="#">
-          <img class="page-header__logo-image" width="74" height="23" src="img/content/logo@1x.svg" alt="Логотип социальной сети Pink">
-        </a>
+    <header class="page__header page-header">
+      <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс page-header__nav- -closed, для открытого состояния и отображения кнопки-крестик добавить класс page-header__nav- -opened  -->
 
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
-        </button>
-
-        <ul class="page-header__list main-nav__list">
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="#" title="Вы на главной странице">Главная</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="catalog.html">Фотографии</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="form.html">Конкурс</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
-          </li>
-        </ul>
+        <div class="main-nav__bar">
+          <a class="page-header__logo logo" href="index.html">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/content/logo-large.svg">
+              <source media="(min-width: 768px)" srcset="img/content/logo-medium.svg">
+              <img class="logo__image" width="74" height="23" src="img/content/logo-mobile.svg" alt="Логотип Пинк">
+            </picture>
+          </a>
+          <button class="main-nav__toggle" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
+        </div>
+        <div class="main-nav__wrapper">
+          <ul class="site-menu">
+            <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item- -active -->
+              <a class="site-menu__link" title="Мы на главной странице">Главная</a>
+            </li>
+            <li class="site-menu__item">
+              <a class="site-menu__link" href="catalog.html">Фотографии</a>
+            </li>
+            <li class="site-menu__item">
+              <a class="site-menu__link" href="form.html">Конкурс</a>
+            </li>
+            <li class="site-menu__item">
+              <a class="site-menu__link" href="https://htmlacademy.ru/intensive/adaptive">Html Academy</a>
+            </li>
+          </ul>
+        </div>
       </nav>
-
     </header>
+
     <main class="page__main page-main">
       <header class="page-main__promo promo">
         <h1 class="visually-hidden">Социальная сеть Pink</h1>
