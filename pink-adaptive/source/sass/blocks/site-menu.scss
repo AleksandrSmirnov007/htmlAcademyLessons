@@ -1,0 +1,16 @@
+.site-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.site-menu__link {
+  display: block;
+  color: $basic-white;
+  text-decoration: none;
+  padding: 16px;
+  border-top: 1px solid fade-out($basic-white, 0.85);
+  border-bottom: 1px solid $basic-black;
+  text-transform: uppercase;
+  background-color: $special-gray;
+}

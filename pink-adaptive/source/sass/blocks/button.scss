@@ -1,0 +1,25 @@
+.button {
+  display: inline-block;
+  font-family: $font-body;
+  border: none;
+  font-weight: 700;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: transparent;
+
+}
+
+.button--primary {
+  padding: 10px;
+  color: $basic-white;
+  border: 3px solid $basic-white;
+  border-radius: 29px;
+}
+
+
+.button--secondary {
+  border: none;
+  background-color: $basic-green;
+  border-radius: 3px;
+}

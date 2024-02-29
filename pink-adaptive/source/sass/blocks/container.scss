@@ -1,0 +1,13 @@
+.container {
+  width: 280px; // 320 - 20 - 20
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: $tablet-width) {
+    width: 620px; // 660 - 2*20px(поля)
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 940px; // 1200 – 130 – 130 = 940
+  }
+}
