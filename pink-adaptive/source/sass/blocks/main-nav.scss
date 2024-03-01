@@ -36,6 +36,18 @@
     0 20px 0 0 $basic-white;
 }
 
+.main-nav__toggle:hover::after {
+  box-shadow:
+  0 10px 0 0 $color-primary,
+  0 20px 0 0 $color-primary;
+}
+
+.main-nav__toggle:active::after {
+  box-shadow:
+  0 10px 0 0 fade-out($color-primary, 0.7),
+  0 20px 0 0 fade-out($color-primary, 0.7);
+}
+
 .main-nav__wrapper {
   display: none;
 }
@@ -90,3 +102,12 @@
   transform: rotate(-45deg);
 }
 
+.main-nav .main-nav__toggle:hover::before,
+.main-nav .main-nav__toggle:hover::after {
+  background-color: $color-primary;
+}
+
+.main-nav .main-nav__toggle:active::before,
+.main-nav .main-nav__toggle:active::after {
+  background-color: fade-out($color-primary, 0.7);
+}

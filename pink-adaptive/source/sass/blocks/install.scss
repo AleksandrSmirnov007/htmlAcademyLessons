@@ -1,0 +1,30 @@
+.install {
+  padding: 28px 0 38px;
+}
+
+.install__button {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.install__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 38px;
+  margin-left: 38px;
+  margin-bottom: 28px;
+}
+
+.install__item {
+  background-color: green;
+  width: 60px;
+  height: 60px;
+}
+
+.install__text {
+  margin: 0;
+  font-weight: 300;
+}

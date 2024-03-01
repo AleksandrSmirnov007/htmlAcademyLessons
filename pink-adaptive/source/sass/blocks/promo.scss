@@ -1,0 +1,26 @@
+.promo {
+  margin-top: -66px;
+}
+
+.promo__header {
+  padding-top: 66px;
+  margin-right: -20px;
+  margin-left: -20px;
+
+  background-image: url("../img/background/back-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 320px 462px;
+
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/background/back-mobile@2x.jpg");
+  }
+}
+
+.promo__heading {
+  margin: 22px 20px 28px;
+  font-weight: 300;
+  line-height: 120%;
+  font-size: 24px;
+}

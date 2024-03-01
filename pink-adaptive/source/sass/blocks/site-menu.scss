@@ -14,3 +14,15 @@
   text-transform: uppercase;
   background-color: $special-gray;
 }
+
+.site-menu__link[href]:hover {
+  color: $color-primary;
+}
+
+.site-menu__link[href]:active {
+  color: fade-out($basic-white, 0.7);
+}
+
+.site-menu__link--active:hover {
+  cursor: default;
+}

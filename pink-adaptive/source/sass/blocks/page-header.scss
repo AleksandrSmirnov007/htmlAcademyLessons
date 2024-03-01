@@ -2,14 +2,6 @@
   text-align: center;
   background-color: $special-gray-2;
   color: $basic-white;
-  background-image: url("../img/background/back-mobile.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 320px 462px;
-
-  @media (min-resolution: 2dppx) {
-    background-image: url("../img/background/back-mobile@2x.jpg");
-  }
 }
 
 .page-header__logo {
