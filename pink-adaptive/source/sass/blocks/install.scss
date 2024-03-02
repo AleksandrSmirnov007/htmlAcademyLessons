@@ -9,19 +9,21 @@
 
 .install__list {
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
-  margin-right: 38px;
-  margin-left: 38px;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 28px;
 }
 
-.install__item {
+.install__icon {
+  display: block;
   background-color: green;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 
 .install__text {
