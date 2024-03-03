@@ -1,0 +1,13 @@
+.developer {
+  margin: 0 auto;
+  width: max-content;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 34px;
+  color: $special-gray;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 15px;
+  align-items: center;
+}

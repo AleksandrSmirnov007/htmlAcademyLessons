@@ -7,3 +7,12 @@
 .page-header__logo {
   display: block;
 }
+
+.page-header__logo img {
+  width: 74px;
+  height: 23px;
+  @media (min-width: $tablet-width) {
+    width: 145px;
+    height: 40px;
+  }
+}

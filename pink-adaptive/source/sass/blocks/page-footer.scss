@@ -1,0 +1,25 @@
+.page-footer {
+  padding: 40px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 160px 1fr 160px;
+  }
+}
+
+.page-footer__logo img {
+  margin: 0 auto 30px;
+  width: 145px;
+  height: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+    margin-right: auto;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 147px;
+  }
+}

@@ -1,5 +1,10 @@
 .install {
-  padding: 28px 0 38px;
+  padding: 28px 20px 38px;
+
+  @media (min-width: $tablet-width) {
+    width: 300px;
+    padding-bottom: 119px;
+  }
 }
 
 .install__button {
