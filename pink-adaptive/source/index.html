@@ -126,7 +126,7 @@
 
       <section class="page-main__section feedbacks slider slash-background">
         <h2 class="visually-hidden">Отзывы</h2>
-        <div class="feedbacks__list slider__list">
+        <div class="feedbacks__list slider__list container">
           <blockquote class="feedbacks__item slider__item">
             <cite class="feedbacks__author-name">Николай Петров</cite>
             <p class="feedbacks__author-age">25 лет</p>
@@ -157,75 +157,100 @@
 
       <section class="page-main__section price slider">
         <h2 class="visually-hidden">Прайслист</h2>
-        <table class="price__list slider__list" cellspacing="0" cellpadding="0">
-          <tr>
-            <td></th>
-            <th class="price__column-head slider-item">
-              <p class="price__title">База</p>
-              <p class="price__cost">1,99 USD</p>
-            </th>
-            <th class="price__column-head price__column-head--hit slider-item slider__item--current">
-              <p class="price__title">Стандарт</p>
-              <p class="price__cost">3,99 USD</p>
-            </th>
-            <th class="price__column-head slider-item">
-              <p class="price__title">Анлим</p>
-              <p class="price__cost">9,99 USD</p>
-            </th>
-          </tr>
+        <div class="price__wrapper">
+          <table class="price__list slider__list" cellspacing="0" cellpadding="0">
+            <tr>
+              <td></th>
+              <th class="price__column-head slider-item">
+                <p class="price__title">База</p>
+                <p class="price__cost">1,99 USD</p>
+              </th>
+              <th class="price__column-head price__column-head--hit slider-item slider__item--current">
+                <p class="price__title">Стандарт</p>
+                <p class="price__cost">3,99 USD</p>
+              </th>
+              <th class="price__column-head slider-item">
+                <p class="price__title">Анлим</p>
+                <p class="price__cost">9,99 USD</p>
+              </th>
+            </tr>
 
-          <tr>
-            <td class="price__row-head">Розовый фильтр</td>
+            <tr>
+              <td class="price__row-head">Розовый фильтр</td>
 
-            <td class="price__check price__check--yes">
-              <p class="price__td-title">Розовый фильтр</p>
-              <b class="visually-hidde">да</b>
-            </td>
-            <td class="price__check price__check--yes">
-              <p class="price__td-title">Розовый фильтр</p>
-              <b class="visually-hidde">да</b>
-            </td>
-            <td class="price__check price__check--yes">
-              <p class="price__td-title">Розовый фильтр</p>
-              <b class="visually-hidde">да</b>
-            </td>
-          </tr>
+              <td class="price__check price__check--yes">
+                <p class="price__td-content">
+                  <span class="price__td-title">Розовый фильтр</span>
+                  <span class="price__td-check"><b class="visually-hidden">да</b></span>
+                </p>
+              </td>
 
-          <tr>
-            <td class="price__row-head">Смайлики</td>
+              <td class="price__check price__check--yes">
+                <p class="price__td-content">
+                  <span class="price__td-title">Розовый фильтр</span>
+                  <span class="price__td-check"><b class="visually-hidden">да</b></span>
+                </p>
+              </td>
+              <td class="price__check price__check--yes">
+                <p class="price__td-content">
+                  <span class="price__td-title">Розовый фильтр</span>
+                  <span class="price__td-check"><b class="visually-hidden">да</b></span>
+                </p>
+              </td>
+            </tr>
 
-            <td class="price__check price__check--no">
-              <p class="price__td-title">Смайлики</p>
-              <b class="visually-hidde">нет</b>
-            </td>
-            <td class="price__check price__check--yes">
-              <p class="price__td-title">Смайлики</p>
-              <b class="visually-hidde">да</b>
-            </td>
-            <td class="price__check price__check--yes">
-              <p class="price__td-title">Смайлики</p>
-              <b class="visually-hidde">да</b>
-            </td>
-          </tr>
+            <tr>
+              <td class="price__row-head">Смайлики</td>
 
-          <tr>
-            <td class="price__row-head">Коментарии</td>
+              <td class="price__check price__check--no">
+                <p class="price__td-content">
+                  <span class="price__td-title">Смайлики</span>
+                  <span class="price__td-check"><b class="visually-hidden">нет</b></span>
+                </p>
+              </td>
 
-            <td class="price__check price__check--no">
-              <p class="price__td-title">Коментарии</p>
-              <b class="visually-hidde">нет</b>
-            </td>
-            <td class="price__check price__check--no">
-              <p class="price__td-title">Коментарии</p>
-              <b class="visually-hidde">нет</b>
-            </td>
-            <td class="price__check price__check--yes">
-              <p class="price__td-title">Коментарии</p>
-              <b class="visually-hidde">да</b>
-            </td>
-          </tr>
-        </table>
+              <td class="price__check price__check--yes">
+                <p class="price__td-content">
+                  <span class="price__td-title">Смайлики</span>
+                  <span class="price__td-check"><b class="visually-hidden">да</b></span>
+                </p>
+              </td>
 
+              <td class="price__check price__check--yes">
+                <p class="price__td-content">
+                  <span class="price__td-title">Смайлики</span>
+                  <span class="price__td-check"><b class="visually-hidden">да</b></span>
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="price__row-head">Коментарии</td>
+
+              <td class="price__check price__check--no">
+                <p class="price__td-content">
+                  <span class="price__td-title">Коментарии</span>
+                  <span class="price__td-check"><b class="visually-hidden">нет</b></span>
+                </p>
+              </td>
+
+              <td class="price__check price__check--no">
+                <p class="price__td-content">
+                  <span class="price__td-title">Коментарии</span>
+                  <span class="price__td-check"><b class="visually-hidden">нет</b></span>
+                </p>
+              </td>
+
+              <td class="price__check price__check--yes">
+                <p class="price__td-content">
+                  <span class="price__td-title">Коментарии</span>
+                  <span class="price__td-check"><b class="visually-hidden">да</b></span>
+                </p>
+              </td>
+
+            </tr>
+          </table>
+        </div>
         <ul class="feedbacks__toggles slider__toggles">
           <li class="slider__toggle-item">
             <button class="slider__toggle button">

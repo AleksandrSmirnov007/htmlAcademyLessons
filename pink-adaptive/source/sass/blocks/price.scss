@@ -1,18 +1,23 @@
 .price {
   background-color: $special-gray-100;
-  display: grid;
-  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+.price__wrapper {
+  overflow-x: auto;
 }
 
 .price__list {
-  width: 1120px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 875px;
+  padding-right: 20px;
+  padding-left: 20px;
 
-  @media (min-width: $tablet-width) {
-    width: 1120px;
+  td {
+    min-width: 280px; // поточнее разобраться
   }
 }
+
+
 
 .price__column-head {
   position: relative;
@@ -29,7 +34,7 @@
   content: "хит";
   position: absolute;
   top: 10px;
-  left: -54px;
+  left: -110px;
   height: 20px;
   width: 100%;
   background-color: $color-primary;
@@ -39,6 +44,7 @@
   text-transform: uppercase;
   font-size: 14px;
   padding-top: 2px;
+  padding-right: 13px;
 }
 
 
@@ -81,7 +87,7 @@
 }
 
 .price__list td {
-  width: 280px;
+  padding: 0;
   border-bottom: 2px solid $special-gray-200;
   border-right: 2px solid $special-gray-200;
   background-color: $basic-white;
@@ -111,7 +117,6 @@
     border-top-left-radius: 3px;
     border-top: 2px solid $special-gray-200;
     border-left: 2px solid $special-gray-200;
-
   }
 }
 
@@ -120,3 +125,43 @@
   border: none;
 }
 
+.price__list tr th:first-child,
+.price__list tr td:first-child {
+  display: none;
+}
+
+// лишняя обертка потому что табличная ячейка display: table-cell и при замене на любое другое значение верстка ломается
+.price__td-content {
+  margin: 0;
+  padding: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+
+.price__td-check {
+  width: 31px;
+  height: 31px;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.price__check--yes .price__td-check::after {
+  background-image: url("../img/sprites/check-yes.svg");
+  background-size: 31px 21px;
+}
+
+.price__check--no .price__td-check::after {
+  background-image: url("../img/sprites/check-no.svg");
+  background-size: 27px 27px;
+}
