@@ -1,0 +1,122 @@
+.price {
+  background-color: $special-gray-100;
+  display: grid;
+  overflow: hidden;
+}
+
+.price__list {
+  width: 1120px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: $tablet-width) {
+    width: 1120px;
+  }
+}
+
+.price__column-head {
+  position: relative;
+  text-transform: uppercase;
+  background-color: $special-gray;
+  color: $basic-white;
+}
+
+.price__column-head--hit {
+  overflow: hidden;
+}
+
+.price__column-head--hit::before {
+  content: "хит";
+  position: absolute;
+  top: 10px;
+  left: -54px;
+  height: 20px;
+  width: 100%;
+  background-color: $color-primary;
+  font-weight: 400;
+  transform: rotate(-45deg);
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 2px;
+}
+
+
+.price__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 17px;
+  margin-bottom: 2px;
+}
+
+.price__cost {
+  margin: 0;
+  margin-bottom: 23px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.price__column-head:first-of-type {
+  border-top-left-radius: 3px;
+}
+
+.price__column-head:last-of-type {
+  border-top-right-radius: 3px;
+}
+
+.price__column-head:not(:last-of-type) {
+  border-right: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.price__list tr:last-child {
+  td:first-child {
+    border-bottom-left-radius: 3px;
+  }
+
+  td:last-child {
+    border-bottom-right-radius: 3px;
+  }
+}
+
+.price__list td {
+  width: 280px;
+  border-bottom: 2px solid $special-gray-200;
+  border-right: 2px solid $special-gray-200;
+  background-color: $basic-white;
+}
+
+.price__list td:first-child,
+.price__list td:nth-child(2) {
+  border-left: 2px solid $special-gray-200;
+}
+
+.price__list td:first-child {
+  border-right: none;
+}
+
+.price__list tr:nth-child(2) td:first-child {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: -2px;
+    left: -2px;
+    right: 0;
+    height: 3px;
+    background-color: $basic-white;
+    border-top-left-radius: 3px;
+    border-top: 2px solid $special-gray-200;
+    border-left: 2px solid $special-gray-200;
+
+  }
+}
+
+.price__list tr:first-child td:first-child {
+  background-color: transparent;
+  border: none;
+}
+

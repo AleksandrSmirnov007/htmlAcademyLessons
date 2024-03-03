@@ -1,0 +1,26 @@
+.slider__toggles {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.slider__toggle-item {
+  margin: 9px;
+}
+
+.slider__toggle {
+  padding: 0;
+  display: block;
+  background-color: fade-out($special-gray, 0.7);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.slider__toggle--current {
+  background-color: $basic-white;
+  outline: 3px solid $special-gray;
+}

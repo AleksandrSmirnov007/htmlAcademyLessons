@@ -4,7 +4,7 @@
 
 .install__button {
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .install__list {
@@ -16,14 +16,30 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 12px;
 }
 
 .install__icon {
   display: block;
-  background-color: green;
   width: 80px;
   height: 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &--ios {
+    background-size: 47px 56px;
+    background-image: url("../img/sprites/apple-logo.svg");
+  }
+
+  &--android {
+    background-size: 43px 47px;
+    background-image: url("../img/sprites/android-logo.svg");
+  }
+
+  &--windows {
+    background-size: 44px 41px;
+    background-image: url("../img/sprites/microsoft-logo.svg");
+  }
 }
 
 .install__text {

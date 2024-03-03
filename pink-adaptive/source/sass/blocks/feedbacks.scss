@@ -1,0 +1,27 @@
+.feedbacks {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.feedbacks__item {
+  margin: 0;
+}
+
+.feedbacks__author-name {
+  margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.feedbacks__author-age,
+.feedbacks__author-profession {
+  display: none;
+}
+
+.feedbacks__text {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
