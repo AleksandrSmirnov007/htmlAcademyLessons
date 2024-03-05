@@ -1,25 +1,41 @@
 .feedbacks {
   padding-top: 50px;
-  padding-bottom: 50px;
 }
 
 .feedbacks__item {
   margin: 0;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+  }
 }
 
 .feedbacks__author-name {
   margin: 0;
   font-style: normal;
+  font-weight: 700;
+  color: $basic-black;
   line-height: 30px;
 }
 
 .feedbacks__author-age,
 .feedbacks__author-profession {
   display: none;
+
+  @media (min-width: $tablet-width) {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    text-transform: lowercase;
+  }
 }
 
 .feedbacks__text {
   margin-top: 0;
   margin-bottom: 20px;
-  line-height: 30px;
+
+  @media (min-width: $tablet-width) {
+    order: -1;
+  }
 }

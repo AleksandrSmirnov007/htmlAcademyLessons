@@ -1,5 +1,5 @@
 .price {
-  background-color: $special-gray-100;
+  padding-top: 100px;
   padding-bottom: 40px;
 }
 
@@ -13,12 +13,21 @@
   padding-right: 20px;
   padding-left: 20px;
 
+
+  @media (min-width: $tablet-width) {
+    width: 612px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
   td {
     min-width: 280px; // поточнее разобраться
+
+    @media (min-width: $tablet-width) {
+      min-width: 153px;
+    }
   }
 }
-
-
 
 .price__column-head {
   position: relative;
@@ -46,6 +55,11 @@
   font-size: 14px;
   padding-top: 2px;
   padding-right: 13px;
+
+  @media (min-width: $tablet-width) {
+    top: 10px;
+    left: -110px;
+  }
 }
 
 
@@ -64,6 +78,14 @@
   line-height: 30px;
 }
 
+.price__row-head {
+  @media (min-width: $tablet-width) {
+    padding: 10px 0;
+  }
+}
+
+
+// радиусы и границы шрифты
 .price__column-head:first-of-type {
   border-top-left-radius: 3px;
 }
@@ -88,10 +110,13 @@
 }
 
 .price__list td {
-  padding: 0;
   border-bottom: 2px solid $special-gray-200;
   border-right: 2px solid $special-gray-200;
   background-color: $basic-white;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+  }
 }
 
 .price__list td:first-child,
@@ -129,16 +154,31 @@
 .price__list tr th:first-child,
 .price__list tr td:first-child {
   display: none;
+
+  @media (min-width: $tablet-width) {
+    display: table-cell;
+  }
 }
 
 // лишняя обертка потому что табличная ячейка display: table-cell и при замене на любое другое значение верстка ломается
 .price__td-content {
   margin: 0;
   padding: 20px;
-  text-align: left;
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    justify-content: center;
+  }
+}
+
+
+.price__td-title {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .price__td-check {

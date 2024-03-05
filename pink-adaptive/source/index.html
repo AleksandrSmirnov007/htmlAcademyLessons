@@ -92,7 +92,7 @@
 
     <main class="page__main page-main">
       <section class="page-main__section advantages">
-        <header class="advantages__header slash-background">
+        <header class="advantages__header">
           <div class="advantages__header-content container">
             <h2 class="visually-hidden">Преимущества</h2>
             <p class="page-main__heading">
@@ -101,10 +101,10 @@
             <p class="page-main__heading">
               Нам есть, что вам предложить!
             </p>
-        </div>
+          </div>
         </header>
 
-        <div class="advantages__body">
+        <div class="advantages__body slash-background-top">
           <ul class="advantages__list container">
             <li class="advantages__item">
               <h3 class="advantages__title page-main__subheading">Поднимает настроение</h3>
@@ -124,20 +124,38 @@
               <h3 class="advantages__title page-main__subheading">Заводит новых друзей</h3>
               <p class="advantages__description">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
               <div class="advantages__image-wrapper">
-                <img class="advantages__image" width="157" height="320" src="img/content/iphone-helloy-all.png" alt="телефон, на эране надпись 'привет всем' на фотографмм с розовым фильтром ">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1200px)" srcset="img/content/iphone-helloy-all-mobile.png 1x, img/content/iphone-helloy-all-mobile@2x.png 2x">
+                  <source type="image/webp" media="(min-width: 660px)" srcset="img/content/iphone-helloy-all-tablet.png 1x, img/content/iphone-helloy-all-tablet@2x.png 2x">
+                  <source type="image/webp" src="img/content/iphone-helloy-all-mobile.png" srcset="img/content/iphone-helloy-all-mobile.png 1x, img/content/iphone-helloy-all-mobile@2x.png 2x">
+
+                  <source media="(min-width: 1200px)" srcset="img/content/iphone-helloy-all-mobile.png 1x, img/content/iphone-helloy-all-mobile@2x.png 2x">
+                  <source media="(min-width: 660px)" srcset="img/content/iphone-helloy-all-tablet.png 1x, img/content/iphone-helloy-all-tablet@2x.png 2x">
+                  <img class="advantages__image" width="157" height="320" src="img/content/iphone-helloy-all-mobile.png" srcset="img/content/iphone-helloy-all-mobile.png, img/content/iphone-helloy-all-mobile@2x.png 2x" alt="телефон, на эране надпись 'привет всем' на фотографмм с розовым фильтром ">
+                </picture>
               </div>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="page-main__section feedbacks slider slash-background">
+      <section class="page-main__section info container">
+        <h2 class="info__heading">Эффект<br class="info__br-tablet"> на 24 часа!</h2>
+        <p class="info__text">
+          Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!
+        </p>
+        <a class="info__link" href="#">Узнать больше об исследовании</a>
+      </section>
+
+      <section class="page-main__section feedbacks slider">
         <h2 class="visually-hidden">Отзывы</h2>
         <div class="feedbacks__list slider__list container">
           <blockquote class="feedbacks__item slider__item">
             <cite class="feedbacks__author-name page-main__subheading">Николай Петров</cite>
-            <p class="feedbacks__author-age">25 лет</p>
-            <p class="feedbacks__author-profession">Водитель трамвая</p>
+            <div class="feedbacks__autor-info">
+              <span class="feedbacks__author-age">25 лет</span>
+              <span class="feedbacks__author-profession">Водитель трамвая</span>
+            </div>
             <p class="feedbacks__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
           </blockquote>
         </div>
@@ -162,7 +180,7 @@
         </ul>
       </section>
 
-      <section class="page-main__section price slider">
+      <section class="page-main__section price slider slash-background-top">
         <h2 class="visually-hidden">Прайслист</h2>
         <div class="price__wrapper">
           <table class="price__list slider__list" cellspacing="0" cellpadding="0">

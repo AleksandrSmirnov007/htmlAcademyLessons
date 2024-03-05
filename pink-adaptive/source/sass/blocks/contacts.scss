@@ -29,6 +29,15 @@
 .contacts__list {
   margin: 0;
   padding: 0;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contacts__item:nth-child(3n) {
+  grid-column: 1 / -1;
 }
 
 .contacts__link {
