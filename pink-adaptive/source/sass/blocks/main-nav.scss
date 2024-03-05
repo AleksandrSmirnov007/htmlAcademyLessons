@@ -7,7 +7,6 @@
 }
 
 .main-nav__bar {
-  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +81,7 @@
 .main-nav--opened .main-nav__wrapper {
   z-index: 2;
   position: absolute;
-  top: 100%;
+  top: 99%;
   width: 100%;
   display: block;
 }
