@@ -33,6 +33,7 @@
             <span class="visually-hidden">Открыть меню</span>
           </button>
         </div>
+
         <div class="main-nav__wrapper">
           <ul class="site-menu">
             <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item- -active -->
@@ -51,41 +52,43 @@
         </div>
       </nav>
 
-      <div class="page-header__promo promo container">
+      <div class="page-header__promo promo">
         <div class="promo__header">
-          <h1 class="visually-hidden">Социальная сеть Pink</h1>
-          <p class="promo__heading">Взгляните на жизнь иначе!</p>
-          <picture>
-            <source type="image/webp" media="(min-width: 1200px)" srcset="img/content/promo-image-desktop.webp 1x, img/content/promo-image-desktop@2x.webp 2x">
-            <source type="image/webp" media="(min-width: 660px)" srcset="img/content/promo-image-tablet.webp 1x, img/content/promo-image-tablet@2x.webp 2x">
-            <source type="image/webp" srcset="img/content/promo-image-mobile.webp 1x, img/content/promo-image-mobile@2x.webp 2x">
+          <div class="container">
+            <h1 class="visually-hidden">Социальная сеть Pink</h1>
+            <p class="promo__heading">Взгляните на жизнь иначе!</p>
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/content/promo-image-desktop.webp 1x, img/content/promo-image-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 660px)" srcset="img/content/promo-image-tablet.webp 1x, img/content/promo-image-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/content/promo-image-mobile.webp 1x, img/content/promo-image-mobile@2x.webp 2x">
 
-            <source media="(min-width: 1200px)" srcset="img/content/map-desktop.jpg 1x, img/content/map-desktop@2x.jpg 2x">
-            <source media="(min-width: 660px)" srcset="img/content/promo-image-tablet.jpg 1x, img/content/promo-image-tablet@2x.jpg 2x">
-            <img class="promo__image" width="320" height="286" src="img/content/promo-image-mobile.png" srcset="img/content/promo-image-mobile.png, img/content/promo-image-mobile@2x.png 2x" alt="Телефон в руке, розовый фильтр на экране телефона">
-          </picture>
-          <section class="page-main__section install">
-            <h2 class="visually-hidden">Установка приложения</h2>
-            <a class="install__button button button--primary" href="#">Скачать приложение</a>
-            <ul class="install__list">
-              <li class="install__item">
-                <a class="install__icon install__icon--ios" href="#">
-                  <span class="visually-hidden">IOS</span>
-                </a>
-              </li>
-              <li class="install__item">
-                <a class="install__icon install__icon--android" href="#">
-                  <span class="visually-hidden">Android</span>
-                </a>
-              </li>
-              <li class="install__item">
-                <a class="install__icon install__icon--windows" href="#">
-                  <span class="visually-hidden">Windows</span>
-                </a>
-              </li>
-            </ul>
-            <p class="install__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
-          </section>
+              <source media="(min-width: 1200px)" srcset="img/content/map-desktop.jpg 1x, img/content/map-desktop@2x.jpg 2x">
+              <source media="(min-width: 660px)" srcset="img/content/promo-image-tablet.jpg 1x, img/content/promo-image-tablet@2x.jpg 2x">
+              <img class="promo__image" width="320" height="286" src="img/content/promo-image-mobile.png" srcset="img/content/promo-image-mobile.png, img/content/promo-image-mobile@2x.png 2x" alt="Телефон в руке, розовый фильтр на экране телефона">
+            </picture>
+            <section class="page-main__section install">
+              <h2 class="visually-hidden">Установка приложения</h2>
+              <a class="install__button button button--primary" href="#">Скачать приложение</a>
+              <ul class="install__list">
+                <li class="install__item">
+                  <a class="install__icon install__icon--ios" href="#">
+                    <span class="visually-hidden">IOS</span>
+                  </a>
+                </li>
+                <li class="install__item">
+                  <a class="install__icon install__icon--android" href="#">
+                    <span class="visually-hidden">Android</span>
+                  </a>
+                </li>
+                <li class="install__item">
+                  <a class="install__icon install__icon--windows" href="#">
+                    <span class="visually-hidden">Windows</span>
+                  </a>
+                </li>
+              </ul>
+              <p class="install__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+            </section>
+          </div>
         </div>
       </div>
     </header>
