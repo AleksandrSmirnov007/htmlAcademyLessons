@@ -6,14 +6,19 @@
   font-size: 24px;
   font-weight: 300;
   line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 25px;
 
   @media (min-width: $tablet-width) {
     font-size: 40px;
     line-height: 54px;
+    margin-bottom: 0;
+  }
 
-    &:last-of-type {
-      padding: 0 25px;
-    }
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 68px;
+
   }
 }
 

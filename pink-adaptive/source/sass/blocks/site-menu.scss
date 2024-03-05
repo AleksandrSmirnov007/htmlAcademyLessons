@@ -4,6 +4,13 @@
   list-style-type: none;
   background-color: $special-gray;
   border-top: 1px solid $basic-black;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: none;
+    background-color: transparent;
+  }
 }
 
 .site-menu__link {
@@ -14,6 +21,15 @@
   border-top: 1px solid fade-out($basic-white, 0.85);
   border-bottom: 1px solid $basic-black;
   text-transform: uppercase;
+
+  @media (min-width: $desktop-width) {
+    text-transform: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    border: none;
+    padding: 16px 35px;
+  }
 }
 
 .site-menu__link[href]:hover {

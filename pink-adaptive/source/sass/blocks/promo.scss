@@ -6,6 +6,11 @@
   }
 }
 
+.promo__content {
+  position: relative;
+  z-index: 1;
+}
+
 .promo__header {
   padding-top: 66px;
 
@@ -20,8 +25,8 @@
   }
 
   @media (min-width: $tablet-width) {
-    z-index: 1;
-    position: relative;
+
+
     background-image: url("../img/background/back-tablet.jpg");
     background-size: 1200px 729px;
 
@@ -31,6 +36,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    padding-top: 120px;
     background-image: url("../img/background/back-desktop.jpg");
     background-size: 2560px 853px;
 
@@ -54,24 +60,35 @@
   }
 }
 
+
+.promo__image-wrapper {
+  margin-right: -20px;
+  margin-left: -20px;
+
+  @media (min-width: $tablet-width) {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+
+
 .promo__image {
   width: 320px;
   height: 286px;
 
   @media (min-width: $tablet-width) {
-    z-index: -1;
     width: 660px;
     height: 545px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   @media (min-width: $desktop-width) {
     width: 1050px;
     height: 645px;
+    margin: 0;
+    left: auto;
   }
 }
