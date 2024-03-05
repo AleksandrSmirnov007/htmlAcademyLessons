@@ -72,6 +72,12 @@
     right: 0;
     left: 0;
   }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+    left: auto;
+    margin-right: -130px;
+  }
 }
 
 
@@ -88,7 +94,5 @@
   @media (min-width: $desktop-width) {
     width: 1050px;
     height: 645px;
-    margin: 0;
-    left: auto;
   }
 }
