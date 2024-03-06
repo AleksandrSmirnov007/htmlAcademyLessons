@@ -1,5 +1,31 @@
 .feedbacks {
-  padding-top: 50px;
+  padding-top: 56px;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 193px;
+    position: relative;
+  }
+}
+
+.feedbacks::after {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 79px;
+    height: 63px;
+    top: 72px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+
+    background-image: url("../img/sprites/quotes.svg");
+    background-repeat: no-repeat;
+    background-size: 79px 63px;
+    background-position: center;
+  }
 }
 
 .feedbacks__item {

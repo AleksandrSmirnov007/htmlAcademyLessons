@@ -1,17 +1,28 @@
 .info {
   display: none;
   text-align: left;
+
   @media (min-width: $tablet-width) {
     display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-color: $special-gray-100;
+  }
+}
+
+.info__wrapper {
+  @media (min-width: $tablet-width) {
     padding-left: 330px;
     padding-top: 102px;
-    padding-bottom: 50px;
+    padding-bottom: 120px;
     background-image: url("../img/background/timer.svg");
     background-repeat: no-repeat;
     background-size: 238px 276px;
     background-position: top 52px left;
   }
 }
+
 
 .info__heading {
   margin: 0;
