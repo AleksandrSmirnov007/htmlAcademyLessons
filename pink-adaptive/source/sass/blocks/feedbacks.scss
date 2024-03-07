@@ -31,9 +31,18 @@
 .feedbacks__item {
   margin: 0;
 
+
   @media (min-width: $tablet-width) {
     display: grid;
   }
+
+
+
+  @media (min-width: $desktop-width) {
+    padding-right: 126px;
+    padding-left: 126px;
+  }
+
 }
 
 .feedbacks__author-name {
