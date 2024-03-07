@@ -1,4 +1,4 @@
-.promo {
+.intro {
   margin-top: -66px;
 
   @media (min-width: $tablet-width) {
@@ -6,12 +6,7 @@
   }
 }
 
-.promo__content {
-  position: relative;
-  z-index: 1;
-}
-
-.promo__header {
+.intro__wrapper {
   padding-top: 66px;
 
   background-image: url("../img/background/back-mobile.jpg");
@@ -46,7 +41,20 @@
   }
 }
 
-.promo__heading {
+
+
+.intro__content {
+  position: relative;
+  z-index: 1;
+}
+
+.intro__content--catalog {
+  padding-bottom: 54px;
+  text-align: center;
+}
+
+
+.intro__heading {
   margin: 22px 20px 31px;
   font-weight: 300;
   line-height: 120%;
@@ -60,8 +68,14 @@
   }
 }
 
+.intro__heading--catalog {
+  @media (min-width: $tablet-width) {
+    width: auto;
+  }
+}
 
-.promo__image-wrapper {
+
+.intro__image-wrapper {
   margin-right: -20px;
   margin-left: -20px;
 
@@ -82,7 +96,7 @@
 
 
 
-.promo__image {
+.intro__image {
   width: 320px;
   height: 286px;
 

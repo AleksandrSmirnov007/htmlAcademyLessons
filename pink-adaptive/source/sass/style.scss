@@ -11,7 +11,8 @@
 @import "blocks/slash-background.scss";
 @import "blocks/main-nav.scss";
 @import "blocks/site-menu.scss";
-@import "blocks/promo.scss";
+
+@import "blocks/intro.scss";
 @import "blocks/install.scss";
 
 @import "blocks/page-main.scss";
@@ -26,3 +27,8 @@
 @import "blocks/social.scss";
 @import "blocks/developer.scss";
 @import "blocks/info.scss";
+
+
+//catalog
+
+@import "blocks/reviews.scss";

@@ -13,6 +13,25 @@
   }
 }
 
+
+.site-menu__item--active {
+  @media (min-width: $desktop-width) {
+    position: relative;
+  }
+}
+
+.site-menu__item--active::after {
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 35px;
+    left: 35px;
+    height: 2px;
+    background-color: $basic-white;
+  }
+}
+
 .site-menu__link {
   display: block;
   color: $basic-white;

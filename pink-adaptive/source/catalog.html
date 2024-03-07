@@ -36,11 +36,11 @@
 
           <div class="main-nav__wrapper">
             <ul class="site-menu">
-              <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item- -active -->
-                <a class="site-menu__link" title="Мы на главной странице">Главная</a>
+              <li class="site-menu__item"> <!-- текущая страница сайта отмечается классом site-menu__item- -active -->
+                <a class="site-menu__link" href="index.html">Главная</a>
               </li>
-              <li class="site-menu__item">
-                <a class="site-menu__link" href="catalog.html">Фотографии</a>
+              <li class="site-menu__item site-menu__item--active">
+                <a class="site-menu__link" title="Вы на странице с фотографиями">Фотографии</a>
               </li>
               <li class="site-menu__item">
                 <a class="site-menu__link" href="form.html">Конкурс</a>
@@ -53,132 +53,167 @@
         </div>
       </nav>
 
-      <div class="page-header__promo promo">
-        <div class="promo__header">
-          <div class="promo__content container">
-            <h1 class="visually-hidden">Социальная сеть Pink</h1>
-            <p class="promo__heading">Взгляните на жизнь иначе!</p>
-
-            <div class="promo__image-wrapper">
-              <picture>
-                <source type="image/webp" media="(min-width: 1200px)" srcset="img/content/promo-image-desktop.webp 1x, img/content/promo-image-desktop@2x.webp 2x">
-                <source type="image/webp" media="(min-width: 660px)" srcset="img/content/promo-image-tablet.webp 1x, img/content/promo-image-tablet@2x.webp 2x">
-                <source type="image/webp" srcset="img/content/promo-image-mobile.webp 1x, img/content/promo-image-mobile@2x.webp 2x">
-
-                <source media="(min-width: 1200px)" srcset="img/content/promo-image-desktop.jpg 1x, img/content/promo-image-desktop@2x.jpg 2x">
-                <source media="(min-width: 660px)" srcset="img/content/promo-image-tablet.jpg 1x, img/content/promo-image-tablet@2x.jpg 2x">
-                <img class="promo__image" width="320" height="286" src="img/content/promo-image-mobile.png" srcset="img/content/promo-image-mobile.png, img/content/promo-image-mobile@2x.png 2x" alt="Телефон в руке, розовый фильтр на экране телефона">
-              </picture>
-            </div>
-
-            <section class="page-main__section install">
-              <h2 class="visually-hidden">Установка приложения</h2>
-              <a class="install__button button button--primary" href="#">Скачать приложение</a>
-              <ul class="install__list">
-                <li class="install__item">
-                  <a class="install__icon install__icon--ios" href="#">
-                    <span class="visually-hidden">IOS</span>
-                  </a>
-                </li>
-                <li class="install__item">
-                  <a class="install__icon install__icon--android" href="#">
-                    <span class="visually-hidden">Android</span>
-                  </a>
-                </li>
-                <li class="install__item">
-                  <a class="install__icon install__icon--windows" href="#">
-                    <span class="visually-hidden">Windows</span>
-                  </a>
-                </li>
-              </ul>
-              <p class="install__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
-            </section>
+      <div class="page-header__intro intro">
+        <div class="intro__wrapper">
+          <div class="intro__content  intro__content--catalog container">
+            <h1 class="visually-hidden">Социальная сеть Pink. Фотографии</h1>
+            <p class="intro__heading intro__heading--catalog">Фотографии<br>пользователей</p>
           </div>
         </div>
       </div>
     </header>
     <main class="page__main page-main">
-      <header class="page-main__header">
-        <h1 class="page-main__headihg">Фотографии пользователей</h1>
-        <p class="page-main__intro">Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?</p>
-      </header>
-      <section class="page-main__section reviews">
-        <h2 class="visually-hidden">Фотографии пользователей и коментарии</h2>
+      <section class="page-main__section reviews ">
 
-        <ul class="reviews__list">
-          <li class="reviews__item">
-            <img class="reviews__image reviews__image--work-month" width="320" height="137" src="img/catalog/panorama@1x-320x137.jpg" alt="Мост через пропасть">
+        <header class="reviews__header">
+          <div class="reviews__header-content container">
+            <h2 class="visually-hidden">Фотографии пользователей и коментарии</h2>
+            <p class="reviews__heading">
+              Взгляните на фотографии, которые выкладывают пользователи!
+            </p>
+            <p class="reviews__heading">
+              Видите, как не хватает ваших?
+            </p>
+          </div>
+        </header>
+
+        <ul class="reviews__list container">
+          <li class="reviews__item reviews__item--day">
             <span class="reviews__mark">Панорама дня</span>
+            <div class="reviews__image-wrapper">
+              <picture>
+                <img class="reviews__image" width="320" height="137" src="img/catalog/panorama@1x-320x137.jpg" alt="Мост через пропасть">
+              </picture>
+            </div>
+
+
             <blockquote class="reviews__quote">
               <cite class="reviews__cite">Анна</cite>
-              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(5 минут назад)</time>
+              <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(5 минут назад)</time>
               <p class="reviews__text">Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</p>
             </blockquote>
-            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="reviews__like-counter">Нравится: 215</span>
+
+            <div class="reviews__likes">
+              <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
+              <span class="reviews__like-counter">Нравится: 215</span>
+            </div>
           </li>
+
           <li class="reviews__item">
-            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-1@1x-280x180.jpg" alt="Белый автомобиль Тесла">
+            <div class="reviews__image-wrapper">
+              <picture>
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-1@1x-280x180.jpg" alt="Белый автомобиль Тесла">
+              </picture>
+            </div>
+
             <blockquote class="reviews__quote">
               <cite class="reviews__cite">Левон</cite>
-              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(5 часов назад)</time>
+              <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(5 часов назад)</time>
               <p class="reviews__text">Вчера он на луну летал, сегодня в руки к нам попал.</p>
             </blockquote>
-            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="reviews__like-counter">Нравится: 356</span>
+
+            <div class="reviews__likes">
+              <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
+              <span class="reviews__like-counter">Нравится: 356</span>
+            </div>
           </li>
+
           <li class="reviews__item">
-            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-2@1x-280x180.jpg" alt="Барабанная установка">
+            <div class="reviews__image-wrapper">
+              <picture>
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-2@1x-280x180.jpg" alt="Барабанная установка">
+              </picture>
+            </div>
+
             <blockquote class="reviews__quote">
               <cite class="reviews__cite">Антон</cite>
-              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(12 часов назад)</time>
+              <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(12 часов назад)</time>
               <p class="reviews__text">Соседи будут рады!</p>
             </blockquote>
-            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="reviews__like-counter">Нравится: 666</span>
+
+            <div class="reviews__likes">
+              <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
+              <span class="reviews__like-counter">Нравится: 666</span>
+            </div>
           </li>
+
           <li class="reviews__item">
-            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-3@1x-280x180.jpg" alt="Небо и решетка">
+            <div class="reviews__image-wrapper">
+              <picture>
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-3@1x-280x180.jpg" alt="Небо и решетка">
+              </picture>
+            </div>
+
             <blockquote class="reviews__quote">
               <cite class="reviews__cite">Борис</cite>
-              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(20 часов назад)</time>
+              <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(20 часов назад)</time>
               <p class="reviews__text">Здесь могла быть ваша цитата о высоком и вечном.</p>
             </blockquote>
-            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="reviews__like-counter">Нравится: 215</span>
+            <div class="reviews__likes">
+              <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
+              <span class="reviews__like-counter">Нравится: 215</span>
+            </div>
           </li>
+
           <li class="reviews__item">
-            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-4@1x-280x180.jpg" alt="Кубанская бахча">
+            <div class="reviews__image-wrapper">
+              <picture>
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-4@1x-280x180.jpg" alt="Кубанская бахча">
+              </picture>
+            </div>
+
             <blockquote class="reviews__quote">
               <cite class="reviews__cite">Сергей</cite>
-              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(25 часов назад)</time>
+              <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(25 часов назад)</time>
               <p class="reviews__text">Самая кубанская в мире!</p>
             </blockquote>
-            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="reviews__like-counter">Нравится: 4</span>
+
+            <div class="reviews__likes">
+              <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
+              <span class="reviews__like-counter">Нравится: 4</span>
+            </div>
           </li>
+
           <li class="reviews__item">
-            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-5@1x-280x180.jpg" alt="Постриженный мужчина в профиль">
+            <div class="reviews__image-wrapper">
+              <picture>
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-5@1x-280x180.jpg" alt="Постриженный мужчина в профиль">
+              </picture>
+            </div>
+
             <blockquote class="reviews__quote">
               <cite class="reviews__cite">Максим</cite>
-              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(40 часов назад)</time>
+              <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(40 часов назад)</time>
               <p class="reviews__text">Где снег-то?</p>
             </blockquote>
-            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="reviews__like-counter">Нравится: 150</span>
+
+            <div class="reviews__likes">
+              <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
+              <span class="reviews__like-counter">Нравится: 150</span>
+            </div>
           </li>
+
           <li class="reviews__item">
-            <img class="reviews__image" width="280" height="180" src="img/catalog/photo-6@1x-280x180.jpg" alt="Крыло самолета">
+            <div class="reviews__image-wrapper">
+              <picture>
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-6@1x-280x180.jpg" alt="Крыло самолета">
+              </picture>
+            </div>
+
             <blockquote class="reviews__quote">
               <cite class="reviews__cite">Надежда</cite>
-              <time class="reviews__cite" datetime="2011-11-18T14:54:39.929">(45 часов назад)</time>
+              <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(45 часов назад)</time>
               <p class="reviews__text">Всем GM и взаимные лайки!</p>
             </blockquote>
-            <button class="reviews__button-like" type="button"><span class="visually-hidden">Нравится</span></button>
-            <span class="reviews__like-counter">Нравится: 150</span>
+
+            <div class="reviews__likes">
+              <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
+              <span class="reviews__like-counter">Нравится: 150</span>
+            </div>
           </li>
         </ul>
       </section>
+
       <section class="page-main__section uploading">
         <h2 class="visually-hidden">Загрузка фотографий</h2>
         <p class="uploading__intro">Затмите их всех! Выкладывайте все, что накопилось в телефоне!</p>
@@ -222,37 +257,55 @@
       </section>
     </main>
 
-    <footer class="page__footer page-footer">
+    <footer class="page__footer page-footer container">
 
-      <div class="page-footer__logo logo">
-        <img class="logo__image" width="128" height="24" src="img/content/logo-footer@1x.svg" alt="Логотип Pink">
-      </div>
+    <a class="page-footer__logo logo" href="index.html">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="img/content/logo-large.svg">
+        <img class="logo__image" width="145" height="40" src="img/content/logo-medium.svg" alt="Логотип Пинк">
+      </picture>
+    </a>
 
-      <ul class="page-footer__list social">
-        <li class="social__item">
-          <a class="social__link social__link--twitter" href="https://vk.com/htmlacademy">
-            <span class="visually-hidden">Мы в Твиттере</span>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
-            <span class="visually-hidden">Мы в Фейсбуке</span>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link social__link--youtube" href="https://www.instagram.com/htmlacademy">
-            <span class="visually-hidden">Мы в Ютубе</span>
-          </a>
-        </li>
-      </ul>
+    <ul class="page-footer__list social">
 
-      <a class="page-footer__developer developer" href="https://htmlacademy.ru/intensive/adaptive">
-        <span class="developer__text">Разработано в</span>
-        <span class="visually-hidden">HTMLAcademy</span>
-        <img class="developer__image" width="27" height="34" src="img/content/logo-html-academy.svg" alt="Логотип HTML Academy">
-      </a>
+      <li class="social__item">
+        <a class="social__link social__link--twitter" href="https://vk.com/htmlacademy">
+          <span class="visually-hidden">Мы в Фейсбук</span>
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#twitter"></use>
+          </svg>
+        </a>
+      </li>
 
-    </footer>
+      <li class="social__item">
+        <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+          <span class="visually-hidden">Мы в Фейсбук</span>
+          <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+
+      <li class="social__item">
+        <a class="social__link social__link--youtube" href="#">
+          <span class="visually-hidden">Мы в Фейсбук</span>
+          <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+
+    <a class="page-footer__developer developer" href="https://htmlacademy.ru/intensive/adaptive">
+      <span class="developer__text">Разработано в</span>
+      <span class="visually-hidden">HTMLAcademy</span>
+      <svg width="27" height="34">
+        <use xlink:href="img/sprite.svg#htmlacademy"></use>
+      </svg>
+    </a>
+
+  </footer>
     <script src="js/script.min.js" ></script>
   </body>
 </html>
