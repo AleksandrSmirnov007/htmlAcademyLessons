@@ -2,35 +2,100 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Pink - Социальная сеть (адаптив). Каталог</title>
+    <title>Pink адаптив. Главная.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Социальная сеть Pink">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple.png"> <!-- 180×180 -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preload" href="fonts/opensans-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/opensans-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/opensans-300.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="css/style.min.css" as="style" crossorigin="anonymous">
+    <link rel="preload" href="js/script.min.js" as="script" crossorigin="anonymous">
+    <link rel="preload" href="img/background/back-mobile.jpg" as="image" type="image/jpg" crossorigin="anonymous">
   </head>
   <body class="page__body">
-    <header class="page-header">
-      <nav class="page-header__nav main-nav">
-        <a class="page-header__logo" href="#">
-          <img class="page-header__logo-image" width="74" height="23" src="img/content/logo@1x.svg" alt="Логотип социальной сети Pink">
-        </a>
+    <header class="page__header page-header">
+      <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс main-nav- -closed, для открытого состояния и отображения кнопки-крестик добавить класс main-nav- -opened  -->
 
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
-        </button>
+        <div class="main-nav__bar container">
+          <a class="page-header__logo logo" href="index.html">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/content/logo-large-white.svg">
+              <source media="(min-width: 660px)" srcset="img/content/logo-medium-white.svg">
+              <img class="logo__image" width="74" height="23" src="img/content/logo-small.svg" alt="Логотип Пинк">
+            </picture>
+          </a>
+          <button class="main-nav__toggle button" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
 
-        <ul class="page-header__list main-nav__list">
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="index.html">Главная</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="#" title="Вы на странице 'Фотографии'">Фотографии</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="form.html">Конкурс</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
-          </li>
-        </ul>
+
+          <div class="main-nav__wrapper">
+            <ul class="site-menu">
+              <li class="site-menu__item site-menu__item--active"> <!-- текущая страница сайта отмечается классом site-menu__item- -active -->
+                <a class="site-menu__link" title="Мы на главной странице">Главная</a>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="catalog.html">Фотографии</a>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="form.html">Конкурс</a>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="https://htmlacademy.ru/intensive/adaptive">Html Academy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
 
+      <div class="page-header__promo promo">
+        <div class="promo__header">
+          <div class="promo__content container">
+            <h1 class="visually-hidden">Социальная сеть Pink</h1>
+            <p class="promo__heading">Взгляните на жизнь иначе!</p>
+
+            <div class="promo__image-wrapper">
+              <picture>
+                <source type="image/webp" media="(min-width: 1200px)" srcset="img/content/promo-image-desktop.webp 1x, img/content/promo-image-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/content/promo-image-tablet.webp 1x, img/content/promo-image-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/content/promo-image-mobile.webp 1x, img/content/promo-image-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1200px)" srcset="img/content/promo-image-desktop.jpg 1x, img/content/promo-image-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/content/promo-image-tablet.jpg 1x, img/content/promo-image-tablet@2x.jpg 2x">
+                <img class="promo__image" width="320" height="286" src="img/content/promo-image-mobile.png" srcset="img/content/promo-image-mobile.png, img/content/promo-image-mobile@2x.png 2x" alt="Телефон в руке, розовый фильтр на экране телефона">
+              </picture>
+            </div>
+
+            <section class="page-main__section install">
+              <h2 class="visually-hidden">Установка приложения</h2>
+              <a class="install__button button button--primary" href="#">Скачать приложение</a>
+              <ul class="install__list">
+                <li class="install__item">
+                  <a class="install__icon install__icon--ios" href="#">
+                    <span class="visually-hidden">IOS</span>
+                  </a>
+                </li>
+                <li class="install__item">
+                  <a class="install__icon install__icon--android" href="#">
+                    <span class="visually-hidden">Android</span>
+                  </a>
+                </li>
+                <li class="install__item">
+                  <a class="install__icon install__icon--windows" href="#">
+                    <span class="visually-hidden">Windows</span>
+                  </a>
+                </li>
+              </ul>
+              <p class="install__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+            </section>
+          </div>
+        </div>
+      </div>
     </header>
     <main class="page__main page-main">
       <header class="page-main__header">
@@ -188,5 +253,6 @@
       </a>
 
     </footer>
+    <script src="js/script.min.js" ></script>
   </body>
 </html>

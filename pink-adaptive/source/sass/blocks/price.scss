@@ -12,7 +12,8 @@
   width: 875px;
   padding-right: 20px;
   padding-left: 20px;
-
+  //border-spacing: 10px 20px; вместо устаревшего cellspacing="0"  еще от таблицы свойство  при border-collapse: collapse; исчезают паддинги
+  border-spacing: 0 0;
 
   @media (min-width: $tablet-width) {
     width: 612px;
@@ -27,6 +28,11 @@
       min-width: 153px;
     }
   }
+}
+
+// взамен устаревшего свойства cellpadding в html применим
+.price__list th {
+  padding: 0;
 }
 
 .price__column-head {
