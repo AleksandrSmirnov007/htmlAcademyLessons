@@ -68,10 +68,10 @@
         <header class="reviews__header">
           <div class="reviews__header-content container">
             <h2 class="visually-hidden">Фотографии пользователей и коментарии</h2>
-            <p class="reviews__heading">
+            <p class="page-main__heading-small">
               Взгляните на фотографии, которые выкладывают пользователи!
             </p>
-            <p class="reviews__heading">
+            <p class="page-main__heading-small">
               Видите, как не хватает ваших?
             </p>
           </div>
@@ -82,27 +82,40 @@
             <span class="reviews__mark">Панорама дня</span>
             <div class="reviews__image-wrapper">
               <picture>
-                <img class="reviews__image" width="320" height="137" src="img/catalog/panorama@1x-320x137.jpg" alt="Мост через пропасть">
+                <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/panorama-desktop.webp 1x, img/catalog/panorama-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/panorama-tablet.webp 1x, img/catalog/panorama-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/catalog/panorama-mobile.webp 1x, img/catalog/panorama-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1200px)" srcset="img/catalog/panorama-desktop.jpg 1x, img/catalog/panorama-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/catalog/panorama-tablet.jpg 1x, img/catalog/panorama-tablet@2x.jpg 2x">
+                <img class="reviews__image" width="320" height="137" src="img/catalog/panorama-mobile.jpg" srcset="img/catalog/panorama-mobile@2x.jpg 2x" alt="Мост через пропасть">
               </picture>
             </div>
 
+            <div class="rewiews__text-wrapper">
+              <blockquote class="reviews__quote">
+                <cite class="reviews__cite">Анна</cite>
+                <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(5 минут назад)</time>
+                <p class="reviews__text">Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</p>
+              </blockquote>
 
-            <blockquote class="reviews__quote">
-              <cite class="reviews__cite">Анна</cite>
-              <time class="reviews__time" datetime="2011-11-18T14:54:39.929">(5 минут назад)</time>
-              <p class="reviews__text">Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</p>
-            </blockquote>
-
-            <div class="reviews__likes">
-              <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
-              <span class="reviews__like-counter">Нравится: 215</span>
+              <div class="reviews__likes">
+                <button class="reviews__button-like button" type="button"><span class="visually-hidden">Нравится</span></button>
+                <span class="reviews__like-counter">Нравится: 215</span>
+              </div>
             </div>
           </li>
 
           <li class="reviews__item">
             <div class="reviews__image-wrapper">
               <picture>
-                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-1@1x-280x180.jpg" alt="Белый автомобиль Тесла">
+                <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-1-desktop.webp 1x, img/catalog/photo-1-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-1-tablet.webp 1x, img/catalog/photo-1-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/catalog/photo-1-mobile.webp 1x, img/catalog/photo-1-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1200px)" srcset="img/catalog/photo-1-desktop.jpg 1x, img/catalog/photo-1-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/catalog/photo-1-tablet.jpg 1x, img/catalog/photo-1-tablet@2x.jpg 2x">
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-1-mobile.jpg" srcset="img/catalog/photo-1-mobile@2x.jpg 2x" alt="Белый автомобиль">
               </picture>
             </div>
 
@@ -121,7 +134,13 @@
           <li class="reviews__item">
             <div class="reviews__image-wrapper">
               <picture>
-                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-2@1x-280x180.jpg" alt="Барабанная установка">
+                <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-2-desktop.webp 1x, img/catalog/photo-2-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-2-tablet.webp 1x, img/catalog/photo-2-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/catalog/photo-2-mobile.webp 1x, img/catalog/photo-2-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1200px)" srcset="img/catalog/photo-2-desktop.jpg 1x, img/catalog/photo-2-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/catalog/photo-2-tablet.jpg 1x, img/catalog/photo-2-tablet@2x.jpg 2x">
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-2-mobile.jpg" srcset="img/catalog/photo-2-mobile@2x.jpg 2x" alt="Белый автомобиль">
               </picture>
             </div>
 
@@ -140,7 +159,13 @@
           <li class="reviews__item">
             <div class="reviews__image-wrapper">
               <picture>
-                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-3@1x-280x180.jpg" alt="Небо и решетка">
+                <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-3-desktop.webp 1x, img/catalog/photo-3-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-3-tablet.webp 1x, img/catalog/photo-3-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/catalog/photo-3-mobile.webp 1x, img/catalog/photo-3-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1200px)" srcset="img/catalog/photo-3-desktop.jpg 1x, img/catalog/photo-3-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/catalog/photo-3-tablet.jpg 1x, img/catalog/photo-3-tablet@2x.jpg 2x">
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-3-mobile.jpg" srcset="img/catalog/photo-3-mobile@2x.jpg 2x" alt="Небо и решетка">
               </picture>
             </div>
 
@@ -158,7 +183,13 @@
           <li class="reviews__item">
             <div class="reviews__image-wrapper">
               <picture>
-                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-4@1x-280x180.jpg" alt="Кубанская бахча">
+                <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-4-desktop.webp 1x, img/catalog/photo-4-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-4-tablet.webp 1x, img/catalog/photo-4-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/catalog/photo-4-mobile.webp 1x, img/catalog/photo-4-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1200px)" srcset="img/catalog/photo-4-desktop.jpg 1x, img/catalog/photo-4-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/catalog/photo-4-tablet.jpg 1x, img/catalog/photo-4-tablet@2x.jpg 2x">
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-4-mobile.jpg" srcset="img/catalog/photo-4-mobile@2x.jpg 2x" alt="Кубанская бахча">
               </picture>
             </div>
 
@@ -177,7 +208,13 @@
           <li class="reviews__item">
             <div class="reviews__image-wrapper">
               <picture>
-                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-5@1x-280x180.jpg" alt="Постриженный мужчина в профиль">
+                <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-5-desktop.webp 1x, img/catalog/photo-5-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-5-tablet.webp 1x, img/catalog/photo-5-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/catalog/photo-5-mobile.webp 1x, img/catalog/photo-5-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1200px)" srcset="img/catalog/photo-5-desktop.jpg 1x, img/catalog/photo-5-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/catalog/photo-5-tablet.jpg 1x, img/catalog/photo-5-tablet@2x.jpg 2x">
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-5-mobile.jpg" srcset="img/catalog/photo-5-mobile@2x.jpg 2x" alt="Постриженный мужчина в профиль">
               </picture>
             </div>
 
@@ -196,8 +233,15 @@
           <li class="reviews__item">
             <div class="reviews__image-wrapper">
               <picture>
-                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-6@1x-280x180.jpg" alt="Крыло самолета">
+                <source type="image/webp" media="(min-width: 1200px)" srcset="img/catalog/photo-6-desktop.webp 1x, img/catalog/photo-6-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-6-tablet.webp 1x, img/catalog/photo-6-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/catalog/photo-6-mobile.webp 1x, img/catalog/photo-6-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1200px)" srcset="img/catalog/photo-6-desktop.jpg 1x, img/catalog/photo-6-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="img/catalog/photo-6-tablet.jpg 1x, img/catalog/photo-6-tablet@2x.jpg 2x">
+                <img class="reviews__image" width="280" height="180" src="img/catalog/photo-6-mobile.jpg" srcset="img/catalog/photo-6-mobile@2x.jpg 2x" alt="Крыло самолета">
               </picture>
+
             </div>
 
             <blockquote class="reviews__quote">
@@ -216,44 +260,56 @@
 
       <section class="page-main__section uploading">
         <h2 class="visually-hidden">Загрузка фотографий</h2>
-        <p class="uploading__intro">Затмите их всех! Выкладывайте все, что накопилось в телефоне!</p>
-        <form class="uploading__form" action="https://echo.htmlacademy.ru" method="post">
-          <img class="uploading__image" width="280" height="374" src="img/catalog/photo-7@1x-280x374.jpg" alt="Снежная дорога">
-          <label class="uploading__label uploading__label--crop uploading__label--current">
-            <span class="visualy-hidden">
-              Обрезать
-              <input class="uploading__input" type="number" name="uploading-crop"  value="50" max="100" min="0"
-              step="1">
-            </span>
-          </label>
-          <label class="uploading__label uploading__label--fill">
-            <span class="visualy-hidden">
-              Заливка
-              <input class="uploading__input" type="number" name="uploading-fill"  value="50" max="100" min="0"
-              step="1">
-            </span>
-          </label>
-          <label class="uploading__label uploading__label--current">
-            <span class="visualy-hidden">
-              Контраст
-              <input class="uploading__input" type="number" name="uploading-contrast"  value="50" max="100" min="0"
-              step="1">
-            </span>
-          </label>
+        <header class="uploading__header container">
+          <p class="page-main__heading-small">Затмите их всех!<br>Выкладывайте все, что накопилось в телефоне!</p>
+        </header>
+        <div class="uploading__wrapper">
+          <form class="uploading__form container" action="https://echo.htmlacademy.ru" method="post">
+            <picture>
+              <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-7-tablet.webp 1x, img/catalog/photo-7-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/catalog/photo-7-mobile.webp 1x, img/catalog/photo-7-mobile@2x.webp 2x">
 
-          <div class="uploading__range range">
-            <div class="range__scale">
-                <div class="range__bar" style="left: 42px;">
-                    <button class="range__toggle" type="button">
-                        <span class="visually-hidden">Изменить параметр</span>
-                    </button>
-                </div>
+              <source media="(min-width: 660px)" srcset="img/catalog/photo-7-tablet.jpg 1x, img/catalog/photo-7-tablet@2x.jpg 2x">
+              <img class="uploading__image" width="280" height="374" src="img/catalog/photo-7-mobile.jpg" srcset="img/catalog/photo-7-mobile@2x.jpg 2x" alt="Снежная дорога">
+            </picture>
+
+            <div class="uploading__ranges-wrapper">
+              <label class="uploading__label uploading__label--current">
+
+                <svg width="44" height="44">
+                  <use xlink:href="img/sprite.svg#crop"></use>
+                </svg>
+
+                <span class="visually-hidden">Обрезать</span>
+                <input class="uploading__input" type="range" name="uploading-contrast"  value="50" max="100" min="0" step="1">
+              </label>
+              <label class="uploading__label uploading__label--current">
+
+                <svg width="48" height="43">
+                  <use xlink:href="img/sprite.svg#fill"></use>
+                </svg>
+
+                <span class="visually-hidden">Заливка</span>
+                <input class="uploading__input" type="range" name="uploading-contrast"  value="50" max="100" min="0" step="1">
+              </label>
+              <label class="uploading__label uploading__label--current">
+
+                <svg width="32" height="32">
+                  <use xlink:href="img/sprite.svg#contrast"></use>
+                </svg>
+
+                <span class="visually-hidden">Контраст</span>
+                <input class="uploading__input" type="range" name="uploading-contrast"  value="50" max="100" min="0" step="1">
+              </label>
             </div>
-          </div>
 
-          <button class="uploading__submit" type="submit">Запостить</button>
-          <button class="uploading__cancel" type="button">Отмена</button>
-        </form>
+            <div class="uploading__button-wrapper">
+              <button class="uploading__submit button" type="submit">Запостить</button>
+              <button class="uploading__cancel button" type="button">Отмена</button>
+            </div>
+          </form>
+        </div>
+
       </section>
     </main>
 

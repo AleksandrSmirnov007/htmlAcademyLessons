@@ -23,10 +23,6 @@
   }
 }
 
-.reviews__heading {
-  margin: 0;
-}
-
 .reviews__item {
   background-color: $special-gray-100;
   margin-bottom: 20px;
@@ -70,6 +66,19 @@
   margin-left: -20px;
 }
 
+.reviews__image {
+
+  @media (min-width: $tablet-width) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 300px;
+    height: 400px;
+  }
+}
+
 .reviews__item--day .reviews__image {
 
   @media (min-width: $tablet-width) {
@@ -83,21 +92,24 @@
   }
 }
 
-.reviews__image {
+.reviews__item--day .rewiews__text-wrapper {
   @media (min-width: $tablet-width) {
-    width: 300px;
-    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    padding-right: 13px;
+    padding-left: 13px;
   }
 
   @media (min-width: $desktop-width) {
-    width: 300px;
-    height: 400px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
 .reviews__quote {
   margin: 0;
-  padding-top: 25px;
+  margin-bottom: 20px;
+  padding-top: 15px;
   padding-right: 17px;
   padding-left: 17px;
 
@@ -113,6 +125,8 @@
 }
 
 .reviews__time {
+  font-size: 12px;
+  line-height: 24px;
   text-transform: uppercase;
 }
 
@@ -124,21 +138,54 @@
   line-height: 24px;
 }
 
+.reviews__item--day .reviews__text {
+
+  @media (min-width: $tablet-width) {
+    margin-right: -150px;
+  }
+
+  @media (min-width: $desktop-width) {
+  }
+}
+
+.reviews__item--day .reviews__likes {
+  @media (min-width: $tablet-width) {
+    margin-top: 25px;
+  }
+}
+
+
+.reviews__likes {
+  display: flex;
+  align-items: start;
+  padding-left: 17px;
+  padding-right: 17px;
+  gap: 15px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+
 .reviews__button-like {
   width: 13px;
   height: 12px;
   vertical-align: middle;
-  margin-left: 17px;
   background-image: url("../img/sprites/heart.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 13px 12px;
+
+  @media (min-width: $tablet-width) {
+
+  }
 }
 
 .reviews__like-counter {
   font-size: 12px;
-  line-height: 24px;
+  line-height: 1;
   color: $color-primary;
   text-transform: uppercase;
-  margin-left: 18px;
 }
