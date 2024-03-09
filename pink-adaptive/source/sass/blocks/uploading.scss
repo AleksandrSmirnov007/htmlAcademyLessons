@@ -12,4 +12,21 @@
 .uploading__ranges-wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.uploading__range-button {
+  width: 60px;
+  height: 50px;
+  padding: 0;
+
+  svg {
+    margin: auto;
+    display: block;
+  }
+}
+
+
+.uploading__label--current .uploading__range-button {
+  color: $color-primary;
 }
