@@ -1,0 +1,54 @@
+.range__input {
+  display: block;
+  margin: auto 0;
+  height: 70px;
+  background-color: transparent;
+  appearance: none;
+  -webkit-apperance: none;
+  -moz-appperance: none;
+}
+
+.range__input {
+  width: 100%;
+}
+
+// для хрома
+
+.range__input::-webkit-slider-runnable-track {
+  height: 1.6px;
+  background-color: $special-gray;
+}
+
+.range__input::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+
+  margin-top: -6px;
+  width: 14px;
+  height: 14px;
+  background-color: $basic-white;
+  border-radius: 50%;
+  border: 2px solid $color-primary;
+  cursor: pointer;
+}
+
+
+//для мозилы
+
+.range__input::-moz-range-track {
+  height: 2px;
+  background-color: $special-gray;
+}
+
+.range__input::-moz-range-thimb {
+  position: relative;
+  -webkit-appearance: none;
+
+  margin-top: -6px;
+  width: 14px;
+  height: 14px;
+  background-color: $basic-white;
+  border-radius: 50%;
+  border: 2px solid $color-primary;
+  cursor: pointer;
+}

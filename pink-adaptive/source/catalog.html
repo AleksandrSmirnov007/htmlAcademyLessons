@@ -265,50 +265,61 @@
         </header>
         <div class="uploading__wrapper">
           <form class="uploading__form container" action="https://echo.htmlacademy.ru" method="post">
-            <picture>
-              <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-7-tablet.webp 1x, img/catalog/photo-7-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/catalog/photo-7-mobile.webp 1x, img/catalog/photo-7-mobile@2x.webp 2x">
+            <div class="uploading__imagae-wrapper">
+              <picture>
+                <source type="image/webp" media="(min-width: 660px)" srcset="img/catalog/photo-7-tablet.webp 1x, img/catalog/photo-7-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/catalog/photo-7-mobile.webp 1x, img/catalog/photo-7-mobile@2x.webp 2x">
 
-              <source media="(min-width: 660px)" srcset="img/catalog/photo-7-tablet.jpg 1x, img/catalog/photo-7-tablet@2x.jpg 2x">
-              <img class="uploading__image" width="280" height="374" src="img/catalog/photo-7-mobile.jpg" srcset="img/catalog/photo-7-mobile@2x.jpg 2x" alt="Снежная дорога">
-            </picture>
-
-            <div class="uploading__ranges-wrapper">
-              <label class="uploading__label uploading__label--current">
-                <button class="uploading__range-button button" type="button">
-                  <svg width="44" height="44">
-                    <use xlink:href="img/sprite.svg#crop"></use>
-                  </svg>
-                </button>
-
-                <span class="visually-hidden">Обрезать</span>
-                <input class="uploading__input" type="range" name="uploading-contrast"  value="50" max="100" min="0" step="1">
-              </label>
-              <label class="uploading__label uploading__label">
-                <button class="uploading__range-button button" type="button">
-                  <svg width="48" height="43">
-                    <use xlink:href="img/sprite.svg#fill"></use>
-                  </svg>
-                </button>
-
-                <span class="visually-hidden">Заливка</span>
-                <input class="uploading__input" type="range" name="uploading-contrast"  value="50" max="100" min="0" step="1">
-              </label>
-              <label class="uploading__label uploading__label">
-                <button class="uploading__range-button button" type="button">
-                  <svg width="32" height="32">
-                    <use xlink:href="img/sprite.svg#contrast"></use>
-                  </svg>
-                </button>
-
-                <span class="visually-hidden">Контраст</span>
-                <input class="uploading__input" type="range" name="uploading-contrast"  value="50" max="100" min="0" step="1">
-              </label>
+                <source media="(min-width: 660px)" srcset="img/catalog/photo-7-tablet.jpg 1x, img/catalog/photo-7-tablet@2x.jpg 2x">
+                <img class="uploading__image" width="280" height="374" src="img/catalog/photo-7-mobile.jpg" srcset="img/catalog/photo-7-mobile@2x.jpg 2x" alt="Снежная дорога">
+              </picture>
             </div>
 
-            <div class="uploading__button-wrapper">
-              <button class="uploading__submit button" type="submit">Запостить</button>
-              <button class="uploading__cancel button" type="button">Отмена</button>
+            <div class="uploading__right-column">
+              <ul class="uploading__ranges-list">
+                <li class="uploading__range-group uploading__range-group--current">
+                  <button class="uploading__range-button button" type="button">
+                    <svg width="44" height="44">
+                      <use xlink:href="img/sprite.svg#crop"></use>
+                    </svg>
+                  </button>
+
+                  <label class="uploading__range range">
+                    <span class="visually-hidden">Обрезать</span>
+                    <input class="range__input" type="range" name="uploading-crop"  value="50" max="100" min="0" step="1">
+                  </label>
+                </li>
+
+                <li class="uploading__range-group">
+                  <button class="uploading__range-button button" type="button">
+                    <svg width="48" height="43">
+                      <use xlink:href="img/sprite.svg#fill"></use>
+                    </svg>
+                  </button>
+                  <label class="uploading__range range">
+                    <span class="visually-hidden">Заливка</span>
+                    <input class="range__input" type="range" name="uploading-fill"  value="50" max="100" min="0" step="1">
+                  </label>
+                </li>
+
+                <li class="uploading__range-group">
+                  <button class="uploading__range-button button" type="button">
+                    <svg width="32" height="32">
+                      <use xlink:href="img/sprite.svg#contrast"></use>
+                    </svg>
+                  </button>
+                  <label class="uploading__range range">
+                    <span class="visually-hidden">Контраст</span>
+                    <input class="range__input" type="range" name="uploading-contrast"  value="50" max="100" min="0" step="1">
+                  </label>
+                </li>
+
+              </ul>
+
+              <div class="uploading__button-wrapper">
+                <button class="uploading__submit button--primary button" type="submit">Запостить</button>
+                <button class="uploading__cancel button--primary button" type="button">Отмена</button>
+              </div>
             </div>
           </form>
         </div>

@@ -1,19 +1,84 @@
+.uploading {
+  position: relative;
+}
+
 .uploading__header {
   padding: 50px 0 50px;
+
+  @media (min-width: $tablet-width) {
+    padding: 73px 0 78px;
+  }
 }
 
 
 .uploading__wrapper {
   background-color: $special-gray-100;
   padding: 20px 0 40px;
+
+  @media (min-width: $desktop-width) {
+    width: 940px;
+    margin: 0 auto;
+    padding: 57px 80px;
+  }
 }
 
 
-.uploading__ranges-wrapper {
+.uploading__form {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: auto;
+    gap: 85px;
+  }
+}
+
+.uploading__image {
+  @media (min-width: $tablet-width) {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+.uploading__right-column {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.uploading__ranges-list {
   display: flex;
   position: relative;
+  gap: 35px;
   justify-content: center;
-  padding-bottom: 50px;
+  margin: 0;
+  padding: 0;
+  padding-top: 42px;
+  padding-bottom: 80px;
+  list-style-type: none;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 0;
+    padding-bottom: 67px;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.uploading__range-group {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    border-bottom: 1px solid fade-out($special-gray, 0.9);
+    min-height: 70px;
+  }
 }
 
 .uploading__range-button {
@@ -26,21 +91,98 @@
     margin: auto;
     display: block;
   }
+
+  @media (min-width: $tablet-width) {
+    color: $color-primary;
+    margin-left: -17px;
+
+    svg {
+      transform: scale(0.5);
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    svg {
+      transform: scale(1);
+    }
+  }
 }
 
-
-.uploading__label--current .uploading__range-button {
+.uploading__range-group--current .uploading__range-button {
   color: $color-primary;
 }
 
-.uploading__input {
+.uploading__range {
   display: none;
+  height: 70px;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    margin-right: 18px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 30px;
+    margin-left: 45px;
+  }
 }
 
-.uploading__label--current .uploading__input {
-  display: inline-block;
+.uploading__range-group--current .uploading__range {
+  display: block;
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 20px;
+  right: 20px;
+
+  @media (min-width: $tablet-width) {
+    position: static;
+  }
+}
+
+
+.uploading__button-wrapper {
+  display: grid;
+  gap: 12px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    right: 0;
+    left: 0;
+    border-top: 1px solid fade-out($special-gray, 0.9);
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-right: 23px;
+    gap: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 44px;
+    margin-top: auto;
+  }
+}
+
+.uploading__submit {
+  margin-top: 38px;
+  color: $color-primary;
+  border-color: $color-primary;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0;
+  }
+}
+
+.uploading__cancel {
+  color: fade-out($special-gray, 0.9);
+  border-color: fade-out($special-gray, 0.9);
+
 }
