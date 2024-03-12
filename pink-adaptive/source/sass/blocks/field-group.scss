@@ -1,0 +1,29 @@
+
+.field-group {
+  border: none;
+  padding-top: 40px;
+}
+
+.field-group:nth-child(2n) {
+  background-color: $special-gray-100;
+}
+
+.field-group__heading {
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: $color-primary;
+  transform: translateY(1em);
+  padding-top: 42px;
+  margin-bottom: 1em;
+}
+
+.field-group__list {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: left;
+}
