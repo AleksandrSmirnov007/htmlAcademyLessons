@@ -1,0 +1,37 @@
+.control {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  gap: 22px;
+  cursor: pointer;
+}
+
+.control__input {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  z-index: 1;
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  opacity: 0;
+}
+
+.control__lead {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  gap: 22px;
+
+  &::before {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background-color: $basic-white;
+    outline: 2px solid $special-gray-200;
+    border-radius: 1px;
+
+  }
+}

@@ -1,14 +1,23 @@
 
 .field-group {
   border: none;
-  padding-top: 40px;
+  padding: 0;
+
+  &:not(:first-child) {
+    padding-top: 42px;
+  }
 }
+
+
 
 .field-group:nth-child(2n) {
   background-color: $special-gray-100;
 }
 
 .field-group__heading {
+  margin-top: 0;
+  margin-bottom: 40px;
+  padding: 0 30px;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -22,4 +31,8 @@
   margin-bottom: 0;
   padding: 0;
   text-align: left;
+}
+
+.field-group__item {
+  margin-bottom: 38px;
 }
