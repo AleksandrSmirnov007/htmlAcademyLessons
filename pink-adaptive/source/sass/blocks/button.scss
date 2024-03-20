@@ -21,6 +21,10 @@
 
 .button--secondary {
   border: none;
+  color: $basic-white;
   background-color: $basic-green;
   border-radius: 3px;
+  padding: 13px;
+  text-transform: uppercase;
+  width: 100%;
 }

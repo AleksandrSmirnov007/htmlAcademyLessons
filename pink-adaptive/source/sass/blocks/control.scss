@@ -26,12 +26,40 @@
   gap: 22px;
 
   &::before {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     content: "";
     width: 35px;
     height: 35px;
     background-color: $basic-white;
     outline: 2px solid $special-gray-200;
     border-radius: 1px;
-
   }
+
+  &::after {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.control__input[type="checkbox"]:checked + .control__lead::after {
+  content: "";
+  background-image: url("../img/icons/tick.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px 16px;
+}
+
+.control__input[type="radio"] + .control__lead::before {
+  border-radius: 50%;
+}
+
+.control__input[type="radio"]:checked + .control__lead::after {
+  content: "";
+  border-radius: 50%;
+  background-color: $color-primary;
+  border: 10px solid transparent;
+  background-clip: content-box;
 }
