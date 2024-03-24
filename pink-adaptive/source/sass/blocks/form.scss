@@ -1,6 +1,10 @@
-.form__buttom {
+.form__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__button {
   margin-right: 20px;
   margin-left: 20px;
-  width: 100%;
-  background-color: red;
+  width: auto;
 }

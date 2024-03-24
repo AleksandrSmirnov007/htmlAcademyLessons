@@ -1,0 +1,57 @@
+.modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal__list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  background-color: $basic-white;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: max-content;
+  padding-top: 44px;
+  padding-bottom: 52px;
+  list-style-type: none;
+  box-shadow: 0 4px 4px 0 fade-out($basic-black, 0.75);
+}
+
+.modal__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__item:not(.modal__item--active) {
+  display: none;
+}
+
+.modal__heading {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 34px;
+}
+
+.modal__message {
+  margin: 0;
+  margin-bottom: 45px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.modal__button {
+  width: auto;
+  margin-right: 22px;
+  margin-left: 22px;
+}
