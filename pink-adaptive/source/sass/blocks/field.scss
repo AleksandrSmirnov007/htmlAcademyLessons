@@ -12,7 +12,7 @@
 }
 
 .field__input {
-  padding: 20px 23px;
+  padding: 14px 23px;
   font-family: $font-body;
   font-weight: 400;
   font-size: 18px;
@@ -20,6 +20,7 @@
   border: none;
   outline: 2px solid $special-gray-200;
   color: $special-gray;
+  border-radius: 3px;
 }
 
 .field__input::placeholder {
@@ -28,4 +29,7 @@
 
 .field__input--textarea {
   margin-bottom: 52px;
+  resize: none;
+  margin-right: 60px;
+  margin-left: 60px;
 }

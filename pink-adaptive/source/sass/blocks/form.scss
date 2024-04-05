@@ -1,6 +1,11 @@
 .form__body {
   display: flex;
   flex-direction: column;
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .form__button {
