@@ -6,6 +6,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  @media (min-width: $desktop-width) {
+
+    padding-left: 112px;
+    padding-right: 112px;
+    margin-right: auto;
+    margin-left: auto;
+
+  }
 }
 
 .form__button {

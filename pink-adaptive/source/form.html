@@ -39,11 +39,11 @@
               <li class="site-menu__item"> <!-- текущая страница сайта отмечается классом site-menu__item- -active -->
                 <a class="site-menu__link" href="index.html">Главная</a>
               </li>
-              <li class="site-menu__item site-menu__item--active">
-                <a class="site-menu__link" title="Вы на странице с фотографиями">Фотографии</a>
-              </li>
               <li class="site-menu__item">
-                <a class="site-menu__link" href="form.html">Конкурс</a>
+                <a class="site-menu__link" href="catalog.html">Фотографии</a>
+              </li>
+              <li class="site-menu__item site-menu__item--active">
+                <a class="site-menu__link"  title="Вы на странице формы для конкурса">Конкурс</a>
               </li>
               <li class="site-menu__item">
                 <a class="site-menu__link" href="https://htmlacademy.ru/intensive/adaptive">Html Academy</a>
@@ -79,7 +79,7 @@
         <form class="form__body"  action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="form__group field-group field-group--name">
             <legend class="visually-hidden">Фамилия Имя Отчество</legend>
-            <ul class="field-group__list container">
+            <ul class="field-group__list">
               <li class="field-group__item">
                 <label class="field-group__field field">
                   <span class="field__lead">Фамилия:</span>
@@ -104,7 +104,7 @@
           <fieldset class="form__group field-group">
             <legend class="visually-hidden">Достижения в путешествии</legend>
             <p class="field-group__heading container">Ваши безбашенные достижения в путешествиях</p>
-            <ul class="field-group__list container">
+            <ul class="field-group__list">
               <li class="field-group__item">
                 <label class="field-group__control control">
                   <input class="control__input"  type="checkbox" name="selfi-with-sharck" checked>
@@ -146,7 +146,7 @@
 
           <fieldset class="form__group field-group field-group--contacts">
             <legend class="visually-hidden"><span>Контакты</span></legend>
-            <ul class="field-group__list container">
+            <ul class="field-group__list">
               <li class="field-group__item">
                 <label class="field-group__field field-group__field--tel field">
                   <span class="field__lead">Номер телефона</span>
@@ -165,7 +165,7 @@
           <fieldset class="form__group field-group field-group--app">
             <legend class="visually-hidden">Операционная система для приложение</legend>
             <p class="field-group__heading container">С каким приложением путешествовали?</p>
-            <ul class="field-group__list container">
+            <ul class="field-group__list">
               <li class="field-group__item">
                 <label class="field-group__control control">
                   <input class="control__input"  type="radio" name="operating system" value="pink-on-ios" checked>
@@ -197,6 +197,7 @@
           <p class="form__explanation">* — Обязательные поля</p>
         </form>
       </section>
+      <!-- при добавлении класса modal --opened модальное окно открывается-->
       <section class="page-main__section modal">
         <h2 class="visually-hidden">Всплывающее окно</h2>
         <ul class="modal__list">

@@ -55,7 +55,16 @@
   margin-bottom: 0;
   padding: 0;
   text-align: left;
+
+  width: 280px; // 320 - 20 - 20
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+  }
 }
+
 
 .field-group:not(:first-child) {
   @media (min-width: $tablet-width) {
@@ -136,6 +145,14 @@
 
     .field__input {
       padding-right: 70px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    .field-group__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 74px;
     }
   }
 }

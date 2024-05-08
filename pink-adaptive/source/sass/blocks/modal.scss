@@ -9,6 +9,10 @@
   display: none;
 }
 
+.modal--opened {
+  display: block;
+}
+
 .modal__list {
   position: absolute;
   top: 0;
