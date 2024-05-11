@@ -9,6 +9,13 @@
   @media (min-width: $tablet-width) {
     margin-left: 0;
   }
+
+  @media (min-width: $desktop-width) {
+    &--tel,
+    &--mail {
+      margin-left: 20px;
+    }
+  }
 }
 
 .field__input {

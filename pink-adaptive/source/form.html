@@ -101,7 +101,7 @@
             </ul>
           </fieldset>
 
-          <fieldset class="form__group field-group">
+          <fieldset class="form__group field-group field-group--progress">
             <legend class="visually-hidden">Достижения в путешествии</legend>
             <p class="field-group__heading container">Ваши безбашенные достижения в путешествиях</p>
             <ul class="field-group__list">
@@ -149,13 +149,13 @@
             <ul class="field-group__list">
               <li class="field-group__item">
                 <label class="field-group__field field-group__field--tel field">
-                  <span class="field__lead">Номер телефона</span>
+                  <span class="field__lead field__lead--tel">Номер телефона</span>
                   <input class="field__input" type="tel" name="phone" placeholder="Номер, пожалуйста">
                 </label>
               </li>
               <li class="field-group__item">
                 <label class="field-group__field field-group__field--mail field">
-                  <span class="field__lead">Адрес почты</span>
+                  <span class="field__lead field__lead--mail">Адрес почты</span>
                   <input class="field__input" type="email" name="e-mail" placeholder="Введите почту *">
                 </label>
               </li>
@@ -194,7 +194,7 @@
             </label>
           </fieldset>
           <button class="form__button button button--secondary" type="submit">Отправить форму</button>
-          <p class="form__explanation">* — Обязательные поля</p>
+          <p class="form__explanation">* — Обязательные <span class="form__add-text-desktop">для заполнения</span> поля</p>
         </form>
       </section>
       <!-- при добавлении класса modal --opened модальное окно открывается-->

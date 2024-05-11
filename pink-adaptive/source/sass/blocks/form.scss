@@ -8,12 +8,10 @@
   }
 
   @media (min-width: $desktop-width) {
-
     padding-left: 112px;
     padding-right: 112px;
     margin-right: auto;
     margin-left: auto;
-
   }
 }
 
@@ -21,4 +19,25 @@
   margin-right: 20px;
   margin-left: 20px;
   width: auto;
+  padding-right: 55px;
+  padding-left: 55px;
+
+
+  @media (min-width: $desktop-width) {
+    margin-right: auto;
+  }
+}
+
+
+.form__explanation {
+  @media (min-width: $desktop-width) {
+    margin-left: auto;
+  }
+}
+
+.form__add-text-desktop {
+  display: none;
+  @media (min-width: $desktop-width) {
+    display: inline;
+  }
 }
