@@ -49,6 +49,14 @@
   }
 }
 
+.field-group__heading--contacts {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
 .field-group__list {
   margin-top: 40px;
   list-style-type: none;
