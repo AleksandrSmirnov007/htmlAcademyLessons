@@ -1,6 +1,7 @@
 .contacts {
   position: relative;
   z-index: 0;
+  margin-bottom: 35px;
 
   @media (min-width: $desktop-width) {
     padding-top: 54px;
@@ -13,7 +14,7 @@
   content: "";
   width: 100%;
   height: 123px;
-  bottom: -50px;
+  bottom: -67px;
   left: 0;
   right: 0;
   background-repeat: repeat;
@@ -31,7 +32,8 @@
 }
 
 .contacts__title {
-  margin-bottom: 45px;
+  margin-bottom: 34px;
+  margin-top: 42px;
 
   @media (min-width:$tablet-width) {
     margin-bottom: 51px;
@@ -78,7 +80,7 @@
 }
 
 .contacts dt {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .contacts dd {

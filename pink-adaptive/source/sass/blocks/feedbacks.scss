@@ -1,5 +1,5 @@
 .feedbacks {
-  padding-top: 56px;
+  padding-top: 42px;
 
   @media (min-width: $desktop-width) {
     padding-top: 193px;
@@ -46,7 +46,9 @@
 }
 
 .feedbacks__author-name {
+  display: block;
   margin: 0;
+  margin-bottom: 12px;
   font-style: normal;
   font-weight: 700;
   color: $basic-black;
@@ -68,7 +70,8 @@
 
 .feedbacks__text {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  line-height: 30px;
 
   @media (min-width: $tablet-width) {
     order: -1;

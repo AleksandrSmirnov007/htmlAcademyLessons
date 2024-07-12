@@ -12,6 +12,10 @@
   align-items: center;
   min-height: 66px;
   border-bottom: 1px solid transparent;
+  width: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: fade-out($basic-black, 0.7);
 
   @media (min-width: $tablet-width) {
     min-height: 110px;

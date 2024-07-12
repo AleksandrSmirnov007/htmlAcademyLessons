@@ -1,11 +1,11 @@
 .price {
-  padding-top: 100px;
+  padding-top: 132px;
   padding-bottom: 40px;
 }
 
 .price__wrapper {
   overflow-x: auto;
-  padding-bottom: 30px;
+  padding-bottom: 36px;
 }
 
 .price__list {
@@ -73,13 +73,13 @@
 .price__title {
   font-size: 16px;
   font-weight: 700;
-  margin-top: 17px;
-  margin-bottom: 2px;
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
 .price__cost {
   margin: 0;
-  margin-bottom: 23px;
+  margin-bottom: 28px;
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -170,10 +170,11 @@
 // лишняя обертка потому что табличная ячейка display: table-cell и при замене на любое другое значение верстка ломается
 .price__td-content {
   margin: 0;
-  padding: 20px;
+  padding: 14px 20px 12px;
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @media (min-width: $tablet-width) {
     padding: 0;

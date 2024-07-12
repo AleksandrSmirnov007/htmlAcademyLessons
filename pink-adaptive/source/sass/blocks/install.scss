@@ -1,5 +1,5 @@
 .install {
-  padding: 28px 20px 38px;
+  padding: 28px 0 32px;
 
   @media (min-width: $tablet-width) {
     width: 300px;
@@ -9,7 +9,7 @@
 
 .install__button {
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .install__list {
@@ -21,7 +21,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .install__icon {

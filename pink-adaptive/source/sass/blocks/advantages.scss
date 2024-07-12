@@ -1,5 +1,5 @@
 .advantages__header {
-  padding-top: 46px;
+  padding-top: 40px;
 
   @media (min-width: $tablet-width) {
     padding-bottom: 46px;
@@ -7,8 +7,8 @@
 }
 
 .advantages__body {
-  margin-top: -56px;
-  padding-top: 100px;
+  margin-top: -30px;
+  padding-top: 114px;
   overflow: hidden;
 }
 
@@ -50,6 +50,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  margin-bottom: 11px;
 
   @media (min-width: $desktop-width) {
     font-size: 30px;
@@ -65,6 +66,7 @@
   margin: 0;
   flex-grow: 1;
   flex-shrink: 0;
+  margin-bottom: 32px;
 
   @media (min-width: $desktop-width) {
     font-size: 18px;
@@ -115,9 +117,10 @@
 }
 
 .advantages__image {
+  margin-top: 8px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: -48px;
+  margin-bottom: -42px;
 
   @media (min-width: $tablet-width) {
       width: 268px;
