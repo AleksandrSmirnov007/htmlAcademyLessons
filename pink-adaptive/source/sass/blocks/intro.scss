@@ -49,7 +49,7 @@
 }
 
 .intro__content--catalog {
-  padding-bottom: 54px;
+  padding-bottom: 12px;
   text-align: center;
 }
 
@@ -69,6 +69,8 @@
 }
 
 .intro__heading--catalog {
+  margin-top: 30px;
+  line-height: 1.4;
   @media (min-width: $tablet-width) {
     width: auto;
   }

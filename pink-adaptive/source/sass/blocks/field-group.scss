@@ -3,7 +3,7 @@
   border: none;
   padding: 0;
   margin: 0;
-  padding-top: 30px;
+  margin-top: -5px;
 
   @media (min-width: $tablet-width) {
     padding-top: 0;
@@ -33,7 +33,7 @@
 }
 
 .field-group__heading {
-  margin-top: 0;
+  margin-top: 40px;
 
   padding: 0 20px;
   font-size: 14px;
@@ -60,7 +60,7 @@
 .field-group__list {
   margin-top: 40px;
   list-style-type: none;
-  margin-bottom: 0;
+  margin-bottom: 48px;
   padding: 0;
   text-align: left;
 
@@ -84,7 +84,7 @@
 }
 
 .field-group__item {
-  margin-bottom: 38px;
+  margin-bottom: 19px;
 
   @media (min-width: $tablet-width) {
     &:last-child {
@@ -96,7 +96,7 @@
 
 .field-group__field {
   display: grid;
-  gap: 17px;
+  gap: 8px;
 }
 
 .field-group--name {
