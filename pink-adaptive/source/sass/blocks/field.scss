@@ -35,8 +35,12 @@
 }
 
 .field__input--textarea {
-  margin-bottom: 52px;
+  margin-bottom: 48px;
+  min-height: 200px;
   resize: none;
-  margin-right: 60px;
-  margin-left: 60px;
+  @media (min-width: $tablet-width) {
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-bottom: 52px;
+  }
 }

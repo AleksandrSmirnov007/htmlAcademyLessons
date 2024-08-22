@@ -1,9 +1,8 @@
 .control {
   display: grid;
-  grid-template-columns: 35px 1fr;
+  grid-template-columns: 37px 1fr;
   gap: 22px;
-
-  margin-bottom: 48px;
+  margin-bottom: 45px;
   cursor: pointer;
 }
 
@@ -11,29 +10,30 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   z-index: 1;
-  width: 35px;
-  height: 35px;
+  width: 37px;
+  height: 37px;
   margin: 0;
   opacity: 0;
   cursor: pointer;
 }
 
 .control__lead {
+  align-items: end;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
   grid-column: 1 / -1;
   grid-row: 1 / 2;
   display: grid;
-  grid-template-columns: 35px 1fr;
+  grid-template-columns: 37px 1fr;
   gap: 22px;
 
   &::before {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     content: "";
-    width: 35px;
-    height: 35px;
+    width: 37px;
+    height: 37px;
     background-color: $basic-white;
     outline: 2px solid $special-gray-200;
     border-radius: 1px;
@@ -42,9 +42,21 @@
   &::after {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    width: 35px;
-    height: 35px;
+    width: 37px;
+    height: 37px;
   }
+}
+
+.control--radio {
+  margin-top: -2px;
+  margin-bottom: 40px;
+  margin-left: 2px;
+
+}
+
+.control--radio .control__lead {
+  gap: 33px;
+  align-items: center;
 }
 
 .control__input[type="checkbox"]:checked + .control__lead::after {
@@ -63,6 +75,6 @@
   content: "";
   border-radius: 50%;
   background-color: $color-primary;
-  border: 10px solid transparent;
+  border: 11.5px solid transparent;
   background-clip: content-box;
 }

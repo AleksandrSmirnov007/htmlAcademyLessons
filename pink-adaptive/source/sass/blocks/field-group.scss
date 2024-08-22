@@ -58,7 +58,7 @@
 }
 
 .field-group__list {
-  margin-top: 40px;
+  margin-top: 39px;
   list-style-type: none;
   margin-bottom: 48px;
   padding: 0;
@@ -67,6 +67,10 @@
   width: 280px; // 320 - 20 - 20
   margin-right: auto;
   margin-left: auto;
+
+  &--contacts {
+    margin-top: 32px;
+  }
 
   @media (min-width: $tablet-width) {
     width: auto;
