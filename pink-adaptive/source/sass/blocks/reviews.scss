@@ -1,7 +1,11 @@
 .reviews__header {
   padding-top: 46px;
-  padding-bottom: 0;
+  padding-bottom: 50px;
   line-height: 2.1;
+}
+
+.reviews__header--form {
+  padding-bottom: 0;
 }
 
 .reviews__list {
@@ -27,7 +31,7 @@
 .reviews__item {
   background-color: $special-gray-100;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 0;
@@ -109,9 +113,9 @@
 
 .reviews__quote {
   margin: 0;
-  margin-bottom: 20px;
-  padding-top: 15px;
-  padding-right: 17px;
+  margin-bottom: 17px;
+  padding-top: 18px;
+  padding-right: 10px;
   padding-left: 17px;
 
   @media (min-width: $tablet-width) {
@@ -129,10 +133,11 @@
   font-size: 12px;
   line-height: 24px;
   text-transform: uppercase;
+  letter-spacing: -0.03em;
 }
 
 .reviews__text {
-  margin-top: 1px;
+  margin-top: -1px;
   margin-bottom: 1px;
   font-size: 14px;
   font-weight: 400;
@@ -161,7 +166,7 @@
   align-items: flex-start;
   padding-left: 17px;
   padding-right: 17px;
-  gap: 15px;
+  gap: 19px;
 
   @media (min-width: $tablet-width) {
     flex-direction: row-reverse;

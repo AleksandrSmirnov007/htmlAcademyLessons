@@ -3,7 +3,8 @@
 }
 
 .uploading__header {
-  padding: 50px 0 50px;
+  padding: 21px 0 44px;
+  line-height: 2.1;
 
   @media (min-width: $tablet-width) {
     padding: 73px 0 78px;
@@ -54,12 +55,12 @@
 .uploading__ranges-list {
   display: flex;
   position: relative;
-  gap: 35px;
+  gap: 16px;
   justify-content: center;
   margin: 0;
   padding: 0;
-  padding-top: 42px;
-  padding-bottom: 80px;
+  padding-top: 39px;
+  padding-bottom: 71px;
   list-style-type: none;
 
   @media (min-width: $tablet-width) {
@@ -106,6 +107,11 @@
       transform: scale(1);
     }
   }
+}
+
+.uploading__range-button--crop {
+  margin-right: 5px;
+  margin-left: -5px;
 }
 
 .uploading__range-group--current .uploading__range-button {
