@@ -30,8 +30,11 @@
   border-radius: 50%;
   border: 2px solid $color-primary;
   cursor: pointer;
-}
 
+  &:active {
+    background-color: $color-primary;
+  }
+}
 
 //для мозилы
 
@@ -51,4 +54,8 @@
   border-radius: 50%;
   border: 2px solid $color-primary;
   cursor: pointer;
+
+  &:active {
+    background-color: $color-primary;
+  }
 }

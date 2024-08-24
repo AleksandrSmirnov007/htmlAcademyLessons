@@ -187,8 +187,30 @@
   }
 }
 
+.uploading__submit:hover {
+  background-color: $color-primary;
+  color: $basic-white;
+}
+
+.uploading__submit:active {
+  background-color: $color-primary;
+  color: fade-out($basic-white, 0.7);
+}
+
 .uploading__cancel {
   color: fade-out($special-gray, 0.9);
   border-color: fade-out($special-gray, 0.9);
+}
 
+
+.uploading__cancel:hover {
+  color: fade-out($special-gray, 0.7);
+  border-color: fade-out($special-gray, 0.7);
+}
+
+
+.uploading__cancel:active {
+  border-color: transparent;
+  background-color: fade-out($special-gray, 0.7);
+  color: fade-out($basic-white, 0.7);
 }
