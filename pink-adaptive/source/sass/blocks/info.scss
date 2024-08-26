@@ -13,9 +13,9 @@
 
 .info__wrapper {
   @media (min-width: $tablet-width) {
-    padding-left: 330px;
-    padding-top: 102px;
-    padding-bottom: 120px;
+    padding-left: 310px;
+    padding-top: 95px;
+    padding-bottom: 78px;
     background-image: url("../img/background/timer.svg");
     background-repeat: no-repeat;
     background-size: 238px 276px;
@@ -31,6 +31,10 @@
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 10px;
+  }
 }
 
 .info__br-tablet {
@@ -47,6 +51,10 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0%;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 5px;
+  }
 }
 
 .info__link {
