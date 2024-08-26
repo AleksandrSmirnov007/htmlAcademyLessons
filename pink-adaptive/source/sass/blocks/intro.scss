@@ -46,6 +46,9 @@
 .intro__content {
   position: relative;
   z-index: 1;
+  @media (min-width: $tablet-width) {
+    margin-top: 28px;
+  }
 }
 
 .intro__content--catalog {
