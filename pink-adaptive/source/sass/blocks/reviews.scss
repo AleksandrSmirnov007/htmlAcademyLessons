@@ -2,6 +2,11 @@
   padding-top: 46px;
   padding-bottom: 50px;
   line-height: 2.1;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 92px;
+    padding-bottom: 72px;
+  }
 }
 
 .reviews__header--form {
@@ -38,6 +43,7 @@
     display: flex;
     flex-direction: column;
     min-height: 455px;
+    padding-bottom: 30px;
   }
 
   @media (min-width: $desktop-width) {
@@ -50,6 +56,8 @@
 
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1;
+    padding-bottom: 0;
+    margin-bottom: 30px;
   }
 }
 
@@ -64,6 +72,10 @@
   color: $basic-white;
   text-transform: uppercase;
   font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    top: 56px;
+  }
 }
 
 .reviews__item--day .reviews__image-wrapper {
@@ -97,17 +109,9 @@
   }
 }
 
-.reviews__item--day .rewiews__text-wrapper {
+.reviews__item--day .reviews__text-wrapper {
   @media (min-width: $tablet-width) {
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    padding-right: 13px;
-    padding-left: 13px;
-  }
-
-  @media (min-width: $desktop-width) {
-    padding-right: 10px;
-    padding-left: 10px;
+    position: relative;
   }
 }
 
@@ -119,7 +123,14 @@
   padding-left: 17px;
 
   @media (min-width: $tablet-width) {
+    padding-left: 30px;
     flex-grow: 1;
+  }
+}
+
+.reviews__item--day .reviews__quote {
+  @media (min-width: $tablet-width) {
+    margin-bottom: 26px;
   }
 }
 
@@ -127,6 +138,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+  }
 }
 
 .reviews__time {
@@ -144,22 +159,13 @@
   line-height: 24px;
 }
 
+
+
 .reviews__item--day .reviews__text {
-
   @media (min-width: $tablet-width) {
-    margin-right: -150px;
-  }
-
-  @media (min-width: $desktop-width) {
+    position: relative;
   }
 }
-
-.reviews__item--day .reviews__likes {
-  @media (min-width: $tablet-width) {
-    margin-top: 25px;
-  }
-}
-
 
 .reviews__likes {
   display: flex;
@@ -171,9 +177,21 @@
   @media (min-width: $tablet-width) {
     flex-direction: row-reverse;
     justify-content: space-between;
+    gap: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
+.reviews__item--day .reviews__likes {
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    right: 13px;
+    top: 30px;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
 
 .reviews__button-like {
   width: 13px;

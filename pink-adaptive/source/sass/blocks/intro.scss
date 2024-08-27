@@ -54,6 +54,10 @@
 .intro__content--catalog {
   padding-bottom: 46px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 126px;
+  }
 }
 
 
@@ -76,6 +80,8 @@
   line-height: 1.4;
   @media (min-width: $tablet-width) {
     width: auto;
+    font-size: 50px;
+    padding-top: 78px;
   }
 }
 
