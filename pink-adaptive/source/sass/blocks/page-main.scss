@@ -54,6 +54,12 @@
   }
 }
 
+.page-main__br--mobile-only {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
 .page-main__subheading {
   font-size: 18px;
   font-weight: 700;
