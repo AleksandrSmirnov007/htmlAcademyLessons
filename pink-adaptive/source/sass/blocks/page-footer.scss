@@ -3,9 +3,18 @@
   text-align: center;
 
   @media (min-width: $tablet-width) {
-    padding: 40px 0;
+    padding: 32px 0;
     display: grid;
     grid-template-columns: 160px 1fr 160px;
+  }
+}
+
+.page-footer__developer {
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+    margin-left: auto;
   }
 }
 

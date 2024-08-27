@@ -11,6 +11,12 @@
   justify-content: center;
 }
 
+.slider__toggles--table {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
 .slider__toggle-item {
   margin: 9px;
 }

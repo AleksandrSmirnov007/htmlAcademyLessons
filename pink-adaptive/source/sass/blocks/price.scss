@@ -1,6 +1,12 @@
 .price {
   padding-top: 132px;
   padding-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: -30px;
+    padding-top: 136px;
+    padding-bottom: 32px;
+  }
 }
 
 .price__wrapper {
@@ -75,6 +81,10 @@
   font-weight: 700;
   margin-top: 15px;
   margin-bottom: 0;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 12px;
+  }
 }
 
 .price__cost {
@@ -83,11 +93,16 @@
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 8px;
+  }
 }
 
 .price__row-head {
   @media (min-width: $tablet-width) {
-    padding: 10px 0;
+    padding: 8px 11px 7px;
+    text-align: left;
   }
 }
 

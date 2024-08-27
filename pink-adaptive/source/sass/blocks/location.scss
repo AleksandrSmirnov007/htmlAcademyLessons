@@ -3,6 +3,9 @@
   position: relative;
   z-index: -1;
 
+  @media (min-width: $tablet-width) {
+    margin-top: -53px;
+  }
 }
 
 .location__wrapper {
@@ -23,6 +26,10 @@
   background-color: $color-primary;
   border-radius: 50%;
   border: 10px solid $basic-white;
+
+  @media (min-width: $tablet-width) {
+    top: 50px;
+  }
 }
 
 

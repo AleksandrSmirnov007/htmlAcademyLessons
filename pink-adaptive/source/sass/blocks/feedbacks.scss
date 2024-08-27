@@ -53,6 +53,18 @@
   font-weight: 700;
   color: $basic-black;
   line-height: 30px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 10px;
+    letter-spacing: 1.3px;
+    margin-bottom: -1px;
+  }
+}
+
+.feedbacks__author-info {
+  @media (min-width: $tablet-width) {
+    margin-bottom: 28px;
+  }
 }
 
 .feedbacks__author-age,
@@ -77,3 +89,11 @@
     order: -1;
   }
 }
+
+.feedbacks__toggles {
+  position: relative;
+  // необходимо для Z-index ниже
+  z-index: 1;
+  // небходимо что бы поднять toggles над наезжающим снизу слоем, так как между блоками косая граница разделения
+}
+

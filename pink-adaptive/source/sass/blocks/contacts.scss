@@ -23,7 +23,7 @@
   background-image: url("../img/background/triangle-white-top.svg");
 
   @media (min-width: $tablet-width) {
-    bottom: -95px;
+    bottom: -50px;
   }
 
   @media (min-width: $desktop-width) {
@@ -36,11 +36,8 @@
   margin-top: 42px;
 
   @media (min-width:$tablet-width) {
-    margin-bottom: 51px;
-  }
-
-  @media (min-width:$tablet-width) {
-    margin-bottom: 61px;
+    margin-top: 45px;
+    margin-bottom: 34px;
   }
 }
 
@@ -52,12 +49,14 @@
   @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 0 10px;
   }
 
   @media (min-width: $desktop-width) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 
 .contacts__item:nth-child(3n) {
   grid-column: 1 / -1;
@@ -89,5 +88,9 @@
   font-size: 24px;
   font-weight: 300;
   line-height: 33px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 42px;
+  }
 }
 
