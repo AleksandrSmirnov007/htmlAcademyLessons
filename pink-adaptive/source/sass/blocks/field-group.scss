@@ -33,7 +33,7 @@
 }
 
 .field-group__heading {
-  margin-top: 40px;
+  margin-top: 0;
 
   padding: 0 20px;
   font-size: 14px;
@@ -91,6 +91,8 @@
   margin-bottom: 19px;
 
   @media (min-width: $tablet-width) {
+
+    margin-bottom: 57px;
     &:last-child {
       margin-bottom: 54px;
     }
@@ -106,6 +108,7 @@
 .field-group--name {
   order: -3;
   @media (min-width: $tablet-width) {
+    margin-bottom: 25px;
     .field-group__field {
       grid-template-columns: max-content 1fr;
       gap: 20px;

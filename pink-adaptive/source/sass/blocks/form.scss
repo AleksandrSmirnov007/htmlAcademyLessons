@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
 
-  @media (min-width: $desktop-width) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  @media (min-width: $tablet-width) {
+    padding-top: 36px;
   }
 
   @media (min-width: $desktop-width) {
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding-left: 112px;
     padding-right: 112px;
     margin-right: auto;
