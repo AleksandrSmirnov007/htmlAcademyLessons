@@ -24,6 +24,11 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
+  @media (min-width: $tablet-width) {
+    width: 45.5%;
+    display: inline-block;
+  }
+
   @media (min-width: $desktop-width) {
     margin-right: auto;
     padding-right: 55px;
@@ -36,6 +41,13 @@
   text-transform: uppercase;
   margin-top: 34px;
   margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 45.5%;
+    font-size: 14px;
+    display: inline-block;
+  }
+
   @media (min-width: $desktop-width) {
     margin-left: auto;
   }

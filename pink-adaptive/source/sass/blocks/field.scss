@@ -8,6 +8,11 @@
 
   @media (min-width: $tablet-width) {
     margin-left: 0;
+
+    &--tel,
+    &--mail {
+      margin-left: 18px;
+    }
   }
 
   @media (min-width: $desktop-width) {
@@ -41,6 +46,10 @@
   @media (min-width: $tablet-width) {
     margin-right: 60px;
     margin-left: 60px;
+    margin-top: 16px;
     margin-bottom: 52px;
+    min-height: 190px;
+    padding: 16px 20px;
+
   }
 }
