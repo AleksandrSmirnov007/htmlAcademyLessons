@@ -21,6 +21,11 @@
     background-size: 238px 276px;
     background-position: top 52px left;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 370px;
+    padding-top: 150px;
+  }
 }
 
 
@@ -54,6 +59,10 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 5px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
   }
 }
 

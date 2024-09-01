@@ -5,6 +5,11 @@
     width: 300px;
     padding-bottom: 110px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 38px;
+    padding-bottom: 123px;
+  }
 }
 
 .install__button {
@@ -15,6 +20,12 @@
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 34px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 58px;
   }
 }
 
@@ -31,6 +42,10 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 19px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 38px;
   }
 }
 
@@ -63,5 +78,10 @@
 
   @media (min-width: $tablet-width) {
     line-height: 1.5;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 1.35;
+    margin-left: -5px;
   }
 }

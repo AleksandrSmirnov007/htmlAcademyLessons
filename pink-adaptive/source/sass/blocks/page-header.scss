@@ -8,8 +8,9 @@
   display: block;
 
   @media (min-width: $desktop-width) {
-    margin-right: 107px;
-    margin-bottom: 20px;
+    margin-left: 32px;
+    margin-right: 132px;
+    margin-bottom: 18px;
   }
 }
 
@@ -23,6 +24,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    margin-bottom: 0;
     width: 147px;
     height: 40px;
   }
