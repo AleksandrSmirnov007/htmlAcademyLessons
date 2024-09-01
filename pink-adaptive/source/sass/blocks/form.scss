@@ -4,6 +4,7 @@
 
   @media (min-width: $tablet-width) {
     padding-top: 36px;
+    margin-bottom: 44px;
   }
 
   @media (min-width: $desktop-width) {
@@ -27,6 +28,9 @@
   @media (min-width: $tablet-width) {
     width: 45.5%;
     display: inline-block;
+    margin-left: 0;
+    padding-bottom: 18px;
+    border-radius: 0;
   }
 
   @media (min-width: $desktop-width) {
@@ -46,6 +50,8 @@
     width: 45.5%;
     font-size: 14px;
     display: inline-block;
+    text-align: right;
+    margin-top: 38px;
   }
 
   @media (min-width: $desktop-width) {

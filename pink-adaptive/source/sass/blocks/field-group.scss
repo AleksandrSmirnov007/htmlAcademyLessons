@@ -16,6 +16,10 @@
       padding-top: 0;
       border-radius: 3px;
     }
+
+    &:last-of-type {
+      margin-bottom: 46px;
+    }
   }
 
   @media (min-width: $desktop-width) {
