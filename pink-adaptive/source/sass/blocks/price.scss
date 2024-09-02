@@ -7,6 +7,10 @@
     padding-top: 136px;
     padding-bottom: 32px;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+  }
 }
 
 .price__wrapper {
@@ -32,6 +36,10 @@
 
     @media (min-width: $tablet-width) {
       min-width: 153px;
+    }
+
+    @media (min-width: $desktop-width) {
+      min-width: 236px;
     }
   }
 }

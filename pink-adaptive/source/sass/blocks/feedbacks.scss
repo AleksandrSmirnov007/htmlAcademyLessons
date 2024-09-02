@@ -2,7 +2,7 @@
   padding-top: 42px;
 
   @media (min-width: $desktop-width) {
-    padding-top: 193px;
+    padding-top: 187px;
     position: relative;
   }
 }
@@ -59,6 +59,12 @@
     letter-spacing: 1.3px;
     margin-bottom: -1px;
   }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    letter-spacing: normal;
+    margin-bottom: 4px;
+  }
 }
 
 .feedbacks__author-info {
@@ -78,11 +84,15 @@
     line-height: 30px;
     text-transform: lowercase;
   }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
 }
 
 .feedbacks__text {
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   line-height: 30px;
 
   @media (min-width: $tablet-width) {
