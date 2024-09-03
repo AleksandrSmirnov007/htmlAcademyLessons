@@ -4,7 +4,7 @@
   margin-bottom: 35px;
 
   @media (min-width: $desktop-width) {
-    padding-top: 54px;
+    padding-top: 14px;
   }
 }
 
@@ -35,9 +35,13 @@
   margin-bottom: 34px;
   margin-top: 42px;
 
-  @media (min-width:$tablet-width) {
+  @media (min-width: $tablet-width) {
     margin-top: 45px;
     margin-bottom: 34px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 41px;
   }
 }
 
@@ -80,6 +84,10 @@
 
 .contacts dt {
   margin-bottom: 2px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .contacts dd {
@@ -94,3 +102,17 @@
   }
 }
 
+.contacts__info { // Нехватает приоритета по стравнению с .contacts dd (доделать)
+  @media (min-width: $desktop-width) {
+
+    &--phone {
+      text-align: right;
+      margin-right: 20px;
+    }
+
+    &--email {
+      text-align: left;
+      margin-left: 10px;
+    }
+  }
+}

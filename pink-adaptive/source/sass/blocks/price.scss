@@ -9,7 +9,8 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin-top: 0;
+    padding-top: 167px;
+    padding-bottom: 59px;
   }
 }
 
@@ -32,7 +33,7 @@
   }
 
   td {
-    min-width: 280px; // поточнее разобраться
+    min-width: 280px;
 
     @media (min-width: $tablet-width) {
       min-width: 153px;
@@ -65,7 +66,6 @@
   position: absolute;
   top: 10px;
   left: -110px;
-  height: 20px;
   width: 100%;
   background-color: $color-primary;
   font-weight: 400;
@@ -74,12 +74,20 @@
   text-transform: uppercase;
   font-size: 14px;
   padding-top: 2px;
+  padding-bottom: 4px;
+
   padding-right: 13px;
 
   @media (min-width: $tablet-width) {
     top: 10px;
     left: -52px;
     padding-right: 7px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 17px;
+    left: -86px;
+    padding-top: 4px;
   }
 }
 
@@ -93,6 +101,11 @@
   @media (min-width: $tablet-width) {
     margin-top: 12px;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 17px;
+    font-size: 18px;
+  }
 }
 
 .price__cost {
@@ -104,6 +117,11 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 8px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 }
 
@@ -146,6 +164,11 @@
 
   @media (min-width: $tablet-width) {
     font-size: 14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+    padding: 16px 22px 13px;
   }
 }
 
