@@ -7,6 +7,10 @@
     display: grid;
     grid-template-columns: 160px 1fr 160px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 68px 0;
+  }
 }
 
 .page-footer__developer {

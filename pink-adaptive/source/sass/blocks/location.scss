@@ -4,15 +4,25 @@
   z-index: -1;
 
   @media (min-width: $tablet-width) {
-    margin-top: -53px;
+    margin-top: -60px;
+  }
+}
+
+.location__container {
+  @media (min-width: $desktop-width) {
+    width: 1200px;
   }
 }
 
 .location__wrapper {
   margin: 0 -20px;
+
+  @media (min-width: $desktop-width) {
+    margin: 0 auto;
+  }
 }
 
-
+// Метка на карте
 .location__wrapper::before {
   position: absolute;
   content: "";
@@ -30,6 +40,10 @@
   @media (min-width: $tablet-width) {
     top: 50px;
   }
+
+  @media (min-width: $tablet-width) {
+    top: 65px;
+  }
 }
 
 
@@ -45,15 +59,4 @@
     width: 1200px;
     height: 502px;
   }
-}
-
-.location__mark {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 36px;
-  height: 36px;
-  background-color: $color-primary;
 }

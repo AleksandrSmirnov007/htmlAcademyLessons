@@ -27,7 +27,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    bottom: -123px;
+    bottom: -97px;
   }
 }
 
@@ -57,7 +57,10 @@
   }
 
   @media (min-width: $desktop-width) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 338px 305px 332px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
   }
 }
 
@@ -99,20 +102,5 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 42px;
-  }
-}
-
-.contacts__info { // Нехватает приоритета по стравнению с .contacts dd (доделать)
-  @media (min-width: $desktop-width) {
-
-    &--phone {
-      text-align: right;
-      margin-right: 20px;
-    }
-
-    &--email {
-      text-align: left;
-      margin-left: 10px;
-    }
   }
 }
