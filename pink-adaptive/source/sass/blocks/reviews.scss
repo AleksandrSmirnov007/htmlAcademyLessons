@@ -7,6 +7,10 @@
     padding-top: 93px;
     padding-bottom: 72px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 84px;
+  }
 }
 
 .reviews__header--form {

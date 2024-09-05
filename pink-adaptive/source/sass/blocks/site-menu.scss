@@ -24,9 +24,9 @@
   @media (min-width: $desktop-width) {
     position: absolute;
     content: "";
-    bottom: 0;
-    right: 35px;
-    left: 35px;
+    bottom: 3px;
+    right: 40px;
+    left: 40px;
     height: 2px;
     background-color: $basic-white;
   }

@@ -86,6 +86,11 @@
     padding-top: 78px;
     line-height: 1.38;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 18px;
+    padding-bottom: 30px;
+  }
 }
 
 
