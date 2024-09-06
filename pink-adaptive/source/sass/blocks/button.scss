@@ -12,7 +12,10 @@
 }
 
 .button--primary {
-  padding: 14px 14px 13px;
+  padding-top: 14px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 13px;
   color: $basic-white;
   border: 3px solid $basic-white;
   border-radius: 29px;
