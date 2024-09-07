@@ -69,10 +69,10 @@
         <header class="reviews__header reviews__header--form">
           <div class="reviews__header-content container">
             <p class="page-main__heading-small">
-              Поделитесь своей историей и получите шанс выиграть<br class="page-main__br--tablet-only">ценный приз — 1000 миль на
-              <br class="page-main__br--desktop-only">
-              вашу бонусную карту!
-              <br class="page-main__br--tablet-only">
+              <span>
+                Поделитесь своей историей и получите шанс выиграть&nbsp;<br class="page-main__br--tablet-only">ценный приз — 1000 миль на&nbsp;<br class="page-main__br--desktop-only">вашу бонусную карту!
+                <br class="page-main__br--tablet-only">
+              </span>
               <span class="page-main__text-additional">&nbsp;Пожалуйста, заполните форму ниже:</span>
             </p>
           </div>
@@ -80,7 +80,7 @@
         <form class="form__body"  action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="form__group field-group field-group--name">
             <legend class="visually-hidden">Фамилия Имя Отчество</legend>
-            <ul class="field-group__list">
+            <ul class="field-group__list field-group__list--name">
               <li class="field-group__item">
                 <label class="field-group__field field">
                   <span class="field__lead">Фамилия:</span>
@@ -167,7 +167,7 @@
           <fieldset class="form__group field-group field-group--app">
             <legend class="visually-hidden">Операционная система для приложение</legend>
             <p class="field-group__heading container">С каким приложением путешествовали?</p>
-            <ul class="field-group__list">
+            <ul class="field-group__list field-group__list--app">
               <li class="field-group__item field-group__item--app">
                 <label class="field-group__control control control--radio">
                   <input class="control__input"  type="radio" name="operating system" value="pink-on-ios" checked>
@@ -188,7 +188,7 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form__group field-group">
+          <fieldset class="form__group field-group field-group--textarea">
             <legend class="visually-hidden">Эмоции</legend>
             <p class="field-group__heading container">
               Опишите свои эмоции

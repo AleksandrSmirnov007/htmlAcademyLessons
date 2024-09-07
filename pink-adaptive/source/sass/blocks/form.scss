@@ -8,13 +8,15 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding-top: 0;
+    padding-top: 78px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-left: 112px;
-    padding-right: 112px;
+    padding-left: 110px;
+    padding-right: 110px;
+
     margin-right: auto;
     margin-left: auto;
+    column-gap: 32px;
   }
 }
 

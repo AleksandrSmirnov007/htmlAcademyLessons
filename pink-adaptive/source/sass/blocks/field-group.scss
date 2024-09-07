@@ -26,6 +26,11 @@
     &:not(.field-group--name):not(.field-group--app) {
       grid-column: 1 / -1;
     }
+
+    &--textarea {
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 }
 
@@ -78,7 +83,13 @@
 
   @media (min-width: $tablet-width) {
     width: auto;
+    padding-right: 60px;
+    padding-left: 60px;
 
+    &--name {
+      padding-right: 0;
+      padding-left: 0;
+    }
     &--contacts {
       margin-top: 30px;
       margin-bottom: -26px;
@@ -89,14 +100,11 @@
       margin-bottom: -5px;
     }
   }
-}
 
-
-.field-group:not(:first-child) {
-  @media (min-width: $tablet-width) {
-    .field-group__list {
-      padding-right: 60px;
-      padding-left: 60px;
+  @media (min-width: $desktop-width) {
+    &--contacts {
+      margin-top: 26px;
+      margin-bottom: -40px;
     }
   }
 }
@@ -149,7 +157,11 @@
   @media (min-width: $desktop-width) {
     .field-group__list {
       width: auto;
-      margin-top: 6px;
+      margin-top: 9px;
+    }
+
+    .field-group__item {
+      margin-bottom: 58px;
     }
   }
 }
@@ -208,8 +220,6 @@
       grid-template-columns: 1fr 1fr;
       gap: 74px;
     }
-
-
   }
 }
 
@@ -221,6 +231,13 @@
   @media (min-width: $desktop-width) {
     .field-group__list {
       width: auto;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    .field-group__list {
+      padding-left: 72px;
+
     }
   }
 }
