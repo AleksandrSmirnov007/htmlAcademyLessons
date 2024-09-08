@@ -131,6 +131,12 @@
       margin-bottom: 20px;
     }
   }
+
+  @media (min-width: $desktop-width) {
+    &--progress {
+      margin-bottom: 1px;
+    }
+  }
 }
 
 
@@ -168,6 +174,7 @@
 
 .field-group--progress {
   @media (min-width: $desktop-width) {
+
     .field-group__list {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;

@@ -4,6 +4,10 @@
   gap: 22px;
   margin-bottom: 45px;
   cursor: pointer;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
 }
 
 .control__input {
