@@ -50,6 +50,11 @@
     margin-bottom: 52px;
     min-height: 190px;
     padding: 16px 20px;
+  }
 
+  @media (min-width: $desktop-width) {
+    margin-top: 13px;
+    min-height: 124px;
+    margin-bottom: 44px;
   }
 }

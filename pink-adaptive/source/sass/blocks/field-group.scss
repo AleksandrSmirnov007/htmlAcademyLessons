@@ -104,7 +104,7 @@
   @media (min-width: $desktop-width) {
     &--contacts {
       margin-top: 26px;
-      margin-bottom: -40px;
+      margin-bottom: -18px;
     }
   }
 }
@@ -133,6 +133,10 @@
   }
 
   @media (min-width: $desktop-width) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     &--progress {
       margin-bottom: 1px;
     }
@@ -177,9 +181,12 @@
 
     .field-group__list {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 60px;
-      row-gap: 10px;
+      grid-template-columns: max-content max-content 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-auto-flow: column;
+      column-gap: 55px;
+      row-gap: 44px;
+      margin-bottom: 54px;
     }
   }
 }
