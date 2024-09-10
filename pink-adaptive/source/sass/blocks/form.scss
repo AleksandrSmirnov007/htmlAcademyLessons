@@ -20,6 +20,15 @@
   }
 }
 
+.form__button-container {
+
+  @media (min-width: $desktop-width) {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .form__button {
   margin-right: 20px;
   margin-left: 20px;
@@ -36,9 +45,9 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin-right: auto;
     padding-right: 55px;
     padding-left: 55px;
+    width: max-content;
   }
 }
 
@@ -57,6 +66,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    width: max-content;
     margin-left: auto;
   }
 }
