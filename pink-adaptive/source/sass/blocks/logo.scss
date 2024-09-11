@@ -1,0 +1,16 @@
+.logo--small {
+  display: block;
+  color: $basic-white;
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $basic-white;
+    opacity: 0.3;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
