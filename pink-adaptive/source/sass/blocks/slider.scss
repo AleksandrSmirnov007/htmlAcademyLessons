@@ -28,11 +28,19 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-}
 
-.slider__toggle--current {
-  background-color: $basic-white;
-  outline: 3px solid $special-gray;
+  &--current {
+    background-color: $basic-white;
+    outline: 3px solid $special-gray;
+  }
+
+  &:hover:not(.slider__toggle--current) {
+    background-color:  fade-out($special-gray, 0.4);
+  }
+
+  &:active:not(.slider__toggle--current) {
+    background-color:  fade-out($special-gray, 0.9);
+  }
 }
 
 .slider__arrows {

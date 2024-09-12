@@ -16,6 +16,16 @@
   width: 100%;
   margin-bottom: 20px;
 
+  &:hover {
+    background-color: $basic-white;
+    color: $color-primary;
+  }
+
+  &:active {
+    background-color: $basic-white;
+    color: fade-out($color-primary, 0.7);
+  }
+
   @media (min-width: $tablet-width) {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -28,6 +38,8 @@
     margin-bottom: 58px;
   }
 }
+
+
 
 .install__list {
   margin: 0;

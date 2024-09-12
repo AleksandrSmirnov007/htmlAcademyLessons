@@ -14,18 +14,61 @@
   }
 }
 
-.page-header__logo img {
-  width: 74px;
-  height: 23px;
-  @media (min-width: $tablet-width) {
-    margin-bottom: 14px;
-    width: 145px;
-    height: 40px;
+.page-header__logo  {
+  .logo--small {
+    display: block;
+    color: $basic-white;
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:active {
+      color: $basic-white;
+      opacity: 0.3;
+    }
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
   }
 
-  @media (min-width: $desktop-width) {
-    margin-bottom: 0;
-    width: 147px;
-    height: 40px;
+  .logo--medium {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: block;
+
+      color: $basic-white;
+      &:hover {
+        color: $color-primary;
+      }
+
+      &:active {
+        color: $basic-white;
+        opacity: 0.3;
+      }
+    }
+
+    @media (min-width: $desktop-width) {
+      display: none;
+    }
+  }
+
+  .logo--large {
+    display: none;
+
+    @media (min-width: $desktop-width) {
+      display: block;
+
+      color: $basic-white;
+      &:hover {
+        color: $color-primary;
+      }
+
+      &:active {
+        color: $basic-white;
+        opacity: 0.3;
+      }
+    }
   }
 }

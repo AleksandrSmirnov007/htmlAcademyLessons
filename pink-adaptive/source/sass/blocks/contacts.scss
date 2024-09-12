@@ -104,3 +104,29 @@
     margin-bottom: 42px;
   }
 }
+
+.contacts__link--email {
+  position: relative;
+
+  &:hover {
+    color: $special-gray;
+  }
+
+  &:active {
+    color: fade-out($special-gray, 0.7);
+  }
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 1px;
+    background-color: $special-gray;
+  }
+
+  &:active::after {
+    background-color: fade-out($special-gray, 0.7);
+  }
+}
