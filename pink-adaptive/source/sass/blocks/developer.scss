@@ -13,4 +13,16 @@
   @media (min-width: $desktop-width) {
     font-size: 18px;
   }
+
+  svg {
+    color: $color-primary;
+  }
+
+  &:hover svg {
+    color: $special-gray;
+  }
+
+  &:active svg {
+    color: fade-out($special-gray, 0.7);
+  }
 }

@@ -24,4 +24,12 @@
   place-content: center;
   border: 3px solid fade-out($special-gray, 0.9);
   border-radius: 50%;
+
+  &:hover {
+    border-color: $special-gray;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
 }

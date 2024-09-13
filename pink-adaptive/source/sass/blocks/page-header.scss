@@ -7,6 +7,10 @@
 .page-header__logo {
   display: block;
 
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+  }
+
   @media (min-width: $desktop-width) {
     margin-left: 32px;
     margin-right: 132px;
