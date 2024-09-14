@@ -55,6 +55,18 @@
   }
 }
 
+.control__lead:hover::before,
+.control__input:hover + .control__lead::before {
+  outline: 2px solid $special-gray;
+}
+
+.control__lead:active::before,
+.control__input:active + .control__lead::before,
+.control__lead:focus::before,
+.control__input:focus + .control__lead::before {
+  outline: 2px solid $color-primary;
+}
+
 .control--radio {
   margin-top: -2px;
   margin-bottom: 40px;

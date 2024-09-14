@@ -205,11 +205,13 @@
         content: "";
         right: 0;
         top: 0;
-        height: 59px;
-        width: 59px;
+        height: 58px;
+        width: 58px;
         background-color: $special-gray-200;
         background-position: center;
         background-repeat: no-repeat;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
       }
     }
 

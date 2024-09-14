@@ -33,6 +33,17 @@
   outline: 2px solid $special-gray-200;
   color: $special-gray;
   border-radius: 3px;
+
+  &:hover {
+    outline: 2px solid $special-gray;
+  }
+
+  &:active,
+  &:focus {
+    outline: 2px solid $color-primary;
+  }
+
+
 }
 
 .field__input::placeholder {
