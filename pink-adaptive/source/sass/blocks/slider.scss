@@ -60,13 +60,19 @@
 .slider__arrow {
   width: 22px;
   height: 41px;
+  padding: 0;
+  opacity: 0.3;
 
-  background-image: url("../img/sprites/arrow-right.svg");
-  background-repeat: no-repeat;
-  background-size: 22px 41px;
-  background-position: center;
 
   &--left {
     transform: rotate(180deg);
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.1;
   }
 }

@@ -38,6 +38,20 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
+  &:hover {
+    background-color: $special-green;
+  }
+
+  &:active {
+    background-color: $special-green;
+    color: fade-out($basic-white, 0.7);
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $special-gray-200;
+  }
+
   @media (min-width: $tablet-width) {
     width: 45.5%;
     display: inline-block;
@@ -55,7 +69,6 @@
     padding-top: 20px;
   }
 }
-
 
 .form__explanation {
   text-transform: uppercase;
@@ -76,7 +89,6 @@
     margin-left: auto;
     margin-right: 20px;
     align-self: center;
-
   }
 }
 
