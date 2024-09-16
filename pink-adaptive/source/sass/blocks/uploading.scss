@@ -15,7 +15,6 @@
   }
 }
 
-
 .uploading__wrapper {
   background-color: $special-gray-100;
   padding: 20px 0 40px;
@@ -133,8 +132,15 @@
   }
 }
 
+.uploading__range-button:hover {
+  color: fade-out($basic-black, 0.5);
+}
 
 .uploading__range-group--current .uploading__range-button {
+  color: $color-primary;
+}
+
+.uploading__range-group--current .uploading__range-button:hover {
   color: $color-primary;
 }
 

@@ -31,6 +31,9 @@
   border: 2px solid $color-primary;
   cursor: pointer;
 
+
+
+  &:hover,
   &:active {
     background-color: $color-primary;
   }

@@ -18,6 +18,13 @@
     <link rel="preload" href="img/background/back-mobile.jpg" as="image" type="image/jpg" crossorigin="anonymous">
   </head>
   <body class="page__body">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="arrow" fill="none" width="22" height="41" viewBox="0 0 22 41">
+        <path fill="#283645" d="M19.96 20.5.26 39.59a.82.82 0 0 0-.26.58.8.8 0 0 0 .25.59.86.86 0 0 0 .61.24.88.88 0 0 0 .6-.24l20.29-19.67a.83.83 0 0 0 .25-.59.8.8 0 0 0-.25-.59L1.47.24A.9.9 0 0 0 .38.14a.81.81 0 0 0-.13 1.27l19.7 19.09Z" opacity="1"/>
+      </symbol>
+
+    </svg>
+
     <header class="page__header page-header">
       <nav class="main-nav main-nav--closed main-nav--nojs"> <!-- для закрытого состояния и отображения кнопки-бургер добавить класс main-nav- -closed, для открытого состояния и отображения кнопки-крестик добавить класс main-nav- -opened  -->
 
@@ -213,18 +220,16 @@
         <div class="slider__arrows container">
           <button class="slider__arrow slider__arrow--left button" type="button">
             <span class="visually-hidden">Листать вправо</span>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="41" fill="none" viewBox="0 0 22 41">
-              <path fill="#283645" d="M19.96 20.5.26 39.59a.82.82 0 0 0-.26.58.8.8 0 0 0 .25.59.86.86 0 0 0 .61.24.88.88 0 0 0 .6-.24l20.29-19.67a.83.83 0 0 0 .25-.59.8.8 0 0 0-.25-.59L1.47.24A.9.9 0 0 0 .38.14a.81.81 0 0 0-.13 1.27l19.7 19.09Z" opacity="1"/>
+            <svg width="22" height="41" viewBox="0 0 22 41" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#arrow-right"></use>
             </svg>
           </button>
 
           <button class="slider__arrow slider__arrow--right button" type="button">
             <span class="visually-hidden">Листать вправо</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="41" fill="none" viewBox="0 0 22 41">
-              <path fill="#283645" d="M19.96 20.5.26 39.59a.82.82 0 0 0-.26.58.8.8 0 0 0 .25.59.86.86 0 0 0 .61.24.88.88 0 0 0 .6-.24l20.29-19.67a.83.83 0 0 0 .25-.59.8.8 0 0 0-.25-.59L1.47.24A.9.9 0 0 0 .38.14a.81.81 0 0 0-.13 1.27l19.7 19.09Z" opacity="1"/>
+            <svg width="22" height="41" viewBox="0 0 22 41" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#arrow-right"></use>
             </svg>
-          <!-- сделать стрелки через спрайты, код стрелки добавлен в спрайты но почему то при добавлении через use svg не отображается -->
           </button>
         </div>
       </section>
