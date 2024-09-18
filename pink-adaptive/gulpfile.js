@@ -165,6 +165,10 @@ export const build = gulp.series(
     sprite,
     createWebp
   ),
+  gulp.series(
+    server,
+    watcher
+  )
 );
 
 
