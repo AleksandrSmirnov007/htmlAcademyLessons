@@ -1,33 +1,34 @@
-//функция возвращающая случайно число из переаданного диапазона включительно
+//функция возвращающая случайное целое число из переаданного диапазона включительно
 
-function randomNumber (number) {
-  if (number >= 0) {
-    return Math.random() * number;
-  }
+// Примечание: Может показаться заманчивым использовать Math.round() для округления, но это может сделать распределение неравномерным и оказаться не тем, что вам нужно.
 
-  return 0;
-}
+// Функция JavaScript Math.ceil() округляет заданное число до ближайшего большего целого. Она всегда округляет до положительной бесконечности, то есть увеличивает число до следующего целого числа, если оно еще не является целым числом. Эта функция полезна для округления значений в вычислениях.
 
-randomNumber();
-// моя фунция работает, но она не то что нужно. Прочитать еще раз задание и сделать работающие функции.
-// если сервер(brausersinc) завис перезагрузить его cntl + c
+// JavaScript-функция math.floor() предназначена для округления чисел, которые больше или равны x, путем нахождения ближайшего целого числа, которое меньше или равно ему. Синтаксис math.floor в javascript таков: чтобы округлить в меньшую сторону, введите здесь x как число, которое необходимо округлить в меньшую сторону. Например, если x =. x = 5.8 = 5.8, то использование Math.floor(5.8) приведет к результату 5, поскольку он округляется до ближайшего целого числа, меньшего или равного 5.8.
 
-// код из архива учебного проекта
+// Math.min() Статический метод возвращает наименьшее из чисел, заданных в качестве входных параметров, или Infinity если параметров нет.
 
-function getRandomPositiveInteger (a, b = 1) {
+// Math.abs() Статический метод возвращает абсолютное значение числа.
+
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+function getRandomIntInclusive(a, b = 1) {
   if (a === undefined) {
-    throw new Error('Первый параметр должен быть число');
+    throw new Error('Первый параметр должен быть число, второй праметр по умолчанию равен 1');
   }
 
-  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
+  const min = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const max = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+  return Math.floor(Math.random() * (max - min + 1) + min); // Максимум и минимум включаются
 }
 
-function checkStringLength (string, length) {
+function stringLength(string, length) {
   return string.length <= length;
 }
 
-getRandomPositiveInteger(1, 0);
-checkStringLength('', 140);
+
+getRandomIntInclusive(0, 1);
+stringLength('proba', 50);
+
+// если сервер(brausersinc) завис перезагрузить его cntl + c
+// при изменении кода в файле .js на странице в браузере(при работе brousersinc) появляется paused in debugger нажать на стрелку для перезагрузки.
