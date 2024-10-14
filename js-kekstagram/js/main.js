@@ -52,3 +52,14 @@ checkStringLength('proba', 50);
 
 // если сервер(brausersinc) завис перезагрузить его cntl + c
 // при изменении кода в файле .js на странице в браузере(при работе brousersinc) появляется paused in debugger нажать на стрелку для перезагрузки.
+
+// создадим массивы для значений
+// создадим функцию для генерации массива
+
+// массив для id (не должны повторяться)
+
+console.log('случайное число: ' + getRandomPositiveInteger(0, 9));
+
+// let function getRandomUsers
+
+
