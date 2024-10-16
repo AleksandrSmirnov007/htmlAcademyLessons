@@ -148,5 +148,4 @@ function createPicture () {
 
 // создаем массив из 25 обьектов с помощью метода для массивов From. кадый обект создается фунцией указанной в аргументе метода.
 const similarPictures = Array.from({length: 25}, createPicture);
-
-similarPictures();
+console.log(similarPictures);
