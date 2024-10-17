@@ -1,62 +1,3 @@
-//функция возвращающая случайное целое число из переаданного диапазона включительно
-
-// Примечание: Может показаться заманчивым использовать Math.round() для округления, но это может сделать распределение неравномерным и оказаться не тем, что вам нужно.
-
-// Функция JavaScript Math.ceil() округляет заданное число до ближайшего большего целого. Она всегда округляет до положительной бесконечности, то есть увеличивает число до следующего целого числа, если оно еще не является целым числом. Эта функция полезна для округления значений в вычислениях.
-
-// JavaScript-функция math.floor() предназначена для округления чисел, которые больше или равны x, путем нахождения ближайшего целого числа, которое меньше или равно ему. Синтаксис math.floor в javascript таков: чтобы округлить в меньшую сторону, введите здесь x как число, которое необходимо округлить в меньшую сторону. Например, если x =. x = 5.8 = 5.8, то использование Math.floor(5.8) приведет к результату 5, поскольку он округляется до ближайшего целого числа, меньшего или равного 5.8.
-
-// Math.min() Статический метод возвращает наименьшее из чисел, заданных в качестве входных параметров, или Infinity если параметров нет.
-
-// Math.abs() Статический метод возвращает абсолютное значение числа.
-
-// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
-// Чтобы не заставлять пользователя нашей функции помнить порядок аргументов,
-// реализуем поддержку передачи минимального и максимального значения в любом порядке,
-// а какое из них большее и меньшее вычислим с помощью Math.min и Math.max.
-
-// После нам нужно убедиться, что пользователь не передал дробные значения,
-// для этого на всякий пожарный случай нижнюю границу диапазона
-// мы округляем к ближайшему большему целому с помощью Math.ceil,
-// а верхнюю границу - к ближайшему меньшему целому с помощью Math.floor
-
-// Обратите внимание, чтобы учесть условие, что диапазон может быть [0, ∞),
-// мы не ругаем пользователя за переданное отрицательное число,
-// а просто берём его по модулю с помощью Math.abs
-
-// Дальше используем Math.random() для получения случайного дробного числа в диапазоне [0, 1),
-// которое домножаем на разницу между переданными числами плюс единица - это будет наша случайная дельта.
-// После нужно сложить дельту с минимальным значением, чтобы получить итоговое случайное число.
-
-// "Плюс единица", чтобы включить верхнюю границу диапазона в случайные числа
-
-// И в конце с помощью метода Math.floor мы округляем полученный результат,
-// потому что Math.random() генерирует только дробные числа и ноль.
-
-function getRandomPositiveInteger(a, b) {
-
-  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
-}
-
-function checkStringLength(string, length) {
-  return string.length <= length;
-}
-
-
-getRandomPositiveInteger(0, 1);
-checkStringLength('proba', 50);
-
-// если сервер(brausersinc) завис перезагрузить его cntl + c
-// при изменении кода в файле .js на странице в браузере(при работе brousersinc) появляется paused in debugger нажать на стрелку для перезагрузки.
-
-// создадим массивы для значений
-// создадим функцию для генерации массива
-
-//  создалим массив с описаниями картинки
 const DESCRIPTIONS = [
   'Дети играют в мяч',
   'Девушка с персиками',
@@ -85,7 +26,7 @@ const DESCRIPTIONS = [
   'Пирс у моря',
 ];
 
-const COMMENTS  = [
+const COMMENTS_LINES  = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -104,48 +45,62 @@ const NAMES = [
   'Люпита',
   'Вашингтон',
 ];
-const SURNAMES = [
-  'да Марья',
-  'Верон',
-  'Мирабелла',
-  'Вальц',
-  'Онопко',
-  'Топольницкая',
-  'Нионго',
-  'Ирвинг',
-];
 
-function getRamdomElement (element) {
-  return element[getRandomPositiveInteger(0, element.length -1)];
+const quantityCreatePicture = 25;
+
+
+function getRandomPositiveInteger(a, b) {
+
+  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
 }
 
-function getMessages () {
-  const countMessages = getRandomPositiveInteger(1, 2); // количество сообщений в будущем массиве случайное число от 1 до 2
-  const messages = []; // создаем сам массив
-
-  // задаем цикл, он прокрутится столько раз сколько выпало количество сообщений (1 или 2 раза)
-  for (let i = 0; i < countMessages; i++) {
-    const message = getRamdomElement(COMMENTS); // рулетка сообщений из словаря
-    const author = `${getRamdomElement(NAMES)} ${getRamdomElement(SURNAMES)}`; // рулетка по ИМЕНАМ + ПРОБЕЛ + рулетка по фамилиям
-    messages[i] = [message, author];
-  }
-  return messages;
+function checkStringLength(string, length) {
+  return string.length <= length;
 }
 
-let currentId = 0;
+const getRamdomArrayElement = (array) => array[getRandomPositiveInteger(0, array.length -1)];
+
+const randomArrayCommentsLines = () => getRamdomArrayElement(COMMENTS_LINES);
+
+const createMessage = () =>
+  Array.from({length: getRandomPositiveInteger (1, 2)}, randomArrayCommentsLines)
+  .join(' ');
+
+
+const createComment = (index) => ({
+  id: index,
+  avatar: `img/avatar${getRandomPositiveInteger(1, 6)}.svg`,
+  message: createMessage(),
+  name: getRamdomArrayElement(NAMES),
+});
 
 // создаем данные для одной картинки если вызвать эту фунцию например в консоли то счетчик currentId станет на 1 больше
-function createPicture () {
-  currentId = currentId + 1;
+
+// до этого я делал через цикл и создавал оттельную переменну для id , в цикле приращивал к ней единицу тем самым передавая создающимся в цикле обьетам последоваьельное id
+function createPicture (index) {
   return {
-    id: currentId,
-    url: `photos/${currentId}.jpg`,
-    description: DESCRIPTIONS[currentId - 1],
+    id: index,
+    url: `photos/${index}.jpg`,
+    description: getRamdomArrayElement(DESCRIPTIONS),
     likes: getRandomPositiveInteger(15, 200),
-    comments: getMessages()
+    comments: Array.from(
+      {length: getRandomPositiveInteger(1, 6)},
+      (_, commentIndex) => createComment(commentIndex + 1) // непонятная конструкция. Ясно что она генерерует последовательные индексы внутри созданных обьектов можно посмотреть сдесь https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+    ),
   };
 }
 
 // создаем массив из 25 обьектов с помощью метода для массивов From. кадый обект создается фунцией указанной в аргументе метода.
-const similarPictures = Array.from({length: 25}, createPicture);
+
+const getPictures = () =>
+  Array.from(
+    {length: quantityCreatePicture},
+    (_, pictureIndex) => createPicture(pictureIndex + 1) // тоже аргумент функция записанный так для создания пословательных индекса в каждой генерации
+  );
+
+checkStringLength('', 140);
+let similarPictures = getPictures();
 console.log(similarPictures);
