@@ -66,8 +66,8 @@ const getRamdomArrayElement = (array) => array[getRandomPositiveInteger(0, array
 const randomArrayCommentsLines = () => getRamdomArrayElement(COMMENTS_LINES);
 
 const createMessage = () =>
-  Array.from({length: getRandomPositiveInteger (1, 2)}, randomArrayCommentsLines)
-  .join(' ');
+  Array.from({length: getRandomPositiveInteger (1, 2)}, randomArrayCommentsLines
+  ).join(' ');
 
 // Круглые скобки нужны, чтобы JavaScript отличил объявление объекта от блока кода {}
 const createComment = (index) => ({
@@ -102,5 +102,7 @@ const getPictures = () =>
   );
 
 checkStringLength('', 140);
-let similarPictures = getPictures();
-console.log(similarPictures);
+getPictures();
+
+// const similarPictures = getPictures();
+// console.log(similarPictures);
