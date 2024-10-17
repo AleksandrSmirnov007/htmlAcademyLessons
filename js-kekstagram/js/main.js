@@ -69,7 +69,7 @@ const createMessage = () =>
   Array.from({length: getRandomPositiveInteger (1, 2)}, randomArrayCommentsLines)
   .join(' ');
 
-
+// Круглые скобки нужны, чтобы JavaScript отличил объявление объекта от блока кода {}
 const createComment = (index) => ({
   id: index,
   avatar: `img/avatar${getRandomPositiveInteger(1, 6)}.svg`,
