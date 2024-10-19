@@ -1,0 +1,81 @@
+
+/* отображение карточками */
+
+.card {
+    display: grid;
+    grid-template-rows: 340px repeat(3, auto);
+    grid-gap: 10px;
+    max-width: 350px;
+
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card-status {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card-status dt {
+    grid-row: 1/2;
+}
+.card-status dd {
+    margin: 0;
+}
+.button {
+    width: max-content;
+    display: block;
+    padding: 10px 20px;
+    margin: 20px;
+    text-align: center;
+
+    text-decoration: none;
+    color: black;
+}
+
+
+/* добавлено ленточное отображение */
+
+.card-table {
+    max-width: 900px;
+    grid-template-columns: 350px 1fr auto;
+    grid-template-rows: repeat(2, auto);
+}
+
+.card-table .card-image {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+.card-table .card-info {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.card-table .card-status {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.card-table .card-button {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.card {
+    outline: 3px solid lightgreen;
+}
+.card-table {
+    outline: 3px solid lightgreen;
+}

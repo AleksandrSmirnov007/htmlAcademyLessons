@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    height: 100vh;
+    font-size: 30px;
+    line-height: 36px;
+    background-color: black;
+}
+
+.container-link {
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+
+}
+
+a {
+    text-decoration: none;
+    font-family: "Montserrat", "Roboto", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #0063bf;
+}
+
+a:visited {
+    color: #8d00bf;
+}
+
+a:hover {
+    color: #0063bf;
+    border-bottom: 1px solid #0063bf;
+    cursor: pointer;
+}
+a:active {
+    padding: 10px;
+    border: 2px solid rgba(0, 131, 255, 0.4);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+/* Для состояний ссылок очень важно соблюсти порядок,
+ в котором будут записаны селекторы с псевдоклассами.
+  Обязательно размещайте их в следующей последовательности:
+
+a { color: red; }
+a:visited { color: grey; }
+a:hover { color: blue; }
+a:active { background-color: yellow; }
+
+Если поменять строки местами, то согласно правилам каскадности,
+ некоторые стили перестанут работать. Дело в том,
+  что ссылка может находиться одновременно в двух состояниях,
+   к примеру, в :visited и в :hover, и если расположить стили для :hover выше,
+    чем стили для :visited, то они перекроют последние. */
+
+
+
+

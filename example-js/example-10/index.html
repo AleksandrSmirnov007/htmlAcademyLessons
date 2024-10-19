@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Сноски с CSS-счетчиком</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h2>Полезное</h2>
+        <p>Нумеровать сноски при разметке <a href="#html" class="footnote-label" id="html-ref">HTML</a>страницы нет необходимости</p>
+        <p>Добавить нумерацию можно с помощью упорядоченного списка и <a href="#css" class="footnote-label" id="css-ref">CSS</a>
+            <a href="#css-counters" class="footnote-label" id="css-counters-ref"> счетчика</a></p>
+        <footer>
+            <h3 class="visually-hidden" id="footnote-label">Сноски</h3>
+            <ol>
+                <li id="html">
+                    HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки»)
+                     — стандартизированный язык разметки документов во Всемирной паутине.
+                      Большинство веб-страниц содержат описание разметки на языке HTML.
+                      Язык HTML интерпретируется браузерами; полученный в результате
+                      интерпретации форматированный текст отображается на экране монитора
+                       компьютера или мобильного устройства.
+                    <a class="back" href="#html-ref">↩</a>
+                </li>
+                <li id="css">
+                    CSS (англ. Cascading Style Sheets — каскадные таблицы стилей)
+                     — формальный язык описания внешнего вида документа,
+                     написанного с использованием языка разметки.
+                    <a class="back" href="#css-ref">↩</a>
+                </li>
+                <li id="css-counters">
+                    CSS счётчики — переменные CSS, значения которых могут быть инкрементированы при помощи CSS
+                     для отслеживания количества их использования.
+                     Они позволяют регулировать внешний вид контента, основываясь на его местоположении в документе.
+                    <a class="back" href="#css-counters-ref">↩</a>
+                </li>
+            </ol>
+        </footer>
+    </article>
+</body>
+</html>
+
+

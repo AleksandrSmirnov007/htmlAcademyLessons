@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Гриды</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article class="card card-table" id="one">
+        <img class="card-image" src="https://novate.ru/files/u17117/58a26f052a0e04eacd14153083a5271c.jpg" width="350" height="340" alt="фото чаши с черникой">
+
+
+        <div class="card-info">
+            <h1 class="card-title"> Черника свежая</h1>
+            <p class="card-description">Отличный товар по привлекательной цене</p>
+        </div>
+
+        <dl class="card-status">
+            <dt>Категория</dt>
+            <dd>Ягоды</dd>
+            <dt> Вес нетто</dt>
+            <dd>1 кг</dd>
+            <dt>Стоимость</dt>
+            <dd>1000 р</dd>
+        </dl>
+
+        <div class="card-button">
+            <a class="button"href="">В кoрзину</a>
+        </div>
+
+    </article>
+
+    <button class=" button button-view" type="button">Кнопка преключения вида</button>
+    <script>
+        document.querySelector('.button-view').addEventListener('click', function() {
+            var elementOne = document.getElementById('one');
+
+
+            if (elementOne.classList.contains("card-table")) {
+                elementOne.classList.remove("card-table");
+            }
+            else {
+                elementOne.classList.add("card-table");
+            }
+        })
+    </script>
+</body>
+</html>
+
+

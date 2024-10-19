@@ -1,0 +1,15 @@
+
+
+
+.catalog-item:focus-within .subcatalog {
+    display: block;
+    padding-left: 20px;
+}
+
+.catalog-item:focus-within {
+    border-left: 2px solid green;
+} /*для того что бы пометить чертой слева пункт меню который раскрывается*/
+
+.subcatalog {
+    display: none;   /*по умолчанию подкаталог скрыт*/
+}

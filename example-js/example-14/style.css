@@ -1,0 +1,87 @@
+html {
+    display: flex;
+    height: 100%;
+}
+
+body {
+    margin: auto;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20vw;
+    height: 10vw;
+    border-radius: 20px;
+
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #756257;
+    margin-bottom: 2vh;
+}
+/* правильный вариант! */
+          .button-1:hover {                        /* здесь и далее будем применять такую конструкцию и последовательность:   .element:hover{...}  .element:active{...}  .element:focus:not(:active){...}.  Тем самым можно добиться того, что в каждом селекторе можно будет прописывать только те стили которые соответсвуют каждому состоянию и не переопределять стили например при нажатии на элемент применяется псевдокласс active но и в этот жке момент элемент находится в фокусе.   */
+              background-color: #615048;
+              }
+
+          .button-1:active {
+              background-color: #615048;
+              color: rgba(255, 255, 255, 0.3);
+          }
+
+          .button-1:focus:not(:active) {
+              background-color: #615048;
+              outline: 3px solid #83B3D3;
+          }
+/*   */
+
+.button-2:hover {
+  background-color: #615048;
+}
+
+.button-2:focus:not(:active) {          /* изменяем последовательность для второй кнопки и все работает */
+  background-color: #615048;
+  outline: 3px solid #83B3D3;
+}
+
+.button-2:active {
+  background-color: #615048;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+.button-3:hover {
+    background-color: #615048;
+  }
+
+.button-3:focus {          /* убираем :not(:acttve) и теперь outline не исчезаeт при :active потомучто там оно не задано*/
+    background-color: #615048;
+    outline: 3px solid #83B3D3;
+  }
+
+.button-3:active {
+    background-color: #615048;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+/* опять возвращаемся к первоначальной последовательности */
+.button-4:hover {
+    background-color: #615048;
+}
+
+.button-4:active {
+    background-color: #615048;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.button-4:focus {          /* убираем :not(:acttve) и теперь outline не исчезаeт при :active потомучто там оно не задано*/
+    background-color: #615048;
+    outline: 3px solid #83B3D3;
+}

@@ -1,0 +1,60 @@
+
+@font-face {
+    font-family: "PT-Sans";
+    font-style: normal;
+    font-weight: 400;
+
+    src: url("../fonts/ptsans-400.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PT-Sans";
+    font-style: bold;
+    font-weight: 700;
+
+    src: url("../fonts/ptsans-700.woff2") format("woff2");
+}
+
+.back-container {
+    margin: 0 auto;
+
+    width: 800px;
+    height: 500px;
+    display: flex;
+    background-image: url("https://ic.pics.livejournal.com/teslafreshpower/36103338/22971/22971_original.jpg");
+
+
+
+}
+
+.address {
+    margin: 40px auto auto;
+
+    font-family: "PT-Sans", Sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 40px;
+    color: white;
+
+    display: grid;  /*псевдо элементы работают только когда элмент грид или флекс???*/
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+
+
+
+}
+
+.address::before {
+    content: "";
+    width: 26px;
+    height: 30px;
+
+
+    background-image: url("mapsmark_89134.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+

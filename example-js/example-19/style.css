@@ -1,0 +1,83 @@
+html {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    flex-grow: 1;
+}
+
+.range-fields {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .range-field {
+    font-size: 15px;
+    line-height: 18px;
+
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: end;
+    width: max-content;
+  }
+
+
+  .range-field:focus-within {
+    outline: 2px solid #af4fff; /* делаем рамку при фокус на инпут */
+    outline-offset: 2px;
+  }
+
+  .range-title {
+    display: block;
+    margin-right: 0.1em;
+  }
+
+  .range-input {
+    background-color: transparent;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    border: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .range-input:focus {
+    outline: none;
+  }
+  /* убираем плейсхолдер при фокусе (далее четыре правила) */
+  .range-input:focus::-webkit-input-placeholder {
+    color: transparent
+  }
+
+  .range-input:focus::-moz-placeholder {
+    color: transparent
+  }
+
+  .range-input:focus:-moz-placeholder {
+    color: transparent
+  }
+
+  .range-input:focus:-ms-input-placeholder {
+    color: transparent
+  }
+
+
+  /* Код ниже прячет стрелки управления в браузерах, основанных на webkit (Opera для проверки нет): */
+  .range-input::-webkit-outer-spin-button,
+  .range-input::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  /* Для Firefox попроще: */
+  .range-input[type="number"] {
+    appearance: textfield;
+  }

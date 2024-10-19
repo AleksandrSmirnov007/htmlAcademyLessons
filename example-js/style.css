@@ -1,0 +1,39 @@
+
+
+html {
+
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+
+  font-family: sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+  text-align: center;
+  display: flex;
+}
+
+.container {
+  margin: auto;
+}
+
+.main-menu-list {
+  padding: 0;
+  text-align: center;
+
+}
+
+.main-menu-item {
+
+  border-bottom: 1px solid #b6bbbb;
+
+}
+.main-menu-item a{
+  text-decoration: none;
+  color: #333333;
+}
+

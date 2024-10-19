@@ -1,0 +1,133 @@
+
+
+.profile-form {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: "photo name name name name"
+                    "photo job job city city"
+                    "photo twitter twitter instagram instagram"
+                    "photo about about about about"
+                    "photo post post post post"
+                    "photo checkbox-1 checkbox-2 checkbox-3 checkbox-4";
+    grid-gap: 15px;
+
+    width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+
+
+
+}
+
+.photo {
+    grid-area: photo;
+
+    /* внутренняя стилизация фото */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 10px;
+    color: #A5A5D6;
+}
+
+.name {
+    grid-area: name;
+}
+
+.job {
+    grid-area: job;
+}
+
+.city {
+    grid-area: city;
+}
+
+.twitter {
+    grid-area: twitter;
+}
+
+.instagram {
+    grid-area: instagram;
+}
+
+.about {
+    grid-area: about;
+}
+
+.post {
+    grid-area: post;
+}
+
+.checkbox-1 {
+    grid-area: checkbox-1;
+}
+.checkbox-2 {
+    grid-area: checkbox-2;
+}
+.checkbox-3 {
+    grid-area: checkbox-3;
+}
+.checkbox-4 {
+    grid-area: checkbox-4;
+}
+
+.input {
+
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* от меня оформление цветов и границ по быстрому */
+
+body {
+    font-family: sans-serif;
+    color: #555555;
+}
+img {
+    display: block;
+    width: 100px;
+    height: 110px;
+}
+
+h2 {
+    text-align: center;
+
+}
+input,
+textarea,
+.photo {
+    font-size: 16px;
+
+    background-color: #EDEDFF;
+    border: none;/* убрал границу border так как разные толщины в пассивном режиме и в режиме фокуса 1px и 2px
+    и элементы скачут на эти 2 пикселя, поэтому долее везде использую outline(это свойство никак не влияет на размеры элемента*/
+    outline: 1px solid #C2C2EF;
+    border-radius: 3px;  /*свойство бордер-радиус работает на outline*/
+}
+
+label {
+    font-size: 10px;
+    color: #A5A5D6;
+}
+
+.checkbox-1 label,
+.checkbox-2 label,
+.checkbox-3 label,
+.checkbox-4 label {
+    font-size: 16px;
+}
+
+input:focus,
+textarea:focus{
+
+
+    outline: 2px solid #5d5dc5; /*при фокусе инпут по умолчанию от браузера осуществляется обводка черного цвета.
+    еле нашел это свойство думал что меняется цвет border, а на самом деле меняется цвет  outline*/
+
+
+}
+

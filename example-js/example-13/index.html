@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>svg-диаграмма</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="canvas">
+            <div class="legend">
+                <p class="title">Что мешает во время работы дома</p>
+                <ul class="caption-list">
+                    <li class="caption-item">еда</li>
+                    <li class="caption-item">соседи </li>
+                    <li class="caption-item">отсутствие рабочего места</li>
+                    <li class="caption-item">мало двигаюсь</li>
+                    <li class="caption-item">отсутствие четкого графика работы</li>
+                    <li class="caption-item">сдожная комуникация с коллегами</li>
+                    <li class="caption-item">много ленюсь</li>
+                </ul>
+            </div>
+            <svg class="chart" width="500" height="500" viewBox="0 0 50 50">
+                <!-- здесь и далее используем радиус 15.9 так как длинна окружности с таким радиусом равна примерно 100 и секторы диаграммы можно задавать численно эквивалентно процентам.  -->
+                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+            </svg>
+        </div>
+        <script>
+//            Вот шаги, которые должны быть реализованы в скрипте:
+
+// Найти все названия секций в легенде.
+// Найти все секции диаграммы.
+// Добавить каждому названию секции отслеживание событий наведения и снятия курсора.
+// Внутри обработчиков этих событий добавлять или удалять класс hovered у секций диаграммы в зависимости от положения курсора.
+
+
+            let captionsList = document.querySelectorAll('.caption-item');
+            let unitsList = document.querySelectorAll('.unit');
+
+            captionsList.forEach(function (item, index) {
+            item.addEventListener('mouseover', function () {
+                unitsList[index].classList.add('hovered');
+            });
+
+            item.addEventListener('mouseout', function () {
+                unitsList[index].classList.remove('hovered');
+            });
+            });
+
+// Здесь мы отслеживаем движение мыши с помощью событий mouseover (курсор над элементом)
+//  и mouseout (курсор уходит с элемента). А для поиска нужной секции используем
+//   совпадение порядковых номеров названий в легенде и секций диаграммы — index названия = index секции.
+//   Нужно учесть, что их всегда должно быть равное количество.
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>автоширина у input</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="range-fields">
+        <label class="range-field">
+          <span class="range-title">от</span>
+          <!-- использую атрибут tel вместо number так как у number не действует атрибут maxlength при ручном вводе пользователя -->
+          <!-- использую зависимость ширины инпута от содержимого onkeydown="this.style.width = ((this.value.length + 1.7) * 8) + 'px';" 1.7 подобрал чтобы инпут расширялся соответсвено длинне введенных символов -->
+          <input onkeydown="this.style.width = ((this.value.length + 1.7) * 8) + 'px';" style="width: 15px; max-width: 100px;" class="range-input" type="tel" maxlength="5" name="min-price"
+          value="0" min="0" max="100000" step="100" placeholder="0">
+        </label>
+
+        <label class="range-field">
+          <span class="range-title">до</span>
+          <input  onkeydown="this.style.width = ((this.value.length + 1.7) * 8) + 'px';" style="width: 45px; max-width: 100px;" class="range-input" type="tel" maxlength="6" name="max-price"
+          value="5000" min="0" max="100000" step="100" placeholder="5000">
+        </label>
+      </div>
+
+</body>
+</html>
+
+

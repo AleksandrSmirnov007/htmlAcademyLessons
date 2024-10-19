@@ -1,0 +1,72 @@
+/* Обратите внимание, что сетка имеет двенадцать колонок. Изображение занимает 7 колонок справа,
+ а текст — 6 колонок слева, но располагается начиная со второй колонки. Если два и более элемента
+  размещаются в одной грид-области, то выше будет располагаться тот,
+ который идёт следующим по разметке. Управлять расположением можно с помощью CSS-свойства z-index. */
+
+body {
+    margin: 0;
+}
+
+.bg-container {
+    background-color: #332D24 ;
+}
+
+.promo {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(3, auto) 1fr;
+    column-gap: 24px;
+
+    color: #E6C18D;
+    background-color: #332D24;
+    font-family: "Arial", sans-serif;
+    margin: 0 auto;
+
+}
+.promo-city {
+    margin-top: 100px;
+    grid-area: 1 / 2 / 2 / 8;
+    align-self: end;
+}
+
+.promo h2 {
+    grid-area: 2 / 2 / 3 / 8;
+    z-index: 1; /* «поднимаем» заголовок над картинкой */
+    color: #ffffff;
+    font-size: 36px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.promo-text {
+    grid-area: 3 / 2 / 4 / 8;
+    z-index: 1; /* «поднимаем» текст над картинкой */
+    line-height: 150%;
+    margin-top: 10px;
+
+
+
+}
+.promo-button {
+    grid-area: 4 / 2 / 5 / 5;
+    display: block;
+    padding: 13px 30px;
+    align-self: start;
+    width: max-content;
+    background: linear-gradient(0,#AF7D33,#F0C992);
+    border-radius: 5px;
+    text-decoration: none;
+    color: #4E412F;
+    margin-top: 20px;
+    font-size: 80%;
+}
+
+
+
+.promo-img {
+    grid-area: 1 / -2 / -1 / -9;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
