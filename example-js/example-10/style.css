@@ -1,74 +1,228 @@
-body {
-    font-size: 125%;
-    line-height: 1.4;
-    max-width: 600px;
-    margin: 0 auto;
-    font-family:Arial, Helvetica, sans-serif;
+h3 {
+  margin: 0.5em 0;
 }
 
-footer {
-    margin-top: 50px;
-    border-top: 1px solid silver;
-    font-size: 0.8em;
+p {
+  margin: 0.5em 0 2em;
 }
 
-footer ol {
-    padding-left: 20px;
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto 0;
+  position: relative;
+  width: 316px;
+  border: 1px solid #ededed;
 }
 
-article {
-    counter-reset: footnotes;  /*сбрасываем счетчик, или создаем так и не понял?*/
-    /*counter-increment: footnotes -3;  /* смотри ниже рассшифровку этой функции-свойства а эта запись что бы стартануть счетчик не с 1 а к примеру с -2*/
+.card__img {
+  order: -1;
 }
 
-.footnote-label {  /*наш созданный для сносок класс*/
-    counter-increment: footnotes;  /*increment-переводиться как "прирост" ( counter-increment: [<переменная> | <число>?]+ none ) none - Запрещает увеличение счётчика для текущего селектора.  <переменная> Задаёт одну или несколько переменных, для которых требуется изменить значение счётчика. Переменные разделяются между собой пробелом. <число> - Определяет значение приращения счётчика. По умолчанию оно равно 1. Допускается использовать только положительные целые числа, отрицательные целые числа и ноль.*/
-    text-decoration: none;         /*убираем подчеркивание для ссылки*/
-    color: inherit;
-    cursor: default;     /*курсор для ссылки наследуется от боаузера "point" менеяем на обычный*/
-
-}
-/*Создаем псевдоэлемнты у ссылок что бы потом скрыть текстовые ссылки и заменить их этими псевдоэлементами  */
-.footnote-label::after {
-    content: "[" counter(footnotes) "]"; /* фщрмируем номер для сноски такого вида как [ 1 ]  суть ковычек добавить скобки, при чем первая [ в своих ковычках "[" потом идет фунция и она возвращает в контент текуще значение счетчика а потом оформляем опять закрывающей квадратной скобкой ] заключаяя ее в "" */
-    vertical-align: super;              /*поднимаем в строке наши сноски*/
-    font-size: 0.5em;                    /*уменьшаем шрифт сноски*/
-    margin-left: 2px;                    /*отсуп слева что бы не сливались с текстом*/
-
-    /* стилизуем сноски как ссылку*/
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
+.card__text {
+  position: relative;
+  margin-top: 0;
+  margin-left: 28px;
+  margin-bottom: 40px;
+  color: #444444;
 }
 
-/*теперь у обычных ссылок скинуты браузерные стили, созданые псевдолемнты от них пронумерованы автоматически и выглядят как ссылки */
-
-/*дальнейшая стилизация */
-
-.footnote-label:focus::after {  /*этот селектор выбирает псевдоэлемент(и стилизует его) от нашей сылки когда мы на жимаем на ссылку или на псевдоэлемент так как он является частью ссылки*/
-    outline: thin dotted;  /*thin- тонкий   это свойство делает прерывистую обводку */
-    outline-offset: 2px;   /*расширяет зону обводки на 2px*/
+.card__text::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 260px;
+  left: 0;
+  bottom: -20px;
+  background-color: #ececec;
 }
 
-
-/*Псевдокласс :target применяется к целевому элементу, иными словами, к идентификатору, который указан в адресной строке браузера. не очень понятно)) а что делать?*/
-/*вобщем он выбирает элементы к которым браузер переходит через якоря или ссылки*/
-/*тут используем вложенный селектор,
-что бы таккая стилизация была только в только разделе где мы расшифровровываем сноски (в нашем случае это footer)
- и не применялась с переходом к другим элементам, например при возврате по id к элемннтам основного текса*/
-
-/*подсветим сноски при переходе*/
- footer :target {
-    background-color: yellow;
+.card__title {
+  margin-top: 18px;
+  margin-left: 28px;
+  margin-bottom: 5px;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
 }
 
+.card__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
-/*далее скроем семантический нужный, но добавленый от себя заголовок от сносок через добавленный элементу класс visually-hidden*/
+.card__button {
+  margin: 0 auto;
+  text-decoration: none;
+  display: block;
+  width: 260px;
+  padding: 0 10px;
+  padding-top: 16px;
+  padding-bottom: 19px;
+  border: 2px solid #444444;
+  color: #444444;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffffff;
+}
+
+.card__button:hover,
+.card__button:focus {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+.card__button:active {
+  background-color: #444444;
+  color: #797979;
+}
+
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature {
+  position: relative;
+}
+
+.feature::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: -5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.feature--eco::before {
+  width: 32px;
+  height: 37px;
+  background-image: url("./image/flower.svg");
+}
+
+.feature--handmade::before {
+  width: 32px;
+  height: 37px;
+  background-image: url("./image/ball.svg");
+}
+
+.feature--gift::before {
+  width: 32px;
+  height: 37px;
+  background-image: url("./image/gift.svg");
+}
+
+.feature--like::before {
+  width: 32px;
+  height: 37px;
+  background-image: url("./image/heart.svg");
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.popup--open {
+  display: block;
+}
+
+.popup::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.popup__content {
+  position: relative;
+  width: 300px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 70px 15px;
+  background-color: #ffffff;
+  box-shadow: -1px 5px 12px 0 rgba(89, 90, 90, 0.3);
+  z-index: 2;
+}
+
+.popup__button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 20px;
+  height: 20px;
+
+  font-size: 0;
+
+  background: none;
+  border: 0;
+}
+
+.popup__button::after,
+.popup__button::before {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  top: 20px;
+
+  width: 26px;
+  height: 6px;
+  margin: -13px -3px;
+
+  color: #bfbfbf;
+  background-color: currentColor;
+}
+
+.popup__button::before {
+  transform: rotate(45deg);
+}
+
+.popup__button::after {
+  transform: rotate(-45deg);
+}
+
+.popup__button:hover,
+.popup__button:focus {
+  color: #9e9e9e;
+}
+
+.popup__button:active {
+  color: #4a4a4a;
+}
+
 .visually-hidden {
-    position: absolute; /*элемент исключается из потока*/
-    clip: rect(0 0 0 0); /* ? */
-    visibility: hidden; /* видимость: скрытый */
-    opacity: 0;         /*прозрачность 100% */
+  position: absolute;
 
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
-

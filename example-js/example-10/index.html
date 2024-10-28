@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Сноски с CSS-счетчиком</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <article>
-        <h2>Полезное</h2>
-        <p>Нумеровать сноски при разметке <a href="#html" class="footnote-label" id="html-ref">HTML</a>страницы нет необходимости</p>
-        <p>Добавить нумерацию можно с помощью упорядоченного списка и <a href="#css" class="footnote-label" id="css-ref">CSS</a>
-            <a href="#css-counters" class="footnote-label" id="css-counters-ref"> счетчика</a></p>
-        <footer>
-            <h3 class="visually-hidden" id="footnote-label">Сноски</h3>
-            <ol>
-                <li id="html">
-                    HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки»)
-                     — стандартизированный язык разметки документов во Всемирной паутине.
-                      Большинство веб-страниц содержат описание разметки на языке HTML.
-                      Язык HTML интерпретируется браузерами; полученный в результате
-                      интерпретации форматированный текст отображается на экране монитора
-                       компьютера или мобильного устройства.
-                    <a class="back" href="#html-ref">↩</a>
-                </li>
-                <li id="css">
-                    CSS (англ. Cascading Style Sheets — каскадные таблицы стилей)
-                     — формальный язык описания внешнего вида документа,
-                     написанного с использованием языка разметки.
-                    <a class="back" href="#css-ref">↩</a>
-                </li>
-                <li id="css-counters">
-                    CSS счётчики — переменные CSS, значения которых могут быть инкрементированы при помощи CSS
-                     для отслеживания количества их использования.
-                     Они позволяют регулировать внешний вид контента, основываясь на его местоположении в документе.
-                    <a class="back" href="#css-counters-ref">↩</a>
-                </li>
-            </ol>
-        </footer>
-    </article>
-</body>
+<html>
+  <head lang="ru">
+    <meta charset="utf-8">
+    <title>
+      Работа с событиями
+    </title>
+    <link href="mishka/setting.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 class="visually-hidden">Каталог товаров</h1>
+
+    <section class="card">
+      <h2 class="card__title">Зайчик-попрыгайчик</h2>
+      <img class="card__img" src="./image/rabbit.jpg" width="" height="" alt="Зайчик-попрыгайчик">
+      <p class="card__text">Рост 30 см, вес 200 г</p>
+      <p><a class="card__button button-show" href="popup.html">Показать подробности</a></p>
+    </section>
+
+    <section class="popup">
+      <div class="popup__content">
+        <h2 class="visually-hidden">Подробности о товаре</h2>
+        <ul class="features">
+          <li class="feature feature--eco">
+            <p>Экологически чистые материалы</p>
+          </li>
+          <li class="feature feature--handmade">
+            <p>Связано вручную с любовью и умилением</p>
+          </li>
+          <li class="feature feature--gift">
+            <p>Поставляется в подарочной упаковке</p>
+          </li>
+          <li class="feature feature--like">
+            <p>Увеличивает лайки на фотографиях</p>
+          </li>
+        </ul>
+        <button class="popup__button button-hide" type="button">Закрыть</button>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
-
-
