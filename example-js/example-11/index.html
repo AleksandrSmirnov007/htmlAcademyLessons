@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Активная форма:focus-within</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Активная форма</h1>
-    <form class="form" acton="#" metod="post">
-        <fieldset class="fieldset">
-            <legend>Личные данные</legend>
-            <div>
-                <label for="name"> Введите имя:</label>
-                <input id="mame" type="text" name="name" placeholder="Иван">
-            </div>
-            <div>
-                <label for="family"> Введите фамилилию:</label>
-                <input id="family" type="text" name="family" placeholder="Иванов">
-            </div>
-        </fieldset>
-        <fieldset class="fieldset">
-            <legend>Служебные данные</legend>
-            <div>
-                <label for="name"> Стаж:</label>
-                <input id="mame" type="text" name="name" placeholder="количество лет">
-            </div>
-            <div>
-                <label for="family"> Должность:</label>
-                <input id="family" type="text" name="family" placeholder="ваша должность">
-            </div>
-        </fieldset>
+  <head>
+    <meta charset="utf-8">
+    <title>Помидоркогалерея</title>
+    <link href="gallery-tomato/setting.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <section class="gallery">
+      <h1>Помидоркогалерея</h1>
+      <div class="gallery__pictures">
+        <p class="gallery__picture-full">
+          <img class="full-picture" src="gallery-tomato/tomato-red-large.jpg" width="450" height="300" alt="Фото большое">
+        </p>
+        <p class="gallery__picture-previews">
+          <button class="gallery__picture-preview" type="button">
+            <img src="./gallery-tomato/tomato-red.jpg" alt="Помидорка красная">
+          </button>
+          <button class="gallery__picture-preview" type="button">
+            <img src="./gallery-tomato/tomato-yellow.jpg" alt="Помидорка жёлтая">
+          </button>
+          <button class="gallery__picture-preview" type="button">
+            <img src="./gallery-tomato/tomato-strange.jpg" alt="Помидорка серобурая">
+          </button>
+        </p>
+      </div>
+    </section>
 
-
-    </form>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
