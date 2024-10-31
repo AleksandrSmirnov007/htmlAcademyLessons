@@ -1,15 +1,161 @@
-
-
-
-.catalog-item:focus-within .subcatalog {
-    display: block;
-    padding-left: 20px;
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Courier New", "Courier", monospace;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fce6ef;
+  background-color: #2b3755;
 }
 
-.catalog-item:focus-within {
-    border-left: 2px solid green;
-} /*для того что бы пометить чертой слева пункт меню который раскрывается*/
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
 
-.subcatalog {
-    display: none;   /*по умолчанию подкаталог скрыт*/
+.computer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 240px;
+  padding: 16px 10px;
+}
+
+.computer::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 244px;
+  background-color: #3c4d77;
+  border-bottom: 1px solid #222c44;
+}
+
+.computer::after {
+  content: "";
+  position: absolute;
+  top: 202px;
+  left: 10px;
+  width: 162px;
+  height: 23px;
+  background-image: url("img/details.svg");
+}
+
+.display-wrapper {
+  border-radius: 6px;
+  margin-bottom: 12px;
+  padding: 4px;
+  background-image: linear-gradient(to bottom, #1a2133, #4d6398);
+}
+
+.display {
+  position: relative;
+  height: 134px;
+  overflow: auto;
+  padding: 8px 28px 16px;
+  word-wrap: break-word;
+  border-radius: 4px;
+  background-color: #2b3755;
+}
+
+.display::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 8px;
+  width: 8px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./img/right-arrow-svgrepo-com.svg");
+}
+
+.keyboard {
+  padding-right: 5px;
+  padding-left: 10px;
+}
+
+.keyboard-line {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 1;
+}
+
+.keyboard-line:nth-child(3) {
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
+.button {
+  position: relative;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font: inherit;
+  color: inherit;
+  border: none;
+  border-radius: 4px;
+  background-image: linear-gradient(to bottom, #4d6398, #334266);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  padding: 1px;
+  width: 100%;
+  height: 100%;
+  top: -1px;
+  left: -1px;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom, #1a2133, #222c44);
+}
+
+.button.clear {
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.key {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  flex-grow: 1;
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.space {
+  height: 40px;
+}
+
+.space::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 6px;
+  background-image: url("img/icon-space.svg");
+}
+
+.button:focus {
+  outline: 3px solid rgba(252, 230, 239, 0.3);
+  outline-offset: 1px;
+}
+
+.button:hover {
+  background-image: linear-gradient(to bottom, #677cb2, #455887);
+}
+
+.button:active {
+  background-image: none;
+  background-color: #334266;
 }

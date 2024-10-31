@@ -1,24 +1,64 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>:focus-within</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Испытание: Виртуальная клавиатура</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <ul class="catalog">
-        <li class="catalog-item">
-            <a href="#">Каталог</a>
-            <ul class="subcatalog">
-                <li><a href="#">Виртуальная реальность</a>
-                </li>
-                <li><a href="#">Моноподы для селфи</a>
-                </li>
-            </ul>
-        </li>
-        <li class="catalog-item"><a href="#">Доставка</a></li>
-        <li class="catalog-item"><a href="#">Гаранития</a></li>
-        <li class="catalog-item"><a href="#">Контакты</a></li>
-    </ul>
-</body>
-</html
+  </head>
+  <body>
+    <h1 class="visually-hidden">Виртуальная клавиатура</h1>
+    <section class="computer">
+      <div class="display-wrapper">
+        <div class="display"></div>
+      </div>
+      <button class="button clear" type="button">Очистить</button>
+    </section>
+
+    <section class="keyboard">
+      <div class="keyboard-line">
+        <button class="button key" type="button" id="index_0">й</button>
+        <button class="button key" type="button" id="index_1">ц</button>
+        <button class="button key" type="button" id="index_2">у</button>
+        <button class="button key" type="button" id="index_3">к</button>
+        <button class="button key" type="button" id="index_4">е</button>
+        <button class="button key" type="button" id="index_5">н</button>
+        <button class="button key" type="button" id="index_6">г</button>
+        <button class="button key" type="button" id="index_7">ш</button>
+        <button class="button key" type="button" id="index_8">щ</button>
+        <button class="button key" type="button" id="index_9">з</button>
+        <button class="button key" type="button" id="index_10">х</button>
+        <button class="button key" type="button" id="index_11">ъ</button>
+      </div>
+      <div class="keyboard-line">
+        <button class="button key" type="button" id="index_12">ф</button>
+        <button class="button key" type="button" id="index_13">ы</button>
+        <button class="button key" type="button" id="index_14">в</button>
+        <button class="button key" type="button" id="index_15">а</button>
+        <button class="button key" type="button" id="index_16">п</button>
+        <button class="button key" type="button" id="index_17">р</button>
+        <button class="button key" type="button" id="index_18">о</button>
+        <button class="button key" type="button" id="index_19">л</button>
+        <button class="button key" type="button" id="index_20">д</button>
+        <button class="button key" type="button" id="index_21">ж</button>
+        <button class="button key" type="button" id="index_22">э</button>
+        <button class="button key" type="button" id="index_23">ё</button>
+      </div>
+      <div class="keyboard-line">
+        <button class="button key" type="button" id="index_24">я</button>
+        <button class="button key" type="button" id="index_25">ч</button>
+        <button class="button key" type="button" id="index_26">с</button>
+        <button class="button key" type="button" id="index_27">м</button>
+        <button class="button key" type="button" id="index_28">и</button>
+        <button class="button key" type="button" id="index_29">т</button>
+        <button class="button key" type="button" id="index_30">ь</button>
+        <button class="button key" type="button" id="index_31">б</button>
+        <button class="button key" type="button" id="index_32">ю</button>
+      </div>
+      <div class="keyboard-line">
+        <button class="button key space" type="button" id="index_33"> </button>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>

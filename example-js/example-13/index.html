@@ -1,62 +1,78 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>svg-диаграмма</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="canvas">
-            <div class="legend">
-                <p class="title">Что мешает во время работы дома</p>
-                <ul class="caption-list">
-                    <li class="caption-item">еда</li>
-                    <li class="caption-item">соседи </li>
-                    <li class="caption-item">отсутствие рабочего места</li>
-                    <li class="caption-item">мало двигаюсь</li>
-                    <li class="caption-item">отсутствие четкого графика работы</li>
-                    <li class="caption-item">сдожная комуникация с коллегами</li>
-                    <li class="caption-item">много ленюсь</li>
-                </ul>
-            </div>
-            <svg class="chart" width="500" height="500" viewBox="0 0 50 50">
-                <!-- здесь и далее используем радиус 15.9 так как длинна окружности с таким радиусом равна примерно 100 и секторы диаграммы можно задавать численно эквивалентно процентам.  -->
-                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-            </svg>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>ограничение длинны комментария, подсказки</title>
+  </head>
+
+  <body class="page light-theme">
+    <header class="page-header">
+      <div class="container">
+        <span class="header-logo">
+          <img src="img/main-logo.svg" width="67" height="29" alt="Логотип портала FlashNews!">
+        </span>
+        <button class="theme-button" type="button">Изменить тему</button>
+      </div>
+    </header>
+
+    <main class="inner-news">
+      <div class="tooltip">
+        <span class="tooltip-text"></span>
+        <button class="button close-button" type="button"><span>Закрыть</span></button>
+      </div>
+
+      <article class="container">
+        <h1 class="inner-heading">Гулять может быть полезно</h1>
+        <div class="news-full">
+          <img src="img/walk.jpg" alt="Люди гуляют">
+          <div class="news-stats">
+
+            <button class="heart" type="button">
+              <svg fill="#000000" height="20" width="20" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 32 32" xml:space="preserve">
+              <path d="M29.7,14.3c-0.3-0.4-0.9-0.6-1.5-0.6h-6.8c-0.7,0-1.3-0.6-1.3-1.3V3.9C20.1,2.8,19,2,18,2c-1,0-1.8,0.8-1.8,1.9
+                c0,2.3-0.7,4.6-2.1,6.5L11,13.9v11.7c1.7,1.5,4.3,2.4,6.8,2.4h8.5c0.9,0,1.6-0.6,1.8-1.5l2-11.1C30,14.9,30,14.5,29.7,14.3z"/>
+              <path d="M6.8,15H4.2c-0.7,0-1.3,0.6-1.3,1.3v10.4c0,0.7,0.6,1.3,1.3,1.3h2.6c0.7,0,1.3-0.6,1.3-1.3V16.3C8.1,15.6,7.5,15,6.8,15z"/>
+              </svg>
+              <span class="likes-number">51</span>
+            </button>
+            <time datetime="2020-02-19">19 февраля 2020</time>
+          </div>
+          <p>А может и не быть, если гулять не <button class="tooltip-button" type="button" data-tooltip-text="или не там">с теми людьми</button>. Учёные из <button class="tooltip-button" type="button" data-tooltip-text="очень крутой университет">Гарварда</button> выяснили, что отношения с близкими влияют на счастье сильнее, чем уровень интеллекта, размер зарплаты или количество <button class="tooltip-button" type="button" data-tooltip-text="а ТЫ подписался на рассылку?">подписчиков</button>. Как влияет на счастье количество <button class="tooltip-button" type="button" data-tooltip-text="высший организм">котиков</button>, всё ещё остаётся <button class="tooltip-button" type="button" data-tooltip-text="нужно больше денег">невыясненным</button>.</p>
         </div>
-        <script>
-//            Вот шаги, которые должны быть реализованы в скрипте:
+        </article>
 
-// Найти все названия секций в легенде.
-// Найти все секции диаграммы.
-// Добавить каждому названию секции отслеживание событий наведения и снятия курсора.
-// Внутри обработчиков этих событий добавлять или удалять класс hovered у секций диаграммы в зависимости от положения курсора.
+        <section class="comment-feed container">
+          <h2>Комментарии</h2>
+          <ol class="comment-list">
+            <li class="user-comment">С точки зрения банальной эрудиции, каждый индивидуум, цинизм помыслов которого ассоциирует концепции парадоксальных иллюзий, просто не может не игнорировать критерии утопического субъективизма. А с точки зрения ценности или содержания этого логического утверждения посредством чисто отрицательного предиката и определяется, прибавляет ли оно что-нибудь ко всей совокупности знания.<br>
+              Иммануил Кант<br>
+            Думаете, что разбираетесь в человеческой природе лучше Канта?</li>
+          </ol>
+          <form action="https://echo.htmlacademy.ru/courses" method="post" class="comment-form">
+            <div class="comment-inner">
+              <label class="comment-label" for="comment-textarea">ваш комментарий</label>
+              <textarea class="comment-field comment-area" rows="3" placeholder="Комментарий" required id="comment-textarea"></textarea>
+            </div>
+            <span class="text-counter">Использовано <output class="char-counter" for="comment-textarea">0</output>/142 символов</span>
+            <button class="button submit-button" type="submit">Отправить</button>
+          </form>
+        </section>
+    </main>
 
+      <footer class="page-footer">
+        <div class="container">
+          <p>© FlashNews!</p>
+          <span class="footer-logo">
+            <img src="img/main-logo.svg" width="100" heigth="100" alt="Логотип портала FlashNews!">
+          </span>
+        </div>
+      </footer>
 
-            let captionsList = document.querySelectorAll('.caption-item');
-            let unitsList = document.querySelectorAll('.unit');
-
-            captionsList.forEach(function (item, index) {
-            item.addEventListener('mouseover', function () {
-                unitsList[index].classList.add('hovered');
-            });
-
-            item.addEventListener('mouseout', function () {
-                unitsList[index].classList.remove('hovered');
-            });
-            });
-
-// Здесь мы отслеживаем движение мыши с помощью событий mouseover (курсор над элементом)
-//  и mouseout (курсор уходит с элемента). А для поиска нужной секции используем
-//   совпадение порядковых номеров названий в легенде и секций диаграммы — index названия = index секции.
-//   Нужно учесть, что их всегда должно быть равное количество.
-
-        </script>
-    </body>
+    <script src="./themes.js"></script>
+    <script src="./likes.js"></script>
+    <script src="./comments.js"></script>
+    <script src="./tooltip.js"></script>
+  </body>
 </html>
