@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>:hover :active :focus:not(:active)</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <a class="button button-1" href="#">
-    кнопка
-    </a>
+  <head>
+    <meta charset="utf-8">
+    <title>Список дел</title>
+    <link href="./style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 class="visually-hidden">Список дел</h1>
+    <ul class="todo-list">
+      <li class="todo-list-item">
+        <label>
+          <input class="todo-list-input" type="checkbox">
+          <span>Покормить кота</span>
+        </label>
+      </li>
+      <li class="todo-list-item">
+        <label>
+          <input class="todo-list-input" type="checkbox">
+          <span>Уехать из страны</span>
+        </label>
+      </li>
+      <li class="todo-list-item">
+        <label>
+          <input class="todo-list-input" type="checkbox">
+          <span>Вдариться в бега</span>
+        </label>
+      </li>
+    </ul>
+    <p class="empty-tasks hidden">Все задачи выполнены. Новых задач нет.</p>
+    <form class="add-form" action="https://echo.htmlacademy.ru/courses" method="post">
+      <input class="add-form-input" type="text"  aria-label="Описание задачи" placeholder="Например, купить слона" required>
+      <button class="add-form-button" type="submit">Добавить задачу</button>
+    </form>
 
-    <a class="button button-2" href="#">
-        кнопка
-    </a>
-
-    <a class="button button-3" href="#">
-        кнопка
-    </a>
-
-    <a class="button button-4" href="#">
-        кнопка
-    </a>
-
-</body>
+    <template id="task-template">
+      <li class="todo-list-item">
+        <label>
+          <input type="checkbox" class="todo-list-input">
+          <span></span>
+        </label>
+      </li>
+    </template>
+    <script src="./script.js"></script>
+  </body>
 </html>
-
-
