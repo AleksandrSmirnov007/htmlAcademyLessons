@@ -1,0 +1,22 @@
+.el {
+  background: #bbbbff;
+  border: 20px solid #6666FF;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  font: bold 60px Arial;
+  line-height: 110px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+}
+
+.pool {
+  background: #e9e9f0;
+  box-sizing: border-box;
+  height: 330px;
+  margin: 20px;
+  padding: 10px;
+}
