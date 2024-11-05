@@ -66,7 +66,7 @@ const createComment = (index) => ({
 function createPicture (index) {
   return {
     id: index,
-    url: `photos/${index}.jpg`,
+    url: `./photos/${index}.jpg`,
     description: getRamdomArrayElement(DESCRIPTIONS),
     likes: getRandomPositiveInteger(15, 200),
     comments: Array.from(

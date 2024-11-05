@@ -1,4 +1,4 @@
 // Точка входа, основной модуль
-import {getPictures} from './data.js';
+import {randomUsersPicture} from './random-users-picture.js'
 
-getPictures(25);
+randomUsersPicture();
