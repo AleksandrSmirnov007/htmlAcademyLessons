@@ -28,7 +28,7 @@ const pictureRender = (userPicturesList) => {
 };
 
 const randomUsersPicture = function () {
-  pictureRender(getPictures(15));
+  pictureRender(getPictures(24));
 }
 
 export {randomUsersPicture};
