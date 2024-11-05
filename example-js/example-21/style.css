@@ -1,0 +1,18 @@
+/* // оригинального css-файла нет. Поэтому импровизирую для занятий */
+
+.setup-player {
+  width: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.setup-similar-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.setup-similar-item {
+  width: 70px;
+}
