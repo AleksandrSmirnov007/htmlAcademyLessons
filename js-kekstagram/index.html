@@ -230,6 +230,18 @@
     <div class="img-upload__message  img-upload__message--loading">Загружаем...</div>
   </template>
 
+
+  <template id="comments">
+    <li class="social__comment">
+      <img
+          class="social__picture"
+          src="{{аватар}}"
+          alt="{{имя комментатора}}"
+          width="35" height="35">
+      <p class="social__text">{{текст комментария}}</p>
+    </li>
+  </template>
+
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
