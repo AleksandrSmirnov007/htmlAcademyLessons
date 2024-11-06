@@ -3,3 +3,5 @@ import { getPictures } from './data.js' // импортироуем функци
 import {renderPicture} from './picture.js' // импортируем функцию превращения данных в элементы и добавление на страницу
 
 renderPicture(getPictures()); // читаем изнутри: создаем данные объектов картинок, а далее их превращаем в элементы и отрисовываем
+
+import './big-picture.js';
