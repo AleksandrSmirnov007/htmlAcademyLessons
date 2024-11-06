@@ -10,16 +10,9 @@ renderPicture(data); // читаем изнутри: передаем данны
 
 const bigPicture = document.querySelector('.big-picture');
 
-
 const closeButton = bigPicture.querySelector('.big-picture__cancel');
 
 const pictureContainer = document.querySelector('.pictures');
-
-// pictures.forEach(element => {
-//   console.log(element);
-// });
-// Непонятно почему forEach не работает на коллекции элементов!!!????
-// a вот for работает
 
 const pictures = pictureContainer.querySelectorAll('.picture');
 
@@ -36,12 +29,6 @@ console.log(bigPicture);
 // };
 
 const commentContainer = bigPicture.querySelector('.social__comments');
-
-const commentTemplate = document.querySelector('#comments').content.querySelector('.social__comment');
-
-const fragment = document.createDocumentFragment();
-
-console.log(commentTemplate);
 
 const renderComents = function (comments) {
 
@@ -60,10 +47,21 @@ const renderComents = function (comments) {
 };
 
 
+// pictures.forEach(element => {
+//   console.log(element);
+// });
+// Непонятно почему forEach не работает на коллекции элементов!!!????
+// a вот for работает
+// upd: тогда были другие условия надо поробовать снова forEach
+
 for (let i = 0; i < pictures.length; i++) {
 
   pictures[i].addEventListener('click', function () {
     bigPicture.classList.remove('hidden');
+
+    bigPicture.querySelector('.social__comment-count').classList.add('hidden');
+    bigPicture.querySelector('.social__comments-loader').classList.add('hidden');
+
     console.log(pictures[i]);
     const bigPictureImage = bigPicture.querySelector('.big-picture__img').children[0]; // у элемента img нет класса и находим его как первого (и едимтвенного) ребенка .big-picture__img'
 
@@ -71,7 +69,6 @@ for (let i = 0; i < pictures.length; i++) {
     bigPictureImage.alt = data[i].description;
 
     bigPicture.querySelector('.social__caption').textContent = data[i].description; // передаем описание фотографии
-
 
     commentContainer.innerHTML = ''; // удаляем коментарии заглушки которые написаны в HTML
 
@@ -81,9 +78,6 @@ for (let i = 0; i < pictures.length; i++) {
 
   });
 };
-
-
-
 
 console.log('big-picture подключен');
 
