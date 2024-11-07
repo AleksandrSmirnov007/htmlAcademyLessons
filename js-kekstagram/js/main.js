@@ -5,7 +5,7 @@ import { addListenerCloseButton, renderComents } from './big-picture.js';
 
 
 const data = (getPictures());
-
+console.log(data);
 renderPicture(data); // читаем изнутри: передаем данные объектов картинок, а далее их превращаем в элементы и отрисовываем
 
 
@@ -15,7 +15,7 @@ const pictureContainer = document.querySelector('.pictures');
 const pictures = pictureContainer.querySelectorAll('.picture');
 const commentContainer = bigPicture.querySelector('.social__comments'); // удалить
 
-const renderBigPicture = function (data) {
+const renderBigPicture = function () {
   for (let i = 0; i < pictures.length; i++) {
 
     pictures[i].addEventListener('click', function () {
@@ -30,7 +30,8 @@ const renderBigPicture = function (data) {
       bigPictureImage.alt = data[i].description;
 
       bigPicture.querySelector('.social__caption').textContent = data[i].description; // передаем описание фотографии
-
+      bigPicture.querySelector('.social__picture').src = data[i].avatar;
+      bigPicture.querySelector('.likes-count').textContent = data[i].likes;
       commentContainer.innerHTML = ''; // удаляем коментарии заглушки которые написаны в HTML
 
       const comments = data[i].comments;
@@ -41,6 +42,6 @@ const renderBigPicture = function (data) {
 };
 
 
-renderBigPicture(data);
+renderBigPicture();
 
 addListenerCloseButton();

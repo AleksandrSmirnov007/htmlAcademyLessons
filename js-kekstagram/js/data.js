@@ -69,6 +69,7 @@ function createPicture (index) {
     url: `./photos/${index}.jpg`,
     description: DESCRIPTIONS[index - 1],
     likes: getRandomPositiveInteger(15, 200),
+    avatar: `./img/avatar-${getRandomPositiveInteger(1, 6)}.svg`,
     comments: Array.from(
       {length: getRandomPositiveInteger(1, 6)},
       (_, commentIndex) => createComment(commentIndex + 1) // непонятная конструкция. Ясно что она генерерует последовательные индексы внутри созданных обьектов можно посмотреть сдесь https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
