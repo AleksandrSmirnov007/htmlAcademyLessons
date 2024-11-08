@@ -24,10 +24,8 @@ const renderBigPicture = function () {
       bigPicture.querySelector('.social__comment-count').classList.add('hidden');
       bigPicture.querySelector('.social__comments-loader').classList.add('hidden');
 
-      const bigPictureImage = bigPicture.querySelector('.big-picture__img').children[0]; // у элемента img нет класса и находим его как первого (и едимтвенного) ребенка .big-picture__img'
-
-      bigPictureImage.src = data[i].url;
-      bigPictureImage.alt = data[i].description;
+      bigPicture.querySelector('.big-picture__img').children[0].src = data[i].url;
+      bigPicture.querySelector('.big-picture__img').children[0].alt = data[i].description;
 
       bigPicture.querySelector('.social__caption').textContent = data[i].description; // передаем описание фотографии
       bigPicture.querySelector('.social__picture').src = data[i].avatar;
@@ -40,7 +38,6 @@ const renderBigPicture = function () {
     });
   };
 };
-
 
 renderBigPicture();
 

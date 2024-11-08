@@ -22,6 +22,17 @@ const addListenerCloseButton = function () {
   closeButton.addEventListener('click', function () {
     bigPicture.classList.add('hidden');
   });
+
+
+  document.addEventListener('keydown', event => {
+    if (
+      (event.key === "Escape" || event.keyCode === 27)
+      &&
+      (!bigPicture.classList.contains('hidden'))
+      ) {
+        bigPicture.classList.add('hidden');
+      }
+  });
 };
 
 export { addListenerCloseButton, renderComents };
