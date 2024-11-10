@@ -1,5 +1,5 @@
 import {getRandomPostiveInteger, checkStringLength, getRandomArrayElement} from './util.js';
-console.log('data is workinng');
+console.log('data.js is working');
 
 const descriptions = [
   'Живописный берег',
@@ -54,5 +54,29 @@ const createMessage = () =>
     getRandomArrayElement(commentLines)
     ).join(' ');
 
+const createComment = (index) => ({
+  id: index,
+  avatar: `./img/avatar${getRandomPostiveInteger(1, 6)}.svg`,
+  message: createMessage(),
+  name: getRandomArrayElement(names),
+});
 
-console.log(createMessage());
+
+const createPicture = (index) => ({
+  id: index,
+  url: `./photos/${index}.jpg`,
+  description: getRandomArrayElement(descriptions),
+  likes: getRandomPostiveInteger(15, 200),
+  comments: Array.from(
+    {length: getRandomPostiveInteger(0, 6)},
+    (_, commentIndex) => createComment(commentIndex + 1)
+  ),
+});
+
+const getPictures = () =>
+  Array.from(
+    {length: 25},
+    (_, pictureIndex) => createPicture(pictureIndex + 1)
+  );
+
+export {getPictures};
