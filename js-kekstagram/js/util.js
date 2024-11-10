@@ -1,13 +1,15 @@
-const getRandomPositiveInteger = (a, b) => {
+console.log('util.js is working')
+
+const getRandomPostiveInteger = (a, b) => {
   const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
   const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-  const result = Math.random() * (upper - lower + 1) + lower;
+  const result = (upper - lower + 1) * Math.random() + lower;
   return Math.floor(result);
-};
+}
 
 const checkStringLength = (string, length) => string.length <= length;
 
 const getRandomArrayElement = (array) =>
-  array[getRandomPositiveInteger(0, array.length - 1)];
+  array[getRandomPostiveInteger(0, array.length -1)];
 
-export { getRandomPositiveInteger, checkStringLength, getRandomArrayElement };
+console.log(getRandomArrayElement([785, 567, 'car', 'ball']));
