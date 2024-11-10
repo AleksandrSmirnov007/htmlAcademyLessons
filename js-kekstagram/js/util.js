@@ -12,4 +12,4 @@ const checkStringLength = (string, length) => string.length <= length;
 const getRandomArrayElement = (array) =>
   array[getRandomPostiveInteger(0, array.length -1)];
 
-console.log(getRandomArrayElement([785, 567, 'car', 'ball']));
+export {getRandomPostiveInteger, checkStringLength, getRandomArrayElement};
