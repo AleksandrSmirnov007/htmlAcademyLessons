@@ -56,7 +56,7 @@ const createMessage = () =>
 
 const createComment = (index) => ({
   id: index,
-  avatar: `./img/avatar${getRandomPostiveInteger(1, 6)}.svg`,
+  avatar: `./img/avatar-${getRandomPostiveInteger(1, 6)}.svg`,
   message: createMessage(),
   name: getRandomArrayElement(names),
 });
