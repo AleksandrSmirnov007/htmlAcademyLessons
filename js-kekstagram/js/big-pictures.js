@@ -1,8 +1,10 @@
 const bigPicture = document.querySelector('.big-picture');
-const commentCount = document.querySelector('.social__comment-count');
 const commentList = document.querySelector('.social__comments');
+const body = document.querySelector('body');
+const commentCount = document.querySelector('.social__comment-count');
+const commentsLoader = document.querySelector('.social__comments-loader');
 
-console.log(commentList);
+const cancelButton = document.querySelector('.big-picture__cancel');
 
 const createComment = ({avatar, name, message}) => {
   const comment = document.createElement('li');
@@ -16,12 +18,12 @@ const createComment = ({avatar, name, message}) => {
   return comment;
 };
 
+// в параметр comments переадется массив из обьектов коментариев
 const renderComments = (comments) => {
   commentList.innerHTML = '';
 
   const fragment = document.createDocumentFragment();
-  console.log('фукнция работает');
-
+// сдесь массив раскидыыается по элементам
   comments.forEach((comment) => {
     const commentElement = createComment(comment);
     fragment.append(commentElement);
@@ -30,4 +32,41 @@ const renderComments = (comments) => {
   commentList.appendChild(fragment);
 }
 
-export {renderComments};
+const hideBigPicture = () => {
+  bigPicture.classList.add('hidden');
+  body.classList.remove('modal-open');
+  document.removeEventListener('keydown', onEscKeyDown);
+};
+
+function onEscKeyDown(evt) {
+  if (evt.key === 'Escape') {
+    evt.preventDefault();
+    hideBigPicture();
+  }
+};
+
+const onCancelButtonClick = () => {
+  hideBigPicture();
+};
+
+const renderPictureDetails = ({url, likes, description}) => {
+  bigPicture.querySelector('.big-picture__img img').src = url;
+  bigPicture.querySelector('.big-picture__img img').alt = description;
+  bigPicture.querySelector('.likes-count').textContent = likes;
+  bigPicture.querySelector('.social__caption').textContent = description;
+};
+
+const showBigPicture = (data) => {
+  bigPicture.classList.remove('hidden');
+  body.classList.add('modal-open');
+  commentCount.classList.add('hidden');
+  commentsLoader.classList.add('hidden');
+  document.addEventListener('keydown', onEscKeyDown);
+
+  renderPictureDetails(data);
+  renderComments(data.comments)
+};
+
+cancelButton.addEventListener ('click', onCancelButtonClick);
+
+export {showBigPicture};

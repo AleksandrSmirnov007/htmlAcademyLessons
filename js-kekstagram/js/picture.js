@@ -1,4 +1,5 @@
 import { getPictures } from "./data.js";
+import { showBigPicture } from './big-pictures.js';
 
 console.log('picture.js is working');
 
@@ -19,6 +20,9 @@ const createPicture = (data) => {
   picture.querySelector('.picture__likes').textContent = likes;
 
   // вписать раздачу событий вновь созданному элементу путем модификации клона после того ка напишется big-pictures
+  picture.addEventListener('click', () => {
+    showBigPicture(data);
+  });
 
   return picture;
 };
