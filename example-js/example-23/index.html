@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Форма связь input и output</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header class="page-header">Форма бронирования отеля</header>
+    <main>
+      <form action="https://echo.htmlacademy.ru/courses" method="post" oninput="dayscountval.value=dayscount.value">
+
+        <div class="half-width">
+          <label for="dayscount">Количество дней</label>
+          1 <input type="range" id="dayscount" name="dayscount" min="1" max="14" step="1"> 14
+        </div>
+        <div class="half-width output-area">
+          <output name="dayscountval">14</output>
+        </div>
+        <div class="buttons">
+          <input type="submit" value="Забронировать">
+        </div>
+      </form>
+    </main>
+    <footer class="page-footer"></footer>
+  </body>
+</html>
