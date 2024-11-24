@@ -683,10 +683,25 @@ main {
   border-radius: 5px;
 }
 
+/* стили валидности формы начало */
+.text__description-label {
+  display: block;
+  position: relative;
+}
+
+.has-success textarea {
+  background-color: rgba(130, 225, 121, 0.434);
+}
+
+.has-danger textarea {
+  background-color: rgba(225, 126, 121, 0.434);
+}
+/* стили валидности формы конец */
+
+
 .text__description {
   width: 450px;
   height: 100px;
-
   margin: 0 auto;
   padding: 15px 10px;
 
@@ -699,15 +714,21 @@ main {
 
 /* добавил стили для позиционирования элемента для вывода сообщения об ошибке в форме */
 /* исправить эти стили  */
-
+/* стили валидности формы начало */
 .text__error-text {
+  height: 20px;
+  background-color: #943106;
   position: absolute;
-  top: 34px;
-  left: 20px;
-  color: #6d0505;
+  top: 100%;
+  width: 450px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  color: #ffffff;
   text-align: center;
+  border-radius: 5px;
 }
-
+/* стили валидности формы конец */
 
 
 /**

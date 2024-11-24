@@ -40,6 +40,8 @@ const showUploadForm = () => {
   formUpload.addEventListener('submit', addSubmitDisabled);
 }
 
+showUploadForm(); // для отладки откроем форму
+
 const addListenerUploadInput = () => imgUploadInput.addEventListener('change', showUploadForm);
 
 
@@ -47,14 +49,21 @@ const pristine = new Pristine(formUpload, {
   classTo: 'text__description-label',
   errorTextParrent: 'text__description-label',
   errorTextClass: 'text__error-text',
-
-  // добавить элемент в html для вывода сообщения об ошибке
-  // - добавить селектор в css для позиционирования сообщения об ошибке в поле
-  // дописать скрипт для взимодействия с pristine
-
 });
 
 
+// const pristine = new Pristine(formUpload, {
+//   // class of the parent element where the error/success class is added
+//   classTo: 'text__description-label',
+//   errorClass: 'has-danger',
+//   successClass: 'has-success',
+//   // class of the parent element where error text element is appended
+//   errorTextParent: 'ftext__description-label',
+//   // type of element to create for the error text
+//   errorTextTag: 'div',
+//   // class of the error text element
+//   errorTextClass: 'text__error-text'
+// });
 
 
 
@@ -62,14 +71,12 @@ formUpload.addEventListener('submit', (evt) => {
   evt.preventDefault();
 
   const isValid = pristine.validate();
-
   if (isValid) {
-    console.log('можно отправлять');
+    console.log('Можно отправлять');
   } else {
-    console.log('фома не валидная');
+    console.log('Форма невалидна');
   }
 });
-
 
 
 export {addListenerUploadInput};
