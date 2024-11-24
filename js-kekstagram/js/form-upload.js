@@ -43,7 +43,32 @@ const showUploadForm = () => {
 const addListenerUploadInput = () => imgUploadInput.addEventListener('change', showUploadForm);
 
 
-// new Pristine(formUpload);
+const pristine = new Pristine(formUpload, {
+  classTo: 'text__description-label',
+  errorTextParrent: 'text__description-label',
+  errorTextClass: 'text__error-text',
+
+  // добавить элемент в html для вывода сообщения об ошибке
+  // - добавить селектор в css для позиционирования сообщения об ошибке в поле
+  // дописать скрипт для взимодействия с pristine
+
+});
+
+
+
+
+
+formUpload.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+
+  const isValid = pristine.validate();
+
+  if (isValid) {
+    console.log('можно отправлять');
+  } else {
+    console.log('фома не валидная');
+  }
+});
 
 
 

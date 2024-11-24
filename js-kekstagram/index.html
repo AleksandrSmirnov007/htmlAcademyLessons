@@ -116,8 +116,12 @@
                 <!-- Добавление хэш-тегов и комментария к изображению -->
                 <fieldset class="img-upload__text text">
                   <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
-                  <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140" required></textarea>
-                </fieldset>
+                  <!-- от себя обернул в тег label  по аналогии с демонстрацией для работы pristine, так же добавлю в css  селектор для расположения элемента с сообщением об ошибке в поле для пользователя -->
+                  <label class="text__description-label">
+                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140" minlength="2" required></textarea>
+                    <div class="pristine-error text__error-text">вывргырворывр</div>
+                  </label>
+                  </fieldset>
 
                 <!-- Кнопка для отправки данных на сервер -->
                 <button type="submit" class="img-upload__submit" id="upload-submit">Опубликовать</button>
