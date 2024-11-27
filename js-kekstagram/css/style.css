@@ -690,11 +690,11 @@ main {
 }
 
 .has-success textarea {
-  background-color: rgba(130, 225, 121, 0.434);
+  background-color: rgb(130, 225, 121);
 }
 
 .has-danger textarea {
-  background-color: rgba(225, 126, 121, 0.434);
+  background-color: rgba(225, 126, 121);
 }
 /* стили валидности формы конец */
 

@@ -17,6 +17,8 @@ const hideUploadForm = () => {
   body.classList.remove('modal-open');
   document.removeEventListener('keydown', onEscKeyDownForm);
   formUpload.removeEventListener('submit', addSubmitDisabled);
+
+  imgUploadInput.value = ''; // Обратите внимание, что при закрытии формы дополнительно необходимо сбрасывать значение поля выбора файла #upload-file. В принципе, всё будет работать, если при повторной попытке загрузить в поле другую фотографию. Но! Событие change не сработает, если пользователь попробует загрузить ту же фотографию, а значит окно с формой не отобразится, что будет нарушением техзадания. Значение других полей формы также нужно сбрасывать.
 }
 
 function onEscKeyDownForm(evt) {
@@ -40,30 +42,34 @@ const showUploadForm = () => {
   formUpload.addEventListener('submit', addSubmitDisabled);
 }
 
-showUploadForm(); // для отладки откроем форму
+// showUploadForm(); // для отладки откроем форму
 
 const addListenerUploadInput = () => imgUploadInput.addEventListener('change', showUploadForm);
 
 
+// const pristine = new Pristine(formUpload, {
+//   classTo: 'text__description-label',
+//   errorTextParrent: 'text__description-label',
+//   errorTextClass: 'text__error-text',
+// });
+
+
 const pristine = new Pristine(formUpload, {
+  // class of the parent element where the error/success class is added
   classTo: 'text__description-label',
-  errorTextParrent: 'text__description-label',
-  errorTextClass: 'text__error-text',
+  errorClass: 'has-danger',
+  successClass: 'has-success',
+  // class of the parent element where error text element is appended
+  errorTextParent: 'text__description-label',
+  // type of element to create for the error text
+  errorTextTag: 'div',
+  // class of the error text element
+  errorTextClass: 'text__error-text'
 });
 
 
-// const pristine = new Pristine(formUpload, {
-//   // class of the parent element where the error/success class is added
-//   classTo: 'text__description-label',
-//   errorClass: 'has-danger',
-//   successClass: 'has-success',
-//   // class of the parent element where error text element is appended
-//   errorTextParent: 'ftext__description-label',
-//   // type of element to create for the error text
-//   errorTextTag: 'div',
-//   // class of the error text element
-//   errorTextClass: 'text__error-text'
-// });
+const re = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
+
 
 
 

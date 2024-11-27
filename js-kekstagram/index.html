@@ -118,9 +118,14 @@
                   <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
                   <!-- от себя обернул в тег label  по аналогии с демонстрацией для работы pristine, так же добавлю в css  селектор для расположения элемента с сообщением об ошибке в поле для пользователя -->
                   <label class="text__description-label">
-                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140" minlength="2" required></textarea>
-                    <!-- непонятно нужно ли добавлять это див-->
-                    <div class="pristine-error text__error-text"></div>
+                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140" minlength="2" required
+                    data-pristine-required-message="Обязательное поле"
+                    data-pristine-minlength-message="Минимальная длина 2 символа"
+                    data-pristine-maxlength-message="Максимальная длина 25 символов"
+                    ></textarea>
+                    <!-- инструкции для pristine добавляются в атрибуты валидируюмого тега с типом data -->
+                    <!-- непонятно нужно ли добавлять это див? Теперь понятно: див сюда добавит сама pristine погэтому он не нужен если только на этапе стилизации-->
+                    <!-- <div class="pristine-error text__error-text"></div> -->
                   </label>
                   </fieldset>
 

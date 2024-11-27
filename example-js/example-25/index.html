@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Регулярные приложения.</title>
+</head>
+<body>
+  <h1>Регулярные приложения. <br> Проверка.</h1>
+
+  <h2> валидация через JS</h2>
+
+  <form class="form-one" action="">
+    <label for="">
+      <div><span>Введите Хештег, <br>
+        правильно (например: #ХэшТег) <br>
+        или не правильно (например; yfghbvth) <br>
+        - содержимое поля ввода проверит javascript.</span></div><br>
+      <input class=" input-one input-js-validate" type="text" name="hashtags-js">
+    </label>
+      <br>
+      <br>
+      <input type="submit" value="Проверить">
+      <br>
+      <br>
+      <div class="message">
+        Сообщение от формы:
+        <span class="message__text"></span>
+      </div>
+
+  </form>
+  <br>
+
+  <h2> валидация через HTML и CSS</h2>
+  <form class="form-two"  action="">
+    <label for="input-two">
+      <div>
+        <span>Введите Хештег, <br>
+        правильно (например: #ХэшТег) <br>
+        или не правильно (например; yfghbvth) <br>
+        - содержимое поля ввода <br> проверит уже html на соответсвие атрибуту pattern. <br>
+        а css, через комбинатор смежных селекторов даст display: inline (вместо none)<br>
+        одному из сообщений.
+        </span>
+        <br>
+        <br>
+        <span>
+          pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$"
+        </span>
+        <br>
+      </div><br>
+    </label>
+
+    <input id="input-two" class="input-two input-html-validate" type="text" name="hashtags-html"
+    pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$" required>
+
+
+      <br>
+      <br>
+      <input type="submit" value="Проверить">
+      <br>
+      <br>
+
+
+    Сообщениe от формы:
+    <span class="message__text message__text--correct green">Правильно</span>
+    <span class="message__text message__text--incorrect red">Не правильно</span>
+  </form>
+
+
+
+  <script src="./script.js"></script>
+</body>
+</html>

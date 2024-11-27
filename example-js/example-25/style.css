@@ -1,0 +1,45 @@
+body {
+  display: grid;
+  justify-content: center;
+}
+
+form {
+  padding: 10px;
+  border: 4px solid rgba(32, 79, 107, 0.507);
+  border-radius: 5px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+/* Работа со второй формой */
+
+.input-two:invalid:focus {
+  outline: 5px solid red;
+  border-radius: 2px;
+}
+
+.input-two:valid {
+  outline: 5px solid green;
+  border-radius: 2px;
+}
+
+.message__text--correct,
+.message__text--incorrect {
+  display: none;
+}
+
+/* Общий комбинатор смежных селекторов (~) разделяет два селектора и находит второй элемент только если ему предшествует первый, и они оба имеют общего родителя. Свойства будут применены ко всем элементам, указанным в правой части, следующим за элементом, указанным в левой части. */
+
+.input-two:invalid:focus ~ .message__text--incorrect {
+  display: inline;
+}
+
+.input-two:valid:focus ~ .message__text--correct {
+  display: inline;
+}
