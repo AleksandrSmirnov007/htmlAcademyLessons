@@ -684,16 +684,18 @@ main {
 }
 
 /* стили валидности формы начало */
-.text__description-label {
+.form__item {
   display: block;
   position: relative;
 }
 
-.has-success textarea {
+.form__item--valid textarea,
+.form__item--valid input {
   background-color: rgb(130, 225, 121);
 }
 
-.has-danger textarea {
+.form__item--invalid textarea,
+.form__item--invalid input {
   background-color: rgba(225, 126, 121);
 }
 /* стили валидности формы конец */
@@ -715,11 +717,12 @@ main {
 /* добавил стили для позиционирования элемента для вывода сообщения об ошибке в форме */
 /* исправить эти стили  */
 /* стили валидности формы начало */
-.text__error-text {
+.form__error {
+  z-index: 2;
   height: 20px;
   background-color: #943106;
   position: absolute;
-  top: 100%;
+  bottom: 0;
   width: 450px;
   margin: 0 auto;
   left: 0;
