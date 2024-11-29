@@ -32,10 +32,6 @@ function onEscKeyDownForm(evt) {
 
 const addListenerUploadCancel = () => uploadCancel.addEventListener('click', hideUploadForm);
 
-
-formUpload.addEventListener('submit', addSubmitDisabled);
-
-
 const showUploadForm = () => {
   imgUploadOverlay.classList.remove('hidden');
   body.classList.add('modal-open');
@@ -48,17 +44,7 @@ showUploadForm(); // для отладки откроем форму
 
 const addListenerUploadInput = () => imgUploadInput.addEventListener('change', showUploadForm);
 
-
-// const pristine = new Pristine(formUpload, {
-//   classTo: 'text__description-label',
-//   errorTextParrent: 'text__description-label',
-//   errorTextClass: 'text__error-text',
-// });
-
-
-
 // Работа оператора new с конструктором:
-
 // При встрече оператора new интерпретатор создаёт новый пустой объект. 1
 // Затем он вызывает конструктор и передаёт ему новый созданный объект в качестве значения ключевого слова this. 1
 // Внутри конструктора происходит инициализация свойств вновь созданного объекта. 1
@@ -66,7 +52,7 @@ const addListenerUploadInput = () => imgUploadInput.addEventListener('change', s
 // Чтобы отличать в коде обычные функции от конструкторов, имена конструкторов обычно начинают с заглавной буквы. 1
 
 
-// убираю атрибут pattern у поля для хештега потому, что ломается валидация черезе pristine нужно это сделать перед парсингом по html  pristinne
+// убираю атрибут pattern у поля для хештега потому, что ломается валидация через pristine нужно это сделать перед тем как pristine пройдет по formUpload и сделает правила по атрибутам в разметке
 formUpload.querySelector('#hashtags').removeAttribute('pattern');
 
 const pristine = new Pristine(formUpload, {
@@ -82,24 +68,34 @@ const pristine = new Pristine(formUpload, {
   errorTextClass: 'form__error'
 });
 
+
+// проверить каждый элемент массива на соответсвие регулярному выражению
+
+// разбиваем строку массив подстрок Методом split()
+// Метод split() в JavaScript делит строку на список подстрок и возвращает их в виде массива. // Синтаксис: str.split(separator, limit). // Параметры: // separator (необязательно) — шаблон (строка или регулярное выражение), описывающий, где должно происходить каждое разделение. // limit (необязательно) — неотрицательное целое число, ограничивающее количество частей, на которые нужно разделить заданную строку.
+
+// в value будет передаваться строка  взятая из введенного набором текста в поле хештег
 function validateHashtags (value) {
-  // поле Хештег не обязательное в случае пустой строки вернем true
+  // поле Хештег не обязательное в случае передачи в value пустой строки вернем true
+
+  let isValidHashtags = true; // создадим переменную в которой будет храниться валидность зададим true если при проверке массива не будет  (так для pristine для определения валидности нужны булевы значения), а далее напишем код при котором если элемнт массива не соответсвует регулярному выражению то вписываем в isValidHashtags = false, а если элемент соответсвует регулярному выражению то ничего не делаем
+
   if (value === '') {
     return true;
   }
 
-  const hashtagsArray = value.split(' ');
+  const hashtagsArray = value.split(' '); // разбиваем строку на массив элементов
 
-  // проверяем на соответствие value регуляроному выражению
-  return re.test(hashtagsArray[0]); // костыль старвнивает тоько первый элемент массива а нужно что б сравнивало каждый и выносило folse если хотя бы оин не соответсвует
-
-  // проверить каждый элемент массива на соответсвие регулярному выражению
-
-  // разбиваем строку массив подстрок Методом split()
-  // Метод split() в JavaScript делит строку на список подстрок и возвращает их в виде массива. // Синтаксис: str.split(separator, limit). // Параметры: // separator (необязательно) — шаблон (строка или регулярное выражение), описывающий, где должно происходить каждое разделение. // limit (необязательно) — неотрицательное целое число, ограничивающее количество частей, на которые нужно разделить заданную строку.
-  // const hashtags = value.split(' ');
+  hashtagsArray.forEach((element) => {
+    // проверяем каждый  элемент на соответствие  регуляроному выражению
+    if(re.test(element) === false) {
+      // если элемент не соответсвует регулярному выражению то присвоим isValidHashtags = false
+      isValidHashtags = false;
+    }
+  });
+  console.log(isValidHashtags);
+  return isValidHashtags;
 };
-
 
 // Чтобы описать валидации в JavaScript, нужно вызвать метод .addValidator().
 // Метод принимает несколько аргументов. Первый — элемент формы, который мы хотим валидировать.
@@ -115,12 +111,13 @@ function validateHashtags (value) {
 // Если поле с именем пустое, или имя короче двух символов, или длиннее 50 символов — мы увидим ошибку.
 
 // добавляем валидатор к полю
+
+
 pristine.addValidator(
   formUpload.querySelector('#hashtags'),
   validateHashtags,
   'Неправильно введены данные в поле Хештег'
 );
-
 
 formUpload.addEventListener('submit', (evt) => {
   evt.preventDefault();
@@ -132,10 +129,6 @@ formUpload.addEventListener('submit', (evt) => {
     console.log('Форма невалидна');
   }
 });
-
-
-
-
 
 
 export {addListenerUploadInput};
