@@ -5,7 +5,6 @@ const imgUploadOverlay = formUpload.querySelector('.img-upload__overlay');
 const imgUploadInput = formUpload.querySelector('.img-upload__input');
 const uploadCancel = formUpload.querySelector('.img-upload__cancel');
 const body = document.querySelector('body');
-
 const re = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
 
 
@@ -20,13 +19,18 @@ const hideUploadForm = () => {
   document.removeEventListener('keydown', onEscKeyDownForm);
   formUpload.removeEventListener('submit', addSubmitDisabled);
 
-  imgUploadInput.value = ''; // Обратите внимание, что при закрытии формы дополнительно необходимо сбрасывать значение поля выбора файла #upload-file. В принципе, всё будет работать, если при повторной попытке загрузить в поле другую фотографию. Но! Событие change не сработает, если пользователь попробует загрузить ту же фотографию, а значит окно с формой не отобразится, что будет нарушением техзадания. Значение других полей формы также нужно сбрасывать.
+  imgUploadInput.value = ''; // Нужно обратить внимание, что при закрытии формы дополнительно необходимо сбрасывать значение поля выбора файла #upload-file. В принципе, всё будет работать, если при повторной попытке загрузить в поле другую фотографию. Но! Событие change не сработает, если пользователь попробует загрузить ту же фотографию, а значит окно с формой не отобразится, что будет нарушением техзадания. Значение других полей формы также нужно сбрасывать.
 }
 
 function onEscKeyDownForm(evt) {
   if(evt.key === 'Escape') {
     evt.preventDefault();
-    hideUploadForm();
+// добавил в разметку.not-respond-esc класс для элементов если на них находится фокус то клавиша ескейп не должна закрывать форму
+    if (document.activeElement.classList.contains('not-respond-esc')) {
+      evt.stopPropagation() // в этой строке может ничего и не быть, то есть тут работает пустая строка как инструкция ничего не делать, но в условии сказано применить этот метод evt.stopPropagation() вобщем сомнительно
+    } else {
+      hideUploadForm();
+    }
   }
 };
 
@@ -37,10 +41,14 @@ const showUploadForm = () => {
   body.classList.add('modal-open');
   addListenerUploadCancel();
   document.addEventListener('keydown', onEscKeyDownForm);
-  formUpload.addEventListener('submit', addSubmitDisabled);
+  // formUpload.addEventListener('submit', addSubmitDisabled); //
+  formUpload.addEventListener('submit', addSubmitformInstruction);
 }
 
-showUploadForm(); // для отладки откроем форму
+
+// для отладки откроем форму
+// showUploadForm();
+// Открывая форму этим методом нужно понимать что если при стандартном открытии формы (то есть через добавление файла) в поле input c классом img-upload__input это поле будет содержать value с адресом файла для добавления, тем самым поле будет удолетворять атрибуту requared и при всех прочих валидных полях  в const isValid = pristine.validate() будет передано true, Но если воспользуемся для оотладки простым вызовом функции showUploadForm(), то форма откроется но поле загрузки файла будет пустым и в const isValid = pristine.validate() будет передано false и так как поле загрузки не явно то будет непонятно почему форма невалидна, хотя видимые поля правильно заполнены
 
 const addListenerUploadInput = () => imgUploadInput.addEventListener('change', showUploadForm);
 
@@ -75,9 +83,16 @@ const pristine = new Pristine(formUpload, {
 // Метод split() в JavaScript делит строку на список подстрок и возвращает их в виде массива. // Синтаксис: str.split(separator, limit). // Параметры: // separator (необязательно) — шаблон (строка или регулярное выражение), описывающий, где должно происходить каждое разделение. // limit (необязательно) — неотрицательное целое число, ограничивающее количество частей, на которые нужно разделить заданную строку.
 
 // в value будет передаваться строка  взятая из введенного набором текста в поле хештег
+
+
+// function validateHashtags (value) {
+//   return true;
+// };
+
+
+
 function validateHashtags (value) {
   // поле Хештег не обязательное в случае передачи в value пустой строки вернем true
-
   let isValidHashtags = true; // создадим переменную в которой будет храниться валидность зададим true если при проверке массива не будет  (так для pristine для определения валидности нужны булевы значения), а далее напишем код при котором если элемнт массива не соответсвует регулярному выражению то вписываем в isValidHashtags = false, а если элемент соответсвует регулярному выражению то ничего не делаем
 
   if (value === '') {
@@ -119,16 +134,36 @@ pristine.addValidator(
   'Неправильно введены данные в поле Хештег'
 );
 
-formUpload.addEventListener('submit', (evt) => {
-  evt.preventDefault();
 
+function addSubmitformInstruction (evt) {
   const isValid = pristine.validate();
   if (isValid) {
-    console.log('Можно отправлять');
+    console.log('Можно отправлять данные');
+    console.log('Отправляю');
+    addSubmitDisabled(); // если использовать сдесь formUpload.addEventListener('submit', addSubmitDisabled); то кнопка submit отключается только по второму клику по ней, так как событие на первый клик уже будет добавлено при запуске функциии showUploadForm (функции показа формы)
   } else {
+    evt.preventDefault();
+    console.log(isValid);
     console.log('Форма невалидна');
   }
-});
+};
 
 
-export {addListenerUploadInput};
+// formUpload.addEventListener('submit', (evt) => {
+
+//   const isValid = pristine.validate();
+//   if (isValid) {
+//     console.log('Можно отправлять');
+//     formUpload.addEventListener('submit', addSubmitDisabled);
+//   } else {
+//     evt.preventDefault();
+//     console.log(isValid);
+//     console.log('Форма невалидна');
+//   }
+// });
+
+
+// formUpload.addEventListener('submit', addSubmitformInstruction);
+
+
+export {addListenerUploadInput };

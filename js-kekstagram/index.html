@@ -117,12 +117,12 @@
                 <fieldset class="img-upload__text text">
                   <label class="form__item">
                     <!--  pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$" -->
-                    <input id="hashtags" class="text__hashtags" name="hashtags" placeholder="#ХэшТег" pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$">
+                    <input id="hashtags" class="text__hashtags not-respond-esc" name="hashtags" placeholder="#ХэшТег" pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$" required>
                   </label>
 
                   <!-- от себя обернул в тег label  по аналогии с демонстрацией для работы pristine, так же добавлю в css  селектор для расположения элемента с сообщением об ошибке в поле для пользователя -->
                   <label class="form__item">
-                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140" minlength="2" required
+                    <textarea class="text__description not-respond-esc" name="description" placeholder="Ваш комментарий..." maxlength="140" minlength="2" required
                     data-pristine-required-message="Обязательное поле"
                     data-pristine-minlength-message="Минимальная длина 2 символа"
                     data-pristine-maxlength-message="Максимальная длина 25 символов"
@@ -256,7 +256,7 @@
       <p class="social__text">{{текст комментария}}</p>
     </li>
   </template>
-
+  <script src="./js/console.js" type="text/javascript"></script>
   <script src="./pristine/pristine.min.js" type="text/javascript"></script>
   <script src="js/main.js" type="module" ></script>
 </body>
