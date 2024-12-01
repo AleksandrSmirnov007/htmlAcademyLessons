@@ -1,4 +1,4 @@
-console.log('form-upload.js is working');
+console.log('form.js is working');
 
 const formUpload = document.querySelector('.img-upload__form');
 const imgUploadOverlay = formUpload.querySelector('.img-upload__overlay');
@@ -9,7 +9,7 @@ const re = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
 
 const hashtagCountMax = 5;
 const hashtagLengthMax = 20;
-const hashtagLengthMin = 3;
+const hashtagLengthMin = 2;
 
 const addSubmitDisabled = () => {
   const submit = formUpload.querySelector("input[type=submit], button[type=submit]");
@@ -114,7 +114,7 @@ function validateHashtags (value) {
 
   console.log(hashtagsArrayCleanSpace);
 
-  if( hashtagsArrayCleanSpace.length > 5) {
+  if( hashtagsArrayCleanSpace.length > hashtagCountMax) {
     return false;
   }
   hashtagsArrayCleanSpace.forEach((element) => {
