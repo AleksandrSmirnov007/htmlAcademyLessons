@@ -7,6 +7,9 @@ const uploadCancel = formUpload.querySelector('.img-upload__cancel');
 const body = document.querySelector('body');
 const re = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
 
+const hashtagCountMax = 5;
+const hashtagLengthMax = 20;
+const hashtagLengthMin = 3;
 
 const addSubmitDisabled = () => {
   const submit = formUpload.querySelector("input[type=submit], button[type=submit]");
@@ -79,9 +82,9 @@ const pristine = new Pristine(formUpload, {
 
 // проверить каждый элемент массива на соответсвие регулярному выражению
 
-// разбиваем строку массив подстрок Методом split()
+// разбиваем строку на массив подстрок Методом split()
 // Метод split() в JavaScript делит строку на список подстрок и возвращает их в виде массива. // Синтаксис: str.split(separator, limit). // Параметры: // separator (необязательно) — шаблон (строка или регулярное выражение), описывающий, где должно происходить каждое разделение. // limit (необязательно) — неотрицательное целое число, ограничивающее количество частей, на которые нужно разделить заданную строку.
-
+// Метод trim() значений String удаляет пробелы с обоих концов этой строки и возвращает новую строку, не изменяя исходную.
 // в value будет передаваться строка  взятая из введенного набором текста в поле хештег
 
 
@@ -99,14 +102,24 @@ function validateHashtags (value) {
     return true;
   }
 
-  const hashtagsArray = value.split(' '); // разбиваем строку на массив элементов
+  const hashtagsArray = value.trim().split(' '); // разбиваем строку на массив элементов
+  console.log(hashtagsArray);
+  const hashtagsArrayCleanSpace = [];
 
-  if( hashtagsArray.length > 5) {
+  hashtagsArray.forEach((element) => {
+    if (element != '') {
+      hashtagsArrayCleanSpace.push(element);
+    }
+  })
+
+  console.log(hashtagsArrayCleanSpace);
+
+  if( hashtagsArrayCleanSpace.length > 5) {
     return false;
   }
-  hashtagsArray.forEach((element) => {
+  hashtagsArrayCleanSpace.forEach((element) => {
     // проверяем каждый  элемент на соответствие  регуляроному выражению
-    if(re.test(element) === false) {
+    if(re.test(element) === false || element.length > hashtagLengthMax || element.length <= hashtagLengthMin) {
       // если элемент не соответсвует регулярному выражению то присвоим isValidHashtags = false
       isValidHashtags = false;
     }
