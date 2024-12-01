@@ -101,6 +101,9 @@ function validateHashtags (value) {
 
   const hashtagsArray = value.split(' '); // разбиваем строку на массив элементов
 
+  if( hashtagsArray.length > 5) {
+    return false;
+  }
   hashtagsArray.forEach((element) => {
     // проверяем каждый  элемент на соответствие  регуляроному выражению
     if(re.test(element) === false) {
