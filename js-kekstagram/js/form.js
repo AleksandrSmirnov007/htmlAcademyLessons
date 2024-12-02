@@ -10,11 +10,15 @@ const hashtagField = form.querySelector('.text__hashtags');
 const commentField = form.querySelector('.text__description');
 
 
-const MAX_HASTAG_COUNT = 5;
+const MAX_HASHTAG_COUNT = 5;
 const MAX_HASHTAG_LENGTH = 20;
 const MIN_HASHTAG_LENGTH = 2;
-const VALID_SYMBOLS = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
 
+// regex101.com - лучший сайт для проверки регулярных выражений
+// const VALID_SYMBOLS = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/; // это регулярное выражение было предложено на лайве, и оно работает и не дает инверсии, но вцелях общего развития я отрежу от него часть отвечающую за количество символов а в коде добавлю дополнительную проверку, но еще както влияет $ (конец строки) его я тоже убрал
+const VALID_SYMBOLS = /^[A-Za-zА-Яа-яЁё0-9]$/;
+
+// const UNVALID_SYMBOLS = /[^a-zA-Z0-9а-яА-ЯёЁ]/g; // в коде проекта используется такое выражение, но как я понял оно инвертирует соответвие сравниваемых т е возвращает true когда срроа не содержится в регулрновм выражении // мои " исследования" привели к тому что если знак степени  ^ (начало строки)
 
 // убираю атрибут pattern у поля для хештега потому, что ломается валидация через pristine нужно это сделать перед тем как pristine пройдет по form и сделает правила по атрибутам в разметке
 form.querySelector('#hashtags').removeAttribute('pattern');
@@ -82,6 +86,21 @@ const onCanselButtonClick = () => {
 // закончил исправление ошибок пока на этом месте не все один в один но приемлемо и все работает(чуть с большим функционалом)
 // далее задача переработать функцию мою функцию validateTags по аналогии с кодом проета ее на  составляющие функции и вынести их отдельно. по спецификации pristine функция валидации должна возвращать true если поле заполнено верно и false если поле заполнено не верно
 
+const foo = '#jjвыывывывijf';
+
+const starstWithHash = (string) => string[0] === '#';  // ВАЖНО ИЗ-ЗА этого не работал код Стрелочные функции Использование скобок. Если тело стрелочной функции состоит из нескольких выражений или требует использования блока кода, необходимо обернуть его в фигурные скобки и явно указать оператор return, если требуется вернуть значение.
+
+const hasValidLength = (string) =>
+  string.length >= MIN_HASHTAG_LENGTH && string.length <= MAX_HASHTAG_LENGTH;
+
+const hasValidSymbols = (string) => VALID_SYMBOLS.test(string.slice(1));
+
+const isValidTag = (tag) => starstWithHash(tag) && hasValidLength(tag);
+
+console.log('hasValidSymbols(foo)');
+console.log(hasValidSymbols(foo));
+
+
 function validateTags (value) {
   // поле Хештег не обязательное в случае передачи в value пустой строки вернем true
   let isValidHashtags = true; // создадим переменную в которой будет храниться валидность зададим true если при проверке массива не будет  (так для pristine для определения валидности нужны булевы значения), а далее напишем код при котором если элемнт массива не соответсвует регулярному выражению то вписываем в isValidHashtags = false, а если элемент соответсвует регулярному выражению то ничего не делаем
@@ -102,12 +121,12 @@ function validateTags (value) {
 
   console.log(hashtagsArrayCleanSpace);
 
-  if( hashtagsArrayCleanSpace.length > MAX_HASTAG_COUNT) {
+  if( hashtagsArrayCleanSpace.length > MAX_HASHTAG_COUNT) {
     return false;
   }
   hashtagsArrayCleanSpace.forEach((element) => {
     // проверяем каждый  элемент на соответствие  регуляроному выражению
-    if(VALID_SYMBOLS.test(element) === false || element.length > MAX_HASHTAG_LENGTH || element.length < MIN_HASHTAG_LENGTH) {
+    if(VALID_SYMBOLS.test(element) === false || hasValidLength(element) === false) {
       // если элемент не соответсвует регулярному выражению то присвоим isValidHashtags = false
       isValidHashtags = false;
     }
@@ -117,6 +136,7 @@ function validateTags (value) {
 };
 
 // Чтобы описать валидации в JavaScript, нужно вызвать метод .addValidator(). // Метод принимает несколько аргументов. Первый — элемент формы, который мы хотим валидировать. // Давайте реализуем ту же валидацию поля ввода имени питомца, но уже через JavaScript. Для этого найдём поле через .querySelector() и передадим Pristine. // Вторым аргументом в .addValidator() нужно передать функцию проверки. Можно передавать по месту, но удобнее объявить функцию выше и передать по ссылке. Назовём её validateNickname. // Функция проверки обязательно должна возвращать true или false, в зависимости от того, валидно ли поле. // Pristine будет вызывать функцию проверки каждый раз, когда потребуется провалидировать форму. Первым параметром будет передано актуальное значение поля. // Третьим аргументом нужно передать сообщение об ошибке. // Попробуйте теперь отправить форму, нажав кнопку «Заказать». // Если поле с именем пустое, или имя короче двух символов, или длиннее 50 символов — мы увидим ошибку. // добавляем валидатор к полю
+
 
 
 pristine.addValidator(
