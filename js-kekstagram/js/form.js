@@ -14,11 +14,10 @@ const MAX_HASHTAG_COUNT = 5;
 const MAX_HASHTAG_LENGTH = 20;
 const MIN_HASHTAG_LENGTH = 2;
 
-// regex101.com - лучший сайт для проверки регулярных выражений
-// const VALID_SYMBOLS = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/; // это регулярное выражение было предложено на лайве, и оно работает и не дает инверсии, но вцелях общего развития я отрежу от него часть отвечающую за количество символов а в коде добавлю дополнительную проверку, но еще както влияет $ (конец строки) его я тоже убрал
-const VALID_SYMBOLS = /^[A-Za-zА-Яа-яЁё0-9]$/;
-
-// const UNVALID_SYMBOLS = /[^a-zA-Z0-9а-яА-ЯёЁ]/g; // в коде проекта используется такое выражение, но как я понял оно инвертирует соответвие сравниваемых т е возвращает true когда срроа не содержится в регулрновм выражении // мои " исследования" привели к тому что если знак степени  ^ (начало строки)
+// const VALID_SYMBOLS = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
+// const VALID_SYMBOLS = /^[A-Za-zА-Яа-яЁё0-9]*$/;
+// const UNVALID_SYMBOLS = /[^a-zA-Z0-9а-яА-ЯёЁ]/g;
+const UNVALID_SYMBOLS = /[^A-Za-zА-Яа-яЁё0-9]/;
 
 // убираю атрибут pattern у поля для хештега потому, что ломается валидация через pristine нужно это сделать перед тем как pristine пройдет по form и сделает правила по атрибутам в разметке
 form.querySelector('#hashtags').removeAttribute('pattern');
@@ -86,28 +85,25 @@ const onCanselButtonClick = () => {
 // закончил исправление ошибок пока на этом месте не все один в один но приемлемо и все работает(чуть с большим функционалом)
 // далее задача переработать функцию мою функцию validateTags по аналогии с кодом проета ее на  составляющие функции и вынести их отдельно. по спецификации pristine функция валидации должна возвращать true если поле заполнено верно и false если поле заполнено не верно
 
-const foo = '#jjвыывывывijf';
+// const foo = '#jjвыыв09ывывijf';
 
 const starstWithHash = (string) => string[0] === '#';  // ВАЖНО ИЗ-ЗА этого не работал код Стрелочные функции Использование скобок. Если тело стрелочной функции состоит из нескольких выражений или требует использования блока кода, необходимо обернуть его в фигурные скобки и явно указать оператор return, если требуется вернуть значение.
 
 const hasValidLength = (string) =>
   string.length >= MIN_HASHTAG_LENGTH && string.length <= MAX_HASHTAG_LENGTH;
 
-const hasValidSymbols = (string) => VALID_SYMBOLS.test(string.slice(1));
+const hasValidSymbols = (string) => !UNVALID_SYMBOLS.test(string.slice(1)); // здесь применяем отрицание оператор НЕ так как испозуем диапазо невалидных символов типа [^abc]
 
-const isValidTag = (tag) => starstWithHash(tag) && hasValidLength(tag);
+const isValidTag = (tag) => starstWithHash(tag) && hasValidLength(tag) && hasValidSymbols(tag);
 
-console.log('hasValidSymbols(foo)');
-console.log(hasValidSymbols(foo));
+const hasValidCount = (tags) => tags.length <= MAX_HASHTAG_COUNT;
+
+// console.log('isValidTag(foo)');
+// console.log(isValidTag(foo));
 
 
 function validateTags (value) {
-  // поле Хештег не обязательное в случае передачи в value пустой строки вернем true
-  let isValidHashtags = true; // создадим переменную в которой будет храниться валидность зададим true если при проверке массива не будет  (так для pristine для определения валидности нужны булевы значения), а далее напишем код при котором если элемнт массива не соответсвует регулярному выражению то вписываем в isValidHashtags = false, а если элемент соответсвует регулярному выражению то ничего не делаем
-
-  if (value === '') {
-    return true;
-  }
+  let isValidHashtags = true; // создадим переменную в которой будет храниться валидность всех хештегов в совокупности зададим true если при проверке массива не будет  (так для pristine для определения валидности нужны булевы значения), а далее напишем код при котором если элемнт массива не соответсвует регулярному выражению то вписываем в isValidHashtags = false, а если элемент соответсвует регулярному выражению то ничего не делаем
 
   const hashtagsArray = value.trim().split(' '); // разбиваем строку на массив элементов
   console.log(hashtagsArray);
@@ -125,9 +121,8 @@ function validateTags (value) {
     return false;
   }
   hashtagsArrayCleanSpace.forEach((element) => {
-    // проверяем каждый  элемент на соответствие  регуляроному выражению
-    if(VALID_SYMBOLS.test(element) === false || hasValidLength(element) === false) {
-      // если элемент не соответсвует регулярному выражению то присвоим isValidHashtags = false
+    // проверяем каждый  элемент на соответствие  регуляроному выражению, старту с символа #, и удолетворяет ли он длинне
+    if(isValidTag(element) === false) {
       isValidHashtags = false;
     }
   });
