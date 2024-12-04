@@ -68,7 +68,7 @@ const createPicture = (index) => ({
   description: getRandomArrayElement(descriptions),
   likes: getRandomPostiveInteger(15, 200),
   comments: Array.from(
-    {length: getRandomPostiveInteger(0, 6)},
+    {length: getRandomPostiveInteger(0, 20)}, // Было {length: getRandomPostiveInteger(0, 6)} исправил 6 на 20 для домашнего задания нужен обьем коментариев
     (_, commentIndex) => createComment(commentIndex + 1)
   ),
 });
