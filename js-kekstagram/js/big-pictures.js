@@ -60,8 +60,6 @@ const renderComments = (comments) => {
   commentList.appendChild(fragment);
 }
 
-// const renderCommentsMore =
-
 const hideBigPicture = () => {
   bigPicture.classList.add('hidden');
   body.classList.remove('modal-open');
