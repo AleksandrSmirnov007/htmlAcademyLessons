@@ -47,8 +47,6 @@ const icon = L.icon({
   iconAnchor: [20, 40],
 });
 
-// Усложняем задачу. Содержимым балуна должен быть наш HTML, а не просто текст. Сперва заведём <template> с разметкой.
-// Затем опишем функцию createCustomPopup по получению DOM-элемента из разметки.
 const createCustomPopup = (point) => {
   const balloonTemplate = document.querySelector('#balloon')
     .content.querySelector('.balloon');
@@ -61,16 +59,13 @@ const createCustomPopup = (point) => {
   return popupElement;
 };
 
+// С помощь метода layerGroup() создадим отдельный слой на карте, куда будем добавлять наши метки. Затем в функции createMarker новосозданные метки всё тем же методом addTo будем добавлять уже не на карту, а в слой на карте.
 
-// Кстати, можно было обойтись без <template>, используя шаблонные строки. Тоже будет работать, потому что метод bindPopup() написан так, что может принимать строки, валидную разметку в виде строки и DOM-элемент.
-// const createCustomPopup = ({lat, lng, title}) => `<section class="balloon">
-//   <h3 class="balloon__title">${title}</h3>
-//   <p class="balloon__lat-lng">Координаты: ${lat}, ${lng}</p>
-// </section>`;
+const markerGroup = L.layerGroup().addTo(map);
 
-console.log(createCustomPopup(points[0]));
+console.log(markerGroup);
 
-points.forEach((point) => {
+const createMarker = (point) => {
   const {lat, lng} = point;
   const marker = L.marker (
     {
@@ -83,7 +78,11 @@ points.forEach((point) => {
   );
 
   marker
-    .addTo(map)
-    .bindPopup(createCustomPopup(point));   // И передадим результат  работы в createCustomPopup bindPopup(). Готово. Попробуйте кликнуть на метку.
-});
+    .addTo(markerGroup) // было .addTo(map)
+    .bindPopup(createCustomPopup(point));
+};
 
+points.forEach((point) => createMarker(point));
+
+// Затем в любой нужный момент достаточно очистить слой, чтобы удалить все метки с карты разом. Для очистки слоя нужно вызвать у него метод clearLayers().
+markerGroup.clearLayers();

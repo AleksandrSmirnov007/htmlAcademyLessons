@@ -9,8 +9,17 @@
 </head>
 <body>
   <div id="map" style="width: 640px; height: 480px;"></div>
+  <button id="next" type="button">Показать оставшиеся точки на карте и скрыть кнопку</button>
+
+  <template id="balloon">
+    <section class="balloon">
+      <h3 class="balloon__title">Остров сокровищ</h3>
+      <p class="balloon__lat-lng">Координаты: 12.34567, 98.76543</p>
+    </section>
+  </template>
 
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
   <script src="./script.js"></script>
+
 </body>
 </html>
