@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="setting.css">
+  <link rel="stylesheet" href="style.css">
+  <title>FlashNews!</title>
+</head>
+
+<body class="page light-theme">
+  <header class="page-header">
+    <div class="container">
+      <a class="header-logo">
+        <img src="img/main-logo.svg" width="67" height="29" alt="Логотип портала FlashNews!">
+      </a>
+      <a href="subscription.html" class="subscription-link">Подписка</a>
+      <button class="theme-button" type="button">Изменить тему</button>
+    </div>
+  </header>
+  <main class="index-main">
+    <div class="container">
+      <h1 class="inner-heading">Оцените новостной портал FlashNews!</h1>
+      <div class="poll">
+        <form class="review-form" action="https://echo.htmlacademy.ru/courses" method="post">
+          <fieldset>
+            <legend>Насколько вам нравятся наши новости?</legend>
+          <p class="poll-option">
+            <input class="review visually-hidden" data-evaluation="bad" type="radio" name="review" id="option1" value="Всё ужасно!">
+            <label for="option1">Всё ужасно!</label>
+          </p>
+          <p class="poll-option">
+            <input class="review visually-hidden" data-evaluation="bad" type="radio" name="review" id="option2" value="Так себе">
+            <label for="option2">Так себе</label>
+          </p>
+          <p class="poll-option">
+            <input class="review visually-hidden" data-evaluation="good" type="radio" name="review" id="option3" value="Хочу больше новостей">
+            <label for="option3">Хочу больше новостей</label>
+          </p>
+          <p class="poll-option">
+            <input class="review visually-hidden" data-evaluation="bad" type="radio" name="review" id="option4" value="Сойдёт">
+            <label for="option4">Сойдёт</label>
+          </p>
+          <p class="poll-option">
+            <input class="review visually-hidden" data-evaluation="good" type="radio" name="review" id="option5" value="Лучше не бывает!">
+            <label for="option5">Лучше не бывает!</label>
+          </p>
+          <p class="poll-option">
+            <input class="review visually-hidden" data-evaluation="good" type="radio" name="review" id="option6" value="Мой любимый сайт!">
+            <label for="option6">Мой любимый сайт!</label>
+          </p>
+          <p class="error">Произошла ошибка! Попробуйте выбрать другой вариант ;)</p>
+          <p>
+            <button class="button submit-button" type="submit">Отправить отзыв</button>
+          </p>
+        </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer">
+    <div class="container">
+      <p>© FlashNews!</p>
+      <a class="footer-logo">
+        <img src="img/white-logo.svg" alt="Логотип портала FlashNews!">
+      </a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script src="themes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+article {
+  padding: 20px;
+  border: 2px solid green;
+  margin-bottom: 20px;
+  color: white;
+  background-color: green;
+}
+
+.visually-hidden,
+.hidden {
+  display: none;
+}
+
+.subscription-link {
+  position: relative;
+  padding-top: 8px;
+  padding-right: 2px;
+  padding-bottom: 6px;
+  padding-left: 26px;
+  margin: auto 4%;
+}
+
+.subscription-link::before {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 12px;
+  top: 9px;
+  left: 2px;
+}
+
+.subscription-link:hover {
+  padding-bottom: 4px;
+  border-bottom: 2px solid;
+}
+
+.subscription-link:active {
+  opacity: 0.6;
+}
+
+.light-theme .subscription-link {
+  color: #6653d9;
+  outline-color: #b6aaff;
+}
+
+.light-theme .subscription-link:hover {
+  border-color: #6653d9;
+}
+
+.light-theme .subscription-link::before {
+  background-image: url("img/letter-light.svg");
+}
+
+.dark-theme .subscription-link {
+  color: #9484f2;
+  outline-color: #6653d9;
+}
+
+.dark-theme .subscription-link:hover {
+  border-color: #9484f2;
+}
+
+.dark-theme .subscription-link::before {
+  background-image: url("img/letter-dark.svg");
+}
+
+.up-button {
+  position: fixed;
+  z-index: 1;
+  padding: 0;
+  bottom: 75px;
+  right: calc(50% - 332px);
+  width: 64px;
+  height: 64px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  border: 5px solid;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+.light-theme .up-button {
+  color: #6653d9;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: #6653d9;
+  outline-color: #b6aaff;
+}
+
+.light-theme .up-button:hover {
+  color: #473c8d;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: #473c8d;
+}
+
+.dark-theme .up-button {
+  color: #9484f2;
+  background-color: rgba(10, 9, 16, 0.6);
+  border-color: #9484f2;
+  outline-color: #6653d9;
+}
+
+.dark-theme .up-button:hover {
+  color: #6653d9;
+  background-color: rgba(10, 9, 16, 0.6);
+  border-color: #6653d9;
+}
+
+.shown {
+  display: inline-block;
+}
+
+/* Стили фильтра */
+.filter {
+  display: flex;
+  padding: 7px 22px 7px 12px;
+  box-sizing: border-box;
+  margin: 0 0 0 auto;
+  font-size: inherit;
+  border: none;
+  border-radius: 2px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat, repeat;
+  background-position: right 8px top 50%;
+  background-size: 8px auto;
+}
+
+.filter::-ms-expand {
+  display: none;
+}
+
+.filter:focus {
+  outline-offset: 0;
+}
+
+.light-theme .filter {
+  color: #ffffff;
+  background-color: #6653d9;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.light-theme .filter:hover {
+  background-color: #473c8d;
+}
+
+.light-theme .filter:focus {
+  outline-color: #b6aaff;
+}
+
+.dark-theme .filter {
+  color: #17161a;
+  background-color: #9484f2;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2317161a%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.dark-theme .filter:hover {
+  background-color: #6653d9;
+}
+
+.dark-theme .filter:focus {
+  outline-color: #6653d9;
+}
+
+/* Стилизация новостных тегов */
+.news-tag {
+  padding: 4px 8px;
+  margin: 0 auto 0 0;
+  border-radius: 12px;
+}
+
+.list-tiles-view .news-tag {
+  margin-bottom: 4px;
+}
+
+.light-theme .news-tag {
+  color: #aaaaaa;
+  background-color: #f2f2f2;
+}
+
+.dark-theme .news-tag {
+  color: #888888;
+  background-color: #0a0910;
+}
+
+/* Выделение карточек новостей */
+.news-block.highlight {
+  padding-top: 6px;
+  padding-right: 6px;
+  padding-bottom: 10px;
+  padding-left: 6px;
+  border: 6px solid;
+}
+
+.light-theme .news-block.highlight {
+  border-color: #ff9900;
+}
+
+.dark-theme .news-block.highlight {
+  border-color: #e58a00;
+}
+
+.list-tiles-view .highlight img {
+  width: calc(100% + 12px);
+  top: -6px;
+  left: -6px;
+  height: 140px;
+}

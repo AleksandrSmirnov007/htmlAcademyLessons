@@ -1,11 +1,13 @@
 const bigPicture = document.querySelector('.big-picture');
-const commentList = document.querySelector('.social__comments');
+const commentCount = bigPicture.querySelector('.social__comment-count');
+const commentList = bigPicture.querySelector('.social__comments');
+const commentsLoader = bigPicture.querySelector('.comments-loader');
 const body = document.querySelector('body');
-const commentCount = document.querySelector('.social__comment-count');
-const commentsLoader = document.querySelector('.social__comments-loader');
-const cancelButton = document.querySelector('.big-picture__cancel');
-const MIN_LOADING_COMMENTS = 5;
-let countLoadedComment = MIN_LOADING_COMMENTS;
+const cancelButton = bigPicture.querySelector('.big-picture__cancel');
+
+const COMMENTS_PER_PORTION = 5;
+let commentsShown = 0;
+let comments =[]; // в учебном проекте вынесли в глобальную переменную массив коментариев, а я заводил его через параметры comments и вызывал функцию renderComments(data.comments)
 
 const createComment = ({avatar, name, message}) => {
   const comment = document.createElement('li');
@@ -19,55 +21,41 @@ const createComment = ({avatar, name, message}) => {
   return comment;
 };
 
-const loadComments = () => {
-  const count = Number(bigPicture.querySelector('.comments-count').textContent); // берем количество из html, проблема в том когда комментарии заканчивабтся, но цикл все равно пытается найти эленты до кратного числа загрузки - а их нет
-  const start = countLoadedComment;
-  let end = countLoadedComment + MIN_LOADING_COMMENTS;
+const renderComments = () => {
 
-  if (end > count) {
-    end = count;
-  }
+  commentsShown += COMMENTS_PER_PORTION;
 
-  for (let i = start; i < end; i++ ){
-    commentList.children[i].classList.remove('hidden');
-    commentCount.querySelector('.comments-count-loaded').textContent = `${end} из`;
-  }
-
-  if(end === count) {
+  if (commentsShown >= comments.length) {
     commentsLoader.classList.add('hidden');
-    countLoadedComment = MIN_LOADING_COMMENTS;
+    commentsShown = comments.length;
+  } else {
+    commentsLoader.classList.remove('hidden');
   }
 
-  countLoadedComment += MIN_LOADING_COMMENTS;
+  const fragment = document.createDocumentFragment();
+
+  // метод forEach перебирает все комментарии и подошелбы если бы нам надо было отображать их все, но если комментариев много нам надо отражать определенную часть и нет смысла  полностью проходиться по всему массиву. Когщда я делал я создал на странице все элементы коментариев и те которые не должны отображаться я добавлял класс hidden.  а потомо при клике на кнопку показать болше кбирал у следующей группы класс хидден. Все таки это моя ошибка
+  for (let i = 0; i < commentsShown; i++) {
+    const commentElement = createComment(comments[i]);
+    fragment.append(commentElement);
+  };
+
+  commentList.innerHTML = '';
+  commentList.append(fragment);
+  commentCount.innerHTML = `${commentsShown} из <span class="comments-count">${comments.length}</span> комментариев`;
 };
 
-const commentsLoaderClick = () =>
-  commentsLoader.addEventListener('click', loadComments);
 
-// в параметр comments переадется массив из обьектов коментариев
-const renderComments = (comments) => {
-  commentList.innerHTML = '';
-  const fragment = document.createDocumentFragment();
-// сдесь массив раскидыыается по элементам
-  comments.forEach((comment) => {
-    const commentElement = createComment(comment);
-    if(fragment.children.length >= MIN_LOADING_COMMENTS){
-      commentElement.classList.add('hidden');
-    };
-    fragment.append(commentElement);
-  });
+const onCommentsLoaderClick = () => renderComments();
 
-  commentList.appendChild(fragment);
-}
 
 const hideBigPicture = () => {
   bigPicture.classList.add('hidden');
   body.classList.remove('modal-open');
   document.removeEventListener('keydown', onEscKeyDown);
-  commentCount.classList.remove('hidden');
-  commentsLoader.classList.remove('hidden');
-  countLoadedComment = MIN_LOADING_COMMENTS;
-  commentCount.querySelector('.comments-count-loaded').textContent = `${MIN_LOADING_COMMENTS} из`;
+  console.log(commentsShown);
+  commentsShown = 0;
+  console.log(commentsShown);
 };
 
 function onEscKeyDown(evt) {
@@ -88,29 +76,19 @@ const renderPictureDetails = ({url, likes, description}) => {
   bigPicture.querySelector('.social__caption').textContent = description;
 };
 
-const addCounterComments = (comments) => {
-  if(comments.length <= MIN_LOADING_COMMENTS) {
-    commentCount.classList.add('hidden');
-    commentsLoader.classList.add('hidden');
-  }
-  commentCount.querySelector('.comments-count').innerHTML = comments.length;
-};
-
-
-
 const showBigPicture = (data) => {
   bigPicture.classList.remove('hidden');
   body.classList.add('modal-open');
-
-  addCounterComments(data.comments);
-  commentsLoaderClick();
-
+  commentsLoader.classList.add('hidden');
   document.addEventListener('keydown', onEscKeyDown);
-
   renderPictureDetails(data);
-  renderComments(data.comments)
+  comments = data.comments;
+  if (comments.length > 0) {
+    renderComments();
+  }
 };
 
 cancelButton.addEventListener ('click', onCancelButtonClick);
+commentsLoader.addEventListener('click', onCommentsLoaderClick);
 
 export {showBigPicture};

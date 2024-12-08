@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./style.css">
+  <title>FlashNews!</title>
+</head>
+
+<body class="page light-theme">
+  <header class="page-header">
+    <div class="container">
+      <a class="header-logo">
+        <img src="img/main-logo.svg" width="67" height="29" alt="Логотип портала FlashNews!">
+      </a>
+      <a href="subscription.html" class="subscription-link">Подписка</a>
+      <button class="theme-button" type="button">Изменить тему</button>
+    </div>
+  </header>
+
+  <main class="index-main">
+    <div class="container">
+      <h1 class="visually-hidden">Новостной портал FlashNews!</h1>
+      <div class="news-view">
+        <button class="row-view view-checked" type="button">Список</button>
+        <button class="tile-view" type="button">Плитка</button>
+        <select class="filter" name="news-filter">
+          <option value="IT">IT</option>
+          <option value="cats">Котики</option>
+          <option value="games">Игры</option>
+          <option value="HR">HR</option>
+          <option value="all" selected>Все новости</option>
+        </select>
+      </div>
+      <section class="news-list">
+        <h2 class="visually-hidden">Все новости</h2>
+        <article class="news-block" data-category="cats">
+          <img src="img/news-cat.jpg" alt="Глаза кота">
+          <div class="news-block-text">
+            <h3>Уникальное видео!</h3>
+            <p>Взгляни на мир глазами кота! Твоя жизнь уже никогда не будет прежней…</p>
+            <span class="news-tag">#Котики</span>
+            <time datetime="2020-03-24">24 марта 2020</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="HR">
+          <img src="img/walk.jpg" alt="Люди гуляют">
+          <div class="news-block-text">
+            <h3>Гулять может быть полезно</h3>
+            <p>А может и не быть, если гулять не с теми людьми…</p>
+            <span class="news-tag">#HR</span>
+            <time datetime="2020-03-19">19 февраля 2020</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="games">
+          <img src="img/ar.jpg" alt="Человек в очках виртуальной реальности">
+          <div class="news-block-text">
+            <h3>Дополни свою реальность</h3>
+            <p>Редакция Flashnews! подготовила подарок для своих подписчиков…</p>
+            <span class="news-tag">#Игры</span>
+            <time datetime="2020-02-18">18 февраля 2020</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="IT">
+          <img src="img/drone.jpg" alt="Маленький дрон">
+          <div class="news-block-text">
+            <h3>Дроновирус</h3>
+            <p>Конструкторы лаборатории DogDrones.inc заверили, что их дроны не могут быть переносчиками опасных
+              вирусов…</p>
+            <span class="news-tag">#IT</span>
+            <time datetime="2019-12-22">22 декабря 2019</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="HR">
+          <img src="img/new-research.jpg" alt="Человек смотрит на доску с карточками">
+          <div class="news-block-text">
+            <h3>Из мира психологии</h3>
+            <p>Исследования показывают, что если делать больше, то можно сделать больше.</p>
+            <span class="news-tag">#HR</span>
+            <time datetime="2019-10-12">12 октября 2019</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="games">
+          <img src="img/new-drone.jpg" alt="Квадрокоптер">
+          <div class="news-block-text">
+            <h3>Квадрокоптер — это не роскошь</h3>
+            <p>Управляя квадрокоптером, можно развить ловкость, пространственное мышление и умение лазать по деревьям…
+            </p>
+            <span class="news-tag">#Игры</span>
+            <time datetime="2019-11-21">21 ноября 2019</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="IT">
+          <img src="img/new-loop.jpg" alt="Бесконечные циклы">
+          <div class="news-block-text">
+            <h3>Бесконечные циклы: пора завязывать с этим</h3>
+            <p>Британские учёные выяснили, что работа ПО напрямую зависит от наличия в нём бесконечных циклов.</p>
+            <span class="news-tag">#IT</span>
+            <time datetime="2019-10-16">16 октября 2019</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="cats">
+          <img src="img/news-robot2.jpg" alt="Робот на курорте">
+          <div class="news-block-text">
+            <h3>Шок! Скандал! Сенсация!</h3>
+            <p>Оказывается, для того, чтобы начать программировать на JavaScript, необязательно быть котом!</p>
+            <span class="news-tag">#Котики</span>
+            <time datetime="2019-12-22">22 декабря 2019</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="IT">
+          <img src="img/new-graph.jpg" alt="Новая библиотека">
+          <div class="news-block-text">
+            <h3>Новая библиотека для создания графиков</h3>
+            <p>Теперь вы можете создать дашборд за считанные секунды.</p>
+            <span class="news-tag">#IT</span>
+            <time datetime="2019-10-14">14 октября 2019</time>
+          </div>
+        </article>
+        <article class="news-block" data-category="cats">
+          <img src="img/new-cat.jpg" alt="Кот на ноутбуке">
+          <div class="news-block-text">
+            <h3>ШОК! Секретные кадры из кошачьего питомника</h3>
+            <p>Никто не ожидал, что за стенами происходит ТАКОЕ…</p>
+            <span class="news-tag">#Котики</span>
+            <time datetime="2019-10-13">13 октября 2019</time>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+  <footer class="page-footer">
+    <div class="container">
+      <p>© FlashNews!</p>
+      <a class="footer-logo">
+        <img src="img/white-logo.svg" alt="Логотип портала FlashNews!">
+      </a>
+    </div>
+  </footer>
+  <button class="up-button" type="button">
+    ↑
+    <span class="visually-hidden">Наверх</span>
+  </button>
+  <script src="./script.js"></script>
+  <script src="./themes.js"></script>
+  <script src="./up-button.js"></script>
+  <script src="./filter.js"></script>
+</body>
+
+</html>

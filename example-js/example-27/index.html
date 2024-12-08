@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <form>
+    <fieldset>
+      <legend>Товары для котиков</legend>
+      <ul>
+        <li>
+          <label>
+            <input type="radio" name="toy_type" value="Дразнилки" checked>
+            Дразнилки
+          </label>
+        </li>
+        <li class="discount-100">
+          <label>
+            <input type="radio" name="toy_type" value="Шуршалки">
+            Шуршалки
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="toy_type" value="Пищалки">
+            Пищалки
+          </label>
+        </li>
+        <li class="discount-100">
+          <label>
+            <input type="radio" name="toy_type" value="Мышки">
+            Мышки
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="toy_type" value="Мячики">
+            Мячики
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+    <p>
+      <label>
+        <input type="checkbox" name="only_available" value="Только в наличии">
+        Только в наличии
+      </label>
+    </p>
+  </form>
+
+  <h3>
+    Показаны товары из категории «<span id="selected-category">Дразнилки</span>»
+  </h3>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
