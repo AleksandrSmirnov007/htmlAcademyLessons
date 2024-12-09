@@ -1,0 +1,42 @@
+body {
+  display: grid;
+  place-content: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+input {
+  font: inherit;
+}
+
+.level-form {
+  max-width: 300px;
+  padding: 30px 30px;
+  background-color: #f1ede0;
+}
+
+.level-form__field {
+  margin-top: 25px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.level-form__label {
+  margin-right: 5px;
+}
+
+.level-form__value {
+  padding: 5px 10px;
+  width: 80px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgba(255,255,255,0.75);
+}
+
+.level-form__value:focus {
+  border-color: #3fb8af;
+  background-color: rgba(255,255,255,1);
+}
