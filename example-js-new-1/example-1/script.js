@@ -35,7 +35,7 @@ noUiSlider.create(sliderElement, {
   format: {
     to: function (value) {
       if (Number.isInteger(value)) {
-        return value.toFixed(0);
+        return value.toFixed(0); // если нужен вывод к примеру в процентах то можно использовать шаблонную строку return `${value.toFixed(0)} %`;
       } else{
       return value.toFixed(1);
       }
