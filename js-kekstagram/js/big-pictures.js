@@ -53,9 +53,7 @@ const hideBigPicture = () => {
   bigPicture.classList.add('hidden');
   body.classList.remove('modal-open');
   document.removeEventListener('keydown', onEscKeyDown);
-  console.log(commentsShown);
   commentsShown = 0;
-  console.log(commentsShown);
 };
 
 function onEscKeyDown(evt) {

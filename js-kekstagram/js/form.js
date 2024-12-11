@@ -1,4 +1,6 @@
 console.log('form.js is working');
+import './upload-scale.js';
+import './upload-slider.js';
 
 const form = document.querySelector('.img-upload__form');
 const overlay = form.querySelector('.img-upload__overlay');
@@ -42,6 +44,8 @@ const showModal = () => {
   body.classList.add('modal-open');
   document.addEventListener('keydown', onEscKeyDownForm);
 }
+
+showModal(); // сделано для отладки что бы форма была всегда открытая
 
 const addSubmitDisabled = () => {
   const submit = form.querySelector("input[type=submit], button[type=submit]");
