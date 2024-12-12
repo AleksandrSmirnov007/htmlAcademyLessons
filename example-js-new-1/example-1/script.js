@@ -14,7 +14,6 @@
 /* global noUiSlider:readonly */
 
 const sliderElement = document.querySelector('.level-form__slider');
-
 const valueElement = document.querySelector('.level-form__value');
 // Начальное значение в поле ввода нужно будет записать самостоятельно. //   непонятно зачем ведь метод valueElement.value = sliderElement.noUiSlider.get(); возвращает значение сразу и даже если будет присвоено другое зщансчение изначально, метод его исправит
 valueElement.value = 80;

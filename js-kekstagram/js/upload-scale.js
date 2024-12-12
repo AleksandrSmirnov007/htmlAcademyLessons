@@ -10,8 +10,6 @@ const SCALE_STEP = 25;
 const SCALE_MIN = 25;
 const SCALE_MAX = 100;
 
-console.log(scaleControlValue.value.substring(0, scaleControlValue.value.length - 1));
-
 const cutPercentToNumber = (value) => Number(value.slice(0, value.length - 1)); // отделяем проценты (один символ в конце строки) и оставляем только число
 
 const onClickSmiller = () => {

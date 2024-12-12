@@ -8,9 +8,9 @@ console.log('upload-slider is working');
 
 const FILTERS = [
   {
-    name: none,
+    name: 'none',
     min: 0,
-    max: 100,
+    max: 1,
     step: 1,
   },
 
@@ -20,6 +20,7 @@ const FILTERS = [
     min: 0,
     max: 1,
     step: 0.1,
+    start: 1,
     unit: '',
   },
 
@@ -29,6 +30,7 @@ const FILTERS = [
     min: 0,
     max: 1,
     step: 0.1,
+    start: 1,
     unit: '',
   },
 
@@ -38,6 +40,7 @@ const FILTERS = [
     min: 0,
     max: 100,
     step: 1,
+    start: 100,
     unit: '%',
   },
 
@@ -47,6 +50,7 @@ const FILTERS = [
     min: 0,
     max: 3,
     step: 0.1,
+    start: 3,
     unit: 'px',
   },
 
@@ -56,38 +60,87 @@ const FILTERS = [
     min: 0,
     max: 3,
     step: 0.1,
+    start: 3,
     unit: '',
   },
 ];
 
+const FILTERS_INDEX_MAP = [
+  'none', 'chrome', 'sepia', 'marvin', 'phobos', 'heat',
+];
 
+
+const imgUploadPreview = document.querySelector('.img-upload__preview').querySelector('img');
 const effectLevelFieldset = document.querySelector('.effect-level');
 const sliderElement = effectLevelFieldset.querySelector('.effect-level__slider');
 const valueElement = effectLevelFieldset.querySelector('.effect-level__value');
+const effectList = document.querySelector('.effects__list');
+console.log(effectList);
 
 // Для разработки открытие скрытого поля
 valueElement.style.display = 'inline-block';
 valueElement.style.color = 'black';
 ////////////
 
-
 const effectsList = document.querySelector('.effects__list');
 
 noUiSlider.create(sliderElement, {
   range: {
     min: 0,
-    max: 100,
+    max: 1,
   },
   step: 1,
-  start: 80,
+  start: 1,
   connect: 'lower',
+  format: {
+    to: function (value) {
+      if (Number.isInteger(value)) {
+        return value.toFixed(0); // если нужен вывод к примеру в процентах то можно использовать шаблонную строку return `${value.toFixed(0)} %`;
+      } else{
+      return value.toFixed(1);
+      }
+    },
+    from: function (value) {
+      return parseFloat(value);
+    },
+  },
 });
-
 
 
 sliderElement.noUiSlider.on('update', () => {
   valueElement.value = sliderElement.noUiSlider.get();
 });
+
+const findFilterIndex = (filter) => {
+  for (let i = 0;  i < FILTERS_INDEX_MAP.length; i++) {
+    if (FILTERS_INDEX_MAP[i] === filter) {
+      console.log(`индекс фильра: ${i}`);
+      return i;
+    }
+  }
+}
+
+effectList.addEventListener('change', (evt) => {
+  const id = evt.target.id;
+  const filter = id.substring(7); // обрезаем первые семь символовот id и получаем чистое название эффекта
+  console.log(filter);
+  imgUploadPreview.className = ''; // присваиваем имени класса пустую строку тем самым удаляем все классы
+  imgUploadPreview.classList.add(`effects__preview--${filter}`); // добавляем неоходимый класс методом составления шаблонной строки и добавляя имя фильра
+
+  const filterIndex = findFilterIndex(filter);
+
+  sliderElement.noUiSlider.updateOptions({
+    range: {
+      min: FILTERS[filterIndex].min,
+      max: FILTERS[filterIndex].max,
+    },
+    step: FILTERS[filterIndex].step,
+    start: FILTERS[filterIndex].start,
+  }
+  );
+});
+
+
 
 // sliderElement.noUiSlider.on('update', () => {
 //   valueElement.value = sliderElement.noUiSlider.get();
