@@ -9,9 +9,11 @@ console.log('upload-slider is working');
 const FILTERS = [
   {
     name: 'none',
+    style: 'none',
     min: 0,
     max: 1,
     step: 1,
+    unit: '',
   },
 
   {
@@ -69,18 +71,21 @@ const FILTERS_INDEX_MAP = [
   'none', 'chrome', 'sepia', 'marvin', 'phobos', 'heat',
 ];
 
-
 const imgUploadPreview = document.querySelector('.img-upload__preview').querySelector('img');
 const effectLevelFieldset = document.querySelector('.effect-level');
 const sliderElement = effectLevelFieldset.querySelector('.effect-level__slider');
 const valueElement = effectLevelFieldset.querySelector('.effect-level__value');
 const effectList = document.querySelector('.effects__list');
-console.log(effectList);
+
+let CURRENT_FILTER = 'none';
+let filterIndex = 0;
 
 // Для разработки открытие скрытого поля
 valueElement.style.display = 'inline-block';
 valueElement.style.color = 'black';
 ////////////
+
+effectLevelFieldset.classList.add('hidden');
 
 const effectsList = document.querySelector('.effects__list');
 
@@ -108,7 +113,20 @@ noUiSlider.create(sliderElement, {
 
 
 sliderElement.noUiSlider.on('update', () => {
+
   valueElement.value = sliderElement.noUiSlider.get();
+  const unit =  FILTERS[filterIndex].unit;
+  let filterCssValue = `${FILTERS[filterIndex].style}(${valueElement.value}${unit})`;
+
+  console.log(`Данные поля: ${valueElement.value}`);
+
+  console.log(`единица измерения: ${unit}`);
+
+  console.log(`текушие значения переменных: ${filterCssValue}`);
+  imgUploadPreview.style.filter = filterCssValue;
+  const style = window.getComputedStyle(imgUploadPreview);
+  const filter = style.getPropertyValue('filter');
+console.log(`Возвращенные данные от CSS filter: ${filter}`);
 });
 
 const findFilterIndex = (filter) => {
@@ -121,13 +139,19 @@ const findFilterIndex = (filter) => {
 }
 
 effectList.addEventListener('change', (evt) => {
-  const id = evt.target.id;
-  const filter = id.substring(7); // обрезаем первые семь символовот id и получаем чистое название эффекта
-  console.log(filter);
-  imgUploadPreview.className = ''; // присваиваем имени класса пустую строку тем самым удаляем все классы
-  imgUploadPreview.classList.add(`effects__preview--${filter}`); // добавляем неоходимый класс методом составления шаблонной строки и добавляя имя фильра
 
-  const filterIndex = findFilterIndex(filter);
+  CURRENT_FILTER = evt.target.value;  // забираем содержимое value от input type='radio' на который кликнули
+
+  if(CURRENT_FILTER === 'none'){
+    effectLevelFieldset.classList.add('hidden');
+  } else {
+    effectLevelFieldset.classList.remove('hidden');
+  }
+  console.log(CURRENT_FILTER);
+  imgUploadPreview.className = ''; // присваиваем имени класса пустую строку тем самым удаляем все классы если и был уже присвоен клас другого эффекта он удалится
+  imgUploadPreview.classList.add(`effects__preview--${CURRENT_FILTER}`); // добавляем неоходимый класс методом составления шаблонной строки и добавляя имя фильра
+
+  filterIndex = findFilterIndex(CURRENT_FILTER);
 
   sliderElement.noUiSlider.updateOptions({
     range: {
