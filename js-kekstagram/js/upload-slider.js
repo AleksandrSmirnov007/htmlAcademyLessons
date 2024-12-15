@@ -117,7 +117,6 @@ sliderElement.noUiSlider.on('update', () => {
   valueElement.value = sliderElement.noUiSlider.get();
   const unit =  FILTERS[filterIndex].unit;
   let filterCssValue = `${FILTERS[filterIndex].style}(${valueElement.value}${unit})`;
-
   console.log(`Данные поля: ${valueElement.value}`);
 
   console.log(`единица измерения: ${unit}`);
