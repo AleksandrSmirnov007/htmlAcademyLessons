@@ -547,6 +547,9 @@ main {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+/* корректиовка стилей */
+  padding: 0.5em 1.5em 0.5em;
+
 }
 
 .effect-level__value {

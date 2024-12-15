@@ -81,8 +81,8 @@ let CURRENT_FILTER = 'none';
 let filterIndex = 0;
 
 // Для разработки открытие скрытого поля
-valueElement.style.display = 'inline-block';
-valueElement.style.color = 'black';
+// valueElement.style.display = 'inline-block';
+// valueElement.style.color = 'black';
 ////////////
 
 effectLevelFieldset.classList.add('hidden');
@@ -112,26 +112,37 @@ noUiSlider.create(sliderElement, {
 });
 
 
-sliderElement.noUiSlider.on('update', () => {
+// 'элемент бегунка слайдера появляется только после создания библиотекой слайдера
+const noUiHandle = document.querySelector('.noUi-handle');
 
+console.log(noUiHandle);
+
+sliderElement.noUiSlider.on('update', () => {
+// модификаторы классов для ползунка в css = = = =   .noUi-handle--min для сгругления левой части,  noUi-handle--max для скругления правой части
   valueElement.value = sliderElement.noUiSlider.get();
+  if (valueElement.value == FILTERS[filterIndex].min) {
+    noUiHandle.classList.add('noUi-handle--min');
+  } else {
+    noUiHandle.classList.remove('noUi-handle--min');
+  }
+
+  if (valueElement.value == FILTERS[filterIndex].max) {
+    noUiHandle.classList.add('noUi-handle--max');
+  } else {
+    noUiHandle.classList.remove('noUi-handle--max');
+  }
+
   const unit =  FILTERS[filterIndex].unit;
   let filterCssValue = `${FILTERS[filterIndex].style}(${valueElement.value}${unit})`;
-  console.log(`Данные поля: ${valueElement.value}`);
-
-  console.log(`единица измерения: ${unit}`);
-
-  console.log(`текушие значения переменных: ${filterCssValue}`);
   imgUploadPreview.style.filter = filterCssValue;
   const style = window.getComputedStyle(imgUploadPreview);
   const filter = style.getPropertyValue('filter');
-console.log(`Возвращенные данные от CSS filter: ${filter}`);
+
 });
 
 const findFilterIndex = (filter) => {
   for (let i = 0;  i < FILTERS_INDEX_MAP.length; i++) {
     if (FILTERS_INDEX_MAP[i] === filter) {
-      console.log(`индекс фильра: ${i}`);
       return i;
     }
   }
@@ -146,7 +157,6 @@ effectList.addEventListener('change', (evt) => {
   } else {
     effectLevelFieldset.classList.remove('hidden');
   }
-  console.log(CURRENT_FILTER);
   imgUploadPreview.className = ''; // присваиваем имени класса пустую строку тем самым удаляем все классы если и был уже присвоен клас другого эффекта он удалится
   imgUploadPreview.classList.add(`effects__preview--${CURRENT_FILTER}`); // добавляем неоходимый класс методом составления шаблонной строки и добавляя имя фильра
 
