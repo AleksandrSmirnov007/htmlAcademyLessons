@@ -1,6 +1,6 @@
 console.log('form.js is working');
-import './upload-scale.js';
-import './upload-slider.js';
+import { resetScale } from './scale.js';
+import { resetSlider} from './upload-slider.js';
 
 const form = document.querySelector('.img-upload__form');
 const overlay = form.querySelector('.img-upload__overlay');
@@ -45,14 +45,14 @@ const showModal = () => {
   document.addEventListener('keydown', onEscKeyDownForm);
 }
 
-showModal(); // сделано для отладки что бы форма была всегда открытая
-
 const addSubmitDisabled = () => {
   const submit = form.querySelector("input[type=submit], button[type=submit]");
   submit.disabled = true;
 }
 
 const hideModal = () => {
+  resetScale();
+  resetSlider();
   form.reset(); // в архиве проекта применен такой метод reset() к форме видимо его можно так применять; // Нужно обратить внимание, что при закрытии формы дополнительно необходимо сбрасывать значение поля выбора файла #upload-file. В принципе, всё будет работать, если при повторной попытке загрузить в поле другую фотографию. Но! Событие change не сработает, если пользователь попробует загрузить ту же фотографию, а значит окно с формой не отобразится, что будет нарушением техзадания. Значение других полей формы также нужно сбрасывать.
   pristine.reset();  // в архиве проекта применен такой метод reset() к библиотеке? видимо его можно так применять;
   overlay.classList.add('hidden');

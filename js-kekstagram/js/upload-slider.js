@@ -71,7 +71,7 @@ const FILTERS_INDEX_MAP = [
   'none', 'chrome', 'sepia', 'marvin', 'phobos', 'heat',
 ];
 
-const imgUploadPreview = document.querySelector('.img-upload__preview').querySelector('img');
+const imgUploadPreview = document.querySelector('.img-upload__preview img');
 const effectLevelFieldset = document.querySelector('.effect-level');
 const sliderElement = effectLevelFieldset.querySelector('.effect-level__slider');
 const valueElement = effectLevelFieldset.querySelector('.effect-level__value');
@@ -154,6 +154,7 @@ effectList.addEventListener('change', (evt) => {
 
   if(CURRENT_FILTER === 'none'){
     effectLevelFieldset.classList.add('hidden');
+    imgUploadPreview.style.filter = 'none';
   } else {
     effectLevelFieldset.classList.remove('hidden');
   }
@@ -173,14 +174,12 @@ effectList.addEventListener('change', (evt) => {
   );
 });
 
+const resetSlider = () => {
+  imgUploadPreview.className = '';
+  imgUploadPreview.style.filter = 'none';
+};
 
-
-// sliderElement.noUiSlider.on('update', () => {
-//   valueElement.value = sliderElement.noUiSlider.get();
-// });
-
-
-
+export {resetSlider};
 
 
 
