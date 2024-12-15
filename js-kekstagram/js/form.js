@@ -1,6 +1,6 @@
 console.log('form.js is working');
 import { resetScale } from './scale.js';
-import { resetSlider} from './upload-slider.js';
+import { resetSlider } from './slider.js';
 
 const form = document.querySelector('.img-upload__form');
 const overlay = form.querySelector('.img-upload__overlay');

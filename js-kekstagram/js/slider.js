@@ -18,8 +18,8 @@ const effectLevel = document.querySelector('.effect-level__value');
 const form = document.querySelector('.img-upload__form');
 
 // Для разработки открытие скрытого поля
-effectLevel.style.display = 'inline-block';
-effectLevel.style.color = 'black';
+// effectLevel.style.display = 'inline-block';
+// effectLevel.style.color = 'black';
 ////////////
 
 const EFFECTS = [
