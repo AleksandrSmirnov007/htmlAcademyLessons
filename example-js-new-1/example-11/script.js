@@ -81,25 +81,85 @@
 //   });
 
 // Такие вещи и удобно обрабатывать в catch y fetch запросов.
+
+
 // Аналогично будет обработана ошибка чтения несуществующего JSON-файла.
+// заменим путь к среверу на несуществующий и метод POST на метод GET
+
+// fetch(
+//   'https://25.javascript.htmlacademy.pro/code-and-magick',
+//   {
+//     method: 'POST',
+//     credentials: 'same-origin',
+//                                   // удалили код  body: new FormData(),
+//   }
+// )
+//   .then((response) => {
+//     console.log(response.status); // выведет 400
+//     console.log(response.ok); // выведет false
+//     return response.json()
+//   })
+//   .then((data) => {
+//     console.log('Результат: ', data)
+//   })
+//   .catch ((err) => {
+//     console.error(err); // выведет: log: Unexpected end of JSON input
+//   });
 
 
-fetch(
-  'https://25.javascript.htmlacademy.pro/code-and-magick',
-  {
-    method: 'POST',
-    credentials: 'same-origin',
-                                  // удалили код  body: new FormData(),
-  }
-)
-  .then((response) => {
-    console.log(response.status); // выведет 400
-    console.log(response.ok); // выведет false
-    return response.json()
-  })
-  .then((data) => {
-    console.log('Результат: ', data)
-  })
-  .catch ((err) => {
-    console.error(err); // выведет: log: Unexpected end of JSON input
-  });
+// Таким образом на основе response.ok и catch можно построить проверки.
+
+
+// fetch(
+//   'https://25.javascript.htmlacademy.pro/code-and-magick',
+//   {
+//     method: 'POST',
+//     credentials: 'same-origin',
+//                                   // удалили код  body: new FormData(),
+//   }
+// )
+//   .then((response) => {
+//     if (response.ok) {
+//       return response.json();
+//     }
+
+//     throw new Error(`${response.status} ${response.statusText}`);
+//   })
+//   .then((data) => {
+//     console.log('Результат: ', data)
+//   })
+//   .catch ((err) => {
+//     console.error(err); // выведет: log: 500
+//   });
+
+
+// Дальше только дело техники — превратить fetch в модуль, чтобы можно было передавать ему свои колбэки.
+
+
+
+// const createLoader = (onSuccess, onError) => () => {
+//   return fetch(
+//     'https://25.javascript.htmlacademy.pro/code-and-magick/data',
+//     {
+//       method: 'GET',
+//       credentials: 'same-origin',
+//     },
+//   )
+//     .then((response) => {
+//       if (response.ok) {
+//         return response.json();
+//       }
+
+//       throw new Error(`${response.status} ${response.statusText}`);
+//     })
+//     .then((data) => {
+//       console.log('код работает');
+//       onSuccess(data);
+//     })
+//     .catch((err) => {
+//       onError(err);
+//     });
+// };
+
+// export {createLoader};
+
