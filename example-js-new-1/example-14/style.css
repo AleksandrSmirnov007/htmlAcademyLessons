@@ -1,0 +1,178 @@
+/* Стилизация лонгрида */
+body {
+  max-width: 600px;
+
+  margin: 0 auto;
+}
+
+article, div {
+  padding: 20px;
+}
+.controls {
+  padding: 16px 0 6px;
+  overflow-x: hidden;
+}
+
+.controls label {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 14px;
+}
+
+.color-filters {
+  display: flex;
+  margin-right: -20px;
+}
+
+.color-filters label {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.color-filters .filter {
+  margin-top: 4px;
+}
+
+.controls .filter {
+  margin-left: 0;
+}
+
+.longread {
+  min-height: calc(100vh - 237px);
+  padding-bottom: 1em;
+  font-size: 14px;
+}
+
+.longread h1 {
+  margin: 1em 0 0.6em;
+  line-height: 1.2;
+}
+
+.longread p {
+  margin: 0 0 0.8em;
+  line-height: 1.6;
+}
+
+/* Кроссбраузерный рендж без скриптов */
+.size-setting {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 10px;
+  margin-top: 8px;
+  padding: 2px 0;
+  border-radius: 5px;
+  outline-offset: 0;
+}
+
+.size-setting::-webkit-slider-thumb {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.size-setting::-moz-range-thumb {
+  box-sizing: border-box;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.size-setting::-ms-thumb {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/* Цветовые темы */
+.page-longread.light-theme {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.light-theme .controls {
+  background-color: #eae9f2;
+}
+
+.light-theme .size-setting {
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 1px #b6aaff;
+  outline-color: #b6aaff;
+}
+
+.light-theme .size-setting::-webkit-slider-thumb {
+  background-color: #ffffff;
+  border: 5px solid #6653d9;
+}
+
+.light-theme .size-setting::-moz-range-thumb {
+  background-color: #ffffff;
+  border: 5px solid #6653d9;
+}
+
+.light-theme .size-setting::-ms-thumb {
+  background-color: #ffffff;
+  border: 5px solid #6653d9;
+}
+
+.light-theme .size-setting::-webkit-slider-thumb:active {
+  background-color: #6653d9;
+}
+
+.light-theme .size-setting::-moz-range-thumb:active {
+  background-color: #6653d9;
+}
+
+.light-theme .size-setting::-ms-thumb:active {
+  background-color: #6653d9;
+}
+
+.page-longread.dark-theme {
+  background-color: #0a0910;
+  color: #f2f2f2;
+}
+
+.dark-theme .controls {
+  background-color: #17161a;
+}
+
+.dark-theme .size-setting {
+  background-color: #0a0910;
+  box-shadow: inset 0 0 0 1px #473c8d;
+  outline-color: #6653d9;
+}
+
+.dark-theme .size-setting::-webkit-slider-thumb {
+  background-color: #0a0910;
+  border: 5px solid #9484f2;
+}
+
+.dark-theme .size-setting::-moz-range-thumb {
+  background-color: #0a0910;
+  border: 5px solid #9484f2;
+}
+
+.dark-theme .size-setting::-ms-thumb {
+  background-color: #0a0910;
+  border: 5px solid #9484f2;
+}
+
+.dark-theme .size-setting::-webkit-slider-thumb:active {
+  background-color: #9484f2;
+}
+
+.dark-theme .size-setting::-moz-range-thumb:active {
+  background-color: #9484f2;
+}
+
+.dark-theme .size-setting::-ms-thumb:active {
+  background-color: #9484f2;
+}

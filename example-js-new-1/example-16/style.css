@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: #333a48;
+}
+
+.controls {
+  margin-bottom: 24px;
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+  line-height: 22px;
+  color: #eff1f5;
+  border-bottom: 2px solid #20262d;
+  background-color: #485671;
+}
+
+.container {
+  width: 326px;
+  height: 66px;
+  margin: 0 auto;
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chosen-color {
+  display: flex;
+  padding: 8px 36px 8px 12px;
+  font: inherit;
+  color: inherit;
+  border: 2px solid #20262d;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 8px top 50%;
+  background-size: 14px auto;
+  background-color: #485671;
+  background-image: url("img/pixel-arrow-down.svg");
+}
+
+.chosen-color::-ms-expand {
+  display: none;
+}
+
+.chosen-color:focus {
+  outline: 2px dashed #6e86b3;
+  outline-offset: 2px;
+}
+
+.chosen-color:hover {
+  background-color: #304153;
+}
+
+.eraser-label {
+  position: relative;
+  padding: 8px 0 8px 40px;
+  cursor: pointer;
+}
+
+.eraser-label::before {
+  position: absolute;
+  content: "";
+  left: 6px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #20262d;
+}
+
+.eraser:checked + .eraser-label::before {
+  background-color: #20262d;
+  background-image: url("img/pixel-check.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.eraser:focus + .eraser-label::before {
+  outline: 2px dashed #6e86b3;
+  outline-offset: 2px;
+}
+
+.eraser-label:hover::before {
+  background-color: #304153;
+}
+
+.eraser-label:active::before {
+  background-color: #20262d;
+  border-color: #485671;
+}
+
+.eraser-label::after {
+  position: absolute;
+  content: "";
+  left: 6px;
+  top: 6px;
+  width: 24px;
+  height: 24px;
+  background: url("img/cut-corners.svg");
+  background-repeat: no-repeat;
+}
+
+.main {
+  position: relative;
+  height: calc(100vh - 92px);
+  width: 326px;
+  margin: 0 auto;
+}
+
+.main::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: -120px;
+  width: 100px;
+  height: 105px;
+  background-image: url("img/pixel-keks.svg");
+  background-repeat: no-repeat;
+}
+
+.canvas {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid #20262d;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333a48;
+  background-color: #ffffff;
+  cursor: pointer;
+}

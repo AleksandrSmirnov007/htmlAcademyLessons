@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="setting.css">
+  <link rel="stylesheet" href="style.css">
+  <title>FlashNews! Настраиваемые стили страницы</title>
+</head>
+
+<body class="page page-longread light-theme">
+  <header class="page-header">
+    <div class="container">
+      <a class="header-logo" href="index.html">
+        <img src="img/main-logo.svg" width="67" height="29" alt="Логотип портала FlashNews!">
+      </a>
+      <a href="subscription.html" class="subscription-link">Подписка</a>
+      <button class="theme-button" type="button">Изменить тему</button>
+    </div>
+  </header>
+
+  <main class="index-main">
+    <div class="controls">
+      <div class="container">
+        <div class="color-filters">
+          <label>Цвет текста:
+            <select class="filter color-setting" name="font-color">
+              <option value="inherit" selected>По умолчанию</option>
+              <option value="black">Чёрный</option>
+              <option value="white">Белый</option>
+              <option value="ghostwhite">Светло-серый</option>
+              <option value="pink">Розовый</option>
+              <option value="darkred">Тёмно-красный</option>
+              <option value="darkorange">Оранжевый</option>
+              <option value="saddlebrown">Коричневый</option>
+              <option value="gold">Золотой</option>
+              <option value="greenyellow">Салатовый</option>
+              <option value="forestgreen">Зелёный</option>
+              <option value="aquamarine">Аквамарин</option>
+              <option value="lightskyblue">Небесно-голубой</option>
+              <option value="lightsteelblue">Серо-голубой</option>
+              <option value="darkblue">Тёмно-синий</option>
+              <option value="indigo">Индиго</option>
+              <option value="mediumpurple">Фиолетовый</option>
+              <option value="purple">Пурпурный</option>
+            </select>
+          </label>
+          <label>Цвет фона:
+            <select class="filter background-setting" name="background-color">
+              <option value="inherit" selected>По умолчанию</option>
+              <option value="black">Чёрный</option>
+              <option value="white">Белый</option>
+              <option value="ghostwhite">Светло-серый</option>
+              <option value="pink">Розовый</option>
+              <option value="darkred">Тёмно-красный</option>
+              <option value="darkorange">Оранжевый</option>
+              <option value="saddlebrown">Коричневый</option>
+              <option value="gold">Золотой</option>
+              <option value="greenyellow">Салатовый</option>
+              <option value="forestgreen">Зелёный</option>
+              <option value="aquamarine">Аквамарин</option>
+              <option value="lightskyblue">Небесно-голубой</option>
+              <option value="lightsteelblue">Серо-голубой</option>
+              <option value="darkblue">Тёмно-синий</option>
+              <option value="indigo">Индиго</option>
+              <option value="mediumpurple">Фиолетовый</option>
+              <option value="purple">Пурпурный</option>
+            </select>
+          </label>
+        </div>
+        <label>Размер текста (<output class="pixels">14</output>px)
+          <input class="size-setting" type="range" min="8" max="48" step="1" value="14">
+        </label>
+      </div>
+    </div>
+    <article class="longread">
+      <div class="container">
+        <h1>Зачем нужны алгоритмы</h1>
+        <p>Многих пугает слово алгоритм, кажется, что это что-то сложное, но на деле это просто законченный набор инструкций. Получается, что вы используете алгоритмы и в обычной жизни, например, когда готовите по рецепту, или добираетесь по навигатору из точки А в точку Б, или решаете квадратное уравнение.</p>
+
+        <p>Когда разработчики говорят об алгоритмах, они имеют в виду не все алгоритмы, а только популярные решения стандартных задач. Многие алгоритмы были придуманы ещё до компьютеров: например, алгоритм поразрядной сортировки был запатентован в девятнадцатом веке в США для обработки данных, полученных после переписи населения.</p>
+
+        <p>Для решения одной и той же задачи могут подходить разные алгоритмы. Представьте, у вас есть список, в котором нужно найти элемент. Предположим, что это список товаров в интернет-магазине и пользователь вводит в фильтр название товара, которое начинается с буквы «Е». Как это сделать?</p>
+
+        <p>Если список отсортирован по алфавиту, вам подходит двоичный поиск — вы смотрите в середину списка, находите там товар, название которого начинается, например, на «К». Список отсортирован, поэтому вы точно знаете, что нужный вам товар находится в левой от вас части списка, потому что «Е» в алфавите стоит раньше, чем «К». Теперь вы берёте левую часть списка и повторяете ту же процедуру с ней.</p>
+
+        <p>Если список не отсортирован, лучше подойдет прямой перебор — вы по порядку идёте от начала списка до его конца и пытаетесь найти тот элемент, который вас интересует. В худшем случае вам придется посмотреть все элементы, но зато вы будете заранее знать время, которое потратите на поиск нужного элемента.</p>
+
+        <p>Выбирать алгоритм нужно под задачу. Поймите, с какими данными вы работаете, и отталкивайтесь от этого.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>© FlashNews!</p>
+      <a class="footer-logo">
+        <img src="img/white-logo.svg" alt="Логотип портала FlashNews!">
+      </a>
+    </div>
+  </footer>
+  <script src="themes.js"></script>
+  <script src="read-mode.js"></script>
+</body>
+</html>

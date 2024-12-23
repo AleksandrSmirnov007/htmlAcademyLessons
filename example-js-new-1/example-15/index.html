@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="setting.css">
+  <link rel="stylesheet" href="style.css">
+  <title>FlashNews! Регистрация</title>
+</head>
+
+<body class="page light-theme">
+  <header class="page-header">
+    <div class="container">
+      <a class="header-logo">
+        <img src="img/main-logo.svg" width="67" height="29" alt="Логотип портала FlashNews!">
+      </a>
+      <a href="subscription.html" class="subscription-link">Подписка</a>
+      <button class="theme-button" type="button">Изменить тему</button>
+    </div>
+  </header>
+
+  <main class="index-main">
+    <div class="container">
+      <h1 class="inner-heading">Регистрация</h1>
+      <form class="reg-form" action="https://echo.htmlacademy.ru/courses" method="post">
+        <label class="reg-label" for="reg-name">логин</label>
+        <input class="name" type="text" value="Опознанный Енот" id="reg-name" name="reg-name" placeholder="Опознанный Енот" required>
+        <label class="reg-label" for="reg-pass">пароль</label>
+        <input class="password" type="password" id="reg-pass" name="reg-pass" placeholder="**********" required >
+        <div class="security">
+          <div class="security-bar"></div>
+        </div>
+        <input class="show-password visually-hidden" type="checkbox" id="show-pass">
+        <label class="checkbox-label" for="show-pass">Показать пароль</label>
+        <button class="button" type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>© FlashNews!</p>
+      <a class="footer-logo">
+        <img src="img/white-logo.svg" alt="Логотип портала FlashNews!">
+      </a>
+    </div>
+  </footer>
+  <script src="themes.js"></script>
+  <script src="password.js"></script>
+</body>
+
+</html>
