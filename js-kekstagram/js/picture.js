@@ -1,4 +1,4 @@
-import { getPictures } from "./data.js";
+
 import { showBigPicture } from './big-pictures.js';
 
 console.log('picture.js is working');
