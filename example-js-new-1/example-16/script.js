@@ -25,3 +25,4 @@ canvas.onclick = function (evt) {
 6. Если в момент клика ластик включён, фон нажатого «пикселя» должен стать белым — 'white'.
 
 */
+console.log(chosenColor.value);

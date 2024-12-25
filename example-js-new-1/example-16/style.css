@@ -145,8 +145,8 @@ body {
 }
 
 .pixel {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   border: 1px solid #333a48;
   background-color: #ffffff;
   cursor: pointer;

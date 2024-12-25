@@ -13,9 +13,9 @@ const getRandomArrayElement = (array) =>
   array[getRandomPostiveInteger(0, array.length -1)];
 
 
-const TIME_SHOW_ALERT = 5000;
+const TIME_SHOW_ALERT = 10000;
 
-const showAlert = (message) => {
+const showMessage = (message, bgColor) => {
   const alertContainer = document.createElement('div');
   alertContainer.style.zIndex = 100;
   alertContainer.style.position = 'absolute';
@@ -25,7 +25,7 @@ const showAlert = (message) => {
   alertContainer.style.padding = '10px 3px';
   alertContainer.style.fontSize = '30px';
   alertContainer.style.textAlign = 'center';
-  alertContainer.style.backgroundColor = 'red';
+  alertContainer.style.backgroundColor = bgColor;
 
   alertContainer.textContent = message;
   document.body.append(alertContainer);
@@ -33,8 +33,14 @@ const showAlert = (message) => {
   setTimeout (() => {
     alertContainer.remove();
   }, TIME_SHOW_ALERT);
-
 }
 
+const showAlert = (message) => {
+  showMessage(message, 'red');
+};
 
-export {getRandomPostiveInteger, checkStringLength, getRandomArrayElement, showAlert};
+const showSuccess = (message) => {
+  showMessage(message, 'green');
+}
+
+export {getRandomPostiveInteger, checkStringLength, getRandomArrayElement, showAlert, showSuccess};

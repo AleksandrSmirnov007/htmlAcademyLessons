@@ -1,5 +1,5 @@
 import {showAlert, getRandomArrayElement} from './util.js';
-
+import { sendData } from './api.js';
 const Color = {
   FIREBALLS: [
     '#ee4830',
