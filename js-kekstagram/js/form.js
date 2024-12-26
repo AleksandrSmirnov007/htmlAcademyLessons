@@ -2,6 +2,7 @@ console.log('form.js is working');
 import { resetScale } from './scale.js';
 import { resetSlider } from './slider.js';
 import { sendData } from './api.js';
+import { showAlert } from './util.js';
 
 const form = document.querySelector('.img-upload__form');
 const overlay = form.querySelector('.img-upload__overlay');
@@ -54,7 +55,10 @@ const addSubmitDisabled = () => {
 const hideModal = () => {
   resetScale();
   resetSlider();
+
+  console.log(`данные перед ресет формы:   ${commentField.value}`);
   form.reset(); // в архиве проекта применен такой метод reset() к форме видимо его можно так применять; // Нужно обратить внимание, что при закрытии формы дополнительно необходимо сбрасывать значение поля выбора файла #upload-file. В принципе, всё будет работать, если при повторной попытке загрузить в поле другую фотографию. Но! Событие change не сработает, если пользователь попробует загрузить ту же фотографию, а значит окно с формой не отобразится, что будет нарушением техзадания. Значение других полей формы также нужно сбрасывать.
+  console.log(`данные после ресет формы:   ${commentField.value}`);
   pristine.reset();  // в архиве проекта применен такой метод reset() к библиотеке? видимо его можно так применять;
   overlay.classList.add('hidden');
   body.classList.remove('modal-open');
@@ -128,8 +132,9 @@ function onFormSubmit (evt) {
     const formData = new FormData(form);
     sendData(formData);
     addSubmitDisabled(); // если использовать сдесь form.addEventListener('submit', addSubmitDisabled); то кнопка submit отключается только по второму клику по ней, так как событие на первый клик уже будет добавлено при запуске функциии showModal (функции показа формы)
+    form.reset();
   } else {
-    console.log('Форма невалидна');
+    showAlert('Неверно заполнены поля формы');
   }
 };
 

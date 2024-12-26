@@ -8,7 +8,7 @@ const getData = (onSuccess) => {
       if (response.ok) {
         return response.json();
       } else {
-        showAlert('response.ok = false, данные не пришли с сервера');
+        showAlert('Что-пошло не так. Перезагрузите страницу');
       }
     })
     .then ((pictures) => onSuccess(pictures))

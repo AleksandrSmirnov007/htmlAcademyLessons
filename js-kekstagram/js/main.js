@@ -5,7 +5,7 @@ import { renderPictures } from './picture.js';
 import './form.js';
 
 
-// renderPictures(getPictures());
+// renderPictures(getPictures()); // на случай если сервер не ответит
 getData(renderPictures);
 
 
