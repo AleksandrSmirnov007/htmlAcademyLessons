@@ -2,7 +2,7 @@ console.log('form.js is working');
 import { resetScale } from './scale.js';
 import { resetSlider } from './slider.js';
 import { sendData } from './api.js';
-import { showAlert } from './util.js';
+import {showAlert, showSuccess} from './util.js';
 
 const form = document.querySelector('.img-upload__form');
 const overlay = form.querySelector('.img-upload__overlay');
@@ -130,7 +130,7 @@ function onFormSubmit (evt) {
   if (isValid) {
     console.log('Можно отправлять данные');
     const formData = new FormData(form);
-    sendData(formData);
+    sendData(showSuccess, showAlert ,formData);
     addSubmitDisabled(); // если использовать сдесь form.addEventListener('submit', addSubmitDisabled); то кнопка submit отключается только по второму клику по ней, так как событие на первый клик уже будет добавлено при запуске функциии showModal (функции показа формы)
     form.reset();
   } else {

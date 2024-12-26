@@ -29,13 +29,13 @@ const showMessage = (message, statusColor) => {
   alertContainer.style.padding = '10px 3px';
   alertContainer.style.fontSize = '30px';
   alertContainer.style.textAlign = 'center';
-  alertContainer.style.color = 'black';
+  alertContainer.style.color = 'white';
   alertContainer.style.minHeight = '20%';
   alertContainer.style.display = 'grid';
   alertContainer.style.placeContent = 'center';
-  alertContainer.style.backgroundColor = 'white';
+  alertContainer.style.backgroundColor = '#383831';
   alertContainer.style.borderRadius = '10px';
-  alertContainer.style.border = `5px solid ${statusColor}`;
+  alertContainer.style.border = `3px solid ${statusColor}`;
 
   alertContainer.textContent = message;
   document.body.append(alertContainer);

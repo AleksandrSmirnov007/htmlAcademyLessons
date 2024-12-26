@@ -1,38 +1,40 @@
 // 4.1. Загрузка изображений от других пользователей производится сразу после открытия страницы с удалённого сервера: https://25.javascript.htmlacademy.pro/kekstagram/data.
 console.log('api.js is working');
-import {showAlert, showSuccess} from './util.js';
 
-const getData = (onSuccess) => {
-  fetch ('https://25.javascript.htmlacademy.pro/kekstagram/data')
-    .then ((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        showAlert('Что-пошло не так. Перезагрузите страницу');
-      }
-    })
-    .then ((pictures) => onSuccess(pictures))
-    .catch((error) => console.error('произошла ошибка: ' + error));
+
+const getData = async (onSuccess, onFail) => {
+  try {
+  const response = await fetch ('https://25.javascript.htmlacademy.pro/kekstagram/data');
+    if (!response.ok) {
+      throw new Error ('Не удалось загрузить фотографии');
+    }
+
+    const offers = await response.json();
+    onSuccess(offers);
+
+  } catch(error) {
+    onFail(error.message);
+  }
 }
 
 
-const sendData = (body) => {
-  fetch('https://25.javascript.htmlacademy.pro/kekstagram',
-    {
-      method: 'POST',
-      credentials: 'same-origin',
-      body: body,
-    },
-  )
-    .then((response) => {
-      if(response.ok) {
-        showSuccess('Данные отправлены успешно');
-        return response.json;
-      } else {
-        showAlert('Произошла ошибка при отправке данных')
+const sendData = async (onSuccess, onFail, body) => {
+  try {
+    const response = await fetch('https://25.javascript.htmlacademy.pro/kekstagram',
+        {
+          method: 'POST',
+          body: body, // в архиве проекта пишут на этой строке просто body,
+        },
+      );
+
+      if(!response.ok) {
+        throw new Error('Не удалось отправить форму. Попробуйте еще раз');
       }
-    })
-    .then((data) => console.log(data));
+
+      onSuccess('Данные отправлены успешно');
+  } catch (error) {
+    onFail(error.message);
+  }
 }
 export { getData, sendData };
 
