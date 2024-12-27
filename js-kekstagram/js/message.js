@@ -42,5 +42,6 @@ function onEscDown (evt) {
   }
 }
 
-showErrorMessage()
+showErrorMessage(); // доработать нет скрытия сообщения по клику на body
+
 export {showSuccessMessage, showErrorMessage};
