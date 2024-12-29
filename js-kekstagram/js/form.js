@@ -1,8 +1,6 @@
 console.log('form.js is working');
 import { resetScale } from './scale.js';
 import { resetSlider } from './slider.js';
-import { sendData } from './api.js';
-import {showAlert, showSuccess} from './util.js';
 
 const form = document.querySelector('.img-upload__form');
 const overlay = form.querySelector('.img-upload__overlay');
@@ -145,3 +143,4 @@ const setOnFormSubmit = (cb) => {
 fileField.addEventListener('change', onFileInputChange); // Я делая домашнее задание вынес добавление этого обработчика в отдельную функцию и экпортировал ее в файл main.js и вызывал ее там по сути это была единственная связка между файлами form.js и main.js и все работало, но в коде архива проекта файл form.js импортирован целиком, а добавление этого обработчика снесено в низ я сделал также
 cancelButton.addEventListener('click', onCanselButtonClick); // тоже добавлял этот обработчик в тело showModal()
 
+export {setOnFormSubmit, hideModal};
