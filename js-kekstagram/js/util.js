@@ -13,7 +13,7 @@ const getRandomArrayElement = (array) =>
   array[getRandomPostiveInteger(0, array.length -1)];
 
 
-const TIME_SHOW_ALERT = 7000;
+const TIME_SHOW_ALERT = 5000;
 
 const showMessage = (message, statusColor) => {
   const alertContainer = document.createElement('div');

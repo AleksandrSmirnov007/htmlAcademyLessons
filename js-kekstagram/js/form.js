@@ -6,12 +6,12 @@ import {showAlert, showSuccess} from './util.js';
 
 const form = document.querySelector('.img-upload__form');
 const overlay = form.querySelector('.img-upload__overlay');
-const fileField = form.querySelector('.img-upload__input');
-const cancelButton = form.querySelector('.img-upload__cancel');
 const body = document.querySelector('body');
-
+const cancelButton = form.querySelector('.img-upload__cancel');
+const fileField = form.querySelector('.img-upload__input');
 const hashtagField = form.querySelector('.text__hashtags');
 const commentField = form.querySelector('.text__description');
+const submitButton = form.querySelector('.img-upload__submit');
 
 
 const MAX_HASHTAG_COUNT = 5;
@@ -47,11 +47,6 @@ const showModal = () => {
   document.addEventListener('keydown', onEscKeyDownForm);
 }
 
-const addSubmitDisabled = () => {
-  const submit = form.querySelector("input[type=submit], button[type=submit]");
-  submit.disabled = true;
-}
-
 const hideModal = () => {
   resetScale();
   resetSlider();
@@ -62,7 +57,7 @@ const hideModal = () => {
   pristine.reset();  // в архиве проекта применен такой метод reset() к библиотеке? видимо его можно так применять;
   overlay.classList.add('hidden');
   body.classList.remove('modal-open');
-  document.removeEventListener('keydown', onEscKeyDownForm); // в архиве проекта нет  удалений обратчиков при закрытии формы я тоже убрал строчку  form.removeEventListener('submit', addSubmitDisabled);
+  document.removeEventListener('keydown', onEscKeyDownForm); // в архиве проекта нет  удалений обратчиков при закрытии формы я тоже убрал строчку  form.removeEventListener('submit', blockSubmitButton);
 }
 
 // document.activeElement это способ определить како элемент находится в фокусе в данный момент
@@ -117,31 +112,36 @@ function validateTags (value) {
 
 // Чтобы описать валидации в JavaScript, нужно вызвать метод .addValidator(). // Метод принимает несколько аргументов. Первый — элемент формы, который мы хотим валидировать. // Давайте реализуем ту же валидацию поля ввода имени питомца, но уже через JavaScript. Для этого найдём поле через .querySelector() и передадим Pristine. // Вторым аргументом в .addValidator() нужно передать функцию проверки. Можно передавать по месту, но удобнее объявить функцию выше и передать по ссылке. Назовём её validateNickname. // Функция проверки обязательно должна возвращать true или false, в зависимости от того, валидно ли поле. // Pristine будет вызывать функцию проверки каждый раз, когда потребуется провалидировать форму. Первым параметром будет передано актуальное значение поля. // Третьим аргументом нужно передать сообщение об ошибке. // Попробуйте теперь отправить форму, нажав кнопку «Заказать». // Если поле с именем пустое, или имя короче двух символов, или длиннее 50 символов — мы увидим ошибку. // добавляем валидатор к полю
 
+
+const blockSubmitButton = () => {
+  submitButton.disabled = true;
+  submitButton.textContent = 'Отправляю';
+};
+
+const unBlockSubmitButton = () => {
+  submitButton.disabled = false;
+  submitButton.textContent = 'Опубликовать';
+};
+
 pristine.addValidator(
-  form.querySelector('#hashtags'),
+  hashtagField,
   validateTags,
   'Неправильно заполнены Хештеги'
 );
 
+const setOnFormSubmit = (cb) => {
+  form.addEventListener('submit', async (evt) => {
+    evt.preventDefault();
+    const isValid = pristine.validate();
 
-function onFormSubmit (evt) {
-  evt.preventDefault();
-  const isValid = pristine.validate();
-  if (isValid) {
-    console.log('Можно отправлять данные');
-    const formData = new FormData(form);
-    sendData(showSuccess, showAlert ,formData);
-    addSubmitDisabled(); // если использовать сдесь form.addEventListener('submit', addSubmitDisabled); то кнопка submit отключается только по второму клику по ней, так как событие на первый клик уже будет добавлено при запуске функциии showModal (функции показа формы)
-    form.reset();
-  } else {
-    showAlert('Неверно заполнены поля формы');
-  }
+    if (isValid) {
+      blockSubmitButton(); // если использовать сдесь form.addEventListener('submit', blockSubmitButton); то кнопка submit отключается только по второму клику по ней, так как событие на первый клик уже будет добавлено при запуске функциии showModal (функции показа формы)
+      await cb(new FormData(form));
+      unBlockSubmitButton();
+    }
+  });
 };
 
-// в коде проекта функция которая привязывается к submit выглядит так: const onFormSubmit = (evt) => { evt.preventDefault(); pristine.validate(); };
-
-
 fileField.addEventListener('change', onFileInputChange); // Я делая домашнее задание вынес добавление этого обработчика в отдельную функцию и экпортировал ее в файл main.js и вызывал ее там по сути это была единственная связка между файлами form.js и main.js и все работало, но в коде архива проекта файл form.js импортирован целиком, а добавление этого обработчика снесено в низ я сделал также
-form.addEventListener('submit', onFormSubmit); // я добавлял это обработчик при открытии формы (чтобы убрать его призакрытии формы) но в архиве проекта он вынесен в конце файла я тоже перенес, думаю связано с тем что бы не нагружать момент нажатия на submit
 cancelButton.addEventListener('click', onCanselButtonClick); // тоже добавлял этот обработчик в тело showModal()
 

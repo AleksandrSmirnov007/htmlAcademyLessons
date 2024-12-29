@@ -14,6 +14,7 @@ const showSuccessMessage = () => {
 const showErrorMessage = () => {
   body.append(errorMessage);
   body.addEventListener('keydown', onEscDown);
+  body.addEventListener('click', onBodyClick);
   errorMessage
     .querySelector('.error__button')
     .addEventListener('click', hideMessage);
@@ -28,6 +29,7 @@ function hideMessage () {
 };
 
 function onBodyClick (evt) {
+  console.log('body click');
   if (evt.target.closest('.error__inner') || evt.target.closest('.success__inner')) {
     return; // приведет к выходу из фунции без каких либо действий если мы кликнем на содержимое сообщения
   }
@@ -42,6 +44,5 @@ function onEscDown (evt) {
   }
 }
 
-showErrorMessage(); // доработать нет скрытия сообщения по клику на body
 
 export {showSuccessMessage, showErrorMessage};
