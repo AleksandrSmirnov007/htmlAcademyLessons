@@ -19,7 +19,7 @@ const onSendDataError = () => {
   showErrorMessage();
 }
 
-setOnFormSubmit( async (data) => {
+setOnFormSubmit( async (data) => { // код из архива проекта // вроде бы понятно что в параметрах передается функция (сb - каллбек) с параметром дата в котрорый придет "new FormData(form)" в модуле (из модуля) form.js // при все недоконца понятно....
   await sendData(onSendDataSuccess, onSendDataError, data);
 });
 
