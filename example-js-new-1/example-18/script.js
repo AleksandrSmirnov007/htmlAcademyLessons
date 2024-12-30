@@ -36,11 +36,11 @@ const funcAsync = (sec) => {
 
 
 const funcSync = (sec) => {
-  console.log(`старт Cинхронной функции на ${sec} секунд`);
-  function fff () {
-      setTimeout(console.log(`Финиш Cинхронной функции на ${sec} секунд`), sec * 1000);
-    };
-  fff();
+
+  console.log(`Старт Синхронной функции на ${sec} секунд`);
+  setTimeout(() => {
+    console.log(`Финиш Синхронной функции на ${sec} секунд`);
+  }, sec * 1000);
 };
 
 // funcAsync(6);
