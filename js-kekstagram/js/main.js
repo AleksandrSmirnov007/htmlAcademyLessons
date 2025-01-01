@@ -1,14 +1,10 @@
 import { renderPictures } from './picture.js';
 import { getData, sendData } from './api.js';
 import { showAlert } from './util.js';
-import {setOnFormSubmit, hideModal} from './form.js';
-import {showSuccessMessage, showErrorMessage} from './message.js'
+import { setOnFormSubmit, hideModal } from './form.js';
+import { showSuccessMessage, showErrorMessage } from './message.js'
+import { changeStyleActiveButton } from './filter.js';
 
-
-
-
-// import { getPictures } from './data.js';
-// renderPictures(getPictures()); // на случай если сервер не ответит
 
 const onSendDataSuccess = () => {
   showSuccessMessage();
@@ -23,7 +19,26 @@ setOnFormSubmit( async (data) => { // код из архива проекта //
   await sendData(onSendDataSuccess, onSendDataError, data);
 });
 
+
+
+const dataFilter = document.querySelector('.img-filters__form');
+
+
+
 getData(renderPictures, showAlert);
 
 
+let filter = 'filter-default';
 
+const addListenerFilterButton = (cb) => {
+  dataFilter.addEventListener('click', (evt) => {
+    changeStyleActiveButton(evt);
+
+    filter = evt.target.id;
+    console.log(filter);
+    cb();
+    }
+  );
+}
+
+addListenerFilterButton(() => getData(renderPictures, showAlert, filter));

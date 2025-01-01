@@ -1,5 +1,6 @@
 
 import { showBigPicture } from './big-pictures.js';
+import { filteringPictures } from './filter.js'
 
 console.log('picture.js is working');
 
@@ -27,14 +28,19 @@ const createPicture = (data) => {
   return picture;
 };
 
+const renderPictures = (pictures, filter) => {
+  console.log(`картинки рендерятся ${filter}`);
 
-const renderPictures = (pictures) => {
+  const filteredPictures = filteringPictures(pictures, filter);
+
   const fragment = document.createDocumentFragment();
-
-  pictures.forEach((picture) => {
+  filteredPictures.forEach((picture) => {
     const pictureElement = createPicture(picture);
     fragment.appendChild(pictureElement);
   });
+
+  const pictureList = container.querySelectorAll('.picture');
+  pictureList.forEach(elem => elem.remove());
 
   container.appendChild(fragment);
 };

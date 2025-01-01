@@ -2,7 +2,7 @@
 console.log('api.js is working');
 
 
-const getData = async (onSuccess, onFail) => {
+const getData = async (onSuccess, onFail, filter = 'filter-default') => {
   try {
   const response = await fetch ('https://25.javascript.htmlacademy.pro/kekstagram/data');
     if (!response.ok) {
@@ -10,7 +10,10 @@ const getData = async (onSuccess, onFail) => {
     }
 
     const offers = await response.json();
-    onSuccess(offers);
+
+    console.log(`данные о фильре пеедались в getData и равны ${filter}`);
+    onSuccess(offers, filter);
+    return offers;
 
   } catch(error) {
     onFail(error.message);

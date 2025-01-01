@@ -1,4 +1,4 @@
-import {getRandomPostiveInteger, getRandomArrayElement} from './util.js';
+import {getRandomPostiveInteger, getRandomArrayElement} from '../../util.js';
 console.log('data.js is working');
 
 const descriptions = [

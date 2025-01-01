@@ -1,0 +1,13 @@
+body {
+  height: 500px;
+  display: grid;
+  place-content: center;
+}
+
+.element,
+.changeColorButton,
+.delay  {
+  margin: 0 auto;
+}
+
+
