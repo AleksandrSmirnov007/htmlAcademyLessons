@@ -1,8 +1,4 @@
-const changeButton = document.querySelector('.changeColorButton');
-const element = document.querySelector('.element');
-const delayField = document.querySelector('.delay-count');
 
-let delay = delayField.value *1000;
 
 // Функция взята из интернета и доработана
 // Источник - https://www.freecodecamp.org/news/javascript-debounce-example
