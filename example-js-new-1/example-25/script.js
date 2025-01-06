@@ -1,14 +1,23 @@
-function debounce(f, delay){
-  var lastTimeout;
-  return function(){
-    if(lastTimeout){
-      clearTimeout(lastTimeout);
-    }
-    var args = Array.from(arguments);
-    lastTimeout = setTimeout(function(){
-      f.apply(null, args);
-    }, delay);
-  }
+
+// Функция взята из интернета и доработана
+// Источник - https://www.freecodecamp.org/news/javascript-debounce-example
+
+function debounce (callback, timeoutDelay = 500) {
+  // Используем замыкания, чтобы id таймаута у нас навсегда приклеился
+  // к возвращаемой функции с setTimeout, тогда мы его сможем перезаписывать
+  let timeoutId;
+  console.log(`debounce в работе, значение timeoutId :${timeoutId}`);
+  return (...rest) => {
+    // Перед каждым новым вызовом удаляем предыдущий таймаут,
+    // чтобы они не накапливались
+    clearTimeout(timeoutId);
+    console.log(`debounce в работе, значение timeoutId :${timeoutId}`);
+    // Затем устанавливаем новый таймаут с вызовом колбэка на ту же задержку
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+    console.log(`debounce в работе, значение timeoutId :${timeoutId}`);
+    // Таким образом цикл «поставить таймаут - удалить таймаут» будет выполняться,
+    // пока действие совершается чаще, чем переданная задержка timeoutDelay
+  };
 }
 
 function sacrifice(name){
@@ -27,13 +36,15 @@ sacrificeDebounced("Лена");
 // На этом, пожалуй, я закончу. Надеюсь, сегодня вы узнали много нового, а главное — поняли всё, что узнали. До новых встреч.
 
 
-// ЗАДАЧА 2. Есть квадрат который меняет цвет по клику. На основе выше описанной функции
+// ЗАДАЧА 2. Есть квадрат который меняет цвет по клику. На основе выше описанной функции сделать так что бы сколько бы раз не была нажата кнопка обновить цвет за указанное время цвет поменяется всего один раз
+// решена и код работает
+
 // добавляю боок кода отвечающий за смену цвета квадрата
 const changeButton = document.querySelector('.changeColorButton');
 const element = document.querySelector('.element');
 const delayField = document.querySelector('.delay-count');
 
-let delay = delayField.value *1000;
+let delay = delayField.value * 1000;
 
 delayField.addEventListener('change', () => {
   delay = delayField.value *1000;
@@ -49,25 +60,24 @@ const allColor = [
 let colorIndex = 0;
 element.style.backgroundColor = allColor[0];
 
-const funcColorChange = (colorIndex) => {
+
+
+const funcColorChange = () => {
   console.log(`начало выполнения функции funcColorChange`);
-    element.style.backgroundColor = allColor[colorIndex];
+  if (colorIndex < allColor.length - 1) {
+    colorIndex++;
+  } else {
+    colorIndex = 0;
+  }
+  console.log(`индекс цвета: ${colorIndex} меняем цвет`);
+  element.style.backgroundColor = allColor[colorIndex];
 };
 
-// const funcColorChange = (colorIndex) => {
-//   console.log(`начало выполнения функции funcColorChange`);
-//   setTimeout(() => {
-//     element.style.backgroundColor = allColor[colorIndex];
-//     console.log(`конец выполнения функции funcColorChange ${delay / 1000} секунд`);
-//   }, delay);
-// };
-
-
-
-console.log(`${delay}`); //
+console.log(` текущее заначение  delay:  ${delay}`); //
 
 
 let funcColorChangeDebounced = debounce( funcColorChange, 1000);
+
 delayField.addEventListener('change', () => {
   delay = delayField.value * 1000;
   funcColorChangeDebounced = debounce( funcColorChange, delay);
@@ -75,22 +85,8 @@ delayField.addEventListener('change', () => {
 });
 
 
-
-
 changeButton.addEventListener('click', () => {
-
-  if (colorIndex < allColor.length - 1) {
-    colorIndex++;
-  } else {
-    colorIndex = 0;
-  }
-  console.log(colorIndex);
-  // funcColorChange(colorIndex); // просто моментально срабатывающий код
-
-  // setTimeout(() => funcColorChange(colorIndex), delay); // задержка выполнения на delay микросекунд (код работает)
-
-
-  funcColorChangeDebounced(colorIndex);
-
+  console.log('клик на кнопку изменить цвет');
+  funcColorChangeDebounced();
 
 });

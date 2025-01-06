@@ -1,5 +1,7 @@
 // 4.1. Загрузка изображений от других пользователей производится сразу после открытия страницы с удалённого сервера: https://25.javascript.htmlacademy.pro/kekstagram/data.
 console.log('api.js is working');
+import { debounce } from './debounce.js';
+
 
 
 const getData = async (onSuccess, onFail, filter = 'filter-default') => {
@@ -11,7 +13,7 @@ const getData = async (onSuccess, onFail, filter = 'filter-default') => {
 
     const offers = await response.json();
 
-    console.log(`данные о фильре пеедались в getData и равны ${filter}`);
+    console.log(`данные о фильре передались в getData и равны ${filter}`);
     onSuccess(offers, filter);
     return offers;
 
@@ -19,7 +21,6 @@ const getData = async (onSuccess, onFail, filter = 'filter-default') => {
     onFail(error.message);
   }
 }
-
 
 const sendData = async (onSuccess, onFail, body) => {
   try {

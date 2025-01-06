@@ -25,7 +25,6 @@ const filteringPictures = (pictures, filter) => {
   }
 
   if (filter === 'filter-random') {
-    console.log(filteredPictures);
     return filteredPictures = getRandomElements(pictures.slice(), COUNT_RANDOM_PICTURES);
   }
 
