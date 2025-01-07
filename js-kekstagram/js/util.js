@@ -12,20 +12,6 @@ const checkStringLength = (string, length) => string.length <= length;
 const getRandomArrayElement = (array) =>
   array[getRandomPostiveInteger(0, array.length -1)];
 
-
-function getRandomElements(arr, n) {
-  let w = arr.length, t, i;
-  // Применяем алгоритм Фишера — Йетса
-  while (w) {
-    i = Math.floor(Math.random() * w--);
-    t = arr[w];
-    arr[w] = arr[i];
-    arr[i] = t;
-  }
-  // Возвращаем первые n элементов
-  return arr.slice(0, n);
-}
-
 const TIME_SHOW_ALERT = 5000;
 
 const showMessage = (message, statusColor) => {
@@ -66,12 +52,20 @@ const showSuccess = (message) => {
   showMessage(message, 'rgba(80, 200 ,120, 0.8)');
 }
 
-const debounce = (callback, timeoutDelay) => {
+const debounce = (callback, timeoutDelay = 500) => {
   let timeoutId;
   return (...rest) => {
+    console.log('debounce работает');
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
   };
 };
 
-export {getRandomPostiveInteger, checkStringLength, getRandomArrayElement, showAlert, showSuccess, getRandomElements, debounce};
+export {
+  getRandomPostiveInteger,
+  checkStringLength,
+  getRandomArrayElement,
+  showAlert,
+  showSuccess,
+  debounce
+};

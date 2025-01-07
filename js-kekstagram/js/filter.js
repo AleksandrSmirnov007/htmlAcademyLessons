@@ -1,4 +1,3 @@
-import { getRandomElements } from './util.js';
 import { debounce } from './util.js';
 
 const PICTURES_COUNT = 10;
@@ -15,36 +14,47 @@ let pictures = [];
 
 const randomSort = () => Math.random() - 0.5; // вывод отрицательного и положительного числа с одинаковой вероятностью
 
-filtersElement.classList.remove('img-filters--inactive');
-
 const discussedSort = (pictureA, pictureB) =>
   pictureB.comments.length - pictureA.comments.length;
 
-const filteringPictures = (pictures, filter) => {
-  let filteredPictures;
-
-  if (filter === 'filter-default') {
-    return filteredPictures = pictures.slice();
-  }
-
-  if (filter === 'filter-random') {
-    return filteredPictures = getRandomElements(pictures.slice(), PICTURES_COUNT);
-  }
-
-  if (filter === 'filter-discussed') {
-    return filteredPictures = pictures.slice().sort(discussedSort);
+const filterPictures = () => {
+  switch (currentFilter) {
+    case filter.RANDOM:
+      return [...pictures].sort(randomSort).slice(0, PICTURES_COUNT); // [...pictures] таким образом происходит запись содержимого массива в безымянный массив по месту и тем самым копирование массива во избежание изменения начального массива
+    case filter.DISCUSSED:
+      return [...pictures].sort(discussedSort);
+    default:
+      return [...pictures];
   }
 };
 
-const changeStyleActiveButton = (evt) => {
-  if (evt.target.classList.contains('img-filters__button')) {
-    const buttons = filtersElement.querySelectorAll('.img-filters__button');
-    buttons.forEach ((button) => {
-      button.classList.remove('img-filters__button--active')
-    });
-
-    evt.target.classList.add('img-filters__button--active');
-  }
+const turnFilterOn = (loadedPictures) => {
+  filtersElement.classList.remove('img-filters--inactive');
+  pictures = [...loadedPictures]; // копирование массива загруженных картинок в пустой массив
+  currentFilter = filter.DEFAULT;
 };
 
-export { filteringPictures, changeStyleActiveButton };
+const setOnFilterClick = (cb) => {
+  const debouncedCallback = debounce(cb);
+
+  filtersElement.addEventListener('click', (evt) => {
+    if(!evt.target.classList.contains('img-filters__button')) {
+      return;
+    }
+
+    const clickedButton = evt.target;
+    if (clickedButton.id === currentFilter) {
+      return;
+    }
+    filtersElement
+    .querySelector('.img-filters__button--active')
+    .classList.remove('img-filters__button--active');
+
+    clickedButton.classList.add('img-filters__button--active');
+
+    currentFilter = clickedButton.id;
+    debouncedCallback(filterPictures());
+  });
+};
+
+export { filterPictures, turnFilterOn, setOnFilterClick };
