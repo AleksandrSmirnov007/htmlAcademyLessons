@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Показ превью изображения при загрузке</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- <script src="https://zeckson.github.io/demo-console/2.2.1/index-silent.min.js"></script> -->
+
+</head>
+
+<body>
+  <form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data" action="https://25.javascript.htmlacademy.pro/kekstagram" autocomplete="off">
+
+    <!-- Изначальное состояние поля для загрузки изображения -->
+    <fieldset class="img-upload__start">
+      <input type="file" id="upload-file" accept="image/png, image/jpeg" class="img-upload__input  visually-hidden" name="filename" required>
+      <label for="upload-file" class="img-upload__label  img-upload__control">Загрузить</label>
+    </fieldset>
+
+    <!-- Форма редактирования изображения -->
+    <div class="img-upload__overlay  hidden">
+      <div class="img-upload__wrapper">
+        <div class="img-upload__preview-container">
+
+          <!-- Изменение размера изображения -->
+          <fieldset class="img-upload__scale  scale">
+            <button type="button" class="scale__control  scale__control--smaller">Уменьшить</button>
+            <input type="text" class="scale__control  scale__control--value" value="100%" title="Image Scale" name="scale" readonly>
+            <button type="button" class="scale__control  scale__control--bigger">Увеличить</button>
+          </fieldset>
+
+          <!-- Предварительный просмотр изображения -->
+          <div class="img-upload__preview">
+            <img src="img/upload-default-image.jpg" alt="Предварительный просмотр фотографии">
+          </div>
+
+          <!-- Изменение глубины эффекта, накладываемого на изображение -->
+          <fieldset class="img-upload__effect-level  effect-level">
+            <input class="effect-level__value" type="number" step="any" name="effect-level" value="">
+            <div class="effect-level__slider"></div>
+          </fieldset>
+
+          <!-- Кнопка для закрытия формы редактирования изображения -->
+          <button type="reset" class="img-upload__cancel  cancel" id="upload-cancel">Закрыть</button>
+        </div>
+
+        <!-- Наложение эффекта на изображение -->
+        <fieldset class="img-upload__effects  effects">
+          <ul class="effects__list">
+            <li class="effects__item">
+              <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-none" value="none" checked>
+              <label for="effect-none" class="effects__label">
+                <span class="effects__preview  effects__preview--none">Превью фото без эффекта</span>
+                Оригинал
+              </label>
+            </li>
+            <li class="effects__item">
+              <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-chrome" value="chrome">
+              <label for="effect-chrome" class="effects__label">
+                <span class="effects__preview  effects__preview--chrome">Превью эффекта Хром</span>
+                Хром
+              </label>
+            </li>
+            <li class="effects__item">
+              <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-sepia" value="sepia">
+              <label for="effect-sepia" class="effects__label">
+                <span class="effects__preview  effects__preview--sepia">Превью эффекта Сепия</span>
+                Сепия
+              </label>
+            </li>
+            <li class="effects__item">
+              <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-marvin" value="marvin">
+              <label for="effect-marvin" class="effects__label">
+                <span class="effects__preview  effects__preview--marvin">Превью эффекта Марвин</span>
+                Марвин
+              </label>
+            </li>
+            <li class="effects__item">
+              <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-phobos" value="phobos">
+              <label for="effect-phobos" class="effects__label">
+                <span class="effects__preview  effects__preview--phobos">Превью эффекта Фобос</span>
+                Фобос
+              </label>
+            </li>
+            <li class="effects__item">
+              <input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-heat" value="heat">
+              <label for="effect-heat" class="effects__label">
+                <span class="effects__preview  effects__preview--heat">Превью эффекта Зной</span>
+                Зной
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <!-- Добавление хэш-тегов и комментария к изображению -->
+        <fieldset class="img-upload__text text">
+          <label class="form__item">
+            <!--  pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$" -->
+            <input id="hashtags" class="text__hashtags not-respond-esc" name="hashtags" placeholder="#ХэшТег" pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$">
+          </label>
+
+          <!-- от себя обернул в тег label  по аналогии с демонстрацией для работы pristine, так же добавлю в css  селектор для расположения элемента с сообщением об ошибке в поле для пользователя -->
+          <label class="form__item">
+            <textarea class="text__description not-respond-esc" name="description" placeholder="Ваш комментарий..." maxlength="140" minlength="2" required
+            data-pristine-required-message="Обязательное поле"
+            data-pristine-minlength-message="Минимальная длина 2 символа"
+            data-pristine-maxlength-message="Максимальная длина 25 символов"
+            ></textarea>
+            <!-- инструкции для pristine добавляются в атрибуты валидируюмого тега с типом data -->
+            <!-- непонятно нужно ли добавлять это див? Теперь понятно: див сюда добавит сама pristine погэтому он не нужен если только на этапе стилизации-->
+            <!-- <div class="pristine-error text__error-text"></div> -->
+          </label>
+          </fieldset>
+
+        <!-- Кнопка для отправки данных на сервер -->
+        <button type="submit" class="img-upload__submit" id="upload-submit">Опубликовать</button>
+      </div>
+    </div>
+  </form>
+  <script src="script.js"></script>
+</body>
+
+</html>

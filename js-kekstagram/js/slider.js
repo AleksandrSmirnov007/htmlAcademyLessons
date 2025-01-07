@@ -161,6 +161,7 @@ const onSliderUpdate = () => {
 const resetSlider = () => {
   image.className = '';
   image.style.filter = 'none';
+  sliderElement.classList.add('hidden');
 };
 
 form.addEventListener('change', onFormChange);

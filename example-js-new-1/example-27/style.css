@@ -1,0 +1,287 @@
+/* .img-upload__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  padding-top: 60px;
+  overflow: auto;
+
+  background-color: rgba(0, 0, 0, 0.8);
+} */
+
+.img-upload__preview-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+
+/**
+ * Кнопки изменения масштаба изобраения
+ */
+
+.img-upload__scale {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 400;
+
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.scale {
+  margin: 0;
+  padding: 10px;
+
+  font-size: 0;
+  border: 0;
+}
+
+.scale__control {
+  position: relative;
+
+  width: 33px;
+  height: 33px;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+}
+
+.scale__control:hover,
+.scale__control:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.scale__control:active {
+  -webkit-transform: translateY(1px);
+      -ms-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
+.scale__control--smaller {
+  border-radius: 50% 0 0 50%;
+}
+
+.scale__control--smaller::before {
+  content: "–";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  font-size: 20px;
+  line-height: 0;
+  color: #ffffff;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.scale__control--value {
+  width: 60px;
+
+  font-size: 16px;
+  color: #ffffff;
+
+  border: solid rgba(255, 255, 255, 0.5);
+  border-width: 0 2px;
+}
+
+.scale__control--bigger {
+  border-radius: 0 50% 50% 0;
+}
+
+.scale__control--bigger::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  font-size: 20px;
+  line-height: 0;
+  color: #ffffff;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+
+/**
+ * Превью изображения
+ */
+
+.img-upload__preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: center;
+     -ms-flex-pack: center;
+   justify-content: center;
+
+  width: 600px;
+  height: 600px;
+
+  background-color: #ffffff;
+}
+
+.img-upload__preview img {
+  display: block;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+
+/**
+ * Шкала регулирования глубины фильтра
+ */
+
+.effect-level {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+
+  width: 495px;
+  height: 33px;
+
+  font-size: 12px;
+  line-height: 42px;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 33px;
+
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+/* корректиовка стилей */
+  padding: 0.5em 1.5em 0.5em;
+
+}
+
+.effect-level__value {
+  display: none;
+}
+
+
+/**
+ * Блок с эффектами, которые можно применить к изображению
+ */
+
+.effects {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  border: none;
+}
+
+.effects__list {
+  margin: 0;
+  padding: 0;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-pack: center;
+     -ms-flex-pack: center;
+   justify-content: center;
+
+  list-style: none;
+  text-align: center;
+}
+
+.effects__item {
+  margin-right: 5px;
+}
+
+.effects__label {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.effects__label:hover,
+.effects__label:focus,
+.effects__radio:checked + .effects__label {
+  color: #ffe753;
+}
+
+.effects__preview {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 5px;
+
+  overflow: hidden;
+
+  font-size: 0;
+
+  background-color: #314359;
+  background-image: url("./img/upload-default-image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+
+  border: solid 5px transparent;
+  border-radius: 5px;
+}
+
+.effects__preview:last-of-type {
+  margin-right: 0;
+}
+
+.effects__radio:checked + .effects__label .effects__preview {
+  border: 5px solid #ffe753;
+}
+
+.effects__radio:focus + .effects__label .effects__preview {
+  outline: auto 5px highlight;
+}
+
+.effects__preview--chrome {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.effects__preview--sepia {
+  -webkit-filter: sepia(1);
+          filter: sepia(1);
+}
+
+.effects__preview--marvin {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.effects__preview--phobos {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.effects__preview--heat {
+  -webkit-filter: brightness(3);
+          filter: brightness(3);
+}
