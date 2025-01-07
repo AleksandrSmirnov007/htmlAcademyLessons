@@ -1,21 +1,24 @@
-import { getData } from "./api.js";
-import { renderPictures } from "./picture.js";
 import { getRandomElements } from './util.js';
+import { debounce } from './util.js';
 
-const COUNT_RANDOM_PICTURES = 10;
-
-const dataFilter = document.querySelector('.img-filters');
-dataFilter.classList.remove('img-filters--inactive');
-
-const compareOnDecrease = (a, b) => {
-  if (a.comments.length > b.comments.length) {
-    return -1;
-  }
-  if (a.comments.length < b.comments.length) {
-    return 1;
-  }
-  return 0;
+const PICTURES_COUNT = 10;
+const filter = {
+  DEFAULT: 'filter-default',
+  RANDOM: 'filter-random',
+  DISCUSSED: 'filter-discussed',
 };
+
+const filtersElement = document.querySelector('.img-filters');
+
+let currentFilter = '';
+let pictures = [];
+
+const randomSort = () => Math.random() - 0.5; // вывод отрицательного и положительного числа с одинаковой вероятностью
+
+filtersElement.classList.remove('img-filters--inactive');
+
+const discussedSort = (pictureA, pictureB) =>
+  pictureB.comments.length - pictureA.comments.length;
 
 const filteringPictures = (pictures, filter) => {
   let filteredPictures;
@@ -25,17 +28,17 @@ const filteringPictures = (pictures, filter) => {
   }
 
   if (filter === 'filter-random') {
-    return filteredPictures = getRandomElements(pictures.slice(), COUNT_RANDOM_PICTURES);
+    return filteredPictures = getRandomElements(pictures.slice(), PICTURES_COUNT);
   }
 
   if (filter === 'filter-discussed') {
-    return filteredPictures = pictures.slice().sort(compareOnDecrease);
+    return filteredPictures = pictures.slice().sort(discussedSort);
   }
 };
 
 const changeStyleActiveButton = (evt) => {
   if (evt.target.classList.contains('img-filters__button')) {
-    const buttons = dataFilter.querySelectorAll('.img-filters__button');
+    const buttons = filtersElement.querySelectorAll('.img-filters__button');
     buttons.forEach ((button) => {
       button.classList.remove('img-filters__button--active')
     });

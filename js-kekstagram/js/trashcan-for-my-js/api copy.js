@@ -1,5 +1,6 @@
 // 4.1. Загрузка изображений от других пользователей производится сразу после открытия страницы с удалённого сервера: https://25.javascript.htmlacademy.pro/kekstagram/data.
 console.log('api.js is working');
+import { debounce } from './debounce.js';
 
 
 

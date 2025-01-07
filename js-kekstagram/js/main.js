@@ -4,7 +4,7 @@ import { showAlert } from './util.js';
 import { setOnFormSubmit, hideModal } from './form.js';
 import { showSuccessMessage, showErrorMessage } from './message.js'
 import { changeStyleActiveButton } from './filter.js';
-import { debounce } from './debounce.js';
+import { debounce } from './util.js';
 
 const onSendDataSuccess = () => {
   showSuccessMessage();
