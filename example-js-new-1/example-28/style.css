@@ -1,0 +1,9 @@
+body {
+  padding: 20px;
+}
+
+.output {
+  overflow: scroll;
+  margin: 1rem 0;
+  height: 70vh;
+}
