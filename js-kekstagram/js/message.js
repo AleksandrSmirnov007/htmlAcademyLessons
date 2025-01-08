@@ -20,7 +20,6 @@ const showErrorMessage = () => {
     .addEventListener('click', hideMessage);
 };
 
-
 function hideMessage () {
   const messageElement = document.querySelector('.success') || document.querySelector('.error');
   messageElement.remove();
@@ -43,6 +42,5 @@ function onEscDown (evt) {
     hideMessage();
   }
 }
-
 
 export {showSuccessMessage, showErrorMessage};

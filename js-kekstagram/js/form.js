@@ -1,4 +1,3 @@
-console.log('form.js is working');
 import { resetScale } from './scale.js';
 import { resetSlider } from './slider.js';
 

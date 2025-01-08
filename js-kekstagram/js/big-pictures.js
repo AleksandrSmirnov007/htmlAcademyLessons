@@ -45,9 +45,7 @@ const renderComments = () => {
   commentCount.innerHTML = `${commentsShown} из <span class="comments-count">${comments.length}</span> комментариев`;
 };
 
-
 const onCommentsLoaderClick = () => renderComments();
-
 
 const hideBigPicture = () => {
   bigPicture.classList.add('hidden');

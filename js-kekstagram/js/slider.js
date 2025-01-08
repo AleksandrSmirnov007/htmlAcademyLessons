@@ -1,4 +1,3 @@
-console.log('upload-slider is working');
 // 2.2. Наложение эффекта на изображение:
 // По умолчанию должен быть выбран эффект «Оригинал».
 // На изображение может накладываться только один эффект.
@@ -81,7 +80,6 @@ let chosenEffect = DEFAULT_EFFECT;
 
 const isDefault = () => chosenEffect == DEFAULT_EFFECT;
 
-
 const updateSlider = () => {
   sliderElement.classList.remove('hidden');
 
@@ -99,7 +97,6 @@ const updateSlider = () => {
     sliderElement.classList.add('hidden');
   }
 };
-
 
 const onFormChange = (evt) => {
   if(!evt.target.classList.contains('effects__radio')) {
@@ -123,7 +120,6 @@ updateSlider();
 
 // 'элемент бегунка слайдера появляется только после создания библиотекой слайдера
 const noUiHandle = document.querySelector('.noUi-handle');
-
 
 // в архиве проекта нет этого кода но радиус бегунку добавляется в крайних положениях
 const addRadiusHandle = (value) => {

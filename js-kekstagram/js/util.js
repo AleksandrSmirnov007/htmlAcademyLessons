@@ -1,5 +1,3 @@
-console.log('util.js is working')
-
 const getRandomPostiveInteger = (a, b) => {
   const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
   const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));

@@ -1,4 +1,3 @@
-console.log('up-load-scale.js is working');
 const image = document.querySelector('.img-upload__preview img');
 const smallerButton = document.querySelector('.scale__control--smaller');
 const biggerButton = document.querySelector('.scale__control--bigger');

@@ -1,7 +1,4 @@
-
 import { showBigPicture } from './big-pictures.js';
-
-console.log('picture.js is working');
 
 const pictureTemplate = document
   .querySelector('#picture')
