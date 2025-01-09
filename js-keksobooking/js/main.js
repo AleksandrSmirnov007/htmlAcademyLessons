@@ -1,5 +1,5 @@
 import {getRandomPositiveFloat} from './util.js';
-
+import './objects-data.js';
 const TITLE = [
 
 ];
