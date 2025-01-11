@@ -15,4 +15,4 @@ const getRandomPostiveInteger = (a, b) => {
 const getRandomArrayElement = (array) =>
   array[getRandomPostiveInteger(0, array.length - 1)];
 
-export {getRandomPositiveFloat};
+export {getRandomPositiveFloat, getRandomPostiveInteger, getRandomArrayElement};
