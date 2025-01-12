@@ -114,13 +114,20 @@ const createCard = (data) => {
   addDetailTextContent(card, '.popup__description', offer.description);
   renderPhoto(card, offer.photos);
 
-  mapCanvas.appendChild(card);
+  return card;
 }
 
-const [data] = getRentals();
-console.log(data);
+const renderCards = (cards) => {
+  const fragment = document.createDocumentFragment();
+  cards.forEach((card) => {
+    const cardElement = createCard(card);
+    fragment.appendChild(cardElement)
+  });
+  mapCanvas.innerHTML = '';
+  mapCanvas.appendChild(fragment);
+}
 
-createCard(data);
+export {renderCards}
 
 
 

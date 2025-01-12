@@ -407,6 +407,12 @@ fieldset {
   margin-right: 14px;
 }
 
+/* для коректного отображения noUiSlider добавим стиль на .ad-form__slider */
+.ad-form__slider {
+  width: calc(100% - 20px);
+  margin-right: 40px;
+}
+
 .features legend {
   padding-bottom: 5px;
 }
