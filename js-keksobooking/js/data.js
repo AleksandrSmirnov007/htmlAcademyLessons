@@ -121,8 +121,8 @@ const createRental = (index) => {
     },
 
     offer: {
-      title: TITLE[index], //  title, строка — заголовок предложения. Придумайте самостоятельно.
-      addres: `${location.lat}, ${location.lng}`, //  address, строка — адрес предложения. Для простоты пусть пока составляется из географических координат по маске {{location.lat}}, {{location.lng}}.
+      title: TITLE[index - 1], //  title, строка — заголовок предложения. Придумайте самостоятельно.
+      address: `${location.lat}, ${location.lng}`, //  address, строка — адрес предложения. Для простоты пусть пока составляется из географических координат по маске {{location.lat}}, {{location.lng}}.
       price: getRandomPostiveInteger(200, 500) * 10, // price, число — стоимость. Случайное целое положительное число.
       type: getRandomArrayElement(TYPE), // type, строка — одно из пяти фиксированных значений: palace, flat, house, bungalow или hotel.
       rooms: getRandomPostiveInteger(1, MAX_ROOMS), // rooms, число — количество комнат. Случайное целое положительное число.
