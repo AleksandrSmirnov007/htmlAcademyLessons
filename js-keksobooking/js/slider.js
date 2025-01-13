@@ -2,8 +2,10 @@ const sliderElement = document.querySelector('.ad-form__slider');
 const valueElement = document.querySelector('.ad-form__value');
 const form = document.querySelector('.img-upload__form');
 
+sliderElement.style.marginTop = '3px';
+
 // Начальное значение в поле ввода нужно будет записать самостоятельно. //   непонятно зачем ведь метод valueElement.value = sliderElement.noUiSlider.get(); возвращает значение сразу и даже если будет присвоено другое зщансчение изначально, метод его исправит
-valueElement.value = 80;
+valueElement.value = 4000;
 
 const specialElement = document.querySelector('.level-form__special');
 
@@ -23,7 +25,7 @@ noUiSlider.create(sliderElement, {
       if (Number.isInteger(value)) {
         return value.toFixed(0); // если нужен вывод к примеру в процентах то можно использовать шаблонную строку return `${value.toFixed(0)} %`;
       } else{
-      return value.toFixed(1);
+      return value.toFixed(0);
       }
     },
     from: function (value) {
@@ -35,3 +37,5 @@ noUiSlider.create(sliderElement, {
 sliderElement.noUiSlider.on('update', () => {
   valueElement.value = sliderElement.noUiSlider.get();
 });
+
+// продолжить Д/З раздел 8 (валидация формы)

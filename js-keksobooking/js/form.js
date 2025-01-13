@@ -6,11 +6,23 @@
 // Форма с фильтрами .map__filters заблокирована так же, как и форма .ad-form — на форму добавлен специальный класс, а на её интерактивные элементы атрибуты disabled.
 
 const adForm = document.querySelector('.ad-form');
+
+const activeFormElements = document.querySelectorAll('.ad-form__element');
 console.log(adForm);
-// adForm.classList.add('ad-form--disabled');
 
-// const activeFormElements = document.querySelectorAll('.ad-form__element');
+const onInactiveForm  = () => {
+  adForm.classList.add('ad-form--disabled');
+  activeFormElements.forEach((element) => {
+    element.disabled = true;
+  });
+}
 
-// activeFormElements.forEach((element) => {
-//   element.disabled = true;
-// });
+const onActiveForm = () => {
+  adForm.classList.remove('ad-form--disabled');
+  activeFormElements.forEach((element) => {
+    element.disabled = false;
+  });
+}
+
+onInactiveForm();
+onActiveForm();

@@ -19,9 +19,17 @@
  .noUi-target {
    position: relative;
  }
+
+
+ .noUi-base {
+  margin-right: 17px; /* мои настройки */
+  margin-left: 17px; /* мои настройки */
+ }
+
  .noUi-base,
  .noUi-connects {
-   width: 100%;
+
+   /* width: 100%; */  /* мои настройки изначально было раскоментировано */
    height: 100%;
    position: relative;
    z-index: 1;
@@ -29,6 +37,8 @@
  /* Wrapper for all connect elements.
   */
  .noUi-connects {
+   margin-right: -17px; /* мои настройки */
+   margin-left: -17px; /* мои настройки */
    overflow: hidden;
    z-index: 0;
  }
@@ -89,10 +99,10 @@
  }
  .noUi-horizontal .noUi-handle {
    width: 34px;
-   /* height: 28px;  было установлено */
+   /* height: 28px; */ /* мои настройки изначально было раскоментировано */
    height: 18px; /* мои настройки*/
    right: -17px;
-   /* top: -6px; было установлено */
+   /* top: -6px; */ /* мои настройки изначально было раскоментировано */
    top: -1px; /* мои настройки*/
  }
  .noUi-vertical {
@@ -122,7 +132,7 @@
  }
  .noUi-connect {
   /* background: #3FB8AF; родной цвет */
-   background: #f4c6bc /* мои настройки*/
+   background: #e4e4de /* мои настройки*/
  }
  /* Handles and cursors;
   */
@@ -139,20 +149,6 @@
    cursor: default;
    box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
  }
-
- /* Добавил эти стили от себя vvvvvvvv */
-/* для стилизации бегунка слайдера */
- .noUi-handle--max {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
- }
-
- .noUi-handle--min {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
- }
- /* Добавил эти стили от себя ^^^^^^^ */
-
 
  .noUi-active {
    box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
