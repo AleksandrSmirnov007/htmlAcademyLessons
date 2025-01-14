@@ -351,6 +351,14 @@ fieldset {
   min-height: 90px;
 
   font-size: 14px;
+  position: relative; /* для позиционирования .ad-form__error position: absolute;*/
+}
+
+/* класс для элементов генерируемых pristine под неверно полями с неверно введенными данными */
+.ad-form__error {
+  position: absolute;
+  margin-top: 2px;
+  color: #ff6547;
 }
 
 .ad-form__element--wide {
@@ -646,6 +654,7 @@ fieldset {
   -webkit-box-shadow: 0 0 2px 2px #ff6547;
           box-shadow: 0 0 2px 2px #ff6547;
 }
+
 
 
 /* Футер
