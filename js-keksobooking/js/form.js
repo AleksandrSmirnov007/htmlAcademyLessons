@@ -7,10 +7,18 @@
 
 const form = document.querySelector('.ad-form');
 const titleField = form.querySelector('#title');
+const priceField = form.querySelector('#price');
+const slider = form.querySelector('.ad-form__slider');
+
+const roomNumberField = form.querySelector('#room_number');
+const capaсityField = form.querySelector('#capacity');
+
+const MAX_PRICE = 100000;
+
 
 
 const activeFormElements = document.querySelectorAll('.ad-form__element');
-console.log(titleField);
+console.log();
 
 
 const onInactiveForm  = () => {
@@ -93,3 +101,143 @@ pristine.addValidator(
   'Максимальная длинна 100 символов',
 );
 //даные атрибута из  html ( data-pristine-maxlength-message="Максимальная длина 100 символов" ) почему-то не показываются при достижении длинны строки в 100 символов поэтому я добавил к этому полю валидатор в JS
+
+
+// можно добавить еще проверок на одно поле (главное что бы суловия не пересекались)
+// const validateTitleLength2 = (value) => {
+//   if(value.length > 50 && value.length < 100) {
+//     console.log('НЕ правильное содержимое');
+//     return false;
+//   }
+//   return true;
+// };
+
+// pristine.addValidator(
+//   titleField,
+//   validateTitleLength2,
+//   'Максимальная длинна 50 символов',
+// );
+
+
+
+
+// const validatePriceMax = (value) => {
+//   if(value <= 100000) {
+//     console.log('правильное содержимое');
+//     slider.style.display = 'block';
+//     return true;
+//   }
+//   slider.style.display = 'none';
+//   return false;
+// };
+
+
+
+// pristine.addValidator(
+//   priceField,
+//   validatePriceMax,
+//   'Максимально: 100000',
+// );
+
+
+// убрать в функцию
+// при ошибке ввода (вручную) слайдер убирается что бы было место для вывода ошибки
+
+const onErrorSliderHide = () => {
+  if (priceField.value && priceField.value <= MAX_PRICE) {
+    slider.style.display = 'block';
+    console.log('слайдер появился')
+  } else {
+    slider.style.display = 'none';
+    console.log('слайдер исчез');
+  }
+}
+
+priceField.addEventListener('input', onErrorSliderHide);
+
+// const validatePriceRequired = (value) => {
+  //   if(value) {
+  //     console.log('правильное содержимое');
+  //     console.log(value);
+  //     slider.style.display = 'block';
+  //     return true;
+  //   }
+  //   if (value === ''){
+  //   slider.style.display = 'none';
+  //   console.log('ytправильное содержимо');
+  //   return false;
+  //   }
+  // };
+
+  // pristine.addValidator(
+  //   priceField,
+  //   validatePriceRequired,
+  //   'Обязательное поле',
+  // );
+
+
+  // 1 комната — «для 1 гостя»;
+// 2 комнаты — «для 2 гостей» или «для 1 гостя»;
+// 3 комнаты — «для 3 гостей», «для 2 гостей» или «для 1 гостя»;
+// 100 комнат — «не для гостей».
+
+
+// const validateCapasity = () => {
+//   if(roomNumberField.value == 1 && capaсityField.value != 1) {
+//     return false
+//   }
+//   return true
+// }
+
+// pristine.addValidator(
+//   capaсityField,
+//   validateCapasity,
+//   '1 комната — «для 1 гостя»',
+// );
+
+
+
+
+
+
+// let pristineMessage = '1 комната — «для 1 гостя»';
+
+// const capacityValidate = () => {
+//   if (roomNumberField.value == 1) {
+//     pristineMessage = '1 комната — «для 1 гостя»';
+//   }
+
+//   if (roomNumberField.value == 2) {
+//     pristineMessage = '2 комнаты — «для 2 гостей» или «для 1 гостя»';
+//   }
+
+//   if (roomNumberField.value == 3) {
+//     pristineMessage = '3 комнаты — «для 3 гостей», «для 2 гостей» или «для 1 гостя»';
+//   }
+
+//   if (roomNumberField.value == 100) {
+//     pristineMessage = '100 комнат — «не для гостей»';
+//   }
+
+//   console.log(pristineMessage);
+// }
+
+
+// form.addEventListener('change', (evt) => {
+//   console.log(evt.target);
+//   if (evt.target.id === 'capacity') {
+//     console.log('выбрана капасити');
+//     capacityValidate();
+//   }
+
+//   const validateCapasity = () => {
+//     return false;
+//   }
+
+//   pristine.addValidator(
+//     capaсityField,
+//     validateCapasity,
+//     pristineMessage,
+//   );
+// });
+
