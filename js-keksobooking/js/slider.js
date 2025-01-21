@@ -1,6 +1,8 @@
 const sliderElement = document.querySelector('.ad-form__slider');
 const valueElement = document.querySelector('.ad-form__value');
-const form = document.querySelector('.img-upload__form');
+const form = document.querySelector('.ad-form');
+const selectType = form.querySelector('#type');
+console.log(selectType);
 
 sliderElement.style.marginTop = '3px';
 
@@ -8,6 +10,43 @@ sliderElement.style.marginTop = '3px';
 valueElement.value = 4000;
 
 const specialElement = document.querySelector('.level-form__special');
+
+
+const TYPE = [
+  {
+    name: 'bungalow',
+    min: 0,
+  },
+
+  {
+    name: 'flat',
+    min: 1000,
+  },
+
+  {
+    name: 'hotel',
+    min: 3000,
+  },
+
+  {
+    name: 'house',
+    min: 5000,
+  },
+
+  {
+    name: 'palace',
+    min: 10000,
+  },
+];
+
+let currentType = 'any';
+
+selectType.addEventListener('change', () => {
+  currentType = selectType.value;
+  console.log(currentType);
+});
+
+
 
 noUiSlider.create(sliderElement, {
   range: {
