@@ -104,7 +104,6 @@ const onFormChange = (evt) => {
   }
   chosenEffect = EFFECTS.find((effect) => effect.name === evt.target.value); // find()Метод Array экземпляров возвращает первый элемент в предоставленном массиве, который удовлетворяет предоставленной функции тестирования. Если никакие значения не удовлетворяют функции тестирования, возвращается undefined. Если вам нужен индекс найденного элемента в массиве, используйте findIndex().
   updateSlider();
-  console.log(chosenEffect);
 }
 
 noUiSlider.create(sliderElement, {

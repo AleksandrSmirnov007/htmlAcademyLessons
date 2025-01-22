@@ -39,18 +39,42 @@ const TYPE = [
   },
 ];
 
-let currentType = 'ftat';
+const DEFAULT_TYPE = TYPE[1];
+let chosenType = DEFAULT_TYPE;
+
+const getChossenType = () => {
+  return chosenType;
+}
 
 selectType.addEventListener('change', () => {
-  currentType = selectType.value;
-  console.log(currentType);
+  chosenType = TYPE.find((type) => type.name === selectType.value); // find()Метод Array экземпляров возвращает первый элемент в предоставленном массиве, который удовлетворяет предоставленной функции тестирования. Если никакие значения не удовлетворяют функции тестирования, возвращается undefined. Если вам нужен индекс найденного элемента в массиве, используйте findIndex().
+  console.log(chosenType);
+  updateSlider();
+  updateAtribyte();
 });
 
+const isDefault = () => chosenType == DEFAULT_TYPE;
+
+const updateAtribyte = () => {
+  // valueElement.min = chosenType.min;
+  valueElement.placeholder = chosenType.min;
+};
+
+const updateSlider = () => {
+  sliderElement.noUiSlider.updateOptions({
+    range: {
+      min: chosenType.min,
+      max: 100000,
+    },
+    start: sliderElement.noUiSlider.get(),
+  }
+  );
+};
 
 
 noUiSlider.create(sliderElement, {
   range: {
-    min: 100,
+    min: DEFAULT_TYPE.min,
     max: 100000,
   },
   step: 100,
@@ -78,3 +102,4 @@ sliderElement.noUiSlider.on('update', () => {
 });
 
 // продолжить Д/З раздел 8 (валидация формы)
+export {getChosenType}

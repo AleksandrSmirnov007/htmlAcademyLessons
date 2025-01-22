@@ -5,6 +5,10 @@
 // Все интерактивные элементы формы .ad-form должны быть заблокированы с помощью атрибута disabled, добавленного на них или на их родительские блоки fieldset. Слайдер также должен быть заблокирован;
 // Форма с фильтрами .map__filters заблокирована так же, как и форма .ad-form — на форму добавлен специальный класс, а на её интерактивные элементы атрибуты disabled.
 
+import {getChosenType} from './slider.js';
+
+
+
 const form = document.querySelector('.ad-form');
 const titleField = form.querySelector('#title');
 const priceField = form.querySelector('#price');
@@ -15,7 +19,12 @@ const capaсityField = form.querySelector('#capacity');
 
 const MAX_PRICE = 100000;
 
+//// проверка работы экспорта переменной
 
+form.addEventListener('click', () => {
+  console.log('экспортируемая переменная')
+  console.log(getChosenType());
+})
 
 const activeFormElements = document.querySelectorAll('.ad-form__element');
 console.log();
