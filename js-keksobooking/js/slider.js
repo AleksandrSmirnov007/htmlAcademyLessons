@@ -39,7 +39,7 @@ const TYPE = [
   },
 ];
 
-let currentType = 'any';
+let currentType = 'ftat';
 
 selectType.addEventListener('change', () => {
   currentType = selectType.value;
