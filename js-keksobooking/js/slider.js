@@ -1,84 +1,64 @@
+import { getMaxPrice, getType } from './form-variables.js';
+
 const sliderElement = document.querySelector('.ad-form__slider');
 const valueElement = document.querySelector('.ad-form__value');
 const form = document.querySelector('.ad-form');
 const selectType = form.querySelector('#type');
-console.log(selectType);
 
+const MAX_PRICE = getMaxPrice();
+console.log(MAX_PRICE);
+
+const TYPE = getType();
+console.log(TYPE);
+
+
+const SLIDER_STEP = 100;
 sliderElement.style.marginTop = '3px';
 
 // Начальное значение в поле ввода нужно будет записать самостоятельно. //   непонятно зачем ведь метод valueElement.value = sliderElement.noUiSlider.get(); возвращает значение сразу и даже если будет присвоено другое зщансчение изначально, метод его исправит
 valueElement.value = 4000;
 
-const specialElement = document.querySelector('.level-form__special');
-
-
-const TYPE = [
-  {
-    name: 'bungalow',
-    min: 0,
-  },
-
-  {
-    name: 'flat',
-    min: 1000,
-  },
-
-  {
-    name: 'hotel',
-    min: 3000,
-  },
-
-  {
-    name: 'house',
-    min: 5000,
-  },
-
-  {
-    name: 'palace',
-    min: 10000,
-  },
-];
-
 const DEFAULT_TYPE = TYPE[1];
 let chosenType = DEFAULT_TYPE;
 
-const getChossenType = () => {
+function getChosenType () {
   return chosenType;
 }
 
-selectType.addEventListener('change', () => {
+const updateAtribyte = () => {
+  valueElement.min = chosenType.min;
+  valueElement.placeholder = chosenType.min;
+};
+
+const onSelectTypeChange = () => {
   chosenType = TYPE.find((type) => type.name === selectType.value); // find()Метод Array экземпляров возвращает первый элемент в предоставленном массиве, который удовлетворяет предоставленной функции тестирования. Если никакие значения не удовлетворяют функции тестирования, возвращается undefined. Если вам нужен индекс найденного элемента в массиве, используйте findIndex().
   console.log(chosenType);
   updateSlider();
   updateAtribyte();
-});
+};
+
+selectType.addEventListener('change', onSelectTypeChange);
 
 const isDefault = () => chosenType == DEFAULT_TYPE;
-
-const updateAtribyte = () => {
-  // valueElement.min = chosenType.min;
-  valueElement.placeholder = chosenType.min;
-};
 
 const updateSlider = () => {
   sliderElement.noUiSlider.updateOptions({
     range: {
       min: chosenType.min,
-      max: 100000,
+      max: MAX_PRICE,
     },
     start: sliderElement.noUiSlider.get(),
   }
   );
 };
 
-
 noUiSlider.create(sliderElement, {
   range: {
     min: DEFAULT_TYPE.min,
-    max: 100000,
+    max: MAX_PRICE,
   },
-  step: 100,
-  start: 5000,
+  step: SLIDER_STEP,
+  start: DEFAULT_TYPE.min,
   connect: 'lower', // Дополнительно можно указать, с какой стороны закрашивать слайдер. Например, от меньшего к большему значению.
   // Давайте разберёмся с этим самым обработчиком. Если вы обратили внимание, на предыдущих шагах в поле цена иногда попадали странные дробные числа. Чтобы этого не происходило, нужно взять форматирование в свои руки. Сперва начнём выводить в поле «Цена» обработанные значения, это первый параметр колбэка, если забыли.
   // Затем опишем методы форматирования. Метод .format.to() нужен для форматирования значения из слайдера и вывода его где-либо. Метод .format.from() нужен для форматирования значения для слайдера. Этот метод должен строго возвращать число, поэтому используем parseFloat(), и достаточно.
