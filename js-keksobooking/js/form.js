@@ -13,18 +13,12 @@ const form = document.querySelector('.ad-form');
 const titleField = form.querySelector('#title');
 const priceField = form.querySelector('#price');
 const slider = form.querySelector('.ad-form__slider');
+const typeField = form.querySelector('#type');
 
 const roomNumberField = form.querySelector('#room_number');
 const capaсityField = form.querySelector('#capacity');
 
 const MAX_PRICE = 100000;
-
-//// проверка работы экспорта переменной
-
-form.addEventListener('click', () => {
-  console.log('экспортируемая переменная')
-  console.log(getChosenType());
-})
 
 const activeFormElements = document.querySelectorAll('.ad-form__element');
 console.log();
@@ -92,8 +86,10 @@ pristine.addValidator(
 );
 //даные атрибута из  html ( data-pristine-maxlength-message="Максимальная длина 100 символов" ) почему-то не показываются при достижении длинны строки в 100 символов поэтому я добавил к этому полю валидатор в JS
 
+
 const isPriceMinValid = () => {
   const chosenType = getChosenType(); // экспортируем переменную из модуля slider.js
+  console.log('')
   return priceField.value >= chosenType.min;
 };
 
@@ -119,6 +115,7 @@ const onErrorSliderHide = () => {
 }
 
 priceField.addEventListener('input', onErrorSliderHide);
+typeField.addEventListener('click', onErrorSliderHide);
 
 pristine.addValidator(
   priceField,

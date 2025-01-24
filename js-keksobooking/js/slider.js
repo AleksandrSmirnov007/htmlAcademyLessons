@@ -47,7 +47,7 @@ const updateSlider = () => {
       min: chosenType.min,
       max: MAX_PRICE,
     },
-    start: sliderElement.noUiSlider.get(),
+    start: valueElement.value,
   }
   );
 };
