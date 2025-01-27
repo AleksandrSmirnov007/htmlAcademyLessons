@@ -6,10 +6,10 @@ const form = document.querySelector('.ad-form');
 const selectType = form.querySelector('#type');
 
 const MAX_PRICE = getMaxPrice();
-console.log(MAX_PRICE);
+// console.log(MAX_PRICE);
 
 const TYPE = getType();
-console.log(TYPE);
+// console.log(TYPE);
 
 
 const SLIDER_STEP = 100;

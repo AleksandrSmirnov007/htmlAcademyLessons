@@ -21,8 +21,8 @@ const capaсityField = form.querySelector('#capacity');
 const MAX_PRICE = 100000;
 
 const activeFormElements = document.querySelectorAll('.ad-form__element');
-console.log();
 
+console.log();
 
 const onInactiveForm  = () => {
   form.classList.add('ad-form--disabled');
@@ -54,31 +54,9 @@ const pristine = new Pristine(form, {
   errorTextClass: 'ad-form__error'
 });
 
-form.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  console.log(titleField.value);
-  // check if the form is valid
-  const isValid = pristine.validate(); // returns true or false
-  if (isValid) {
-    console.log('форма заполнена правильно можно отправлять');
-  } else {
-    console.log('форма заполнена неправильно!');
-  }
-});
+const validateTitleLength = (value) => value.length < 100;
 
-// Чтобы описать валидации в JavaScript, нужно вызвать метод .addValidator(). // Метод принимает несколько аргументов. Первый — элемент формы, который мы хотим валидировать. // Давайте реализуем ту же валидацию поля ввода имени питомца, но уже через JavaScript. Для этого найдём поле через .querySelector() и передадим Pristine. // Вторым аргументом в .addValidator() нужно передать функцию проверки. Можно передавать по месту, но удобнее объявить функцию выше и передать по ссылке. Назовём её validateNickname. // Функция проверки обязательно должна возвращать true или false, в зависимости от того, валидно ли поле. // Pristine будет вызывать функцию проверки каждый раз, когда потребуется провалидировать форму. Первым параметром будет передано актуальное значение поля. // Третьим аргументом нужно передать сообщение об ошибке. // Попробуйте теперь отправить форму, нажав кнопку «Заказать». // Если поле с именем пустое, или имя короче двух символов, или длиннее 50 символов — мы увидим ошибку. // добавляем валидатор к полю
-
-const validateTitleLength = (value) => {
-  if(value.length < 100) {
-    console.log('правильное содержимое');
-    return true;
-  }
-  return false;
-};
-
-// // pristine.addValidator(nameOrElem, handler, errorMessage, priority, halt);
-// // priority - Приоритет функции валидации. Чем выше значение, тем раньше она вызывается при наличии нескольких валидаторов для одного поля. по умолчанию 1
-// // halt - Останавливать ли проверку текущего поля после этой проверки. Если true после проверки текущего валидатора остальные валидаторы игнорируются для текущего поля. по умолчанию false
+// Чтобы описать валидации в JavaScript, нужно вызвать метод .addValidator(). // Метод принимает несколько аргументов. Первый — элемент формы, который мы хотим валидировать. // Давайте реализуем ту же валидацию поля ввода имени питомца, но уже через JavaScript. Для этого найдём поле через .querySelector() и передадим Pristine. // Вторым аргументом в .addValidator() нужно передать функцию проверки. Можно передавать по месту, но удобнее объявить функцию выше и передать по ссылке. Назовём её validateNickname. // Функция проверки обязательно должна возвращать true или false, в зависимости от того, валидно ли поле. // Pristine будет вызывать функцию проверки каждый раз, когда потребуется провалидировать форму. Первым параметром будет передано актуальное значение поля. // Третьим аргументом нужно передать сообщение об ошибке. // Попробуйте теперь отправить форму, нажав кнопку «Заказать». // Если поле с именем пустое, или имя короче двух символов, или длиннее 50 символов — мы увидим ошибку. // добавляем валидатор к полю // // pristine.addValidator(nameOrElem, handler, errorMessage, priority, halt); priority - Приоритет функции валидации. Чем выше значение, тем раньше она вызывается при наличии нескольких валидаторов для одного поля. по умолчанию 1. halt - Останавливать ли проверку текущего поля после этой проверки. Если true после проверки текущего валидатора остальные валидаторы игнорируются для текущего поля. по умолчанию false
 pristine.addValidator(
   titleField,
   validateTitleLength,
@@ -86,23 +64,22 @@ pristine.addValidator(
 );
 //даные атрибута из  html ( data-pristine-maxlength-message="Максимальная длина 100 символов" ) почему-то не показываются при достижении длинны строки в 100 символов поэтому я добавил к этому полю валидатор в JS
 
+const MIN_PRICE_TYPE = {
+  'bungalow': 0,
+  'flat': 1000,
+  'hotel': 3000,
+  'house': 5000,
+  'palace': 10000,
+}
 
-const isPriceMinValid = () => {
-  const chosenType = getChosenType(); // экспортируем переменную из модуля slider.js
-  console.log('')
-  return priceField.value >= chosenType.min;
-};
+console.log(MIN_PRICE_TYPE[typeField.value]);
 
 const isPriceValid = () => {
-  if (
-    priceField.value
-    && priceField.value <= MAX_PRICE
-    && isPriceMinValid()
-  ) {
-    return true;
-  }
-  return false;
+  const minPrice = MIN_PRICE_TYPE[typeField.value];
+  return priceField.value && priceField.value <= MAX_PRICE && priceField.value >= minPrice;
 }
+
+
 
 const onErrorSliderHide = () => {
   if (isPriceValid()) {
@@ -114,11 +91,13 @@ const onErrorSliderHide = () => {
   }
 }
 
-priceField.addEventListener('input', onErrorSliderHide);
-typeField.addEventListener('click', onErrorSliderHide);
 
-pristine.addValidator(
-  priceField,
-  isPriceMinValid,
-  'Маловато',
-);
+form.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  const isValid = pristine.validate(); // returns true or false
+  if (isValid) {
+    console.log('форма заполнена правильно можно отправлять');
+  } else {
+    console.log('форма заполнена неправильно!');
+  }
+});
