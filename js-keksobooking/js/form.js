@@ -15,6 +15,7 @@ const priceField = form.querySelector('#price');
 const slider = form.querySelector('.ad-form__slider');
 const typeField = form.querySelector('#type');
 
+
 const roomNumberField = form.querySelector('#room_number');
 const capaсityField = form.querySelector('#capacity');
 
@@ -70,27 +71,62 @@ const MIN_PRICE_TYPE = {
   'hotel': 3000,
   'house': 5000,
   'palace': 10000,
-}
+};
 
-console.log(MIN_PRICE_TYPE[typeField.value]);
-
-const isPriceValid = () => {
-  const minPrice = MIN_PRICE_TYPE[typeField.value];
-  return priceField.value && priceField.value <= MAX_PRICE && priceField.value >= minPrice;
-}
-
-
-
-const onErrorSliderHide = () => {
-  if (isPriceValid()) {
+const sliderHide = (boolean) => {
+  if (boolean) {
     slider.style.display = 'block';
-    console.log('слайдер появился')
   } else {
     slider.style.display = 'none';
-    console.log('слайдер исчез');
   }
 }
 
+function validatePrice (value) {
+  const minPrice = MIN_PRICE_TYPE[typeField.value];
+  return value && value >= minPrice; //  валидация по  value <= MAX_PRICE обеспечится за счет атрибута в html data-pristine-max-message="Максимально 100000"
+};
+
+function getTitleType (value) {
+  let titleType;
+  typeField
+    .querySelectorAll('option')
+    .forEach((option) => {
+    if(option.value === value) {
+      titleType = option.textContent;
+    }
+  });
+  return titleType;
+}
+
+function getPriceErrorMessage () {
+  const minPrice = MIN_PRICE_TYPE[typeField.value];
+  const titleType = getTitleType(typeField.value);
+  return `${titleType} от ${minPrice}`;
+};
+
+pristine.addValidator(
+  priceField,
+  validatePrice,
+  getPriceErrorMessage,
+)
+
+const onPriceField = () => {
+  const isPriceValid = pristine.validate(priceField);
+  sliderHide(isPriceValid); // если поле цены невалидно то слайдер скрывается
+};
+
+priceField.addEventListener('input', onPriceField);
+
+const updatePricePlaceholder = () => {
+  const minPrice = MIN_PRICE_TYPE[typeField.value];
+  priceField.placeholder = minPrice;
+};
+
+const onTypeField = () => {
+  pristine.validate(priceField);
+};
+
+typeField.addEventListener('change', onTypeField);
 
 form.addEventListener('submit', function (evt) {
   evt.preventDefault();

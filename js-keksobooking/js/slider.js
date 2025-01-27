@@ -78,8 +78,9 @@ noUiSlider.create(sliderElement, {
 });
 
 sliderElement.noUiSlider.on('update', () => {
-  valueElement.value = sliderElement.noUiSlider.get();
-});
+    valueElement.value = parseInt(sliderElement.noUiSlider.get());
+  });
+
 
 // продолжить Д/З раздел 8 (валидация формы)
 export {getChosenType}
