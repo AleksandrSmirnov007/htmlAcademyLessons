@@ -123,7 +123,8 @@ const updatePricePlaceholder = () => {
 };
 
 const onTypeField = () => {
-  pristine.validate(priceField);
+  const isPriceValid = pristine.validate(priceField);
+  sliderHide(isPriceValid); // если поле цены невалидно то слайдер скрывается
 };
 
 typeField.addEventListener('change', onTypeField);

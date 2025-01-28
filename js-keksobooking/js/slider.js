@@ -65,20 +65,26 @@ noUiSlider.create(sliderElement, {
   // А вот с методом .format.to() нужно повозиться. Условия такие: если значение слайдера целое число, то нужно вывести его без дробной части; если значение дробное — с одним знаком после запятой. Для первого условия используем метод Number.isInteger(), он вернёт булево значение в зависимости от того, целое ли ему передано число. Например, число 7.0 метод считает целым, хотя запись дробная. Это то, что нам и нужно. А дальше дело техники. С помощью .toFixed() оставим нужное количество знаков после запятой.
   format: {
     to: function (value) {
+      if (!value) {
+        return '';
+      } // слайдер зависал при переключении поля тип когда в поле price не было данных или данные были стерты добавил такое условие стало работать
       if (Number.isInteger(value)) {
         return value.toFixed(0); // если нужен вывод к примеру в процентах то можно использовать шаблонную строку return `${value.toFixed(0)} %`;
-      } else{
+      } else {
       return value.toFixed(0);
       }
     },
     from: function (value) {
+      if (!value) {
+        return '';
+      } // слайдер зависал при переключении поля тип когда в поле price не было данных или данные были стерты добавил такое условие стало работать
       return parseFloat(value);
     },
   },
 });
 
 sliderElement.noUiSlider.on('update', () => {
-    valueElement.value = parseInt(sliderElement.noUiSlider.get());
+    valueElement.value = sliderElement.noUiSlider.get();
   });
 
 
