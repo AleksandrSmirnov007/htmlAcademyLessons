@@ -5,9 +5,7 @@
 // Все интерактивные элементы формы .ad-form должны быть заблокированы с помощью атрибута disabled, добавленного на них или на их родительские блоки fieldset. Слайдер также должен быть заблокирован;
 // Форма с фильтрами .map__filters заблокирована так же, как и форма .ad-form — на форму добавлен специальный класс, а на её интерактивные элементы атрибуты disabled.
 
-import {getChosenType} from './slider.js';
-
-
+import './slider.js';
 
 const form = document.querySelector('.ad-form');
 const titleField = form.querySelector('#title');
@@ -15,16 +13,12 @@ const priceField = form.querySelector('#price');
 const slider = form.querySelector('.ad-form__slider');
 const typeField = form.querySelector('#type');
 
-
-const roomNumberField = form.querySelector('#room_number');
+const roomsField = form.querySelector('#room_number');
 const capaсityField = form.querySelector('#capacity');
-
-const MAX_PRICE = 100000;
 
 const activeFormElements = document.querySelectorAll('.ad-form__element');
 
-console.log();
-
+// активность и неактивность формы
 const onInactiveForm  = () => {
   form.classList.add('ad-form--disabled');
   activeFormElements.forEach((element) => {
@@ -42,6 +36,9 @@ const onActiveForm = () => {
 onInactiveForm();
 onActiveForm();
 
+
+// валидация
+
 const pristine = new Pristine(form, {
   // class of the parent element where the error/success class is added
   classTo: 'ad-form__element',
@@ -58,6 +55,8 @@ const pristine = new Pristine(form, {
 const validateTitleLength = (value) => value.length < 100;
 
 // Чтобы описать валидации в JavaScript, нужно вызвать метод .addValidator(). // Метод принимает несколько аргументов. Первый — элемент формы, который мы хотим валидировать. // Давайте реализуем ту же валидацию поля ввода имени питомца, но уже через JavaScript. Для этого найдём поле через .querySelector() и передадим Pristine. // Вторым аргументом в .addValidator() нужно передать функцию проверки. Можно передавать по месту, но удобнее объявить функцию выше и передать по ссылке. Назовём её validateNickname. // Функция проверки обязательно должна возвращать true или false, в зависимости от того, валидно ли поле. // Pristine будет вызывать функцию проверки каждый раз, когда потребуется провалидировать форму. Первым параметром будет передано актуальное значение поля. // Третьим аргументом нужно передать сообщение об ошибке. // Попробуйте теперь отправить форму, нажав кнопку «Заказать». // Если поле с именем пустое, или имя короче двух символов, или длиннее 50 символов — мы увидим ошибку. // добавляем валидатор к полю // // pristine.addValidator(nameOrElem, handler, errorMessage, priority, halt); priority - Приоритет функции валидации. Чем выше значение, тем раньше она вызывается при наличии нескольких валидаторов для одного поля. по умолчанию 1. halt - Останавливать ли проверку текущего поля после этой проверки. Если true после проверки текущего валидатора остальные валидаторы игнорируются для текущего поля. по умолчанию false
+
+// валидация поля заголовок обьявления
 pristine.addValidator(
   titleField,
   validateTitleLength,
@@ -65,6 +64,7 @@ pristine.addValidator(
 );
 //даные атрибута из  html ( data-pristine-maxlength-message="Максимальная длина 100 символов" ) почему-то не показываются при достижении длинны строки в 100 символов поэтому я добавил к этому полю валидатор в JS
 
+// // валидация поля цена
 const MIN_PRICE_TYPE = {
   'bungalow': 0,
   'flat': 1000,
@@ -81,12 +81,12 @@ const sliderHide = (boolean) => {
   }
 }
 
-function validatePrice (value) {
+const validatePrice = (value) => {
   const minPrice = MIN_PRICE_TYPE[typeField.value];
   return value && value >= minPrice; //  валидация по  value <= MAX_PRICE обеспечится за счет атрибута в html data-pristine-max-message="Максимально 100000"
 };
 
-function getTitleType (value) {
+const getTitleType = (value) => {
   let titleType;
   typeField
     .querySelectorAll('option')
@@ -98,7 +98,8 @@ function getTitleType (value) {
   return titleType;
 }
 
-function getPriceErrorMessage () {
+const getPriceErrorMessage = () => {
+  console.log('работает');
   const minPrice = MIN_PRICE_TYPE[typeField.value];
   const titleType = getTitleType(typeField.value);
   return `${titleType} от ${minPrice}`;
@@ -111,23 +112,116 @@ pristine.addValidator(
 )
 
 const onPriceField = () => {
-  const isPriceValid = pristine.validate(priceField);
+  const isPriceValid = pristine.validate(priceField); // это дублирует валидацию поля, но по другому результат валидации пока не получить
   sliderHide(isPriceValid); // если поле цены невалидно то слайдер скрывается
 };
 
 priceField.addEventListener('input', onPriceField);
 
-const updatePricePlaceholder = () => {
+const updatePriceAtribytes = () => {
   const minPrice = MIN_PRICE_TYPE[typeField.value];
   priceField.placeholder = minPrice;
+  priceField.min = minPrice;
 };
+
+updatePriceAtribytes();
 
 const onTypeField = () => {
   const isPriceValid = pristine.validate(priceField);
   sliderHide(isPriceValid); // если поле цены невалидно то слайдер скрывается
+  updatePriceAtribytes();
 };
 
 typeField.addEventListener('change', onTypeField);
+
+// валидация соответсвия полей количество комнат и количество гостей // 3.6. Поле «Количество комнат» синхронизировано с полем «Количество мест» таким образом, что при выборе количества комнат вводятся ограничения на допустимые варианты выбора количества гостей: 1 комната — «для 1 гостя»; 2 комнаты — «для 2 гостей» или «для 1 гостя»; 3 комнаты — «для 3 гостей», «для 2 гостей» или «для 1 гостя»; 100 комнат — «не для гостей».
+
+const ROOM_CAPACITY = {
+  '1': ['1'],
+  '2': ['1', '2'],
+  '3': ['1', '2', '3'],
+  '100': ['0'],
+};
+
+// валидация roomsField
+const roomsValidate = (val) => { // в параметр val pristine передаст значение поля при использовании функции в pristine.addvalidatior(поле, функция проверки, текст ошибки )
+  const currentCapacity = capaсityField.value;
+  const validCapacityArray = ROOM_CAPACITY[val];
+  const isValid = validCapacityArray.some((validCapacity) => validCapacity === currentCapacity);
+  return isValid;
+};
+
+const roomsErrorMessage = () => {
+  const rooms = roomsField.value;
+  let message;
+  switch(rooms) {
+    case '1':
+      message = '1 комната для 1 гостя'
+      break;
+    case '2':
+      message = '2 комнаты для 1, 2 гостей'
+      break;
+    case '3':
+      message = '3 комнаты для 1, 2, 3 гостей'
+      break;
+    case '100':
+      message = '100 комнат не для гостей'
+      break;
+  }
+  return message;
+};
+
+pristine.addValidator(
+  roomsField,
+  roomsValidate,
+  roomsErrorMessage
+);
+
+const onCapacityFieldChange = () => {
+  pristine.validate(roomsField);
+};
+
+capaсityField.addEventListener('change', onCapacityFieldChange ); // проверка при обновлении поля capacity
+
+// валидация capaсityField
+const capacityValidate = (val) => { // в параметр val pristine передаст значение поля при использовании функции в pristine.addvalidatior(поле, функция проверки, текст ошибки )
+  const currentCapacity = val;
+  const validCapasityArray = ROOM_CAPACITY[roomsField.value];
+  const isValid = validCapasityArray.some((validCapacity) => validCapacity === currentCapacity);
+  return isValid;
+};
+
+const capacityErrorMessage = () => {
+  const capacity = capaсityField.value;
+  let message;
+  switch(capacity) {
+    case '1':
+      message = 'для 1 гостя 1 комната'
+      break;
+    case '2':
+      message = 'для 1, 2 гостей 2 комнаты'
+      break;
+    case '3':
+      message = 'для 1, 2, 3 гостей 3 комнаты'
+      break;
+    case '0':
+      message = 'не для гостей 100 комнат'
+      break;
+  }
+  return message;
+};
+
+pristine.addValidator(
+  capaсityField,
+  capacityValidate,
+  capacityErrorMessage
+);
+
+const onRoomsFieldChange = () => {
+  pristine.validate(capaсityField);
+};
+
+roomsField.addEventListener('change', onRoomsFieldChange);
 
 form.addEventListener('submit', function (evt) {
   evt.preventDefault();

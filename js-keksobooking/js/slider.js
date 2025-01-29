@@ -1,43 +1,52 @@
-import { getMaxPrice, getType } from './form-variables.js';
-
-const sliderElement = document.querySelector('.ad-form__slider');
-const valueElement = document.querySelector('.ad-form__value');
 const form = document.querySelector('.ad-form');
-const selectType = form.querySelector('#type');
+const priceField = form.querySelector('#price');
+const typeField = form.querySelector('#type');
+const sliderElement = form.querySelector('.ad-form__slider');
 
-const MAX_PRICE = getMaxPrice();
-// console.log(MAX_PRICE);
+const MAX_PRICE = 100000;
 
-const TYPE = getType();
-// console.log(TYPE);
+const TYPE = [
+  {
+    name: 'bungalow',
+    min: 0,
+  },
 
+  {
+    name: 'flat',
+    min: 1000,
+  },
+
+  {
+    name: 'hotel',
+    min: 3000,
+  },
+
+  {
+    name: 'house',
+    min: 5000,
+  },
+
+  {
+    name: 'palace',
+    min: 10000,
+  },
+];
 
 const SLIDER_STEP = 100;
 sliderElement.style.marginTop = '3px';
 
-// Начальное значение в поле ввода нужно будет записать самостоятельно. //   непонятно зачем ведь метод valueElement.value = sliderElement.noUiSlider.get(); возвращает значение сразу и даже если будет присвоено другое зщансчение изначально, метод его исправит
-valueElement.value = 4000;
+// Начальное значение в поле ввода нужно будет записать самостоятельно. //   непонятно зачем ведь метод priceField.value = sliderElement.noUiSlider.get(); возвращает значение сразу и даже если будет присвоено другое зщансчение изначально, метод его исправит
+priceField.value = 4000;
 
 const DEFAULT_TYPE = TYPE[1];
 let chosenType = DEFAULT_TYPE;
 
-function getChosenType () {
-  return chosenType;
-}
-
-const updateAtribyte = () => {
-  valueElement.min = chosenType.min;
-  valueElement.placeholder = chosenType.min;
-};
-
-const onSelectTypeChange = () => {
-  chosenType = TYPE.find((type) => type.name === selectType.value); // find()Метод Array экземпляров возвращает первый элемент в предоставленном массиве, который удовлетворяет предоставленной функции тестирования. Если никакие значения не удовлетворяют функции тестирования, возвращается undefined. Если вам нужен индекс найденного элемента в массиве, используйте findIndex().
-  console.log(chosenType);
+const onTypeFieldChange = () => {
+  chosenType = TYPE.find((type) => type.name === typeField.value); // find()Метод Array экземпляров возвращает первый элемент в предоставленном массиве, который удовлетворяет предоставленной функции тестирования. Если никакие значения не удовлетворяют функции тестирования, возвращается undefined. Если вам нужен индекс найденного элемента в массиве, используйте findIndex().
   updateSlider();
-  updateAtribyte();
 };
 
-selectType.addEventListener('change', onSelectTypeChange);
+typeField.addEventListener('change', onTypeFieldChange);
 
 const isDefault = () => chosenType == DEFAULT_TYPE;
 
@@ -47,7 +56,7 @@ const updateSlider = () => {
       min: chosenType.min,
       max: MAX_PRICE,
     },
-    start: valueElement.value,
+    start: priceField.value,
   }
   );
 };
@@ -84,9 +93,6 @@ noUiSlider.create(sliderElement, {
 });
 
 sliderElement.noUiSlider.on('update', () => {
-    valueElement.value = sliderElement.noUiSlider.get();
-  });
+  priceField.value = sliderElement.noUiSlider.get();
+});
 
-
-// продолжить Д/З раздел 8 (валидация формы)
-export {getChosenType}
