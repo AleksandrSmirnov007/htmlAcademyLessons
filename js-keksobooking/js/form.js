@@ -12,10 +12,12 @@ const titleField = form.querySelector('#title');
 const priceField = form.querySelector('#price');
 const slider = form.querySelector('.ad-form__slider');
 const typeField = form.querySelector('#type');
-
 const roomsField = form.querySelector('#room_number');
 const capaсityField = form.querySelector('#capacity');
-
+const timeinField = form.querySelector('#timein');
+console.log(timeinField);
+const timeoutField = form.querySelector('#timeout');
+console.log(timeoutField);
 const activeFormElements = document.querySelectorAll('.ad-form__element');
 
 // активность и неактивность формы
@@ -99,7 +101,6 @@ const getTitleType = (value) => {
 }
 
 const getPriceErrorMessage = () => {
-  console.log('работает');
   const minPrice = MIN_PRICE_TYPE[typeField.value];
   const titleType = getTitleType(typeField.value);
   return `${titleType} от ${minPrice}`;
@@ -131,8 +132,7 @@ const onTypeField = () => {
   sliderHide(isPriceValid); // если поле цены невалидно то слайдер скрывается
   updatePriceAtribytes();
 };
-
-typeField.addEventListener('change', onTypeField);
+// typeField.addEventListener('change', onTypeField);
 
 // валидация соответсвия полей количество комнат и количество гостей // 3.6. Поле «Количество комнат» синхронизировано с полем «Количество мест» таким образом, что при выборе количества комнат вводятся ограничения на допустимые варианты выбора количества гостей: 1 комната — «для 1 гостя»; 2 комнаты — «для 2 гостей» или «для 1 гостя»; 3 комнаты — «для 3 гостей», «для 2 гостей» или «для 1 гостя»; 100 комнат — «не для гостей».
 
@@ -180,8 +180,7 @@ pristine.addValidator(
 const onCapacityFieldChange = () => {
   pristine.validate(roomsField);
 };
-
-capaсityField.addEventListener('change', onCapacityFieldChange ); // проверка при обновлении поля capacity
+// capaсityField.addEventListener('change', onCapacityFieldChange ); // проверка при обновлении поля capacity
 
 // валидация capaсityField
 const capacityValidate = (val) => { // в параметр val pristine передаст значение поля при использовании функции в pristine.addvalidatior(поле, функция проверки, текст ошибки )
@@ -220,8 +219,42 @@ pristine.addValidator(
 const onRoomsFieldChange = () => {
   pristine.validate(capaсityField);
 };
+// roomsField.addEventListener('change', onRoomsFieldChange);
 
-roomsField.addEventListener('change', onRoomsFieldChange);
+//  Поля «Время заезда» и «Время выезда» синхронизированы: при изменении значения одного поля во втором выделяется соответствующее ему значение. Например, если время заезда указано «после 14», то время выезда будет равно «до 14» и наоборот.
+
+const onTimeinFieldChange = (evt) => {
+  timeoutField.value = evt.target.value;
+};
+// timeinField.addEventListener('change', onTimeinFieldChange);
+
+const onTimeoutFieldChange = (evt) => {
+  timeinField.value = evt.target.value;
+};
+// timeoutField.addEventListener('change', onTimeoutFieldChange);
+
+
+// собираем все change обработчики по полям на форму в один обработчик change (код с добавлением обработчиков закомментрируем)
+form.addEventListener('change', (evt) => {
+  switch (evt.target) {
+    case typeField:
+      onTypeField();
+      break;
+    case capaсityField:
+      onCapacityFieldChange();
+      break;
+    case roomsField:
+      onRoomsFieldChange();
+      break;
+    case timeinField:
+      onTimeinFieldChange(evt);
+      break;
+    case timeoutField:
+      onTimeoutFieldChange(evt);
+      break;
+  }
+});
+
 
 form.addEventListener('submit', function (evt) {
   evt.preventDefault();
