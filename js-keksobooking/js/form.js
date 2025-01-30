@@ -15,9 +15,7 @@ const typeField = form.querySelector('#type');
 const roomsField = form.querySelector('#room_number');
 const capaсityField = form.querySelector('#capacity');
 const timeinField = form.querySelector('#timein');
-console.log(timeinField);
 const timeoutField = form.querySelector('#timeout');
-console.log(timeoutField);
 const activeFormElements = document.querySelectorAll('.ad-form__element');
 
 // активность и неактивность формы
@@ -234,7 +232,7 @@ const onTimeoutFieldChange = (evt) => {
 // timeoutField.addEventListener('change', onTimeoutFieldChange);
 
 
-// собираем все change обработчики по полям на форму в один обработчик change (код с добавлением обработчиков закомментрируем)
+//  все change обработчики по полям собираем в один обработчик change  на форму (код с добавлением обработчиков закомментрируем)
 form.addEventListener('change', (evt) => {
   switch (evt.target) {
     case typeField:

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./nouislider/nouislider.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin=""/>
   <title>Кексобукинг</title>
 </head>
 <body>
@@ -20,7 +21,9 @@
     <section class="map">
 
       <!-- Блок для вставки карты -->
-      <div class="map__canvas" id="map-canvas"></div>
+      <div class="map__canvas" id="map-canvas">
+        <div id="map" style="height: 100%;"></div>
+      </div>
 
       <!-- Фильтрация объявлений -->
       <div class="map__filters-container">
@@ -255,5 +258,7 @@
   <script src="./js/main.js" type="module"></script>
   <script src="./pristine/pristine.min.js"  type="text/javascript"></script>
   <script src="./nouislider/nouislider.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
+  <script src="./leaflet/map.js"></script>
 </body>
 </html>
