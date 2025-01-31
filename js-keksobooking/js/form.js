@@ -16,6 +16,7 @@ const roomsField = form.querySelector('#room_number');
 const capaсityField = form.querySelector('#capacity');
 const timeinField = form.querySelector('#timein');
 const timeoutField = form.querySelector('#timeout');
+const addressField = form.querySelector('#address');
 const activeFormElements = document.querySelectorAll('.ad-form__element');
 
 // активность и неактивность формы
@@ -33,8 +34,8 @@ const onActiveForm = () => {
   });
 }
 
-onInactiveForm();
-onActiveForm();
+onInactiveForm(); // форма станет неактивна сразу при загрузке страницы
+// onActiveForm(); // активной форма
 
 
 // валидация
@@ -263,3 +264,16 @@ form.addEventListener('submit', function (evt) {
     console.log('форма заполнена неправильно!');
   }
 });
+
+//  address
+
+addressField.disabled = true;
+
+const updateAddress = (value) => {
+  addressField.value = value;
+}
+
+// updateAddress('hjfjghjfhgj');
+
+
+export {onActiveForm, updateAddress};

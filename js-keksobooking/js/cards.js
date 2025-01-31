@@ -1,5 +1,3 @@
-import { getRentals } from "./data.js";
-
 const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
 const mapCanvas = document.querySelector('.map__canvas');
 
