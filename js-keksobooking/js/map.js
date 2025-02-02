@@ -75,11 +75,11 @@ const onMoveendMainPin = (cb) => {
   });
 };
 
-// Обычные маркеры похожих обьявлений
+// Обычные маркеры похожих обьявлений 5.3. Каждое из объявлений показывается на карте в виде метки. Размеры метки похожего объявления — 40 на 40, размеры специальной метки выбора адреса — 52 на 52.
 const similarPinIcon = L.icon ({
   iconUrl: '../img/main-pin.svg',
-  iconSize: [26 , 26],
-  iconAnchor: [13, 26],
+  iconSize: [40 , 40],
+  iconAnchor: [20, 40],
 });
 
 // data здесь -  один элемент массива данных
@@ -108,4 +108,12 @@ const renderMarkers = (markers) => {
 };
 // при клике на маркер консоль выдает собщения предупреждения "Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies"  что означает: "Chrome переходит к новому интерфейсу, который позволяет пользователям просматривать веб-страницы без использования сторонних файлов cookie."
 // непонимаю почему так, но есть закономерность сообщения вылезают только когда в карточке есть фотографии в блоке popup__photos  .... нужно разобраться в этом позже
+
+// map.closePopup(); // В вашем объекте map есть чистый метод, позволяющий закрыть все открытые всплывающие окна.
+const filterForm = document.querySelector('.map__filters');
+
+filterForm.addEventListener('click', () => { // убрать отсюда и применить при фильрации обьявлений
+  map.closePopup()} // работает
+);
+
 export { onMoveendMainPin, renderMarkers };
