@@ -1,5 +1,4 @@
 const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
-const mapCanvas = document.querySelector('.map__canvas');
 
 // для доюавления avatar
 const addDetailSrc = (card, selector, value) => {
@@ -115,17 +114,7 @@ const createCard = (data) => {
   return card;
 }
 
-const renderCards = (cards) => {
-  const fragment = document.createDocumentFragment();
-  cards.forEach((card) => {
-    const cardElement = createCard(card);
-    fragment.appendChild(cardElement)
-  });
-  mapCanvas.innerHTML = '';
-  mapCanvas.appendChild(fragment);
-}
-
-export {renderCards}
+export { createCard };
 
 
 
