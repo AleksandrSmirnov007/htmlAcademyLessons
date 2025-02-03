@@ -62,6 +62,10 @@ const timeContent = (checkin, checkout) => `Заезд после ${checkin}, в
 
 // renderfeatures
 const isElementContainsFeature = (element, features) => {
+  if (!features) {
+    return; // если а данных нет features, то завершить функцию // при получении данных выдавало ошибку в обработке (так как я упустил из виду когда генерировал свои данные для проверки что features сожет и не быть)
+  }
+
   features.forEach((feature) => {
     if (element.classList.contains(`popup__feature--${feature}`)) {
       element.classList.remove('hidden');
@@ -80,11 +84,15 @@ const renderFeature = (card, features) => {
 //////////
 
 const renderPhoto = (card, photos) => {
-
   const fragment = document.createDocumentFragment();
   const photoTemplate = card.querySelector('.popup__photo');
   const container = card.querySelector('.popup__photos');
   container.innerHTML = '';
+
+  // напишем проверку на присутсвие фото после очистки контейнера, так как контейнер с фото нужно очистить в любом случае
+  if(!photos) {
+    return; // по тойже причине что и features я упустил и виду что данные могут отсутствовать в объекте
+  }
 
   photos.forEach((photo) => {
     const photoImg = photoTemplate.cloneNode(true);

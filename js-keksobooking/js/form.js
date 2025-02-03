@@ -234,6 +234,7 @@ const onTimeoutFieldChange = (evt) => {
 
 
 //  все change обработчики по полям собираем в один обработчик change  на форму (код с добавлением обработчиков закомментрируем)
+
 form.addEventListener('change', (evt) => {
   switch (evt.target) {
     case typeField:
