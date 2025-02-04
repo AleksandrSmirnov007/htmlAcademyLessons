@@ -7,17 +7,35 @@
 
 import './slider.js';
 
+
+const body = document.querySelector('body');
 const form = document.querySelector('.ad-form');
 const titleField = form.querySelector('#title');
 const priceField = form.querySelector('#price');
 const slider = form.querySelector('.ad-form__slider');
 const typeField = form.querySelector('#type');
 const roomsField = form.querySelector('#room_number');
-const capaсityField = form.querySelector('#capacity');
+const capacityField = form.querySelector('#capacity');
 const timeinField = form.querySelector('#timein');
 const timeoutField = form.querySelector('#timeout');
 const addressField = form.querySelector('#address');
 const activeFormElements = document.querySelectorAll('.ad-form__element');
+const submitButton = form.querySelector('.ad-form__submit');
+
+
+titleField.value = 'ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh';
+// addressField.value = 'dddddddddddddddddfjjjjjjjjjjjj'
+capacityField.value = '1';
+
+const successTemplate =
+  document
+  .querySelector('#success')
+  .content.querySelector('.success');
+
+const failTemplate =
+  document
+  .querySelector('#error')
+  .content.querySelector('.error');
 
 // активность и неактивность формы
 const onInactiveForm  = () => {
@@ -144,7 +162,7 @@ const ROOM_CAPACITY = {
 
 // валидация roomsField
 const roomsValidate = (val) => { // в параметр val pristine передаст значение поля при использовании функции в pristine.addvalidatior(поле, функция проверки, текст ошибки )
-  const currentCapacity = capaсityField.value;
+  const currentCapacity = capacityField.value;
   const validCapacityArray = ROOM_CAPACITY[val];
   const isValid = validCapacityArray.some((validCapacity) => validCapacity === currentCapacity);
   return isValid;
@@ -176,12 +194,14 @@ pristine.addValidator(
   roomsErrorMessage
 );
 
+pristine.validate(roomsField); // запустим валидацию при загрузке страницы так как примеру у нас выбраны не соответсвующие опции в селектах
+
 const onCapacityFieldChange = () => {
   pristine.validate(roomsField);
 };
-// capaсityField.addEventListener('change', onCapacityFieldChange ); // проверка при обновлении поля capacity
+// capacityField.addEventListener('change', onCapacityFieldChange ); // проверка при обновлении поля capacity
 
-// валидация capaсityField
+// валидация capacityField
 const capacityValidate = (val) => { // в параметр val pristine передаст значение поля при использовании функции в pristine.addvalidatior(поле, функция проверки, текст ошибки )
   const currentCapacity = val;
   const validCapasityArray = ROOM_CAPACITY[roomsField.value];
@@ -190,7 +210,7 @@ const capacityValidate = (val) => { // в параметр val pristine пере
 };
 
 const capacityErrorMessage = () => {
-  const capacity = capaсityField.value;
+  const capacity = capacityField.value;
   let message;
   switch(capacity) {
     case '1':
@@ -210,13 +230,15 @@ const capacityErrorMessage = () => {
 };
 
 pristine.addValidator(
-  capaсityField,
+  capacityField,
   capacityValidate,
   capacityErrorMessage
 );
 
+pristine.validate(capacityField); // запустим валидацию при загрузке страницы так как примеру у нас выбраны не соответсвующие опции в селектах
+
 const onRoomsFieldChange = () => {
-  pristine.validate(capaсityField);
+  pristine.validate(capacityField);
 };
 // roomsField.addEventListener('change', onRoomsFieldChange);
 
@@ -240,7 +262,7 @@ form.addEventListener('change', (evt) => {
     case typeField:
       onTypeField();
       break;
-    case capaсityField:
+    case capacityField:
       onCapacityFieldChange();
       break;
     case roomsField:
@@ -255,26 +277,78 @@ form.addEventListener('change', (evt) => {
   }
 });
 
-
-form.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  const isValid = pristine.validate(); // returns true or false
-  if (isValid) {
-    console.log('форма заполнена правильно можно отправлять');
-  } else {
-    console.log('форма заполнена неправильно!');
-  }
-});
-
-//  address
-
-addressField.disabled = true;
+addressField.readOnly = true; // addressField.disabled = true; нельзя использовать так как Поле с атрибутом disabled не передаст своё содержимое при отправке формы.
 
 const updateAddress = (value) => {
   addressField.value = value;
+  pristine.validate(addressField);
+};
+
+pristine.validate(addressField);
+
+const blockSubmitButton = () => {
+  submitButton.disabled = true;
+  submitButton.textContent = 'Отправляю...';
 }
 
-// updateAddress('hjfjghjfhgj');
+const unBlockSubmitButton = () => {
+  submitButton.disabled = false;
+  submitButton.textContent = 'Опубликовать';
+}
 
 
-export {onActiveForm, updateAddress};
+// сообщение об успехе
+const showSuccessMessage = (message) => {
+  const successMessage = successTemplate.cloneNode(true);
+  if (message) {
+    const messageElement = successMessage.querySelector('.success__message');
+    messageElement.textContent = message;
+  }
+  const hideSuccessMessage = () => successMessage.remove();
+  successMessage.addEventListener('click', hideSuccessMessage);
+  body.appendChild(successMessage);
+  setTimeout(hideSuccessMessage, 5000);
+};
+
+// сообщение об ошибке
+const showFailMessage = (message) => {
+  const failMessage = failTemplate.cloneNode(true);
+  if (message) {
+    const messageElement = failMessage.querySelector('.error__message');
+    messageElement.textContent = message;
+  }
+  const hideFailMessage = () => failMessage.remove();
+  failMessage.addEventListener('click', hideFailMessage);
+  body.appendChild(failMessage);
+}
+
+const onFormReset = () => {
+  console.log('reset is working');
+  form.reset();
+};
+
+form.addEventListener('reset', onFormReset);
+
+const setOnFormSubmit = (cb) => {
+  form.addEventListener('submit', async (evt) => {
+    evt.preventDefault();
+    const isValid = pristine.validate(); // returns true or false
+    if (isValid) {
+      blockSubmitButton();
+      console.log('форма заполнена правильно можно отправлять');
+      await cb(new FormData(form));
+      unBlockSubmitButton();
+    } else {
+      showFailMessage('Неправильно заполнены данные объявления');
+      console.log('форма заполнена неправильно!');
+    }
+  });
+};
+
+export {
+  onActiveForm,
+  updateAddress,
+  setOnFormSubmit,
+  showSuccessMessage,
+  showFailMessage,
+  onFormReset };

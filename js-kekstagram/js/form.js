@@ -148,7 +148,7 @@ const setOnFormSubmit = (cb) => {
     const isValid = pristine.validate();
 
     if (isValid) {
-      blockSubmitButton(); // если использовать сдесь form.addEventListener('submit', blockSubmitButton); то кнопка submit отключается только по второму клику по ней, так как событие на первый клик уже будет добавлено при запуске функциии showModal (функции показа формы)
+      blockSubmitButton(); // если форма правильно заполнена отключаем кнопку submit после клика на нее что бы не было дублирования нажатия
       await cb(new FormData(form));
       unBlockSubmitButton();
     }
