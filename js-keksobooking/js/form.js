@@ -23,9 +23,9 @@ const activeFormElements = document.querySelectorAll('.ad-form__element');
 const submitButton = form.querySelector('.ad-form__submit');
 
 
-titleField.value = 'ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh';
-// addressField.value = 'dddddddddddddddddfjjjjjjjjjjjj'
-capacityField.value = '1';
+// titleField.value = 'ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh';
+// // addressField.value = 'dddddddddddddddddfjjjjjjjjjjjj'
+// capacityField.value = '1';
 
 const successTemplate =
   document

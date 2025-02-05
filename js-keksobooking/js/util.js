@@ -15,4 +15,12 @@ const getRandomPostiveInteger = (a, b) => {
 const getRandomArrayElement = (array) =>
   array[getRandomPostiveInteger(0, array.length - 1)];
 
-export {getRandomPositiveFloat, getRandomPostiveInteger, getRandomArrayElement};
+const debounce = (callback, timeoutDelay) => {
+  let timeoutId;
+  return () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.aplly(this, rest), timeoutDelay);
+  };
+};
+
+export {getRandomPositiveFloat, getRandomPostiveInteger, getRandomArrayElement, debounce };

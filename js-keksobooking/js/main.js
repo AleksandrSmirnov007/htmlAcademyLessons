@@ -3,6 +3,8 @@ import { getData, sendData } from './api.js';
 import {updateAddress, setOnFormSubmit, showSuccessMessage, showFailMessage, onFormReset} from './form.js';
 import {onMoveendMainPin, renderMarkers} from './map.js';
 
+import './filter.js';
+
 
 onMoveendMainPin(updateAddress);  // передаем колбак функцию обновить данные в поле адресс в функции которая содержит обработчик событий
 
