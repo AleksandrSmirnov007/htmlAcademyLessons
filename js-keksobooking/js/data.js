@@ -123,10 +123,10 @@ const createRental = (index) => {
     offer: {
       title: TITLE[index - 1], //  title, строка — заголовок предложения. Придумайте самостоятельно.
       address: `${location.lat}, ${location.lng}`, //  address, строка — адрес предложения. Для простоты пусть пока составляется из географических координат по маске {{location.lat}}, {{location.lng}}.
-      price: getRandomPostiveInteger(200, 500) * 10, // price, число — стоимость. Случайное целое положительное число.
+      price: getRandomPostiveInteger(200, 6000) * 10, // price, число — стоимость. Случайное целое положительное число.
       type: getRandomArrayElement(TYPE), // type, строка — одно из пяти фиксированных значений: palace, flat, house, bungalow или hotel.
       rooms: getRandomPostiveInteger(1, MAX_ROOMS), // rooms, число — количество комнат. Случайное целое положительное число.
-      guests: getRandomPostiveInteger(1, MAX_GUESTS), // guests, число — количество гостей, которое можно разместить. Случайное целое положительное число.
+      guests: getRandomPostiveInteger(0, MAX_GUESTS), // guests, число — количество гостей, которое можно разместить. Случайное целое положительное число.
       checkin: getRandomArrayElement(CHECKIN), // checkin, строка — одно из трёх фиксированных значений: 12:00, 13:00 или 14:00.
       checkout: getRandomArrayElement(CHECKOUT), // checkout, строка — одно из трёх фиксированных значений: 12:00, 13:00 или 14:00.
       features: createFeatures(),// features, массив строк — массив случайной длины из значений: wifi, dishwasher, parking, washer, elevator, conditioner. Значения не должны повторяться.
@@ -142,7 +142,7 @@ const createRental = (index) => {
 
 const getRentals = () =>
   Array.from(
-    {length: 10},
+    {length: 55},
     (_, rentalIndex) => createRental(rentalIndex + 1)
   );
 

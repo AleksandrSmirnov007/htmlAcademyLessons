@@ -8,7 +8,7 @@ const getData = async (onSuccess, onFail) => {
     const rentals = await response.json();
     onSuccess(rentals);
 
-    // return rentals;
+    return rentals;
   } catch (error) {
     onFail(error.message);
   }
