@@ -104,7 +104,7 @@ const createLocation = () => {
   }
 };
 
-const createFeatures = () => FEATURES.slice(0, getRandomPostiveInteger(0, FEATURES.length - 1));
+const createFeatures = () => FEATURES.slice(0, getRandomPostiveInteger(0, FEATURES.length));
 
 const createPhotos = () =>
   Array.from({length: getRandomPostiveInteger(0, 5)}, () =>

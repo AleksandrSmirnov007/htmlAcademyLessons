@@ -50,7 +50,7 @@ console.log(rentals);
 
 // функции сортировки
 const sortType = (array) => {
-  if (type === 'any') {
+  if (currentType === 'any') {
     return array;
   }
   return array.filter((element) => element.offer.type === currentType);
@@ -80,27 +80,47 @@ const sortGuests = (array) => {
   return array.filter((element) => element.offer.guests === Number(currentGuests));
 };
 
-// функция сравнения двух массивов для sortfeatures (вне зависимости последовательности элементов)
+// // функция сравнения двух массивов для sortfeatures (вне зависимости последовательности элементов)
+// // каждому элементу одного массива должен быть равный элемент в другом массиве (при порядок элементов в обоих массивах не важен на всякий
+// // но эта функция слишком жестко фильтрует, так как например пользователю нужен вайфай, а стиральная машинка не принципиально он нажмет на заначек вайфай и ему покжет только обьявления где есть только вайфай, а таких мало, возможно есть смысл сделать функцию которая выбирала обявления обязалено указанные варианты удобств и плюс дополнительные удобства, то есть длинна массива из обьявления может быть и больше
+// const compareFeatures = (arrayElement, arrayFilter) => {
+//   if(arrayElement.length !== arrayFilter.length) {
+//     return false; // если по длинне массивы не совпадают то сразу не равны можно дальше не проверять
+//   }
+//   let match = true; // после проверки по длинне, предположим массивы равны
 
-const compareFeatures = (arrayA, arrayB) => {
-  if(arrayA.length !== arrayB.length) {
-    return false; // если по длинне массивы не совпадают то сразу не равны можно дальше не проверять
+//   for (let item of arrayFilter) {
+//     const isInclude = arrayElement.includes(item);   // для каждого элемента  массива (А) в другом массиве (B) должен содержаться его близнец
+//     if(!isInclude) {
+//       match = false;  // если есть случай "не содержится" значит в масивах есть разные элементы
+//       break; // Цикл for...of в JavaScript может быть прерван с использованием инструкции break. Если уже есть несовпадения нет смысла перебирать другие элементы массива и тратить ресурс поэтому не ипользую forEach
+//     }
+//   }
+//   return match;
+// };
+
+
+// сравнивает массивы не строго по длинне, поэтому могут быть дополнительные features, решил пуить будет так по шести показателяи мало вариантов для показа или не бывает вообюще из 55 каторые возращаеются с сервера (кстати также хорошо обрабатывается вариант влучае не выбранных значков в features  в фильтре)
+const compareFeatures = (arrayElement, arrayFilter) => {
+  if(arrayElement.length < arrayFilter.length) {
+    return false;
   }
   let match = true; // после проверки по длинне, предположим массивы равны
 
-  for (let itemA of arrayA) {
-    const isInclude = arrayB.includes(itemA);   // для каждого элемента  массива (А) в другом массиве (B) должен содержаться его близнец
+  for (let item of arrayFilter) {
+    const isInclude = arrayElement.includes(item);   // для каждого элемента  массива (А) в другом массиве (B) должен содержаться его близнец
     if(!isInclude) {
-      match = false;  // если есть случай "не содержится" значит в масивах есть разные элементы
+      match = false;  // если есть случай "не содержится" значит такое объявление нам не подходит
       break; // Цикл for...of в JavaScript может быть прерван с использованием инструкции break. Если уже есть несовпадения нет смысла перебирать другие элементы массива и тратить ресурс поэтому не ипользую forEach
     }
   }
   return match;
-}
+};
+
 
 const sortFeatures = (array) => {
   return array.filter((element) => {
-    const elementFeatures = element.offer.features; // массив
+    const elementFeatures = element.offer.features; // массив features в одном обьявлении
 
     if (compareFeatures(elementFeatures, currentFeatures)) {
       return true;
@@ -109,8 +129,29 @@ const sortFeatures = (array) => {
   });
 };
 
-// приминение всех фильтров сразу
-const sortAllFilters = (array) => sortFeatures(sortPrice(sortGuests(sortRooms(sortType(array))))); // последовательность исходя и сложности функций, сначала сортируеся простыми функциями что бы на долю сложным в массиве было меньше элементов
+// приминение всех фильтров сразу // const sortAllFilters = (array) => sortFeatures(sortPrice(sortGuests(sortRooms(sortType(array))))); // последовательность исходя и сложности функций, сначала сортируеся простыми функциями что бы на долю сложным в массиве было меньше элементов // функция conveyor (data, function1, function2, function3, function4 ) // берет данные передает их в первую функцию, а результат ее работы передает в параметр второй функции, резульат второй функции передается в параметры третьей  .... и так далее // // Синтаксический сахар вместо глубокой вложенности функций типа sortFeatures(sortPrice(sortGuests(sortRooms(sortType(array)))))
+const conveyor = (data, ...functions) => {
+  functions.forEach((funct) => data = funct(data));
+  return data;
+};
+
+// собираем все фильры в общую функцию с помощью функции conveyor конвеер
+const sortAllFilters = (array) => conveyor (
+  array, // заменить на [...markers] array убрать из параметров
+  sortType,
+  sortRooms,
+  sortGuests,
+  sortPrice,
+  sortFeatures,
+  // console.log
+);
+
+
+const turnFilterOn = (loadedMarkers) => {
+  pictures = [...loadedMarkers]; // копирование массива загруженных картинок в пустой массив
+};
+
+
 
 // один обработчик на все поля фильра (делегирование)
 const onMapFilters = (evt) => {
@@ -152,17 +193,13 @@ const onMapFilters = (evt) => {
 
 
 
-  const filteredRentals = sortAllFilters(rentals);
+  const filteredRentals = sortAllFilters([...rentals]);
   console.log(filteredRentals);
+
+  // const debounceSortAllFilters = debounce(sortAllFilters, 1400);
+
+  // const debounceFilteredRentals = debounceSortAllFilters([...rentals]);
 };
 
-Последовательный вызов функций в JavaScript
-// Можно результат работы одной функции передать параметром в другую. В следующем примере мы сначала найдем квадрат числа 2, а затем квадрат результата: https://code.mu/ru/javascript/book/prime/functions/basis/sequential-calling/
-functon
-
-function all (fn, ...rest) {
-
-
-}
 
 mapFilters.addEventListener('change', onMapFilters)

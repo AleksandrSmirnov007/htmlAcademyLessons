@@ -15,11 +15,11 @@ const getRandomPostiveInteger = (a, b) => {
 const getRandomArrayElement = (array) =>
   array[getRandomPostiveInteger(0, array.length - 1)];
 
-const debounce = (callback, timeoutDelay) => {
+const debounce = (callback, timeoutDelay = 500) => {
   let timeoutId;
-  return () => {
+  return (...rest) => {
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => callback.aplly(this, rest), timeoutDelay);
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
   };
 };
 
