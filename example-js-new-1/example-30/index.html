@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pristine. Сложная валидация. В демо на примере близком к Кексобукингу</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=2.0" /> -->
+
+  <!-- <script src="https://zeckson.github.io/demo-console/2.2.1/index-silent.min.js"></script> -->
+
+</head>
+
+<body style="display: grid; place-content: center;">
+  <h1>Pristine. Сложная валидация. В демо на примере близком к Кексобукингу</h1>
+  <form class="form" autocomplete="off">
+    <h3>Доставка Кексокорма</h3>
+
+    <p class="form__item">
+      <label for="nickname">Имя питомца для открытки:</label>
+      <br>
+      <input
+        type="text"
+        name="nickname"
+        id="nickname"
+        required
+        placeholder="Кексик"
+        minlength="2"
+        maxlength="50"
+        data-pristine-required-message="Укажите имя питомца"
+        data-pristine-minlength-message="Минимум 2 символа"
+        data-pristine-maxlength-message="Максимум 50 символов"
+      >
+    </p>
+
+    <p>
+      Размер:
+      <label><input type="radio" name="unit" value="s" checked>S</label>
+      <label><input type="radio" name="unit" value="m">M</label>
+    </p>
+
+    <p class="form__item">
+      <label for="amount">Количество:</label>
+      <br>
+      <input
+        type="number"
+        name="amount"
+        id="amount"
+        placeholder="10"
+      >
+    </p>
+
+    <p class="form__item">
+      <select name="delivery">
+        <option value="Доставка" selected>Доставка</option>
+        <option value="Самовывоз">Самовывоз</option>
+      </select>
+      <select name="date">
+        <option value="Сегодня" selected>Сегодня</option>
+        <option value="Завтра">Завтра</option>
+        <option value="На выходных">На выходных</option>
+      </select>
+    </p>
+
+    <p>
+      <button>Заказать</button>
+    </p>
+  </form>
+
+  <script src="./pristine/pristine.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+</html>

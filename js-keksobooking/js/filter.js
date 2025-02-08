@@ -156,4 +156,13 @@ const onMapFilters = (evt) => {
   console.log(filteredRentals);
 };
 
+Последовательный вызов функций в JavaScript
+// Можно результат работы одной функции передать параметром в другую. В следующем примере мы сначала найдем квадрат числа 2, а затем квадрат результата: https://code.mu/ru/javascript/book/prime/functions/basis/sequential-calling/
+functon
+
+function all (fn, ...rest) {
+
+
+}
+
 mapFilters.addEventListener('change', onMapFilters)
