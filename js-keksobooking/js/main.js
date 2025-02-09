@@ -2,24 +2,21 @@
 import { getData, sendData } from './api.js';
 import {updateAddress, setOnFormSubmit, showSuccessMessage, showFailMessage, onFormReset} from './form.js';
 import {onMoveendMainPin, renderMarkers} from './map.js';
-
-import './filter.js';
-
+import { filterMarkers, turnFilterOn, setOnFilterChange } from './filter.js';
 
 onMoveendMainPin(updateAddress);  // передаем колбак функцию обновить данные в поле адресс в функции которая содержит обработчик событий
-
-// // код для случайной генерации маркеров
-// import {getRentals} from './data.js';
-// const data = getRentals();
-// console.log(data);
-// renderMarkers([data[0]]);
-// renderMarkers(data);
 
 const onGetDataError = (message) => {
   showFailMessage(message); // передатся сообщение из тела getData()
 };
 
-getData(renderMarkers, onGetDataError);
+const onGetDataSuccess = (data) => {
+  turnFilterOn(data);
+  renderMarkers(filterMarkers());
+  setOnFilterChange(renderMarkers);
+};
+
+getData(onGetDataSuccess, onGetDataError);
 
 
 const onSendDataSuccess = () => {

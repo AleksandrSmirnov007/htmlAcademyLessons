@@ -83,6 +83,9 @@ const similarPinIcon = L.icon ({
   iconAnchor: [20, 40],
 });
 
+// созжаем слой для Маркеров
+const markerGroup = L.layerGroup().addTo(map);
+
 // data здесь -  один элемент массива данных
 const renderMarker = (data) => {
   const {author, offer, location} = data;
@@ -97,12 +100,13 @@ const renderMarker = (data) => {
   );
 
   similarPinMarker
-    .addTo(map)
+    .addTo(markerGroup) // добавим маркеры на слой markerGroup,  можно было также добавить маркеры на (map) но тогда бы при удалении пришлось бы их всех искать класть в коллекцию и удалять обходя колекцию методом forEach // Но в Leaftet есть возможность добавить маркеры не на карту а на слой на карте  и удалить их разом методом clearLayers() // Что мы и будем делать в функции renderMarkers первым делом
     .bindPopup(createCard(data));  // Кстати, можно было обойтись без <template>, используя шаблонные строки. Тоже будет работать, потому что метод bindPopup() написан так, что может принимать строки, валидную разметку в виде строки и DOM-элемент.
 }
 
 // markers - массив данных целиком
 const renderMarkers = (markers) => {
+  markerGroup.clearLayers();
   markers.forEach((marker) => {
     renderMarker(marker);
   });

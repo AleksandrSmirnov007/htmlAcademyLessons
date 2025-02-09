@@ -1,12 +1,11 @@
 import { debounce } from './util.js';
-import { getData } from './api.js'
-import { getRentals } from './data.js';
-import { renderMarkers } from './map.js';
+
+let markers = []; // в эту переменную будут копироваться  данные которые пришли с сервера
 
 const mapFilters = document.querySelector('.map__filters');
 const featuresCheckbox = mapFilters.querySelectorAll('[name="features"]');
 
-const MARKER_COUNT = 10; // сделать countFulter для MARKER_COUNT
+const MARKERS_COUNT = 10; // количество маркеров отображаемое единовременно на карте сделать countFulter для MARKER_COUNT
 
 // применю промежутки массив из двух чисел (минимальное и максимальное), что бы потом просто подставитть их в условие
 const PRICE_MAP = {
@@ -15,13 +14,6 @@ const PRICE_MAP = {
   low: [0, 10000],
   high: [50000, Infinity],
 };
-
-let markers = [];
-
-// const getMarkers = async () => {
-//   const data = await getData(console.log, console.log);
-//   return data;
-// };
 
 // переменные данных фильра
 let currentType = 'any';
@@ -44,9 +36,6 @@ const updateCurrentFeatures = () => {
     }
   });
 };
-
-const rentals = getRentals();
-console.log(rentals);
 
 // функции сортировки
 const sortType = (array) => {
@@ -100,7 +89,7 @@ const sortGuests = (array) => {
 // };
 
 
-// сравнивает массивы не строго по длинне, поэтому могут быть дополнительные features, решил пуить будет так по шести показателяи мало вариантов для показа или не бывает вообюще из 55 каторые возращаеются с сервера (кстати также хорошо обрабатывается вариант влучае не выбранных значков в features  в фильтре)
+// сравнивает массивы не строго по длинне, поэтому могут быть дополнительные features, решил пуcть будет так по шести показателяи мало вариантов для показа или не бывает вообюще из 55 каторые возращаеются с сервера (кстати также при этом хорошо обрабатывается вариант влучае не выбранных значков в features  в фильтре)
 const compareFeatures = (arrayElement, arrayFilter) => {
   if(arrayElement.length < arrayFilter.length) {
     return false;
@@ -117,10 +106,14 @@ const compareFeatures = (arrayElement, arrayFilter) => {
   return match;
 };
 
-
 const sortFeatures = (array) => {
   return array.filter((element) => {
-    const elementFeatures = element.offer.features; // массив features в одном обьявлении
+    let elementFeatures;
+    if (!element.offer.features) {
+      elementFeatures = []; // если сваойтва в объекте нет, то что пусть будет, потому что функция compareFeatures принимает для сравнения только массивы, кстати это свойства не всегда бывает в данных, а в тех данных которые я сам генерировал я передавал пустой массив если не было features если на этом этапе вернуть false то элемент нникогда не отразится на карте (хотя у него должны быть шансы отразиться когда когда в фильре currentFeatures пустой массив [] )
+    } else {
+      elementFeatures = element.offer.features; // массив features в одном обьявлении //
+    }
 
     if (compareFeatures(elementFeatures, currentFeatures)) {
       return true;
@@ -129,77 +122,90 @@ const sortFeatures = (array) => {
   });
 };
 
-// приминение всех фильтров сразу // const sortAllFilters = (array) => sortFeatures(sortPrice(sortGuests(sortRooms(sortType(array))))); // последовательность исходя и сложности функций, сначала сортируеся простыми функциями что бы на долю сложным в массиве было меньше элементов // функция conveyor (data, function1, function2, function3, function4 ) // берет данные передает их в первую функцию, а результат ее работы передает в параметр второй функции, резульат второй функции передается в параметры третьей  .... и так далее // // Синтаксический сахар вместо глубокой вложенности функций типа sortFeatures(sortPrice(sortGuests(sortRooms(sortType(array)))))
+const sortCount = (array) => {
+  if (array.length > MARKERS_COUNT) {
+    return array.slice(0, MARKERS_COUNT); // если после фильровки больше десяти элементов то обрежь и верни десять нужно будет добавить рандомность как в кексограмме
+  }
+  return array;
+}
+
+// приминение всех фильтров сразу // const filterMarkers = (array) => sortFeatures(sortPrice(sortGuests(sortRooms(sortType(array))))); // последовательность исходя и сложности функций, сначала сортируеся простыми функциями что бы на долю сложным в массиве было меньше элементов // функция conveyor (data, function1, function2, function3, function4 ) // берет данные передает их в первую функцию, а результат ее работы передает в параметр второй функции, резульат второй функции передается в параметры третьей  .... и так далее // // Синтаксический сахар вместо глубокой вложенности функций типа sortFeatures(sortPrice(sortGuests(sortRooms(sortType(array)))))
 const conveyor = (data, ...functions) => {
   functions.forEach((funct) => data = funct(data));
   return data;
 };
 
 // собираем все фильры в общую функцию с помощью функции conveyor конвеер
-const sortAllFilters = (array) => conveyor (
-  array, // заменить на [...markers] array убрать из параметров
+const filterMarkers = () => conveyor (
+  [...markers], // [...rentals] (данные сгенерированные для разработки) заменить на [...markers] (данные которые приходят с сервера)
   sortType,
   sortRooms,
   sortGuests,
   sortPrice,
   sortFeatures,
-  // console.log
+  sortCount
 );
 
-
 const turnFilterOn = (loadedMarkers) => {
-  pictures = [...loadedMarkers]; // копирование массива загруженных картинок в пустой массив
+  markers = [...loadedMarkers]; // копирование массива загруженных картинок в пустой массив
 };
-
-
 
 // один обработчик на все поля фильра (делегирование)
-const onMapFilters = (evt) => {
-  console.log('в работе---------------------');
 
-  switch (evt.target.name) {
-    case 'housing-type':
-      updateCurrentType(evt.target.value);
-      break;
-    case 'housing-price':
-      updatecurrentPrice(evt.target.value);
-      break;
-    case 'housing-rooms':
-      updateCurrentRooms(evt.target.value);
-      break;
-    case 'housing-guests':
-      updateCurrentGuests(evt.target.value);
-      break;
-    case 'features':
-      updateCurrentFeatures();
-      break;
-  }
-  console.log(currentType, currentPrice, currentRooms, currentGuests, currentFeatures);
+// const onMapFilters = (evt) => {
+//   switch (evt.target.name) {
+//     case 'housing-type':
+//       updateCurrentType(evt.target.value);
+//       break;
+//     case 'housing-price':
+//       updatecurrentPrice(evt.target.value);
+//       break;
+//     case 'housing-rooms':
+//       updateCurrentRooms(evt.target.value);
+//       break;
+//     case 'housing-guests':
+//       updateCurrentGuests(evt.target.value);
+//       break;
+//     case 'features':
+//       updateCurrentFeatures();
+//       break;
+//   }
+// };
 
-  // const filterType = sortType(rentals);
-  // console.log(filterType);
+const setOnFilterChange = (cb) => {
+  const debouncedCallback = debounce(cb, 500);
+  mapFilters.addEventListener('change', (evt) => {
+    // обновление переменной в зависимоти от события
+    switch (evt.target.name) {
+      case 'housing-type':
+        updateCurrentType(evt.target.value);
+        break;
+      case 'housing-price':
+        updatecurrentPrice(evt.target.value);
+        break;
+      case 'housing-rooms':
+        updateCurrentRooms(evt.target.value);
+        break;
+      case 'housing-guests':
+        updateCurrentGuests(evt.target.value);
+        break;
+      case 'features':
+        updateCurrentFeatures();
+        break;
+    }
 
-  // const filterPrice = sortPrice(rentals);
-  // console.log(filterPrice);
-
-  // const filterRooms = sortRooms(rentals);
-  // console.log(filterRooms);
-
-  // const filterGuests = sortGuests(rentals);
-  // console.log(filterGuests);
-
-  // const filterFeatures = sortFeatures(rentals);
-  // console.log(filterFeatures);
-
-
-
-  const filteredRentals = sortAllFilters([...rentals]);
-  console.log(filteredRentals);
-
-  // const debounceSortAllFilters = debounce(sortAllFilters, 1400);
-
-  // const debounceFilteredRentals = debounceSortAllFilters([...rentals]);
+    debouncedCallback(filterMarkers());
+  });
 };
 
+export {filterMarkers, turnFilterOn, setOnFilterChange};
 
-mapFilters.addEventListener('change', onMapFilters)
+// // В случае если сервер не работает то раcкоментировать этот код, данные загрузятся из генератора данных из модуля data.js (0перенести в маин)
+// // получение генерированных данных с обработки убрать потом но оставить возможностть загрузить данные
+// import {renderMarkers} from './map.js';
+// import { getRentals } from './data.js';
+// const rentals = getRentals();
+// console.log(rentals);
+// turnFilterOn(rentals);
+// renderMarkers(filterMarkers());
+// setOnFilterChange(renderMarkers);

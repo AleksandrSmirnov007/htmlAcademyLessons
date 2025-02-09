@@ -91,9 +91,9 @@ const PHOTOS = [
 
 const createAvatar = (index) => {
   if (index < 10) {
-    return `img/avatars/user0${index}.png`
+    return `./img/avatars/user0${index}.png`
   } else if (index >= 10) {
-    return `img/avatars/user${index}.png`
+    return `./img/avatars/user${index}.png`
   }
 };
 

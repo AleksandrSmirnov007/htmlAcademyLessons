@@ -254,7 +254,6 @@ const onTimeoutFieldChange = (evt) => {
 };
 // timeoutField.addEventListener('change', onTimeoutFieldChange);
 
-
 //  все change обработчики по полям собираем в один обработчик change  на форму (код с добавлением обработчиков закомментрируем)
 
 form.addEventListener('change', (evt) => {
@@ -295,7 +294,6 @@ const unBlockSubmitButton = () => {
   submitButton.disabled = false;
   submitButton.textContent = 'Опубликовать';
 }
-
 
 // сообщение об успехе
 const showSuccessMessage = (message) => {
