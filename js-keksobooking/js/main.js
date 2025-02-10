@@ -1,6 +1,8 @@
 
 import { getData, sendData } from './api.js';
-import {updateAddress, setOnFormSubmit, showSuccessMessage, showFailMessage, onFormReset} from './form.js';
+import { showSuccessMessage, showFailMessage } from './message.js'
+import {updateAddress, setOnFormSubmit, onFormReset} from './form.js';
+
 import {onMoveendMainPin, renderMarkers} from './map.js';
 import { filterMarkers, turnFilterOn, setOnFilterChange } from './filter.js';
 

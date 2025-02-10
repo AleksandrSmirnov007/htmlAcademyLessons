@@ -6,9 +6,8 @@
 // Форма с фильтрами .map__filters заблокирована так же, как и форма .ad-form — на форму добавлен специальный класс, а на её интерактивные элементы атрибуты disabled.
 
 import './slider.js';
+import { showFailMessage } from './message.js'
 
-
-const body = document.querySelector('body');
 const form = document.querySelector('.ad-form');
 const titleField = form.querySelector('#title');
 const priceField = form.querySelector('#price');
@@ -22,20 +21,9 @@ const addressField = form.querySelector('#address');
 const activeFormElements = document.querySelectorAll('.ad-form__element');
 const submitButton = form.querySelector('.ad-form__submit');
 
-
 // titleField.value = 'ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh';
-// // addressField.value = 'dddddddddddddddddfjjjjjjjjjjjj'
+// addressField.value = 'dddddddddddddddddfjjjjjjjjjjjj'
 // capacityField.value = '1';
-
-const successTemplate =
-  document
-  .querySelector('#success')
-  .content.querySelector('.success');
-
-const failTemplate =
-  document
-  .querySelector('#error')
-  .content.querySelector('.error');
 
 // активность и неактивность формы
 const onInactiveForm  = () => {
@@ -55,9 +43,7 @@ const onActiveForm = () => {
 onInactiveForm(); // форма станет неактивна сразу при загрузке страницы
 // onActiveForm(); // активной форма
 
-
 // валидация
-
 const pristine = new Pristine(form, {
   // class of the parent element where the error/success class is added
   classTo: 'ad-form__element',
@@ -152,7 +138,6 @@ const onTypeField = () => {
 // typeField.addEventListener('change', onTypeField);
 
 // валидация соответсвия полей количество комнат и количество гостей // 3.6. Поле «Количество комнат» синхронизировано с полем «Количество мест» таким образом, что при выборе количества комнат вводятся ограничения на допустимые варианты выбора количества гостей: 1 комната — «для 1 гостя»; 2 комнаты — «для 2 гостей» или «для 1 гостя»; 3 комнаты — «для 3 гостей», «для 2 гостей» или «для 1 гостя»; 100 комнат — «не для гостей».
-
 const ROOM_CAPACITY = {
   '1': ['1'],
   '2': ['1', '2'],
@@ -295,31 +280,6 @@ const unBlockSubmitButton = () => {
   submitButton.textContent = 'Опубликовать';
 }
 
-// сообщение об успехе
-const showSuccessMessage = (message) => {
-  const successMessage = successTemplate.cloneNode(true);
-  if (message) {
-    const messageElement = successMessage.querySelector('.success__message');
-    messageElement.textContent = message;
-  }
-  const hideSuccessMessage = () => successMessage.remove();
-  successMessage.addEventListener('click', hideSuccessMessage);
-  body.appendChild(successMessage);
-  setTimeout(hideSuccessMessage, 5000);
-};
-
-// сообщение об ошибке
-const showFailMessage = (message) => {
-  const failMessage = failTemplate.cloneNode(true);
-  if (message) {
-    const messageElement = failMessage.querySelector('.error__message');
-    messageElement.textContent = message;
-  }
-  const hideFailMessage = () => failMessage.remove();
-  failMessage.addEventListener('click', hideFailMessage);
-  body.appendChild(failMessage);
-}
-
 const onFormReset = () => {
   console.log('reset is working');
   form.reset();
@@ -347,6 +307,5 @@ export {
   onActiveForm,
   updateAddress,
   setOnFormSubmit,
-  showSuccessMessage,
-  showFailMessage,
-  onFormReset };
+  onFormReset
+};
