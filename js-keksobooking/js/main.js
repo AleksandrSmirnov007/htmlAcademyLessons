@@ -1,12 +1,14 @@
 
 import { getData, sendData } from './api.js';
 import { showSuccessMessage, showFailMessage } from './message.js'
-import {updateAddress, setOnFormSubmit, onFormReset} from './form.js';
+import {onActiveForm, updateAddress, setOnFormSubmit, onFormReset} from './form.js';
 
-import {onMoveendMainPin, renderMarkers} from './map.js';
-import { filterMarkers, turnFilterOn, setOnFilterChange } from './filter.js';
+import { onMapLoad, onMoveendMainPin, renderMarkers} from './map.js';
+import { onActiveFilters, filterMarkers, turnFilterOn, setOnFilterChange } from './filter.js';
 
-onMoveendMainPin(updateAddress);  // передаем колбак функцию обновить данные в поле адресс в функции которая содержит обработчик событий
+onMoveendMainPin(updateAddress);  // передаем колбэк функцию обновить данные в поле адресс в функции которая содержит обработчик событий
+
+onMapLoad(onActiveForm, onActiveFilters); // передаем колбэки которые выполняться при зогрузке карты  - форма и фильры активируются
 
 const onGetDataError = (message) => {
   showFailMessage(message); // передатся сообщение из тела getData()

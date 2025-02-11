@@ -1,13 +1,37 @@
 import { debounce } from './util.js';
 
+
+
+
+
+
+
+const filtersForm = document.querySelector('.map__filters');
+const featuresCheckbox = filtersForm.querySelectorAll('[name="features"]');
+const filters = filtersForm.querySelectorAll('.map__filter');
+
+// деактивация / активация
+
+const onInactiveFilters = () => {
+  filtersForm.classList.add('map__filters--disabled');
+  filters.forEach((filter) => filter.disabled = true);
+  featuresCheckbox.forEach((feature) => feature.disabled = true);
+};
+
+const onActiveFilters = () => {
+  filtersForm.classList.remove('map__filters--disabled');
+  filters.forEach((filter) => filter.disabled = false);
+  featuresCheckbox.forEach((feature) => feature.disabled = false);
+};
+
+onInactiveFilters(); // деактивация, фильтры активизизуются после загрузки карты
+// onActiveFilters();
+
+// фильтрация
 let markers = []; // в эту переменную будут копироваться  данные которые пришли с сервера
-
-const mapFilters = document.querySelector('.map__filters');
-const featuresCheckbox = mapFilters.querySelectorAll('[name="features"]');
-
 const MARKERS_COUNT = 10; // количество маркеров отображаемое единовременно на карте сделать countFulter для MARKER_COUNT
 
-// применю промежутки массив из двух чисел (минимальное и максимальное), что бы потом просто подставитть их в условие
+// промежутки массив из двух чисел (минимальное и максимальное), что бы потом просто подставитть их в условие
 const PRICE_MAP = {
   any: [0, Infinity],
   middle: [10000, 50000],
@@ -152,7 +176,7 @@ const turnFilterOn = (loadedMarkers) => {
 
 // один обработчик на все поля фильра (делегирование)
 
-// const onMapFilters = (evt) => {
+// const onfiltersForm = (evt) => {
 //   switch (evt.target.name) {
 //     case 'housing-type':
 //       updateCurrentType(evt.target.value);
@@ -174,7 +198,7 @@ const turnFilterOn = (loadedMarkers) => {
 
 const setOnFilterChange = (cb) => {
   const debouncedCallback = debounce(cb, 500);
-  mapFilters.addEventListener('change', (evt) => {
+  filtersForm.addEventListener('change', (evt) => {
     // обновление переменной в зависимоти от события
     switch (evt.target.name) {
       case 'housing-type':
@@ -198,7 +222,7 @@ const setOnFilterChange = (cb) => {
   });
 };
 
-export {filterMarkers, turnFilterOn, setOnFilterChange};
+export {onActiveFilters, filterMarkers, turnFilterOn, setOnFilterChange};
 
 // // В случае если сервер не работает то раcкоментировать этот код, данные загрузятся из генератора данных из модуля data.js (0перенести в маин)
 // // получение генерированных данных с обработки убрать потом но оставить возможностть загрузить данные
