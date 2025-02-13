@@ -5,7 +5,7 @@
 // Все интерактивные элементы формы .ad-form должны быть заблокированы с помощью атрибута disabled, добавленного на них или на их родительские блоки fieldset. Слайдер также должен быть заблокирован;
 // Форма с фильтрами .map__filters заблокирована так же, как и форма .ad-form — на форму добавлен специальный класс, а на её интерактивные элементы атрибуты disabled.
 
-import './slider.js';
+import { sliderChosenTypeUpdate } from './slider.js';
 import { showFailMessage } from './message.js'
 
 const form = document.querySelector('.ad-form');
@@ -20,6 +20,8 @@ const timeoutField = form.querySelector('#timeout');
 const addressField = form.querySelector('#address');
 const activeFormElements = document.querySelectorAll('.ad-form__element');
 const submitButton = form.querySelector('.ad-form__submit');
+const resetButton = form.querySelector('.ad-form__reset');
+
 
 // titleField.value = 'ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh';
 // addressField.value = 'dddddddddddddddddfjjjjjjjjjjjj'
@@ -244,6 +246,7 @@ const onTimeoutFieldChange = (evt) => {
 form.addEventListener('change', (evt) => {
   switch (evt.target) {
     case typeField:
+      sliderChosenTypeUpdate(); // функция из модуля slider.js (обновление переменной  содержащей выбранного типа жилья)
       onTypeField();
       break;
     case capacityField:
@@ -281,11 +284,16 @@ const unBlockSubmitButton = () => {
 }
 
 const onFormReset = () => {
-  console.log('reset is working');
+  console.log('очситка формы');
   form.reset();
+  const type = typeField.value;
+  priceField.value = MIN_PRICE_TYPE[type]; // При пустом поле при отправке поверх слойдера появляется валидация поля цены потому что поле не редактируется но содержимое поля меняется, что бы не писать лишних проверок рациональнее задать для пользователя минимально возможное значение цены для поля, а уже при его редактировании работает валидация.
 };
 
-form.addEventListener('reset', onFormReset);
+resetButton.addEventListener('click', (evt) => {
+  evt.preventDefault(); // отменит очистку всех полей заложенную по умолчанию, если не отменять то в конечном все данные буту очищены, через функцию onFormReset мы самостоятельно очистим форму с помошбю form.reset(), а потом присвоим полю с ценой актуальное минимальное занчения цены для типа жилья, При пустом поле при отправке поверх слойдера появляется валидация поля цены потому что поле не редактируется но содержимое поля меняется, что бы не писать лишних проверок рациональнее задать для пользователя минимально возможное значение цены для поля, а уже при его редактировании работает валидация.
+  onFormReset();
+});
 
 const setOnFormSubmit = (cb) => {
   form.addEventListener('submit', async (evt) => {

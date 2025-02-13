@@ -41,12 +41,11 @@ priceField.value = 4000;
 const DEFAULT_TYPE = TYPE[1];
 let chosenType = DEFAULT_TYPE;
 
-const onTypeFieldChange = () => {
+const sliderChosenTypeUpdate = () => {
   chosenType = TYPE.find((type) => type.name === typeField.value); // find()Метод Array экземпляров возвращает первый элемент в предоставленном массиве, который удовлетворяет предоставленной функции тестирования. Если никакие значения не удовлетворяют функции тестирования, возвращается undefined. Если вам нужен индекс найденного элемента в массиве, используйте findIndex().
   updateSlider();
 };
 
-typeField.addEventListener('change', onTypeFieldChange);
 
 const isDefault = () => chosenType == DEFAULT_TYPE;
 
@@ -96,3 +95,4 @@ sliderElement.noUiSlider.on('update', () => {
   priceField.value = sliderElement.noUiSlider.get();
 });
 
+export {sliderChosenTypeUpdate};

@@ -46,7 +46,6 @@ const showSuccessMessage = (message) => {
 
 // сообщение об ошибке
 const showFailMessage = (message) => {
-  console.log('не надо клонировать');
   if (message) {
     const messageElement = failMessage.querySelector('.error__message');
     messageElement.textContent = message;
