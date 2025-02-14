@@ -24,7 +24,8 @@ body {
 .main-menu-list {
   padding: 0;
   text-align: center;
-
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .main-menu-item {

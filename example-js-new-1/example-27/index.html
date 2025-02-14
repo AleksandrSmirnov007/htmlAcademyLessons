@@ -25,11 +25,11 @@
         <div class="img-upload__preview-container">
 
           <!-- Изменение размера изображения -->
-          <fieldset class="img-upload__scale  scale">
+          <!-- <fieldset class="img-upload__scale  scale">
             <button type="button" class="scale__control  scale__control--smaller">Уменьшить</button>
             <input type="text" class="scale__control  scale__control--value" value="100%" title="Image Scale" name="scale" readonly>
             <button type="button" class="scale__control  scale__control--bigger">Увеличить</button>
-          </fieldset>
+          </fieldset> -->
 
           <!-- Предварительный просмотр изображения -->
           <div class="img-upload__preview">
@@ -37,14 +37,14 @@
           </div>
 
           <!-- Изменение глубины эффекта, накладываемого на изображение -->
-          <fieldset class="img-upload__effect-level  effect-level">
+          <!-- <fieldset class="img-upload__effect-level  effect-level">
             <input class="effect-level__value" type="number" step="any" name="effect-level" value="">
             <div class="effect-level__slider"></div>
-          </fieldset>
+          </fieldset> -->
 
           <!-- Кнопка для закрытия формы редактирования изображения -->
-          <button type="reset" class="img-upload__cancel  cancel" id="upload-cancel">Закрыть</button>
-        </div>
+          <!-- <button type="reset" class="img-upload__cancel  cancel" id="upload-cancel">Закрыть</button>
+        </div> -->
 
         <!-- Наложение эффекта на изображение -->
         <fieldset class="img-upload__effects  effects">
@@ -93,29 +93,6 @@
             </li>
           </ul>
         </fieldset>
-
-        <!-- Добавление хэш-тегов и комментария к изображению -->
-        <fieldset class="img-upload__text text">
-          <label class="form__item">
-            <!--  pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$" -->
-            <input id="hashtags" class="text__hashtags not-respond-esc" name="hashtags" placeholder="#ХэшТег" pattern="^#[A-Za-zА-Яа-яЁё0-9]{1,19}$">
-          </label>
-
-          <!-- от себя обернул в тег label  по аналогии с демонстрацией для работы pristine, так же добавлю в css  селектор для расположения элемента с сообщением об ошибке в поле для пользователя -->
-          <label class="form__item">
-            <textarea class="text__description not-respond-esc" name="description" placeholder="Ваш комментарий..." maxlength="140" minlength="2" required
-            data-pristine-required-message="Обязательное поле"
-            data-pristine-minlength-message="Минимальная длина 2 символа"
-            data-pristine-maxlength-message="Максимальная длина 25 символов"
-            ></textarea>
-            <!-- инструкции для pristine добавляются в атрибуты валидируюмого тега с типом data -->
-            <!-- непонятно нужно ли добавлять это див? Теперь понятно: див сюда добавит сама pristine погэтому он не нужен если только на этапе стилизации-->
-            <!-- <div class="pristine-error text__error-text"></div> -->
-          </label>
-          </fieldset>
-
-        <!-- Кнопка для отправки данных на сервер -->
-        <button type="submit" class="img-upload__submit" id="upload-submit">Опубликовать</button>
       </div>
     </div>
   </form>

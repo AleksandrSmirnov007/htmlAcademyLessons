@@ -6,6 +6,8 @@ import {onActiveForm, updateAddress, setOnFormSubmit, onFormReset} from './form.
 import { onMapLoad, onMoveendMainPin, renderMarkers} from './map.js';
 import { onActiveFilters, filterMarkers, turnFilterOn, setOnFilterChange } from './filter.js';
 
+import './avatar.js';
+
 onMoveendMainPin(updateAddress);  // передаем колбэк функцию обновить данные в поле адресс в функции которая содержит обработчик событий
 
 onMapLoad(onActiveForm, onActiveFilters); // передаем колбэки которые выполняться при зогрузке карты  - форма и фильры активируются
