@@ -1,5 +1,25 @@
+const fileChooserAvatar = document.querySelector('#avatar');
+const prewiewAvatar = document.querySelector('.ad-form-header__avatar');
+const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
+
+const loadPreviewAvatar = () => {
+  const file = fileChooserAvatar.files[0];
+  const fileName = file.name.toLowerCase();
+  const matches = FILE_TYPES.some((type) => {
+    return fileName.endsWith(type);
+  });
+
+  if (matches) {
+    prewiewAvatar.src = URL.createObjectURL(file);
+  }
+}
+
+// fileChooserAvatar.addEventListener('change', loadPreviewAvatar); // Експортируем отсюда функцию загрузки аватара, в модуль form что бы не нагружать обработчиками, добавим к соновному списку в обработчике form
+
+export {loadPreviewAvatar};
+
 // 1. Нам нужно реализовать выбор аватара пользователя с предпросмотром. За выбор будет отвечать <input type="file">, а нам нужно реализовать показ превью. Чтобы стандартный контрол выбора файла не выбивался из дизайна, мы спрятали его под картинку, но выбор файла работает.
-// 2. Найдём наши элементы на странице: fileChooser — поле ввода, с помощью которого пользователь выбирает изображение; preview — картинка, куда мы будем выставлять превью загруженного изображения.
+// 2. Найдём наши элементы на странице: fileChooserAvatar — поле ввода, с помощью которого пользователь выбирает изображение; preview — картинка, куда мы будем выставлять превью загруженного изображения.
 // 3. Код будем писать в отдельном модуле avatar.js.
 // 4. Обработаем событие change, оно случится, когда пользователь выберет изображение. Обработка событий вам знакома, а тем, кто выбрал Кекстаграм — знакома даже работа с <input type="file">. Поэтому перейдём к самому интересному.
 // 5. Во-первых, разберёмся, как получить доступ к выбранному файлу.У DOM-узла поля для выбора файла есть свойство files — это структура, похожая на массив. В этом свойстве хранится список файлов. Да-да, хотя мы можем выбрать лишь один файл, в свойстве files хранится список, пусть и из одного файла. А раз структура похожа на массив, мы можем этот единственный в списке файл получить по индексу, он у него будет всегда 0.
@@ -9,27 +29,3 @@
 // 9. Теперь нам нужно проверить, оканчивается ли имя файла одним из допустимых расширений. Для этого мы с помощью метода some пройдём по массиву FILE_TYPES и для каждого элемента — допустимого расширения — проверим, оканчивается ли название файла на него. В этом нам поможет метод строки endsWith.
 // 10. Метод some возвращает булево значение, было ли совпадение, поэтому мы можем результат выполнения этого метода использовать в условии.
 // 11. После того, как файл выбран, а все проверки пройдены, загруженное изображение нужно показать на странице. Для этого воспользуемся методом URL.createObjectURL(), который позволяет сделать ссылку на содержимое, а не ресурс на каком-то адресе. Изображение, которое вернёт метод, мы положим в атрибут src DOM-узла с превью картинки. Готово!
-const fileChooser = document.querySelector('#avatar');
-const prewiewAvatar = document.querySelector('.ad-form-header__avatar');
-
-const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
-console.log(prewiewAvatar);
-
-fileChooser.addEventListener('change', () => {
-  console.log('обработчик на fileChooser работает');
-  console.log(fileChooser.files);
-  const file = fileChooser.files[0];
-  const fileName = file.name.toLowerCase();
-  console.log(fileName)
-
-  const matches = FILE_TYPES.some((type) => {
-    return fileName.endsWith(type);
-  });
-
-  if (matches) {
-    prewiewAvatar.src = URL.createObjectURL(file);
-  }
-
-});
-
-/* <img class="setup-user-pic" src="img/user-1.jpg"></img> */

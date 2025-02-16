@@ -7,6 +7,7 @@ import { onMapLoad, onMoveendMainPin, renderMarkers} from './map.js';
 import { onActiveFilters, filterMarkers, turnFilterOn, setOnFilterChange } from './filter.js';
 
 import './avatar.js';
+import './load-photo.js';
 
 onMoveendMainPin(updateAddress);  // передаем колбэк функцию обновить данные в поле адресс в функции которая содержит обработчик событий
 

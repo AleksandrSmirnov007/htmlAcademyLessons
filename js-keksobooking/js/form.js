@@ -7,8 +7,11 @@
 
 import { sliderChosenTypeUpdate } from './slider.js';
 import { showFailMessage } from './message.js'
+import { loadPreviewAvatar } from './avatar.js';
+import { loadPreviewPhoto } from './load-photo.js';
 
 const form = document.querySelector('.ad-form');
+const fileChooserAvatar = form.querySelector('#avatar');
 const titleField = form.querySelector('#title');
 const priceField = form.querySelector('#price');
 const slider = form.querySelector('.ad-form__slider');
@@ -19,6 +22,9 @@ const timeinField = form.querySelector('#timein');
 const timeoutField = form.querySelector('#timeout');
 const addressField = form.querySelector('#address');
 const activeFormElements = document.querySelectorAll('.ad-form__element');
+
+const fileChooserPhoto = document.querySelector('#images');
+
 const submitButton = form.querySelector('.ad-form__submit');
 const resetButton = form.querySelector('.ad-form__reset');
 
@@ -245,6 +251,9 @@ const onTimeoutFieldChange = (evt) => {
 
 form.addEventListener('change', (evt) => {
   switch (evt.target) {
+    case fileChooserAvatar:
+      loadPreviewAvatar();
+      break;
     case typeField:
       sliderChosenTypeUpdate(); // функция из модуля slider.js (обновление переменной  содержащей выбранного типа жилья)
       onTypeField();
@@ -260,6 +269,9 @@ form.addEventListener('change', (evt) => {
       break;
     case timeoutField:
       onTimeoutFieldChange(evt);
+      break;
+    case fileChooserPhoto:
+      loadPreviewPhoto();
       break;
   }
 });
