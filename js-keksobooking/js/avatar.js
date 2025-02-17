@@ -1,7 +1,8 @@
 const fileChooserAvatar = document.querySelector('#avatar');
-const prewiewAvatar = document.querySelector('.ad-form-header__avatar');
+const previewAvatar = document.querySelector('.ad-form-header__avatar');
 const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
 
+const DEFAULT_SRC = 'img/muffin-grey.svg';
 const loadPreviewAvatar = () => {
   const file = fileChooserAvatar.files[0];
   const fileName = file.name.toLowerCase();
@@ -10,13 +11,17 @@ const loadPreviewAvatar = () => {
   });
 
   if (matches) {
-    prewiewAvatar.src = URL.createObjectURL(file);
+    previewAvatar.src = URL.createObjectURL(file);
   }
+}
+
+const previewAvatarDefault = () => {
+  previewAvatar.src = DEFAULT_SRC;
 }
 
 // fileChooserAvatar.addEventListener('change', loadPreviewAvatar); // Експортируем отсюда функцию загрузки аватара, в модуль form что бы не нагружать обработчиками, добавим к соновному списку в обработчике form
 
-export {loadPreviewAvatar};
+export {loadPreviewAvatar, previewAvatarDefault};
 
 // 1. Нам нужно реализовать выбор аватара пользователя с предпросмотром. За выбор будет отвечать <input type="file">, а нам нужно реализовать показ превью. Чтобы стандартный контрол выбора файла не выбивался из дизайна, мы спрятали его под картинку, но выбор файла работает.
 // 2. Найдём наши элементы на странице: fileChooserAvatar — поле ввода, с помощью которого пользователь выбирает изображение; preview — картинка, куда мы будем выставлять превью загруженного изображения.

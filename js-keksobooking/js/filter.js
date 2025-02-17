@@ -93,26 +93,6 @@ const sortGuests = (array) => {
   return array.filter((element) => element.offer.guests === Number(currentGuests));
 };
 
-// // функция сравнения двух массивов для sortfeatures (вне зависимости последовательности элементов)
-// // каждому элементу одного массива должен быть равный элемент в другом массиве (при порядок элементов в обоих массивах не важен на всякий
-// // но эта функция слишком жестко фильтрует, так как например пользователю нужен вайфай, а стиральная машинка не принципиально он нажмет на заначек вайфай и ему покжет только обьявления где есть только вайфай, а таких мало, возможно есть смысл сделать функцию которая выбирала обявления обязалено указанные варианты удобств и плюс дополнительные удобства, то есть длинна массива из обьявления может быть и больше
-// const compareFeatures = (arrayElement, arrayFilter) => {
-//   if(arrayElement.length !== arrayFilter.length) {
-//     return false; // если по длинне массивы не совпадают то сразу не равны можно дальше не проверять
-//   }
-//   let match = true; // после проверки по длинне, предположим массивы равны
-
-//   for (let item of arrayFilter) {
-//     const isInclude = arrayElement.includes(item);   // для каждого элемента  массива (А) в другом массиве (B) должен содержаться его близнец
-//     if(!isInclude) {
-//       match = false;  // если есть случай "не содержится" значит в масивах есть разные элементы
-//       break; // Цикл for...of в JavaScript может быть прерван с использованием инструкции break. Если уже есть несовпадения нет смысла перебирать другие элементы массива и тратить ресурс поэтому не ипользую forEach
-//     }
-//   }
-//   return match;
-// };
-
-
 // сравнивает массивы не строго по длинне, поэтому могут быть дополнительные features, решил пуcть будет так по шести показателяи мало вариантов для показа или не бывает вообюще из 55 каторые возращаеются с сервера (кстати также при этом хорошо обрабатывается вариант влучае не выбранных значков в features  в фильтре)
 const compareFeatures = (arrayElement, arrayFilter) => {
   if(arrayElement.length < arrayFilter.length) {
@@ -146,9 +126,11 @@ const sortFeatures = (array) => {
   });
 };
 
+const randomSort = () => Math.random() - 0.5; // вывод отрицательного и положительного числа с одинаковой вероятностью
+
 const sortCount = (array) => {
   if (array.length > MARKERS_COUNT) {
-    return array.slice(0, MARKERS_COUNT); // если после фильровки больше десяти элементов то обрежь и верни десять нужно будет добавить рандомность как в кексограмме
+    return [...array].sort(randomSort).slice(0, MARKERS_COUNT); // [...pictures] таким образом происходит запись содержимого массива в безымянный массив по месту и тем самым копирование массива во избежание изменения начального массива // Пример массив const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]; метод возвращает такую сортировку:  [16, 19, 34, 39, 40, 1, 6, 5, 25, 26]
   }
   return array;
 }
@@ -174,32 +156,13 @@ const turnFilterOn = (loadedMarkers) => {
   markers = [...loadedMarkers]; // копирование массива загруженных картинок в пустой массив
 };
 
-// один обработчик на все поля фильра (делегирование)
 
-// const onfiltersForm = (evt) => {
-//   switch (evt.target.name) {
-//     case 'housing-type':
-//       updateCurrentType(evt.target.value);
-//       break;
-//     case 'housing-price':
-//       updatecurrentPrice(evt.target.value);
-//       break;
-//     case 'housing-rooms':
-//       updateCurrentRooms(evt.target.value);
-//       break;
-//     case 'housing-guests':
-//       updateCurrentGuests(evt.target.value);
-//       break;
-//     case 'features':
-//       updateCurrentFeatures();
-//       break;
-//   }
-// };
+
 
 const setOnFilterChange = (cb) => {
   const debouncedCallback = debounce(cb, 500);
   filtersForm.addEventListener('change', (evt) => {
-    // обновление переменной в зависимоти от события
+    // обновление переменной в зависимоти от события // один обработчик на все поля фильра (делегирование)
     switch (evt.target.name) {
       case 'housing-type':
         updateCurrentType(evt.target.value);
@@ -222,7 +185,21 @@ const setOnFilterChange = (cb) => {
   });
 };
 
-export {onActiveFilters, filterMarkers, turnFilterOn, setOnFilterChange};
+// планируется запуск той функции при успешной отправке формы
+const defaultMarkers = () => conveyor (
+  [...markers],
+  sortCount // (фильры (селекты) сбросим функцией filtersDefault) Возьмем массив сохранееных не отфильтрованных данных скопируем его и отсечем спомощью функции sortCount пусть при рендоре покажет только  const MARKERS_COUNT = 10; штук маркеров
+);
+
+
+// Функция сброса селектов и подготовки массива фильрованных по умолчанию (по количеству) маркеров. В main.js вместо cb подставим функцию renderMarkers из модуля map.js
+const filtersDefault = (cb) => {
+  const debouncedCallback = debounce(cb, 1000);
+  filtersForm.reset();
+  debouncedCallback(defaultMarkers());
+}
+
+export {onActiveFilters, filterMarkers, turnFilterOn, setOnFilterChange, filtersDefault};
 
 // // В случае если сервер не работает то раcкоментировать этот код, данные загрузятся из генератора данных из модуля data.js (0перенести в маин)
 // // получение генерированных данных с обработки убрать потом но оставить возможностть загрузить данные

@@ -7,8 +7,8 @@
 
 import { sliderChosenTypeUpdate } from './slider.js';
 import { showFailMessage } from './message.js'
-import { loadPreviewAvatar } from './avatar.js';
-import { loadPreviewPhoto } from './load-photo.js';
+import { loadPreviewAvatar, previewAvatarDefault } from './avatar.js';
+import { loadPreviewPhoto,  previewPhotoClear } from './load-photo.js';
 
 const form = document.querySelector('.ad-form');
 const fileChooserAvatar = form.querySelector('#avatar');
@@ -29,9 +29,9 @@ const submitButton = form.querySelector('.ad-form__submit');
 const resetButton = form.querySelector('.ad-form__reset');
 
 
-// titleField.value = 'ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh';
-// addressField.value = 'dddddddddddddddddfjjjjjjjjjjjj'
-// capacityField.value = '1';
+titleField.value = 'ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh';
+addressField.value = 'dddddddddddddddddfjjjjjjjjjjjj'
+capacityField.value = '1';
 
 // активность и неактивность формы
 const onInactiveForm  = () => {
@@ -296,10 +296,12 @@ const unBlockSubmitButton = () => {
 }
 
 const onFormReset = () => {
-  console.log('очситка формы');
+  console.log('очиcтка формы');
   form.reset();
   const type = typeField.value;
   priceField.value = MIN_PRICE_TYPE[type]; // При пустом поле при отправке поверх слойдера появляется валидация поля цены потому что поле не редактируется но содержимое поля меняется, что бы не писать лишних проверок рациональнее задать для пользователя минимально возможное значение цены для поля, а уже при его редактировании работает валидация.
+  previewPhotoClear();
+  previewAvatarDefault();
 };
 
 resetButton.addEventListener('click', (evt) => {
