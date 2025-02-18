@@ -19,7 +19,7 @@ const previewAvatarDefault = () => {
   previewAvatar.src = DEFAULT_SRC;
 }
 
-// fileChooserAvatar.addEventListener('change', loadPreviewAvatar); // Експортируем отсюда функцию загрузки аватара, в модуль form что бы не нагружать обработчиками, добавим к соновному списку в обработчике form
+// fileChooserAvatar.addEventListener('change', loadPreviewAvatar); // экспортируем отсюда функцию загрузки аватара, в модуль form что бы не нагружать обработчиками, добавим к соновному списку в обработчике form
 
 export {loadPreviewAvatar, previewAvatarDefault};
 

@@ -1,3 +1,5 @@
+// Этот модуль нужен только для разработки в нем просходит генерация случайных данных, аналогичным приходящим с сервера. Оставлю его на случай если сервер перестанет работать
+
 import { getRandomPositiveFloat, getRandomPostiveInteger, getRandomArrayElement, } from "./util.js";
 
 const TITLE = [

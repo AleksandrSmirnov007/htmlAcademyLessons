@@ -1,6 +1,6 @@
 const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
 
-// для доюавления avatar
+// для добавления avatar
 const addDetailSrc = (card, selector, value) => {
   if(value) {
     card.querySelector(selector).src = value;

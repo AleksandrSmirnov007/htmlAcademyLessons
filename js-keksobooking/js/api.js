@@ -27,7 +27,7 @@ const sendData = async (onSuccess, onFail, body) => {
     }
     // const result = await response.json();
     // console.log(result);
-    onSuccess(); // Было     onSuccess('Данные отправлены успешно'); решил не передавать сообщение для успешного исхода (оно есть в шаблоне), а для неуспешного могут быть варианты - неправильн заполнена фарма или непередались данные на сервер
+    onSuccess(); // Было     onSuccess('Данные отправлены успешно'); решил не передавать сообщение для успешного исхода (оно есть в шаблоне), а для неуспешного могут быть варианты - "неправильно заполнена форма" или "непередались данные на сервер"
 
   } catch (error) {
     onFail(error.message);
@@ -35,5 +35,3 @@ const sendData = async (onSuccess, onFail, body) => {
 }
 
 export { getData, sendData };
-
-// sendData(console.log, console.log, 'какие то данные');
