@@ -6,7 +6,7 @@ const POSITION_DEFAULT = {
 };
 
 const getDefaultAddress = () => {
-  return `По широте: ${POSITION_DEFAULT.lat.toFixed(5)}, По долготе: ${POSITION_DEFAULT.lng.toFixed(5)}`
+  return `${POSITION_DEFAULT.lat.toFixed(5)}, ${POSITION_DEFAULT.lng.toFixed(5)}`
 }
 
 // функция для обработки событий при загрузке карты // собрем в массив calbacks все функции переданные в праметрах // а потом c помощью метода forEach последовательно вызовем все функции по одной // Теперь можно экспортировать в main.js эту функцию и там внее добавить onActiveForm и onActiveFilters // onMapLoad(onActiveForm, onActiveFilters);
@@ -65,7 +65,7 @@ const mainMarkerDefault = () => {
 const onMoveendMainPin = (cb) => {
   mainPinMarker.on('moveend', (evt) => {
     const coordinates = evt.target.getLatLng();
-    cb(`По широте: ${coordinates.lat.toFixed(5)}, По долготе: ${coordinates.lng.toFixed(5)}`);
+    cb(`${coordinates.lat.toFixed(5)}, ${coordinates.lng.toFixed(5)}`);
   });
 };
 
