@@ -1,6 +1,6 @@
 const getData = async (onSuccess, onFail) => {
   try {
-    const response = await fetch ('https://25.javascript.htmlacademy.pro/keksobooking/dat');
+    const response = await fetch ('https://25.javascript.htmlacademy.pro/keksobooking/data');
     if (!response.ok) {
       throw new Error ('Не удалось загрузить обьявления об аренде. Попробуйте перезагрузить страницу');
     }
