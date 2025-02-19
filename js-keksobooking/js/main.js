@@ -9,14 +9,14 @@ import { onActiveFilters, filterMarkers, turnFilterOn, setOnFilterChange, filter
 import './avatar.js';
 import './load-photo.js';
 
-updateAddress(getDefaultAddress()); // напишет в поле Адрес значения главной метки по умолчанию
+updateAddress(getDefaultAddress()); // передаст в поле Адрес значения главной метки по умолчанию
 
-onMoveendMainPin(updateAddress);  // передаем колбэк функцию обновить данные в поле адресс в функции которая содержит обработчик событий
+onMoveendMainPin(updateAddress);  // передаем колбэк функцию "обновить данные в поле адресс" в функцию, которая содержит обработчик событий
 
-onMapLoad(onActiveForm, onActiveFilters); // передаем колбэки которые выполняться при зогрузке карты  - форма и фильры активируются
+onMapLoad(onActiveForm, onActiveFilters); // передаем колбэки которые выполняться при заргрузке карты  - форма для заполнения и форма с фильтрами активируются
 
 const onGetDataError = (message) => {
-  showFailMessage(message); // передатся сообщение из тела getData()
+  showFailMessage(message); // получит сообщение из тела функции getData()
 };
 
 const onGetDataSuccess = (data) => {
