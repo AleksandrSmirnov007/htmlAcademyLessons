@@ -46,9 +46,6 @@ const sliderChosenTypeUpdate = () => {
   updateSlider();
 };
 
-
-const isDefault = () => chosenType == DEFAULT_TYPE;
-
 const updateSlider = () => {
   sliderElement.noUiSlider.updateOptions({
     range: {

@@ -1,4 +1,5 @@
 import { debounce } from './util.js';
+import { closeMapPopup } from './map.js';
 
 const filtersForm = document.querySelector('.map__filters');
 const featuresCheckbox = filtersForm.querySelectorAll('[name="features"]');
@@ -150,10 +151,8 @@ const turnFilterOn = (loadedMarkers) => {
   markers = [...loadedMarkers]; // копирование массива загруженных картинок в пустой массив
 };
 
-
-
-
 const setOnFilterChange = (cb) => {
+  closeMapPopup(); // при любом изменении форты фильра - закрыть карточку обьявления если она открыта
   const debouncedCallback = debounce(cb, 500);
   filtersForm.addEventListener('change', (evt) => {
     // обновление переменной в зависимоти от события // один обработчик на все поля фильра (делегирование)

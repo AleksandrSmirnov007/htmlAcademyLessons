@@ -23,4 +23,4 @@ const debounce = (callback, timeoutDelay = 1000) => {
   };
 };
 
-export {getRandomPositiveFloat, getRandomPostiveInteger, getRandomArrayElement, debounce };
+export { getRandomPositiveFloat, getRandomPostiveInteger, getRandomArrayElement, debounce };

@@ -12,7 +12,7 @@ const failMessage =
 const hideMessage = () => {
   const messageElement = document.querySelector('.error') || document.querySelector('.success'); // повторил спомсоб из кексограмма но в консолт через сунды дые выдвет ошибку: Uncaught TypeError: Cannot read properties of null (reading 'remove') at hideMessage ()то есть пытается удалить и второй элемент но его нет, тогда добавил дальше   // if(messageElement) {  messageElement.remove(); };
   if(messageElement) {
-    messageElement.removeEventListener('click', onMessageClick); // удаляем обработчик проверить в инструментах разработчика проверить работает или нет
+    messageElement.removeEventListener('click', onMessageClick); // удаляем обработчик проверить в инструментах разработчика проверить в инструментах разработчика
     messageElement.remove();
   };
   body.removeEventListener('keydown', onEscDown);
