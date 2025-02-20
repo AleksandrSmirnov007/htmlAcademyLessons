@@ -317,6 +317,7 @@ const setOnFormSubmit = (cb) => {
       console.log('форма заполнена правильно можно отправлять');
       await cb(new FormData(form));
       unBlockSubmitButton();
+      pristine.validate(); // Для наглядности в html options selected прописаны неправильно, при успешной отправке формы форма сбрасывается но валидации уже не происходит, и при этом сообщение об ошибке выбранных select не выводится.
     } else {
       showFailMessage('Неправильно заполнены данные объявления');
       console.log('форма заполнена неправильно!');

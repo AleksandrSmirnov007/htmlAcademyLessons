@@ -196,10 +196,10 @@ export {onActiveFilters, filterMarkers, turnFilterOn, setOnFilterChange, filters
 
 // В случае если сервер не работает то раcкоментировать этот код, данные загрузятся из генератора данных из модуля data.js (0перенести в маин)
 // получение генерированных данных с обработки убрать потом но оставить возможностть загрузить данные
-import {renderMarkers} from './map.js';
-import { getRentals } from './data.js';
-const rentals = getRentals();
-console.log(rentals);
-turnFilterOn(rentals);
-renderMarkers(filterMarkers());
-setOnFilterChange(renderMarkers);
+// import {renderMarkers} from './map.js';
+// import { getRentals } from './data.js';
+// const rentals = getRentals();
+// console.log(rentals);
+// turnFilterOn(rentals);
+// renderMarkers(filterMarkers());
+// setOnFilterChange(renderMarkers);
