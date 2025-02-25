@@ -10,13 +10,12 @@ const loadPreviewPhoto = () => {
     return fileName.endsWith(type);
   });
   if (matches) {
-    previewPhoto.style.backgroundImage = `url("${URL.createObjectURL(file)}")`; // работать с background-image проще, при этом не надо добавлять элемент через createElement или innerHtml создавать <img> и присваивать ему prewiewPhoto.src = URL.createObjectURL(file);, центровка background-image:   background-position: center; background-size: cover; (добавляю напрямую в css)
+    previewPhoto.style.backgroundImage = `url("${URL.createObjectURL(file)}")`;
   }
-}
-// fileChooserPhoto.addEventListener('change', loadPreviewPhoto); //экспортируем фкнкцию loadPreviewPhoto м через делеирование обработчиков событий на форму задать действия при этом событии через switch в модуле form.js вместе со всеми обработчиками
+};
 
 const previewPhotoClear = () => {
   previewPhoto.style.backgroundImage = 'none';
-}
+};
 
 export { loadPreviewPhoto, previewPhotoClear };

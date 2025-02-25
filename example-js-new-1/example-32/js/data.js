@@ -2,6 +2,30 @@
 
 import { getRandomPositiveFloat, getRandomPostiveInteger, getRandomArrayElement, } from "./util.js";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const TITLE = [
   'Маленькая квартирка рядом с парком',
   'Чёткая хата',
@@ -149,6 +173,9 @@ const getRentals = () =>
   );
 
 export {getRentals};
+
+const data = getRentals();
+console.log(data);
 
 
 // Структура каждого объекта должна быть следующей:

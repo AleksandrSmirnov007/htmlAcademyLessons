@@ -24,9 +24,8 @@ const sendData = async (onSuccess, onFail, body) => {
     if (!response.ok) {
       throw new Error ('Не удалось отправить форму попробуйте еще раз');
     }
-    // const result = await response.json();
-    // console.log(result);
-    onSuccess(); // Было     onSuccess('Данные отправлены успешно'); решил не передавать сообщение для успешного исхода (оно есть в шаблоне), а для неуспешного могут быть варианты - "неправильно заполнена форма" или "непередались данные на сервер"
+
+    onSuccess();
 
   } catch (error) {
     onFail(error.message);
