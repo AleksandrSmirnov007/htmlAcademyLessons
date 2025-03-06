@@ -82,21 +82,25 @@
       </div>
     </section>
 
-    <section class="page-main__form form">
-      <h3>Оставить отзыв</h3>
+    <section class="page-main__form form wrapper">
+      <h3 class="form__heading">Оставить отзыв</h3>
       <form action="">
         <fieldset>
-          <label>Ваш коментарий</label>
-          <textarea name="comment" id="comment" placeholder="Расскажите, что вы думаете о проекте"></textarea>
+          <label class="visually-hidden">Ваш коментарий</label>
+          <textarea class="form__textarea" name="comment" id="comment" placeholder="Расскажите, что вы думаете о проекте"></textarea>
         </fieldset>
         <fieldset>
-          <label for=""></label>
-          <input type="text" name="name" id="name">
+          <label for="name"></label>
+          <input class="form__field form__field--name" type="text" name="name" id="name">
         </fieldset>
 
-        <button type="submit">Отправить</button>
-        <p class="form__explanation">Отзыв будет добавлен после проверки модератором</p>
+        <div class="form__submit-container">
+          <button class="form__submit" type="submit">Отправить</button>
+          <p class="form__explanation">Отзыв будет добавлен после <br> проверки модератором</p>
+        </div>
+        <div class="form__separator"></div>
       </form>
+
     </section>
 
     <section class="reviews">

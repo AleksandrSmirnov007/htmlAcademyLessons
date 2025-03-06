@@ -31,6 +31,17 @@
   font-display: swap;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -85,6 +96,10 @@ body {
   display: relative;
   padding: 10px;
   display: block; /* тем самым переопределяем родное display: list-item, нативная стрелка у details исчезает */
+}
+
+.header__summary:hover {
+  cursor: pointer;
 }
 
 .header__summary::before {
@@ -177,6 +192,7 @@ header a:hover {
   font-weight: 500;
   line-height: 39px;
   margin: 0 0 32px;
+  color: #9f7303;
 }
 
 .wysiwyg-wrapper p {
@@ -238,7 +254,65 @@ header a:hover {
   color: #9f7303
 }
 
-.page-main__form {
+.form {
   background-color: #f4efe2;
+  padding-top: 81px;
+  padding-bottom: 88px;
 }
 
+.form__heading {
+  color: #9f7303;
+  margin: 0 0 32px;
+}
+
+.form__textarea {
+  width: 100%;
+  height: 160px;
+  padding: 16px;
+  font-size: 18px;
+  resize: none;
+  border-radius: 8px;
+  border: 1px solid #f5d581;
+  margin-bottom: 24px;
+}
+
+.form__textarea::placeholder {
+  color: #000000;
+  opacity: 0.3;
+}
+
+
+.form__field--name {
+  width: 540px;
+  font-size: 18px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #f5d581;
+  margin-bottom: 24px;
+}
+
+.form__submit-container {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.form__submit {
+  padding: 18px 92px;
+  border-radius: 8px;
+  background-color: #9f7303;
+  border: 1px solid transparent;
+  font-size: 18px;
+}
+
+.form__explanation {
+  font-size: 12px;
+}
+
+.form__separator {
+  width: 1px;
+  border-bottom: 1px solid #f5d581;
+  width: 100%;
+}
