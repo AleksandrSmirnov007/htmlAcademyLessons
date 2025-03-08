@@ -316,3 +316,7 @@ header a:hover {
   border-bottom: 1px solid #f5d581;
   width: 100%;
 }
+
+.reviews__list {
+  list-style-type: none;
+}
