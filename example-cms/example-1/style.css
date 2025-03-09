@@ -257,7 +257,7 @@ header a:hover {
 .form {
   background-color: #f4efe2;
   padding-top: 81px;
-  padding-bottom: 88px;
+  padding-bottom: 44px;
 }
 
 .form__heading {
@@ -317,6 +317,43 @@ header a:hover {
   width: 100%;
 }
 
+.reviews {
+  background-color: #f4efe2;
+  padding-top: 44px;
+  padding-bottom: 88px;
+}
+
 .reviews__list {
   list-style-type: none;
+  display: grid;
+  row-gap: 32px;
+}
+
+.reviews__item {
+  display: grid;
+  grid-template-columns: min-content auto;
+  column-gap: 24px;
+}
+
+
+
+.reviews__avatar-container {
+  grid-row: 1 / 3;
+  width: 50px;
+  height: 50px;
+  background-color: #f5d581;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.reviews__author {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  font-style: normal;
+}
+
+.reviews__blockquote {
+  grid-column: 2 / 3  ;
 }
