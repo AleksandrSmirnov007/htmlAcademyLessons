@@ -16,26 +16,22 @@ const addDetailTextContent = (card, selector, value) => {
   }
 };
 
-const getTypeOffer = (value) => {
-  switch(value) {
-    case 'palace':
-      return 'Дворец'
-    case 'flat':
-      return 'Квартира'
-    case 'hotel':
-      return 'Отель'
-    case 'house':
-      return 'Дом'
-    case 'bungalow':
-      return'Бунгало'
-  }
+
+const TYPE_OFFER_MAP = {
+  'palace': 'Дворец',
+  'flat': 'Квартира',
+  'hotel': 'Отель',
+  'house': 'Дом',
+  'bungalow': 'Бунгало',
 }
+
+const getTypeOffer = (value) => TYPE_OFFER_MAP[value];
 
 const capasityContent = (amountRooms, amountGuests) => {
   let rooms;
   let guests;
 
-  if (amountRooms == 1) {
+  if (amountRooms === 1) {
     rooms = '1 комната ';
   } else if ( amountRooms > 1 || amountRooms < 5) {
     rooms = `${amountRooms} комнаты `;
@@ -45,7 +41,7 @@ const capasityContent = (amountRooms, amountGuests) => {
     rooms = '';
   }
 
-  if (amountGuests == 1) {
+  if (amountGuests === 1) {
     guests = 'для 1 гостя';
   } else if (amountGuests > 1 || amountGuests < 5) {
     guests = `для ${amountGuests} гостей`;

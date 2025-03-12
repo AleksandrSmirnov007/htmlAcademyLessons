@@ -6,9 +6,8 @@ const FILE_TYPES = ['gif','jpeg','jpg','png'];
 const loadPreviewPhoto = () => {
   const file = fileChooserPhoto.files[0];
   const fileName = file.name.toLowerCase();
-  const matches = FILE_TYPES.some((type) => {
-    return fileName.endsWith(type);
-  });
+  const matches = FILE_TYPES.some((type) => fileName.endsWith(type));
+
   if (matches) {
     previewPhoto.style.backgroundImage = `url("${URL.createObjectURL(file)}")`;
   }

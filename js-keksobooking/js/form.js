@@ -134,25 +134,17 @@ const roomsValidate = (val) => {
   return isValid;
 };
 
+const ROOMS_ERROR_MESSAGE_MAP = {
+  '1': '1 комната для 1 гостя',
+  '2': '2 комнаты для 1, 2 гостей',
+  '3': '3 комнаты для 1, 2, 3 гостей',
+  '100': '100 комнат не для гостей',
+}
+
 const roomsErrorMessage = () => {
   const rooms = roomsField.value;
-  let message;
-  switch(rooms) {
-    case '1':
-      message = '1 комната для 1 гостя'
-      break;
-    case '2':
-      message = '2 комнаты для 1, 2 гостей'
-      break;
-    case '3':
-      message = '3 комнаты для 1, 2, 3 гостей'
-      break;
-    case '100':
-      message = '100 комнат не для гостей'
-      break;
-  }
-  return message;
-};
+  return ROOMS_ERROR_MESSAGE_MAP[rooms];
+}
 
 pristine.addValidator(
   roomsField,
@@ -173,25 +165,17 @@ const capacityValidate = (val) => {
   return isValid;
 };
 
+const CAPACITY_ERROR_MESSAGE_MAP = {
+  '1': 'для 1 гостя 1 комната',
+  '2': 'для 1, 2 гостей 2 комнаты',
+  '3': 'для 1, 2, 3 гостей 3 комнаты',
+  '0': 'не для гостей 100 комнат',
+}
+
 const capacityErrorMessage = () => {
   const capacity = capacityField.value;
-  let message;
-  switch(capacity) {
-    case '1':
-      message = 'для 1 гостя 1 комната'
-      break;
-    case '2':
-      message = 'для 1, 2 гостей 2 комнаты'
-      break;
-    case '3':
-      message = 'для 1, 2, 3 гостей 3 комнаты'
-      break;
-    case '0':
-      message = 'не для гостей 100 комнат'
-      break;
-  }
-  return message;
-};
+  return CAPACITY_ERROR_MESSAGE_MAP[capacity];
+}
 
 pristine.addValidator(
   capacityField,
