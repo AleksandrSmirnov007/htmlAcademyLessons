@@ -5,9 +5,7 @@ const POSITION_DEFAULT = {
   lng: 139.692,
 };
 
-const getDefaultAddress = () => {
-  return `${POSITION_DEFAULT.lat.toFixed(5)}, ${POSITION_DEFAULT.lng.toFixed(5)}`
-}
+const getDefaultAddress = () => `${POSITION_DEFAULT.lat.toFixed(5)}, ${POSITION_DEFAULT.lng.toFixed(5)}`;
 
 const onMapLoad = (...calbacks) => {
   calbacks.forEach((calback) => calback());

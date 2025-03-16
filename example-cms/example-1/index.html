@@ -7,52 +7,58 @@
   <title>Document</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <img src="" alt="">
-      <ul>
+  <header class="page__header header">
+    <nav class="header__nav">
+      <img class="header__logo" width="262" height="47" src="./image/logo-large.svg" alt="Логотип Interior Lounge">
+      <ul class="header__menu-list">
         <li>
-          <details>
-            <summary>Наши проекты</summary>
-            <ul>
+          <details class="header__details">
+            <summary class="header__summary">Наши проекты</summary>
+            <ul class="header__details-list">
               <li>
                 <a href="">Tomazzi Hall</a>
               </li>
 
               <li>
-                <a href="">Lounge Hall</a>
+                <a href="#">Lounge Hall</a>
               </li>
 
               <li>
-                <a href="">Astra Hall</a>
+                <a href="#">Astra Hall</a>
               </li>
 
             </ul>
           </details>
         </li>
+
+        <li>
+          <a href="#">Контакты</a>
+        </li>
+
+        <li>
+          <a class="header__feedback" href="#">Оставить отзыв</a>
+        </li>
       </ul>
 
-      <a href="">Контакты</a>
-      <a href="">Оставить отзыв</a>
     </nav>
   </header>
   <main class="page-main">
-
+<!--
     <section class="intro">
       <div class="wrapper">
         <div class="wysiwyg-wrapper">
-          <!-- здесь будет вставлен код WYSIWYG радактора -->
+           здесь будет вставлен код WYSIWYG редактора
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="main-area">
       <div class="wrapper">
         <div class="wysiwyg-wrapper">
           <h1>Дизайн общественных интерьеров</h1>
           <h2>Кейс клубного дома Tomazzi Hall</h2>
-          <img src="" alt="">
-          <p>Создать объект, подобного которому в Санкт-Петербурге еще не было, — такую задачу поставил перед собой девелопер Interior Lounge, продумывая клубный дом Tomazzi Hall. Над экстерьером комплекса работала команда одного из крупнейших архитектурных  Бюро России — «Студия 11» разработал концепцию, а мы оформили интерьер 10 парадных и 3 лаунж-зон.</p>
+          <img width ="1110" height="400" src="./image/tomazzi-hall.jpeg" alt="Томаззи Холл" >
+          <p class="wp-yellow-text">Создать объект, подобного которому в Санкт-Петербурге еще не было, — такую задачу поставил перед собой девелопер <b>Interior Lounge</b>, продумывая клубный дом Tomazzi Hall. Над экстерьером комплекса работала команда одного из крупнейших архитектурных  Бюро России — «Студия 11» разработал концепцию, а мы оформили интерьер 10 парадных и 3 лаунж-зон.</p>
           <p>Заказчик знал команду, следил за нашей деятельностью, поэтому никого больше не рассматривал — поручил дизайн парадных и лаунж-зон нам. Основными моментами, на которые мы оринтировались, стали:</p>
           <ul>
             <li>Источники вдохновения планировалось искать в строгой геометрии, модерне и духе «ревущих двадцатых»;</li>
@@ -61,56 +67,69 @@
           </ul>
 
           <div>
-            <img src="" alt="">
-            <img src="" alt="">
+            <img src="./image/circular-staircase.jpeg" alt="Круговая лестница">
+            <img src="./image/skyscraper.jpeg" alt="Небоскреб">
           </div>
 
           <h3>Начало работы и источники вдохновения</h3>
-          <ul>
-            <li>Над экстерьером комплекса работала команда одного из крупнейших архитектурных бюро России — «Студия 11», а мы оформили интерьер 10 парадных и 3 лаунж-зон.</li>
-            <li>Заказчик знал команду, следил за нашей деятельностью, поэтому никого больше не рассматривал — поручил дизайн парадных и лаунж-зон нам.</li>
-          </ul>
+          <div>
+            <p>Над экстерьером комплекса работала команда одного из крупнейших архитектурных бюро России — «Студия 11», а мы оформили интерьер 10 парадных и 3 лаунж-зон.</p>
+            <p>Заказчик знал команду, следил за нашей деятельностью, поэтому никого больше не рассматривал — поручил дизайн парадных и лаунж-зон нам.</p>
+          </div>
 
-          <p>«Нам хотелось поддержать внешнюю архитектурную концепцию, но внутри добавить что-то необычное. Сделать некое подобие матрешки, чтобы все время открывались новые смыслы и элементы».</p>
+          <blockquote>«Нам хотелось поддержать внешнюю архитектурную концепцию, но внутри добавить что-то необычное. Сделать некое подобие матрешки, чтобы все время открывались новые смыслы и элементы».</blockquote>
         </div>
       </div>
     </section>
 
-    <section class="form">
-      <h3>Оставить отзыв</h3>
+    <section class="page-main__form form wrapper">
+      <h3 class="form__heading">Оставить отзыв</h3>
       <form action="">
         <fieldset>
-          <label>Ваш коментарий</label>
-          <textarea name="comment" id="comment" placeholder="Расскажите, что вы думаете о проекте"></textarea>
+          <label class="visually-hidden">Ваш коментарий</label>
+          <textarea class="form__textarea" name="comment" id="comment" placeholder="Расскажите, что вы думаете о проекте"></textarea>
         </fieldset>
         <fieldset>
-          <label for=""></label>
-          <input type="text" name="name" id="name">
+          <label for="name"></label>
+          <input class="form__field form__field--name" type="text" name="name" id="name">
         </fieldset>
 
-        <button type="submit">Отправить</button>
-        <p class="form__explanation">Отзыв будет добавлен после проверки модератором</p>
+        <div class="form__submit-container">
+          <button class="form__submit" type="submit">Отправить</button>
+          <p class="form__explanation">Отзыв будет добавлен после <br> проверки модератором</p>
+        </div>
+        <div class="form__separator"></div>
       </form>
+
     </section>
 
-    <section class="reviews">
-      <h3>Отзывы</h3>
-      <ul>
-        <li>
-          <cite>Иван Грачев</cite>
-          <blockquote>Очень самобытный и необычный проект.</blockquote>
+    <section class="reviews wrapper">
+      <h3 class="visually-hidden">Отзывы</h3>
+      <ul class="reviews__list">
+        <li class="reviews__item">
+          <div class="reviews__avatar-container">
+            <img class="reviews__avatar" width="50" height="50" src="./image/avatar-01.jpg" alt="avatar">
+          </div>
+          <cite class="reviews__author">Иван Грачев</cite>
+          <blockquote class="reviews__blockquote">Очень самобытный и необычный проект.</blockquote>
         </li>
 
-        <li>
-          <cite>Мария Рачинская</cite>
-          <blockquote>Мне особенно понравилось решение лестничных клеток.
-            Кружки вообще очень стильные!</blockquote>
+        <li class="reviews__item">
+          <div class="reviews__avatar-container">
+            <img class="reviews__avatar" width="50" height="50" src="./image/avatar-02.jpg" alt="avatar">
+          </div>
+          <cite class="reviews__author">Мария Рачинская</cite>
+          <blockquote class="reviews__blockquote">Мне особенно понравилось решение лестничных клеток.
+            <br>Кружки вообще очень стильные!</blockquote>
         </li>
 
-        <li>
-          <cite>Светлана</cite>
-          <blockquote>Очень нравится, что в городе развиваются такие проекты. Надеюсь, такие проекты скоро будут не только в частных домах, но и в кафе, музеях, театрах.
-            Я бы сходила!</blockquote>
+        <li class="reviews__item">
+          <div class="reviews__avatar-container">
+            <img class="reviews__avatar" width="50" height="50" src="./image/avatar-03.jpg" alt="avatar">
+          </div>
+          <cite class="reviews__author">Светлана</cite>
+          <blockquote class="reviews__blockquote">Очень нравится, что в городе развиваются такие проекты. Надеюсь, такие проекты скоро будут не только в частных домах, но и в кафе, музеях, театрах.
+            <br>Я бы сходила!</blockquote>
         </li>
       </ul>
     </section>

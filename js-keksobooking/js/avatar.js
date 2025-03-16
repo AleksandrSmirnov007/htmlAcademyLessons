@@ -6,9 +6,7 @@ const DEFAULT_SRC = 'img/muffin-grey.svg';
 const loadPreviewAvatar = () => {
   const file = fileChooserAvatar.files[0];
   const fileName = file.name.toLowerCase();
-  const matches = FILE_TYPES.some((type) => {
-    return fileName.endsWith(type);
-  });
+  const matches = FILE_TYPES.some((type) => fileName.endsWith(type));
 
   if (matches) {
     previewAvatar.src = URL.createObjectURL(file);
