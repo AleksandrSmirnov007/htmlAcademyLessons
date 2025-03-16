@@ -54,7 +54,7 @@ const capasityContent = (amountRooms, amountGuests) => {
 
 const timeContent = (checkin, checkout) => `Заезд после ${checkin}, выезд до ${checkout}`;
 
-const isElementContainsFeature = (element, features) => {
+const showElementContainsFeature = (element, features) => {
   if (!features) {
     return;
   }
@@ -71,7 +71,7 @@ const renderFeature = (card, features) => {
 
   elements.forEach((element) => {
     element.classList.add('hidden');
-    isElementContainsFeature(element, features);
+    showElementContainsFeature(element, features);
   });
 }
 
