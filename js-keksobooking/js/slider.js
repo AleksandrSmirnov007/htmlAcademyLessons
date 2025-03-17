@@ -32,6 +32,8 @@ const TYPE = [
   },
 ];
 
+TYPE.forEach((typeObject) => Object.freeze(typeObject)); // замораживаю все обьекты внутри массива TYPE, теперь строка TYPE[1].name = 'не флет)))' выдаст ошибку Uncaught TypeError: Cannot assign to read only property 'name' of object '#<Object>' at slider.js:36:14 (перевод Необработанная ошибка TypeError: невозможно присвоить значение только для чтения свойству 'name' объекта '#<Object>' в slider.js:36:14). Но значение в нктри обьекта не изменится console.log(TYPE[1].name);
+
 const SLIDER_STEP = 100;
 sliderElement.style.marginTop = '3px';
 

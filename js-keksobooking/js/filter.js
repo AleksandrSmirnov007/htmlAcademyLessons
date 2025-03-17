@@ -29,6 +29,8 @@ const PRICE_MAP = {
   high: [50000, Infinity],
 };
 
+Object.freeze(PRICE_MAP);
+
 let currentType = 'any';
 let currentPrice = 'any';
 let currentRooms = 'any';
