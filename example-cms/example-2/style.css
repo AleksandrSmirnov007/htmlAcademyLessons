@@ -1,0 +1,81 @@
+/* Шаг 1 Перед нами страница студии дизайна общественных интерьеров. Ссылка на макет Наша задача: подготовить текстовые параметры для интеграции в WYSIWYG редактор. В этом шаге показано, какие блоки вынесут в редактор. Секции с WYSIWYG редактором полностью верстать не надо, так как большая часть будет вынесена в WYSIWYG редактор. Нужно подготовить только основную стилизацию. Колонки прописывать тоже не нужно: они создаются на уровне WYSIWYG редактора. Можно сразу добавить больше текста, чтобы учесть переполнение и перенос на вторую строку заголовков. Картинки стилизовать не нужно, их просто вставят через редактор. */
+/* Шаг 2 Добавляем на страницу заголовки и тексты в разном порядке, чтобы видеть отступы между ними. В каждый элемент подставляем больше текста, чтобы учитывать переполнение. Примечание: обратите внимание, что для wrapper мы опять поставили ширину 80%, а не 1110px, как в макете. Это сделано только для того, чтобы отображаемый текст в демонстрации смотрелся удобнее. В реальном проекте стоило бы ставить 1110px. */
+/* Шаг 3 Пропишем основные стили текстовых параметров. */
+/* Шаг 4 Добавим стили для заголовков. Цвет заголовков первого, второго и третьего уровня хотя и можно изменить из админки, но его всё равно стоит указать. В любом случае, если понадобится заголовок третьего уровня чёрного цвета, перезаписать из редактора смогут. А вот выравнивание не нужно менять. */
+/* Шаг 5 Пропишем стилизацию для списков. */
+/* Шаг 6 Последний шаг: добавим стилизацию для цитаты. Готово. Мы завершили подготовку блока для WYSIWYG редактора. */
+.wrapper {
+  width: 1110px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Montserrat", "Tahoma", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000000;
+  min-width: 1150px;
+}
+
+.page-body {
+  background-color: #fffdf8;
+  padding: 0 60px;
+}
+
+.wysiwyg-wrapper h1 {
+  font-size: 48px;
+  line-height: 49px;
+  margin-bottom: 24px;
+}
+
+.wysiwyg-wrapper h2 {
+  font-size: 40px;
+  font-weight: 500;
+  color: #9f7303;
+}
+
+.wysiwyg-wrapper h3 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #9f7303;
+}
+
+.wysiwyg-wrapper ul,
+.wysiwyg-wrapper ol {
+  margin-bottom: 50px;
+  padding-left: 22px;
+}
+
+.wysiwyg-wrapper li {
+  margin-bottom: 16px;
+  position: relative;
+  list-style: none;
+}
+
+.wysiwyg-wrapper li::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  display: block;
+  background-color: #f5d581;
+  position: absolute;
+  top: 12px;
+  bottom: 0;
+  left: -20px;
+  transform: rotate(45deg);
+}
+
+.wysiwyg-wrapper blockquote {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 300;
+  color: #9f7303;
+  padding: 40px 100px;
+  border-top: 1px solid #f5d581;
+  border-bottom: 1px solid #f5d581;
+  text-align: center;
+  width: 70%;
+  margin: 60px auto;
+}
