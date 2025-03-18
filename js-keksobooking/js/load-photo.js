@@ -3,6 +3,8 @@ const previewPhoto = document.querySelector('.ad-form__photo');
 
 const FILE_TYPES = ['gif','jpeg','jpg','png'];
 
+Object.freeze(FILE_TYPES);
+
 const loadPreviewPhoto = () => {
   const file = fileChooserPhoto.files[0];
   const fileName = file.name.toLowerCase();

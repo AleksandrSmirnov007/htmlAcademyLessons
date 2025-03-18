@@ -62,6 +62,8 @@ const MIN_PRICE_TYPE = {
   'palace': 10000,
 };
 
+Object.freeze(MIN_PRICE_TYPE);
+
 const sliderHide = (boolean) => {
   if (boolean) {
     slider.style.display = 'block';
@@ -127,6 +129,8 @@ const ROOM_CAPACITY = {
   '100': ['0'],
 };
 
+Object.freeze(ROOM_CAPACITY);
+
 const roomsValidate = (val) => {
   const currentCapacity = capacityField.value;
   const validCapacityArray = ROOM_CAPACITY[val];
@@ -140,6 +144,8 @@ const ROOMS_ERROR_MESSAGE_MAP = {
   '3': '3 комнаты для 1, 2, 3 гостей',
   '100': '100 комнат не для гостей',
 }
+
+Object.freeze(ROOMS_ERROR_MESSAGE_MAP);
 
 const roomsErrorMessage = () => {
   const rooms = roomsField.value;
@@ -171,6 +177,8 @@ const CAPACITY_ERROR_MESSAGE_MAP = {
   '3': 'для 1, 2, 3 гостей 3 комнаты',
   '0': 'не для гостей 100 комнат',
 }
+
+Object.freeze(CAPACITY_ERROR_MESSAGE_MAP);
 
 const capacityErrorMessage = () => {
   const capacity = capacityField.value;
