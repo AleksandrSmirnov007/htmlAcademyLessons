@@ -1,0 +1,138 @@
+body {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: #000000;
+  padding: 0 165px;
+}
+
+.review {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-rows: 32px auto 28px;
+  column-gap: 22px;
+  margin-bottom: 64px;
+}
+
+.review__image {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  text-indent: -100vw; /* Добавим text-indent: -100vw для review__image, чтобы убрать обводку и битое изображение. Теперь выглядит аккуратно. */
+}
+
+.review__image-wrapper {
+  background-color: #f5d581;
+  width: 160px;
+  height: 160px;
+}
+
+.review__name {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0;
+}
+
+.review__text {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  margin: 0 0 10px 0;
+}
+
+.review__link {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  color: #d8874d;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 24px;
+  position: relative;
+}
+
+.review__link::before {
+  content: "";
+  background-image: url("img/icon-in.svg");
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
+
+
+body {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.wrapper {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+  background-size: cover;
+}
+
+.page-footer::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: url("img/background-darker.png");
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+
+/* Так как цвет футера темный, сразу пропишем белый цвет для любых техстовых элементов в футере% */
+.page-footer * {
+  color: #ffffff;
+}
+
+.page-footer__logo {
+  margin-bottom: 13px;
+}
+
+.page-footer__phone {
+  margin-bottom: 30px;
+}
+
+.page-footer__phone a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.page-footer__social {
+  padding-left: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.page-footer__social-item a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid #ffffff;
+  margin: 0 16px;
+}
