@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+
+  src:
+    url("./fonts/Montserrat-Regular.woff") format("woff"),
+    url("./fonts/Montserrat-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+
+  src:
+    url("./fonts/Montserrat-Medium.woff") format("woff"),
+    url("./fonts/Montserrat-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 300;
+
+  src:
+    url("./fonts/Montserrat-LightItalic.woff") format("woff"),
+    url("./fonts/Montserrat-LightItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000000;
+  background-color: #ffffff;
+  min-width: 1440px;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+  padding-left: 165px;
+  padding-right: 165px;
+}
+
+.reviews {
+  background-color: #f4efe2;
+  padding-top: 44px;
+  padding-bottom: 88px;
+}
+
+.reviews__list {
+  list-style-type: none;
+  display: grid;
+  row-gap: 32px;
+}
+
+.reviews__item {
+  display: grid;
+  grid-template-columns: min-content auto;
+  column-gap: 24px;
+}
+
+
+
+.reviews__image-wrapper {
+  grid-row: 1 / 3;
+  width: 50px;
+  height: 50px;
+  background-color: #f5d581;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+
+.reviews__image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  text-indent: -100vw; /* Добавим text-indent: -100vw для review__image, чтобы убрать обводку и битое изображение. Теперь выглядит аккуратно. */
+}
+
+.reviews__author {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  font-style: normal;
+}
+
+.reviews__blockquote {
+  grid-column: 2 / 3  ;
+}

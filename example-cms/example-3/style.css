@@ -80,6 +80,8 @@ body {
   max-width: 1110px;
   margin: 0 auto;
   padding: 0 20px;
+  z-index: 2;
+  position: relative;
 }
 
 .page-footer {
@@ -87,7 +89,9 @@ body {
   text-align: center;
   padding: 80px 0;
   position: relative;
+  /* background-repeat: no-repeat; */
   background-size: cover;
+   /* шаг десять из 13 демонстрация разобраться */
 }
 
 .page-footer::before {
@@ -135,4 +139,15 @@ body {
   display: inline-block;
   border: 2px solid #ffffff;
   margin: 0 16px;
+  /* display: grid; */
+  /* place-content: center; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-footer__social-item img {
+  max-width: 28px;
+  max-height: 28px;
 }
