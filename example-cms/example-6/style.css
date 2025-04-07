@@ -9,3 +9,37 @@
   src: url("fonts/arkhip.woff2") format("woff2"),
   url("fonts/arkhip.woff") format("woff"); /* скачать шрифты */
 }
+
+body {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000;
+  min-width: 1150px;
+}
+
+.wrapper {
+  width: 1110px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.order {
+  padding: 120px 0;
+  background-image: url("img/background-order.jpeg");
+  background-size: cover;
+}
+
+.order__title {
+  font-family: "Arkhip", "Arial", sans-serif;
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.order__form {
+  margin: 60px 0;
+}
