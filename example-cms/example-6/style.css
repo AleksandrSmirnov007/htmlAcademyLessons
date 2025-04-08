@@ -1,6 +1,10 @@
+/* https://up.htmlacademy.ru/profession/frontender-lite/2/cms/2/demos/6513#2 */
+
 /* Щаг-1 В этом демо-проекте мы будем готовить форму для интеграции WordPress с плагином Contact Form 7. Макет: «Витрины для выпечки», если ссылка не работает, то попробуйте открыть тут. В проекте одна форма. Её особенность в том, что в ней три колонки. Такой реализации по умолчанию в плагине Contact Form 7 нет, поэтому колонки будем создавать самостоятельно. Подготовим основную разметку в следующем шаге. */
 /* Шаг-2 Задаём основную стилизацию и добавляем обёртки. Создадим обёртку с классом order-form, чтобы от него создавать колонки. Если бы мы стилизовали на основе уже интегрированного сайта, то можно было бы отталкиваться от id формы. */
-/* https://up.htmlacademy.ru/profession/frontender-lite/2/cms/2/demos/6513#2 */
+/* Шаг-3 Задаём основную стилизацию и добавляем обёртки. Для колонок мы можем использовать кастомные классы и задавать любое количество обёрток. Эти обёртки разработчик будет переносить к коду плагина. Для колонок создадим обёртку с классом order-form__column-wrapper с дочерними элементами order-form__column-item. В CSS поставим их в колонки. В следующем шаге добавим поля формы. */
+/* Шаг-4 Добавим <select>. CF7 генерирует такой код: <p> без класса, <span>, <select> с классом wpcf7-select, <option> без классов. Стилизуем от класса обёртки формы order-form. В следующем шаге стилизуем чекбокс */
+
 @font-face {
   font-family: "Arkhip";
   font-weight: 400;
@@ -42,4 +46,50 @@ body {
 
 .order__form {
   margin: 60px 0;
+}
+
+.order__form__column-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-form__column-item {
+  width: 350px;
+  text-align: center;
+}
+
+.order-form .wpcf7-select {
+  background-color: #fffaf3;
+  border: 0;
+  padding: 21px;
+  border-radius: 200px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 30px;
+  box-sizing: border-box;
+  /* ставим по центру */
+  text-align-last: center;
+  /* стилизация стрелочки*/
+
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 71%;
+  background-position-y: 25px;
+}
+
+.order-form__column-item p {
+  margin: 0;
+}
+
+.order-form .cf7md-select {
+  margin-bottom: 20px;
+
+  /* ставим произвольные отступы на случай, если инпуты
+  будут идти друг под другом, к тому же по умолчанию
+  нельзя сделать колонки в плагине Contact Form 7,
+  только при добавлении каких-либо плагинов. Можно
+  сделать колонки на уже готовой интегрируемой
+  форме, оттолкнувшись от оберток
+  */
 }
