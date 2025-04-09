@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
   <title>BakeIT — витрины для выпечки, которые продают</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
     <section class="order">
       <div class="wrapper">
         <h2 class="order__title">Заказать консультацию <br> ведущего специалиста</h2>
-        <div class="order__form">
+        <div class="order-form">
           <!-- Отсюда код будет удален и заменен на код вставки плагина -->
           <div class="wpcf7"><!-- обертка с классом, которую создаcт плагин -->
             <form action="" class="wpcf7"><!-- обертка с классом, которую создаcт плагин -->
@@ -38,12 +38,14 @@
                 <div class="order-form__column-item">
                   <div class="cf7md-item">
                     <label for="input-1">Ваше имя</label>
-                    <input type="text" class="wpcf7" id="input-1" placeholder="Иван Николаев">
+                    <input type="text" class="wpcf7-text" id="input-1" placeholder="Иван Николаев">
                   </div>
+                </div>
 
+                <div class="order-form__column-item">
                   <div class="cf7md-item">
-                    <label for="input-1">Ваше имя</label>
-                    <input type="text" class="wpcf7" id="input-1" placeholder="+7 (999) 999-99-99">
+                    <label for="input-1">Номер телефона</label>
+                    <input type="text" class="wpcf7-text" id="input-1" placeholder="+7 (999) 999-99-99">
                   </div>
                 </div>
 
