@@ -3,7 +3,10 @@
 /* Щаг-1 В этом демо-проекте мы будем готовить форму для интеграции WordPress с плагином Contact Form 7. Макет: «Витрины для выпечки», если ссылка не работает, то попробуйте открыть тут. В проекте одна форма. Её особенность в том, что в ней три колонки. Такой реализации по умолчанию в плагине Contact Form 7 нет, поэтому колонки будем создавать самостоятельно. Подготовим основную разметку в следующем шаге. */
 /* Шаг-2 Задаём основную стилизацию и добавляем обёртки. Создадим обёртку с классом order-form, чтобы от него создавать колонки. Если бы мы стилизовали на основе уже интегрированного сайта, то можно было бы отталкиваться от id формы. */
 /* Шаг-3 Задаём основную стилизацию и добавляем обёртки. Для колонок мы можем использовать кастомные классы и задавать любое количество обёрток. Эти обёртки разработчик будет переносить к коду плагина. Для колонок создадим обёртку с классом order-form__column-wrapper с дочерними элементами order-form__column-item. В CSS поставим их в колонки. В следующем шаге добавим поля формы. */
-/* Шаг-4 Добавим <select>. CF7 генерирует такой код: <p> без класса, <span>, <select> с классом wpcf7-select, <option> без классов. Стилизуем от класса обёртки формы order-form. В следующем шаге стилизуем чекбокс */
+/* Шаг-4 Добавим поля формы в первые две колонки. Оборачиваем в <div> с классом cf7md-item. При добавлении кастомного кода плагин Contact Form 7 оборачивает поля ввода в <div> и <span>, но на стилизацию это не влияет. Поэтому просто пропишем <label> и <input> с классом wpcf7-text. И стилизуем от класса обёртки формы order-form. Можно задавать кастомные id для <input>, чтобы привязать к нему <label>. Или можно просто положить <input> в <label>. В следующем шаге добавим <select>. */
+/* Шаг-5 Добавим <select>. CF7 генерирует такой код: <p> без класса, <span>, <select> с классом wpcf7-select, <option> без классов. Стилизуем от класса обёртки формы order-form. В следующем шаге стилизуем чекбокс */
+/* Шаг-6 Добавим чекбокс. Contact Form 7 генерирует обёртки <p> без класса и <span> с классом wpcf7-list-item. Но нам нужна обёртка, чтобы поставить чекбокс по центру. Если мы оборачиваем элемент в обёртку, то параграф не будет сгенерирован. Поэтому создаём обёртки: <div> с классом order-form__checkbox-wrapper и <span> с классом wpcf7-list-item. Внутри CF7 генерирует <label>, в котором находятся <input> и <span> с классом wpcf7-list-item-label. Стилизуем от класса обёртки формы order-form. В следующем шаге стилизуем кнопку submit.*/
+
 
 @font-face {
   font-family: "Arkhip";
@@ -51,6 +54,7 @@ body {
 .order-form__column-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .order-form__column-item {
@@ -135,4 +139,63 @@ body {
   сделать колонки на уже готовой интегрируемой
   форме, оттолкнувшись от оберток
   */
+}
+
+.order-form__checkbox-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.order-form .wpcf7-list-item {
+  /* сбрасываем отступы плагина*/
+  margin-left: 0;
+}
+
+.order-form .wpcf7-list-item input[type="checkbox"] {
+  appearance: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.order-form .wpcf7-list-item-label {
+  position: relative;
+  padding-left: 36px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.order-form .wpcf7-list-item-label::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-color: #ffb076;
+  border-radius: 5px;
+}
+
+.order-form .wpcf7-list-item input[type="checkbox"]:checked ~ .wpcf7-list-item-label::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-image: url("img/icon-checked.svg");
+  background-size: 15px 15px;
+  background-position: 0 -3px;
+  background-repeat: no-repeat;
+  z-index: 10px;
 }
