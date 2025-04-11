@@ -1,0 +1,41 @@
+/* ШАГ-1 В этом демо-проекте мы подготовим форму для интеграции Bitrix. Макет: «Витрины для выпечки», если ссылка не работает, то попробуйте открыть тут. Подготовим такую же форму для Bitrix. Основной момент, который стоит учитывать — создавать обёртки для пар <input> и <label>. Названия классов могут быть любыми. В Bitrix, скорее всего, не получится найти демо. Поэтому мы посмотрим другой вариант разметки. */
+/* ШАГ-2 Здесь мы создаём только одну обёртку для формы order-form, так как другие обёртки в предыдущем примере добавляли из-за генерируемого кода плагина. Для обертки формы добавляем класс form. Оборачиваем <input> и <label> в <div> с классом form__column-wrapper. Для колонок создаём обёртку с классом form__row-wrapper. На этом всё. Другие обёртки не нужны. В следующем шаге показана разметка из демо-проекта WordPress, чтобы вы могли посмотреть на разницу в коде. */
+
+@font-face {
+  font-family: "Arkhip";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/arkhip.woff2") format("woff2"),
+    url("fonts/arkhip.woff") format("woff");
+}
+
+body {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000;
+  min-width: 1150px;
+}
+
+.wrapper {
+  width: 1110px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.order {
+  padding: 120px;
+  background-image: url("img/background-order.jpeg");
+  background-size: cover;
+}
+
+.order-title {
+  font-family: "Arkhip", "Arial", sans-serif;
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+}
