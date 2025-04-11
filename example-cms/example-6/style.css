@@ -188,14 +188,37 @@ body {
 .order-form .wpcf7-list-item input[type="checkbox"]:checked ~ .wpcf7-list-item-label::after {
   content: "";
   position: absolute;
-  top: 5px;
-  left: 4px;
+  top: 0;
+  left: 0;
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 22px;
+  height: 22px;
   background-image: url("img/icon-checked.svg");
-  background-size: 15px 15px;
-  background-position: 0 -3px;
+  background-size: 17px 17px;
+  background-position: 60% 30%;
   background-repeat: no-repeat;
-  z-index: 10px;
+}
+
+.order-form .wpcf7-submit {
+  background-color: #ffb076;
+  border: 0;
+  padding: 21px;
+  width: 540px;
+  border-radius: 200px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.order-form__submit-wrapper {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.order-form__text {
+  text-align: center;
+  color: #8c8c8c;
 }
