@@ -17,5 +17,31 @@
 }
 
 body {
-  font-family: "Montserrat", "Arial", sans-serif; ;
+  font-family: "Montserrat", "Arial", sans-serif;
+  min-width: 1440px;
+  font-weight: 400px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.feedback {
+  background-color: #f4efe2;
+  padding-top: 81px;
+  padding-bottom: 56px;
+}
+
+.wrapper {
+  width: 1110px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.feedback__title {
+  margin: 0 0 24px 0;
+  font-size: 32px;
+  line-height: 39px;
+  font-weight: 500;
+  color: #9f7303;
 }
