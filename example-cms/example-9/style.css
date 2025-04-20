@@ -1,3 +1,12 @@
+/* step-1 Вам дана страница студии дизайна общественных интерьеров. Ссылка на макет Ваша задача: подготовить форму под интеграцию WordPress, плагин Contact Form 7. В проекте всего одна форма. Она содержит текстовое поле, растянутое на всю ширину, и поле для имени, занимающее только половину ширины. Снизу находится кнопка «Отправить», а справа от неё — короткий текст. */
+/* step-2 Создадим обёртку с классом order-form, чтобы от него изменить ширину поля для ввода имени. Меняем только в этой форме, так как впоследствии могут появиться новые формы с другими стилями. Если бы мы стилизовали на основе уже интегрированного сайта, то можно было бы отталкиваться от id формы. Если бы в форме было два поля для ввода текста, мы могли бы использовать обёртку для <input> и стилизовать от нее. Пропишем основную стилизацию блока и текстовые параметры для заголовка. */
+/* step-3 Добавим обёртки, которые создает плагин. <div class="wpcf7"> <!-- обертка с классом, которую создаcт плагин --><form action="" class="wpcf7-form"> <!-- тег формы с классом, которую создаcт плагин --></form></div> */
+/* step-4 Добавим тег <textarea>. Оборачиваем его в <p> без класса и <span> с классом wpcf7-form-control-wrap. По умолчанию стилей WordPress <textarea> растягивается на всю ширину, но разработчик может удалить эти стили. Поэтому пропишем ширину 100%. Если вы хотите добавить универсальные стили для всех <textarea> на сайте, стилизуйте по классам плагина. Здесь мы рассмотрим именно такую реализацию. Поэтому пропишем основную стилизацию для всех <textarea> по селектору класса wpcf7-textarea. */
+/* step-5 Добавим <input>. Он оборачивается в <p> без класса и <span> с классом wpcf7-form-control-wrap. А сам имеет класс wpcf7-text. Стилизуем по этому классу все <input>, которые могут появиться на сайте. По умолчанию у них добавлен атрибут size="40" — мы не будем его менять. */
+/* step -6 Добавим разметку для подписи и кнопки отправки. Стили для всех кнопок отправки задаём по классу wpcf7-submit. Подпись оборачиваем в <div>, так как Contact Form 7 может добавить для <p> дополнительный параграф — обёртку. */
+/* step-7 Для подписи и кнопки создаём обёртку, ставим их в ряд. Готово! Мы прописали уникальную и универсальную стилизацию для полей и кнопки формы. */
+
+
 @font-face {
   font-family: "Montserrat";
   font-weight: 500;
@@ -18,17 +27,16 @@
 
 body {
   font-family: "Montserrat", "Arial", sans-serif;
-  min-width: 1440px;
+  min-width: 1150px;
   font-weight: 400px;
   font-size: 18px;
   line-height: 1.5;
   color: #000000;
 }
 
-.feedback {
+.order {
   background-color: #f4efe2;
-  padding-top: 81px;
-  padding-bottom: 56px;
+  padding: 70px 0;
 }
 
 .wrapper {
@@ -38,80 +46,100 @@ body {
   box-sizing: border-box;
 }
 
-.feedback__title {
+.order__title {
   margin: 0 0 24px 0;
   font-size: 32px;
-  line-height: 39px;
+  /* line-height: 39px; не обязательно так как одна строка */
   font-weight: 500;
   color: #9f7303;
 }
 
-.feedback-form .wpcf7-text {
-  border: 1px solid #f5d581;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-sizing: border-box;
-  padding: 16px;
+.order-form {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #f5d581;
+}
+
+.wpcf7-textarea {
   font-size: 18px;
-  margin-bottom: 24px;
+  line-height: 1.5;
+  font-family: "Montserrat", "Arial", san-serif;
+  width: 100%;
+  padding: 17px;
+  box-sizing: border-box;
+  border: 1px solid #f5d581;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.wpcf7-text {
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "Montserrat", "Arial", sans-serif;
+  padding: 17px;
+  box-sizing: border-box;
+  border: 1px solid #f5d581;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+.order-form .wpcf7-text {
+  width: 50%;
 }
 
 /* Для обеспечения кроссбраузерной совместимости могут использоваться вендорные префиксы. Например, для WebKit-браузеров (Chrome, Safari) — ::-webkit-input-placeholder, для Firefox 4–18 — ::-moz-placeholder, для Firefox 19+ — :-moz-placeholder, для Internet Explorer 10–11 — :-ms-input-placeholder. 2 */
 
 /* Crome, Opera, Safary*/
-.feedback-form .wpcf7-text::-webkit-input-placeholder {
+.order-form .wpcf7-text::-webkit-input-placeholder {
   color: #000000;
   opacity: 0.3;
 }
 
 /* Firefox 19 + */
-.feedback-form .wpcf7-text::-moz-placeholder {
+.order-form .wpcf7-text::-moz-placeholder {
   color: #000000;
   opacity: 0.3;
 }
 
 /* IE 18+ */
-.feedback-form .wpcf7-text::-ms-input-placeholder {
+.order-form .wpcf7-text::-ms-input-placeholder {
   color: #000000;
   opacity: 0.3;
 }
 
 /* Firefox 18 - */
-.feedback-form .wpcf7-text:-moz-placeholder {
+.order-form .wpcf7-text:-moz-placeholder {
   color: #000000;
   opacity: 0.3;
 }
 
-.feedback-form textarea {
-  resize: none;
-  width: 100%;
-  height: 160px;
-}
 
-.feedback-form input {
-  width: 540px;
-}
-
-.feedback-form .wpcf7-submit {
+/* стили для кнопки отправки */
+.wpcf7-submit {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
   background-color: #9F7303;
-  padding: 18px 92px;
+  color: #ffffff;
+  width: 285px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-radius: 8px;
   font-weight: 500;
   border: none;
-  border-radius: 8px;
-  display: block;
+  cursor: pointer;
 }
 
-.feedback-form__submit-text-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.feedback-form .feedback-form__text-wrapper {
-  margin-left: 16px;
-}
-
-.feedback-form .feedback-form__text {
-  margin: 0;
+.order-text {
   font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400px;
+  opacity: 0.7;
+  width: 185px;
+  margin-left: 20px;
+}
+
+.order-submit-area {
+  display: flex;
+  align-items: center;
 }

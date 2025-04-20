@@ -1,0 +1,114 @@
+4.8. Чек-лист самопроверки
+При стилизации кастомных элементов форм, input не удален из DOM
+С кастомными чекбоксами, радиобаттонами и другими элементами формы, не удаляйте input из DOM.
+
+Верно:
+
+<label>
+  <input type="checkbox" class="custom-checkbox">
+  <span>Кликни здесь</span>
+</label>
+
+        Копировать
+
+
+
+.custom-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+        Копировать
+
+
+
+В этом случае input все еще находится в DOM, но не виден.
+
+Неверно:
+
+<label>
+  <input type="checkbox" class="custom-checkbox">
+  <span>Кликни здесь</span>
+</label>
+
+        Копировать
+
+
+
+.custom-checkbox {
+  display: none;
+}
+
+        Копировать
+
+
+
+В этом случае input удален из DOM.
+
+При интеграции с плагином
+Найден генерируемый код плагина, стилизация проведена по этому коду.
+При интеграции кастомным кодом
+Стилизация сделана каскадом от обёртки.
+То есть на теге form не должно быть классов, вся стилизация через каскад от обертки.
+
+Пример верного кода. На теге form нет класса, стилизация идет от обертки:
+
+<!-- index.html -->
+
+<div class="form-product-wrapper"> <!-- обёртка формы -->
+  <form action="" method="post">
+
+  </form>
+</div>
+
+        Копировать
+
+
+
+.form-product-wrapper form {
+  border: 2px solid purple;
+}
+
+.form-product-wrapper input {
+  margin: 10px;
+}
+
+        Копировать
+
+
+
+Пример неверного кода. На теге form есть класс для стилизации:
+
+<!-- index.html -->
+
+<div class="form-product-wrapper"> <!-- обёртка формы -->
+  <form action="" method="post" class="form-product">
+
+  </form>
+</div>
+
+        Копировать
+
+
+
+.form-product {
+  border: 2px solid purple;
+}
+
+.form-product input {
+  margin: 10px;
+}
+
+        Копировать
+
+
+
+Конечно, опытный CMS разработчик сможет интегрировать форму как в примере неверного кода, но это может занять больше времени. Так что лучше создать обертку и стилизовать от нее, как в примере верного кода.
