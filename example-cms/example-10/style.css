@@ -1,0 +1,66 @@
+/* step-1 В этом демо-проекте мы будем готовить меню для интеграции WordPress. Макет: «Витрины для выпечки», если ссылка не работает, то попробуйте открыть тут. Подготовим основную разметку в следующем шаге. */
+/* step-2 Зададим основную стилизацию и добавим кастомные обёртки. По техническому заданию у нас прозрачное меню, которое накладывается на следующий блок. Но мы не будем отвлекаться на стили и просто добавим чёрный фон. Обратите внимание, что весь код, который мы напишем внутри page-header__menu-wrapper, будет удалён, а на его место встанет код меню. В следующем шаге добавим генерируемые обёртки WordPress. */
+/* step-3 Создадим генерируемые обёртки WordPress: <nav> с классом menu-primary-container, <ul> с классом menu, <li> с классом menu-item, ссылки без классов. Пропишем стилизацию для этих элементов. Стилизуем от класса конкретного меню menu-primary-container, чтобы не перезаписать стили других меню, которые могут появиться на сайте. В следующем шаге добавим выпадающее меню. */
+/* step-4 Пропишем разметку выпадающего меню. Добавим к пункту с выпадающим меню класс menu-item-has-children. Добавляем выпадающему меню класс sub-menu, пунктам меню — menu-item, ссылки оставляем без класса. Прописываем открытие подменю по классу menu-item-has-children. Для sub-menu обязательно прописываем z-index. Мы закончили. Меню готово к интеграции. */
+
+@font-face {
+  font-family: "Arkhip", "Arial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("./fonts/Arkhip_font.woff2") format("woff2"),
+    url("./fonts/Arkhip_font.woff") format("woff");
+}
+
+body {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000;
+  min-width: 1150px;
+}
+
+.wrapper {
+  width: 1110px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.page-header {
+  background-color: #000000;
+  padding: 23px 0 20px 0;
+}
+
+.page-header__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.page-header__info-wrapper {
+  margin-left: auto;
+}
+
+.page-header__info-wrapper a {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu-primary-container .menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+}
+
+.menu-primary-container a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+дописать шаг 4 на css
