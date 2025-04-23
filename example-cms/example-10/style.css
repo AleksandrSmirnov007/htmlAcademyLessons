@@ -63,4 +63,45 @@ body {
   padding: 10px 20px;
 }
 
-дописать шаг 4 на css
+.menu-primary-container .menu-item-has-children {
+  position: relative;
+  background-image: url("img/icon-sub-menu.svg");
+  background-repeat: no-repeat;
+  background-size: 12px 6px;
+  background-position: 89% center;
+}
+
+.menu-primary-container .menu-item-has-children a {
+  padding-right: 30px;
+}
+
+.menu-primary-container .menu-item-has-children:hover .sub-menu {
+  display: block;
+}
+
+.menu-primary-container .sub-menu {
+  display: none;
+  position: absolute;
+  background-color: #fef9f3;
+  min-width: 320px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  top: 32px;
+  left: 12px;
+  z-index: 2;
+}
+
+.menu-primary-container .sub-menu li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.menu-primary-container .sub-menu a {
+  color: #000000;
+}
+
+.menu-primary-container a:hover {
+  color: #d8874d;
+}
+
+
