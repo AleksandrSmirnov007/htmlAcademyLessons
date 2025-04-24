@@ -1,2 +1,107 @@
 /* step-1 В этом демо-проекте мы подготовим меню для интеграции Bitrix. Макет: «Витрины для выпечки», если ссылка не работает, то попробуйте открыть тут. Стилизацию мы рассмотрели в демо-проекте про WordPress, а здесь разберём саму разметку. */
 /* step-2 Разметка для Bitrix может быть такой же, как и для WordPress. Поэтому мы посмотрим другой вариант наименования классов. Для удобства стилизации заменим классы для пунктов в выпадающем меню и переименуем класс пункта с выпадающим меню на menu-item-with-submenu. В следующем шаге показана разметка из демо-проекта про WordPress, можете сравнить код. */
+
+@font-face {
+  font-family: "Arkhip", "Arial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("./fonts/Arkhip_font.woff2") format("woff2"),
+    url("./fonts/Arkhip_font.woff") format ("woff");
+}
+
+body {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000;
+  min-width: 1150px;
+}
+
+.wrapper {
+  width: 1110px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.page-header {
+  background-color: #000000;
+  padding: 23px 0 20px 0;
+}
+
+.page-header__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.page-header__info-wrapper {
+  margin-left: auto;
+}
+
+.page-header__info-wrapper a {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu-primary-container .menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+}
+
+.menu-primary-container a {
+  font-size: 18px;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu-primary-container .menu-item-with-submenu {
+  position: relative;
+  background-image: url("img/icon-sub-menu.svg");
+  background-position: 89% center;
+  background-size: 12px 6px;
+  background-repeat: no-repeat;
+}
+
+.menu-primary-container .menu-item-with-submenu:marker {
+  list-style-type: none;
+}
+
+.menu-primary-container .menu-item-with-submenu a {
+  padding-right: 30px;
+}
+
+.menu-primary-container .menu-item-with-submenu:hover .sub-menu {
+  display: block;
+}
+
+.menu-primary-container .sub-menu {
+  display: none;
+  position: absolute;
+  top: 32px;
+  left: 12px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  background-color: #fef9f3;
+  min-width: 330px;
+  z-index: 2;
+}
+
+.menu-primary-container .sub-menu li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.menu-primary-container .sub-menu-item a {
+  color: #000000;
+}
+
+.menu-primary-container a:hover {
+  color: #d8874d;
+}
