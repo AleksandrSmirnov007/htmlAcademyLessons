@@ -1,0 +1,106 @@
+/*step-1 Создадим основную разметку шапки и обёртку с классом main-nav. Код внутри этого класса будет удалён: его заменит генерируемый код CMS. */
+/*step-2 Создадим обёртку с генерируемыми классами menu-primary-container и menu. Добавим в разметку пункты меню и стилизуем — стили для последнего пункта пока не указываем. */
+/*step-3 Теперь создадим подменю и пропишем для него классы. Пункту меню, в котором будет создано подменю, добавим menu-item-has-children. Для самого подменю — sub-menu, а для каждого из его пунктов — menu-item. Стилизуем. */
+
+body {
+  font-family: "Montserrat", "Arial" sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 30px;
+  font-size: 14px;
+  color: #000000;
+  min-width: 1150px; /* 1440px */
+}
+
+.wrapper {
+  width: 1110px; /* 1440px*/
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.page-header {
+  padding: 10px 165px;
+  border-bottom: 1px solid#f5d581;
+}
+
+.main-header__wrapper {
+  display: flex;
+}
+
+.main-nav {
+  margin-left: auto;
+  max-width: 700px;
+}
+
+/* шаг 3 по css отсюда (шаг три по html выполнен) */
+
+.menu-primary-container .menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+}
+
+.menu-primary-container a {
+  color: #000000;
+  font-size: 18px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 24px 20px;
+}
+
+.menu-primary-container .menu-item-has-children {
+  position: relative;
+  background-image: url("./img/icon-sub-menu.svg");
+  background-position: 95% center;
+  background-repeat: no-repeat;
+  background-size: 13px 9px;
+}
+
+.menu-primary-container .menu-item-has-children > a {
+  padding-right: 30px;
+}
+
+.menu-primary-container .sub-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 16px;
+  box-sizing: border-box;
+  padding: 16px 0 0;
+  margin: 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px 0px rgba(97, 97, 97, 0.18);
+  box-shadow: 0 2px 4px 0px rgba(97, 97, 97, 0.18);
+  background-color: #ffffff;
+}
+
+.menu-primary-container .sub-menu a {
+  padding: 8px 16px;
+}
+
+.menu-primary-container .menu-item-has-children:hover .sub-menu {
+  display: block;
+}
+
+.menu-primary-container .sub-menu li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.menu-primary-container a:hover {
+  color: #9f7303;
+}
+
+.page-header__feedback a {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Montserrat", "Arial", sans-serif;
+  text-decoration: none;
+  padding: 6px 22px;
+  border-radius: 8px;
+  border: 1px solid #9f7303;
+  margin: 0 20px;
+}
