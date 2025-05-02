@@ -1,6 +1,9 @@
 /*step-1 Создадим основную разметку шапки и обёртку с классом main-nav. Код внутри этого класса будет удалён: его заменит генерируемый код CMS. */
 /*step-2 Создадим обёртку с генерируемыми классами menu-primary-container и menu. Добавим в разметку пункты меню и стилизуем — стили для последнего пункта пока не указываем. */
 /*step-3 Теперь создадим подменю и пропишем для него классы. Пункту меню, в котором будет создано подменю, добавим menu-item-has-children. Для самого подменю — sub-menu, а для каждого из его пунктов — menu-item. Стилизуем. */
+/*step-4 Теперь создадим подменю и пропишем для него классы. Пункту меню, в котором будет создано подменю, добавим menu-item-has-children. Для самого подменю — sub-menu, а для каждого из его пунктов — menu-item. Стилизуем. */
+/*step-5 Стилизовать пункт «Оставить отзыв» можно несколькими способами: Стилизовать последний элемент первого уровня через nth-child. Добавить кастомный класс. Оба варианта справляются с задачей, но мы остановимся на втором. Он более универсальный, потому что впоследствии с помощью кастомного класса можно будет стилизовать сразу несколько пунктов. Кроме того, у нас ничего не сломается, если заказчик решит изменить последовательность пунктов. Добавим кастомный класс menu-item-styled и стилизуем его. В следующем шаге подготовим пункт списка текущей страницы с классом current-menu-item. */
+/* step-6 Стилизуем пункт списка текущей страницы с классом current-menu-item. Обязательно следите за уровнями вложенности — сама ссылка лежит внутри li с классом current-menu-item, поэтому селектор не .current-menu-item, а .current-menu-item a. Также в данном случае используем селектор .menu-primary-container, так как выше стилизовали ссылки меню от этого селектора. Если его не использовать, то цвет ссылки для пункт списка текущей страницы не применится. Проверим, что пункт меню отображается как нужно: добавим класс current-menu-item к пункту, допустим, Контакты. На этом всё. Меню готово к интеграции. */
 
 body {
   font-family: "Montserrat", "Arial" sans-serif;
@@ -23,7 +26,7 @@ body {
   border-bottom: 1px solid#f5d581;
 }
 
-.main-header__wrapper {
+.main-header-wrapper {
   display: flex;
 }
 
@@ -34,73 +37,93 @@ body {
 
 /* шаг 3 по css отсюда (шаг три по html выполнен) */
 
+.menu-primary-container .menu-item {
+  list-style-type: none;
+}
+
+
+.menu-primary-container .menu-item a {
+  color: #000000;
+  line-height: 27px;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 25px;
+}
+
+.menu-primary-container .menu-item a:hover {
+  color: #9f7303;
+}
+
 .menu-primary-container .menu {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  list-style: none;
 }
 
-.menu-primary-container a {
-  color: #000000;
-  font-size: 18px;
-  font-family: "Montserrat", "Arial", sans-serif;
-  font-weight: 400;
-  text-decoration: none;
-  padding: 24px 20px;
-}
+/* Отсупы для пунктов меню первого уровня*/
 
-.menu-primary-container .menu-item-has-children {
-  position: relative;
-  background-image: url("./img/icon-sub-menu.svg");
-  background-position: 95% center;
-  background-repeat: no-repeat;
-  background-size: 13px 9px;
-}
-
-.menu-primary-container .menu-item-has-children > a {
-  padding-right: 30px;
+.menu-primary-container .menu > .menu-item {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .menu-primary-container .sub-menu {
   display: none;
   position: absolute;
   top: 30px;
-  left: 16px;
+  left: 20px;
   box-sizing: border-box;
-  padding: 16px 0 0;
+  padding: 16px;
   margin: 0;
   min-width: 200px;
-  box-shadow: 0 4px 8px 0px rgba(97, 97, 97, 0.18);
-  box-shadow: 0 2px 4px 0px rgba(97, 97, 97, 0.18);
+  box-shadow: 0 4px 8px 0px rgba(97, 97, 97, 0.18),
+    0 2px 4px 0px rgba(97, 97, 97, 0.18);
   background-color: #ffffff;
+  z-index: 2;
 }
 
 .menu-primary-container .sub-menu a {
-  padding: 8px 16px;
+  line-height: 22px;
+}
+
+.menu-primary-container .menu-item-has-children {
+  position: relative;
+}
+
+.menu-primary-container .menu-item-has-children > a {
+  padding-right: 30px;
+}
+
+.menu-primary-container .menu-item-has-children::before {
+  content: "";
+  background-image: url("./img/icon-sub-menu.svg");
+  background-size: cover;
+  width: 13px;
+  height: 9px;
+  position: absolute;
+  right: 5px;
+  top: 12px;
+  z-index: 1;
+}
+
+
+.menu-primary-container .sub-menu .menu-item {
+  margin-bottom: 10px;
+}
+
+.menu-primary-container .sub-menu .menu-item:last-child {
+  margin-bottom: 0;
 }
 
 .menu-primary-container .menu-item-has-children:hover .sub-menu {
   display: block;
 }
 
-.menu-primary-container .sub-menu li {
-  list-style: none;
-  margin-bottom: 15px;
-}
-
-.menu-primary-container a:hover {
-  color: #9f7303;
-}
-
-.page-header__feedback a {
-  color: #000000;
-  font-size: 18px;
-  font-weight: 400;
-  font-family: "Montserrat", "Arial", sans-serif;
-  text-decoration: none;
-  padding: 6px 22px;
+.menu-primary-container .menu-item-styled {
   border-radius: 8px;
   border: 1px solid #9f7303;
-  margin: 0 20px;
+}
+
+/* шаг 6 */
+.menu-primary-container .current-menu-item a {
+  color: #648c05;
 }
