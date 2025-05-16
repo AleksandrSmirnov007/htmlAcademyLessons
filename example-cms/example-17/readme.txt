@@ -274,3 +274,101 @@ The requested URL /page-tes was not found on this server.
 
 щаг1 В WordPress подключается один CSS файл на все страницы. Поэтому важно создать только один стилевой файл.
 // так я пока не нашел этот файл, все файлы в папке styles имеют формат json
+
+
+15.05.2025
+Шпаргалка по MySQL
+https://habr.com/ru/articles/564390/
+
+закончил на Операторы...
+дошел до Создание таблицы
+Пока хватит потом еще почитать
+
+
+Перешел к демонстрации
+Поитогам  понял сто код разьивают на фрагменты и  php  может как то склеивать эти фрагменты в единую страницу
+
+Скачал всякое что бы php работало как пайтон - не запускается php файл пишет
+1.7. Пошаговая демонстрация: разделение кода страниц сайта на шаблоны в Wordpress
+пройдено но не могу запустить php-файл
+
+16.05.2025
+
+Нашел css файл с который подкючается к странице сайта
+/home/a1124660/domains/montage47.ru/public_html/wp-content/themes/twentytwentyfive/style.css
+
+содержание файла style.css
+
+/*
+Theme Name: Twenty Twenty-Five
+Theme URI: https://wordpress.org/themes/twentytwentyfive/
+Author: the WordPress team
+Author URI: https://wordpress.org
+Description: Twenty Twenty-Five emphasizes simplicity and adaptability. It offers flexible design options, supported by a variety of patterns for different page types, such as services and landing pages, making it ideal for building personal blogs, professional portfolios, online magazines, or business websites. Its templates cater to various blog styles, from text-focused to image-heavy layouts. Additionally, it supports international typography and diverse color palettes, ensuring accessibility and customization for users worldwide.
+Requires at least: 6.7
+Tested up to: 6.7
+Requires PHP: 7.2
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyfive
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
+*/
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: .1em;
+}
+
+/* Focus styles */
+:where(.wp-site-blocks *:focus) {
+	outline-width: 2px;
+	outline-style: solid;
+}
+
+/* Increase the bottom margin on submenus, so that the outline is visible. */
+.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+/* Increase the outline offset on the parent menu items, so that the outline does not touch the text. */
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+}
+
+/* Remove outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
+}
+
+/*
+ * Progressive enhancement to reduce widows and orphans
+ * https://github.com/WordPress/gutenberg/issues/55190
+ */
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
+	text-wrap: pretty;
+}
+
+/*
+ * Change the position of the more block on the front, by making it a block level element.
+ * https://github.com/WordPress/gutenberg/issues/65934
+*/
+.more-link {
+	display: block;
+}
+
+добавил строки в самый низ кода:
+
+/*Мой код для стилизации  */
+body {
+    /* фон зеленый оттенок белоз-зеленый */
+    background-color: #BDECB6;
+}
+
+это сработало - фон всеx страниц поменялся на бледно зеленый.
+
+
