@@ -377,4 +377,19 @@ body {
 Блоки с фоновым изображением
 Если предполагается изменение фонового изображения из админки, пропишите изображение через атрибут style у нужного блока в HTML, а не в CSS. Вынести в админку написанный CSS нельзя, поэтому фоновую картинку нужно вынести в HTML. Например, изменение фоновой картинки в первом блоке главной страницы «Седоны»:
 
+Для этого пропишем фоновую картинку в HTML:
 
+<section class="welcome-area" style="background-image: url(“img/welcome-bg.jpg”);">
+  <img src="img/welcome.svg" width="456" height="350"> <!-- картинка с текстом Welcome to the gorgeous Sedona -->
+</section>
+
+        Копировать
+
+
+
+Всю остальную стилизацию оставляем в CSS:
+
+.welcome-area {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
