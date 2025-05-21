@@ -393,3 +393,13 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+
+21.05.2025
+Создал папку images в папке smirnov-test (в домене montage47.ru)
+загрузил туда картинку morkovo-pole.jpg
+попробую ee задать к header через атрибут style="background-image: url('https://montage47.ru/smirnov-test/images/markovo-pole.jpg');"
+
+подключил этот фон к тестовой странице так же (нужно использовать одинарные ковычки внутри)
+
+style="background-image: url('https://montage47.ru/smirnov-test/images/markovo-pole.jpg');"
