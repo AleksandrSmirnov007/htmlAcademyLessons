@@ -33,3 +33,6 @@
 
 
 https://montage47.ru/?page_id=107
+
+Копировал стили из контекстного меню элемента в админке
+<!-- wp:navigation-link {"label":"Тес-ст-2","type":"page","id":107,"url":"https://montage47.ru/?page_id=107","kind":"post-type","fontSize":"x-large"} /-->
