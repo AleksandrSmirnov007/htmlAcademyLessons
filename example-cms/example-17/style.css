@@ -1,0 +1,11 @@
+:root {
+  --color-primary: tomato;
+
+}
+
+
+
+body {
+  background-color: rgb(153, 203, 148);
+  background-color: var(--color-primary);
+}
